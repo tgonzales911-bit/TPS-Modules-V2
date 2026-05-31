@@ -193,6 +193,12 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 .lf-btn:hover{background:var(--gold);color:var(--navy)}
 .lf-timer{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:var(--gold);padding:6px 14px;border-radius:4px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:1px;margin-top:10px}
 .lesson-main.ft>p{display:none!important}.lesson-main.ft>.callout{display:none!important}.ft-toggle{display:flex;align-items:center;gap:10px;padding:10px 16px;background:var(--navy);border-radius:6px;cursor:pointer;border:1px solid rgba(201,168,76,0.25)}.ft-toggle-switch{width:36px;height:20px;background:rgba(201,168,76,0.2);border-radius:10px;position:relative;transition:background .2s}.ft-toggle-switch.on{background:var(--gold)}.ft-toggle-knob{width:14px;height:14px;background:#fff;border-radius:50%;position:absolute;top:3px;left:3px;transition:left .2s}.ft-toggle-switch.on .ft-toggle-knob{left:19px}.ft-toggle-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}.ft-toggle-desc{font-size:11px;color:var(--mid)}.lesson-main.ft-on>p,.lesson-main.ft-on>.callout,.lesson-main.ft-on h3{display:none!important}.lesson-main.ft-on .ob-card,.lesson-main.ft-on .lf-wrap,.lesson-main.ft-on .lead-nav,.lesson-main.ft-on h2{display:block!important}
+
+.dim-frame{background:var(--navy);border-left:4px solid var(--gold);border-radius:0 8px 8px 0;padding:16px 22px;margin:0 3rem 0;display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+.dim-frame-num{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);opacity:.8;white-space:nowrap;}
+.dim-frame-title{font-family:'Cinzel',serif;font-size:16px;font-weight:700;color:#fff;margin-bottom:3px;}
+.dim-frame-desc{font-size:13px;color:rgba(255,255,255,.6);line-height:1.5;}
+.dim-frame-badge{margin-left:auto;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.3);border-radius:4px;padding:5px 12px;font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);white-space:nowrap;}
 </style>
 </head>
 <body>
@@ -202,12 +208,14 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
     <div class="nav-brand">The Promotional Standard<span>Universal · Chapter 41</span></div>
   </div>
   <div class="nav-pills">
-    <button class="nav-pill active" onclick="showLesson(0)">The Performance Gap</button>
-    <button class="nav-pill" onclick="showLesson(1)">The Night Before</button>
-    <button class="nav-pill" onclick="showLesson(2)">The Identity Anchor</button>
-    <button class="nav-pill" onclick="showLesson(3)">Between Exercises</button>
-    <button class="nav-pill" onclick="showLesson(4)">When It Goes Wrong</button>
-    <button class="nav-pill" onclick="showLesson(5)">After the Assessment</button>
+    <button class="nav-pill" onclick="showLesson(0)">Stress Tolerance</button>
+    
+    <button class="nav-pill active" onclick="showLesson(1)">The Performance Gap</button>
+    <button class="nav-pill" onclick="showLesson(2)">The Night Before</button>
+    <button class="nav-pill" onclick="showLesson(3)">The Identity Anchor</button>
+    <button class="nav-pill" onclick="showLesson(4)">Between Exercises</button>
+    <button class="nav-pill" onclick="showLesson(5)">When It Goes Wrong</button>
+    <button class="nav-pill" onclick="showLesson(6)">After the Assessment</button>
   </div>
 </nav>
 <div class="progress-bar" id="prog"></div>
@@ -227,12 +235,12 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
       <div class="mh-thread-text">Complete this module two to four weeks before your assessment date. Read it once to understand the concepts. Then read Lessons 2, 3, and 4 again the night before and the morning of your assessment. Lesson 5 is for the day of — when something doesn't go as planned. Lesson 6 is for the day after.</div>
     </div>
     <div class="mh-lesson-nav">
-      <button class="mh-lesson-btn active" onclick="showLesson(0)">1. The Performance Gap</button>
-      <button class="mh-lesson-btn" onclick="showLesson(1)">2. The Night Before</button>
-      <button class="mh-lesson-btn" onclick="showLesson(2)">3. The Identity Anchor</button>
-      <button class="mh-lesson-btn" onclick="showLesson(3)">4. Between Exercises</button>
-      <button class="mh-lesson-btn" onclick="showLesson(4)">5. When It Goes Wrong</button>
-      <button class="mh-lesson-btn" onclick="showLesson(5)">6. After the Assessment</button>
+      <button class="mh-lesson-btn active" onclick="showLesson(1)">1. The Performance Gap</button>
+      <button class="mh-lesson-btn" onclick="showLesson(2)">2. The Night Before</button>
+      <button class="mh-lesson-btn" onclick="showLesson(3)">3. The Identity Anchor</button>
+      <button class="mh-lesson-btn" onclick="showLesson(4)">4. Between Exercises</button>
+      <button class="mh-lesson-btn" onclick="showLesson(5)">5. When It Goes Wrong</button>
+      <button class="mh-lesson-btn" onclick="showLesson(6)">6. After the Assessment</button>
     </div>
   </div>
 </div>
@@ -244,7 +252,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="lesson-container">
 <div class="lesson-main">
   <div class="lesson-header">
-    <div class="lh-eyebrow">Chapter 41 · Lesson 1 of 6</div>
+    <div class="lh-eyebrow">Chapter 41 · Lesson 2 of 7</div>
     <h1 class="lh-title">The Performance Gap —<br><em>Why Preparation Doesn't Always Show Up</em></h1>
     <div class="lh-meta">
       <span class="lh-meta-item">⏱ 16 min</span>
@@ -357,17 +365,183 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Leadership Philosophy</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Yerkes-Dodson Curve → Four-Step Reset Protocol → Pre-Exercise Protocol → LEAD Ten-Second Activation</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the performance zone → apply the reset → activate LEAD → close with Discipline and Trustworthiness</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
 <div class="lesson-nav-bar">
   <button class="lnb-btn" disabled>← Previous</button>
-  <div class="lnb-info"><div class="lnb-name">The Performance Gap</div><div class="lnb-num">Lesson 1 of 6</div></div>
+  <div class="lnb-info"><div class="lnb-name">The Performance Gap</div><div class="lnb-num">Lesson 2 of 7</div></div>
   <button class="lnb-btn primary" onclick="nextLesson()">Next: The Night Before →</button>
 </div>
 </div>
 
 <!-- LESSON 2 -->
+
+<div class="dim-frame">
+  <div>
+    <div class="dim-frame-num">Dimension 08</div>
+    <div class="dim-frame-title">Stress Tolerance</div>
+    <div class="dim-frame-desc">This chapter develops Dimension 08 of the eight assessment dimensions — composure under observation pressure, deliberate pace, and consistent performance when challenged by follow-up questions. Stress Tolerance is the dimension most candidates never prepare for.</div>
+  </div>
+  <div class="dim-frame-badge">Chapter 41 · Dim 08</div>
+</div>
+
+<div class="lesson-view" id="lesson-0">
+<div class="lesson-container"><div class="lesson-main">
+<div class="lesson-header"><div class="lh-eyebrow">Chapter 41 · Lesson 1 of 7</div>
+<h1 class="lh-title">Stress<br><em>Tolerance</em></h1>
+<div class="lh-meta"><span class="lh-meta-item">⏱ 18 min</span><span class="lh-meta-item">🧠 Dimension 08</span></div>
+<div class="ft-toggle" onclick="toggleFastTrack(this)">
+<div class="ft-toggle-switch"><div class="ft-toggle-knob"></div></div>
+<div><div class="ft-toggle-label">Fast Track</div><div class="ft-toggle-desc">Frameworks + OB cards only</div></div>
+</div>
+</div>
+
+<p>Stress Tolerance is the eighth of the eight assessment dimensions — and the one almost no candidate consciously prepares for. It is also the one assessors can score before you say your first word. How you walk into the room. Whether you pause before answering a hard question or immediately defend. Whether your voice stays measured under a follow-up challenge. All of it is observable. All of it is scoreable.</p>
+
+<p>The assessment center is a performance under observation. Every other dimension requires content — frameworks, frameworks chained, principles named. Stress Tolerance is scored on behavior. You cannot fake it. You can build it.</p>
+
+<h2>What Assessors Are Scoring</h2>
+
+<div class="infographic-wrap">
+<div class="ig-header">
+<span class="ig-eyebrow">◆ TPS FRAMEWORK</span>
+<div class="ig-title">Stress Tolerance — BARS Behavioral Anchors</div>
+<div class="ig-sub">What a 1, 3, 4, and 5 looks like on this dimension. Make the right behaviors visible.</div>
+</div>
+<div class="ig-dims" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr));">
+<div class="ig-dim-card" style="border-top:3px solid #C41E2A;">
+<div class="ig-dim-num" style="color:#C41E2A;">1–2</div>
+<div class="ig-dim-name">Below Standard</div>
+<div class="ig-dim-desc">Visible agitation or freeze response. Rushed answers to follow-up questions. Defensive tone when challenged. Posture collapsed or rigid. Recovery from a stumble takes the rest of the exercise.</div>
+</div>
+<div class="ig-dim-card" style="border-top:3px solid #8FA8C0;">
+<div class="ig-dim-num" style="color:#8FA8C0;">3</div>
+<div class="ig-dim-name">Meets Standard</div>
+<div class="ig-dim-desc">Manages stress adequately. No visible breakdown. Answers follow-up questions correctly but slightly rushed. Composure is present but thin — a strong challenge would expose it.</div>
+</div>
+<div class="ig-dim-card" style="border-top:3px solid #C9A84C;">
+<div class="ig-dim-num" style="color:#C9A84C;">4</div>
+<div class="ig-dim-name">Above Standard</div>
+<div class="ig-dim-desc">Deliberate pace throughout. Pauses before follow-up responses. Maintains consistent delivery when challenged. Posture grounded. Minor stumble recovered in one sentence.</div>
+</div>
+<div class="ig-dim-card" style="border-top:3px solid #3A9C5A;">
+<div class="ig-dim-num" style="color:#3A9C5A;">5</div>
+<div class="ig-dim-name">Significantly Above</div>
+<div class="ig-dim-desc">Assessment pressure is invisible. Pace is the same on question one as on question five. Follow-up challenges produce a brief pause, a measured response, and no defensive language. Composure is a leadership signal — the candidate already operates at the rank.</div>
+</div>
+</div>
+</div>
+
+<h2>The Three Visible Signals</h2>
+<p>Assessors cannot score what they cannot observe. Stress Tolerance is scored on three behavioral signals — all of which are visible within the first thirty seconds of each exercise.</p>
+
+<h3>Signal 1 — Pace</h3>
+<p>The most consistent indicator of stress in a board room is accelerated speech. Candidates under pressure speak faster. The faster the speech, the harder it is to structure a response, name a framework explicitly, and close with a value anchor. Deliberate pace is not slow — it is controlled. A candidate who speaks at 80% of their normal conversational pace in an assessment room is outperforming one speaking at 120%.</p>
+
+<h3>Signal 2 — The Pause</h3>
+<p>When an assessor asks a follow-up challenge — "What if that approach doesn't work?" or "What would you do differently at the next rank?" — the first two seconds of the response determine the Stress Tolerance score more than the content that follows. An immediate defensive answer signals that the pressure landed. A one-second pause before answering signals that the candidate processed the challenge and chose a response. The pause is the signal. Build it deliberately.</p>
+
+<h3>Signal 3 — Recovery</h3>
+<p>Every candidate has a moment in a board where something goes wrong. A framework name forgotten. A scenario more complex than anticipated. A stumble on a word. How the candidate recovers — not whether they stumble — is what assessors observe. A 5-level recovery is one sentence: name what you're doing, redirect, continue. A 2-level recovery is visible panic, extended silence, or an apology that takes thirty seconds.</p>
+
+<div class="callout callout-gold"><span class="callout-label">The Paradox of Preparation</span>
+<p>The most effective Stress Tolerance preparation is not stress management — it is competence depth. The more automatic your LEAD execution, your framework application, and your T·C·H·O·E·D·S close, the less cognitive load the board consumes, and the more composure you have available. Stress Tolerance is built in the reps, not in the breathing exercises.</p></div>
+
+<h2>The Protocol</h2>
+
+<h3>Pre-Exercise — Two Breaths Before You Speak</h3>
+<p>After the assessor finishes reading the scenario, before your first word: two slow breaths. Not visible hyperventilation — just two measured exhales that reset your pace and signal to yourself that you are in control of the response. This is not a ritual. It is a calibration. Every 5-level candidate does something equivalent.</p>
+
+<h3>During — Anchor to LEAD</h3>
+<p>When pressure spikes mid-response, anchor to the next LEAD step. If you lose your place in an oral board response, say "Let me apply this." Then execute A — Apply the diagnostic framework explicitly. Naming a framework out loud resets the response architecture and buys composure. The assessors see structured thinking under pressure. That is exactly Stress Tolerance scoring at 4+.</p>
+
+<h3>Follow-Up Challenges — The Pause Protocol</h3>
+<p>When challenged with a follow-up: pause one beat, then say "That is a good point" or "Let me address that." Both phrases buy a second of processing time and signal composure without sounding defensive. Then answer directly. If you genuinely do not know: "I would consult with [appropriate authority] before making that determination" is a complete, non-defensive 4-level answer.</p>
+
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav">
+<div class="lead-nav-title">LEAD Navigator<div class="lead-nav-subtitle">Applied to this lesson's board question</div></div>
+<div class="lead-nav-step"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Assessment Awareness · Stress Tolerance</div></div></div>
+<div class="lead-nav-step"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">STAR-P · pace, pause, recovery framework</div></div></div>
+<div class="lead-nav-step"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">BARS anchors · Three signals · Pre-exercise protocol</div></div></div>
+<div class="lead-nav-step"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">At testing rank · T·C·H·O·E·D·S close</div></div></div>
+</div>
+
+<span class="sbar-label">BARS — Stress Tolerance</span>
+<div class="sbar-card"><strong>1–2</strong> Visible agitation · defensive tone · no recovery</div>
+<div class="sbar-card"><strong>3</strong> Adequate composure · slightly rushed follow-ups</div>
+<div class="sbar-card"><strong>4</strong> Deliberate pace · pauses before challenges</div>
+<div class="sbar-card"><strong>5</strong> Pressure invisible · composure is leadership signal</div>
+
+<span class="sbar-label" style="margin-top:14px;">Three Signals</span>
+<div class="sbar-card"><strong>Pace</strong> Controlled, not fast</div>
+<div class="sbar-card"><strong>Pause</strong> 1 beat before follow-ups</div>
+<div class="sbar-card"><strong>Recovery</strong> 1 sentence, no apology</div>
+</div></div>
+
+<div class="ob-card">
+<div class="ob-header"><div class="ob-label">Oral Board — Stress Tolerance</div></div>
+<div class="ob-body">
+<div class="ob-q"><span class="ob-q-tag">All Ranks</span><div><div class="ob-q-text">"How do you prepare specifically for the Stress Tolerance dimension of an assessment center, and what does a 5-level response look like on this dimension?"</div><div class="ob-note">Name the dimension explicitly: Stress Tolerance, Dimension 08. Name the three visible signals: pace, pause, and recovery. Describe the pre-exercise two-breath protocol. Explain the paradox — competence depth is the most effective stress tolerance builder. A 5 response closes with a T·C·H·O·E·D·S value anchor connected to composure under pressure — Courage or Discipline are the natural fits.</div></div></div>
+</div>
+</div>
+
+<div class="takeaways">
+<div class="tk-lbl">Lesson 1 — Key Takeaways</div>
+<div class="tk-item">Stress Tolerance is Dimension 08 of the eight assessment dimensions. It is the only dimension scored on behavior alone — no framework content required. Assessors can score it before you speak your first word.</div>
+<div class="tk-item">Three visible signals: pace (controlled, not fast), pause (one beat before follow-up responses), and recovery (one sentence, no extended apology). Build all three deliberately in practice reps.</div>
+<div class="tk-item">The most effective Stress Tolerance preparation is competence depth — automatic LEAD execution, named frameworks, T·C·H·O·E·D·S close. When the board consumes less cognitive load, composure is what's left over.</div>
+</div>
+
+<div class="lf-wrap">
+<div class="lf-header">
+<div class="lf-title">Lesson Close · 3-Step Flow</div>
+<div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div>
+</div>
+<div class="lf-step active">
+<div class="lf-step-num">Step 1 of 3 · Review</div>
+<div class="lf-step-title">Name the three visible Stress Tolerance signals and the pre-exercise protocol.</div>
+<p style="font-size:13px;color:var(--mid);line-height:1.6">Pace. Pause. Recovery. Two breaths before your first word. Can you describe what a 5 looks like on this dimension? If you can answer that in 60 seconds, you own this lesson.</p>
+<button class="lf-btn" onclick="lfNext(this,1)">Got it → Show me the framework chain</button>
+</div>
+<div class="lf-step">
+<div class="lf-step-num">Step 2 of 3 · Framework Chain</div>
+<div class="lf-step-title">Your framework chain for this question type</div>
+<div class="lf-chain">
+<div class="lf-chain-label">Bucket</div>
+<div class="lf-chain-text">Assessment Awareness · Stress Tolerance</div>
+</div>
+<div class="lf-chain">
+<div class="lf-chain-label">Framework Chain</div>
+<div class="lf-chain-text">BARS Anchors (1–5) → Three Signals → Pre-Exercise Protocol → Competence Paradox</div>
+</div>
+<div class="lf-chain">
+<div class="lf-chain-label">Close Cue</div>
+<div class="lf-chain-close">Composure is built in reps → name your weakest signal → target it in practice</div>
+</div>
+<button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button>
+</div>
+<div class="lf-step">
+<div class="lf-step-num">Step 3 of 3 · The Rep</div>
+<div class="lf-step-title">The Halligan — Do your rep</div>
+<div class="lf-prompt">
+<div class="lf-prompt-label">Your Scenario</div>
+<div class="lf-prompt-text">Use the OB card above. Name the dimension (Stress Tolerance, Dim 08). Describe the three signals, the BARS anchors, and your personal protocol. Close with a T·C·H·O·E·D·S anchor. 90 seconds.</div>
+</div>
+<div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div>
+<p style="font-size:12px;color:var(--gray);margin-top:10px;line-height:1.5">After your rep: Did you name all three signals? Did you close with a value anchor? Did your pace stay controlled through the whole 90 seconds? One rep per lesson. 90 reps over 90 days.</p>
+</div>
+</div>
+
+<div class="lesson-nav-bar">
+<button class="lnb-btn" disabled>← Previous</button>
+<div class="lnb-info"><div class="lnb-name">Stress Tolerance</div><div class="lnb-num">Lesson 1 of 7</div></div>
+<button class="lnb-btn primary" onclick="nextLesson()">The Performance Gap →</button>
+</div></div>
+
+
 <div class="lesson-view" id="lesson-1">
 <div class="lesson-container">
 <div class="lesson-main">
   <div class="lesson-header">
-    <div class="lh-eyebrow">Chapter 41 · Lesson 2 of 6</div>
+    <div class="lh-eyebrow">Chapter 41 · Lesson 3 of 7</div>
     <h1 class="lh-title">The Night Before<br><em>+ Morning Of Protocol</em></h1>
     <div class="lh-meta">
       <span class="lh-meta-item">⏱ 16 min</span>
@@ -508,7 +682,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Leadership Philosophy</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Yerkes-Dodson Curve → Four-Step Reset Protocol → Pre-Exercise Protocol → LEAD Ten-Second Activation</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the performance zone → apply the reset → activate LEAD → close with Discipline and Trustworthiness</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
 <div class="lesson-nav-bar">
   <button class="lnb-btn" onclick="prevLesson()">← Previous</button>
-  <div class="lnb-info"><div class="lnb-name">The Night Before</div><div class="lnb-num">Lesson 2 of 6</div></div>
+  <div class="lnb-info"><div class="lnb-name">The Night Before</div><div class="lnb-num">Lesson 3 of 7</div></div>
   <button class="lnb-btn primary" onclick="nextLesson()">Next: The Identity Anchor →</button>
 </div>
 </div>
@@ -518,7 +692,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="lesson-container">
 <div class="lesson-main">
   <div class="lesson-header">
-    <div class="lh-eyebrow">Chapter 41 · Lesson 3 of 6</div>
+    <div class="lh-eyebrow">Chapter 41 · Lesson 4 of 7</div>
     <h1 class="lh-title">The<br><em>Identity Anchor</em></h1>
     <div class="lh-meta">
       <span class="lh-meta-item">⏱ 18 min</span>
@@ -644,7 +818,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
 <div class="lesson-nav-bar">
   <button class="lnb-btn" onclick="prevLesson()">← Previous</button>
-  <div class="lnb-info"><div class="lnb-name">The Identity Anchor</div><div class="lnb-num">Lesson 3 of 6</div></div>
+  <div class="lnb-info"><div class="lnb-name">The Identity Anchor</div><div class="lnb-num">Lesson 4 of 7</div></div>
   <button class="lnb-btn primary" onclick="nextLesson()">Next: Between Exercises →</button>
 </div>
 </div>
@@ -654,7 +828,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="lesson-container">
 <div class="lesson-main">
   <div class="lesson-header">
-    <div class="lh-eyebrow">Chapter 41 · Lesson 4 of 6</div>
+    <div class="lh-eyebrow">Chapter 41 · Lesson 5 of 7</div>
     <h1 class="lh-title">Between Exercises —<br><em>The Mental Reset Protocol</em></h1>
     <div class="lh-meta">
       <span class="lh-meta-item">⏱ 14 min</span>
@@ -751,7 +925,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Leadership Philosophy</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Yerkes-Dodson Curve → Four-Step Reset Protocol → Pre-Exercise Protocol → LEAD Ten-Second Activation</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the performance zone → apply the reset → activate LEAD → close with Discipline and Trustworthiness</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
 <div class="lesson-nav-bar">
   <button class="lnb-btn" onclick="prevLesson()">← Previous</button>
-  <div class="lnb-info"><div class="lnb-name">Between Exercises</div><div class="lnb-num">Lesson 4 of 6</div></div>
+  <div class="lnb-info"><div class="lnb-name">Between Exercises</div><div class="lnb-num">Lesson 5 of 7</div></div>
   <button class="lnb-btn primary" onclick="nextLesson()">Next: When It Goes Wrong →</button>
 </div>
 </div>
@@ -761,7 +935,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="lesson-container">
 <div class="lesson-main">
   <div class="lesson-header">
-    <div class="lh-eyebrow">Chapter 41 · Lesson 5 of 6</div>
+    <div class="lh-eyebrow">Chapter 41 · Lesson 6 of 7</div>
     <h1 class="lh-title">When It<br><em>Goes Wrong</em></h1>
     <div class="lh-meta">
       <span class="lh-meta-item">⏱ 14 min</span>
@@ -850,7 +1024,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Leadership Philosophy</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Yerkes-Dodson Curve → Four-Step Reset Protocol → Pre-Exercise Protocol → LEAD Ten-Second Activation</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the performance zone → apply the reset → activate LEAD → close with Discipline and Trustworthiness</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
 <div class="lesson-nav-bar">
   <button class="lnb-btn" onclick="prevLesson()">← Previous</button>
-  <div class="lnb-info"><div class="lnb-name">When It Goes Wrong</div><div class="lnb-num">Lesson 5 of 6</div></div>
+  <div class="lnb-info"><div class="lnb-name">When It Goes Wrong</div><div class="lnb-num">Lesson 6 of 7</div></div>
   <button class="lnb-btn primary" onclick="nextLesson()">Next: After the Assessment →</button>
 </div>
 </div>
@@ -860,7 +1034,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="lesson-container">
 <div class="lesson-main">
   <div class="lesson-header">
-    <div class="lh-eyebrow">Chapter 41 · Lesson 6 of 6</div>
+    <div class="lh-eyebrow">Chapter 41 · Lesson 7 of 7</div>
     <h1 class="lh-title">After the Assessment —<br><em>The Debrief Discipline</em></h1>
     <div class="lh-meta">
       <span class="lh-meta-item">⏱ 12 min</span>
@@ -971,7 +1145,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Leadership Philosophy</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Yerkes-Dodson Curve → Four-Step Reset Protocol → Pre-Exercise Protocol → LEAD Ten-Second Activation</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the performance zone → apply the reset → activate LEAD → close with Discipline and Trustworthiness</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
 <div class="lesson-nav-bar">
   <button class="lnb-btn" onclick="prevLesson()">← Previous</button>
-  <div class="lnb-info"><div class="lnb-name">After the Assessment</div><div class="lnb-num">Lesson 6 of 6</div></div>
+  <div class="lnb-info"><div class="lnb-name">After the Assessment</div><div class="lnb-num">Lesson 7 of 7</div></div>
   <button class="lnb-btn primary" onclick="window.scrollTo({top:0,behavior:'smooth'})">Module Complete ✓</button>
 </div>
 </div>
@@ -1005,7 +1179,7 @@ window.addEventListener('scroll',()=>{
   if(h>0)document.getElementById('prog').style.width=Math.min(100,(s/h*100))+'%';
 });
 
-document.addEventListener('DOMContentLoaded',()=>showLesson(0));
+document.addEventListener('DOMContentLoaded',()=>showLesson(1));
 
 function lfNext(el,stepNum){
   var wrap=el.closest('.lf-wrap');
