@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Chapter 18 — Professional Development | The Promotional Standard</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Crimson+Pro:wght@300;400;500;600&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --navy:#0C2340;--navy2:#1A3A5C;--gold:#C9A84C;--gold2:#F5F0E8;--gold3:#6B4F10;
+  --cream:#F5F0E8;--offwhite:#F5F0E8;--light:#EAE5DC;--mid:#2A3D50;--gray:#8FA8C0;
+  --red:#B22222;--green:#1A5C3A;--green-light:#EAF3DE;
+  --teal:#006B6B;--teal-light:#E0F4F4;--purple:#4A2570;--purple-light:#F0EAF8;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:var(--navy);font-size:18px;line-height:1.8;}
+.top-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(12,35,64,0.98);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,168,76,0.2);height:64px;display:flex;align-items:center;padding:0 2rem;gap:1rem;}
+.nav-left{display:flex;align-items:center;gap:12px;flex:1;}
+.nav-brand{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;color:var(--cream);line-height:1.3;}
+.nav-brand span{display:block;font-size:8px;color:var(--gold);letter-spacing:2px;}
+.nav-pills{display:flex;gap:5px;flex:2;justify-content:center;overflow-x:auto;}
+.nav-pill{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#8FA8C0;padding:6px 11px;border-radius:20px;cursor:pointer;transition:all 0.2s;border:none;background:transparent;white-space:nowrap;}
+.nav-pill:hover{color:var(--cream);background:rgba(255,255,255,0.05);}
+.nav-pill.active{color:var(--gold);background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.25);}
+.progress-bar{position:fixed;top:64px;left:0;height:3px;background:linear-gradient(90deg,var(--navy2),var(--gold));z-index:199;width:0%;transition:width 0.3s;}
+.lesson-view{display:none;}.lesson-view.active{display:block;}
+.module-hero{background:var(--navy);padding:4.5rem 3rem 3.5rem;margin-top:64px;position:relative;overflow:hidden;border-bottom:3px solid var(--gold);}
+.module-hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 60px,rgba(201,168,76,0.015) 60px,rgba(201,168,76,0.015) 61px);}
+.module-hero::after{content:'';position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(180deg,var(--navy2),var(--gold));}
+.mh-inner{max-width:900px;position:relative;z-index:2;}
+.mh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.mh-title{font-family:'EB Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:800;color:var(--cream);line-height:1.1;margin-bottom:0.75rem;}
+.mh-title em{font-style:italic;color:var(--gold);}
+.mh-sub{font-size:1.05rem;color:#8FA8C0;max-width:700px;line-height:1.7;margin-bottom:2rem;}
+.mh-badges{display:flex;gap:10px;margin-bottom:1.5rem;flex-wrap:wrap;}
+.mh-badge{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border-radius:3px;}
+.badge-track{background:rgba(201,168,76,0.15);color:var(--gold);border:1px solid rgba(201,168,76,0.3);}
+.badge-nfpa{background:rgba(100,160,220,0.15);color:#8FA8C0;border:1px solid rgba(100,160,220,0.3);}
+.badge-new{background:rgba(50,180,100,0.15);color:#3AB464;border:1px solid rgba(50,180,100,0.3);}
+.mh-thread{background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);border-left:3px solid var(--gold);padding:1rem 1.5rem;margin-bottom:2rem;max-width:700px;}
+.mh-thread-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+.mh-thread-text{font-size:0.92rem;color:var(--cream);line-height:1.65;}
+.mh-lesson-nav{display:flex;gap:8px;flex-wrap:wrap;}
+.mh-lesson-btn{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:8px 14px;border-radius:6px;cursor:pointer;transition:all 0.2s;border:1px solid rgba(201,168,76,0.25);background:transparent;color:#8FA8C0;}
+.mh-lesson-btn:hover{background:rgba(255,255,255,0.05);color:var(--cream);}
+.mh-lesson-btn.active{background:rgba(201,168,76,0.12);color:var(--gold);border-color:rgba(201,168,76,0.4);}
+.lesson-container{display:grid;grid-template-columns:1fr 310px;gap:0;}
+.lesson-main{padding:3rem 3.5rem;border-right:1px solid var(--light);}
+.lesson-sidebar{padding:2rem 1.75rem;background:var(--offwhite);position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;}
+.lesson-header{margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:2px solid var(--light);}
+.lh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold3);margin-bottom:0.6rem;}
+.lh-title{font-family:'EB Garamond',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;color:var(--navy);line-height:1.15;margin-bottom:0.6rem;}
+.lh-title em{font-style:italic;color:var(--gold);}
+.lh-meta{display:flex;gap:1.5rem;flex-wrap:wrap;}
+.lh-meta-item{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);}
+.lesson-main h2{font-family:'EB Garamond',serif;font-size:1.7rem;font-weight:700;color:var(--navy);margin:3rem 0 0.9rem;padding-bottom:0.5rem;border-bottom:2px solid var(--light);}
+.lesson-main h3{font-family:'EB Garamond',serif;font-size:1.25rem;font-weight:600;color:var(--navy);margin:2.25rem 0 0.65rem;}
+.lesson-main p{margin-bottom:1.25rem;color:#2A3D50;line-height:1.82;}
+.lesson-main ul,.lesson-main ol{margin:0 0 1.25rem 1.5rem;color:#2A3D50;}
+.lesson-main li{margin-bottom:0.6rem;line-height:1.72;}
+.lesson-main strong{color:var(--navy);font-weight:600;}
+.callout{padding:1.4rem 1.6rem;margin:2rem 0;}
+.callout-gold{background:var(--gold2);border-left:3px solid var(--gold);}.callout-gold p{color:var(--gold3);font-size:0.97rem;line-height:1.75;}
+.callout-navy{background:var(--navy);border-left:3px solid var(--gold);}.callout-navy p{color:#8FA8C0;font-size:0.95rem;line-height:1.75;}
+.callout-red{background:#FFF0F0;border-left:4px solid var(--red);}.callout-red p{color:#6B4F10;font-size:0.97rem;line-height:1.75;}
+.callout-green{background:var(--green-light);border-left:4px solid var(--green);}.callout-green p{color:#1A3A5C;font-size:0.97rem;line-height:1.75;}
+.callout-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:0.5rem;display:block;}
+.callout-gold .callout-label{color:var(--gold3);}
+.callout-navy .callout-label{color:var(--gold);}
+.callout-red .callout-label{color:var(--red);}
+.callout-green .callout-label{color:var(--green);}
+.framework-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.fw-card{background:white;border:1px solid #EAE5DC;padding:1.25rem;border-radius:8px;}
+.fw-card-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:6px;}
+.fw-card-title{font-family:'EB Garamond',serif;font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.fw-card-desc{font-size:0.9rem;color:var(--mid);line-height:1.6;}
+.acro-grid{display:flex;flex-direction:column;gap:0;margin:1.5rem 0;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;}
+.acro-row{display:grid;grid-template-columns:52px 1fr;gap:0;border-bottom:1px solid #EAE5DC;}
+.acro-row:last-child{border-bottom:none;}
+.acro-letter{background:var(--navy);color:var(--gold);font-family:'EB Garamond',serif;font-size:1.8rem;font-weight:800;display:flex;align-items:center;justify-content:center;}
+.acro-content{padding:0.9rem 1.1rem;background:white;}
+.acro-word{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:3px;}
+.acro-desc{font-size:0.85rem;color:var(--mid);line-height:1.55;}
+.sbar-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold3);margin-bottom:0.65rem;margin-top:1.5rem;display:block;}
+.sbar-label:first-child{margin-top:0;}
+.sbar-card{background:white;border:1px solid #EAE5DC;border-radius:8px;padding:0.9rem 1rem;margin-bottom:8px;font-size:0.9rem;color:var(--mid);line-height:1.55;}
+.sbar-card strong{color:var(--navy);display:block;margin-bottom:3px;font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;}
+.lesson-nav-bar{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 3rem;border-top:3px solid var(--gold);background:var(--navy);gap:1rem;}
+.lnb-btn{background:rgba(255,255,255,0.08);border:2px solid rgba(201,168,76,0.4);padding:14px 28px;font-family:'Cinzel',serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border-radius:6px;color:var(--cream);transition:all 0.2s;white-space:nowrap;}
+.lnb-btn:hover{background:rgba(201,168,76,0.15);border-color:var(--gold);color:var(--gold);}
+.lnb-btn:disabled,.lnb-btn[disabled]{opacity:0.25;cursor:not-allowed;background:transparent;}
+.lnb-btn:disabled:hover,.lnb-btn[disabled]:hover{background:transparent;border-color:rgba(201,168,76,0.4);color:var(--cream);}
+.lnb-btn.primary{background:var(--gold);color:var(--navy);border-color:var(--gold);font-weight:800;}
+.lnb-btn.primary:hover{background:#C9A84C;border-color:#C9A84C;}
+.lnb-info{text-align:center;flex:1;}
+.lnb-name{font-family:'EB Garamond',serif;font-size:1rem;font-weight:700;color:var(--cream);}
+.lnb-num{font-size:0.85rem;color:var(--gold);font-family:'Cinzel',serif;letter-spacing:1px;}
+/* ICS-specific styles */
+.dim-cards{display:flex;flex-direction:column;gap:0.75rem;margin:1.5rem 0;}
+.dim-card{background:white;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;display:grid;grid-template-columns:64px 1fr;}
+.dim-card.dim-highlight{border-color:var(--gold);border-width:2px;}
+.dim-num-col{background:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1rem 0.5rem;gap:4px;}
+.dim-card.dim-highlight .dim-num-col{background:var(--gold);}
+.dim-badge{font-family:'EB Garamond',serif;font-size:1.6rem;font-weight:800;color:var(--gold);line-height:1;}
+.dim-card.dim-highlight .dim-badge{color:var(--navy);}
+.dim-body{padding:1rem 1.25rem;}
+.dim-title{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:5px;}
+.dim-card.dim-highlight .dim-title{color:var(--gold3);}
+.dim-desc{font-size:0.85rem;color:var(--mid);line-height:1.6;}
+.dim-scored{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold3);margin-top:6px;display:block;}
+.dim-card.dim-highlight .dim-scored{color:var(--gold3);}
+/* Legacy ics styles kept for ICS structure table in lesson 2 */
+.ics-structure{background:white;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;margin:1.5rem 0;}
+.ics-level{padding:0.9rem 1.25rem;border-bottom:1px solid #EAE5DC;display:grid;grid-template-columns:150px 1fr;gap:1rem;align-items:start;}
+.ics-level:last-child{border-bottom:none;}
+.ics-level-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:white;background:var(--navy);padding:4px 8px;border-radius:3px;display:inline-block;margin-top:2px;}
+.ics-level-desc{font-size:0.85rem;color:#2A3D50;line-height:1.6;}
+.ics-level-desc strong{color:var(--navy);font-family:'Cinzel',serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;}
+.ics-level.highlight{background:rgba(201,168,76,0.08);border-left:3px solid var(--gold);}
+.ics-level.highlight .ics-level-label{background:var(--gold);color:var(--navy);}
+.sizeup-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.75rem;margin:1.5rem 0;}
+.su-card{background:white;border:1px solid #EAE5DC;border-radius:8px;padding:1.1rem;text-align:center;}
+.su-num{font-family:'EB Garamond',serif;font-size:2rem;font-weight:800;color:var(--gold);line-height:1;}
+.su-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);font-weight:700;margin:5px 0 6px;}
+.su-desc{font-size:0.9rem;color:var(--mid);line-height:1.55;}
+.command-script{background:var(--navy);border-radius:8px;padding:1.5rem 1.75rem;margin:1.5rem 0;}
+.cs-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:block;}
+.cs-line{display:grid;grid-template-columns:100px 1fr;gap:0.75rem;margin-bottom:0.75rem;align-items:start;}
+.cs-line:last-child{margin-bottom:0;}
+.cs-role{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(201,168,76,0.6);padding-top:2px;}
+.cs-text{font-size:0.88rem;color:var(--cream);line-height:1.6;font-style:italic;}
+.score-compare{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.sc-card{padding:1.25rem;border-radius:8px;}
+.sc-card.miss{background:#FFF0F0;border:1px solid #F0C0C0;}
+.sc-card.hit{background:var(--green-light);border:1px solid #9DCCA8;}
+.sc-title{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;margin-bottom:0.75rem;}
+.sc-card.miss .sc-title{color:var(--red);}
+.sc-card.hit .sc-title{color:var(--green);}
+.sc-body{font-size:0.9rem;line-height:1.6;}
+.sc-card.miss .sc-body{color:#6B4F10;}
+.sc-card.hit .sc-body{color:#1A3A5C;}
+@media(max-width:900px){.lesson-container{grid-template-columns:1fr;}.lesson-sidebar{position:relative;height:auto;}.lesson-main{padding:2rem 1.5rem;}.lesson-nav-bar{padding:1rem 1.5rem;}.sizeup-grid{grid-template-columns:1fr 1fr;}.score-compare{grid-template-columns:1fr;}}
+.score-compare{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}.sc-card{padding:1.25rem;border-radius:8px;}.sc-card.miss{background:var(--red-light);border:1px solid #F0C0C0;}.sc-card.hit{background:var(--green-light);border:1px solid #9DCCA8;}.sc-title{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:0.75rem;}.sc-card.miss .sc-title{color:var(--red);}.sc-card.hit .sc-title{color:var(--green);}.sc-body{font-size:0.87rem;line-height:1.6;}.sc-card.miss .sc-body{color:#6B4F10;}.sc-card.hit .sc-body{color:#1A3A5C;}.callout-teal{background:var(--teal-light);border-left:4px solid var(--teal);}.callout-teal p{color:#003A3A;font-size:0.97rem;line-height:1.75;}.callout-teal .callout-label{color:var(--teal);}.badge-blue{background:rgba(30,80,180,0.12);color:#4A7FD0;border:1px solid rgba(30,80,180,0.25);}.badge-gold{background:rgba(201,168,76,0.15);color:var(--gold);border:1px solid rgba(201,168,76,0.3);}.badge-purple{background:rgba(74,37,112,0.15);color:#8B5FBF;border:1px solid rgba(74,37,112,0.3);}.badge-nfpa{background:rgba(100,160,220,0.15);color:#8FA8C0;border:1px solid rgba(100,160,220,0.3);}
+/* OB CARD */
+.ob-card{background:var(--navy);margin:2rem 0;overflow:hidden;}
+.ob-header{padding:0.85rem 1.5rem;background:rgba(201,168,76,0.08);border-bottom:1px solid rgba(201,168,76,0.15);}
+.ob-label{font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);}
+.ob-body{padding:1.25rem 1.5rem;}
+.ob-q{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;}
+.ob-q-tag{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);background:rgba(201,168,76,0.1);padding:4px 10px;border-radius:3px;white-space:nowrap;}
+.ob-q-text{font-family:'EB Garamond',serif;font-size:1.08rem;font-weight:600;color:var(--cream);line-height:1.5;margin-bottom:8px;}
+.ob-note{font-size:0.88rem;color:#8FA8C0;line-height:1.6;font-style:italic;}
+/* TAKEAWAYS */
+.takeaways{background:var(--navy);padding:2.25rem;margin:3rem 0 0;border-top:3px solid var(--gold);}
+.tk-lbl{font-family:'Cinzel',serif;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.tk-item{color:#8FA8C0;font-size:0.92rem;line-height:1.7;padding:0.5rem 0 0.5rem 1.25rem;border-left:2px solid rgba(201,168,76,0.2);margin-bottom:0.5rem;}
+
+
+.lead-nav{background:var(--navy);border-radius:8px;padding:14px 16px;margin-bottom:16px;border:1px solid rgba(201,168,76,0.2)}
+.lead-nav-header{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.lead-nav-row{display:grid;grid-template-columns:20px 1fr;gap:6px;margin-bottom:6px;align-items:start}
+.lead-nav-letter{font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:var(--gold)}
+.lead-nav-content{}
+.lead-nav-name{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:2px}
+.lead-nav-app{font-size:11px;color:#8FA8C0;line-height:1.5}
+
+.lf-wrap{margin:2.5rem 0 1.5rem;border:2px solid var(--gold);border-radius:10px;overflow:hidden}
+.lf-header{background:var(--navy);padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
+.lf-title{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+.lf-dots{display:flex;gap:6px}
+.lf-dot{width:8px;height:8px;border-radius:50%;background:rgba(201,168,76,0.25);transition:all 0.3s}
+.lf-dot.active{background:var(--gold);transform:scale(1.3)}
+.lf-dot.done{background:var(--gold)}
+.lf-step{display:none;padding:20px}
+.lf-step.active{display:block}
+.lf-step-num{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:6px}
+.lf-step-title{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:10px}
+.lf-chain{background:var(--navy);border-radius:6px;padding:14px 18px;margin:10px 0}
+.lf-chain-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.lf-chain-text{font-size:13px;color:#8FA8C0;line-height:1.6}
+.lf-chain-close{font-size:12px;color:var(--cream);margin-top:6px;font-style:italic}
+.lf-btn{background:var(--navy);color:var(--gold);border:2px solid var(--gold);padding:12px 24px;border-radius:6px;font-family:'Cinzel',serif;font-size:12px;letter-spacing:1.5px;font-weight:600;cursor:pointer;margin-top:12px;transition:all 0.2s;display:inline-block}
+.lf-btn:hover{background:var(--gold);color:var(--navy)}
+.lf-timer{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:var(--gold);padding:6px 14px;border-radius:4px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:1px;margin-top:10px}
+.lesson-main.ft>p{display:none!important}.lesson-main.ft>.callout{display:none!important}.ft-toggle{display:flex;align-items:center;gap:10px;padding:10px 16px;background:var(--navy);border-radius:6px;cursor:pointer;border:1px solid rgba(201,168,76,0.25)}.ft-toggle-switch{width:36px;height:20px;background:rgba(201,168,76,0.2);border-radius:10px;position:relative;transition:background .2s}.ft-toggle-switch.on{background:var(--gold)}.ft-toggle-knob{width:14px;height:14px;background:#fff;border-radius:50%;position:absolute;top:3px;left:3px;transition:left .2s}.ft-toggle-switch.on .ft-toggle-knob{left:19px}.ft-toggle-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}.ft-toggle-desc{font-size:11px;color:var(--mid)}.lesson-main.ft-on>p,.lesson-main.ft-on>.callout,.lesson-main.ft-on h3{display:none!important}.lesson-main.ft-on .ob-card,.lesson-main.ft-on .lf-wrap,.lesson-main.ft-on .lead-nav,.lesson-main.ft-on h2{display:block!important}
+</style>
+</head>
+<body>
+<nav class="top-nav"><div class="nav-left"><div class="nav-brand">The Promotional Standard<span>Universal · Chapter 18</span></div></div>
+  <div class="nav-pills">    <button class="nav-pill active" onclick="showLesson(0)">Career Ownership</button>
+    <button class="nav-pill" onclick="showLesson(1)">Education Pathways</button>
+    <button class="nav-pill" onclick="showLesson(2)">Professional Associations</button>
+    <button class="nav-pill" onclick="showLesson(3)">Preparing for Promotion</button>
+    <button class="nav-pill" onclick="showLesson(4)">Developing Others</button>
+    <button class="nav-pill" onclick="showLesson(5)">AC Application</button></div></nav>
+<div class="progress-bar" id="prog"></div>
+<div class="module-hero"><div class="mh-inner">
+  <div class="mh-eyebrow">Chapter 18 · Universal · All Ranks</div>
+  <h1 class="mh-title">Professional Development<br><em>+ Career Planning</em></h1>
+  <p class="mh-sub">Career ownership and the professional development mindset, education pathways from AA to EFO program, professional associations and network building, deliberate promotional preparation using SPARR and assessment center practice, developing others as a leadership obligation, and the career planning questions assessors ask at every level.</p>
+  <div class="mh-badges"><span class="mh-badge badge-badge-purple">Universal — All Ranks</span><span class="mh-badge badge-badge-nfpa">All Ranks</span></div>
+  <div class="mh-thread"><div class="mh-thread-label">Before You Begin</div><div class="mh-thread-text">Professional development is universal — it applies at every rank and at every stage of the career. This module builds the deliberate career plan that passive professional development cannot.</div></div>
+  <div class="mh-lesson-nav">      <button class="mh-lesson-btn active" onclick="showLesson(0)">1. Career Ownership</button>
+      <button class="mh-lesson-btn" onclick="showLesson(1)">2. Education Pathways</button>
+      <button class="mh-lesson-btn" onclick="showLesson(2)">3. Professional Associations</button>
+      <button class="mh-lesson-btn" onclick="showLesson(3)">4. Preparing for Promotion</button>
+      <button class="mh-lesson-btn" onclick="showLesson(4)">5. Developing Others</button>
+      <button class="mh-lesson-btn" onclick="showLesson(5)">6. AC Application</button></div>
+</div></div>
+<main><div class="lesson-view active" id="lesson-0">
+<div class="lesson-container"><div class="lesson-main">
+<div class="lesson-header"><div class="lh-eyebrow">Chapter 18 · Lesson 1 of 6</div>
+<h1 class="lh-title">Taking Ownership of Your Career —<br><em>The Professional Development Mindset</em></h1><div class="lh-meta"><span class="lh-meta-item">⏱ 12 min</span><span class="lh-meta-item">🎯 Career Ownership · Development</span></div></div>
+<p>Professional development in the fire service is often treated as something that happens to you — training you attend, courses you complete, promotions you apply for — rather than something you build deliberately. The officer who takes ownership of their professional development — who has a clear picture of where they want to go and a systematic plan for getting there — outperforms the one who waits for opportunities to appear by a substantial margin.</p><div class="callout callout-gold"><span class="callout-label">The Difference Between Doing the Job and Building the Career</span><p>Doing the job well is necessary but not sufficient for career advancement. The firefighter or officer who does excellent operational work but doesn't pursue education, professional credentials, or leadership development is the one who gets passed over for promotion in favor of someone with equivalent operational skills and a broader professional profile. Both matter. Career ownership means investing in both simultaneously.</p></div><div class="framework-grid"><div class="fw-card"><div class="fw-card-label">The External Environment</div><div class="fw-card-title">What the Profession Values</div><div class="fw-card-desc">Fire service promotions are increasingly weighted toward candidates who bring education (associate's or bachelor's degree), professional credentials (CFO designation, EFO program completion, NFA courses), leadership development (IAFC, state fire chiefs, professional associations), and demonstrated initiative beyond the minimum requirements. Understanding what assessors and promotional boards value enables deliberate investment in those areas.</div></div><div class="fw-card"><div class="fw-card-label">The Internal Investment</div><div class="fw-card-title">Self-Knowledge as Career Foundation</div><div class="fw-card-desc">The officer who understands their own strengths, development areas, values, and goals makes better career decisions than the one who doesn't. Professional development begins with honest self-assessment: what do I do well? Where do I have gaps? What kind of leadership role do I want? What do I need to develop to be ready for it?</div></div></div>
+</div><div class="lesson-sidebar">
+<div class="ft-toggle" onclick="toggleFT(this)" style="margin-bottom:16px;max-width:320px">
+<div class="ft-toggle-switch"><div class="ft-toggle-knob"></div></div>
+<div><div class="ft-toggle-label">Fast Track Mode</div><div class="ft-toggle-desc">Full lesson content</div></div>
+</div>
+
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Development & Mentoring</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Career Pathing Framework → Succession Planning → Coaching Conversation → 70-20-10</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Assess the development need → apply the framework → create a development plan → close with Commitment</div></div></div></div>
+<span class="sbar-label">Career Ownership</span><div class="sbar-card">Deliberate plan > waiting for opportunities. Build it systematically.</div><span class="sbar-label">Two-Track Investment</span><div class="sbar-card">Operational excellence + professional profile. Both matter. Operational only = passed over by someone with equivalent ops + broader profile.</div><span class="sbar-label">What the Profession Values</span><div class="sbar-card">Education · credentials (CFO, EFO) · NFA courses · professional associations · demonstrated initiative beyond minimums.</div></div></div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Taking Ownership of Your Career</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"How does taking ownership of your career apply to your daily leadership practice? Give me a specific example."</div><div class="ob-note">Name specific development strategies for yourself and for your crew. Show that development is a system, not a wish. Connect it to succession planning.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 1 — Key Takeaways</div>
+  <div class="tk-item">LEAD integration: Label this as a Professional Development question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Development & Mentoring</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Career Pathing Framework → Succession Planning → Coaching Conversation → 70-20-10</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Assess the development need → apply the framework → create a development plan → close with Commitment</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar"><button class="lnb-btn" disabled>← Previous</button>
+<div class="lnb-info"><div class="lnb-name">Lesson 1 of 6</div><div class="lnb-num">Chapter 18</div></div>
+<button class="lnb-btn primary" onclick="nextLesson()">Next: Education Pathways →</button></div></div><div class="lesson-view" id="lesson-1">
+<div class="lesson-container"><div class="lesson-main">
+<div class="lesson-header"><div class="lh-eyebrow">Chapter 18 · Lesson 2 of 6</div>
+<h1 class="lh-title">Education Pathways for Fire Service Leaders</h1><div class="lh-meta"><span class="lh-meta-item">⏱ 14 min</span><span class="lh-meta-item">🎓 Degrees · NFA · EFO Program</span></div></div>
+<p>Educational credentials signal analytical capacity, organizational commitment, and the ability to work at an intellectual level that senior fire service leadership requires. The fire service has developed a robust educational infrastructure specifically for fire service professionals — from community college programs to graduate degrees and executive leadership programs.</p><div class="acro-grid"><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-weight:800;font-family:'EB Garamond',serif;">AA</div><div class="acro-content"><div class="acro-word">Associate's Degree — The Entry Point</div><div class="acro-desc">An associate's degree in fire science, emergency management, or a related field is increasingly the baseline expectation for Lieutenant and above in many departments. Community college fire programs deliver directly relevant content, are typically schedule-flexible for shift workers, and are affordable. Many departments provide tuition reimbursement. The officer who hasn't started should start.</div></div></div><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-weight:800;font-family:'EB Garamond',serif;">BS</div><div class="acro-content"><div class="acro-word">Bachelor's Degree — The Competitive Differentiator</div><div class="acro-desc">A bachelor's degree in fire administration, public administration, organizational leadership, or emergency management significantly expands the candidate's profile at Captain and above. Online degree completion programs (Cogswell, Columbia Southern, Eastern Oregon, Grand Canyon) are designed for working fire service professionals. The degree doesn't have to be fire-specific — organizational leadership and public administration are equally valued at senior levels.</div></div></div><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-weight:800;font-family:'EB Garamond',serif;">NFA</div><div class="acro-content"><div class="acro-word">National Fire Academy — The Professional Development Pathway</div><div class="acro-desc">The National Fire Academy in Emmitsburg, Maryland offers resident and online courses across executive development, leadership, and technical programs. The Executive Fire Officer (EFO) Program — a four-year applied research program — is the premier credential for senior fire service leaders and is specifically designed around the competencies needed at DC and Fire Chief level. NFA courses are free to qualifying applicants.</div></div></div><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-weight:800;font-family:'EB Garamond',serif;">CFO</div><div class="acro-content"><div class="acro-word">Chief Fire Officer Designation — The Professional Credential</div><div class="acro-desc">The CPSE Chief Fire Officer (CFO) designation validates demonstrated competency across eight professional development dimensions. It is the peer-reviewed professional credential for senior fire service leaders — analogous to a professional certification in other fields. The process requires documentation of education, experience, and professional contributions, peer review, and commitment to ongoing professional development.</div></div></div></div><div class="callout callout-teal"><span class="callout-label">The Degree That Doesn't Match</span><p>A concern often raised: "My degree is in something unrelated to fire service — does it still matter?" Answer: yes. A bachelor's degree in business, psychology, public health, or any rigorous field demonstrates analytical capacity and educational perseverance. It also signals intellectual range. Non-fire-specific degrees combined with fire service professional credentials (NFA, CFO) are a compelling combination at senior levels.</p></div>
+</div><div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Development & Mentoring</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Career Pathing Framework → Succession Planning → Coaching Conversation → 70-20-10</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Assess the development need → apply the framework → create a development plan → close with Commitment</div></div></div></div>
+<span class="sbar-label">Education Pathway</span><div class="sbar-card">AA: baseline for LT+. BS: competitive differentiator for Capt+. NFA: free, relevant, career-spanning. EFO: premier senior leadership credential.</div><span class="sbar-label">CFO Designation</span><div class="sbar-card">CPSE peer-reviewed professional credential. Eight dimensions. Documentation + peer review + ongoing development. Signals executive readiness.</div><span class="sbar-label">Any Degree Counts</span><div class="sbar-card">Analytical capacity + perseverance signal = value regardless of field. Non-fire degree + fire credentials = compelling combination.</div></div></div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Education Pathways for Fire Service Leaders</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"How does education pathways for fire service leaders apply to your daily leadership practice? Give me a specific example."</div><div class="ob-note">Name specific development strategies for yourself and for your crew. Show that development is a system, not a wish. Connect it to succession planning.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 2 — Key Takeaways</div>
+  <div class="tk-item">LEAD integration: Label this as a Professional Development question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Development & Mentoring</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Career Pathing Framework → Succession Planning → Coaching Conversation → 70-20-10</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Assess the development need → apply the framework → create a development plan → close with Commitment</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar"><button class="lnb-btn" onclick="prevLesson()">← Career Ownership</button>
+<div class="lnb-info"><div class="lnb-name">Lesson 2 of 6</div><div class="lnb-num">Chapter 18</div></div>
+<button class="lnb-btn primary" onclick="nextLesson()">Next: Professional Associations →</button></div></div><div class="lesson-view" id="lesson-2">
+<div class="lesson-container"><div class="lesson-main">
+<div class="lesson-header"><div class="lh-eyebrow">Chapter 18 · Lesson 3 of 6</div>
+<h1 class="lh-title">Professional Associations and Networks</h1><div class="lh-meta"><span class="lh-meta-item">⏱ 12 min</span><span class="lh-meta-item">🤝 IAFC · IAFF · State Associations</span></div></div>
+<p>Professional associations — the International Association of Fire Chiefs (IAFC), state fire chiefs associations, NFPA technical committees, IAFC sections (EMS, Operations, Safety, Volunteer) — are simultaneously career development resources, professional learning communities, and relationship networks. The officer who participates actively in professional associations is connected to the broader profession in ways that directly benefit their development, their organization, and their career.</p><div class="framework-grid"><div class="fw-card"><div class="fw-card-label">IAFC</div><div class="fw-card-title">International Association of Fire Chiefs</div><div class="fw-card-desc">The primary professional association for fire service leaders at the officer level and above. Offers leadership development programs (Officer Development Handbook, Fire Officer I-IV series), annual conference (Fire-Rescue International), division and section membership, and peer networks. The IAFC is where fire service policy is developed and where the profession's direction is shaped by its most engaged practitioners.</div></div><div class="fw-card"><div class="fw-card-label">State Fire Chiefs</div><div class="fw-card-title">Regional Learning + Advocacy</div><div class="fw-card-desc">State fire chiefs associations provide regional conference programming, legislative advocacy for fire service interests, peer networks with the chiefs you'll actually mutual aid with, and leadership development tailored to state-specific contexts. Membership in the state fire chiefs association is the first step into professional association engagement for most officers.</div></div><div class="fw-card"><div class="fw-card-label">NFPA Committees</div><div class="fw-card-title">Shaping the Standards You Work Under</div><div class="fw-card-desc">NFPA technical committees — the groups that develop and revise NFPA standards — accept applications from qualified practitioners. Serving on an NFPA technical committee provides direct insight into the standards-development process, national peer networks, and professional development that is unavailable through any other pathway. Applications are competitive but open.</div></div><div class="fw-card"><div class="fw-card-label">Professional Mentorship</div><div class="fw-card-title">Formal and Informal</div><div class="fw-card-desc">The mentor relationship — a more experienced professional who provides guidance, feedback, and network access — is among the most effective professional development tools available. Formal mentorship programs exist through IAFC and some state associations. Informal mentorship is available to any officer who asks: most senior leaders in the fire service will engage a junior officer who approaches them thoughtfully and demonstrates genuine commitment to development.</div></div></div><div class="callout callout-gold"><span class="callout-label">Giving Before Taking</span><p>The most valuable professional association members are contributors, not consumers. The officer who shows up to state conference, takes what's offered, and leaves has extracted value without creating it. The one who presents a program, serves on a committee, mentors a junior officer, or writes for a professional publication has contributed something that returns to them in visibility, relationships, and professional standing that purely transactional engagement does not.</p></div>
+</div><div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Development & Mentoring</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Career Pathing Framework → Succession Planning → Coaching Conversation → 70-20-10</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Assess the development need → apply the framework → create a development plan → close with Commitment</div></div></div></div>
+<span class="sbar-label">Key Associations</span><div class="sbar-card">IAFC (primary) · state fire chiefs (regional) · NFPA technical committees (standards shaping).</div><span class="sbar-label">Mentorship</span><div class="sbar-card">Formal (IAFC, state programs) or informal (ask). Most senior leaders will engage a junior officer who demonstrates genuine commitment.</div><span class="sbar-label">Contribute, Don't Just Consume</span><div class="sbar-card">Present · serve on committees · mentor · write. Contribution builds visibility and relationships that extraction doesn't.</div></div></div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Professional Associations and Networks</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"How does professional associations and networks apply to your daily leadership practice? Give me a specific example."</div><div class="ob-note">Name specific development strategies for yourself and for your crew. Show that development is a system, not a wish. Connect it to succession planning.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 3 — Key Takeaways</div>
+  <div class="tk-item">LEAD integration: Label this as a Professional Development question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Development & Mentoring</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Career Pathing Framework → Succession Planning → Coaching Conversation → 70-20-10</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Assess the development need → apply the framework → create a development plan → close with Commitment</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar"><button class="lnb-btn" onclick="prevLesson()">← Education Pathways</button>
+<div class="lnb-info"><div class="lnb-name">Lesson 3 of 6</div><div class="lnb-num">Chapter 18</div></div>
+<button class="lnb-btn primary" onclick="nextLesson()">Next: Preparing for Promotion →</button></div></div><div class="lesson-view" id="lesson-3">
+<div class="lesson-container"><div class="lesson-main">
+<div class="lesson-header"><div class="lh-eyebrow">Chapter 18 · Lesson 4 of 6</div>
+<h1 class="lh-title">Preparing for Promotion —<br><em>The Deliberate Pre-Assessment Plan</em></h1><div class="lh-meta"><span class="lh-meta-item">⏱ 14 min</span><span class="lh-meta-item">📋 Promotional Prep · Assessment Centers</span></div></div>
+<p>The TPS curriculum is specifically designed for this moment — but preparation for a promotional assessment is not something that begins when the announcement is posted. The officers who perform best in assessment centers have been systematically preparing for 6–18 months before they walk into the room. The candidate who begins preparation after the announcement typically runs out of time.</p><div class="acro-grid"><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-weight:800;font-family:'EB Garamond',serif;">STD</div><div class="acro-content"><div class="acro-word">Study the Standards — Know What the Assessment Measures</div><div class="acro-desc">Every assessment center is designed to measure specific competencies that are defined by the KSA (knowledge, skills, abilities) for the rank. Request or research the competency dimensions the assessment center will measure. The TPS curriculum maps directly to the most commonly assessed competency dimensions. The candidate who knows what is being assessed can focus preparation where it matters.</div></div></div><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-weight:800;font-family:'EB Garamond',serif;">MOK</div><div class="acro-content"><div class="acro-word">Study the Position — Know the Job You're Seeking</div><div class="acro-desc">The candidate applying for Lieutenant should be able to describe in specific terms what a Lieutenant does — operationally, administratively, and interpersonally — at their specific department. Not generically, but specifically: what are the critical incidents a Lieutenant in this department handles? What are the administrative responsibilities? What does the chain of command look like? The candidate who has studied the position performs more specifically and more credibly.</div></div></div><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-weight:800;font-family:'EB Garamond',serif;">SPA</div><div class="acro-content"><div class="acro-word">SPARR Your Answers — Structured Response Practice</div><div class="acro-desc">The SPARR framework (Situation, Problem, Action, Result, Reflection) provides the response structure for behavioral scenarios. The candidate who practices SPARR responses for common scenario types — supervisory judgment, conflict resolution, personnel management, emergency operations, budget, ethics — develops the fluency that distinguishes a practiced candidate from an unprepared one.</div></div></div><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-weight:800;font-family:'EB Garamond',serif;">PRC</div><div class="acro-content"><div class="acro-word">Practice Under Realistic Conditions</div><div class="acro-desc">Oral board practice with a mirror, a recording device, or a practice partner is not the same as oral board practice with a panel of evaluators in an unfamiliar room under time pressure. Seek realistic practice conditions: a feedback session with a mentor, a mock assessment center through a professional association, or formal coaching. The nerves are part of the preparation.</div></div></div><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-weight:800;font-family:'EB Garamond',serif;">ASS</div><div class="acro-content"><div class="acro-word">Get Honest Feedback and Incorporate It</div><div class="acro-desc">The most valuable preparation activity is structured feedback from someone qualified to provide it — a mentor who has participated in assessment centers, a coach who knows the process, or an experienced officer who will give honest rather than encouraging feedback. Incorporating critical feedback before the assessment is more valuable than receiving it after.</div></div></div></div><div class="callout callout-gold"><span class="callout-label">The Continuous Improvement Mindset</span><p>The officer who treats every promotional attempt — including unsuccessful ones — as data for improvement is on a trajectory toward eventual success. Post-assessment feedback (available in most jurisdictions for candidates who request it) reveals specific scoring gaps that guide targeted preparation for the next attempt. The candidate who treats an unsuccessful attempt as evidence of fixed limitation, rather than as a diagnostic tool, has given up the most useful information the process provides.</p></div>
+</div><div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Development & Mentoring</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Career Pathing Framework → Succession Planning → Coaching Conversation → 70-20-10</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Assess the development need → apply the framework → create a development plan → close with Commitment</div></div></div></div>
+<span class="sbar-label">Pre-Assessment Timeline</span><div class="sbar-card">6–18 months before announcement, not after. Study competencies · study the position · SPARR practice · realistic conditions · honest feedback.</div><span class="sbar-label">SPARR</span><div class="sbar-card">Situation · Problem · Action · Result · Reflection. Structure every scenario response. Practice until fluent.</div><span class="sbar-label">Unsuccessful Attempts</span><div class="sbar-card">Request feedback. Specific gaps = targeted improvement plan. Not fixed limitation — diagnostic data.</div></div></div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Preparing for Promotion</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"How does preparing for promotion apply to your daily leadership practice? Give me a specific example."</div><div class="ob-note">Name specific development strategies for yourself and for your crew. Show that development is a system, not a wish. Connect it to succession planning.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 4 — Key Takeaways</div>
+  <div class="tk-item">LEAD integration: Label this as a Professional Development question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Development & Mentoring</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Career Pathing Framework → Succession Planning → Coaching Conversation → 70-20-10</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Assess the development need → apply the framework → create a development plan → close with Commitment</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar"><button class="lnb-btn" onclick="prevLesson()">← Professional Associations</button>
+<div class="lnb-info"><div class="lnb-name">Lesson 4 of 6</div><div class="lnb-num">Chapter 18</div></div>
+<button class="lnb-btn primary" onclick="nextLesson()">Next: Developing Others →</button></div></div><div class="lesson-view" id="lesson-4">
+<div class="lesson-container"><div class="lesson-main">
+<div class="lesson-header"><div class="lh-eyebrow">Chapter 18 · Lesson 5 of 6</div>
+<h1 class="lh-title">Developing Others —<br><em>The Officer's Responsibility to the Pipeline</em></h1><div class="lh-meta"><span class="lh-meta-item">⏱ 12 min</span><span class="lh-meta-item">🌱 Mentorship · Succession · Pipeline</span></div></div>
+<p>Professional development is not only a personal investment — it is an organizational one. The officer who actively develops the people below them in the organization is fulfilling a leadership obligation that extends beyond their own career. The fire service needs a continuous pipeline of well-prepared candidates for every rank — and that pipeline is built by the officers who invest in developing it.</p><div class="framework-grid"><div class="fw-card"><div class="fw-card-label">Mentoring the Junior Officer</div><div class="fw-card-title">What Good Mentorship Looks Like</div><div class="fw-card-desc">Good mentorship is not career advice delivered once and forgotten. It is an ongoing relationship where the mentor provides: honest feedback on performance (not just encouragement), connections to opportunities and professional networks the mentee doesn't yet have, guidance on navigating organizational dynamics, and investment in the mentee's long-term development rather than their short-term comfort. The mentor who tells a junior officer what they want to hear is not mentoring — they're socializing.</div></div><div class="fw-card"><div class="fw-card-label">Sponsorship vs Mentorship</div><div class="fw-card-title">The Distinction That Matters</div><div class="fw-card-desc">Mentorship provides advice and guidance. Sponsorship provides visibility and opportunity — actively recommending the developing officer for assignments, committees, and opportunities that expose them to the experience and relationships they need. The junior officer who has sponsors as well as mentors is better positioned than the one who has only advice without access.</div></div><div class="fw-card"><div class="fw-card-label">The Developmental Assignment</div><div class="fw-card-title">Learning Through Doing</div><div class="fw-card-desc">The most effective development often occurs through strategic assignment — the junior officer placed in an unfamiliar role, given a project beyond their current comfort level, or assigned to a collaborative initiative that requires skills they don't yet fully have. The developmental assignment requires the officer to grow to meet the challenge. The officer who designs developmental assignments for their promising crew members is doing succession planning at the company level.</div></div><div class="fw-card"><div class="fw-card-label">Career Conversations</div><div class="fw-card-title">The Conversation Nobody Has</div><div class="fw-card-desc">Most officers have never been asked explicitly by their supervisor: "Where do you want to go in your career? What do you need to develop to get there? How can I help?" The officer who initiates this conversation with their crew members — and follows through on what they learn — is investing in individuals and in the organization's future simultaneously.</div></div></div><div class="callout callout-teal"><span class="callout-label">The Legacy of Development</span><p>The most lasting professional legacy any officer leaves is not the promotions they achieved, the incidents they managed, or the programs they built — it is the officers they developed. The captain whose crew produced three lieutenants, the lieutenant whose firefighter became a chief, the chief whose entire senior team grew up in an organization that invested in development — these are the legacies that matter most and last longest.</p></div>
+</div><div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Development & Mentoring</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Career Pathing Framework → Succession Planning → Coaching Conversation → 70-20-10</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Assess the development need → apply the framework → create a development plan → close with Commitment</div></div></div></div>
+<span class="sbar-label">Mentorship vs Sponsorship</span><div class="sbar-card">Mentorship: advice + feedback + guidance. Sponsorship: visibility + opportunities + active recommendation. Junior officers need both.</div><span class="sbar-label">Developmental Assignment</span><div class="sbar-card">Strategic assignment beyond current comfort level. Grow to meet the challenge. Company-level succession planning.</div><span class="sbar-label">Career Conversations</span><div class="sbar-card">"Where do you want to go? What do you need? How can I help?" Most officers never ask. The ones who do invest in individuals and the org's future.</div></div></div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Developing Others</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"How does developing others apply to your daily leadership practice? Give me a specific example."</div><div class="ob-note">Name specific development strategies for yourself and for your crew. Show that development is a system, not a wish. Connect it to succession planning.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 5 — Key Takeaways</div>
+  <div class="tk-item">LEAD integration: Label this as a Professional Development question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Development & Mentoring</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Career Pathing Framework → Succession Planning → Coaching Conversation → 70-20-10</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Assess the development need → apply the framework → create a development plan → close with Commitment</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar"><button class="lnb-btn" onclick="prevLesson()">← Preparing for Promotion</button>
+<div class="lnb-info"><div class="lnb-name">Lesson 5 of 6</div><div class="lnb-num">Chapter 18</div></div>
+<button class="lnb-btn primary" onclick="nextLesson()">Next: AC Application →</button></div></div><div class="lesson-view" id="lesson-5">
+<div class="lesson-container"><div class="lesson-main">
+<div class="lesson-header"><div class="lh-eyebrow">Chapter 18 · Lesson 6 of 6 · Assessment Application</div>
+<h1 class="lh-title">Assessment Center Application —<br><em>Professional Development Questions</em></h1><div class="lh-meta"><span class="lh-meta-item">⏱ 10 min</span><span class="lh-meta-item">🎯 Scoring</span></div></div>
+<p>Professional development questions appear most often in oral boards as leadership philosophy questions — "describe your approach to your own development," "how do you develop the people below you," or "where do you see yourself in ten years." The 5/5 response is specific, self-aware, and demonstrates active investment rather than intention.</p><div class="callout callout-navy"><span class="callout-label">Oral Board Prompt</span><p>"This promotion is for Lieutenant. If you get it, describe how you will approach your own continued professional development over the next five years."</p></div><div class="score-compare"><div class="sc-card miss"><div class="sc-title">3/5 Response</div><div class="sc-body">"I plan to pursue additional education and take NFA courses relevant to the Lieutenant role. I want to be the best leader I can be for my crew and continue learning from my experiences. I'm also interested in getting involved in the state fire chiefs association."</div></div><div class="sc-card hit"><div class="sc-title">5/5 Response</div><div class="sc-body">"My five-year development plan has four specific components, and I've been actively working on two of them already in preparation for this promotion.<br><br>First, education: I'm currently enrolled in a BS completion program in organizational leadership. I graduate in 18 months. That was a deliberate decision — the leadership content is directly relevant to what I'll be doing, and I wanted to have it underway before I promoted rather than starting it afterward.<br><br>Second, NFA: I have completed Executive Development S-300 and am on the waitlist for the Managing Officer Program. My plan is to complete the prerequisite NFA courses for the EFO program over years 3 and 4, with the goal of applying to EFO in year five.<br><br>Third, professional engagement: I've been an active member of [state] fire chiefs association for two years and presented at the regional conference last year on [topic]. I'm applying for the IAFC Safety Section membership this year. These aren't resume checkboxes — they're the networks where I learn what the best departments are doing and bring it back here.<br><br>Fourth, development of others: I will take a deliberate approach to identifying the most promising people in my company and investing in them the way I've been invested in. If I'm doing this job well, some of them will be promoted before I leave this rank. That outcome would tell me more about my effectiveness as a leader than my own score on this assessment."</div></div></div><div class="callout callout-gold"><span class="callout-label">Chapter 18 Complete</span><p>Professional development is career stewardship — the same stewardship mindset that Module 38 applies to organizational leadership, applied to personal leadership growth. The officer who invests deliberately in their own development, who develops others as they go, and who treats every experience — including setbacks — as development data is building something that no single test, degree, or credential can provide: the integrated professional capability that makes excellent leaders.</p></div>
+</div><div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Development & Mentoring</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Career Pathing Framework → Succession Planning → Coaching Conversation → 70-20-10</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Assess the development need → apply the framework → create a development plan → close with Commitment</div></div></div></div>
+<span class="sbar-label">5/5 Pattern</span><div class="sbar-card">Specific (four named components) · already underway (not future intention) · education in progress · NFA pathway mapped · professional engagement with contribution example · develops others as explicit goal.</div><span class="sbar-label">3/5 Gap</span><div class="sbar-card">General intentions. No specifics. No evidence of current action. "I want to" vs "I am." Assessors distinguish intentions from actions.</div></div></div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Assessment Center Application</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"You receive a scenario about professional development. Walk me through your complete response using the frameworks from this chapter."</div><div class="ob-note">Use LEAD: Label the bucket (Professional Development), Engage the specific framework (reference Assessment Center Application explicitly), Address the operational and organizational impact, Drive to a concrete first action with a timeline.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 6 — Key Takeaways</div>
+  <div class="tk-item">LEAD integration: Label this as a Professional Development question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Development & Mentoring</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Career Pathing Framework → Succession Planning → Coaching Conversation → 70-20-10</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Assess the development need → apply the framework → create a development plan → close with Commitment</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar"><button class="lnb-btn" onclick="prevLesson()">← Developing Others</button>
+<div class="lnb-info"><div class="lnb-name">Lesson 6 of 6</div><div class="lnb-num">Chapter 18</div></div>
+<button class="lnb-btn primary" onclick="window.scrollTo({{top:0,behavior:'smooth'}})">Module Complete ✓</button></div></div></main>
+<script>
+let cur=0;const ls=document.querySelectorAll('.lesson-view');const ps=document.querySelectorAll('.nav-pill');const mbs=document.querySelectorAll('.mh-lesson-btn');
+function showLesson(n){ls.forEach(l=>l.classList.remove('active'));ps.forEach(p=>p.classList.remove('active'));mbs.forEach(m=>m.classList.remove('active'));if(ls[n])ls[n].classList.add('active');if(ps[n])ps[n].classList.add('active');if(mbs[n])mbs[n].classList.add('active');cur=n;window.scrollTo({top:0,behavior:'smooth'});document.getElementById('prog').style.width='0%';}
+function nextLesson(){if(cur<ls.length-1)showLesson(cur+1);}
+function prevLesson(){if(cur>0)showLesson(cur-1);}
+window.addEventListener('scroll',()=>{const s=document.documentElement.scrollTop;const h=document.documentElement.scrollHeight-window.innerHeight;if(h>0)document.getElementById('prog').style.width=Math.min(100,(s/h*100))+'%';});
+document.addEventListener('DOMContentLoaded',()=>showLesson(0));
+
+function lfNext(el,stepNum){
+  var wrap=el.closest('.lf-wrap');
+  if(!wrap)return;
+  var steps=wrap.querySelectorAll('.lf-step');
+  var dots=wrap.querySelectorAll('.lf-dot');
+  steps.forEach(function(s,i){s.classList.remove('active');if(i<stepNum)s.classList.add('done');});
+  dots.forEach(function(d,i){d.classList.remove('active');if(i<stepNum)d.classList.add('done');if(i===stepNum)d.classList.add('active');});
+  if(steps[stepNum])steps[stepNum].classList.add('active');
+}
+</script><script>function toggleFT(el){var sw=el.querySelector('.ft-toggle-switch');var desc=el.querySelector('.ft-toggle-desc');var mains=document.querySelectorAll('.lesson-main');sw.classList.toggle('on');var on=sw.classList.contains('on');desc.textContent=on?'Frameworks + OB cards only':'Full lesson content';mains.forEach(function(m){m.classList.toggle('ft-on',on);});}</script>
+</body></html>

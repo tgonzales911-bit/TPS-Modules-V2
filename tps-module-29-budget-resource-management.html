@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Chapter 28 — Budget + Resource Management | The Promotional Standard</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Crimson+Pro:wght@300;400;500;600&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{--navy:#0C2340;--navy2:#1A3A5C;--gold:#C9A84C;--gold2:#F5F0E8;--gold3:#6B4F10;--cream:#F5F0E8;--offwhite:#F5F0E8;--light:#EAE5DC;--mid:#2A3D50;--gray:#8FA8C0;--red:#B22222;--red-light:#FFF0F0;--green:#1A5C3A;--green-light:#EAF3DE;--teal:#006B6B;--teal-light:#E0F4F4;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:var(--navy);font-size:18px;line-height:1.8;}
+.top-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(12,35,64,0.98);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,168,76,0.2);height:64px;display:flex;align-items:center;padding:0 2rem;gap:1rem;}
+.nav-left{display:flex;align-items:center;gap:12px;flex:1;}
+.nav-brand{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;color:var(--cream);line-height:1.3;}
+.nav-brand span{display:block;font-size:8px;color:var(--gold);letter-spacing:2px;}
+.nav-pills{display:flex;gap:5px;flex:2;justify-content:center;overflow-x:auto;}
+.nav-pill{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#8FA8C0;padding:6px 11px;border-radius:20px;cursor:pointer;transition:all 0.2s;border:none;background:transparent;white-space:nowrap;}
+.nav-pill:hover{color:var(--cream);background:rgba(255,255,255,0.05);}
+.nav-pill.active{color:var(--gold);background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.25);}
+.progress-bar{position:fixed;top:64px;left:0;height:3px;background:linear-gradient(90deg,var(--navy2),var(--gold));z-index:199;width:0%;transition:width 0.3s;}
+.lesson-view{display:none;}.lesson-view.active{display:block;}
+.module-hero{background:var(--navy);padding:4.5rem 3rem 3.5rem;margin-top:64px;position:relative;overflow:hidden;border-bottom:3px solid var(--gold);}
+.module-hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 60px,rgba(201,168,76,0.015) 60px,rgba(201,168,76,0.015) 61px);}
+.module-hero::after{content:'';position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(180deg,var(--navy2),var(--gold));}
+.mh-inner{max-width:900px;position:relative;z-index:2;}
+.mh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.mh-title{font-family:'EB Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:800;color:var(--cream);line-height:1.1;margin-bottom:0.75rem;}
+.mh-title em{font-style:italic;color:var(--gold);}
+.mh-sub{font-size:1.05rem;color:#8FA8C0;max-width:700px;line-height:1.7;margin-bottom:2rem;}
+.mh-badges{display:flex;gap:10px;margin-bottom:1.5rem;flex-wrap:wrap;}
+.mh-badge{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border-radius:3px;}
+.badge-teal{background:rgba(0,107,107,0.15);color:#009999;border:1px solid rgba(0,107,107,0.3);}
+.badge-nfpa{background:rgba(100,160,220,0.15);color:#8FA8C0;border:1px solid rgba(100,160,220,0.3);}
+.mh-thread{background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);border-left:3px solid var(--gold);padding:1rem 1.5rem;margin-bottom:2rem;max-width:700px;}
+.mh-thread-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+.mh-thread-text{font-size:0.92rem;color:var(--cream);line-height:1.65;}
+.mh-lesson-nav{display:flex;gap:8px;flex-wrap:wrap;}
+.mh-lesson-btn{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:8px 14px;border-radius:6px;cursor:pointer;transition:all 0.2s;border:1px solid rgba(201,168,76,0.25);background:transparent;color:#8FA8C0;}
+.mh-lesson-btn:hover{background:rgba(255,255,255,0.05);color:var(--cream);}
+.mh-lesson-btn.active{background:rgba(201,168,76,0.12);color:var(--gold);border-color:rgba(201,168,76,0.4);}
+.lesson-container{display:grid;grid-template-columns:1fr 310px;gap:0;}
+.lesson-main{padding:3rem 3.5rem;border-right:1px solid var(--light);}
+.lesson-sidebar{padding:2rem 1.75rem;background:var(--offwhite);position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;}
+.lesson-header{margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:2px solid var(--light);}
+.lh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold3);margin-bottom:0.6rem;}
+.lh-title{font-family:'EB Garamond',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;color:var(--navy);line-height:1.15;margin-bottom:0.6rem;}
+.lh-title em{font-style:italic;color:var(--gold);}
+.lh-meta{display:flex;gap:1.5rem;flex-wrap:wrap;}
+.lh-meta-item{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);}
+.lesson-main h2{font-family:'EB Garamond',serif;font-size:1.7rem;font-weight:700;color:var(--navy);margin:3rem 0 0.9rem;padding-bottom:0.5rem;border-bottom:2px solid var(--light);}
+.lesson-main h3{font-family:'EB Garamond',serif;font-size:1.25rem;font-weight:600;color:var(--navy);margin:2.25rem 0 0.65rem;}
+.lesson-main p{margin-bottom:1.25rem;color:#2A3D50;line-height:1.82;}
+.lesson-main ul,.lesson-main ol{margin:0 0 1.25rem 1.5rem;color:#2A3D50;}
+.lesson-main li{margin-bottom:0.6rem;line-height:1.72;}
+.lesson-main strong{color:var(--navy);font-weight:600;}
+.callout{padding:1.4rem 1.6rem;margin:2rem 0;}
+.callout-gold{background:var(--gold2);border-left:3px solid var(--gold);}.callout-gold p{color:var(--gold3);font-size:0.97rem;line-height:1.75;}
+.callout-navy{background:var(--navy);border-left:3px solid var(--gold);}.callout-navy p{color:#8FA8C0;font-size:0.95rem;line-height:1.75;}
+.callout-red{background:var(--red-light);border-left:4px solid var(--red);}.callout-red p{color:#6B4F10;font-size:0.97rem;line-height:1.75;}
+.callout-green{background:var(--green-light);border-left:4px solid var(--green);}.callout-green p{color:#1A3A5C;font-size:0.97rem;line-height:1.75;}
+.callout-teal{background:var(--teal-light);border-left:4px solid var(--teal);}.callout-teal p{color:#003A3A;font-size:0.97rem;line-height:1.75;}
+.callout-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:0.5rem;display:block;}
+.callout-gold .callout-label{color:var(--gold3);}.callout-navy .callout-label{color:var(--gold);}.callout-red .callout-label{color:var(--red);}.callout-green .callout-label{color:var(--green);}.callout-teal .callout-label{color:var(--teal);}
+.framework-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.fw-card{background:white;border:1px solid #EAE5DC;padding:1.25rem;border-radius:8px;}
+.fw-card-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:6px;}
+.fw-card-title{font-family:'EB Garamond',serif;font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.fw-card-desc{font-size:0.9rem;color:var(--mid);line-height:1.6;}
+.acro-grid{display:flex;flex-direction:column;gap:0;margin:1.5rem 0;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;}
+.acro-row{display:grid;grid-template-columns:52px 1fr;gap:0;border-bottom:1px solid #EAE5DC;}
+.acro-row:last-child{border-bottom:none;}
+.acro-letter{background:var(--navy);color:var(--gold);font-family:'EB Garamond',serif;font-size:1.8rem;font-weight:800;display:flex;align-items:center;justify-content:center;}
+.acro-content{padding:0.9rem 1.1rem;background:white;}
+.acro-word{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:3px;}
+.acro-desc{font-size:0.85rem;color:var(--mid);line-height:1.55;}
+.budget-flow{display:flex;flex-direction:column;gap:0;margin:1.5rem 0;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;}
+.bf-step{display:grid;grid-template-columns:44px 1fr;border-bottom:1px solid var(--light);}
+.bf-step:last-child{border-bottom:none;}
+.bf-num{background:var(--navy2);color:var(--gold);font-family:'Cinzel',serif;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.bf-body{padding:0.9rem 1.1rem;background:white;}
+.bf-title{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:3px;}
+.bf-desc{font-size:0.85rem;color:var(--mid);line-height:1.55;}
+.bf-captain{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1px;color:var(--teal);margin-top:4px;font-style:italic;}
+.score-compare{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.sc-card{padding:1.25rem;border-radius:8px;}
+.sc-card.miss{background:var(--red-light);border:1px solid #F0C0C0;}
+.sc-card.hit{background:var(--green-light);border:1px solid #9DCCA8;}
+.sc-title{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:0.75rem;}
+.sc-card.miss .sc-title{color:var(--red);}.sc-card.hit .sc-title{color:var(--green);}
+.sc-body{font-size:0.87rem;line-height:1.6;}
+.sc-card.miss .sc-body{color:#6B4F10;}.sc-card.hit .sc-body{color:#1A3A5C;}
+.sbar-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold3);margin-bottom:0.65rem;margin-top:1.5rem;display:block;}
+.sbar-label:first-child{margin-top:0;}
+.sbar-card{background:white;border:1px solid #EAE5DC;border-radius:8px;padding:0.9rem 1rem;margin-bottom:8px;font-size:0.9rem;color:var(--mid);line-height:1.55;}
+.sbar-card strong{color:var(--navy);display:block;margin-bottom:3px;font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;}
+.lesson-nav-bar{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 3rem;border-top:3px solid var(--gold);background:var(--navy);gap:1rem;}
+.lnb-btn{background:rgba(255,255,255,0.08);border:2px solid rgba(201,168,76,0.4);padding:14px 28px;font-family:'Cinzel',serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border-radius:6px;color:var(--cream);transition:all 0.2s;white-space:nowrap;}
+.lnb-btn:hover{background:rgba(201,168,76,0.15);border-color:var(--gold);color:var(--gold);}
+.lnb-btn:disabled,.lnb-btn[disabled]{opacity:0.25;cursor:not-allowed;background:transparent;}
+.lnb-btn:disabled:hover,.lnb-btn[disabled]:hover{background:transparent;border-color:rgba(201,168,76,0.4);color:var(--cream);}
+.lnb-btn.primary{background:var(--gold);color:var(--navy);border-color:var(--gold);font-weight:800;}
+.lnb-btn.primary:hover{background:#C9A84C;border-color:#C9A84C;}
+.lnb-info{text-align:center;flex:1;}
+.lnb-name{font-family:'EB Garamond',serif;font-size:1rem;font-weight:700;color:var(--cream);}
+.lnb-num{font-size:0.85rem;color:var(--gold);font-family:'Cinzel',serif;letter-spacing:1px;}
+@media(max-width:900px){.lesson-container{grid-template-columns:1fr;}.lesson-sidebar{position:relative;height:auto;}.lesson-main{padding:2rem 1.5rem;}.lesson-nav-bar{padding:1rem 1.5rem;flex-wrap:wrap;}.framework-grid,.score-compare{grid-template-columns:1fr;}.nav-pills{display:none;}}
+
+/* OB CARD */
+.ob-card{background:var(--navy);margin:2rem 0;overflow:hidden;}
+.ob-header{padding:0.85rem 1.5rem;background:rgba(201,168,76,0.08);border-bottom:1px solid rgba(201,168,76,0.15);}
+.ob-label{font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);}
+.ob-body{padding:1.25rem 1.5rem;}
+.ob-q{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;}
+.ob-q-tag{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);background:rgba(201,168,76,0.1);padding:4px 10px;border-radius:3px;white-space:nowrap;}
+.ob-q-text{font-family:'EB Garamond',serif;font-size:1.08rem;font-weight:600;color:var(--cream);line-height:1.5;margin-bottom:8px;}
+.ob-note{font-size:0.88rem;color:#8FA8C0;line-height:1.6;font-style:italic;}
+/* TAKEAWAYS */
+.takeaways{background:var(--navy);padding:2.25rem;margin:3rem 0 0;border-top:3px solid var(--gold);}
+.tk-lbl{font-family:'Cinzel',serif;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.tk-item{color:#8FA8C0;font-size:0.92rem;line-height:1.7;padding:0.5rem 0 0.5rem 1.25rem;border-left:2px solid rgba(201,168,76,0.2);margin-bottom:0.5rem;}
+
+
+.lead-nav{background:var(--navy);border-radius:8px;padding:14px 16px;margin-bottom:16px;border:1px solid rgba(201,168,76,0.2)}
+.lead-nav-header{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.lead-nav-row{display:grid;grid-template-columns:20px 1fr;gap:6px;margin-bottom:6px;align-items:start}
+.lead-nav-letter{font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:var(--gold)}
+.lead-nav-content{}
+.lead-nav-name{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:2px}
+.lead-nav-app{font-size:11px;color:#8FA8C0;line-height:1.5}
+
+.lf-wrap{margin:2.5rem 0 1.5rem;border:2px solid var(--gold);border-radius:10px;overflow:hidden}
+.lf-header{background:var(--navy);padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
+.lf-title{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+.lf-dots{display:flex;gap:6px}
+.lf-dot{width:8px;height:8px;border-radius:50%;background:rgba(201,168,76,0.25);transition:all 0.3s}
+.lf-dot.active{background:var(--gold);transform:scale(1.3)}
+.lf-dot.done{background:var(--gold)}
+.lf-step{display:none;padding:20px}
+.lf-step.active{display:block}
+.lf-step-num{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:6px}
+.lf-step-title{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:10px}
+.lf-chain{background:var(--navy);border-radius:6px;padding:14px 18px;margin:10px 0}
+.lf-chain-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.lf-chain-text{font-size:13px;color:#8FA8C0;line-height:1.6}
+.lf-chain-close{font-size:12px;color:var(--cream);margin-top:6px;font-style:italic}
+.lf-btn{background:var(--navy);color:var(--gold);border:2px solid var(--gold);padding:12px 24px;border-radius:6px;font-family:'Cinzel',serif;font-size:12px;letter-spacing:1.5px;font-weight:600;cursor:pointer;margin-top:12px;transition:all 0.2s;display:inline-block}
+.lf-btn:hover{background:var(--gold);color:var(--navy)}
+.lf-timer{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:var(--gold);padding:6px 14px;border-radius:4px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:1px;margin-top:10px}
+.lesson-main.ft>p{display:none!important}.lesson-main.ft>.callout{display:none!important}.ft-toggle{display:flex;align-items:center;gap:10px;padding:10px 16px;background:var(--navy);border-radius:6px;cursor:pointer;border:1px solid rgba(201,168,76,0.25)}.ft-toggle-switch{width:36px;height:20px;background:rgba(201,168,76,0.2);border-radius:10px;position:relative;transition:background .2s}.ft-toggle-switch.on{background:var(--gold)}.ft-toggle-knob{width:14px;height:14px;background:#fff;border-radius:50%;position:absolute;top:3px;left:3px;transition:left .2s}.ft-toggle-switch.on .ft-toggle-knob{left:19px}.ft-toggle-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}.ft-toggle-desc{font-size:11px;color:var(--mid)}.lesson-main.ft-on>p,.lesson-main.ft-on>.callout,.lesson-main.ft-on h3{display:none!important}.lesson-main.ft-on .ob-card,.lesson-main.ft-on .lf-wrap,.lesson-main.ft-on .lead-nav,.lesson-main.ft-on h2{display:block!important}
+</style>
+</head>
+<body>
+<nav class="top-nav">
+  <div class="nav-left"><div class="nav-brand">The Promotional Standard<span>Captain Track · Chapter 28</span></div></div>
+  <div class="nav-pills">
+    <button class="nav-pill active" onclick="showLesson(0)">Budget Fundamentals</button>
+    <button class="nav-pill" onclick="showLesson(1)">The Budget Process</button>
+    <button class="nav-pill" onclick="showLesson(2)">Justifying Resources</button>
+    <button class="nav-pill" onclick="showLesson(3)">Managing Constraints</button>
+    <button class="nav-pill" onclick="showLesson(4)">Capital Planning</button>
+    <button class="nav-pill" onclick="showLesson(5)">AC Application</button>
+  </div>
+</nav>
+<div class="progress-bar" id="prog"></div>
+<div class="module-hero">
+  <div class="mh-inner">
+    <div class="mh-eyebrow">Chapter 28 · Captain Track · Fire Officer II–III</div>
+    <h1 class="mh-title">Budget + Resource Management<br><em>The Captain's Financial Stewardship</em></h1>
+    <p class="mh-sub">Municipal budget structure, the annual budget cycle, cost-benefit justification, managing within constraints, and capital planning for apparatus and equipment. What every Captain needs to know about how money works in the fire service — and how assessors test whether you understand your organizational financial responsibilities.</p>
+    <div class="mh-badges">
+      <span class="mh-badge badge-teal">Captain Track</span>
+      <span class="mh-badge badge-nfpa">NFPA 1021 · FO II–III</span>
+    </div>
+    <div class="mh-thread">
+      <div class="mh-thread-label">Before You Begin</div>
+      <div class="mh-thread-text">Budget and resource management questions appear most often in written exercises and in-basket items at the Captain and above level — but they also surface in oral boards when assessors ask about your administrative responsibilities. The candidate who understands the budget cycle, speaks about resources in terms of organizational stewardship rather than personal advocacy, and can discuss trade-offs with data performs significantly better than the candidate who approaches resources as someone asking for things.</div>
+    </div>
+    <div class="mh-lesson-nav">
+      <button class="mh-lesson-btn active" onclick="showLesson(0)">1. Budget Fundamentals</button>
+      <button class="mh-lesson-btn" onclick="showLesson(1)">2. The Budget Process</button>
+      <button class="mh-lesson-btn" onclick="showLesson(2)">3. Justifying Resources</button>
+      <button class="mh-lesson-btn" onclick="showLesson(3)">4. Managing Constraints</button>
+      <button class="mh-lesson-btn" onclick="showLesson(4)">5. Capital Planning</button>
+      <button class="mh-lesson-btn" onclick="showLesson(5)">6. AC Application</button>
+    </div>
+  </div>
+</div>
+<main>
+
+<!-- LESSON 1 -->
+<div class="lesson-view active" id="lesson-0">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 28 · Lesson 1 of 6</div>
+    <h1 class="lh-title">Budget Fundamentals —<br><em>How Municipal Money Works</em></h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 14 min</span><span class="lh-meta-item">💰 Municipal Finance · Budget Types</span></div>
+  </div>
+  <p>Most fire service promotional candidates have spent their careers executing operational priorities — and relatively little time engaging with the financial systems that fund those priorities. At the Captain level, this changes. The Captain who understands how money moves through the municipal system, how the fire department budget is structured, and what financial accountability means for their role as an officer is far better prepared to lead effectively and to demonstrate organizational competence in assessment centers.</p>
+  <h2>Municipal Budget Structure — The Basics</h2>
+  <p>Fire departments are almost always funded through a municipal or county government budget. Understanding how that government raises and allocates money is foundational to understanding your department's financial reality.</p>
+  <div class="framework-grid">
+    <div class="fw-card">
+      <div class="fw-card-label">General Fund</div>
+      <div class="fw-card-title">The Primary Source</div>
+      <div class="fw-card-desc">Most fire department operations are funded through the municipal general fund — the pool of tax revenue (primarily property tax and sales tax) that funds all core government services. Fire, police, parks, public works all compete for general fund allocation. Budget competition happens here. The fire department's allocation reflects both its operational needs and its political standing relative to other departments.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Special Revenue Funds</div>
+      <div class="fw-card-title">Dedicated for Specific Purposes</div>
+      <div class="fw-card-desc">Some fire service funding comes through special revenue funds — collections dedicated to specific purposes. Impact fees from new development, EMS billing revenue, hazmat program fees. These funds can only be spent on their designated purpose, which limits flexibility but protects funding from general budget competition. Understanding which revenues feed special funds matters for resource justification.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Capital Funds</div>
+      <div class="fw-card-title">Major Purchases and Infrastructure</div>
+      <div class="fw-card-desc">Apparatus, station construction, major equipment — purchases with long useful lives are typically funded through capital improvement programs rather than the operating budget. Capital requests go through a separate planning and approval process. The Captain who understands this distinction doesn't request a new aerial in the operating budget; they understand and engage the capital planning process.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Grants</div>
+      <div class="fw-card-title">Federal, State, and Foundation</div>
+      <div class="fw-card-desc">FEMA's Assistance to Firefighters Grant (AFG), Staffing for Adequate Fire and Emergency Response (SAFER), state homeland security grants, and private foundation grants supplement department budgets for specific purposes. Grants require application, compliance, and reporting. The Captain who has engaged the grant process adds organizational value that goes beyond operational competence.</div>
+    </div>
+  </div>
+  <h2>Operating vs Capital — The Distinction That Matters Most</h2>
+  <p>Every budget question in an assessment center involves this distinction. Operating budget covers recurring, day-to-day costs — personnel (the largest line item by far in any fire department), supplies, fuel, maintenance, training, and utilities. Capital budget covers major purchases with multi-year useful lives — apparatus, stations, major equipment.</p>
+  <div class="callout callout-gold">
+    <span class="callout-label">The Personnel Cost Reality</span>
+    <p>Personnel costs — salaries, benefits, overtime, and retirement — typically represent 85–92% of a fire department's operating budget. This means that every staffing decision is also a financial decision. The Captain who argues for additional staffing without a corresponding understanding of what that costs the organization is not speaking the language that budget decision-makers use. The one who frames the staffing need in terms of service level, risk, and cost is speaking that language fluently.</p>
+  </div>
+  <h2>Line-Item Budgeting — What the Captain Manages</h2>
+  <p>Most fire departments use line-item budgets — specific allocations for specific cost categories. A Captain managing a station budget typically oversees line items in categories such as: office supplies, training materials, vehicle maintenance (non-capital), protective equipment maintenance and replacement, community programs, and station supplies. Understanding what's in each line item, why it was funded at its level, and how to manage within it is basic financial competence at the company officer level.</p>
+  <div class="acro-grid">
+    <div class="acro-row">
+      <div class="acro-letter">TRK</div>
+      <div class="acro-content">
+        <div class="acro-word">Track Every Expenditure Against Your Allocation</div>
+        <div class="acro-desc">The Captain who runs out of supply budget in month 8 because they didn't monitor expenditures against allocation creates a problem for their battalion — either an emergency request that uses administrative capital, or a station that doesn't have what it needs for the last four months of the fiscal year. Monthly reconciliation of expenditures against budget is a basic administrative responsibility.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">DOC</div>
+      <div class="acro-content">
+        <div class="acro-word">Document the Rationale for Every Significant Purchase</div>
+        <div class="acro-desc">Budget justification is not a one-time event during budget season — it's an ongoing practice of documenting why resources are being spent. The Captain whose expenditure records show clear operational justification (this PPE replacement was required by the inspection record, this training investment was tied to the identified competency gap) builds the institutional record that supports future budget requests.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">STEW</div>
+      <div class="acro-content">
+        <div class="acro-word">Stewardship Mindset — Public Money, Public Trust</div>
+        <div class="acro-desc">The money the Captain manages is not the department's — it is the public's, entrusted to government for specific purposes. The financial stewardship mindset treats every expenditure as a public accountability question: is this the most effective use of these resources for the community we serve? This framing — stewardship rather than entitlement — is what assessors listen for when budget and resource questions appear in senior officer assessments.</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="lesson-sidebar">
+<div class="ft-toggle" onclick="toggleFT(this)" style="margin-bottom:16px;max-width:320px">
+<div class="ft-toggle-switch"><div class="ft-toggle-knob"></div></div>
+<div><div class="ft-toggle-label">Fast Track Mode</div><div class="ft-toggle-desc">Full lesson content</div></div>
+</div>
+
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Operating vs Capital Budget Framework → Line-Item Management → Cost-Per-Call → BSC Financial Perspective</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the budget category → apply the framework → justify with data → close with Discipline</div></div></div></div>
+
+  <span class="sbar-label">Four Budget Sources</span>
+  <div class="sbar-card"><strong>General Fund</strong>Primary source. Tax revenue. Competes with all other city departments.</div>
+  <div class="sbar-card"><strong>Special Revenue</strong>Impact fees, EMS billing. Dedicated use only.</div>
+  <div class="sbar-card"><strong>Capital Funds</strong>Apparatus, stations. Separate planning process.</div>
+  <div class="sbar-card"><strong>Grants</strong>AFG, SAFER, state, foundation. Application + compliance required.</div>
+  <span class="sbar-label">The Personnel Reality</span>
+  <div class="sbar-card">85–92% of operating budget is personnel. Every staffing argument is a financial argument. Speak the language of cost and service level together.</div>
+  <span class="sbar-label">Stewardship Mindset</span>
+  <div class="sbar-card">Public money, public trust. "Is this the most effective use of these resources for the community?" Every assessor at BC and above will test this framing.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Budget Fundamentals</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"Describe your understanding of municipal budget structure — the basics and how you would apply it in a real scenario."</div><div class="ob-note">Name the budget justification process: identify the need with data, quantify the cost and benefit, present it in the language decision-makers use. Show financial literacy.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 1 — Key Takeaways</div>
+  <div class="tk-item">Municipal Budget Structure — The Basics — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">Operating vs Capital — The Distinction That Matters Most — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Budget Resource Management question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Operating vs Capital Budget Framework → Line-Item Management → Cost-Per-Call → BSC Financial Perspective</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the budget category → apply the framework → justify with data → close with Discipline</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" disabled>← Previous</button>
+  <div class="lnb-info"><div class="lnb-name">Budget Fundamentals</div><div class="lnb-num">Lesson 1 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: The Budget Process →</button>
+</div>
+</div>
+
+<!-- LESSON 2 -->
+<div class="lesson-view" id="lesson-1">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 28 · Lesson 2 of 6</div>
+    <h1 class="lh-title">The Budget Process —<br><em>When, Who, and How Decisions Are Made</em></h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 14 min</span><span class="lh-meta-item">📅 Annual Cycle · Submission Process</span></div>
+  </div>
+  <p>Understanding the budget cycle — when decisions happen, who makes them, and where company officer input enters the process — is the difference between a Captain who engages the system effectively and one who shows up after decisions have already been made. In most municipalities, the company officer's window to influence resource allocation is earlier in the cycle than most officers realize.</p>
+  <h2>The Annual Budget Cycle</h2>
+  <div class="budget-flow">
+    <div class="bf-step">
+      <div class="bf-num">1</div>
+      <div class="bf-body">
+        <div class="bf-title">Needs Assessment (5–7 Months Before Fiscal Year)</div>
+        <div class="bf-desc">Department leadership identifies operational needs, service gaps, equipment deficiencies, and strategic priorities for the coming year. This is the Captain's primary input window — documenting needs, providing data on equipment condition, quantifying training gaps, and identifying resource constraints that affect mission performance.</div>
+        <div class="bf-captain">Captain role: Document needs proactively and specifically. Equipment inspection records, training gap analyses, and incident data that support resource requests all feed this phase.</div>
+      </div>
+    </div>
+    <div class="bf-step">
+      <div class="bf-num">2</div>
+      <div class="bf-body">
+        <div class="bf-title">Department Budget Submission (4–5 Months Before)</div>
+        <div class="bf-desc">The fire chief prepares and submits the department's budget request to the city manager or finance department. Requests are prioritized — some are funded, some are deferred. The Captain whose documented needs are part of this submission has influenced the request. The one who hasn't documented needs has no voice at this stage.</div>
+        <div class="bf-captain">Captain role: Ensure your battalion chief has your documented needs data before this deadline. The budget submission process has a specific calendar — know it.</div>
+      </div>
+    </div>
+    <div class="bf-step">
+      <div class="bf-num">3</div>
+      <div class="bf-body">
+        <div class="bf-title">Executive Review and Balancing (3 Months Before)</div>
+        <div class="bf-desc">The city manager reviews all department requests against projected revenue and policy priorities. Cuts happen here. The fire department's total request is rarely funded — the chief must defend priorities and accept reductions in other areas. This is the phase where strong data justification determines what survives the cut.</div>
+        <div class="bf-captain">Captain role: None directly. But the quality of justification data submitted in phase 1 determines what the chief can defend at this stage.</div>
+      </div>
+    </div>
+    <div class="bf-step">
+      <div class="bf-num">4</div>
+      <div class="bf-body">
+        <div class="bf-title">City Council Adoption (1–2 Months Before Fiscal Year)</div>
+        <div class="bf-desc">The city council holds public hearings and formally adopts the budget. In many jurisdictions, this is the point at which community advocates, union representatives, and individual department representatives can speak publicly about resource needs. The Captain who has built community relationships has indirect influence here through the voices of community members who understand the service level stakes.</div>
+        <div class="bf-captain">Captain role: Know when council hearings occur. Understand what your department's public advocates will say. Community relations and budget advocacy are connected.</div>
+      </div>
+    </div>
+    <div class="bf-step">
+      <div class="bf-num">5</div>
+      <div class="bf-body">
+        <div class="bf-title">Fiscal Year Execution + Monitoring</div>
+        <div class="bf-desc">The adopted budget is implemented. Monthly expenditure tracking, mid-year adjustments, and year-end closeout are the execution responsibilities. Departments that manage well within their adopted budget build credibility for future cycles. Departments that require frequent emergency amendments or end fiscal years with large surpluses signal poor financial management.</div>
+        <div class="bf-captain">Captain role: Monitor, document, manage within allocation. Year-end performance on budget management is data for the next cycle's credibility.</div>
+      </div>
+    </div>
+  </div>
+  <div class="callout callout-gold">
+    <span class="callout-label">The Documentation Principle</span>
+    <p>The company officer who arrives at budget season with organized, data-supported documentation of their station's needs — equipment condition reports, training records showing gaps, incident data showing resource constraints, and specific cost estimates for what is being requested — is doing something most company officers don't do. That documentation is what allows the battalion chief to make specific, data-supported requests instead of general ones. General requests get cut first. Specific, well-documented requests survive. The Captain who understands this invests in documentation throughout the year, not just during budget season.</p>
+  </div>
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Operating vs Capital Budget Framework → Line-Item Management → Cost-Per-Call → BSC Financial Perspective</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the budget category → apply the framework → justify with data → close with Discipline</div></div></div></div>
+
+  <span class="sbar-label">5-Phase Annual Cycle</span>
+  <div class="sbar-card"><strong>Phase 1</strong>Needs assessment — Captain's primary input window. 5–7 months out.</div>
+  <div class="sbar-card"><strong>Phase 2</strong>Department submission — feeds from your documented data.</div>
+  <div class="sbar-card"><strong>Phase 3</strong>Executive review — where undocumented needs get cut.</div>
+  <div class="sbar-card"><strong>Phase 4</strong>Council adoption — community relationships matter here.</div>
+  <div class="sbar-card"><strong>Phase 5</strong>Execution — monthly tracking, year-end credibility-building.</div>
+  <span class="sbar-label">Captain Input Window</span>
+  <div class="sbar-card">Phase 1 — 5 to 7 months before fiscal year. Document throughout the year, not just at budget season. Equipment records · training gaps · incident data · cost estimates.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — The Budget Process</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"Describe your understanding of the annual budget cycle and how you would apply it in a real scenario."</div><div class="ob-note">Name the budget justification process: identify the need with data, quantify the cost and benefit, present it in the language decision-makers use. Show financial literacy.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 2 — Key Takeaways</div>
+  <div class="tk-item">The Annual Budget Cycle — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Budget Resource Management question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Operating vs Capital Budget Framework → Line-Item Management → Cost-Per-Call → BSC Financial Perspective</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the budget category → apply the framework → justify with data → close with Discipline</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Budget Fundamentals</button>
+  <div class="lnb-info"><div class="lnb-name">The Budget Process</div><div class="lnb-num">Lesson 2 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Justifying Resources →</button>
+</div>
+</div>
+
+<!-- LESSON 3 -->
+<div class="lesson-view" id="lesson-2">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 28 · Lesson 3 of 6</div>
+    <h1 class="lh-title">Justifying Resources —<br><em>How to Make the Case That Gets Funded</em></h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 16 min</span><span class="lh-meta-item">📊 Cost-Benefit · Justification Frameworks</span></div>
+  </div>
+  <p>Resource requests that get funded share a common structure: they speak the decision-maker's language (cost, risk, and organizational impact), they are specific rather than general, they anticipate objections, and they connect the request to something the decision-maker already cares about. Requests that don't get funded are usually vague, emotional, or framed as internal department preferences rather than organizational and community needs.</p>
+  <h2>The Five Elements of a Fundable Resource Request</h2>
+  <div class="acro-grid">
+    <div class="acro-row">
+      <div class="acro-letter">PRB</div>
+      <div class="acro-content">
+        <div class="acro-word">State the Problem with Data, Not Opinion</div>
+        <div class="acro-desc">"Our SCBA sets are aging" is an opinion. "47% of our SCBA inventory has exceeded the NFPA 1852 ten-year service life. In the last fiscal year, 3 units required emergency maintenance during active incidents. Per NFPA data, respiratory equipment failures in structural firefighting are a leading cause of near-miss events." That is a data-supported problem statement. Decision-makers fund solutions to documented problems, not general preferences.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">RSK</div>
+      <div class="acro-content">
+        <div class="acro-word">Name the Risk of Not Funding</div>
+        <div class="acro-desc">Every resource request has a risk consequence if denied. The Captain who names that risk — to personnel safety, service delivery, liability exposure, or community outcome — is engaging the decision-maker's risk management function. "Continued operation with expired SCBA creates OSHA liability exposure, potential NFPA standard violations, and — most importantly — an elevated risk of firefighter injury or death during structural operations." Decision-makers who understand the risk of inaction are more likely to fund the remedy.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">OPT</div>
+      <div class="acro-content">
+        <div class="acro-word">Present Options with Costs and Trade-offs</div>
+        <div class="acro-desc">A single request with a single price is easy to reject. A request that presents three options — full replacement at $X, priority replacement of the highest-risk units at $Y, and a phased two-year replacement at $Z with year-one costs of $W — forces the decision-maker to choose among options rather than simply approve or deny. Options demonstrate analytical rigor and fiscal awareness. They signal that the requestor understands the decision-maker's constraints.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">BEN</div>
+      <div class="acro-content">
+        <div class="acro-word">Quantify the Benefit Where Possible</div>
+        <div class="acro-desc">The most compelling resource justifications connect cost to measurable benefit. "SAFER grant funding for two additional positions will reduce overtime expenditure by approximately $180,000 annually — nearly cost-neutral relative to grant requirements while eliminating the service gap on B-shift." Benefit quantification translates the request from "the fire department wants this" to "this is a sound organizational investment."</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">ALN</div>
+      <div class="acro-content">
+        <div class="acro-word">Connect to Organizational or Council Priorities</div>
+        <div class="acro-desc">Every municipal government has stated strategic priorities — equity, economic development, public safety, climate resilience. The resource request that connects explicitly to one of these priorities is harder to cut than the one that doesn't. "This request directly supports the council's adopted strategic priority of reducing emergency response time disparities in underserved areas" positions the request as organizational alignment, not departmental advocacy.</div>
+      </div>
+    </div>
+  </div>
+  <h2>The Grant Opportunity — Working the AFG and SAFER Process</h2>
+  <p>FEMA's Assistance to Firefighters Grants (AFG) and Staffing for Adequate Fire and Emergency Response (SAFER) grants provide competitive federal funding for equipment and staffing. The Captain who understands these programs — their cycles, their eligibility requirements, their scoring criteria — can position their department to compete effectively rather than leaving available funding uncaptured.</p>
+  <ul>
+    <li><strong>AFG</strong> funds equipment, training, and wellness/fitness programs for the operational fire service. Applications are scored on need, cost-effectiveness, and alignment with FEMA priorities. Departments with well-documented need histories and specific, measurable project descriptions score higher.</li>
+    <li><strong>SAFER</strong> funds staffing to achieve and maintain minimum staffing levels. The application requires demonstration of need, financial sustainability plan for after the grant period, and community risk documentation. Applications that connect staffing to specific service level data are more competitive.</li>
+    <li><strong>The Captain's role:</strong> Maintain the documentation — incident records, response time data, equipment condition logs, training records — that makes a compelling grant application possible when the window opens.</li>
+  </ul>
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Operating vs Capital Budget Framework → Line-Item Management → Cost-Per-Call → BSC Financial Perspective</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the budget category → apply the framework → justify with data → close with Discipline</div></div></div></div>
+
+  <span class="sbar-label">Five Elements of Fundable Requests</span>
+  <div class="sbar-card"><strong>Problem with Data</strong>Not opinion. Documented evidence with numbers.</div>
+  <div class="sbar-card"><strong>Risk of Not Funding</strong>Personnel safety · liability · service gaps · community outcome.</div>
+  <div class="sbar-card"><strong>Options with Trade-offs</strong>Full / priority / phased. Forces choice, not just approve/deny.</div>
+  <div class="sbar-card"><strong>Quantified Benefit</strong>Cost vs measurable return. Translate to organizational investment language.</div>
+  <div class="sbar-card"><strong>Aligned to Priorities</strong>Connect to council strategic goals. Harder to cut when it's aligned.</div>
+  <span class="sbar-label">Grant Programs</span>
+  <div class="sbar-card"><strong>AFG</strong>Equipment, training, wellness. Documentation drives score.</div>
+  <div class="sbar-card"><strong>SAFER</strong>Staffing. Service level data + sustainability plan required.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Justifying Resources</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"Describe your understanding of the five elements of a fundable resource request and how you would apply it in a real scenario."</div><div class="ob-note">Name the budget justification process: identify the need with data, quantify the cost and benefit, present it in the language decision-makers use. Show financial literacy.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 3 — Key Takeaways</div>
+  <div class="tk-item">The Five Elements of a Fundable Resource Request — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">The Grant Opportunity — Working the AFG and SAFER Process — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Budget Resource Management question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Operating vs Capital Budget Framework → Line-Item Management → Cost-Per-Call → BSC Financial Perspective</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the budget category → apply the framework → justify with data → close with Discipline</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← The Budget Process</button>
+  <div class="lnb-info"><div class="lnb-name">Justifying Resources</div><div class="lnb-num">Lesson 3 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Managing Constraints →</button>
+</div>
+</div>
+
+<!-- LESSON 4 -->
+<div class="lesson-view" id="lesson-3">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 28 · Lesson 4 of 6</div>
+    <h1 class="lh-title">Managing Within Constraints —<br><em>Leading When the Budget Says No</em></h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 14 min</span><span class="lh-meta-item">⚙️ Resource Allocation · Prioritization</span></div>
+  </div>
+  <p>The Captain who only functions well when resources are adequate is a fair-weather leader. Most fire service careers involve extended periods of constraint — budget reductions, hiring freezes, equipment deferral, reduced overtime authorization. The officer who can maintain mission performance, crew morale, and organizational standards within financial constraints is demonstrating exactly the leadership capacity that senior promotions require.</p>
+  <h2>The Prioritization Discipline</h2>
+  <p>Constrained resources require explicit prioritization — a clear, principled articulation of what gets funded first and why. The Captain who makes resource prioritization decisions based on relationships, convenience, or recency rather than on operational impact and risk creates organizational dysfunction and, eventually, liability. Principled prioritization means:</p>
+  <ul>
+    <li><strong>Life safety first.</strong> Expenditures that directly protect personnel or community life safety are non-negotiable first priorities. PPE, SCBA maintenance, building systems testing. These are not negotiable regardless of budget pressure.</li>
+    <li><strong>Mission-critical next.</strong> Resources required to deliver core emergency services — apparatus maintenance, essential equipment, minimum staffing — are second priority. The department can tolerate some degradation in administrative and convenience resources before operational capacity is affected.</li>
+    <li><strong>Operational effectiveness third.</strong> Training materials, community programs, administrative tools. Important, but capable of some deferral without immediate safety impact.</li>
+    <li><strong>Convenience and enhancement last.</strong> Station improvements, additional equipment beyond minimum requirements, enhanced administrative resources. These are the first to be deferred in constrained cycles.</li>
+  </ul>
+  <div class="callout callout-navy">
+    <span class="callout-label">The Transparency Requirement Under Constraint</span>
+    <p>The Captain who manages budget cuts quietly — absorbing the impact without communicating it to the crew or up the chain — creates two problems: the crew doesn't understand why priorities have shifted, which generates confusion and resentment; and administration doesn't have accurate information about the operational impact of the cuts, which prevents accurate assessment of the real cost of the constraint. Transparency about resource constraints — communicated appropriately to crew, documented and communicated up the chain — is a leadership requirement, not a complaint.</p>
+  </div>
+  <h2>Creative Resource Management</h2>
+  <p>Constrained budgets create the conditions that reveal organizational creativity. The Captain who responds to constraint only with complaint has limited value. The one who identifies creative alternatives — mutual aid for training, grant opportunities that weren't previously pursued, equipment sharing with neighboring companies, partnership-based community programs that reduce departmental costs — demonstrates the adaptive organizational thinking that senior leadership requires.</p>
+  <div class="framework-grid">
+    <div class="fw-card">
+      <div class="fw-card-label">Mutual Aid Training</div>
+      <div class="fw-card-title">Share the Instructor Cost</div>
+      <div class="fw-card-desc">Regional training programs that pool instructors and facilities across multiple agencies reduce per-unit training costs significantly. The Captain who initiates or participates in regional training partnerships during constrained periods builds organizational relationships and maintains training quality simultaneously.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Equipment Sharing Agreements</div>
+      <div class="fw-card-title">Formal Protocols for Specialty Resources</div>
+      <div class="fw-card-desc">Specialty equipment — technical rescue gear, hazmat equipment, mass casualty supplies — can often be shared through formal inter-agency agreements rather than purchased independently by each agency. The Captain who facilitates these agreements reduces capital requirements without reducing capability.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Community Partnerships</div>
+      <div class="fw-card-title">Co-Sponsor Programs</div>
+      <div class="fw-card-desc">Community organizations — faith groups, nonprofits, businesses — that co-sponsor fire prevention programs, smoke alarm installations, and community safety events reduce the department's direct program cost while often extending reach and effectiveness. Community relations and resource management are the same activity viewed from different angles.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Documentation for Next Cycle</div>
+      <div class="fw-card-title">Turn Constraints Into Future Justification</div>
+      <div class="fw-card-desc">Every instance of constraint — a training that was cut, a piece of equipment deferred, a program reduced — is data for next year's budget request. The Captain who documents the operational impact of this year's constraints is building the evidence base that makes next year's requests more compelling.</div>
+    </div>
+  </div>
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Operating vs Capital Budget Framework → Line-Item Management → Cost-Per-Call → BSC Financial Perspective</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the budget category → apply the framework → justify with data → close with Discipline</div></div></div></div>
+
+  <span class="sbar-label">Prioritization Hierarchy</span>
+  <div class="sbar-card"><strong>1st</strong>Life safety — PPE, SCBA, building systems. Non-negotiable.</div>
+  <div class="sbar-card"><strong>2nd</strong>Mission-critical — apparatus, essential equipment, minimum staffing.</div>
+  <div class="sbar-card"><strong>3rd</strong>Operational effectiveness — training, community programs.</div>
+  <div class="sbar-card"><strong>4th</strong>Convenience and enhancement — station improvements, additional equipment above minimums.</div>
+  <span class="sbar-label">Constraint = Leadership Test</span>
+  <div class="sbar-card">Respond with creative alternatives: mutual aid training · equipment sharing · community co-sponsorship · document impacts for next cycle.</div>
+  <span class="sbar-label">Transparency Under Constraint</span>
+  <div class="sbar-card">Communicate to crew (why priorities shifted) AND up the chain (what the operational impact actually is). Silence is not stewardship — it's abdication.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Managing Within Constraints</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"Describe your understanding of the prioritization discipline and how you would apply it in a real scenario."</div><div class="ob-note">Name the budget justification process: identify the need with data, quantify the cost and benefit, present it in the language decision-makers use. Show financial literacy.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 4 — Key Takeaways</div>
+  <div class="tk-item">The Prioritization Discipline — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">Creative Resource Management — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Budget Resource Management question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Operating vs Capital Budget Framework → Line-Item Management → Cost-Per-Call → BSC Financial Perspective</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the budget category → apply the framework → justify with data → close with Discipline</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Justifying Resources</button>
+  <div class="lnb-info"><div class="lnb-name">Managing Constraints</div><div class="lnb-num">Lesson 4 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Capital Planning →</button>
+</div>
+</div>
+
+<!-- LESSON 5 -->
+<div class="lesson-view" id="lesson-4">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 28 · Lesson 5 of 6</div>
+    <h1 class="lh-title">Capital Planning —<br><em>Apparatus, Equipment, and Infrastructure</em></h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 14 min</span><span class="lh-meta-item">🚒 Capital Improvement · Fleet Management</span></div>
+  </div>
+  <p>Capital planning is the process by which organizations plan and fund major purchases with multi-year useful lives. In the fire service, this means apparatus replacement, major equipment programs, and station maintenance and construction. The Captain who understands capital planning principles is better prepared to participate in the planning process, to justify capital requests, and to manage apparatus and equipment with an organizational financial perspective.</p>
+  <h2>Apparatus Replacement Planning</h2>
+  <p>Most well-managed fire departments maintain a formal apparatus replacement schedule — a multi-year plan that identifies when each piece of apparatus will reach end of useful life and needs replacement, and programs capital funding to match. The captain's contribution to this process is condition documentation: accurate, ongoing records of apparatus performance, maintenance history, and emerging reliability issues.</p>
+  <div class="acro-grid">
+    <div class="acro-row">
+      <div class="acro-letter">SVC</div>
+      <div class="acro-content">
+        <div class="acro-word">Know Your Apparatus Service Life Standards</div>
+        <div class="acro-desc">NFPA 1911 (Standard for the Inspection, Maintenance, Testing, and Retirement of In-Service Automotive Fire Apparatus) establishes guidance on apparatus service life and retirement criteria. Front-line apparatus is typically replaced at 10–15 years; reserve apparatus extends that life. The Captain who knows where their apparatus sits on this timeline can anticipate capital needs and document accordingly.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">DOC</div>
+      <div class="acro-content">
+        <div class="acro-word">Maintenance Documentation Is Capital Justification</div>
+        <div class="acro-desc">Every major repair, every reliability incident, every out-of-service event is data that supports the capital replacement request when it comes. Departments that can demonstrate a pattern of escalating maintenance costs and reliability issues for aging apparatus make a far more compelling capital request than those who simply cite apparatus age. The captain who documents maintenance history is building the capital case continuously.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">TCO</div>
+      <div class="acro-content">
+        <div class="acro-word">Total Cost of Ownership — The Full Financial Picture</div>
+        <div class="acro-desc">Capital requests for new apparatus are most compelling when they include total cost of ownership analysis: purchase price compared to projected maintenance savings, fuel efficiency improvements, reduced out-of-service time, and extended operational life. A new pumper at $650,000 that replaces one costing $85,000 annually in maintenance, losing 45 operational days per year to repairs, has a very different financial profile than its sticker price suggests.</div>
+      </div>
+    </div>
+  </div>
+  <h2>The Capital Improvement Program (CIP)</h2>
+  <p>Most municipalities use a formal Capital Improvement Program — a multi-year (typically 5–10 year) plan that identifies and schedules major capital investments across all departments. Fire departments compete for CIP funding alongside road improvements, park infrastructure, and facility renovations. The Captain who understands the CIP process — when requests are solicited, what criteria are used for prioritization, and how public safety capital competes with other infrastructure needs — is in a fundamentally better position to support effective advocacy than one who doesn't.</p>
+  <div class="callout callout-gold">
+    <span class="callout-label">The Captain's Capital Responsibility in Plain Terms</span>
+    <p>You are not expected to build the capital budget. You are expected to provide the raw material that makes a capital request defensible: accurate maintenance records, documented reliability incidents, honest condition assessments, and specific operational impact data when apparatus is unavailable. The battalion chief and chief officer translate that material into the capital request. Your job is to make sure the material is there, current, and honest. The captain who overstates condition to avoid the paperwork of a capital process, and the one who understates it to avoid scrutiny of their management, both fail this responsibility.</p>
+  </div>
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Operating vs Capital Budget Framework → Line-Item Management → Cost-Per-Call → BSC Financial Perspective</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the budget category → apply the framework → justify with data → close with Discipline</div></div></div></div>
+
+  <span class="sbar-label">Apparatus Replacement</span>
+  <div class="sbar-card"><strong>NFPA 1911</strong>Service life guidance. Front-line: 10–15 years. Know where yours sits.</div>
+  <div class="sbar-card"><strong>Maintenance as Evidence</strong>Every repair, out-of-service event, and reliability incident is capital justification data.</div>
+  <div class="sbar-card"><strong>Total Cost of Ownership</strong>Purchase price + maintenance savings + operational availability = the real financial case.</div>
+  <span class="sbar-label">CIP Process</span>
+  <div class="sbar-card">5–10 year multi-year capital plan. Fire competes with all city infrastructure. Know the timeline and the criteria.</div>
+  <span class="sbar-label">Your Actual Role</span>
+  <div class="sbar-card">Provide the raw material: accurate records, honest assessments, documented impacts. The chief builds the request. You make it defensible.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Capital Planning</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"Describe your understanding of apparatus replacement planning and how you would apply it in a real scenario."</div><div class="ob-note">Name the budget justification process: identify the need with data, quantify the cost and benefit, present it in the language decision-makers use. Show financial literacy.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 5 — Key Takeaways</div>
+  <div class="tk-item">Apparatus Replacement Planning — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">The Capital Improvement Program (CIP) — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Budget Resource Management question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Operating vs Capital Budget Framework → Line-Item Management → Cost-Per-Call → BSC Financial Perspective</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the budget category → apply the framework → justify with data → close with Discipline</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Managing Constraints</button>
+  <div class="lnb-info"><div class="lnb-name">Capital Planning</div><div class="lnb-num">Lesson 5 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: AC Application →</button>
+</div>
+</div>
+
+<!-- LESSON 6 -->
+<div class="lesson-view" id="lesson-5">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 28 · Lesson 6 of 6 · Assessment Application</div>
+    <h1 class="lh-title">Assessment Center Application —<br><em>Budget and Resource Scenarios</em></h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 14 min</span><span class="lh-meta-item">🎯 Scoring + Practice Scenarios</span></div>
+  </div>
+  <p>Budget and resource management questions appear most frequently in written exercises and in-basket items at Captain and above. They also surface in oral board questions about administrative responsibilities and in leadership philosophy questions about how you make decisions under constraint. The scoring framework is consistent: assessors look for stewardship mindset, data literacy, and organizational perspective — not personal advocacy.</p>
+  <h2>Practice Scenario — Budget Reduction</h2>
+  <div class="callout callout-navy">
+    <span class="callout-label">Written Exercise Prompt</span>
+    <p>"Your battalion chief has notified you that due to a mid-year revenue shortfall, each station is required to reduce its non-personnel operating expenditures by 15% for the remainder of the fiscal year. You manage a station with annual non-personnel operating budget of $48,000. You have 6 months remaining in the fiscal year. Describe how you would respond to this directive."</p>
+  </div>
+  <div class="score-compare">
+    <div class="sc-card miss">
+      <div class="sc-title">3/5 Response</div>
+      <div class="sc-body">"I would review my current budget and identify areas where we can cut spending. I would prioritize safety equipment and essential operations while reducing non-essential expenses. I would communicate this to my crew and ensure we stay within the reduced allocation. If the cuts impact our operations, I would notify my battalion chief."</div>
+    </div>
+    <div class="sc-card hit">
+      <div class="sc-title">5/5 Response</div>
+      <div class="sc-body">"The 15% reduction on a $48,000 budget with 6 months remaining represents approximately $3,600 in required savings against the remaining 6-month allocation of roughly $24,000.<br><br>My first step is a category-by-category review of remaining commitments against the prioritization hierarchy: life safety expenditures (PPE maintenance, SCBA service) are non-negotiable. Mission-critical items (apparatus maintenance already scheduled) are protected. I'm looking at training materials, community program costs, administrative supplies, and station improvement items for the reduction.<br><br>Based on this review I would likely achieve the required savings through: deferring the planned station supply reorder to next fiscal year ($800), reducing discretionary training materials in favor of department-provided resources ($1,200), pausing the community program supply budget and seeking partnership co-sponsorship for remaining events ($900), and eliminating the planned equipment enhancement that was a quality-of-life addition rather than a safety requirement ($700). Total: $3,600.<br><br>I would document each deferral and its operational rationale — both to justify the specific decisions and to build the case for restoring these items in the next cycle. I would brief my crew on what's changed and why, and I would document the operational impact of the deferred training materials for the next budget submission. The transparency with my crew about why priorities shifted protects trust; the documentation up the chain ensures administration has accurate information about what the cuts actually cost operationally."</div>
+    </div>
+  </div>
+  <div class="callout callout-gold">
+    <span class="callout-label">Chapter 28 Complete</span>
+    <p>Budget literacy is one of the clearest signals of organizational readiness at the senior officer level — because it requires thinking about resources from the organization's perspective rather than from the individual station's perspective. The Captain who can speak accurately about budget structure, process, justification, and constraint management is demonstrating the institutional knowledge that separates company officer candidates from senior officer candidates. You now have that foundation.</p>
+  </div>
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Operating vs Capital Budget Framework → Line-Item Management → Cost-Per-Call → BSC Financial Perspective</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the budget category → apply the framework → justify with data → close with Discipline</div></div></div></div>
+
+  <span class="sbar-label">What Assessors Score</span>
+  <div class="sbar-card">Stewardship mindset · data literacy · organizational perspective · specific and structured response · transparency and documentation discipline.</div>
+  <span class="sbar-label">3/5 vs 5/5 Pattern</span>
+  <div class="sbar-card">3/5: states general priorities and communication intent. 5/5: calculates the actual number, applies prioritization hierarchy to specific categories, names specific amounts, documents for future cycle, and addresses crew communication explicitly.</div>
+  <span class="sbar-label">The Frame That Wins</span>
+  <div class="sbar-card">"Stewardship, not advocacy." Requests framed as organizational stewardship survive budget review. Requests framed as departmental wants get cut first.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Assessment Center Application</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"You receive a scenario about budget resource management. Walk me through your complete response using the frameworks from this chapter."</div><div class="ob-note">Use LEAD: Label the bucket (Budget Resource Management), Engage the specific framework (reference Practice Scenario — Budget Reduction explicitly), Address the operational and organizational impact, Drive to a concrete first action with a timeline.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 6 — Key Takeaways</div>
+  <div class="tk-item">Practice Scenario — Budget Reduction — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Budget Resource Management question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Operating vs Capital Budget Framework → Line-Item Management → Cost-Per-Call → BSC Financial Perspective</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the budget category → apply the framework → justify with data → close with Discipline</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Capital Planning</button>
+  <div class="lnb-info"><div class="lnb-name">AC Application</div><div class="lnb-num">Lesson 6 of 6</div></div>
+  <button class="lnb-btn primary" onclick="window.scrollTo({top:0,behavior:'smooth'})">Module Complete ✓</button>
+</div>
+</div>
+
+</main>
+<script>
+let cur=0;
+const ls=document.querySelectorAll('.lesson-view');
+const ps=document.querySelectorAll('.nav-pill');
+const mbs=document.querySelectorAll('.mh-lesson-btn');
+function showLesson(n){ls.forEach(l=>l.classList.remove('active'));ps.forEach(p=>p.classList.remove('active'));mbs.forEach(m=>m.classList.remove('active'));if(ls[n])ls[n].classList.add('active');if(ps[n])ps[n].classList.add('active');if(mbs[n])mbs[n].classList.add('active');cur=n;window.scrollTo({top:0,behavior:'smooth'});document.getElementById('prog').style.width='0%';}
+function nextLesson(){if(cur<ls.length-1)showLesson(cur+1);}
+function prevLesson(){if(cur>0)showLesson(cur-1);}
+window.addEventListener('scroll',()=>{const s=document.documentElement.scrollTop;const h=document.documentElement.scrollHeight-window.innerHeight;if(h>0)document.getElementById('prog').style.width=Math.min(100,(s/h*100))+'%';});
+document.addEventListener('DOMContentLoaded',()=>showLesson(0));
+
+function lfNext(el,stepNum){
+  var wrap=el.closest('.lf-wrap');
+  if(!wrap)return;
+  var steps=wrap.querySelectorAll('.lf-step');
+  var dots=wrap.querySelectorAll('.lf-dot');
+  steps.forEach(function(s,i){s.classList.remove('active');if(i<stepNum)s.classList.add('done');});
+  dots.forEach(function(d,i){d.classList.remove('active');if(i<stepNum)d.classList.add('done');if(i===stepNum)d.classList.add('active');});
+  if(steps[stepNum])steps[stepNum].classList.add('active');
+}
+</script>
+<script>function toggleFT(el){var sw=el.querySelector('.ft-toggle-switch');var desc=el.querySelector('.ft-toggle-desc');var mains=document.querySelectorAll('.lesson-main');sw.classList.toggle('on');var on=sw.classList.contains('on');desc.textContent=on?'Frameworks + OB cards only':'Full lesson content';mains.forEach(function(m){m.classList.toggle('ft-on',on);});}</script>
+</body>
+</html>

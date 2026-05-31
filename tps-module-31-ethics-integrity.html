@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Chapter 30 — Ethics + Integrity | The Promotional Standard</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Crimson+Pro:wght@300;400;500;600&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{--navy:#0C2340;--navy2:#1A3A5C;--gold:#C9A84C;--gold2:#F5F0E8;--gold3:#6B4F10;--cream:#F5F0E8;--offwhite:#F5F0E8;--light:#EAE5DC;--mid:#2A3D50;--gray:#8FA8C0;--red:#B22222;--red-light:#FFF0F0;--green:#1A5C3A;--green-light:#EAF3DE;--teal:#006B6B;--teal-light:#E0F4F4;--purple:#4A2570;--purple-light:#F0EAF8;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:var(--navy);font-size:18px;line-height:1.8;}
+.top-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(12,35,64,0.98);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,168,76,0.2);height:64px;display:flex;align-items:center;padding:0 2rem;gap:1rem;}
+.nav-left{display:flex;align-items:center;gap:12px;flex:1;}
+.nav-brand{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;color:var(--cream);line-height:1.3;}
+.nav-brand span{display:block;font-size:8px;color:var(--gold);letter-spacing:2px;}
+.nav-pills{display:flex;gap:5px;flex:2;justify-content:center;overflow-x:auto;}
+.nav-pill{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#8FA8C0;padding:6px 11px;border-radius:20px;cursor:pointer;transition:all 0.2s;border:none;background:transparent;white-space:nowrap;}
+.nav-pill:hover{color:var(--cream);background:rgba(255,255,255,0.05);}
+.nav-pill.active{color:var(--gold);background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.25);}
+.progress-bar{position:fixed;top:64px;left:0;height:3px;background:linear-gradient(90deg,var(--navy2),var(--gold));z-index:199;width:0%;transition:width 0.3s;}
+.lesson-view{display:none;}.lesson-view.active{display:block;}
+.module-hero{background:var(--navy);padding:4.5rem 3rem 3.5rem;margin-top:64px;position:relative;overflow:hidden;border-bottom:3px solid var(--gold);}
+.module-hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 60px,rgba(201,168,76,0.015) 60px,rgba(201,168,76,0.015) 61px);}
+.module-hero::after{content:'';position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(180deg,var(--navy2),var(--gold));}
+.mh-inner{max-width:900px;position:relative;z-index:2;}
+.mh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.mh-title{font-family:'EB Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:800;color:var(--cream);line-height:1.1;margin-bottom:0.75rem;}
+.mh-title em{font-style:italic;color:var(--gold);}
+.mh-sub{font-size:1.05rem;color:#8FA8C0;max-width:700px;line-height:1.7;margin-bottom:2rem;}
+.mh-badges{display:flex;gap:10px;margin-bottom:1.5rem;flex-wrap:wrap;}
+.mh-badge{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border-radius:3px;}
+.badge-bc{background:rgba(139,50,22,0.12);color:#C06030;border:1px solid rgba(139,50,22,0.25);}
+.badge-nfpa{background:rgba(100,160,220,0.15);color:#8FA8C0;border:1px solid rgba(100,160,220,0.3);}
+.mh-thread{background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);border-left:3px solid var(--gold);padding:1rem 1.5rem;margin-bottom:2rem;max-width:700px;}
+.mh-thread-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+.mh-thread-text{font-size:0.92rem;color:var(--cream);line-height:1.65;}
+.mh-lesson-nav{display:flex;gap:8px;flex-wrap:wrap;}
+.mh-lesson-btn{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:8px 14px;border-radius:6px;cursor:pointer;transition:all 0.2s;border:1px solid rgba(201,168,76,0.25);background:transparent;color:#8FA8C0;}
+.mh-lesson-btn:hover{background:rgba(255,255,255,0.05);color:var(--cream);}
+.mh-lesson-btn.active{background:rgba(201,168,76,0.12);color:var(--gold);border-color:rgba(201,168,76,0.4);}
+.lesson-container{display:grid;grid-template-columns:1fr 310px;gap:0;}
+.lesson-main{padding:3rem 3.5rem;border-right:1px solid var(--light);}
+.lesson-sidebar{padding:2rem 1.75rem;background:var(--offwhite);position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;}
+.lesson-header{margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:2px solid var(--light);}
+.lh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold3);margin-bottom:0.6rem;}
+.lh-title{font-family:'EB Garamond',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;color:var(--navy);line-height:1.15;margin-bottom:0.6rem;}
+.lh-title em{font-style:italic;color:var(--gold);}
+.lh-meta{display:flex;gap:1.5rem;flex-wrap:wrap;}
+.lh-meta-item{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);}
+.lesson-main h2{font-family:'EB Garamond',serif;font-size:1.7rem;font-weight:700;color:var(--navy);margin:3rem 0 0.9rem;padding-bottom:0.5rem;border-bottom:2px solid var(--light);}
+.lesson-main h3{font-family:'EB Garamond',serif;font-size:1.25rem;font-weight:600;color:var(--navy);margin:2.25rem 0 0.65rem;}
+.lesson-main p{margin-bottom:1.25rem;color:#2A3D50;line-height:1.82;}
+.lesson-main ul,.lesson-main ol{margin:0 0 1.25rem 1.5rem;color:#2A3D50;}
+.lesson-main li{margin-bottom:0.6rem;line-height:1.72;}
+.lesson-main strong{color:var(--navy);font-weight:600;}
+.callout{padding:1.4rem 1.6rem;margin:2rem 0;}
+.callout-gold{background:var(--gold2);border-left:3px solid var(--gold);}.callout-gold p{color:var(--gold3);font-size:0.97rem;line-height:1.75;}
+.callout-navy{background:var(--navy);border-left:3px solid var(--gold);}.callout-navy p{color:#8FA8C0;font-size:0.95rem;line-height:1.75;}
+.callout-red{background:var(--red-light);border-left:4px solid var(--red);}.callout-red p{color:#6B4F10;font-size:0.97rem;line-height:1.75;}
+.callout-green{background:var(--green-light);border-left:4px solid var(--green);}.callout-green p{color:#1A3A5C;font-size:0.97rem;line-height:1.75;}
+.callout-purple{background:var(--purple-light);border-left:4px solid var(--purple);}.callout-purple p{color:#2A0A40;font-size:0.97rem;line-height:1.75;}
+.callout-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:0.5rem;display:block;}
+.callout-gold .callout-label{color:var(--gold3);}.callout-navy .callout-label{color:var(--gold);}.callout-red .callout-label{color:var(--red);}.callout-green .callout-label{color:var(--green);}.callout-purple .callout-label{color:var(--purple);}
+.framework-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.fw-card{background:white;border:1px solid #EAE5DC;padding:1.25rem;border-radius:8px;}
+.fw-card-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:6px;}
+.fw-card-title{font-family:'EB Garamond',serif;font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.fw-card-desc{font-size:0.9rem;color:var(--mid);line-height:1.6;}
+.acro-grid{display:flex;flex-direction:column;gap:0;margin:1.5rem 0;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;}
+.acro-row{display:grid;grid-template-columns:52px 1fr;gap:0;border-bottom:1px solid #EAE5DC;}
+.acro-row:last-child{border-bottom:none;}
+.acro-letter{background:var(--navy);color:var(--gold);font-family:'EB Garamond',serif;font-size:1.8rem;font-weight:800;display:flex;align-items:center;justify-content:center;}
+.acro-content{padding:0.9rem 1.1rem;background:white;}
+.acro-word{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:3px;}
+.acro-desc{font-size:0.85rem;color:var(--mid);line-height:1.55;}
+.sbar-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold3);margin-bottom:0.65rem;margin-top:1.5rem;display:block;}
+.sbar-label:first-child{margin-top:0;}
+.sbar-card{background:white;border:1px solid #EAE5DC;border-radius:8px;padding:0.9rem 1rem;margin-bottom:8px;font-size:0.9rem;color:var(--mid);line-height:1.55;}
+.sbar-card strong{color:var(--navy);display:block;margin-bottom:3px;font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;}
+.ethics-framework{display:flex;flex-direction:column;gap:0;margin:1.5rem 0;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;}
+.ef-row{display:grid;grid-template-columns:120px 1fr;border-bottom:1px solid var(--light);}
+.ef-row:last-child{border-bottom:none;}
+.ef-name{padding:1.1rem;display:flex;align-items:center;justify-content:center;text-align:center;}
+.ef-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;line-height:1.4;}
+.ef-body{padding:0.95rem 1.1rem;background:white;}
+.ef-thinker{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold3);margin-bottom:3px;}
+.ef-principle{font-size:0.9rem;font-weight:600;color:var(--navy);margin-bottom:4px;}
+.ef-fire{font-size:0.83rem;color:var(--mid);line-height:1.55;}
+.ef-fire em{color:var(--teal);font-style:italic;}
+.score-compare{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.sc-card{padding:1.25rem;border-radius:8px;}
+.sc-card.miss{background:var(--red-light);border:1px solid #F0C0C0;}
+.sc-card.hit{background:var(--green-light);border:1px solid #9DCCA8;}
+.sc-title{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:0.75rem;}
+.sc-card.miss .sc-title{color:var(--red);}.sc-card.hit .sc-title{color:var(--green);}
+.sc-body{font-size:0.87rem;line-height:1.6;}
+.sc-card.miss .sc-body{color:#6B4F10;}.sc-card.hit .sc-body{color:#1A3A5C;}
+.slippery-steps{display:flex;flex-direction:column;gap:0;margin:1.5rem 0;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;}
+.ss-step{display:grid;grid-template-columns:44px 1fr;border-bottom:1px solid var(--light);}
+.ss-step:last-child{border-bottom:none;}
+.ss-num{color:var(--gold);font-family:'EB Garamond',serif;font-size:1.4rem;font-weight:800;display:flex;align-items:center;justify-content:center;}
+.ss-body{padding:0.85rem 1.1rem;background:white;}
+.ss-title{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:3px;}
+.ss-desc{font-size:0.85rem;color:var(--mid);line-height:1.55;}
+.ss-step:nth-child(1) .ss-num{background:#F5F5F0;}
+.ss-step:nth-child(2) .ss-num{background:#F0EDE0;}
+.ss-step:nth-child(3) .ss-num{background:#EDE5CE;}
+.ss-step:nth-child(4) .ss-num{background:#E8D8B0;}
+.ss-step:nth-child(5) .ss-num{background:#E0C080;}
+.ss-step:nth-child(6) .ss-num{background:var(--red-light);}
+.lesson-nav-bar{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 3rem;border-top:3px solid var(--gold);background:var(--navy);gap:1rem;}
+.lnb-btn{background:rgba(255,255,255,0.08);border:2px solid rgba(201,168,76,0.4);padding:14px 28px;font-family:'Cinzel',serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border-radius:6px;color:var(--cream);transition:all 0.2s;white-space:nowrap;}
+.lnb-btn:hover{background:rgba(201,168,76,0.15);border-color:var(--gold);color:var(--gold);}
+.lnb-btn:disabled,.lnb-btn[disabled]{opacity:0.25;cursor:not-allowed;background:transparent;}
+.lnb-btn:disabled:hover,.lnb-btn[disabled]:hover{background:transparent;border-color:rgba(201,168,76,0.4);color:var(--cream);}
+.lnb-btn.primary{background:var(--gold);color:var(--navy);border-color:var(--gold);font-weight:800;}
+.lnb-btn.primary:hover{background:#C9A84C;border-color:#C9A84C;}
+.lnb-info{text-align:center;flex:1;}
+.lnb-name{font-family:'EB Garamond',serif;font-size:1rem;font-weight:700;color:var(--cream);}
+.lnb-num{font-size:0.85rem;color:var(--gold);font-family:'Cinzel',serif;letter-spacing:1px;}
+@media(max-width:900px){.lesson-container{grid-template-columns:1fr;}.lesson-sidebar{position:relative;height:auto;}.lesson-main{padding:2rem 1.5rem;}.lesson-nav-bar{padding:1rem 1.5rem;flex-wrap:wrap;}.framework-grid,.score-compare{grid-template-columns:1fr;}.nav-pills{display:none;}}
+
+/* OB CARD */
+.ob-card{background:var(--navy);margin:2rem 0;overflow:hidden;}
+.ob-header{padding:0.85rem 1.5rem;background:rgba(201,168,76,0.08);border-bottom:1px solid rgba(201,168,76,0.15);}
+.ob-label{font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);}
+.ob-body{padding:1.25rem 1.5rem;}
+.ob-q{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;}
+.ob-q-tag{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);background:rgba(201,168,76,0.1);padding:4px 10px;border-radius:3px;white-space:nowrap;}
+.ob-q-text{font-family:'EB Garamond',serif;font-size:1.08rem;font-weight:600;color:var(--cream);line-height:1.5;margin-bottom:8px;}
+.ob-note{font-size:0.88rem;color:#8FA8C0;line-height:1.6;font-style:italic;}
+/* TAKEAWAYS */
+.takeaways{background:var(--navy);padding:2.25rem;margin:3rem 0 0;border-top:3px solid var(--gold);}
+.tk-lbl{font-family:'Cinzel',serif;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.tk-item{color:#8FA8C0;font-size:0.92rem;line-height:1.7;padding:0.5rem 0 0.5rem 1.25rem;border-left:2px solid rgba(201,168,76,0.2);margin-bottom:0.5rem;}
+
+
+.lead-nav{background:var(--navy);border-radius:8px;padding:14px 16px;margin-bottom:16px;border:1px solid rgba(201,168,76,0.2)}
+.lead-nav-header{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.lead-nav-row{display:grid;grid-template-columns:20px 1fr;gap:6px;margin-bottom:6px;align-items:start}
+.lead-nav-letter{font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:var(--gold)}
+.lead-nav-content{}
+.lead-nav-name{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:2px}
+.lead-nav-app{font-size:11px;color:#8FA8C0;line-height:1.5}
+
+.lf-wrap{margin:2.5rem 0 1.5rem;border:2px solid var(--gold);border-radius:10px;overflow:hidden}
+.lf-header{background:var(--navy);padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
+.lf-title{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+.lf-dots{display:flex;gap:6px}
+.lf-dot{width:8px;height:8px;border-radius:50%;background:rgba(201,168,76,0.25);transition:all 0.3s}
+.lf-dot.active{background:var(--gold);transform:scale(1.3)}
+.lf-dot.done{background:var(--gold)}
+.lf-step{display:none;padding:20px}
+.lf-step.active{display:block}
+.lf-step-num{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:6px}
+.lf-step-title{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:10px}
+.lf-chain{background:var(--navy);border-radius:6px;padding:14px 18px;margin:10px 0}
+.lf-chain-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.lf-chain-text{font-size:13px;color:#8FA8C0;line-height:1.6}
+.lf-chain-close{font-size:12px;color:var(--cream);margin-top:6px;font-style:italic}
+.lf-btn{background:var(--navy);color:var(--gold);border:2px solid var(--gold);padding:12px 24px;border-radius:6px;font-family:'Cinzel',serif;font-size:12px;letter-spacing:1.5px;font-weight:600;cursor:pointer;margin-top:12px;transition:all 0.2s;display:inline-block}
+.lf-btn:hover{background:var(--gold);color:var(--navy)}
+.lf-timer{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:var(--gold);padding:6px 14px;border-radius:4px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:1px;margin-top:10px}
+.lesson-main.ft>p{display:none!important}.lesson-main.ft>.callout{display:none!important}.ft-toggle{display:flex;align-items:center;gap:10px;padding:10px 16px;background:var(--navy);border-radius:6px;cursor:pointer;border:1px solid rgba(201,168,76,0.25)}.ft-toggle-switch{width:36px;height:20px;background:rgba(201,168,76,0.2);border-radius:10px;position:relative;transition:background .2s}.ft-toggle-switch.on{background:var(--gold)}.ft-toggle-knob{width:14px;height:14px;background:#fff;border-radius:50%;position:absolute;top:3px;left:3px;transition:left .2s}.ft-toggle-switch.on .ft-toggle-knob{left:19px}.ft-toggle-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}.ft-toggle-desc{font-size:11px;color:var(--mid)}.lesson-main.ft-on>p,.lesson-main.ft-on>.callout,.lesson-main.ft-on h3{display:none!important}.lesson-main.ft-on .ob-card,.lesson-main.ft-on .lf-wrap,.lesson-main.ft-on .lead-nav,.lesson-main.ft-on h2{display:block!important}
+</style>
+</head>
+<body>
+<nav class="top-nav">
+  <div class="nav-left"><div class="nav-brand">The Promotional Standard<span>BC/AC Track · Chapter 30</span></div></div>
+  <div class="nav-pills">
+    <button class="nav-pill active" onclick="showLesson(0)">Why Ethics Is Tested</button>
+    <button class="nav-pill" onclick="showLesson(1)">Ethical Frameworks</button>
+    <button class="nav-pill" onclick="showLesson(2)">Decisions Under Pressure</button>
+    <button class="nav-pill" onclick="showLesson(3)">Organizational Ethics</button>
+    <button class="nav-pill" onclick="showLesson(4)">Failures That End Careers</button>
+    <button class="nav-pill" onclick="showLesson(5)">AC Application</button>
+  </div>
+</nav>
+<div class="progress-bar" id="prog"></div>
+<div class="module-hero">
+  <div class="mh-inner">
+    <div class="mh-eyebrow">Chapter 30 · BC/AC Track · Fire Officer III–IV</div>
+    <h1 class="mh-title">Ethics + Integrity<br><em>The Non-Negotiable Foundation</em></h1>
+    <p class="mh-sub">Why ethics is assessed so heavily at senior levels, the three ethical frameworks that structure rigorous moral reasoning, decision-making under competing pressures, organizational ethics and the duty to act, the specific patterns that end senior careers — and how to demonstrate integrated ethical reasoning in every assessment center format. The complete ethics curriculum for Battalion Chief and above.</p>
+    <div class="mh-badges">
+      <span class="mh-badge badge-bc">BC / AC Track</span>
+      <span class="mh-badge badge-nfpa">NFPA 1021 · FO III–IV</span>
+    </div>
+    <div class="mh-thread">
+      <div class="mh-thread-label">Before You Begin</div>
+      <div class="mh-thread-text">Ethics questions at BC and above are not asking whether you know that lying is wrong. They are asking whether you have the moral reasoning capacity to navigate genuinely difficult situations — where legitimate values conflict, where organizational pressure pushes toward compromise, and where the easy answer is wrong. That capacity is what this module is designed to build. It cannot be faked on assessment day — which is why it has to be developed before assessment day.</div>
+    </div>
+    <div class="mh-lesson-nav">
+      <button class="mh-lesson-btn active" onclick="showLesson(0)">1. Why Ethics Is Tested</button>
+      <button class="mh-lesson-btn" onclick="showLesson(1)">2. Ethical Frameworks</button>
+      <button class="mh-lesson-btn" onclick="showLesson(2)">3. Decisions Under Pressure</button>
+      <button class="mh-lesson-btn" onclick="showLesson(3)">4. Organizational Ethics</button>
+      <button class="mh-lesson-btn" onclick="showLesson(4)">5. Failures That End Careers</button>
+      <button class="mh-lesson-btn" onclick="showLesson(5)">6. AC Application</button>
+    </div>
+  </div>
+</div>
+<main>
+
+<!-- LESSON 1 -->
+<div class="lesson-view active" id="lesson-0">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 30 · Lesson 1 of 6</div>
+    <h1 class="lh-title">Why Ethics Is Tested<br><em>at Every Senior Level</em></h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 14 min</span><span class="lh-meta-item">⚖️ Foundation + Stakes</span></div>
+  </div>
+  <p>Ethics is not assessed at senior levels because assessors expect senior candidates to be morally superior to junior ones. It is assessed because the <em>stakes</em> of ethical failure scale with rank — and because organizational ethics culture is determined almost entirely by what senior leaders model, tolerate, and respond to.</p>
+  <h2>The Three Reasons Ethics Is Assessed at BC and Above</h2>
+  <div class="acro-grid">
+    <div class="acro-row">
+      <div class="acro-letter">STK</div>
+      <div class="acro-content">
+        <div class="acro-word">The Stakes Scale with Rank</div>
+        <div class="acro-desc">A firefighter who behaves unethically creates a local problem. A Lieutenant who behaves unethically creates a crew problem and a supervision liability. A Battalion Chief who behaves unethically creates a department problem and a public trust crisis. A Fire Chief whose ethics fail creates an organizational catastrophe — budget investigations, loss of accreditation, civil litigation, community confidence collapse. The higher the rank, the more the individual's ethical integrity IS the organization's ethical integrity.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">MOD</div>
+      <div class="acro-content">
+        <div class="acro-word">Senior Leaders Set the Ethical Culture</div>
+        <div class="acro-desc">Organizational ethics culture is not set by policy — it is set by what senior leaders do when no one is watching, what they tolerate when something happens, and what they model in their daily conduct. The battalion chief who looks the other way when a captain cuts corners is establishing that cutting corners is permissible in this battalion. The deputy chief who promotes based on relationships rather than merit is establishing that merit is not the actual standard here. Senior leaders cannot set a "do as I say, not as I do" ethical standard — the organization takes its cues from observed behavior, not stated policy.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">NAV</div>
+      <div class="acro-content">
+        <div class="acro-word">Senior Problems Are Genuinely Hard</div>
+        <div class="acro-desc">Junior officers mostly face situations where the ethical path is clear — they just need the courage to take it. Senior officers face situations where legitimate values genuinely conflict: loyalty to a colleague vs honesty with administration, organizational welfare vs individual member welfare, short-term operational need vs long-term integrity. These are not obvious situations. Navigating them requires actual ethical reasoning capacity — not just good intentions — which is why senior assessments probe it so consistently and so deeply.</div>
+      </div>
+    </div>
+  </div>
+  <h2>Integrity as Identity — The T·C·H·O·E·D·S Foundation</h2>
+  <p>The Transparency and Courage elements of T·C·H·O·E·D·S are the two ethics-specific leadership qualities. Transparency in this context means not just avoiding deception but actively providing the information that people who depend on you need to make good decisions — even when that information is uncomfortable, politically inconvenient, or personally costly. Courage means acting on your ethical assessment when pressure, relationships, or self-interest pull in the other direction.</p>
+  <div class="callout callout-gold">
+    <span class="callout-label">The Assessment Center Truth About Ethics</span>
+    <p>Ethics questions at senior levels are not testing knowledge of ethical definitions. They are testing whether you have the moral reasoning capacity to recognize an ethical problem when it doesn't present itself neatly as "right vs wrong," whether you have the courage to act on your assessment, and whether your stated values match your behavioral responses under pressure. A candidate who knows all the right vocabulary but whose scenario responses reveal a willingness to rationalize compromise scores poorly on ethics regardless of what they say their values are. The assessors are watching what you do, not what you say you believe.</p>
+  </div>
+</div>
+<div class="lesson-sidebar">
+<div class="ft-toggle" onclick="toggleFT(this)" style="margin-bottom:16px;max-width:320px">
+<div class="ft-toggle-switch"><div class="ft-toggle-knob"></div></div>
+<div><div class="ft-toggle-label">Fast Track Mode</div><div class="ft-toggle-desc">Full lesson content</div></div>
+</div>
+
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Ethics & Integrity</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Ethical Decision Framework → Courage Test → T·C·H·O·E·D·S → Just Culture</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Name the ethical dimension → apply the decision framework → demonstrate moral courage → close with Trustworthiness</div></div></div></div>
+
+  <span class="sbar-label">Why Ethics Scales with Rank</span>
+  <div class="sbar-card"><strong>Stakes</strong>FF ethical failure = local problem. BC ethical failure = department crisis. Chief ethical failure = organizational catastrophe.</div>
+  <div class="sbar-card"><strong>Culture</strong>Senior leaders set ethics culture by what they model, tolerate, and respond to — not by what policy says.</div>
+  <div class="sbar-card"><strong>Difficulty</strong>Junior problems: right path is clear. Senior problems: legitimate values conflict. Actual reasoning required.</div>
+  <span class="sbar-label">T·C·H·O·E·D·S Links</span>
+  <div class="sbar-card"><strong>Transparency</strong>Provide information people need even when uncomfortable or costly.</div>
+  <div class="sbar-card"><strong>Courage</strong>Act on your ethical assessment when pressure pulls the other way.</div>
+  <span class="sbar-label">The AC Truth</span>
+  <div class="sbar-card">Assessors watch what you do in scenarios, not what you say you believe. Vocabulary without behavioral courage scores poorly every time.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Why Ethics Is Tested at Every Senior Level</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"Describe your understanding of the three reasons ethics is assessed at bc and abo and how you would apply it in a real scenario."</div><div class="ob-note">Apply the ethical decision framework: identify the pressure (loyalty), name the standard (documentation integrity), choose the standard, document and protect. Courage when it costs something.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 1 — Key Takeaways</div>
+  <div class="tk-item">The Three Reasons Ethics Is Assessed at BC and Above — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">Integrity as Identity — The T·C·H·O·E·D·S Foundation — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Ethics Integrity question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Ethics & Integrity</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Ethical Decision Framework → Courage Test → T·C·H·O·E·D·S → Just Culture</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Name the ethical dimension → apply the decision framework → demonstrate moral courage → close with Trustworthiness</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" disabled>← Previous</button>
+  <div class="lnb-info"><div class="lnb-name">Why Ethics Is Tested</div><div class="lnb-num">Lesson 1 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Ethical Frameworks →</button>
+</div>
+</div>
+
+<!-- LESSON 2 -->
+<div class="lesson-view" id="lesson-1">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 30 · Lesson 2 of 6</div>
+    <h1 class="lh-title">Ethical Frameworks —<br><em>The Tools of Rigorous Moral Reasoning</em></h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 18 min</span><span class="lh-meta-item">🏛️ Deontology · Consequentialism · Virtue Ethics</span></div>
+  </div>
+  <p>Ethical frameworks are systematic approaches to moral reasoning — tools for analyzing what is right and why. The senior officer who has only one framework misses moral complexity that a single lens can't capture. The one who can apply multiple frameworks, identify where they agree and where they diverge, and reason through that divergence is demonstrating exactly the ethical sophistication that BC and above assessments are designed to find.</p>
+  <h2>The Three Primary Frameworks</h2>
+  <div class="ethics-framework">
+    <div class="ef-row">
+      <div class="ef-name" style="background:#0C2340;"><div class="ef-label" style="color:var(--gold);">Deontological Ethics</div></div>
+      <div class="ef-body">
+        <div class="ef-thinker">Kant · Rules · Duties · Rights</div>
+        <div class="ef-principle">Some actions are inherently right or wrong regardless of consequences.</div>
+        <div class="ef-fire">The deontological framework asks: what is my duty here? What rules and principles apply regardless of outcome? What rights of others must be respected? In fire service ethics, deontological reasoning underlies obligations like: I must tell the truth even when the truth is costly. I must treat all personnel consistently regardless of who they are. I must report misconduct even when reporting is organizationally inconvenient. <em>The strength: clarity and consistency. The limitation: can produce results that seem clearly harmful when rigidly applied. "The rule is the rule" sometimes produces wrong outcomes.</em></div>
+      </div>
+    </div>
+    <div class="ef-row">
+      <div class="ef-name" style="background:#1A3A5C;"><div class="ef-label" style="color:var(--gold);">Consequentialist Ethics</div></div>
+      <div class="ef-body">
+        <div class="ef-thinker">Mill · Bentham · Outcomes · Greatest Good</div>
+        <div class="ef-principle">The right action is the one that produces the best outcomes for the most people.</div>
+        <div class="ef-fire">Consequentialist reasoning asks: what are the likely consequences of each available action? Who is affected and how? Which choice produces the most good or least harm in aggregate? In fire service ethics, consequentialist reasoning underlies resource allocation decisions, risk-benefit calculations in tactical operations, and policy choices that trade individual costs for collective benefit. <em>The strength: practical, outcome-focused, responsive to real-world complexity. The limitation: can justify harmful actions toward individuals when the aggregate math seems to work out — a dangerous pattern in personnel decisions and public trust situations.</em></div>
+      </div>
+    </div>
+    <div class="ef-row">
+      <div class="ef-name" style="background:#3A1A60;"><div class="ef-label" style="color:var(--gold);">Virtue Ethics</div></div>
+      <div class="ef-body">
+        <div class="ef-thinker">Aristotle · Character · Who You Are</div>
+        <div class="ef-principle">The right action is what a person of excellent character would do in this situation.</div>
+        <div class="ef-fire">Virtue ethics asks not "what rule applies?" or "what outcome maximizes good?" but "what would a person of integrity do here?" It focuses on character rather than compliance — on who you are becoming through your choices rather than whether you are following the rules. In fire service ethics, T·C·H·O·E·D·S is fundamentally a virtue ethics framework: it defines the character qualities that constitute leadership excellence, not just the rules that govern leadership behavior. <em>The strength: captures the integrated, habitual nature of ethical leadership that rules-based frameworks miss. The limitation: requires genuine development of character — cannot be reduced to a formula.</em></div>
+      </div>
+    </div>
+  </div>
+  <h2>Using All Three — The Multi-Framework Approach</h2>
+  <p>The senior officer who applies multiple frameworks to an ethical decision is doing something assessors recognize immediately as sophisticated moral reasoning. The approach: first identify what each framework recommends, then identify where they agree (high confidence that course of action is right), where they diverge (genuine moral complexity requiring judgment), and what you would do given that analysis.</p>
+  <div class="callout callout-gold">
+    <span class="callout-label">The Multi-Framework Signal Line</span>
+    <p>"My deontological obligation is clear — I have a duty to report what I observed. The consequentialist analysis is more complex — there are real organizational costs to this report that I have to weigh honestly. But when I ask the virtue ethics question — what would a person of genuine integrity do? — the answer is not ambiguous. I report, and I accept the organizational costs that come with it." That is a 5/5 ethics reasoning response. It demonstrates familiarity with the frameworks, honest engagement with the complexity, and resolution through character rather than rationalization.</p>
+  </div>
+  <h2>Ethical Relativism — The Framework to Reject</h2>
+  <p>The view that ethical standards are merely cultural conventions with no objective validity — that what is "right" is simply what a particular group agrees on — is not a legitimate ethical framework for senior leadership. It provides no basis for standing against organizational misconduct, no foundation for refusing clearly unethical directives, and no grounding for the moral courage that senior leadership requires. Assessors who encounter relativistic reasoning in ethics responses — "well, it depends on your perspective" as a final answer — do not score it well.</p>
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Ethics & Integrity</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Ethical Decision Framework → Courage Test → T·C·H·O·E·D·S → Just Culture</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Name the ethical dimension → apply the decision framework → demonstrate moral courage → close with Trustworthiness</div></div></div></div>
+
+  <span class="sbar-label">Three Frameworks</span>
+  <div class="sbar-card"><strong>Deontological</strong>Duties and rules. Some actions inherently right/wrong regardless of outcomes. Risk: rigid application produces bad results.</div>
+  <div class="sbar-card"><strong>Consequentialist</strong>Best outcomes for most people. Practical and responsive. Risk: justifies harm to individuals for aggregate benefit.</div>
+  <div class="sbar-card"><strong>Virtue Ethics</strong>What would a person of excellent character do? T·C·H·O·E·D·S is fundamentally this framework. Risk: requires genuine character development, not formula.</div>
+  <span class="sbar-label">Multi-Framework Signal</span>
+  <div class="sbar-card">Where all three agree: high confidence. Where they diverge: genuine complexity. Resolve through virtue, not rationalization. This is 5/5 reasoning.</div>
+  <span class="sbar-label">Reject</span>
+  <div class="sbar-card">Ethical relativism — "it depends on your perspective" — as a final answer. No foundation for moral courage. Assessors score it poorly.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Ethical Frameworks</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"Describe your understanding of the three primary frameworks and how you would apply it in a real scenario."</div><div class="ob-note">Apply the ethical decision framework: identify the pressure (loyalty), name the standard (documentation integrity), choose the standard, document and protect. Courage when it costs something.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 2 — Key Takeaways</div>
+  <div class="tk-item">The Three Primary Frameworks — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">Using All Three — The Multi-Framework Approach — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Ethics Integrity question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Ethics & Integrity</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Ethical Decision Framework → Courage Test → T·C·H·O·E·D·S → Just Culture</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Name the ethical dimension → apply the decision framework → demonstrate moral courage → close with Trustworthiness</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Why Ethics Is Tested</button>
+  <div class="lnb-info"><div class="lnb-name">Ethical Frameworks</div><div class="lnb-num">Lesson 2 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Decisions Under Pressure →</button>
+</div>
+</div>
+
+<!-- LESSON 3 -->
+<div class="lesson-view" id="lesson-2">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 30 · Lesson 3 of 6</div>
+    <h1 class="lh-title">Ethical Decisions Under Pressure —<br><em>When Values Conflict and Stakes Are Real</em></h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 16 min</span><span class="lh-meta-item">⚡ Competing Values · Pressure · Rationalization</span></div>
+  </div>
+  <p>Most ethical failures in senior leadership are not the result of people with bad values making obvious bad choices. They are the result of people with good values making choices that seemed justified in the moment — through rationalization, through the accumulated weight of competing pressures, or through gradual erosion of standards that happened so incrementally that no single step felt like a significant departure. Understanding how this happens is as important as knowing what the right values are.</p>
+  <h2>The Four Competing Pressure Pairs</h2>
+  <p>Senior officer ethical decisions most often involve genuine tension between competing legitimate values. These are not right vs wrong — they are right vs right situations where both values have legitimate claims:</p>
+  <div class="framework-grid">
+    <div class="fw-card">
+      <div class="fw-card-label">Loyalty vs Honesty</div>
+      <div class="fw-card-title">The Most Common Senior Conflict</div>
+      <div class="fw-card-desc">A colleague, a subordinate, or a superior who has made an ethical error. Loyalty says protect them. Honesty and organizational integrity say report accurately. The senior officer who always defaults to loyalty is protecting individuals at the organization's expense. The one who can hold both values — genuine loyalty expressed through honest accountability rather than protective silence — is demonstrating mature ethical reasoning.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Organizational Welfare vs Individual Welfare</div>
+      <div class="fw-card-title">When Organizational Interest Conflicts with Member Interest</div>
+      <div class="fw-card-desc">A performance action that is right for the organization's standards but costly for an individual member's career. A policy that serves the public well but disadvantages specific personnel. A disclosure that protects community trust but harms a department's reputation. These tensions are real and common at BC and above. Neither value can be dismissed — both must be engaged honestly.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Short-Term vs Long-Term</div>
+      <div class="fw-card-title">Expedience vs Integrity</div>
+      <div class="fw-card-desc">The action that resolves a problem quickly (suppress the information, handle it internally, defer the difficult decision) vs the action that sustains long-term organizational integrity (report accurately, address publicly, make the difficult decision now). Short-term expedience almost always looks more attractive in the moment. The senior officer who consistently chooses short-term resolution is accumulating a long-term integrity debt that eventually comes due.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Following Orders vs Personal Ethics</div>
+      <div class="fw-card-title">The Hardest One</div>
+      <div class="fw-card-desc">A directive from a superior that the senior officer believes is ethically wrong. Following the chain of command is a legitimate value — professional discipline matters. But the chain of command does not obligate compliance with clearly unethical directives. The senior officer who can distinguish between "I disagree with this decision" (follow the order, express disagreement through appropriate channels) and "this directive requires me to act unethically" (decline, document, escalate) is exercising the judgment that the rank demands.</div>
+    </div>
+  </div>
+  <h2>The Rationalization Patterns — How Good People Cross Lines</h2>
+  <p>Rationalization is the process by which the mind constructs post-hoc justifications for actions that have already been chosen on other grounds. These patterns appear in fire service ethics failures consistently:</p>
+  <div class="acro-grid">
+    <div class="acro-row">
+      <div class="acro-letter">MIN</div>
+      <div class="acro-content">
+        <div class="acro-word">Minimization — "It's Not That Serious"</div>
+        <div class="acro-desc">"It was just a small thing." "Nobody was really hurt." "It's not like he stole the money — he just used the account for something personal." Minimization reduces the apparent severity of an ethical violation to make inaction seem proportionate. Every major ethical failure in organizational history was preceded by someone deciding that smaller violations were not serious enough to act on.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">COM</div>
+      <div class="acro-content">
+        <div class="acro-word">Comparative Justification — "Others Do Worse"</div>
+        <div class="acro-desc">"At least we don't do what they do." "Compared to the other departments, this is nothing." Comparative justification sets a floor on ethical behavior rather than maintaining a standard. It normalizes the violation by referencing something worse, rather than evaluating the action against what is right. Senior leaders who use this pattern are managing to the lowest common denominator of professional conduct.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">SYM</div>
+      <div class="acro-content">
+        <div class="acro-word">Sympathy Override — "He Has a Family"</div>
+        <div class="acro-desc">Personal compassion for the individual who committed the violation overrides accountability. Genuine compassion and accountability are not mutually exclusive — the senior leader can hold both. But when sympathy for the individual consistently prevents accountability, the organization's ethical standards erode, and other members notice that the standard depends on who you are rather than what you did.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">LOY</div>
+      <div class="acro-content">
+        <div class="acro-word">Loyalty Displacement — "You Don't Report on Your People"</div>
+        <div class="acro-desc">The conflation of loyalty to individuals with the abandonment of organizational accountability. This pattern is particularly powerful in fire service culture, where crew loyalty is deeply valued and "ratting out" a colleague is treated as a betrayal of fundamental professional values. The senior officer who allows this to prevent legitimate accountability has allowed a crew-level value to override an organizational one — at the organization's expense.</div>
+      </div>
+    </div>
+  </div>
+  <div class="callout callout-purple">
+    <span class="callout-label">The Test That Cuts Through Rationalization</span>
+    <p>When facing a suspected rationalization: <strong>"Would I be comfortable if my chief, my city manager, and the public saw exactly what I am doing and why?"</strong> This test — sometimes called the transparency test or the newspaper test — cuts through most rationalizations because they depend on the decision being invisible. If the answer is "no," the rationalization is doing work that the ethical analysis cannot support. The right action withstands public scrutiny. The rationalized action requires privacy to persist.</p>
+  </div>
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Ethics & Integrity</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Ethical Decision Framework → Courage Test → T·C·H·O·E·D·S → Just Culture</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Name the ethical dimension → apply the decision framework → demonstrate moral courage → close with Trustworthiness</div></div></div></div>
+
+  <span class="sbar-label">Four Competing Pairs</span>
+  <div class="sbar-card"><strong>Loyalty vs Honesty</strong>Most common. Genuine loyalty expressed through honest accountability, not protective silence.</div>
+  <div class="sbar-card"><strong>Org vs Individual</strong>Both have legitimate claims. Neither dismissed — both engaged honestly.</div>
+  <div class="sbar-card"><strong>Short vs Long Term</strong>Expedience accumulates an integrity debt. It comes due.</div>
+  <div class="sbar-card"><strong>Orders vs Ethics</strong>Disagree with decision: follow and express through channels. Unethical directive: decline, document, escalate.</div>
+  <span class="sbar-label">Four Rationalization Patterns</span>
+  <div class="sbar-card">Minimization · Comparative Justification · Sympathy Override · Loyalty Displacement. Every major ethics failure was preceded by these.</div>
+  <span class="sbar-label">The Transparency Test</span>
+  <div class="sbar-card">"Would I be comfortable if my chief, city manager, and public saw exactly what I'm doing and why?" Rationalizations require privacy. Right actions withstand scrutiny.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Ethical Decisions Under Pressure</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"Describe your understanding of the four competing pressure pairs and how you would apply it in a real scenario."</div><div class="ob-note">Apply the ethical decision framework: identify the pressure (loyalty), name the standard (documentation integrity), choose the standard, document and protect. Courage when it costs something.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 3 — Key Takeaways</div>
+  <div class="tk-item">The Four Competing Pressure Pairs — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">The Rationalization Patterns — How Good People Cross Lines — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Ethics Integrity question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Ethics & Integrity</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Ethical Decision Framework → Courage Test → T·C·H·O·E·D·S → Just Culture</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Name the ethical dimension → apply the decision framework → demonstrate moral courage → close with Trustworthiness</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div>
+<h3>Use the OB card question</h3>
+<p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Ethical Frameworks</button>
+  <div class="lnb-info"><div class="lnb-name">Decisions Under Pressure</div><div class="lnb-num">Lesson 3 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Organizational Ethics →</button>
+</div>
+</div>
+
+<!-- LESSON 4 -->
+<div class="lesson-view" id="lesson-3">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 30 · Lesson 4 of 6</div>
+    <h1 class="lh-title">Organizational Ethics —<br><em>Culture, Corruption, and the Duty to Act</em></h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 16 min</span><span class="lh-meta-item">🏛️ Culture · Corruption · Whistleblowing</span></div>
+  </div>
+  <p>Individual ethics determines whether a leader acts with integrity in their own conduct. Organizational ethics determines whether a leader builds and protects a culture of integrity in the people and systems they lead. At BC and above, both are assessed — and organizational ethics is the harder, more consequential, and less frequently taught dimension.</p>
+  <h2>How Organizational Ethical Culture Erodes</h2>
+  <p>No fire department announces a decision to become corrupt or ethically compromised. Organizational ethical erosion happens through the accumulation of small decisions — each of which seems minor in isolation — that gradually normalize compromise, reduce accountability, and establish that the stated standards are not the actual standards.</p>
+  <div class="slippery-steps">
+    <div class="ss-step">
+      <div class="ss-num">1</div>
+      <div class="ss-body"><div class="ss-title">A Small Violation Goes Unaddressed</div><div class="ss-desc">A minor policy violation — falsified training records, improper equipment use, a misleading incident report — is identified by a supervisor who decides it's not worth the conflict. No action taken. This decision is private and seems inconsequential.</div></div>
+    </div>
+    <div class="ss-step">
+      <div class="ss-num">2</div>
+      <div class="ss-body"><div class="ss-title">The Pattern Establishes a Precedent</div><div class="ss-desc">The violation goes unaddressed again. And again. The people who observe this — both those who committed the violation and those who watched it not be addressed — update their understanding of what the actual standard is. The stated standard and the enforced standard have diverged.</div></div>
+    </div>
+    <div class="ss-step">
+      <div class="ss-num">3</div>
+      <div class="ss-body"><div class="ss-title">Silence Becomes Complicity</div><div class="ss-desc">People who know about the violations and don't report them become implicated in them. The culture of non-reporting is now a shared organizational secret rather than an individual one. Reporting now carries a social cost — it violates the unspoken norm of silence — that was not present at step 1.</div></div>
+    </div>
+    <div class="ss-step">
+      <div class="ss-num">4</div>
+      <div class="ss-body"><div class="ss-title">Violations Escalate</div><div class="ss-desc">With the norm of silence established, the violations that occur become larger and more significant. The implicit message is that the organizational system will not respond — so the behavior that was previously checked by accountability risk is now uncheck by it.</div></div>
+    </div>
+    <div class="ss-step">
+      <div class="ss-num">5</div>
+      <div class="ss-body"><div class="ss-title">The Ethical Members Begin to Leave</div><div class="ss-desc">Members with strong personal ethical standards become increasingly uncomfortable in an organization where those standards are not reflected in conduct or enforced. The most ethical members — who had the most options — begin to leave or disengage. The organization becomes gradually less capable of self-correction.</div></div>
+    </div>
+    <div class="ss-step">
+      <div class="ss-num">6</div>
+      <div class="ss-body"><div class="ss-title">External Exposure Creates Crisis</div><div class="ss-desc">Organizational ethical failures rarely self-correct at this stage. They are exposed — by a whistleblower, a media investigation, a legal action, or an operational failure that can no longer be concealed. The crisis that results is almost always far larger than any intervention at step 1 would have been.</div></div>
+    </div>
+  </div>
+  <h2>The Senior Leader's Duty to Act — When Reporting Is Required</h2>
+  <p>The senior officer who becomes aware of ethical violations in their organization has a professional and in many cases legal obligation to act. This is not optional — and the "I didn't want to create problems" defense has ended many senior careers when the violations that could have been addressed early were instead allowed to grow to crisis size.</p>
+  <div class="acro-grid">
+    <div class="acro-row">
+      <div class="acro-letter">RPT</div>
+      <div class="acro-content">
+        <div class="acro-word">Report Through the Chain of Command First</div>
+        <div class="acro-desc">The default channel for reporting ethical violations is the chain of command — upward, to the person's supervisor, or to HR depending on the nature of the violation. This is the first-line responsibility. Document that the report was made. Follow up if action is not taken within a reasonable timeframe.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">ESC</div>
+      <div class="acro-content">
+        <div class="acro-word">Escalate When the Chain of Command Is the Problem</div>
+        <div class="acro-desc">When the violation involves the person's immediate supervisor, or when a report has been made and not acted upon, the obligation shifts to alternative channels — HR, the inspector general, the city manager's office, or external oversight bodies. Most jurisdictions have whistleblower protection laws that protect employees who report in good faith. The senior officer who knows about senior leadership misconduct and reports only to that leadership has not fulfilled the reporting obligation.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">DOC</div>
+      <div class="acro-content">
+        <div class="acro-word">Document Everything, at Every Stage</div>
+        <div class="acro-desc">What was observed, when, by whom. When it was reported, to whom, and in what form. What response was received. What follow-up occurred or did not occur. This documentation protects the reporting officer legally and organizationally, and provides the evidence record that any subsequent investigation will need. The senior officer who reports verbally without documentation has a much weaker position if the situation later becomes contested.</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Ethics & Integrity</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Ethical Decision Framework → Courage Test → T·C·H·O·E·D·S → Just Culture</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Name the ethical dimension → apply the decision framework → demonstrate moral courage → close with Trustworthiness</div></div></div></div>
+
+  <span class="sbar-label">Erosion Pattern — 6 Steps</span>
+  <div class="sbar-card">Small violation unaddressed → precedent established → silence becomes complicity → violations escalate → ethical members leave → external exposure = crisis. Every major fire service scandal follows this sequence.</div>
+  <span class="sbar-label">Duty to Act</span>
+  <div class="sbar-card"><strong>Report</strong>Chain of command first. Document the report.</div>
+  <div class="sbar-card"><strong>Escalate</strong>When chain is the problem or report not acted on. HR · IG · city manager · external oversight.</div>
+  <div class="sbar-card"><strong>Document</strong>Everything. At every stage. Verbal-only reporting leaves you exposed.</div>
+  <span class="sbar-label">Organizational Ethics Truth</span>
+  <div class="sbar-card">"I didn't want to create problems" has ended more senior careers than the violations it was protecting. Early intervention at step 1 costs almost nothing. Crisis at step 6 costs everything.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Organizational Ethics</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"Describe your understanding of how organizational ethical culture erodes and how you would apply it in a real scenario."</div><div class="ob-note">Apply the ethical decision framework: identify the pressure (loyalty), name the standard (documentation integrity), choose the standard, document and protect. Courage when it costs something.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 4 — Key Takeaways</div>
+  <div class="tk-item">How Organizational Ethical Culture Erodes — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">The Senior Leader's Duty to Act — When Reporting Is Required — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Ethics Integrity question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Ethics & Integrity</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Ethical Decision Framework → Courage Test → T·C·H·O·E·D·S → Just Culture</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Name the ethical dimension → apply the decision framework → demonstrate moral courage → close with Trustworthiness</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Decisions Under Pressure</button>
+  <div class="lnb-info"><div class="lnb-name">Organizational Ethics</div><div class="lnb-num">Lesson 4 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Failures That End Careers →</button>
+</div>
+</div>
+
+<!-- LESSON 5 -->
+<div class="lesson-view" id="lesson-4">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 30 · Lesson 5 of 6</div>
+    <h1 class="lh-title">The Failures That End Careers —<br><em>What the Patterns Actually Look Like</em></h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 16 min</span><span class="lh-meta-item">⚠️ Career-Ending Patterns · Warning Signs</span></div>
+  </div>
+  <p>Senior fire service career-ending ethics failures are not randomly distributed. They cluster around recognizable patterns that, in hindsight, almost always had earlier warning signs that went unaddressed. Understanding these patterns is both a personal protection tool and an organizational leadership responsibility.</p>
+  <h2>The Six Career-Ending Patterns</h2>
+  <div class="acro-grid">
+    <div class="acro-row">
+      <div class="acro-letter">FIN</div>
+      <div class="acro-content">
+        <div class="acro-word">Financial Misconduct — The Most Common Senior Failure</div>
+        <div class="acro-desc">Misappropriation of organizational funds, improper use of department resources, manipulation of overtime records, procurement fraud, or the acceptance of gifts or considerations from vendors with department relationships. Financial misconduct is the single most common senior officer ethics failure in fire service organizations — not because fire leaders are uniquely greedy, but because senior positions provide resource authority that creates opportunity, and because the rationalizations ("I've given my career to this department") are particularly powerful at senior levels.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">HAR</div>
+      <div class="acro-content">
+        <div class="acro-word">Harassment and Hostile Work Environment</div>
+        <div class="acro-desc">Sexual harassment, racial harassment, discriminatory conduct, or the creation and tolerance of a hostile work environment. At the senior officer level, this includes both direct harassment and the failure to respond appropriately when harassment is reported or observed. The battalion chief who "doesn't get involved in interpersonal stuff" when a lieutenant reports harassment from a peer is creating liability and organizational damage as surely as if they were the harasser.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">DEP</div>
+      <div class="acro-content">
+        <div class="acro-word">Deception of Superiors or the Public</div>
+        <div class="acro-desc">Falsifying incident reports, misrepresenting operational data to administration, providing inaccurate information to elected officials, or deceiving the public about department performance or incidents. Deception failures at the senior level almost always involve a decision to protect someone — the officer, the department, a subordinate — through misrepresentation. They are discovered more often than the deceiver expects, and the discovery is almost always worse than the original problem would have been.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">RET</div>
+      <div class="acro-content">
+        <div class="acro-word">Retaliation Against Reporters</div>
+        <div class="acro-desc">Taking adverse action — assignment changes, negative evaluations, hostile treatment, discipline — against members who have reported misconduct or exercised protected rights. Retaliation is both illegal under most whistleblower protection laws and organizationally catastrophic — it confirms the culture of silence, deters future reporting, and creates substantial civil liability for the individual and the organization. The senior officer who retaliates often adds a much larger legal problem to the smaller one they were trying to protect.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">NEP</div>
+      <div class="acro-content">
+        <div class="acro-word">Nepotism and Favoritism in Personnel Decisions</div>
+        <div class="acro-desc">Promotion, assignment, scheduling, or disciplinary decisions made on the basis of personal relationships rather than merit and applicable standards. This pattern is particularly damaging in fire service organizations because it directly contradicts the meritocratic values that emergency services depend on for safety and effectiveness. The officer who promotes the less qualified candidate because of relationship sends a clear organizational message: merit is not the actual standard here.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">COV</div>
+      <div class="acro-content">
+        <div class="acro-word">Cover-Up — Compounding the Original Failure</div>
+        <div class="acro-desc">In most fire service ethics failures that have resulted in significant career damage or legal consequences, the cover-up — the attempt to suppress, minimize, or conceal the original violation — did more damage than the original violation would have done if addressed promptly. Richard Nixon's career was not ended by the Watergate break-in. The pattern repeats in fire service organizations with striking regularity. When a violation occurs, the first question should always be: how do I address this transparently? Not: how do I contain this?</div>
+      </div>
+    </div>
+  </div>
+  <div class="callout callout-navy">
+    <span class="callout-label">The Single Most Important Ethics Habit</span>
+    <p>Of all the practices that protect senior leaders from career-ending ethics failures, the most important is the simplest: <strong>never cover.</strong> The violation itself — financial, behavioral, operational — is almost always survivable if addressed immediately, honestly, and transparently. The cover-up almost never is. Every senior officer should ask before any attempt to contain rather than report: "Is the problem I'm trying to protect myself or this organization from actually smaller than the problem I'm about to create?" The honest answer, consistently, is yes.</p>
+  </div>
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Ethics & Integrity</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Ethical Decision Framework → Courage Test → T·C·H·O·E·D·S → Just Culture</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Name the ethical dimension → apply the decision framework → demonstrate moral courage → close with Trustworthiness</div></div></div></div>
+
+  <span class="sbar-label">Six Career-Ending Patterns</span>
+  <div class="sbar-card"><strong>Financial</strong>Most common. Resource authority + powerful rationalizations = specific vulnerability at senior levels.</div>
+  <div class="sbar-card"><strong>Harassment</strong>Direct conduct AND failure to respond when reported. Both career-ending.</div>
+  <div class="sbar-card"><strong>Deception</strong>Discovered more often than expected. Discovery always worse than original problem.</div>
+  <div class="sbar-card"><strong>Retaliation</strong>Illegal + organizationally catastrophic. Adds a larger legal problem to the smaller one being protected.</div>
+  <div class="sbar-card"><strong>Nepotism</strong>Merit is not the actual standard — everyone sees it. Organizational damage is systemic.</div>
+  <div class="sbar-card"><strong>Cover-Up</strong>Almost always worse than the original violation. The Nixon lesson applies universally.</div>
+  <span class="sbar-label">The Most Important Habit</span>
+  <div class="sbar-card">Never cover. Address immediately, honestly, transparently. The violation is survivable. The cover-up is almost never survivable.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — The Failures That End Careers</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"Describe your understanding of the six career-ending patterns and how you would apply it in a real scenario."</div><div class="ob-note">Apply the ethical decision framework: identify the pressure (loyalty), name the standard (documentation integrity), choose the standard, document and protect. Courage when it costs something.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 5 — Key Takeaways</div>
+  <div class="tk-item">The Six Career-Ending Patterns — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Ethics Integrity question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Ethics & Integrity</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Ethical Decision Framework → Courage Test → T·C·H·O·E·D·S → Just Culture</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Name the ethical dimension → apply the decision framework → demonstrate moral courage → close with Trustworthiness</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Organizational Ethics</button>
+  <div class="lnb-info"><div class="lnb-name">Failures That End Careers</div><div class="lnb-num">Lesson 5 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: AC Application →</button>
+</div>
+</div>
+
+<!-- LESSON 6 -->
+<div class="lesson-view" id="lesson-5">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 30 · Lesson 6 of 6 · Assessment Application</div>
+    <h1 class="lh-title">Assessment Center Application —<br><em>Ethics Scenarios at BC and Above</em></h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 16 min</span><span class="lh-meta-item">🎯 Scoring + Practice Scenarios</span></div>
+  </div>
+  <p>Ethics scenarios at BC and above test three things simultaneously: whether you recognize the ethical issue embedded in a complex situation, whether you can reason through it using multiple frameworks, and whether your behavioral response demonstrates the Courage and Transparency that the analysis requires. A response that is intellectually correct but behaviorally evasive scores no better than one that missed the ethical issue entirely.</p>
+  <h2>Practice Scenario — The Deputy Chief's Request</h2>
+  <div class="callout callout-navy">
+    <span class="callout-label">Oral Board Prompt</span>
+    <p>"You are a newly promoted Battalion Chief. Your Deputy Chief — who was instrumental in your promotion and whom you have great respect for — calls you privately and asks you to adjust the performance evaluation of a Captain in your battalion. He says the Captain is 'going through some personal stuff' and asks you to soften a below-standard rating to 'Meets Expectations' to protect him through a difficult period. He says, 'I'd consider it a personal favor.' How do you respond?"</p>
+  </div>
+  <div class="score-compare">
+    <div class="sc-card miss">
+      <div class="sc-title">3/5 Response</div>
+      <div class="sc-body">"This puts me in a difficult position. I have loyalty to the Deputy Chief who supported my career, but I also have an obligation to be honest in performance evaluations. I would probably try to find a middle ground — maybe acknowledge the personal circumstances in the evaluation narrative while not completely altering the rating. I would want to support the Captain while still being fair."</div>
+    </div>
+    <div class="sc-card hit">
+      <div class="sc-title">5/5 Response</div>
+      <div class="sc-body">"I recognize immediately that this request is asking me to falsify an official document — a performance evaluation — and that accepting it would compromise the Captain, the organization, and the integrity of the performance management system. The fact that it comes from someone I respect, framed as a personal favor, makes it more ethically significant, not less — because those are exactly the conditions under which rationalization becomes most seductive.<br><br>My response to the Deputy Chief would be direct and private: 'Chief, I understand this is coming from a place of genuine concern for him, and I share that concern. But I can't change a performance rating I don't believe is accurate — not because I don't value our relationship or respect your judgment, but because doing so would compromise exactly the kind of leader I need to be at this level. If the Captain needs support through a difficult personal period, I'm committed to providing it — through EAP referral, through coaching, through flexibility where policy permits. But the evaluation has to reflect actual performance.'<br><br>I would document that this conversation occurred and that I declined the request — not in an adversarial way, but as a record of what happened. And I would follow through on genuine support for the Captain through legitimate means.<br><br>If the Deputy Chief escalated pressure or took retaliatory action for my refusal, I would elevate to HR and the Fire Chief, with my documentation. The deontological obligation is clear — I cannot falsify a document. The virtue ethics test is equally clear — a person of integrity doesn't trade honesty for relationship. And the consequentialist analysis, honestly done, shows that the harm of falsifying the evaluation extends to the organization, to other personnel whose honest evaluations compete with artificially inflated ones, and ultimately to the Captain himself — who needed honest feedback, not protection from it."</div>
+    </div>
+  </div>
+  <div class="callout callout-gold">
+    <span class="callout-label">Chapter 30 Complete</span>
+    <p>Ethics is the one dimension of senior leadership that cannot be performed — it can only be genuine. The frameworks in this module provide language and structure for moral reasoning. The courage to act on that reasoning in the face of organizational pressure, relationship loyalty, and personal cost is something only genuine character can supply. The candidates who perform best on ethics scenarios are the ones whose stated values and behavioral responses are the same — because they have made those values genuinely their own, not because they have memorized the right answers. That is what this module is designed to build.</p>
+  </div>
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Ethics & Integrity</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Ethical Decision Framework → Courage Test → T·C·H·O·E·D·S → Just Culture</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Name the ethical dimension → apply the decision framework → demonstrate moral courage → close with Trustworthiness</div></div></div></div>
+
+  <span class="sbar-label">What the 5/5 Demonstrates</span>
+  <div class="sbar-card">Recognizes the ethical problem immediately · names the rationalization trap (respected superior, personal favor) · gives a direct, private, respectful refusal · offers genuine legitimate alternatives · documents the conversation · applies all three frameworks explicitly.</div>
+  <span class="sbar-label">What the 3/5 Does Wrong</span>
+  <div class="sbar-card">"Middle ground" on falsifying a document is still falsifying a document. The ethics of the action don't change because the compromise is smaller. Assessors score this as ethical rationalization.</div>
+  <span class="sbar-label">The Integration Line</span>
+  <div class="sbar-card">"The fact that it comes from someone I respect, framed as a personal favor, makes it more significant — not less — because those are the exact conditions under which rationalization is most seductive." That sentence alone signals 4/5 ethical reasoning.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Assessment Center Application</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"You receive a scenario about ethics integrity. Walk me through your complete response using the frameworks from this chapter."</div><div class="ob-note">Use LEAD: Label the bucket (Ethics Integrity), Engage the specific framework (reference Practice Scenario — The Deputy Chief's Request explicitly), Address the operational and organizational impact, Drive to a concrete first action with a timeline.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 6 — Key Takeaways</div>
+  <div class="tk-item">Practice Scenario — The Deputy Chief's Request — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Ethics Integrity question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Ethics & Integrity</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Ethical Decision Framework → Courage Test → T·C·H·O·E·D·S → Just Culture</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Name the ethical dimension → apply the decision framework → demonstrate moral courage → close with Trustworthiness</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Failures That End Careers</button>
+  <div class="lnb-info"><div class="lnb-name">AC Application</div><div class="lnb-num">Lesson 6 of 6</div></div>
+  <button class="lnb-btn primary" onclick="window.scrollTo({top:0,behavior:'smooth'})">Module Complete ✓</button>
+</div>
+</div>
+
+</main>
+<script>
+let cur=0;
+const ls=document.querySelectorAll('.lesson-view');
+const ps=document.querySelectorAll('.nav-pill');
+const mbs=document.querySelectorAll('.mh-lesson-btn');
+function showLesson(n){ls.forEach(l=>l.classList.remove('active'));ps.forEach(p=>p.classList.remove('active'));mbs.forEach(m=>m.classList.remove('active'));if(ls[n])ls[n].classList.add('active');if(ps[n])ps[n].classList.add('active');if(mbs[n])mbs[n].classList.add('active');cur=n;window.scrollTo({top:0,behavior:'smooth'});document.getElementById('prog').style.width='0%';}
+function nextLesson(){if(cur<ls.length-1)showLesson(cur+1);}
+function prevLesson(){if(cur>0)showLesson(cur-1);}
+window.addEventListener('scroll',()=>{const s=document.documentElement.scrollTop;const h=document.documentElement.scrollHeight-window.innerHeight;if(h>0)document.getElementById('prog').style.width=Math.min(100,(s/h*100))+'%';});
+document.addEventListener('DOMContentLoaded',()=>showLesson(0));
+
+function lfNext(el,stepNum){
+  var wrap=el.closest('.lf-wrap');
+  if(!wrap)return;
+  var steps=wrap.querySelectorAll('.lf-step');
+  var dots=wrap.querySelectorAll('.lf-dot');
+  steps.forEach(function(s,i){s.classList.remove('active');if(i<stepNum)s.classList.add('done');});
+  dots.forEach(function(d,i){d.classList.remove('active');if(i<stepNum)d.classList.add('done');if(i===stepNum)d.classList.add('active');});
+  if(steps[stepNum])steps[stepNum].classList.add('active');
+}
+</script>
+<script>function toggleFT(el){var sw=el.querySelector('.ft-toggle-switch');var desc=el.querySelector('.ft-toggle-desc');var mains=document.querySelectorAll('.lesson-main');sw.classList.toggle('on');var on=sw.classList.contains('on');desc.textContent=on?'Frameworks + OB cards only':'Full lesson content';mains.forEach(function(m){m.classList.toggle('ft-on',on);});}</script>
+</body>
+</html>

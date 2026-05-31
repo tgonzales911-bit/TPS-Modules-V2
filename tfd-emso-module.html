@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>TFD EMSO Module — The Forward Operating Officer | The Promotional Standard</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Crimson+Pro:wght@300;400;500;600&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --navy:#0C2340;--navy2:#0F2A4A;--navy-deep:#071828;
+  --gold:#C9A84C;--gold-light:#E4C97A;--gold-dim:#8B6914;
+  --cream:#F5F0E8;--cream2:#EDE4D0;--offwhite:#F5F0E8;--light:#EAE5DC;
+  --on-dark-1:#F0E8D8;--on-dark-2:#C8DCF0;--on-dark-3:#98B8D0;--on-dark-4:#6A90A8;
+  --on-light-1:#1A2E42;--on-light-2:#3A5068;--on-light-3:#6A7A8A;
+  --ems:#1A4A6B;--ems2:#2A6090;--ems-bg:rgba(42,96,144,0.12);--ems-border:rgba(42,96,144,0.35);--ems-text:#80C0E8;
+  --exec:#2D1B4E;--exec2:#4A2D7A;--exec3:#180D30;
+  --exec-gold:#E8C96A;--exec-gold-dim:#A07828;
+  --exec-bg:rgba(74,45,122,0.18);--exec-border:rgba(74,45,122,0.4);--exec-text:#C0A0E8;
+  --tfd:#1A3D2B;--tfd2:#2A5C3F;--tfd3:#0D2018;
+  --tfd-gold:#7ED8A0;--tfd-gold-dim:#3A8050;
+  --tfd-bg:rgba(26,61,43,0.18);--tfd-border:rgba(42,92,63,0.4);--tfd-text:#80D8A0;
+  --shield:#8C3A10;--shield2:#C05020;--shield-text:#F0B080;--shield-bg:rgba(140,58,16,0.15);
+  --diplomat:#1A3A6B;--diplomat2:#2A5A9B;--diplomat-text:#90C0F0;--diplomat-bg:rgba(26,58,107,0.15);
+  --mentor:#4A2A6B;--mentor2:#6A4A9B;--mentor-text:#C0A0F0;--mentor-bg:rgba(74,42,107,0.15);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:var(--on-light-1);font-size:18px;line-height:1.8;}
+/* NAV */
+.top-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(13,32,24,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(126,216,160,0.25);height:68px;display:flex;align-items:center;padding:0 2rem;gap:1rem;}
+.nav-left{display:flex;align-items:center;gap:14px;flex:1;min-width:0;}
+.nav-brand{font-family:'Cinzel',serif;font-size:12px;letter-spacing:1.8px;color:var(--cream);line-height:1.3;white-space:nowrap;}
+.nav-brand span{display:block;font-size:8px;color:var(--tfd-gold);letter-spacing:2.5px;}
+.nav-divider{width:1px;height:28px;background:rgba(126,216,160,0.2);flex-shrink:0;}
+.nav-tfd-badge{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;background:var(--tfd-bg);border:1px solid var(--tfd-border);color:var(--tfd-text);padding:5px 11px;border-radius:4px;white-space:nowrap;flex-shrink:0;}
+.nav-pills{display:flex;gap:4px;flex:2;justify-content:center;overflow-x:auto;scrollbar-width:none;}
+.nav-pills::-webkit-scrollbar{display:none;}
+.nav-pill{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;color:rgba(126,216,160,0.5);padding:7px 13px;border-radius:20px;cursor:pointer;transition:all .2s;border:1px solid transparent;background:transparent;white-space:nowrap;}
+.nav-pill:hover{color:var(--cream);background:rgba(255,255,255,.06);}
+.nav-pill.active{color:var(--tfd-gold);background:rgba(126,216,160,.12);border-color:rgba(126,216,160,.3);}
+.progress-bar{position:fixed;top:68px;left:0;height:3px;background:linear-gradient(90deg,var(--tfd2),var(--tfd-gold));z-index:199;width:0%;transition:width .15s;}
+.lesson-view{display:none;}.lesson-view.active{display:block;}
+/* HERO */
+.module-hero{background:linear-gradient(155deg,var(--tfd3) 0%,var(--tfd) 55%,#0A2015 100%);padding:5rem 3rem 4rem;margin-top:68px;position:relative;overflow:hidden;border-bottom:3px solid var(--tfd-gold);}
+.module-hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 80px,rgba(126,216,160,.015) 80px,rgba(126,216,160,.015) 81px);}
+.module-hero::after{content:'';position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--tfd-gold),var(--tfd-gold-dim));}
+.hero-glow{position:absolute;right:-100px;top:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(42,92,63,.25) 0%,transparent 70%);pointer-events:none;}
+.mh-inner{max-width:920px;position:relative;z-index:2;}
+.mh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--tfd-gold);margin-bottom:.5rem;}
+.mh-track-badge{display:inline-flex;align-items:center;gap:6px;font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:2.5px;text-transform:uppercase;background:var(--tfd-bg);border:1px solid var(--tfd-border);color:var(--tfd-text);padding:5px 12px;border-radius:4px;margin-bottom:1.25rem;}
+.mh-title{font-family:'EB Garamond',serif;font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:800;color:var(--cream);line-height:1.08;margin-bottom:.85rem;text-shadow:0 2px 20px rgba(0,0,0,.5);}
+.mh-title em{font-style:italic;color:var(--tfd-gold);}
+.mh-sub{font-size:1.1rem;color:var(--on-dark-2);max-width:680px;line-height:1.75;margin-bottom:2rem;}
+.mh-thread{background:rgba(126,216,160,.07);border:1px solid rgba(126,216,160,.2);border-left:4px solid var(--tfd-gold);padding:1.1rem 1.6rem;max-width:680px;}
+.mh-thread-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--tfd-gold);margin-bottom:6px;}
+.mh-thread-text{font-size:.95rem;color:var(--cream2);line-height:1.7;}
+/* CAPACITY BADGES */
+.capacity-shield{background:var(--shield-bg);border:1px solid rgba(140,58,16,.4);color:var(--shield-text);}
+.capacity-diplomat{background:var(--diplomat-bg);border:1px solid rgba(26,58,107,.4);color:var(--diplomat-text);}
+.capacity-mentor{background:var(--mentor-bg);border:1px solid rgba(74,42,107,.4);color:var(--mentor-text);}
+.capacity-badge{display:inline-flex;align-items:center;gap:6px;font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border-radius:4px;margin:.25rem .25rem 0 0;}
+/* LAYOUT */
+.lesson-container{display:grid;grid-template-columns:1fr 320px;gap:0;}
+.lesson-main{padding:3rem 3.5rem;border-right:1px solid var(--light);min-height:70vh;}
+.lesson-sidebar{padding:2rem 1.75rem;background:#EFF5F0;position:sticky;top:68px;height:calc(100vh - 68px);overflow-y:auto;}
+.lesson-header{margin-bottom:2.5rem;padding-bottom:1.75rem;border-bottom:2px solid var(--light);}
+.lh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--tfd-gold-dim);margin-bottom:.5rem;}
+.lh-track{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:2px;text-transform:uppercase;color:var(--tfd-text);background:var(--tfd-bg);border:1px solid var(--tfd-border);padding:3px 9px;border-radius:3px;display:inline-block;margin-bottom:.65rem;}
+.lh-title{font-family:'EB Garamond',serif;font-size:clamp(1.9rem,3vw,2.55rem);font-weight:800;color:var(--tfd);line-height:1.12;margin-bottom:.65rem;}
+.lh-title em{font-style:italic;color:var(--tfd-gold-dim);}
+.lh-meta{display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:.25rem;}
+.lh-meta-item{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--on-light-3);}
+.lesson-main h2{font-family:'EB Garamond',serif;font-size:1.75rem;font-weight:700;color:var(--tfd);margin:3rem 0 1rem;padding-bottom:.6rem;border-bottom:2px solid var(--light);}
+.lesson-main p{margin-bottom:1.35rem;color:var(--on-light-1);line-height:1.85;font-size:1rem;}
+.lesson-main ul{margin:0 0 1.35rem 1.6rem;color:var(--on-light-1);}
+.lesson-main li{margin-bottom:.65rem;line-height:1.75;}
+.lesson-main strong{color:var(--tfd);font-weight:600;}
+/* CALLOUTS */
+.callout{padding:1.5rem 1.75rem;margin:2.25rem 0;}
+.callout-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:.6rem;display:block;}
+.callout-tfd{background:rgba(26,61,43,.07);border-left:4px solid var(--tfd2);}
+.callout-tfd .callout-label{color:var(--tfd-gold-dim);}
+.callout-tfd p{color:var(--on-light-1);font-size:1rem;line-height:1.8;}
+.callout-gold{background:#FBF7E6;border-left:3px solid var(--gold);}
+.callout-gold .callout-label{color:var(--gold-dim);}
+.callout-gold p{color:#4A3A10;font-size:1rem;line-height:1.8;}
+.callout-navy{background:var(--tfd3);border-left:4px solid var(--tfd-gold);}
+.callout-navy .callout-label{color:var(--tfd-gold);}
+.callout-navy p{color:var(--on-dark-1);font-size:1rem;line-height:1.8;}
+/* INFOGRAPHIC */
+.infographic-wrap{background:var(--tfd3);border:1px solid rgba(126,216,160,.2);border-left:4px solid var(--tfd-gold);margin:2.25rem 0;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.3);}
+.ig-header{background:rgba(126,216,160,.07);padding:1.1rem 1.4rem 1rem;border-bottom:1px solid rgba(126,216,160,.15);}
+.ig-eyebrow{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:3px;text-transform:uppercase;color:var(--tfd-gold);display:block;margin-bottom:5px;}
+.ig-title{font-family:'EB Garamond',serif;font-size:1.3rem;font-weight:700;color:var(--cream);margin-bottom:4px;}
+.ig-sub{font-size:.97rem;color:var(--on-dark-2);line-height:1.65;}
+.ig-callout{margin:.6rem 1.4rem 1.1rem;padding:1rem 1.25rem;background:rgba(126,216,160,.07);border-left:3px solid var(--tfd-gold);font-size:.97rem;color:#7EC890;line-height:1.7;font-style:italic;}
+/* THREE CAPACITY CARDS */
+.capacity-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:rgba(126,216,160,.08);}
+.cap-card{padding:1.5rem;background:var(--tfd3);}
+.cap-card.shield{border-top:4px solid var(--shield2);}
+.cap-card.diplomat{border-top:4px solid var(--diplomat2);}
+.cap-card.mentor{border-top:4px solid var(--mentor2);}
+.cap-icon{font-size:2rem;margin-bottom:.75rem;}
+.cap-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:.4rem;}
+.cap-card.shield .cap-label{color:var(--shield-text);}
+.cap-card.diplomat .cap-label{color:var(--diplomat-text);}
+.cap-card.mentor .cap-label{color:var(--mentor-text);}
+.cap-name{font-family:'EB Garamond',serif;font-size:1.3rem;font-weight:800;color:var(--on-dark-1);margin-bottom:.5rem;}
+.cap-desc{font-size:.97rem;color:var(--on-dark-2);line-height:1.65;}
+.cap-purpose{font-size:.88rem;font-style:italic;margin-top:.5rem;}
+.cap-card.shield .cap-purpose{color:var(--shield-text);}
+.cap-card.diplomat .cap-purpose{color:var(--diplomat-text);}
+.cap-card.mentor .cap-purpose{color:var(--mentor-text);}
+/* AUTHORITY TABLE */
+.auth-table{width:100%;border-collapse:collapse;font-size:.95rem;}
+.auth-table th{background:rgba(26,61,43,.6);color:var(--tfd-gold);padding:.65rem 1rem;text-align:left;font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;}
+.auth-table td{padding:.7rem 1rem;border-bottom:1px solid rgba(126,216,160,.1);vertical-align:top;color:var(--on-dark-2);line-height:1.55;}
+.auth-table td strong{color:var(--on-dark-1);}
+.auth-table tr:nth-child(even) td{background:rgba(26,61,43,.15);}
+.green-row td:nth-child(2){color:#7ED8A0;font-weight:700;}
+.yellow-row td:nth-child(2){color:#E8C96A;font-weight:700;}
+.red-row td:nth-child(2){color:#F08080;font-weight:700;}
+/* AUTHORITY LEVEL CARDS */
+.auth-levels{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:rgba(126,216,160,.08);margin:1.5rem 0;}
+.auth-level{padding:1.25rem;background:var(--tfd3);}
+.auth-level.green{border-top:4px solid #3A9C5A;}
+.auth-level.yellow{border-top:4px solid #C9A84C;}
+.auth-level.red{border-top:4px solid #C03030;}
+.auth-code{font-family:'Cinzel',serif;font-size:1.1rem;font-weight:700;letter-spacing:3px;margin-bottom:.4rem;}
+.auth-level.green .auth-code{color:#7ED8A0;}
+.auth-level.yellow .auth-code{color:#E8C96A;}
+.auth-level.red .auth-code{color:#F08080;}
+.auth-name{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--on-dark-2);margin-bottom:.5rem;}
+.auth-def{font-size:.93rem;color:var(--on-dark-2);line-height:1.6;}
+/* PIPELINE RUBRIC */
+.rubric-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:rgba(126,216,160,.08);}
+.rubric-quality{background:var(--tfd3);padding:1.25rem;}
+.rubric-quality-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--tfd-gold);margin-bottom:.6rem;}
+.rubric-quality-name{font-family:'EB Garamond',serif;font-size:1.1rem;font-weight:700;color:var(--on-dark-1);margin-bottom:.75rem;}
+.rubric-indicator{display:flex;align-items:flex-start;gap:.6rem;margin-bottom:.6rem;font-size:.93rem;color:var(--on-dark-2);line-height:1.55;}
+.rubric-dot{width:6px;height:6px;border-radius:50%;background:var(--tfd-gold);flex-shrink:0;margin-top:.45rem;}
+/* SIDEBAR */
+.sbar-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--tfd-gold-dim);margin-bottom:.7rem;margin-top:1.75rem;display:block;}
+.sbar-label:first-child{margin-top:0;}
+.sbar-card{background:white;border:1px solid #C8D8C0;border-radius:8px;padding:1rem 1.15rem;margin-bottom:8px;font-size:.93rem;color:var(--on-light-2);line-height:1.65;box-shadow:0 1px 4px rgba(0,0,0,.04);}
+.sbar-card strong{color:var(--tfd);display:block;margin-bottom:4px;font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;}
+.sbar-card.accent-shield{border-left:3px solid var(--shield2);background:#FFF8F4;}
+.sbar-card.accent-shield strong{color:var(--shield);}
+.sbar-card.accent-diplomat{border-left:3px solid var(--diplomat2);background:#F4F6FF;}
+.sbar-card.accent-diplomat strong{color:var(--diplomat);}
+.sbar-card.accent-mentor{border-left:3px solid var(--mentor2);background:#F8F4FF;}
+.sbar-card.accent-mentor strong{color:var(--mentor);}
+.sbar-card.accent-tfd{border-left:3px solid var(--tfd2);background:#F0F8F2;}
+.sbar-card.accent-tfd strong{color:var(--tfd);}
+.sbar-card.accent-gold{border-left:3px solid var(--gold);}
+.sbar-card.accent-gold strong{color:var(--gold-dim);}
+.sbar-card.accent-red{border-left:3px solid #B22222;background:#FFF5F5;}
+.sbar-card.accent-red strong{color:#8B1A1A;}
+/* NAV BAR */
+.lesson-nav-bar{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 3rem;border-top:2px solid var(--light);background:white;box-shadow:0 -2px 12px rgba(0,0,0,.07);}
+.lnb-btn{background:transparent;border:1.5px solid #C8D8C0;padding:12px 28px;font-family:'Cinzel',serif;font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;border-radius:6px;color:var(--on-light-2);transition:all .2s;min-width:160px;}
+.lnb-btn:hover:not(:disabled){border-color:var(--tfd-gold);color:var(--tfd-gold-dim);}
+.lnb-btn:disabled{opacity:.35;cursor:default;}
+.lnb-btn.primary{background:linear-gradient(135deg,var(--tfd) 0%,var(--tfd2) 100%);color:var(--tfd-gold);border-color:var(--tfd);box-shadow:0 3px 12px rgba(26,61,43,.3);}
+.lnb-btn.primary:hover{background:linear-gradient(135deg,var(--tfd2) 0%,#3A7050 100%);}
+.lnb-btn.complete{background:linear-gradient(135deg,#1A5C3A 0%,#226644 100%);color:#80E0A0;border-color:#1A5C3A;cursor:default;}
+.lnb-info{text-align:center;}
+.lnb-name{font-family:'EB Garamond',serif;font-size:1rem;font-weight:600;color:var(--tfd);}
+.lnb-num{font-size:.78rem;color:var(--on-light-3);margin-top:2px;}
+/* DISCLAIMER */
+.legal-disclaimer{margin:3rem 0 0;padding:1.25rem 1.5rem;background:#F0F5F0;border:1px solid #C8D8C0;border-top:3px solid var(--light);}
+.legal-disclaimer-label{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--on-light-3);margin-bottom:.5rem;display:block;}
+.legal-disclaimer p{font-size:.8rem!important;color:var(--on-light-3)!important;line-height:1.65!important;margin-bottom:0!important;font-style:italic;}
+/* RESPONSIVE */
+@media(max-width:960px){.lesson-container{grid-template-columns:1fr;}.lesson-sidebar{position:relative;height:auto;}.capacity-grid,.rubric-grid,.auth-levels{grid-template-columns:1fr;}}
+
+/* OB CARD */
+.ob-card{background:var(--navy);margin:2rem 0;overflow:hidden;}
+.ob-header{padding:0.85rem 1.5rem;background:rgba(201,168,76,0.08);border-bottom:1px solid rgba(201,168,76,0.15);}
+.ob-label{font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);}
+.ob-body{padding:1.25rem 1.5rem;}
+.ob-q{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;}
+.ob-q-tag{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);background:rgba(201,168,76,0.1);padding:4px 10px;border-radius:3px;white-space:nowrap;}
+.ob-q-text{font-family:'EB Garamond',serif;font-size:1.08rem;font-weight:600;color:var(--cream);line-height:1.5;margin-bottom:8px;}
+.ob-note{font-size:0.88rem;color:#8FA8C0;line-height:1.6;font-style:italic;}
+/* TAKEAWAYS */
+.takeaways{background:var(--navy);padding:2.25rem;margin:3rem 0 0;border-top:3px solid var(--gold);}
+.tk-lbl{font-family:'Cinzel',serif;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.tk-item{color:#8FA8C0;font-size:0.92rem;line-height:1.7;padding:0.5rem 0 0.5rem 1.25rem;border-left:2px solid rgba(201,168,76,0.2);margin-bottom:0.5rem;}
+
+
+.lead-nav{background:var(--navy);border-radius:8px;padding:14px 16px;margin-bottom:16px;border:1px solid rgba(201,168,76,0.2)}
+.lead-nav-header{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.lead-nav-row{display:grid;grid-template-columns:20px 1fr;gap:6px;margin-bottom:6px;align-items:start}
+.lead-nav-letter{font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:var(--gold)}
+.lead-nav-content{}
+.lead-nav-name{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:2px}
+.lead-nav-app{font-size:11px;color:#8FA8C0;line-height:1.5}
+
+.lf-wrap{margin:2.5rem 0 1.5rem;border:2px solid var(--gold);border-radius:10px;overflow:hidden}
+.lf-header{background:var(--navy);padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
+.lf-title{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+.lf-dots{display:flex;gap:6px}
+.lf-dot{width:8px;height:8px;border-radius:50%;background:rgba(201,168,76,0.25);transition:all 0.3s}
+.lf-dot.active{background:var(--gold);transform:scale(1.3)}
+.lf-dot.done{background:var(--gold)}
+.lf-step{display:none;padding:20px}
+.lf-step.active{display:block}
+.lf-step-num{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:6px}
+.lf-step-title{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:10px}
+.lf-chain{background:var(--navy);border-radius:6px;padding:14px 18px;margin:10px 0}
+.lf-chain-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.lf-chain-text{font-size:13px;color:#8FA8C0;line-height:1.6}
+.lf-chain-close{font-size:12px;color:var(--cream);margin-top:6px;font-style:italic}
+.lf-btn{background:var(--navy);color:var(--gold);border:2px solid var(--gold);padding:12px 24px;border-radius:6px;font-family:'Cinzel',serif;font-size:12px;letter-spacing:1.5px;font-weight:600;cursor:pointer;margin-top:12px;transition:all 0.2s;display:inline-block}
+.lf-btn:hover{background:var(--gold);color:var(--navy)}
+.lf-timer{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:var(--gold);padding:6px 14px;border-radius:4px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:1px;margin-top:10px}
+.lesson-main.ft>p{display:none!important}.lesson-main.ft>.callout{display:none!important}
+h3{font-family:'EB Garamond',serif;font-size:1.1rem;font-weight:700;color:var(--gold3);margin:1.5rem 0 0.5rem}
+.ft-toggle{display:flex;align-items:center;gap:10px;padding:10px 16px;background:var(--navy);border-radius:6px;cursor:pointer;border:1px solid rgba(201,168,76,0.25)}.ft-toggle-switch{width:36px;height:20px;background:rgba(201,168,76,0.2);border-radius:10px;position:relative;transition:background .2s}.ft-toggle-switch.on{background:var(--gold)}.ft-toggle-knob{width:14px;height:14px;background:#fff;border-radius:50%;position:absolute;top:3px;left:3px;transition:left .2s}.ft-toggle-switch.on .ft-toggle-knob{left:19px}.ft-toggle-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}.ft-toggle-desc{font-size:11px;color:var(--mid)}.lesson-main.ft-on>p,.lesson-main.ft-on>.callout,.lesson-main.ft-on h3{display:none!important}.lesson-main.ft-on .ob-card,.lesson-main.ft-on .lf-wrap,.lesson-main.ft-on .lead-nav,.lesson-main.ft-on h2{display:block!important}
+</style>
+</head>
+<body>
+<nav class="top-nav">
+  <div class="nav-left">
+    <div class="nav-brand">The Promotional Standard<span>Coaching Lab</span></div>
+    <div class="nav-divider"></div>
+    <div class="nav-tfd-badge">◆ TFD · EMSO Module · Forward Operating Officer</div>
+  </div>
+  <div class="nav-pills">
+    <button class="nav-pill active" onclick="showLesson(0)">The FOO Model</button>
+    <button class="nav-pill" onclick="showLesson(1)">The Shield</button>
+    <button class="nav-pill" onclick="showLesson(2)">The Mentor</button>
+    <button class="nav-pill" onclick="showLesson(3)">The Diplomat</button>
+    <button class="nav-pill" onclick="showLesson(4)">Operational Rhythm</button>
+    <button class="nav-pill" onclick="showLesson(5)">The Integrated EMSO</button>
+  </div>
+</nav>
+<div class="progress-bar" id="prog"></div>
+<main>
+<div class="module-hero">
+  <div class="hero-glow"></div>
+  <div class="mh-inner">
+    <div class="mh-eyebrow">Thornton Fire Department · EMS Division · EMSO Module</div>
+    <div class="mh-track-badge">◆ TFD Exclusive · Station-Level EMS Leadership · Forward Operating Officer</div>
+    <h1 class="mh-title">The EMS Officer —<br><em>The Forward Operating Officer</em></h1>
+    <p class="mh-sub">The EMSO is not a traditional supervisor. It is a new kind of officer built for a new kind of problem — the gap between EMS Division intent and station-level reality. The Forward Operating Officer model gives that gap a name, a structure, and a person responsible for closing it. That person is you.</p>
+    <div class="mh-thread">
+      <div class="mh-thread-label">Module Thread</div>
+      <div class="mh-thread-text">Six lessons. The Forward Operating Officer identity and its three capacities — The Shield, The Mentor, The Diplomat. The Authority Matrix — GREEN, YELLOW, RED decision architecture across all four domains. The 3x3 High-Potential Pipeline Rubric built for TFD. The Kitchen Table Mandate and Forward Observer function. The weekly operational rhythm in Notion. The Integrated EMSO — all three capacities across a full 48-hour tour.</div>
+    </div>
+  </div>
+</div>
+<!-- ═══════════════ LESSON 1 — THE FOO MODEL ═══════════════ -->
+<div class="lesson-view active" id="lesson-0">
+<div class="lesson-container">
+<div class="lesson-main">
+<div class="lesson-header">
+  <div class="lh-eyebrow">EMSO Module · Lesson 1 of 6</div>
+  <div class="lh-track">TFD Exclusive · Foundation · All Capacities</div>
+  <h1 class="lh-title">The Forward Operating Officer —<br><em>Identity, Architecture, and Purpose</em></h1>
+  <div class="lh-meta"><span class="lh-meta-item">⏱ 14 min</span><span class="lh-meta-item">📘 Foundation</span><span class="lh-meta-item">Shield · Diplomat · Mentor</span></div>
+</div>
+
+<p>The EMS Division has a problem that every growing fire-based EMS operation eventually faces: the people responsible for EMS outcomes — the SAMs, the EMS Captains, the Chief — cannot be physically present at every station, every shift, every day. The division's standards, culture, and operational rhythm exist at the leadership level. But the work happens at the station level. That gap is where EMS quality erodes, misinformation spreads, and documentation problems compound before anyone with authority to address them is even aware they exist.</p>
+
+<p>The Forward Operating Officer model is Thornton Fire's answer to that problem. The EMSO is not a traditional supervisor. There are no direct reports. There is no formal disciplinary authority over peers. What the EMSO has is something more precise and, in many ways, more demanding: <strong>defined functional authority within a structured decision-making framework, operating at the intersection of three distinct leadership capacities simultaneously.</strong></p>
+
+<div class="callout callout-tfd">
+  <span class="callout-label">The Core Principle</span>
+  <p>The EMSO extends the EMS Division's presence, standards, and culture into every station it serves — not through rank, but through consistent presence, disciplined communication, and deliberate development. When you are in the station, the Division is in the station.</p>
+</div>
+
+<h2>The Three Capacities</h2>
+<p>Every EMSO duty maps to one of three functional identities. These are not sequential — you operate in all three simultaneously. Understanding which capacity a given situation calls for is the first decision a skilled EMSO makes before acting.</p>
+
+<div class="infographic-wrap">
+  <div class="ig-header">
+    <span class="ig-eyebrow">◆ THE FORWARD OPERATING OFFICER — THREE CAPACITIES</span>
+    <div class="ig-title">The Architecture of the EMSO Role</div>
+    <div class="ig-sub">Three distinct identities. One officer. Every situation maps to one — or requires all three simultaneously.</div>
+  </div>
+  <div class="capacity-grid">
+    <div class="cap-card shield">
+      <div class="cap-icon">🛡️</div>
+      <div class="cap-label">Capacity One</div>
+      <div class="cap-name">The Shield</div>
+      <div class="cap-desc">Absorbs station-level EMS administrative burden from Fire Company Officers and SAMs. Manages certifications, supply authority, equipment accountability, Hub &amp; Spoke roves, and resource gatekeeping. The Shield exists so that operational and clinical leaders can focus on higher-order work.</div>
+      <div class="cap-purpose">Purpose: Reduce friction. Absorb burden. Protect bandwidth.</div>
+    </div>
+    <div class="cap-card mentor">
+      <div class="cap-icon">🎓</div>
+      <div class="cap-label">Capacity Two</div>
+      <div class="cap-name">The Mentor</div>
+      <div class="cap-desc">Performs first-line TQM review, conducts Hot Wash debriefs, identifies and actively develops High-Potential candidates through the 3x3 Pipeline, and provides informal clinical coaching. The Mentor builds the succession pipeline one conversation at a time.</div>
+      <div class="cap-purpose">Purpose: Develop people. Improve quality. Build the pipeline.</div>
+    </div>
+    <div class="cap-card diplomat">
+      <div class="cap-icon">🤝</div>
+      <div class="cap-label">Capacity Three</div>
+      <div class="cap-name">The Diplomat</div>
+      <div class="cap-desc">Maintains EMS Division presence in station common areas, corrects misinformation with facts, serves as the first communication node for Division messaging, functions as the Forward Observer for the SAM, and identifies crew members showing signs of burnout or distress.</div>
+      <div class="cap-purpose">Purpose: Represent the Division. Hold the culture. Report early.</div>
+    </div>
+  </div>
+  <div class="ig-callout">The most common early failure mode for new EMSOs: defaulting entirely to The Shield because operational tasks are visible and measurable, while Diplomat and Mentor work feels less defined. All three capacities are required. If you are executing Shield functions but not showing up at the kitchen table and not actively developing anyone — you are performing one-third of the role.</div>
+</div>
+
+<h2>Why This Model Exists</h2>
+<p>The Forward Operating Officer concept borrows from military doctrine — specifically the idea of a forward-deployed liaison who bridges strategic command intent with tactical ground reality. In the TFD context, the SAMs and EMS Captains are the strategic layer. The crews at each station are the tactical layer. The EMSO is the bridge.</p>
+
+<p>Without that bridge, three predictable failure modes occur:</p>
+
+<ul>
+  <li><strong>Information decay</strong> — Division updates, policy changes, and strategic priorities never reach crews with full fidelity. By the time messaging travels through the fire chain of command, it is fragmented, misinterpreted, or simply not passed on.</li>
+  <li><strong>Documentation erosion</strong> — PCR quality issues compound in silence for weeks before a second-line TQM reviewer catches them. By then, patterns have formed and habits are entrenched.</li>
+  <li><strong>Pipeline invisibility</strong> — High-Potential candidates exist at every station, but without a system to identify and develop them, their potential goes unrecognized until they leave or self-select out of the promotional process.</li>
+</ul>
+
+<p>The EMSO addresses all three simultaneously — not by solving them from above, but by being present at the level where they occur.</p>
+
+<h2>The Authority Framework</h2>
+<p>The EMSO operates within a defined authority framework — not unlimited discretion, not powerless presence. The Authority Matrix (EMS-2026-AM-001) establishes three decision-making levels across four operational domains. Understanding these levels is not optional — operating outside them, even with good intentions, creates liability and erodes the trust that makes the EMSO role function.</p>
+
+<div class="infographic-wrap">
+  <div class="ig-header">
+    <span class="ig-eyebrow">◆ AUTHORITY MATRIX — THREE DECISION LEVELS</span>
+    <div class="ig-title">GREEN · YELLOW · RED</div>
+    <div class="ig-sub">Every EMSO decision falls into one of three levels. The level determines whether you act, consult, or escalate. Knowing which level applies before you act is the first discipline of the role.</div>
+  </div>
+  <div class="auth-levels">
+    <div class="auth-level green">
+      <div class="auth-code">GREEN</div>
+      <div class="auth-name">Autonomous</div>
+      <div class="auth-def">Full authority to decide and act. No prior approval required. Document the decision in Notion for transparency. When in doubt whether something is GREEN — if the Authority Matrix says GREEN, it is GREEN. Do not escalate autonomous decisions. That creates the burden the Shield is designed to relieve.</div>
+    </div>
+    <div class="auth-level yellow">
+      <div class="auth-name">Consult</div>
+      <div class="auth-code">YELLOW</div>
+      <div class="auth-def">Consult with your SAM before acting. If the SAM is unavailable for more than four hours and the situation requires action, you may proceed and notify the SAM afterward. YELLOW is not permission-seeking — it is risk management through consultation.</div>
+    </div>
+    <div class="auth-level red">
+      <div class="auth-code">RED</div>
+      <div class="auth-name">Escalate</div>
+      <div class="auth-def">You may gather information and make recommendations — you may not decide. RED items belong to the SAM, EMS Captain, or EMS Chief. Your job at RED is to surface the issue clearly and completely, not to resolve it. Attempting to resolve RED items is a scope violation regardless of intent.</div>
+    </div>
+  </div>
+  <div class="ig-callout">The most common authority error: treating YELLOW as RED. When something is clearly within the YELLOW zone — consult, then act. Escalating YELLOW items to the SAM unnecessarily recreates the administrative burden the EMSO role was designed to absorb. Read the Matrix. Trust it. Act within it.</div>
+</div>
+
+<h2>The Reporting Relationship</h2>
+<p>The EMSO reports to the Shift SAM for daily operations. Monthly activity metrics are reviewed by the SAM. Quarterly summaries go to the EMS Chief. This chain matters because it defines where information flows and where decisions get made.</p>
+
+<p>The EMSO does not report to the Fire Company Officer or Battalion Chief for EMS Division functions — though coordination with Company Officers is required for station operations. When Fire and EMS authority intersect, the escalation path is clear: EMSO → Shift SAM → Day SAM → Functional Captain → EMS Chief. Never bypass this chain. The credibility of the Forward Operating Officer model depends on every link in that chain functioning correctly.</p>
+
+<div class="callout callout-gold">
+  <span class="callout-label">Before You Go Further</span>
+  <p>Read the full Authority Matrix (EMS-2026-AM-001). Not the summary in this lesson — the actual document. Know which decisions are GREEN in each of the four domains before you execute your first shift as an EMSO. The matrix is the operating manual for this role. This lesson is the orientation. The document is the standard.</p>
+</div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="ft-toggle" onclick="toggleFT(this)" style="margin-bottom:16px;max-width:320px">
+<div class="ft-toggle-switch"><div class="ft-toggle-knob"></div></div>
+<div><div class="ft-toggle-label">Fast Track Mode</div><div class="ft-toggle-desc">Full lesson content</div></div>
+</div>
+
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: EMS Officer Leadership</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">NEMSMA Pillars → T-K-S Triad → Forward Operating Officer Model</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify operational role → apply the triad → deliver at EMS Officer scope with Service anchor</div></div></div></div>
+
+  <span class="sbar-label">The Three Capacities</span>
+  <div class="sbar-card accent-shield"><strong>The Shield</strong>Absorbs operational burden. Certifications, supply authority, equipment, Hub &amp; Spoke roves, resource gatekeeping. Protects SAM and Company Officer bandwidth.</div>
+  <div class="sbar-card accent-mentor"><strong>The Mentor</strong>First-line TQM, Hot Wash debriefs, High-Potential identification, clinical coaching. Builds the succession pipeline.</div>
+  <div class="sbar-card accent-diplomat"><strong>The Diplomat</strong>Division presence, Kitchen Table Mandate, misinformation correction, Forward Observer function, burnout detection.</div>
+  <span class="sbar-label">Authority Levels</span>
+  <div class="sbar-card accent-tfd"><strong>GREEN — Autonomous</strong>Act. Document in Notion. No prior approval needed.</div>
+  <div class="sbar-card accent-gold"><strong>YELLOW — Consult</strong>SAM consultation before action. If SAM unavailable 4+ hrs, act and notify after.</div>
+  <div class="sbar-card accent-red"><strong>RED — Escalate</strong>Gather info. Make recommendations. Do not decide. SAM or above only.</div>
+  <span class="sbar-label">Reporting Chain</span>
+  <div class="sbar-card"><strong>EMSO → Shift SAM → Day SAM → Functional Captain → EMS Chief</strong>Never bypass. The model's credibility depends on every link functioning.</div>
+  <span class="sbar-label">Common Early Errors</span>
+  <div class="sbar-card accent-red"><strong>One-Third Role</strong>Executing Shield only. All three capacities are required every tour.</div>
+  <div class="sbar-card accent-red"><strong>YELLOW as RED</strong>Escalating decisions that belong to the EMSO recreates the burden the role exists to relieve.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — The Forward Operating Officer</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">TFD</span><div><div class="ob-q-text">"You are given a scenario that requires knowledge of the forward operating officer. How do you structure your response?"</div><div class="ob-note">Use LEAD: Label this as a Emso Module question. Engage the specific framework from this lesson — name it explicitly. Address impact at both the immediate and organizational level. Drive to a specific first action.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 1 — Key Takeaways</div>
+  <div class="tk-item">The Three Capacities — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">Why This Model Exists — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Emso Module question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">EMS Officer Leadership</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">NEMSMA Pillars → T-K-S Triad → Forward Operating Officer Model</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify operational role → apply the triad → deliver at EMS Officer scope with Service anchor</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" disabled>← Start</button>
+  <div class="lnb-info"><div class="lnb-name">The Forward Operating Officer Model</div><div class="lnb-num">Lesson 1 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">The Shield →</button>
+</div>
+</div>
+<!-- ═══════════════ LESSON 2 — THE SHIELD ═══════════════ -->
+<div class="lesson-view" id="lesson-1">
+<div class="lesson-container">
+<div class="lesson-main">
+<div class="lesson-header">
+  <div class="lh-eyebrow">EMSO Module · Lesson 2 of 6</div>
+  <div class="lh-track">TFD Exclusive · Operational Authority · The Shield</div>
+  <h1 class="lh-title">The Shield —<br><em>Authority Matrix, Resource Gatekeeping &amp; Hub &amp; Spoke</em></h1>
+  <div class="lh-meta"><span class="lh-meta-item">⏱ 16 min</span><span class="lh-meta-item">📘 Operational Authority</span><span class="lh-meta-item">GREEN · YELLOW · RED · Hub &amp; Spoke</span></div>
+</div>
+
+<p>The Shield capacity exists to solve a specific organizational problem: Fire Company Officers and SAMs are carrying EMS administrative tasks that require EMS expertise to execute correctly — and those tasks are pulling them away from the work that actually requires their authority. Certification tracking, supply requests, equipment accountability, continuing education coordination. Every one of those tasks lands on someone. Before the EMSO model, they landed wherever there was no clear owner.</p>
+
+<p>The Shield is the clear owner. Not because the EMSO has the most rank — but because the role was specifically designed, authorized, and accountable for exactly these functions. Executing them well is not administrative drudgery. It is the operational foundation that makes every other EMSO capacity possible.</p>
+
+<h2>Operational Authority — The Full GREEN/YELLOW/RED Map</h2>
+
+<div class="infographic-wrap">
+  <div class="ig-header">
+    <span class="ig-eyebrow">◆ OPERATIONAL DOMAIN — AUTHORITY MATRIX</span>
+    <div class="ig-title">Complete Decision Map for The Shield</div>
+    <div class="ig-sub">Every operational decision the EMSO will face is mapped here. Know this before your first shift. The matrix is not a suggestion — it is the operating standard.</div>
+  </div>
+  <div style="padding:.5rem 1rem 1rem;">
+    <table class="auth-table">
+      <thead><tr><th>Decision / Action</th><th>Level</th><th>Boundaries</th></tr></thead>
+      <tbody>
+        <tr class="green-row"><td><strong>Certification expiration tracking and notification</strong></td><td>GREEN</td><td>30/60/90-day cadence. Notify the crew member directly.</td></tr>
+        <tr class="green-row"><td><strong>Station EMS supply requests under $100</strong></td><td>GREEN</td><td>Log every transaction in Notion. Monthly reconciliation with Logistics Captain.</td></tr>
+        <tr class="green-row"><td><strong>Supply orders to maintain PAR levels — no dollar limit</strong></td><td>GREEN</td><td>Notify Logistics Captain if single order exceeds $2,000 or is 3x a typical order.</td></tr>
+        <tr class="green-row"><td><strong>CE delivery coordination at station</strong></td><td>GREEN</td><td>Training Captain-approved content only. Do not source or deliver unapproved CE.</td></tr>
+        <tr class="green-row"><td><strong>Ambulance, medication, and equipment check oversight</strong></td><td>GREEN</td><td>Within station crew. Coordinate with Company Officer for duty assignment.</td></tr>
+        <tr class="green-row"><td><strong>Hub &amp; Spoke mid-day rove visits</strong></td><td>GREEN</td><td>10:00–14:00 window. Execute when staffing permits. Document in Notion.</td></tr>
+        <tr class="yellow-row"><td><strong>Deny non-urgent station EMS requests</strong></td><td>YELLOW</td><td>Document rationale. Notify SAM within 24 hours of denial.</td></tr>
+        <tr class="yellow-row"><td><strong>Address crew EMS equipment misuse or negligence</strong></td><td>YELLOW</td><td>Initial counseling only. Formal discipline is RED — escalate to SAM.</td></tr>
+        <tr class="red-row"><td><strong>All supply requests over $100</strong></td><td>RED</td><td>Escalate to Logistics Captain or EMS Chief. No exceptions.</td></tr>
+        <tr class="red-row"><td><strong>Ambulance deployment or staffing changes</strong></td><td>RED</td><td>Battalion Chief authority only. Never authorize independently.</td></tr>
+        <tr class="red-row"><td><strong>Company Officer disagreements</strong></td><td>RED</td><td>Escalate through EMS chain of command. Do not engage in peer-to-peer authority disputes.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="ig-callout">Supply authority is tiered precisely: under $100 is fully autonomous, no-limit PAR orders are GREEN with notification thresholds, and over $100 non-PAR requests escalate. Memorize these tiers. You will be asked about them — and the difference between acting within authority and outside it defines the credibility of every future EMSO decision.</div>
+</div>
+
+<h2>Hub &amp; Spoke — The Rove Function</h2>
+<p>The Hub &amp; Spoke model solves the geographic coverage problem: not every station has an assigned EMSO on every shift. The rove function extends EMSO presence to neighboring stations during the 10:00–14:00 window — the period when administrative tasks are most executable and operational tempo is typically lower.</p>
+
+<div class="callout callout-navy">
+  <span class="callout-label">Hub &amp; Spoke — Operating Principles</span>
+  <p><strong>Your assigned station is the Hub.</strong> Neighboring stations without an assigned EMSO on that shift are the Spokes. During the rove window, you visit Spoke stations to check in with crew, identify any emerging issues, and extend Division presence to stations that would otherwise have no EMSO contact that shift. The rove is not a supervisory inspection — it is a presence visit. Show up, connect, observe, report.</p>
+</div>
+
+<p>When you arrive at a Spoke station during a rove:</p>
+<ul>
+  <li>Check in with the crew — introduce or reintroduce yourself in the EMSO capacity</li>
+  <li>Ask two questions: anything EMS-related they need addressed, and anything they want the SAM to know</li>
+  <li>Note any equipment, documentation, or certification issues you observe — do not correct them on the spot unless GREEN authority applies</li>
+  <li>Log the visit in Notion before end of tour: station visited, crew contacted, issues noted, actions taken or escalated</li>
+</ul>
+
+<h2>The Notion Command Center</h2>
+<p>Every Shield function generates a documentation trail in Notion. This is not bureaucracy — it is the mechanism that makes the EMSO role visible and accountable to the SAM who cannot be at every station. Without Notion documentation, the EMSO's work is invisible. Invisible work cannot be validated, cannot be improved, and cannot protect you when questions arise about decisions made.</p>
+
+<div class="callout callout-tfd">
+  <span class="callout-label">What Gets Logged in Notion — Shield Functions</span>
+  <p>Supply approvals and orders (every transaction). Certification notifications sent (who, what, when). CE coordination activities. Equipment check discrepancies and resolution. Hub &amp; Spoke rove visits (station, crew, issues, actions). Any YELLOW decisions and their rationale. Any RED escalations initiated. Weekly activity summary — due by end of each tour.</p>
+</div>
+
+<h2>The Certification Cadence</h2>
+<p>The 30/60/90-day notification cadence is the EMSO's early warning system for certification expirations. Most paramedics do not actively track their own certification timelines — and a lapsed certification creates immediate operational and liability consequences for the individual, the station, and the Division.</p>
+
+<ul>
+  <li><strong>90 days out</strong> — First notification. Informational. "Your ACLS expires in 90 days. Here are renewal options."</li>
+  <li><strong>60 days out</strong> — Follow-up. Confirm they have a renewal plan. Log the conversation.</li>
+  <li><strong>30 days out</strong> — Escalation trigger. If no renewal is scheduled, notify the SAM. This is now a staffing issue, not just a professional development reminder.</li>
+</ul>
+
+<p>Running this cadence correctly requires knowing every crew member's certification status at your station — and at Spoke stations you cover. Build and maintain that tracking in Notion from day one of your EMSO assignment.</p>
+
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: EMS Officer Leadership</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">NEMSMA Pillars → T-K-S Triad → Forward Operating Officer Model</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify operational role → apply the triad → deliver at EMS Officer scope with Service anchor</div></div></div></div>
+
+  <span class="sbar-label">Shield — GREEN Authority</span>
+  <div class="sbar-card accent-tfd"><strong>Certifications</strong>Track and notify at 30/60/90. Fully autonomous.</div>
+  <div class="sbar-card accent-tfd"><strong>Supplies under $100</strong>Approve. Log in Notion every time.</div>
+  <div class="sbar-card accent-tfd"><strong>PAR Orders — No Limit</strong>GREEN with notification if over $2K or 3x typical.</div>
+  <div class="sbar-card accent-tfd"><strong>CE Coordination</strong>Training Captain-approved content only.</div>
+  <div class="sbar-card accent-tfd"><strong>Equipment Checks</strong>Oversee within station crew.</div>
+  <div class="sbar-card accent-tfd"><strong>Hub &amp; Spoke Roves</strong>10:00–14:00. Log every visit in Notion.</div>
+  <span class="sbar-label">Shield — RED Lines</span>
+  <div class="sbar-card accent-red"><strong>Supplies over $100</strong>Escalate to Logistics Captain. No exceptions.</div>
+  <div class="sbar-card accent-red"><strong>Staffing / Deployment</strong>Battalion Chief authority only.</div>
+  <div class="sbar-card accent-red"><strong>Company Officer Disputes</strong>Escalate through EMS chain. Never engage peer-to-peer.</div>
+  <span class="sbar-label">Notion — Log Everything</span>
+  <div class="sbar-card accent-gold"><strong>Every supply transaction · Every certification notification · Every rove visit · Every YELLOW decision · Every RED escalation · Weekly summary due end of tour</strong></div>
+  <span class="sbar-label">30/60/90 Cadence</span>
+  <div class="sbar-card"><strong>90 days</strong>Informational notice. Renewal options provided.</div>
+  <div class="sbar-card"><strong>60 days</strong>Confirm renewal plan. Log conversation.</div>
+  <div class="sbar-card accent-red"><strong>30 days — no plan</strong>Notify SAM immediately. This is a staffing issue now.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — The Shield</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">TFD</span><div><div class="ob-q-text">"You are given a scenario that requires knowledge of the shield. How do you structure your response?"</div><div class="ob-note">Use LEAD: Label this as a Emso Module question. Engage the specific framework from this lesson — name it explicitly. Address impact at both the immediate and organizational level. Drive to a specific first action.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 2 — Key Takeaways</div>
+  <div class="tk-item">Operational Authority — The Full GREEN/YELLOW/RED Map — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">Hub &amp; Spoke — The Rove Function — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Emso Module question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">EMS Officer Leadership</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">NEMSMA Pillars → T-K-S Triad → Forward Operating Officer Model</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify operational role → apply the triad → deliver at EMS Officer scope with Service anchor</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← The FOO Model</button>
+  <div class="lnb-info"><div class="lnb-name">The Shield</div><div class="lnb-num">Lesson 2 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">The Mentor →</button>
+</div>
+</div>
+<!-- ═══════════════ LESSON 3 — THE MENTOR ═══════════════ -->
+<div class="lesson-view" id="lesson-2">
+<div class="lesson-container">
+<div class="lesson-main">
+<div class="lesson-header">
+  <div class="lh-eyebrow">EMSO Module · Lesson 3 of 6</div>
+  <div class="lh-track">TFD Exclusive · QA &amp; Succession · The Mentor</div>
+  <h1 class="lh-title">The Mentor —<br><em>TQM First Line, Hot Wash &amp; the 3×3 Pipeline</em></h1>
+  <div class="lh-meta"><span class="lh-meta-item">⏱ 18 min</span><span class="lh-meta-item">📘 Quality &amp; Development</span><span class="lh-meta-item">TQM · Hot Wash · 3×3 Pipeline · High-Potential</span></div>
+</div>
+
+<p>The Mentor capacity is where the EMSO has the longest-range impact. Shield work is visible and immediate — a supply order processed, a certification tracked. Mentor work is slower, less visible, and more consequential. The paramedic you identify as High-Potential today may be your replacement SAM in five years. The documentation pattern you address through an educational Hot Wash today may prevent an adverse outcome in six months. The Mentor plays a long game — and that requires a different kind of discipline than operational execution.</p>
+
+<h2>First-Line TQM — The PCR Review Function</h2>
+<p>The EMSO performs completeness and quality checks on station crew PCRs — not as an auditor looking for disciplinary findings, but as a first-line quality lens that catches issues early and addresses them educationally before they become patterns.</p>
+
+<div class="callout callout-tfd">
+  <span class="callout-label">What First-Line TQM Covers</span>
+  <p>Completeness — are all required fields populated? Accuracy — does the narrative match the clinical picture? Protocol alignment — are interventions documented consistent with standing orders? Timeliness — were times recorded accurately and in sequence? The EMSO flags issues for educational follow-up and documents findings in Notion for SAM second-line review. The EMSO does <strong>not</strong> determine that a protocol deviation occurred — that is RED, SAM authority.</p>
+</div>
+
+<p>When you identify a documentation issue, the approach is always educational first:</p>
+<ul>
+  <li>Request clarification privately — never in front of peers or in writing that could be construed as formal discipline</li>
+  <li>Frame it as a question, not an accusation: "Walk me through the timeline on this call — I want to make sure I understand the sequence"</li>
+  <li>Document the clarification conversation in Notion: date, provider, issue identified, response given, resolution</li>
+  <li>Flag any potential protocol deviation to the SAM immediately — do not investigate further independently</li>
+</ul>
+
+<h2>The Hot Wash Debrief</h2>
+<p>The Hot Wash is a structured post-call debrief conducted after significant calls — not every call, but the ones where learning occurred, where clinical decisions were complex, where something went wrong, or where something went exceptionally well. The Hot Wash is a Mentor function because its purpose is development, not evaluation.</p>
+
+<div class="infographic-wrap">
+  <div class="ig-header">
+    <span class="ig-eyebrow">◆ HOT WASH STRUCTURE — TFD EMSO FORMAT</span>
+    <div class="ig-title">Five Elements of an Effective Post-Call Debrief</div>
+    <div class="ig-sub">The Hot Wash is a development conversation, not a performance review. The tone is curiosity, not judgment. Document findings in Notion for SAM second-line review.</div>
+  </div>
+  <div style="padding:.75rem 1rem 1rem;">
+    <table class="auth-table">
+      <thead><tr><th>#</th><th>Element</th><th>How to Run It</th></tr></thead>
+      <tbody>
+        <tr><td><strong>1</strong></td><td><strong>What Happened</strong></td><td>Brief factual summary of the call — patient, presentation, interventions, outcome. No evaluation yet. Get alignment on the facts before anything else.</td></tr>
+        <tr><td><strong>2</strong></td><td><strong>What Went Well</strong></td><td>Explicitly name what the crew did right. Clinical decisions, communication, teamwork. This is not perfunctory — it builds psychological safety for honest critique in the next step.</td></tr>
+        <tr><td><strong>3</strong></td><td><strong>What Could Be Different</strong></td><td>Open, non-judgmental exploration of what might be done differently. Frame as "what would we do differently if this happened again" — future-facing, not backward-looking blame.</td></tr>
+        <tr><td><strong>4</strong></td><td><strong>What We Learned</strong></td><td>Synthesize the key learning point from the call. One specific, actionable lesson that the crew can carry forward. If there is no learning, the debrief was too surface-level.</td></tr>
+        <tr><td><strong>5</strong></td><td><strong>What Gets Documented</strong></td><td>Log significant findings in Notion. Escalate any protocol concerns to SAM. If the call involved a patient outcome requiring further review, notify SAM before end of tour.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="ig-callout">The Hot Wash is GREEN authority — the EMSO runs it independently. The output (Notion documentation + any SAM notifications) makes it visible to the second-line review process. A Hot Wash that produces no documentation happened; a Hot Wash that produces a Notion entry and a SAM flag develops the division.</div>
+</div>
+
+<h2>The 3×3 High-Potential Pipeline Rubric</h2>
+<p>The EMSO identifies one High-Potential candidate per shift/station using a structured rubric. This is not a gut feeling — it is a disciplined observation process applied consistently across three qualities, each evaluated through three observable indicators. The SAM validates every nomination. The EMSO's job is to observe and nominate with evidence — not to champion or advocate.</p>
+
+<div class="infographic-wrap">
+  <div class="ig-header">
+    <span class="ig-eyebrow">◆ TFD 3×3 HIGH-POTENTIAL PIPELINE RUBRIC</span>
+    <div class="ig-title">Three Qualities · Three Observable Indicators Each</div>
+    <div class="ig-sub">Nominate when a candidate shows Present across at least 6 of 9 indicators — with at least one Present in each of the three qualities. SAM validates every nomination. This rubric is a TFD-developed tool built for the Forward Operating Officer model.</div>
+  </div>
+  <div class="rubric-grid">
+    <div class="rubric-quality">
+      <div class="rubric-quality-label">Quality 1</div>
+      <div class="rubric-quality-name">Leadership Instinct</div>
+      <div class="rubric-indicator"><div class="rubric-dot"></div><div>Takes initiative on scene or in station without being prompted — steps into gaps before being asked</div></div>
+      <div class="rubric-indicator"><div class="rubric-dot"></div><div>Peers informally defer to them — crew members naturally look to them for guidance in ambiguous situations</div></div>
+      <div class="rubric-indicator"><div class="rubric-dot"></div><div>Handles interpersonal friction constructively — de-escalates, doesn't amplify crew conflict</div></div>
+    </div>
+    <div class="rubric-quality">
+      <div class="rubric-quality-label">Quality 2</div>
+      <div class="rubric-quality-name">Clinical Excellence</div>
+      <div class="rubric-indicator"><div class="rubric-dot"></div><div>PCRs are consistently complete, accurate, and above average in narrative quality — documentation reflects clinical thinking</div></div>
+      <div class="rubric-indicator"><div class="rubric-dot"></div><div>Seeks feedback on complex calls without prompting — debriefs voluntarily, asks "what could I have done differently"</div></div>
+      <div class="rubric-indicator"><div class="rubric-dot"></div><div>Demonstrates protocol mastery and applies clinical judgment consistently — not just technically compliant but clinically sharp</div></div>
+    </div>
+    <div class="rubric-quality">
+      <div class="rubric-quality-label">Quality 3</div>
+      <div class="rubric-quality-name">Professional Orientation</div>
+      <div class="rubric-indicator"><div class="rubric-dot"></div><div>Pursues CE and professional development beyond minimum requirements — self-directed learner</div></div>
+      <div class="rubric-indicator"><div class="rubric-dot"></div><div>Expresses genuine interest in the promotional track or in organizational leadership — says it, not just implies it</div></div>
+      <div class="rubric-indicator"><div class="rubric-dot"></div><div>Actively engages with the EMSO on career development conversations — receptive, curious, action-oriented</div></div>
+    </div>
+  </div>
+  <div class="ig-callout">Scoring: each indicator is Present, Developing, or Not Yet Observed. You do not need all nine Present to nominate — you need six or more Present, with at least one in each quality. A candidate with nine Developing scores is not a nomination. A candidate with six Present including one per quality is. Document your observed evidence for each indicator in Notion before submitting the nomination to your SAM.</div>
+</div>
+
+<h2>Active Mentorship of the High-Potential Candidate</h2>
+<p>Identification is the beginning, not the end. Once a candidate is validated by the SAM, the EMSO begins active mentorship — regular development conversations, deliberate assignments, and honest feedback.</p>
+
+<ul>
+  <li><strong>Monthly development conversation</strong> — 15–20 minutes. What they're working on, what's developing, what the next growth edge is. Not a performance review — a development investment.</li>
+  <li><strong>Deliberate exposure</strong> — assign them to lead the Hot Wash debrief, brief the crew on a policy update, or coordinate a CE session. Real leadership reps in a low-stakes environment.</li>
+  <li><strong>Honest feedback</strong> — the EMSO using the CLEAR framework: Commend what's genuinely strong, name the Limitation specifically, give an Example, define the Adjustment, Repeat at the next cadence.</li>
+  <li><strong>Document every significant conversation</strong> — not a surveillance record, but a development trail the SAM can use for succession planning.</li>
+</ul>
+
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: EMS Officer Leadership</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">NEMSMA Pillars → T-K-S Triad → Forward Operating Officer Model</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify operational role → apply the triad → deliver at EMS Officer scope with Service anchor</div></div></div></div>
+
+  <span class="sbar-label">TQM First Line — Scope</span>
+  <div class="sbar-card accent-tfd"><strong>GREEN — EMSO Authority</strong>Completeness checks · Accuracy flags · Educational clarification conversations · Notion documentation · SAM notification of concerns</div>
+  <div class="sbar-card accent-red"><strong>RED — Not EMSO Authority</strong>Determining protocol deviation occurred · Formal disciplinary recommendations · Reporting directly to Medical Director</div>
+  <span class="sbar-label">Hot Wash — Five Steps</span>
+  <div class="sbar-card"><strong>1</strong> What happened — facts only</div>
+  <div class="sbar-card accent-tfd"><strong>2</strong> What went well — name it explicitly</div>
+  <div class="sbar-card"><strong>3</strong> What could be different — future-facing</div>
+  <div class="sbar-card accent-tfd"><strong>4</strong> What we learned — one specific lesson</div>
+  <div class="sbar-card accent-gold"><strong>5</strong> Document in Notion + SAM notification if needed</div>
+  <span class="sbar-label">3×3 Rubric — Nomination Threshold</span>
+  <div class="sbar-card accent-mentor"><strong>6 of 9 Present · At least 1 per Quality</strong>Document observed evidence before submitting. SAM validates every nomination.</div>
+  <span class="sbar-label">The Three Qualities</span>
+  <div class="sbar-card"><strong>1 — Leadership Instinct</strong>Initiative · peer deference · conflict management</div>
+  <div class="sbar-card"><strong>2 — Clinical Excellence</strong>PCR quality · feedback-seeking · protocol mastery</div>
+  <div class="sbar-card"><strong>3 — Professional Orientation</strong>CE pursuit · promotional interest · development engagement</div>
+  <span class="sbar-label">CLEAR in Mentorship</span>
+  <div class="sbar-card accent-gold"><strong>Commend · Limitations · Example · Adjust · Repeat</strong>Use CLEAR for every significant mentorship feedback conversation. Document it.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — The Mentor</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">TFD</span><div><div class="ob-q-text">"You are given a scenario that requires knowledge of the mentor. How do you structure your response?"</div><div class="ob-note">Use LEAD: Label this as a Emso Module question. Engage the specific framework from this lesson — name it explicitly. Address impact at both the immediate and organizational level. Drive to a specific first action.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 3 — Key Takeaways</div>
+  <div class="tk-item">First-Line TQM — The PCR Review Function — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">The Hot Wash Debrief — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Emso Module question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">EMS Officer Leadership</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">NEMSMA Pillars → T-K-S Triad → Forward Operating Officer Model</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify operational role → apply the triad → deliver at EMS Officer scope with Service anchor</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div>
+<h3>Use the OB card question</h3>
+<p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← The Shield</button>
+  <div class="lnb-info"><div class="lnb-name">The Mentor</div><div class="lnb-num">Lesson 3 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">The Diplomat →</button>
+</div>
+</div>
+<!-- ═══════════════ LESSON 4 — THE DIPLOMAT ═══════════════ -->
+<div class="lesson-view" id="lesson-3">
+<div class="lesson-container">
+<div class="lesson-main">
+<div class="lesson-header">
+  <div class="lh-eyebrow">EMSO Module · Lesson 4 of 6</div>
+  <div class="lh-track">TFD Exclusive · Cultural Leadership · The Diplomat</div>
+  <h1 class="lh-title">The Diplomat —<br><em>Kitchen Table Mandate, Forward Observer &amp; Cultural Presence</em></h1>
+  <div class="lh-meta"><span class="lh-meta-item">⏱ 16 min</span><span class="lh-meta-item">📘 Cultural Leadership</span><span class="lh-meta-item">Kitchen Table · Forward Observer · Misinformation · Burnout</span></div>
+</div>
+
+<p>Of the three EMSO capacities, the Diplomat is the hardest to execute and the easiest to skip. Shield tasks have clear deliverables. Mentor functions have rubrics and checklists. The Diplomat works in the space between — in common area conversations, in the tone of a casual correction, in the decision to stay present when it would be easier to disappear into operational tasks. It is relational, cultural, and largely invisible. And it is what makes the difference between an EMSO who is technically competent and one who actually shapes the division's culture at the station level.</p>
+
+<h2>The Kitchen Table Mandate</h2>
+<p>The Kitchen Table Mandate is the most operationally specific Diplomat requirement: the EMSO maintains a minimum weekly presence in station common areas — the kitchen, the day room, wherever crews gather informally — to brief on Notion Command Center updates, correct factual errors about Division direction, and simply be visible as the EMS Division's representative at that station.</p>
+
+<div class="callout callout-navy">
+  <span class="callout-label">What the Kitchen Table Mandate Is</span>
+  <p>Not a formal briefing. Not a mandatory meeting. A deliberate choice to be present where informal culture is formed — because the most consequential conversations in any fire station happen informally, over coffee, between calls. When the EMSO is at that table and engaged, the Division has a voice in those conversations. When the EMSO is in the apparatus bay running operational tasks instead, it does not.</p>
+</div>
+
+<p>At minimum weekly, the EMSO should:</p>
+<ul>
+  <li>Brief the crew verbally on any Notion Command Center updates — policy changes, strategic initiatives, operational news from the Division</li>
+  <li>Invite questions and actually engage with them — not deflect or redirect every question upward</li>
+  <li>Note what topics the crew raises spontaneously — this is forward intelligence for the Forward Observer function</li>
+  <li>Document the briefing in Notion: date, topics covered, questions raised, crew response</li>
+</ul>
+
+<h2>Misinformation Correction — Facts Only, No Opinions</h2>
+<p>In any organization undergoing change, misinformation spreads faster than accurate information. The EMSO is the first line of factual correction — but the operating principle is narrow and precise: <strong>correct factual errors with facts, never argue opinions.</strong></p>
+
+<div class="infographic-wrap">
+  <div class="ig-header">
+    <span class="ig-eyebrow">◆ MISINFORMATION CORRECTION — THE EMSO PROTOCOL</span>
+    <div class="ig-title">When to Correct, What to Say, When to Stop</div>
+  </div>
+  <div style="padding:.75rem 1rem 1rem;">
+    <table class="auth-table">
+      <thead><tr><th>Situation</th><th>EMSO Response</th><th>What Not to Do</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Factual error about policy or Division direction</strong></td><td>Correct it directly: "That's not accurate — the actual policy is X. Here's where you can verify that." Log in Notion as a misinformation trend if it recurs.</td><td>Let it go unaddressed. Misinformation that isn't corrected becomes accepted as true within 48 hours.</td></tr>
+        <tr><td><strong>Opinion stated as fact about Division leadership</strong></td><td>Distinguish the fact from the opinion: "I understand the frustration. What I can tell you is [the factual situation]. The interpretation of that is a conversation I'd encourage you to have with the SAM."</td><td>Agree with the opinion, even privately. The EMSO does not editorialize about Division leadership decisions at the station level.</td></tr>
+        <tr><td><strong>Rumor about operational changes (staffing, deployment, etc.)</strong></td><td>"I don't have information on that. I'll find out what I can and get back to you — or bring it to the SAM directly." Then do it. Never say "I'll find out" and not follow through.</td><td>Speculate. One uninformed EMSO statement about potential staffing changes becomes a rumor by the second retelling.</td></tr>
+        <tr><td><strong>Escalating argument or crew member becoming adversarial</strong></td><td>Exit the argument: "I hear you. This is a conversation worth having with the SAM." Then report the interaction to the SAM using the Forward Observer function.</td><td>Escalate the argument. The Diplomat de-escalates and reports — never out-argues.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="ig-callout">The Diplomat's credibility comes entirely from accuracy. One instance of an EMSO speculating, editorializing, or advocating a personal position about Division decisions destroys the factual authority of every future correction. Facts only. Opinions never. When you don't know — say so, and follow through on finding out.</div>
+</div>
+
+<h2>The Forward Observer Function</h2>
+<p>The Forward Observer is the EMSO's early warning role for the SAM. Before problems become formal grievances, before discontent becomes an HR issue, before a crew member's burnout becomes a patient safety concern — there is a period when an attentive, present EMSO can see it forming and report it to someone with the authority and resources to address it.</p>
+
+<p>The Forward Observer function requires two things: the presence to observe (which the Kitchen Table Mandate provides) and the discipline to report what you observe rather than attempting to solve it yourself.</p>
+
+<div class="callout callout-tfd">
+  <span class="callout-label">What Gets Reported to the SAM as Forward Observer Intelligence</span>
+  <p>Recurring misinformation themes — if the same false narrative surfaces at multiple stations or multiple shifts, it is a systemic signal, not an individual misunderstanding. Morale shifts — visible changes in crew engagement, energy, or cohesion that don't have an obvious explanation. Crew conflict that hasn't yet risen to the formal level. Rumors about operational or organizational changes that are creating anxiety. Any crew member who appears to be struggling.</p>
+</div>
+
+<h2>Burnout and Distress Identification</h2>
+<p>The EMSO is not a mental health professional. The role is not to diagnose, treat, or counsel crew members experiencing burnout or distress. The role is to recognize the observable indicators and connect the crew member to appropriate support through the SAM and peer support referral process.</p>
+
+<p>Observable indicators that warrant a SAM notification:</p>
+<ul>
+  <li>Noticeable change in engagement — a previously engaged crew member becomes withdrawn, disinterested, or irritable over multiple shifts</li>
+  <li>Clinical performance changes — a provider who was consistently strong begins making uncharacteristic documentation errors or showing hesitation on calls they previously handled confidently</li>
+  <li>Increased sick usage or shift refusals</li>
+  <li>Direct statements of distress, exhaustion, or considering leaving the profession</li>
+  <li>Behavioral changes after a high-acuity call — particularly pediatric codes, mass casualty incidents, or calls involving colleagues</li>
+</ul>
+
+<p>When you observe these indicators: notify the SAM. Consider a peer support referral if appropriate. Do not attempt to provide counseling, do not suggest the crew member is fine if they are not, and do not disclose what you observed to other crew members. Confidentiality and discretion are the Diplomat's operating standards in this function.</p>
+
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: EMS Officer Leadership</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">NEMSMA Pillars → T-K-S Triad → Forward Operating Officer Model</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify operational role → apply the triad → deliver at EMS Officer scope with Service anchor</div></div></div></div>
+
+  <span class="sbar-label">Kitchen Table Mandate</span>
+  <div class="sbar-card accent-diplomat"><strong>Weekly Minimum</strong>Verbal briefing on Notion updates. Engage with questions. Note topics raised. Document in Notion.</div>
+  <div class="sbar-card accent-red"><strong>The Absence Cost</strong>When the EMSO is not present in common areas, the Division has no voice in the informal culture that forms there.</div>
+  <span class="sbar-label">Misinformation — The Rule</span>
+  <div class="sbar-card accent-tfd"><strong>Facts Only · Opinions Never</strong>Correct factual errors directly. Distinguish fact from opinion. Never speculate about operational changes. Never editorialize about Division decisions.</div>
+  <div class="sbar-card accent-gold"><strong>"I'll Find Out"</strong>If you say it, do it. Every unfollowed commitment destroys Diplomat credibility permanently.</div>
+  <span class="sbar-label">Forward Observer</span>
+  <div class="sbar-card accent-diplomat"><strong>Observe and Report</strong>Not solve. Recurring misinformation themes · Morale shifts · Emerging conflict · Operational rumors · Crew distress. All go to SAM.</div>
+  <span class="sbar-label">Burnout Indicators</span>
+  <div class="sbar-card"><strong>Engagement change · Clinical performance shifts · Sick pattern increase · Direct distress statements · Post-high-acuity behavioral change</strong></div>
+  <div class="sbar-card accent-tfd"><strong>Action: Notify SAM. Consider peer support referral. Maintain confidentiality. Do not counsel.</strong></div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — The Diplomat</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">TFD</span><div><div class="ob-q-text">"You are given a scenario that requires knowledge of the diplomat. How do you structure your response?"</div><div class="ob-note">Use LEAD: Label this as a Emso Module question. Engage the specific framework from this lesson — name it explicitly. Address impact at both the immediate and organizational level. Drive to a specific first action.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 4 — Key Takeaways</div>
+  <div class="tk-item">The Kitchen Table Mandate — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">Misinformation Correction — Facts Only, No Opinions — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Emso Module question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">EMS Officer Leadership</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">NEMSMA Pillars → T-K-S Triad → Forward Operating Officer Model</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify operational role → apply the triad → deliver at EMS Officer scope with Service anchor</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← The Mentor</button>
+  <div class="lnb-info"><div class="lnb-name">The Diplomat</div><div class="lnb-num">Lesson 4 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Operational Rhythm →</button>
+</div>
+</div>
+<!-- ═══════════════ LESSON 5 — OPERATIONAL RHYTHM ═══════════════ -->
+<div class="lesson-view" id="lesson-4">
+<div class="lesson-container">
+<div class="lesson-main">
+<div class="lesson-header">
+  <div class="lh-eyebrow">EMSO Module · Lesson 5 of 6</div>
+  <div class="lh-track">TFD Exclusive · Administrative Functions · Daily · Weekly · Monthly</div>
+  <h1 class="lh-title">The Operational Rhythm —<br><em>Daily, Weekly &amp; Monthly EMSO Cadence</em></h1>
+  <div class="lh-meta"><span class="lh-meta-item">⏱ 12 min</span><span class="lh-meta-item">📘 Administrative</span><span class="lh-meta-item">Notion · Weekly Huddle · Reporting Cadence</span></div>
+</div>
+
+<p>The EMSO role produces results through consistency, not intensity. A single exceptional shift followed by weeks of minimal engagement does not develop crews, does not build pipeline, and does not extend Division culture. The operational rhythm is the system that makes consistent execution possible — turning the three capacities from intentions into habits.</p>
+
+<h2>The Tour Rhythm</h2>
+<div class="infographic-wrap">
+  <div class="ig-header">
+    <span class="ig-eyebrow">◆ EMSO OPERATIONAL CADENCE — FULL CYCLE</span>
+    <div class="ig-title">What Happens Every Tour · Every Week · Every Month</div>
+  </div>
+  <div style="padding:.5rem 1rem 1rem;">
+    <table class="auth-table">
+      <thead><tr><th>Cadence</th><th>Function</th><th>Capacity</th><th>Notion</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Every Tour</strong></td><td>Equipment and medication checks assigned and verified</td><td>Shield</td><td>Log any discrepancies</td></tr>
+        <tr><td><strong>Every Tour</strong></td><td>Certification status check — flag any approaching windows</td><td>Shield</td><td>Log notifications sent</td></tr>
+        <tr><td><strong>Every Tour</strong></td><td>PCR first-line review — completeness and accuracy check</td><td>Mentor</td><td>Flag issues for SAM</td></tr>
+        <tr><td><strong>Every Tour</strong></td><td>Common area presence — Kitchen Table engagement</td><td>Diplomat</td><td>Log topics raised</td></tr>
+        <tr><td><strong>Every Tour</strong></td><td>Hub &amp; Spoke rove (10:00–14:00 when staffing permits)</td><td>Shield</td><td>Log: station, crew, issues, actions</td></tr>
+        <tr><td><strong>Every Tour</strong></td><td>Weekly Notion summary — due end of tour</td><td>Admin</td><td>Required every tour</td></tr>
+        <tr><td><strong>Weekly</strong></td><td>Notion Command Center verbal briefing to crew</td><td>Diplomat</td><td>Log: date, topics, questions</td></tr>
+        <tr><td><strong>Weekly</strong></td><td>Weekly Huddle submission — station issues consolidated for SAM</td><td>Admin</td><td>Submit via Notion</td></tr>
+        <tr><td><strong>Weekly</strong></td><td>Supply inventory review and order if needed</td><td>Shield</td><td>Log all orders</td></tr>
+        <tr><td><strong>Monthly</strong></td><td>High-Potential candidate development conversation</td><td>Mentor</td><td>Log: topics, growth edges, actions</td></tr>
+        <tr><td><strong>Monthly</strong></td><td>TQM metrics review with SAM</td><td>Mentor</td><td>SAM-led; EMSO contributes data</td></tr>
+        <tr><td><strong>Monthly</strong></td><td>Supply reconciliation with Logistics Captain</td><td>Shield</td><td>Reconcile Notion log with actuals</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>The Weekly Notion Summary</h2>
+<p>The weekly summary is the EMSO's accountability document. It is due by end of each tour and covers six categories: roves completed and stations visited, TQM reviews conducted and issues flagged, mentee check-ins and development conversations, Kitchen Table interventions and misinformation corrections, supply activity, and any YELLOW or RED escalations initiated.</p>
+
+<p>The summary does not need to be long. It needs to be accurate and complete. A five-line summary that covers all six categories is better than two paragraphs that cover three. The SAM reads these summaries to monitor division health at the station level — the signal-to-noise ratio matters.</p>
+
+<h2>The Weekly Huddle</h2>
+<p>The Weekly Huddle is the EMSO's mechanism for surfacing station-level issues to the SAM before they become problems. Each EMSO consolidates crew concerns, operational issues, and forward intelligence items from their station into a single submission — preventing the SAM from needing to chase down each crew member individually.</p>
+
+<div class="callout callout-tfd">
+  <span class="callout-label">What Goes in the Weekly Huddle</span>
+  <p>Operational issues requiring SAM attention. Policy questions the EMSO could not answer definitively. Crew concerns that rose above the Diplomat's correction authority. Supply or equipment issues unresolved at the GREEN level. High-Potential pipeline updates. Any Forward Observer intelligence that requires SAM awareness. Keep it concise — the Huddle is a signal, not a report.</p>
+</div>
+
+<h2>Becoming a Notion Power User</h2>
+<p>Notion is the EMSO's operating system. Every function — Shield, Mentor, Diplomat, Administrative — generates a Notion entry. The EMSO is responsible for onboarding station crew to the platform, maintaining current and accurate logs, and submitting structured reports on cadence.</p>
+
+<p>The first responsibility when assigned to a new station: confirm every crew member has Notion access and knows how to navigate the Command Center. An EMSO whose crew cannot access the platform has failed a fundamental infrastructure function before the first Shield task is executed.</p>
+
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: EMS Officer Leadership</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">NEMSMA Pillars → T-K-S Triad → Forward Operating Officer Model</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify operational role → apply the triad → deliver at EMS Officer scope with Service anchor</div></div></div></div>
+
+  <span class="sbar-label">Every Tour</span>
+  <div class="sbar-card accent-tfd"><strong>Equipment checks · Cert review · PCR first-line · Kitchen Table · Rove (if staffing permits) · Weekly Notion summary</strong></div>
+  <span class="sbar-label">Weekly</span>
+  <div class="sbar-card accent-diplomat"><strong>Notion briefing to crew · Weekly Huddle submission · Supply inventory review</strong></div>
+  <span class="sbar-label">Monthly</span>
+  <div class="sbar-card accent-mentor"><strong>High-Potential development conversation · TQM metrics with SAM · Supply reconciliation</strong></div>
+  <span class="sbar-label">Notion Summary — 6 Categories</span>
+  <div class="sbar-card"><strong>1</strong> Roves completed</div>
+  <div class="sbar-card"><strong>2</strong> TQM reviews + issues</div>
+  <div class="sbar-card"><strong>3</strong> Mentee check-ins</div>
+  <div class="sbar-card"><strong>4</strong> Kitchen Table + misinformation</div>
+  <div class="sbar-card"><strong>5</strong> Supply activity</div>
+  <div class="sbar-card"><strong>6</strong> YELLOW/RED escalations</div>
+  <span class="sbar-label">Onboarding Priority</span>
+  <div class="sbar-card accent-red"><strong>First task at any new station: confirm every crew member has Notion access. Everything else depends on it.</strong></div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — The Operational Rhythm</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">TFD</span><div><div class="ob-q-text">"You are given a scenario that requires knowledge of the operational rhythm. How do you structure your response?"</div><div class="ob-note">Use LEAD: Label this as a Emso Module question. Engage the specific framework from this lesson — name it explicitly. Address impact at both the immediate and organizational level. Drive to a specific first action.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 5 — Key Takeaways</div>
+  <div class="tk-item">The Tour Rhythm — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">The Weekly Notion Summary — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Emso Module question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">EMS Officer Leadership</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">NEMSMA Pillars → T-K-S Triad → Forward Operating Officer Model</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify operational role → apply the triad → deliver at EMS Officer scope with Service anchor</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← The Diplomat</button>
+  <div class="lnb-info"><div class="lnb-name">The Operational Rhythm</div><div class="lnb-num">Lesson 5 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">The Integrated EMSO →</button>
+</div>
+</div>
+
+<!-- ═══════════════ LESSON 6 — THE INTEGRATED EMSO ═══════════════ -->
+<div class="lesson-view" id="lesson-5">
+<div class="lesson-container">
+<div class="lesson-main">
+<div class="lesson-header">
+  <div class="lh-eyebrow">EMSO Module · Lesson 6 of 6</div>
+  <div class="lh-track">TFD Exclusive · Integration · All Three Capacities</div>
+  <h1 class="lh-title">The Integrated EMSO —<br><em>All Three Capacities Across a Full Tour</em></h1>
+  <div class="lh-meta"><span class="lh-meta-item">⏱ 14 min</span><span class="lh-meta-item">📘 Integration</span><span class="lh-meta-item">Shield · Mentor · Diplomat · Simultaneous Execution</span></div>
+</div>
+
+<p>Every lesson to this point has treated the three capacities separately because they needed to be understood separately. The Shield has its own authority framework. The Mentor has its own tools and rubrics. The Diplomat has its own mandate and operating principles. In practice, the three capacities do not take turns. They operate simultaneously — and the skill of the EMSO is knowing which one is most needed in any given moment, while keeping the other two running in the background.</p>
+
+<h2>A Full Tour — How the Capacities Interact</h2>
+<div class="infographic-wrap">
+  <div class="ig-header">
+    <span class="ig-eyebrow">◆ THE INTEGRATED EMSO — TOUR WALKTHROUGH</span>
+    <div class="ig-title">One 48-Hour Tour · Three Capacities in Motion</div>
+    <div class="ig-sub">This is illustrative — not prescriptive. Every tour is different. The purpose is to show how the capacities weave together rather than execute in sequence.</div>
+  </div>
+  <div style="padding:.75rem 1rem 1rem;">
+    <table class="auth-table">
+      <thead><tr><th>Time/Event</th><th>Primary Capacity</th><th>What's Happening</th></tr></thead>
+      <tbody>
+        <tr><td><strong>0800 — Tour start</strong></td><td><span class="capacity-badge capacity-shield">Shield</span></td><td>Verify equipment and medication checks are assigned. Pull up Notion — check certification status for station crew. No 30-day flags today.</td></tr>
+        <tr><td><strong>0900 — Kitchen</strong></td><td><span class="capacity-badge capacity-diplomat">Diplomat</span></td><td>Morning coffee with the crew. Mention the Notion update about the new PCR documentation requirement. Crew member pushes back — "nobody told us about this." Correct factually, note the misinformation gap in Notion.</td></tr>
+        <tr><td><strong>1000 — Hub &amp; Spoke rove</strong></td><td><span class="capacity-badge capacity-shield">Shield</span><span class="capacity-badge capacity-diplomat">Diplomat</span></td><td>Rove to Station 4. Check in with crew, ask two questions. Equipment issue noted — falls within GREEN authority. Addressed on the spot and logged in Notion.</td></tr>
+        <tr><td><strong>1300 — Post-significant call</strong></td><td><span class="capacity-badge capacity-mentor">Mentor</span></td><td>Crew just cleared a difficult pediatric call. Run a Hot Wash. What happened, what went well, what could be different, what we learned. Notice your High-Potential candidate stepped up during the call — note it in Notion as a rubric observation.</td></tr>
+        <tr><td><strong>1500 — PCR review</strong></td><td><span class="capacity-badge capacity-mentor">Mentor</span></td><td>Review PCRs from the last two shifts. One has a narrative gap. Request clarification from the provider — educational tone, private conversation. Log in Notion. No protocol deviation concern — EMSO authority handles this.</td></tr>
+        <tr><td><strong>1800 — Kitchen table</strong></td><td><span class="capacity-badge capacity-diplomat">Diplomat</span></td><td>A crew member seems off — quieter than usual, not engaging. You noticed the same thing on the last tour. This is a Forward Observer observation. You don't address it at the table. You log it and include it in the Weekly Huddle for SAM awareness.</td></tr>
+        <tr><td><strong>2000 — Supply order</strong></td><td><span class="capacity-badge capacity-shield">Shield</span></td><td>PAR level low on specific medication. Order placed — total $1,400. GREEN authority, but above the $1,000 informal notification threshold. Notify Logistics Captain as a courtesy. Log in Notion.</td></tr>
+        <tr><td><strong>Tour end — Notion summary</strong></td><td>All Three</td><td>Weekly summary submitted: rove to Station 4 (issue resolved), TQM review (1 documentation flag, clarification requested and logged), Kitchen Table (misinformation corrected, crew engagement observation noted), supply order ($1,400 PAR, Logistics Captain notified), High-Potential observation from pediatric Hot Wash. Weekly Huddle includes the crew member welfare observation for SAM.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="ig-callout">The integrated EMSO is not switching between modes — all three capacities are on simultaneously. The skill is recognition: knowing in real time which capacity a situation is calling for, executing in that capacity, and returning to the baseline of all three running in parallel. That recognition develops through deliberate practice — which starts now.</div>
+</div>
+
+<h2>When a Capacity Is Missing</h2>
+<p>The three capacities are interdependent. When one is consistently absent, the other two degrade.</p>
+<ul>
+  <li><strong>No Shield</strong> — Company Officers and SAMs absorb the operational burden back. The EMSO loses organizational credibility because the core function it was designed to perform is not being performed.</li>
+  <li><strong>No Mentor</strong> — Documentation issues compound. The pipeline dries up. The division runs without a succession system at the station level. The SAM gets no early-warning quality signal from the first-line.</li>
+  <li><strong>No Diplomat</strong> — The EMS Division's culture lives or dies at the station level. Without the Diplomat present, misinformation fills the vacuum, the Division's messaging never arrives with fidelity, and crew members in distress go unnoticed until the situation is a formal HR issue.</li>
+</ul>
+
+<h2>Your First Assignment</h2>
+<p>Before your first tour as an EMSO, complete four things:</p>
+<ul>
+  <li><strong>Read the full Authority Matrix (EMS-2026-AM-001)</strong> — not the summary in Lesson 1. The document.</li>
+  <li><strong>Confirm Notion access</strong> for every crew member at your assigned station. Identify any gaps and resolve them before end of your first tour.</li>
+  <li><strong>Identify your High-Potential observation targets</strong> — who at your station might be showing indicators across the three rubric qualities? You are not nominating yet. You are beginning deliberate observation.</li>
+  <li><strong>Have one Kitchen Table conversation</strong> — intentional, present, and engaged. Not a briefing. Not a check-in. A genuine conversation that establishes your presence as the Diplomat before you execute a single Shield function.</li>
+</ul>
+
+<div class="callout callout-navy">
+  <span class="callout-label">The Standard</span>
+  <p>EMSOs are accountable to the Shift SAM for daily operations. Monthly activity metrics are reviewed by the SAM. Quarterly summaries go to the EMS Chief. Failure to execute Forward Operating Officer functions may result in removal from the EMSO position. This is not a warning — it is a definition of the standard. The EMSO role exists because TFD decided it was worth creating. Executing it well honors that decision. Executing it partially does not.</p>
+</div>
+
+<div class="legal-disclaimer">
+  <span class="legal-disclaimer-label">TFD Internal Use · Educational Content</span>
+  <p>This module was developed for Thornton Fire Department EMS Division internal professional development purposes. Content reflects the Forward Operating Officer model as documented in the EMSO Position Description (Revision 2.0, February 28, 2026) and the EMSO Authority Matrix (EMS-2026-AM-001, March 16, 2026). This material is intended for use by current and prospective TFD EMSOs and is not for external distribution. Authority Matrix provisions supersede this educational content in any case of conflict. Always consult your Shift SAM or the EMS Chief for authoritative guidance on specific operational decisions. The Promotional Standard LLC · thepromotionalstandard.com</p>
+</div>
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: EMS Officer Leadership</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">NEMSMA Pillars → T-K-S Triad → Forward Operating Officer Model</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify operational role → apply the triad → deliver at EMS Officer scope with Service anchor</div></div></div></div>
+
+  <span class="sbar-label">Integration Principle</span>
+  <div class="sbar-card accent-tfd"><strong>All Three — Simultaneously</strong>The capacities do not take turns. The skill is knowing which one is primary in any given moment while keeping the other two running.</div>
+  <span class="sbar-label">When a Capacity Is Missing</span>
+  <div class="sbar-card accent-red"><strong>No Shield</strong>Organizational credibility erodes. Burden returns to Company Officers and SAMs.</div>
+  <div class="sbar-card accent-red"><strong>No Mentor</strong>Documentation compounds. Pipeline dries. No early-warning quality signal reaches the SAM.</div>
+  <div class="sbar-card accent-red"><strong>No Diplomat</strong>Misinformation fills the vacuum. Division culture forms without Division input. Distress goes unnoticed.</div>
+  <span class="sbar-label">First Four Assignments</span>
+  <div class="sbar-card accent-tfd"><strong>1</strong> Read the full Authority Matrix</div>
+  <div class="sbar-card accent-tfd"><strong>2</strong> Confirm Notion access for all crew</div>
+  <div class="sbar-card accent-mentor"><strong>3</strong> Begin High-Potential observation (not nomination yet)</div>
+  <div class="sbar-card accent-diplomat"><strong>4</strong> Have one intentional Kitchen Table conversation — before any Shield function</div>
+  <span class="sbar-label">The Standard</span>
+  <div class="sbar-card accent-gold"><strong>Consistent execution of all three capacities is the standard. Partial execution is not the role.</strong></div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — The Integrated EMSO</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">TFD</span><div><div class="ob-q-text">"You receive a scenario about emso module. Walk me through your complete response using the frameworks from this chapter."</div><div class="ob-note">Use LEAD: Label the bucket (Emso Module), Engage the specific framework (reference A Full Tour — How the Capacities Interact explicitly), Address the operational and organizational impact, Drive to a concrete first action with a timeline.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 6 — Key Takeaways</div>
+  <div class="tk-item">A Full Tour — How the Capacities Interact — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">When a Capacity Is Missing — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Emso Module question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">EMS Officer Leadership</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">NEMSMA Pillars → T-K-S Triad → Forward Operating Officer Model</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify operational role → apply the triad → deliver at EMS Officer scope with Service anchor</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Operational Rhythm</button>
+  <div class="lnb-info"><div class="lnb-name">The Integrated EMSO</div><div class="lnb-num">Lesson 6 of 6</div></div>
+  <button class="lnb-btn complete" disabled>Module Complete ✓</button>
+</div>
+</div>
+</main>
+<script>
+let cur=0;
+const ls=document.querySelectorAll('.lesson-view');
+const ps=document.querySelectorAll('.nav-pill');
+function showLesson(i){ls.forEach(l=>l.classList.remove('active'));ps.forEach(p=>p.classList.remove('active'));ls[i].classList.add('active');ps[i].classList.add('active');cur=i;window.scrollTo({top:0,behavior:'smooth'});document.getElementById('prog').style.width='0%';}
+function nextLesson(){if(cur<ls.length-1)showLesson(cur+1);}
+function prevLesson(){if(cur>0)showLesson(cur-1);}
+window.addEventListener('scroll',()=>{const s=document.documentElement.scrollTop;const h=document.documentElement.scrollHeight-window.innerHeight;if(h>0)document.getElementById('prog').style.width=Math.min(100,(s/h*100))+'%';});
+document.addEventListener('DOMContentLoaded',()=>showLesson(0));
+
+function lfNext(el,stepNum){
+  var wrap=el.closest('.lf-wrap');
+  if(!wrap)return;
+  var steps=wrap.querySelectorAll('.lf-step');
+  var dots=wrap.querySelectorAll('.lf-dot');
+  steps.forEach(function(s,i){s.classList.remove('active');if(i<stepNum)s.classList.add('done');});
+  dots.forEach(function(d,i){d.classList.remove('active');if(i<stepNum)d.classList.add('done');if(i===stepNum)d.classList.add('active');});
+  if(steps[stepNum])steps[stepNum].classList.add('active');
+}
+</script>
+<script>function toggleFT(el){var sw=el.querySelector('.ft-toggle-switch');var desc=el.querySelector('.ft-toggle-desc');var mains=document.querySelectorAll('.lesson-main');sw.classList.toggle('on');var on=sw.classList.contains('on');desc.textContent=on?'Frameworks + OB cards only':'Full lesson content';mains.forEach(function(m){m.classList.toggle('ft-on',on);});}</script>
+</body>
+</html>

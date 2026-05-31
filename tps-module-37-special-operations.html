@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Chapter 33 — Special Operations Leadership | The Promotional Standard</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Crimson+Pro:wght@300;400;500;600&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{--navy:#0C2340;--navy2:#1A3A5C;--gold:#C9A84C;--gold2:#F5F0E8;--gold3:#6B4F10;--cream:#F5F0E8;--offwhite:#F5F0E8;--light:#EAE5DC;--mid:#2A3D50;--gray:#8FA8C0;--red:#B22222;--red-light:#FFF0F0;--green:#1A5C3A;--green-light:#EAF3DE;--teal:#006B6B;--teal-light:#E0F4F4;--orange:#8B3A0A;--orange-light:#FFF0E0;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:var(--navy);font-size:18px;line-height:1.8;}
+.top-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(12,35,64,0.98);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,168,76,0.2);height:64px;display:flex;align-items:center;padding:0 2rem;gap:1rem;}
+.nav-left{display:flex;align-items:center;gap:12px;flex:1;}
+.nav-brand{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;color:var(--cream);line-height:1.3;}
+.nav-brand span{display:block;font-size:8px;color:var(--gold);letter-spacing:2px;}
+.nav-pills{display:flex;gap:5px;flex:2;justify-content:center;overflow-x:auto;}
+.nav-pill{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#8FA8C0;padding:6px 11px;border-radius:20px;cursor:pointer;transition:all 0.2s;border:none;background:transparent;white-space:nowrap;}
+.nav-pill:hover{color:var(--cream);background:rgba(255,255,255,0.05);}
+.nav-pill.active{color:var(--gold);background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.25);}
+.progress-bar{position:fixed;top:64px;left:0;height:3px;background:linear-gradient(90deg,var(--navy2),var(--gold));z-index:199;width:0%;transition:width 0.3s;}
+.lesson-view{display:none;}.lesson-view.active{display:block;}
+.module-hero{background:var(--navy);padding:4.5rem 3rem 3.5rem;margin-top:64px;position:relative;overflow:hidden;border-bottom:3px solid var(--gold);}
+.module-hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 60px,rgba(201,168,76,0.015) 60px,rgba(201,168,76,0.015) 61px);}
+.module-hero::after{content:'';position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(180deg,var(--navy2),var(--gold));}
+.mh-inner{max-width:900px;position:relative;z-index:2;}
+.mh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.mh-title{font-family:'EB Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:800;color:var(--cream);line-height:1.1;margin-bottom:0.75rem;}
+.mh-title em{font-style:italic;color:var(--gold);}
+.mh-sub{font-size:1.05rem;color:#8FA8C0;max-width:700px;line-height:1.7;margin-bottom:2rem;}
+.mh-badges{display:flex;gap:10px;margin-bottom:1.5rem;flex-wrap:wrap;}
+.mh-badge{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border-radius:3px;}
+.badge-bc{background:rgba(139,50,22,0.12);color:#C06030;border:1px solid rgba(139,50,22,0.25);}
+.badge-nfpa{background:rgba(100,160,220,0.15);color:#8FA8C0;border:1px solid rgba(100,160,220,0.3);}
+.mh-thread{background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);border-left:3px solid var(--gold);padding:1rem 1.5rem;margin-bottom:2rem;max-width:700px;}
+.mh-thread-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+.mh-thread-text{font-size:0.92rem;color:var(--cream);line-height:1.65;}
+.mh-lesson-nav{display:flex;gap:8px;flex-wrap:wrap;}
+.mh-lesson-btn{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:8px 14px;border-radius:6px;cursor:pointer;transition:all 0.2s;border:1px solid rgba(201,168,76,0.25);background:transparent;color:#8FA8C0;}
+.mh-lesson-btn:hover{background:rgba(255,255,255,0.05);color:var(--cream);}
+.mh-lesson-btn.active{background:rgba(201,168,76,0.12);color:var(--gold);border-color:rgba(201,168,76,0.4);}
+.lesson-container{display:grid;grid-template-columns:1fr 310px;gap:0;}
+.lesson-main{padding:3rem 3.5rem;border-right:1px solid var(--light);}
+.lesson-sidebar{padding:2rem 1.75rem;background:var(--offwhite);position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;}
+.lesson-header{margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:2px solid var(--light);}
+.lh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold3);margin-bottom:0.6rem;}
+.lh-title{font-family:'EB Garamond',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;color:var(--navy);line-height:1.15;margin-bottom:0.6rem;}
+.lh-title em{font-style:italic;color:var(--gold);}
+.lh-meta{display:flex;gap:1.5rem;flex-wrap:wrap;}
+.lh-meta-item{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);}
+.lesson-main h2{font-family:'EB Garamond',serif;font-size:1.7rem;font-weight:700;color:var(--navy);margin:3rem 0 0.9rem;padding-bottom:0.5rem;border-bottom:2px solid var(--light);}
+.lesson-main h3{font-family:'EB Garamond',serif;font-size:1.25rem;font-weight:600;color:var(--navy);margin:2.25rem 0 0.65rem;}
+.lesson-main p{margin-bottom:1.25rem;color:#2A3D50;line-height:1.82;}
+.lesson-main ul,.lesson-main ol{margin:0 0 1.25rem 1.5rem;color:#2A3D50;}
+.lesson-main li{margin-bottom:0.6rem;line-height:1.72;}
+.lesson-main strong{color:var(--navy);font-weight:600;}
+.callout{padding:1.4rem 1.6rem;margin:2rem 0;}
+.callout-gold{background:var(--gold2);border-left:3px solid var(--gold);}.callout-gold p{color:var(--gold3);font-size:0.97rem;line-height:1.75;}
+.callout-navy{background:var(--navy);border-left:3px solid var(--gold);}.callout-navy p{color:#8FA8C0;font-size:0.95rem;line-height:1.75;}
+.callout-red{background:var(--red-light);border-left:4px solid var(--red);}.callout-red p{color:#6B4F10;font-size:0.97rem;line-height:1.75;}
+.callout-green{background:var(--green-light);border-left:4px solid var(--green);}.callout-green p{color:#1A3A5C;font-size:0.97rem;line-height:1.75;}
+.callout-teal{background:var(--teal-light);border-left:4px solid var(--teal);}.callout-teal p{color:#003A3A;font-size:0.97rem;line-height:1.75;}
+.callout-orange{background:var(--orange-light);border-left:4px solid var(--orange);}.callout-orange p{color:#4A1A00;font-size:0.97rem;line-height:1.75;}
+.callout-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:0.5rem;display:block;}
+.callout-gold .callout-label{color:var(--gold3);}.callout-navy .callout-label{color:var(--gold);}.callout-red .callout-label{color:var(--red);}.callout-green .callout-label{color:var(--green);}.callout-teal .callout-label{color:var(--teal);}.callout-orange .callout-label{color:var(--orange);}
+.framework-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.fw-card{background:white;border:1px solid #EAE5DC;padding:1.25rem;border-radius:8px;}
+.fw-card-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:6px;}
+.fw-card-title{font-family:'EB Garamond',serif;font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.fw-card-desc{font-size:0.9rem;color:var(--mid);line-height:1.6;}
+.acro-grid{display:flex;flex-direction:column;gap:0;margin:1.5rem 0;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;}
+.acro-row{display:grid;grid-template-columns:52px 1fr;gap:0;border-bottom:1px solid #EAE5DC;}
+.acro-row:last-child{border-bottom:none;}
+.acro-letter{background:var(--navy);color:var(--gold);font-family:'EB Garamond',serif;font-size:1.8rem;font-weight:800;display:flex;align-items:center;justify-content:center;}
+.acro-content{padding:0.9rem 1.1rem;background:white;}
+.acro-word{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:3px;}
+.acro-desc{font-size:0.85rem;color:var(--mid);line-height:1.55;}
+.disc-grid{display:flex;flex-direction:column;gap:0;margin:1.5rem 0;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;}
+.disc-row{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--light);}
+.disc-row:last-child{border-bottom:none;}
+.disc-label{padding:0.9rem;display:flex;align-items:center;justify-content:center;text-align:center;}
+.disc-tag{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;line-height:1.4;}
+.disc-body{padding:0.85rem 1.1rem;background:white;}
+.disc-std{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold3);margin-bottom:3px;}
+.disc-desc{font-size:0.85rem;color:var(--mid);line-height:1.55;}
+.disc-bc{font-size:0.82rem;color:var(--teal);margin-top:4px;font-style:italic;}
+.sbar-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold3);margin-bottom:0.65rem;margin-top:1.5rem;display:block;}
+.sbar-label:first-child{margin-top:0;}
+.sbar-card{background:white;border:1px solid #EAE5DC;border-radius:8px;padding:0.9rem 1rem;margin-bottom:8px;font-size:0.9rem;color:var(--mid);line-height:1.55;}
+.sbar-card strong{color:var(--navy);display:block;margin-bottom:3px;font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;}
+.score-compare{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.sc-card{padding:1.25rem;border-radius:8px;}
+.sc-card.miss{background:var(--red-light);border:1px solid #F0C0C0;}
+.sc-card.hit{background:var(--green-light);border:1px solid #9DCCA8;}
+.sc-title{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:0.75rem;}
+.sc-card.miss .sc-title{color:var(--red);}.sc-card.hit .sc-title{color:var(--green);}
+.sc-body{font-size:0.87rem;line-height:1.6;}
+.sc-card.miss .sc-body{color:#6B4F10;}.sc-card.hit .sc-body{color:#1A3A5C;}
+.lesson-nav-bar{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 3rem;border-top:3px solid var(--gold);background:var(--navy);gap:1rem;}
+.lnb-btn{background:rgba(255,255,255,0.08);border:2px solid rgba(201,168,76,0.4);padding:14px 28px;font-family:'Cinzel',serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border-radius:6px;color:var(--cream);transition:all 0.2s;white-space:nowrap;}
+.lnb-btn:hover{background:rgba(201,168,76,0.15);border-color:var(--gold);color:var(--gold);}
+.lnb-btn:disabled,.lnb-btn[disabled]{opacity:0.25;cursor:not-allowed;background:transparent;}
+.lnb-btn:disabled:hover,.lnb-btn[disabled]:hover{background:transparent;border-color:rgba(201,168,76,0.4);color:var(--cream);}
+.lnb-btn.primary{background:var(--gold);color:var(--navy);border-color:var(--gold);font-weight:800;}
+.lnb-btn.primary:hover{background:#C9A84C;border-color:#C9A84C;}
+.lnb-info{text-align:center;flex:1;}
+.lnb-name{font-family:'EB Garamond',serif;font-size:1rem;font-weight:700;color:var(--cream);}
+.lnb-num{font-size:0.85rem;color:var(--gold);font-family:'Cinzel',serif;letter-spacing:1px;}
+@media(max-width:900px){.lesson-container{grid-template-columns:1fr;}.lesson-sidebar{position:relative;height:auto;}.lesson-main{padding:2rem 1.5rem;}.lesson-nav-bar{padding:1rem 1.5rem;flex-wrap:wrap;}.framework-grid,.score-compare{grid-template-columns:1fr;}.nav-pills{display:none;}}
+
+/* OB CARD */
+.ob-card{background:var(--navy);margin:2rem 0;overflow:hidden;}
+.ob-header{padding:0.85rem 1.5rem;background:rgba(201,168,76,0.08);border-bottom:1px solid rgba(201,168,76,0.15);}
+.ob-label{font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);}
+.ob-body{padding:1.25rem 1.5rem;}
+.ob-q{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;}
+.ob-q-tag{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);background:rgba(201,168,76,0.1);padding:4px 10px;border-radius:3px;white-space:nowrap;}
+.ob-q-text{font-family:'EB Garamond',serif;font-size:1.08rem;font-weight:600;color:var(--cream);line-height:1.5;margin-bottom:8px;}
+.ob-note{font-size:0.88rem;color:#8FA8C0;line-height:1.6;font-style:italic;}
+/* TAKEAWAYS */
+.takeaways{background:var(--navy);padding:2.25rem;margin:3rem 0 0;border-top:3px solid var(--gold);}
+.tk-lbl{font-family:'Cinzel',serif;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.tk-item{color:#8FA8C0;font-size:0.92rem;line-height:1.7;padding:0.5rem 0 0.5rem 1.25rem;border-left:2px solid rgba(201,168,76,0.2);margin-bottom:0.5rem;}
+
+
+.lead-nav{background:var(--navy);border-radius:8px;padding:14px 16px;margin-bottom:16px;border:1px solid rgba(201,168,76,0.2)}
+.lead-nav-header{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.lead-nav-row{display:grid;grid-template-columns:20px 1fr;gap:6px;margin-bottom:6px;align-items:start}
+.lead-nav-letter{font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:var(--gold)}
+.lead-nav-content{}
+.lead-nav-name{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:2px}
+.lead-nav-app{font-size:11px;color:#8FA8C0;line-height:1.5}
+
+.lf-wrap{margin:2.5rem 0 1.5rem;border:2px solid var(--gold);border-radius:10px;overflow:hidden}
+.lf-header{background:var(--navy);padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
+.lf-title{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+.lf-dots{display:flex;gap:6px}
+.lf-dot{width:8px;height:8px;border-radius:50%;background:rgba(201,168,76,0.25);transition:all 0.3s}
+.lf-dot.active{background:var(--gold);transform:scale(1.3)}
+.lf-dot.done{background:var(--gold)}
+.lf-step{display:none;padding:20px}
+.lf-step.active{display:block}
+.lf-step-num{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:6px}
+.lf-step-title{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:10px}
+.lf-chain{background:var(--navy);border-radius:6px;padding:14px 18px;margin:10px 0}
+.lf-chain-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.lf-chain-text{font-size:13px;color:#8FA8C0;line-height:1.6}
+.lf-chain-close{font-size:12px;color:var(--cream);margin-top:6px;font-style:italic}
+.lf-btn{background:var(--navy);color:var(--gold);border:2px solid var(--gold);padding:12px 24px;border-radius:6px;font-family:'Cinzel',serif;font-size:12px;letter-spacing:1.5px;font-weight:600;cursor:pointer;margin-top:12px;transition:all 0.2s;display:inline-block}
+.lf-btn:hover{background:var(--gold);color:var(--navy)}
+.lf-timer{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:var(--gold);padding:6px 14px;border-radius:4px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:1px;margin-top:10px}
+.lesson-main.ft>p{display:none!important}.lesson-main.ft>.callout{display:none!important}.ft-toggle{display:flex;align-items:center;gap:10px;padding:10px 16px;background:var(--navy);border-radius:6px;cursor:pointer;border:1px solid rgba(201,168,76,0.25)}.ft-toggle-switch{width:36px;height:20px;background:rgba(201,168,76,0.2);border-radius:10px;position:relative;transition:background .2s}.ft-toggle-switch.on{background:var(--gold)}.ft-toggle-knob{width:14px;height:14px;background:#fff;border-radius:50%;position:absolute;top:3px;left:3px;transition:left .2s}.ft-toggle-switch.on .ft-toggle-knob{left:19px}.ft-toggle-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}.ft-toggle-desc{font-size:11px;color:var(--mid)}.lesson-main.ft-on>p,.lesson-main.ft-on>.callout,.lesson-main.ft-on h3{display:none!important}.lesson-main.ft-on .ob-card,.lesson-main.ft-on .lf-wrap,.lesson-main.ft-on .lead-nav,.lesson-main.ft-on h2{display:block!important}
+</style>
+</head>
+<body>
+<nav class="top-nav">
+  <div class="nav-left"><div class="nav-brand">The Promotional Standard<span>BC/AC Track · Chapter 33</span></div></div>
+  <div class="nav-pills">
+    <button class="nav-pill active" onclick="showLesson(0)">Special Ops Overview</button>
+    <button class="nav-pill" onclick="showLesson(1)">Technical Rescue</button>
+    <button class="nav-pill" onclick="showLesson(2)">Hazardous Materials</button>
+    <button class="nav-pill" onclick="showLesson(3)">Water + Swift Water</button>
+    <button class="nav-pill" onclick="showLesson(4)">Managing SO Resources</button>
+    <button class="nav-pill" onclick="showLesson(5)">AC Application</button>
+  </div>
+</nav>
+<div class="progress-bar" id="prog"></div>
+<div class="module-hero">
+  <div class="mh-inner">
+    <div class="mh-eyebrow">Chapter 33 · BC/AC Track · Fire Officer III–IV</div>
+    <h1 class="mh-title">Special Operations Leadership<br><em>Command, Competency, and Oversight</em></h1>
+    <p class="mh-sub">Technical rescue disciplines and NFPA standards, hazardous materials incident command at the senior officer level, swift water and water rescue command considerations, managing special operations resources across the training-certification-readiness continuum, and what assessors look for when they probe senior candidates on specialized capability oversight. The complete special operations leadership curriculum for Battalion Chief and above.</p>
+    <div class="mh-badges">
+      <span class="mh-badge badge-bc">BC / AC Track</span>
+      <span class="mh-badge badge-nfpa">NFPA 1670 · NFPA 472 · FO III–IV</span>
+    </div>
+    <div class="mh-thread">
+      <div class="mh-thread-label">Before You Begin</div>
+      <div class="mh-thread-text">This module covers special operations at the <em>command and oversight</em> level — not as a technical specialist. The BC does not need to be a certified rope rescue technician to effectively command a technical rescue incident. They need to understand the discipline's capabilities and limitations, apply the correct ICS structure, know when to activate specialized resources, and manage the resource and safety systems that protect both victims and rescuers. That is this module's focus.</div>
+    </div>
+    <div class="mh-lesson-nav">
+      <button class="mh-lesson-btn active" onclick="showLesson(0)">1. Special Ops Overview</button>
+      <button class="mh-lesson-btn" onclick="showLesson(1)">2. Technical Rescue</button>
+      <button class="mh-lesson-btn" onclick="showLesson(2)">3. Hazardous Materials</button>
+      <button class="mh-lesson-btn" onclick="showLesson(3)">4. Water + Swift Water</button>
+      <button class="mh-lesson-btn" onclick="showLesson(4)">5. Managing SO Resources</button>
+      <button class="mh-lesson-btn" onclick="showLesson(5)">6. AC Application</button>
+    </div>
+  </div>
+</div>
+<main>
+
+<!-- LESSON 1 -->
+<div class="lesson-view active" id="lesson-0">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 33 · Lesson 1 of 6</div>
+    <h1 class="lh-title">Special Operations Overview —<br><em>Scope, Authority, and the Command Principle</em></h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 14 min</span><span class="lh-meta-item">🔧 Scope · Authority · Competency Levels</span></div>
+  </div>
+  <p>Special operations — technical rescue, hazardous materials, water rescue, and their various sub-disciplines — represent the highest-risk category of fire service operations. They are high-risk because the hazards are less forgiving than routine structural firefighting, the margin for error in command decisions is narrower, and the potential for catastrophic outcomes (the rescuer becoming a second victim) is elevated. The senior officer's role is to understand these operations well enough to command them effectively, not to perform them personally.</p>
+  <h2>The Three Special Operations Disciplines</h2>
+  <div class="acro-grid">
+    <div class="acro-row">
+      <div class="acro-letter">TR</div>
+      <div class="acro-content">
+        <div class="acro-word">Technical Rescue — NFPA 1670 and 1006</div>
+        <div class="acro-desc">Technical rescue encompasses structural collapse, confined space, rope rescue (high angle, low angle, and cliff rescue), trench and excavation rescue, vehicle and machinery rescue, and wilderness search. NFPA 1670 (Standard on Operations and Training for Technical Search and Rescue Incidents) defines operational levels. NFPA 1006 (Standard for Technical Rescuer Professional Qualifications) defines the rescuer certification levels. The BC commands technical rescue incidents; they do not perform technical rescue operations.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">HM</div>
+      <div class="acro-content">
+        <div class="acro-word">Hazardous Materials — NFPA 472 and 473</div>
+        <div class="acro-desc">Hazardous materials response encompasses chemical, biological, radiological, nuclear, and explosive (CBRNE) incidents, as well as industrial chemical releases, pipeline incidents, and transportation accidents. NFPA 472 (Standard for Competence of Responders to Hazardous Materials/WMD Incidents) defines awareness through technician competency levels. The BC commands hazmat incidents at the operations or incident command level; technician-level operations are performed by certified hazmat team members.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">WR</div>
+      <div class="acro-content">
+        <div class="acro-word">Water/Swift Water Rescue — NFPA 1670</div>
+        <div class="acro-desc">Water rescue encompasses surface water rescue, swift water rescue, dive rescue, and flood rescue. NFPA 1670 also covers water rescue operational levels. Swift water rescue in particular is a high-fatality discipline for responders who enter moving water without proper training and equipment — making the command decision about what resources to commit and what operations to authorize especially consequential.</div>
+      </div>
+    </div>
+  </div>
+  <h2>NFPA Operational Levels — The Framework Every BC Must Know</h2>
+  <p>NFPA 1670 establishes three operational levels for special operations that define what a given agency's personnel and teams are trained and equipped to do. These levels directly govern what command decisions the BC can authorize:</p>
+  <div class="framework-grid">
+    <div class="fw-card" style="border-top:3px solid var(--gold);">
+      <div class="fw-card-label">Awareness Level</div>
+      <div class="fw-card-title">Recognize, Isolate, Notify</div>
+      <div class="fw-card-desc">Personnel can recognize that a special operations incident has occurred, isolate the hazard zone, and notify the appropriate specialized resources. They do not perform rescue operations. The first-due engine company at a structural collapse is typically awareness level — they recognize the situation, establish perimeter, and request technical rescue resources.</div>
+    </div>
+    <div class="fw-card" style="border-top:3px solid var(--teal);">
+      <div class="fw-card-label">Operations Level</div>
+      <div class="fw-card-title">Defensive and Limited Offensive Actions</div>
+      <div class="fw-card-desc">Personnel can perform defensive operations — controlling the hazard perimeter, supporting life safety, and providing defensive interventions — and limited offensive actions as defined for their operational level. Operations-level personnel do not enter the hazard zone for rescue operations in most technical rescue disciplines.</div>
+    </div>
+    <div class="fw-card" style="border-top:3px solid var(--red);">
+      <div class="fw-card-label">Technician Level</div>
+      <div class="fw-card-title">Entry, Rescue, and Mitigation</div>
+      <div class="fw-card-desc">Certified technicians can enter the hazard zone to perform rescue and mitigation operations. The hazmat technician enters the hot zone in proper protective equipment. The rope rescue technician performs entry operations at the rescue face. Technician-level operations require technician-certified personnel — and the BC must know their team's certification level before authorizing entry operations.</div>
+    </div>
+  </div>
+  <div class="callout callout-red">
+    <span class="callout-label">The Command Principle That Saves Lives</span>
+    <p>The single most dangerous command error in special operations is authorizing operations beyond the team's certification and training level. The untrained rescuer entering a confined space to reach a victim who is already deceased creates two casualties where there was one. The BC who orders entry operations without confirming team certification, equipment availability, and hazard assessment has violated the command principle that governs all special operations: <strong>do not create additional victims in the attempt to rescue.</strong> Tactical patience — waiting for the right resources rather than committing available but insufficient ones — is not abandonment. It is the most defensible and most ethical command decision in high-risk rescue scenarios.</p>
+  </div>
+</div>
+<div class="lesson-sidebar">
+<div class="ft-toggle" onclick="toggleFT(this)" style="margin-bottom:16px;max-width:320px">
+<div class="ft-toggle-switch"><div class="ft-toggle-knob"></div></div>
+<div><div class="ft-toggle-label">Fast Track Mode</div><div class="ft-toggle-desc">Full lesson content</div></div>
+</div>
+
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Operational Command</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">NFPA Operational Levels → Four Technical Rescue Disciplines → Span of Control at Scale → CRM</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the special ops type → apply NFPA level → establish command → close with Discipline and Service</div></div></div></div>
+
+  <span class="sbar-label">Three SO Disciplines</span>
+  <div class="sbar-card"><strong>Technical Rescue</strong>NFPA 1670 + 1006. Structural collapse · confined space · rope · trench · vehicle/machinery · wilderness.</div>
+  <div class="sbar-card"><strong>HazMat</strong>NFPA 472 + 473. CBRNE · industrial · pipeline · transportation. BC commands; technicians enter.</div>
+  <div class="sbar-card"><strong>Water/Swift Water</strong>NFPA 1670. Surface · swift · dive · flood. Moving water = highest responder fatality risk.</div>
+  <span class="sbar-label">Three Operational Levels</span>
+  <div class="sbar-card"><strong>Awareness</strong>Recognize · isolate · notify. No rescue operations.</div>
+  <div class="sbar-card"><strong>Operations</strong>Defensive + limited offensive. No hazard zone entry for rescue.</div>
+  <div class="sbar-card"><strong>Technician</strong>Entry + rescue + mitigation. Must be certified. BC must confirm before authorizing.</div>
+  <span class="sbar-label">The Command Principle</span>
+  <div class="sbar-card">Do not create additional victims. Tactical patience waiting for right resources > committing insufficient ones. Not abandonment — the most ethical command decision.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Special Operations Overview</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"Describe your understanding of the three special operations disciplines and how you would apply it in a real scenario."</div><div class="ob-note">Name training frequency requirements. Address certification maintenance, equipment readiness, and mutual aid coordination. Show that special ops readiness is a command responsibility.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 1 — Key Takeaways</div>
+  <div class="tk-item">The Three Special Operations Disciplines — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">NFPA Operational Levels — The Framework Every BC Must Know — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Special Operations question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Operational Command</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">NFPA Operational Levels → Four Technical Rescue Disciplines → Span of Control at Scale → CRM</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the special ops type → apply NFPA level → establish command → close with Discipline and Service</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" disabled>← Previous</button>
+  <div class="lnb-info"><div class="lnb-name">Special Ops Overview</div><div class="lnb-num">Lesson 1 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Technical Rescue →</button>
+</div>
+</div>
+
+<!-- LESSON 2 -->
+<div class="lesson-view" id="lesson-1">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 33 · Lesson 2 of 6</div>
+    <h1 class="lh-title">Technical Rescue —<br><em>Command Across the Disciplines</em></h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 16 min</span><span class="lh-meta-item">🔩 Structural Collapse · Confined Space · Rope · Trench</span></div>
+  </div>
+  <p>Technical rescue is not a single discipline — it is a family of related but distinct disciplines, each with its own hazard profile, equipment requirements, and tactical approach. The BC who commands technical rescue incidents needs to understand the unique characteristics of each discipline well enough to make correct resource activation, staging, and entry authorization decisions.</p>
+  <h2>The Four Core Technical Rescue Disciplines</h2>
+  <div class="disc-grid">
+    <div class="disc-row">
+      <div class="disc-label" style="background:#0C2340;"><div class="disc-tag" style="color:var(--gold);">Structural Collapse</div></div>
+      <div class="disc-body">
+        <div class="disc-std">NFPA 1670 · FEMA USAR Typing</div>
+        <div class="disc-desc">Structural collapse rescue involves locating and extracting victims from collapsed buildings or structures. Hazards include secondary collapse, utility hazards, confined space atmospheres within void spaces, and structural instability. FEMA USAR teams are typed Light, Medium, and Heavy based on capability. The BC's command priorities: establish collapse zone (1.5× building height minimum), request appropriate USAR typing, activate search (acoustic, optical, search dogs), and manage staging for sustained operations that may extend 24–72+ hours.</div>
+        <div class="disc-bc">BC focus: Resource typing and request, hazard zone management, operational period planning for extended operations, family liaison coordination.</div>
+      </div>
+    </div>
+    <div class="disc-row">
+      <div class="disc-label" style="background:#1A3A5C;"><div class="disc-tag" style="color:var(--gold);">Confined Space</div></div>
+      <div class="disc-body">
+        <div class="disc-std">NFPA 1670 · OSHA 29 CFR 1910.146</div>
+        <div class="disc-desc">Confined space rescue involves permit-required confined spaces — any space large enough to enter but not designed for continuous occupancy, with limited egress, and containing or capable of containing a hazardous atmosphere. The hazardous atmosphere is the primary killer — nearly all confined space fatalities involve responders who entered to rescue a victim and succumbed to the same atmosphere. OSHA 29 CFR 1910.146 governs permit-required confined space entry. The BC must ensure atmospheric testing is completed before any entry is authorized, the entry permit process is followed, and rescue resources are staged before entry begins.</div>
+        <div class="disc-bc">BC focus: Atmospheric testing completion before ANY entry authorization. Entry permit compliance. Rescue standby staged before the entry team goes in. OSHA process is non-negotiable.</div>
+      </div>
+    </div>
+    <div class="disc-row">
+      <div class="disc-label" style="background:#2A1A40;"><div class="disc-tag" style="color:var(--gold);">Rope Rescue</div></div>
+      <div class="disc-body">
+        <div class="disc-std">NFPA 1670 · NFPA 1006</div>
+        <div class="disc-desc">Rope rescue encompasses high-angle (greater than 60 degrees), low-angle (less than 60 degrees), and cliff rescue operations. Hazards include fall potential for rescuers, anchor failure, and patient packaging and movement challenges on steep terrain. NFPA 1006 defines rope rescue technician qualifications. The BC's command role: confirm team has appropriate rope rescue certification level, ensure a qualified technical rescue supervisor is in operational command of the rescue, and manage the perimeter and support resources while the technical team executes.</div>
+        <div class="disc-bc">BC focus: Confirm certification level before authorizing. Technical supervisor in charge of rescue face operations. BC manages the ICS structure above the technical team — not the rope system.</div>
+      </div>
+    </div>
+    <div class="disc-row">
+      <div class="disc-label" style="background:#3A1A00;"><div class="disc-tag" style="color:var(--gold);">Trench + Excavation</div></div>
+      <div class="disc-body">
+        <div class="disc-std">NFPA 1670 · OSHA 29 CFR 1926.652</div>
+        <div class="disc-desc">Trench rescue involves buried victims in trenches, excavations, or soil engulfment incidents. Secondary collapse is the primary hazard — the same unstable soil conditions that caused the initial burial remain present and are often exacerbated by the incident. OSHA 29 CFR 1926.652 governs trench safety. The BC's most critical command decision: establishing and enforcing an adequate exclusion zone around the trench (crowds of bystanders, vibration from emergency vehicles, and the weight of rescue equipment all increase collapse risk), and preventing non-certified personnel from entering to "help."</div>
+        <div class="disc-bc">BC focus: Exclusion zone enforcement is the most critical immediate action. Vibration from vehicles increases secondary collapse risk. Non-certified bystanders in the trench have created many two-victim incidents.</div>
+      </div>
+    </div>
+  </div>
+  <div class="callout callout-teal">
+    <span class="callout-label">The Technical Supervisor Principle</span>
+    <p>At every technical rescue incident, the BC commands the overall ICS structure — resources, staging, safety, sectors — but operational authority at the rescue face belongs to the most qualified technical supervisor on scene. The BC who second-guesses technical decisions at the rescue face, overrides rigging choices, or insists on tactical approaches the technical team has rejected is creating dangerous conditions through chain-of-command interference. The clear principle: IC authority governs the overall incident; technical supervisor authority governs the rescue operation. Those two authorities are complementary, not competing.</p>
+  </div>
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Operational Command</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">NFPA Operational Levels → Four Technical Rescue Disciplines → Span of Control at Scale → CRM</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the special ops type → apply NFPA level → establish command → close with Discipline and Service</div></div></div></div>
+
+  <span class="sbar-label">Structural Collapse</span>
+  <div class="sbar-card">Collapse zone = 1.5× building height · request USAR typing (Light/Medium/Heavy) · search activation · 24–72+ hr operational planning.</div>
+  <span class="sbar-label">Confined Space</span>
+  <div class="sbar-card">Atmospheric testing BEFORE any entry · entry permit compliance · rescue standby staged before entry team goes in · OSHA non-negotiable. Most rescuer deaths involve skipping this.</div>
+  <span class="sbar-label">Rope Rescue</span>
+  <div class="sbar-card">Confirm certification level · technical supervisor commands rescue face · BC manages ICS above — not the rope system.</div>
+  <span class="sbar-label">Trench/Excavation</span>
+  <div class="sbar-card">Exclusion zone enforcement = most critical immediate action · vibration increases collapse risk · non-certified personnel in trench = second victim risk.</div>
+  <span class="sbar-label">Technical Supervisor Principle</span>
+  <div class="sbar-card">BC commands ICS. Technical supervisor commands rescue face. Complementary, not competing. IC interference at rescue face creates danger.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Technical Rescue</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"Describe your understanding of the four core technical rescue disciplines and how you would apply it in a real scenario."</div><div class="ob-note">Name the rescue priority framework. Show how you balance victim savability against crew risk. The assessor is scoring your decision-making criteria, not just your decision.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 2 — Key Takeaways</div>
+  <div class="tk-item">The Four Core Technical Rescue Disciplines — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Special Operations question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Operational Command</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">NFPA Operational Levels → Four Technical Rescue Disciplines → Span of Control at Scale → CRM</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the special ops type → apply NFPA level → establish command → close with Discipline and Service</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Special Ops Overview</button>
+  <div class="lnb-info"><div class="lnb-name">Technical Rescue</div><div class="lnb-num">Lesson 2 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Hazardous Materials →</button>
+</div>
+</div>
+
+<!-- LESSON 3 -->
+<div class="lesson-view" id="lesson-2">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 33 · Lesson 3 of 6</div>
+    <h1 class="lh-title">Hazardous Materials —<br><em>Incident Command at the Senior Officer Level</em></h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 16 min</span><span class="lh-meta-item">☢️ HazMat · Three Zones · Operations Level</span></div>
+  </div>
+  <p>Hazardous materials incidents require the senior fire officer to manage a discipline that operates on different principles than structural firefighting — different zone structures, different decision timelines, different specialist resources, and a much heavier emphasis on identification and characterization before any offensive action is taken. The BC who arrives at a major industrial chemical release and begins applying structural firefighting instincts is in serious danger of creating a mass casualty incident.</p>
+  <h2>The Three-Zone Structure — The Mandatory Framework</h2>
+  <div class="acro-grid">
+    <div class="acro-row">
+      <div class="acro-letter">HOT</div>
+      <div class="acro-content">
+        <div class="acro-word">Hot Zone — Exclusion Zone</div>
+        <div class="acro-desc">The area immediately surrounding the release — highest concentration of hazardous material, immediately dangerous to life and health (IDLH) without proper PPE. Only properly equipped and trained technician-level responders in appropriate chemical protective equipment enter the hot zone. Access is strictly controlled; no one enters without the IC's authorization and proper protective equipment verification. At the BC level: know who is authorized to grant hot zone entry, and ensure that authorization process is enforced regardless of urgency pressure.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">WARM</div>
+      <div class="acro-content">
+        <div class="acro-word">Warm Zone — Contamination Reduction Zone</div>
+        <div class="acro-desc">The zone where decontamination operations occur — where personnel exiting the hot zone are decontaminated before moving to the cold zone. The warm zone requires appropriate PPE (typically operations-level). The decontamination corridor is established here, and emergency medical support for responders exiting the hot zone is staged in the warm zone. At the BC level: ensure the decon corridor is established and functioning before technicians begin hot zone operations.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">COLD</div>
+      <div class="acro-content">
+        <div class="acro-word">Cold Zone — Safe Operations Zone</div>
+        <div class="acro-desc">The area outside the warm zone where no contamination risk exists. The Incident Command Post, staging, and all non-operations functions are in the cold zone. Media and elected officials who arrive at the scene must be directed to the cold zone and kept there. Any individual who has been in the hot zone and not gone through decontamination is not in the cold zone — regardless of who they are or what they claim.</div>
+      </div>
+    </div>
+  </div>
+  <h2>Identification Before Action — The HazMat Command Imperative</h2>
+  <p>The fundamental difference between hazmat command and structural fire command is this: at a structure fire, the IC can begin offensive operations based on visible observation. At a hazmat incident, offensive operations cannot begin until the material is identified, the hazard profile is understood, and appropriate protective equipment is confirmed available. The identification step is not optional — it is the command action that determines every subsequent decision.</p>
+  <div class="framework-grid">
+    <div class="fw-card">
+      <div class="fw-card-label">Identification Resources</div>
+      <div class="fw-card-title">What the IC Uses to Identify</div>
+      <div class="fw-card-desc">Emergency Response Guidebook (ERG) for initial placarding. CAMEO/MARPLOT for computerized hazard data. Chemtrec (1-800-424-9300) for chemical manufacturer emergency response. State hazmat advisory teams. Sensor monitoring from within the warm zone. Shipping papers, material safety data sheets, and facility pre-incident plans.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">The LEPC Relationship</div>
+      <div class="fw-card-title">EPCRA and Community Right-to-Know</div>
+      <div class="fw-card-desc">The Emergency Planning and Community Right-to-Know Act (EPCRA) requires facilities with hazardous materials above threshold quantities to report to the Local Emergency Planning Committee (LEPC). The BC who has reviewed LEPC inventories for their service area, pre-planned with high-hazard facilities, and established relationships with facility emergency coordinators arrives at hazmat incidents with information advantage over the one who has not.</div>
+    </div>
+  </div>
+  <h2>The BC's HazMat Command Role — Not Technician, But Informed Overseer</h2>
+  <p>The BC at a hazmat incident does not need to know chemical thermodynamics. They need to: establish and enforce the three-zone system; ensure identification is completed before offensive action is authorized; activate the hazmat team and technical specialists; manage staging, public protection (evacuation or shelter-in-place), and interagency coordination (fire, EMS, law enforcement, public works, utilities, environmental agencies); and communicate with the EOC as the incident scales. These are command and coordination functions — not technical functions. The technical functions belong to the hazmat team.</p>
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Operational Command</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">NFPA Operational Levels → Four Technical Rescue Disciplines → Span of Control at Scale → CRM</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the special ops type → apply NFPA level → establish command → close with Discipline and Service</div></div></div></div>
+
+  <span class="sbar-label">Three-Zone Structure</span>
+  <div class="sbar-card"><strong>Hot Zone</strong>Exclusion. Technician-level + proper PPE only. BC controls entry authorization.</div>
+  <div class="sbar-card"><strong>Warm Zone</strong>Decontamination corridor. Operations-level PPE. Decon established before hot zone entry begins.</div>
+  <div class="sbar-card"><strong>Cold Zone</strong>ICP + staging. No contamination risk. Media and VIPs directed here — never allowed forward.</div>
+  <span class="sbar-label">Identification First</span>
+  <div class="sbar-card">ERG · CAMEO/MARPLOT · Chemtrec (1-800-424-9300) · state hazmat teams · shipping papers · MSDS · pre-incident plans. ID before offensive action. No exceptions.</div>
+  <span class="sbar-label">LEPC Advantage</span>
+  <div class="sbar-card">EPCRA requires facility reporting to LEPC. BC who reviewed LEPC inventories and pre-planned with facilities arrives with information advantage.</div>
+  <span class="sbar-label">BC HazMat Role</span>
+  <div class="sbar-card">Enforce zones · complete ID before action · activate team · manage staging + public protection + interagency coordination + EOC communication. Command functions — not technical functions.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Hazardous Materials</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"Describe your understanding of the three-zone structure — the mandatory framework and how you would apply it in a real scenario."</div><div class="ob-note">Name training frequency requirements. Address certification maintenance, equipment readiness, and mutual aid coordination. Show that special ops readiness is a command responsibility.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 3 — Key Takeaways</div>
+  <div class="tk-item">The Three-Zone Structure — The Mandatory Framework — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">Identification Before Action — The HazMat Command Imperative — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Special Operations question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Operational Command</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">NFPA Operational Levels → Four Technical Rescue Disciplines → Span of Control at Scale → CRM</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the special ops type → apply NFPA level → establish command → close with Discipline and Service</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Technical Rescue</button>
+  <div class="lnb-info"><div class="lnb-name">Hazardous Materials</div><div class="lnb-num">Lesson 3 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Water + Swift Water →</button>
+</div>
+</div>
+
+<!-- LESSON 4 -->
+<div class="lesson-view" id="lesson-3">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 33 · Lesson 4 of 6</div>
+    <h1 class="lh-title">Water + Swift Water Rescue —<br><em>The Discipline That Kills Rescuers</em></h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 14 min</span><span class="lh-meta-item">🌊 Swift Water · Flood · Dive · Command</span></div>
+  </div>
+  <p>Water rescue — and swift water rescue in particular — has one of the highest rescuer-to-victim fatality ratios of any fire service discipline. Untrained personnel entering fast-moving water to reach a victim frequently become victims themselves, requiring additional rescue resources and sometimes dying. The BC's most important water rescue command action is not tactical — it is protective: preventing well-intentioned but undertrained personnel from entering the water before proper resources are in place.</p>
+  <h2>Swift Water Command Priorities</h2>
+  <div class="acro-grid">
+    <div class="acro-row">
+      <div class="acro-letter">REACH</div>
+      <div class="acro-content">
+        <div class="acro-word">Reach — Extend Something Without Entering the Water</div>
+        <div class="acro-desc">The first rescue technique: reach from shore with a pole, rope, throw bag, or other device that extends rescuer contact to the victim without entering the water. The rescuer maintains a stable surface platform. This technique works for victims within reach of shore and conscious enough to grab and hold. The BC ensures that reaching techniques are attempted before any entry is authorized.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">THROW</div>
+      <div class="acro-content">
+        <div class="acro-word">Throw — Throw Bag or Rope to the Victim</div>
+        <div class="acro-desc">A throw bag (a bag containing floating rope) can reach victims beyond arm's reach while keeping the rescuer on stable ground. An effective throw bag deployment requires training — even this non-entry technique has a skill component. Multiple bags should be pre-staged for rapid deployment. The BC confirms throw bag availability and trained personnel before determining that the situation requires entry.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">ROW</div>
+      <div class="acro-content">
+        <div class="acro-word">Row — Watercraft with Proper Equipment</div>
+        <div class="acro-desc">Swift water-capable watercraft (inflatable rescue boats, swift water boats) operated by certified swift water rescue technicians. Requires trained operators, appropriate boats for current conditions, and personal flotation devices (PFDs) for all boat crew. The BC's authorization decision for boat deployment must account for current velocity, hazards, and the certification level of the boat operators.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">GO</div>
+      <div class="acro-content">
+        <div class="acro-word">Go — Certified Rescue Swimmer as Last Resort</div>
+        <div class="acro-desc">In-water rescue by a certified swift water technician wearing appropriate PPE (dry suit, PFD, helmet, knife, whistle). Only authorized when reach, throw, and row techniques are not effective and the victim's life is immediately at risk. The BC who authorizes a go operation confirms the rescuer's swift water certification, equipment, and downstream safety setup — a safety boat or bank safety downstream to catch the rescuer if they go under. A go operation without downstream safety is not authorized.</div>
+      </div>
+    </div>
+  </div>
+  <h2>Flood Rescue — The Extended Operation</h2>
+  
+<h3>Flood rescue adds the dimension</h3>
+<p>Flood rescue adds the dimension of geographic scale and extended duration to water rescue operations. Flood incidents require: systematic sector assignment to prevent multiple teams working the same areas, boat resource management and maintenance, coordination with state and federal flood response resources, establishment of rescue staging areas (helicopter-accessible if possible), and management of the rescue-to-sheltering transition as evacuated victims need placement. The BC who manages flood rescue as a single incident rather than as an extended operational event will run out of resources, lose situational awareness, and create safety gaps.</p>
+  <div class="callout callout-red">
+    <span class="callout-label">The Order You Cannot Override</span>
+    <p>No one enters swift water rescue operations without a PFD. This is non-negotiable regardless of urgency, civilian pressure, or the victim's apparent distress. The BC who allows — or fails to prevent — an untrained person from entering fast-moving water without a PFD is authorizing a probable second victim event. The "I couldn't stop them" defense is not a command defense — it is a documentation of failed command authority. Establish the perimeter. Control access. No entry without PPE. Hold that line.</p>
+  </div>
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Operational Command</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">NFPA Operational Levels → Four Technical Rescue Disciplines → Span of Control at Scale → CRM</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the special ops type → apply NFPA level → establish command → close with Discipline and Service</div></div></div></div>
+
+  <span class="sbar-label">Swift Water Priority Sequence</span>
+  <div class="sbar-card"><strong>1. Reach</strong>From shore. No water entry. Try first.</div>
+  <div class="sbar-card"><strong>2. Throw</strong>Throw bag. Trained technique. Multiple bags staged.</div>
+  <div class="sbar-card"><strong>3. Row</strong>Certified operators + appropriate watercraft + PFDs required.</div>
+  <div class="sbar-card"><strong>4. Go</strong>Last resort. Certified swift water tech + full PPE + downstream safety setup. No downstream safety = not authorized.</div>
+  <span class="sbar-label">Flood Rescue</span>
+  <div class="sbar-card">Systematic sector assignment · boat resource management · state/federal coordination · rescue staging · rescue-to-sheltering transition. Extended operation = extended management.</div>
+  <span class="sbar-label">Non-Negotiable Order</span>
+  <div class="sbar-card">No one enters swift water without PFD. Period. Establish perimeter. Control access. "I couldn't stop them" is not a command defense.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Water + Swift Water Rescue</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"Describe your understanding of swift water command priorities and how you would apply it in a real scenario."</div><div class="ob-note">Name the rescue priority framework. Show how you balance victim savability against crew risk. The assessor is scoring your decision-making criteria, not just your decision.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 4 — Key Takeaways</div>
+  <div class="tk-item">Swift Water Command Priorities — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">Flood Rescue — The Extended Operation — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Special Operations question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Operational Command</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">NFPA Operational Levels → Four Technical Rescue Disciplines → Span of Control at Scale → CRM</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the special ops type → apply NFPA level → establish command → close with Discipline and Service</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Hazardous Materials</button>
+  <div class="lnb-info"><div class="lnb-name">Water + Swift Water</div><div class="lnb-num">Lesson 4 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Managing SO Resources →</button>
+</div>
+</div>
+
+<!-- LESSON 5 -->
+<div class="lesson-view" id="lesson-4">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 33 · Lesson 5 of 6</div>
+    <h1 class="lh-title">Managing Special Operations Resources —<br><em>Training, Certification, and Readiness</em></h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 14 min</span><span class="lh-meta-item">⚙️ Team Management · Readiness · Budget · Safety</span></div>
+  </div>
+  <p>Special operations capability is not maintained — it is actively managed. Technical rescue and hazmat teams require ongoing training to maintain certification, equipment that must be inspected, maintained, and replaced on defined cycles, and documented team readiness that the BC can verify before committing the team to operations. The BC who assumes their special operations team is ready because it was ready last year has not managed the team — they have assumed.</p>
+  <h2>The Four Readiness Dimensions</h2>
+  <div class="framework-grid">
+    <div class="fw-card">
+      <div class="fw-card-label">Personnel Certification</div>
+      <div class="fw-card-title">Current, Verified, Documented</div>
+      <div class="fw-card-desc">NFPA 1006, NFPA 472, and state certifications have recertification cycles — typically every 2–3 years. The BC maintains a current certification matrix for all special operations personnel and knows, at any given time, which personnel are currently certified at which levels in which disciplines. A team roster that includes members with expired certifications is a liability and a safety risk during incident operations.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Training Currency</div>
+      <div class="fw-card-title">Skill Maintenance Beyond Certification</div>
+      <div class="fw-card-desc">Certification demonstrates minimum competency at a point in time. Ongoing skills maintenance — regular team drills, scenario-based training, regional exercises — maintains the operational proficiency that certification alone doesn't guarantee. The BC ensures special operations teams conduct regular training events (at minimum quarterly for critical skills) and documents participation and performance.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Equipment Readiness</div>
+      <div class="fw-card-title">Inspection, Maintenance, and Replacement</div>
+      <div class="fw-card-desc">Life safety equipment — ropes, harnesses, SCBA, chemical protective clothing, dive equipment — requires regular inspection, documented maintenance, and replacement at defined service life intervals. A rope that has exceeded its service life or been subjected to a shock load is not a trusted life safety device. The BC ensures inspection and maintenance documentation is current and that equipment is replaced based on manufacturer and NFPA standards, not based on whether it "looks okay."</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Operational Protocols</div>
+      <div class="fw-card-title">Current SOGs for Current Threats</div>
+      <div class="fw-card-desc">Standard operating guidelines for special operations disciplines must be current, reviewed regularly, and consistent with current NFPA standards and best practices. SOGs that were written before current NFPA standards were published, or that haven't been reviewed in years, may authorize practices that are no longer considered safe. The BC owns the SOG review cycle for special operations.</div>
+    </div>
+  </div>
+  <h2>The BC's Safety Officer Role at Special Operations Incidents</h2>
+  <p>Special operations incidents require a dedicated Incident Safety Officer (ISO) with competency in the relevant discipline. At a technical rescue incident, the ISO must understand the technical hazards well enough to identify safety deficiencies — not just general incident safety. The BC ensures that a qualified ISO is in position before operations begin and that the ISO has genuine authority to halt operations when a safety violation is identified. An ISO who does not feel empowered to call an operational stop is not providing real safety oversight.</p>
+  <div class="callout callout-gold">
+    <span class="callout-label">The After-Action Review as Readiness Investment</span>
+    <p>Every significant special operations incident — whether it went well or not — is a training opportunity that cannot be purchased. The BC who conducts thorough after-action reviews of special operations incidents — identifying what worked, what didn't, what the team learned, and what training gaps were revealed — is building the institutional knowledge that improves team performance over time. The teams that become genuinely excellent at special operations are almost always the ones whose leadership invests consistently in the AAR process.</p>
+  </div>
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Operational Command</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">NFPA Operational Levels → Four Technical Rescue Disciplines → Span of Control at Scale → CRM</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the special ops type → apply NFPA level → establish command → close with Discipline and Service</div></div></div></div>
+
+  <span class="sbar-label">Four Readiness Dimensions</span>
+  <div class="sbar-card"><strong>Personnel Certification</strong>Current matrix maintained. Expired certs = liability + safety risk.</div>
+  <div class="sbar-card"><strong>Training Currency</strong>Quarterly minimum for critical skills. Document participation and performance.</div>
+  <div class="sbar-card"><strong>Equipment Readiness</strong>Inspection records · maintenance documentation · replacement on manufacturer/NFPA schedule — not visual inspection.</div>
+  <div class="sbar-card"><strong>Operational Protocols</strong>SOGs current against NFPA standards. BC owns the review cycle.</div>
+  <span class="sbar-label">Safety Officer</span>
+  <div class="sbar-card">Dedicated ISO with discipline-specific competency. In position BEFORE operations begin. Genuine authority to halt operations. ISO without stop authority = theater, not safety.</div>
+  <span class="sbar-label">AAR as Investment</span>
+  <div class="sbar-card">Every SO incident = training opportunity. Thorough AAR builds institutional knowledge. Teams that become excellent at SO consistently invest in the AAR process.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Managing Special Operations Resources</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"Describe your understanding of the four readiness dimensions and how you would apply it in a real scenario."</div><div class="ob-note">Name training frequency requirements. Address certification maintenance, equipment readiness, and mutual aid coordination. Show that special ops readiness is a command responsibility.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 5 — Key Takeaways</div>
+  <div class="tk-item">The Four Readiness Dimensions — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">The BC's Safety Officer Role at Special Operations Incidents — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Special Operations question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Operational Command</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">NFPA Operational Levels → Four Technical Rescue Disciplines → Span of Control at Scale → CRM</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the special ops type → apply NFPA level → establish command → close with Discipline and Service</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Water + Swift Water</button>
+  <div class="lnb-info"><div class="lnb-name">Managing SO Resources</div><div class="lnb-num">Lesson 5 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: AC Application →</button>
+</div>
+</div>
+
+<!-- LESSON 6 -->
+<div class="lesson-view" id="lesson-5">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 33 · Lesson 6 of 6 · Assessment Application</div>
+    <h1 class="lh-title">Assessment Center Application —<br><em>Special Operations Scenarios</em></h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 14 min</span><span class="lh-meta-item">🎯 Scoring + Practice Scenarios</span></div>
+  </div>
+  <p>Special operations scenarios at BC level test whether the candidate understands the command principles that govern high-risk operations — not whether they are a technical rescue specialist. The 5/5 response demonstrates: correct zone establishment, identification before action, proper resource activation and staging, safety officer assignment, and the command discipline to prevent undertrained personnel from creating additional victims.</p>
+  <h2>Practice Scenario — Industrial Confined Space</h2>
+  <div class="callout callout-navy">
+    <span class="callout-label">Oral Board Prompt</span>
+    <p>"You are the first arriving Battalion Chief at an industrial facility. Two maintenance workers entered a large water treatment tank for routine maintenance approximately 45 minutes ago and have not responded to voice contact or radio. A supervisor on scene reports the tank contains residual chlorine gas from treatment operations. A bystander worker is attempting to climb a ladder into the tank opening, saying 'I'm going in to get them.' How do you manage this scene in the first five minutes?"</p>
+  </div>
+  <div class="score-compare">
+    <div class="sc-card miss">
+      <div class="sc-title">3/5 Response</div>
+      <div class="sc-body">"I would stop the bystander from entering and establish command. I would request my hazmat team and confined space rescue team. I would begin gathering information about the contents of the tank. I would establish a perimeter and keep bystanders back while waiting for specialized resources to arrive."</div>
+    </div>
+    <div class="sc-card hit">
+      <div class="sc-title">5/5 Response</div>
+      <div class="sc-body">"First 30 seconds: physical interception of the bystander. Direct — not request — the supervisor to remove that person from the immediate area. This is the most urgent action because a third victim in a chlorine atmosphere is the worst possible outcome I can allow. I announce command and clear all non-essential personnel from the tank area.<br><br>Next 60 seconds: request immediate dispatch of the confined space rescue team and hazmat team. Request EMS upgrade to mass casualty standby. Notify EOC of potential multi-victim hazmat/confined space incident. Request facility MSDS and pre-incident plan from the supervisor immediately.<br><br>Minutes 2–5: begin atmospheric monitoring from outside the tank opening — I need a CO, O2, and chlorine reading before anyone approaches the tank further. No one — including my crew — enters or approaches the tank opening without SCBA until I have atmospheric data and my hazmat team is on scene with appropriate PPE. If atmospheric monitoring from outside shows immediately dangerous concentrations, the tank is treated as a hazmat crime scene until the hazmat team establishes whether any rescue operation is viable.<br><br>The hard truth of this incident: if 45 minutes have elapsed in a chlorine atmosphere, the survival probability for the victims is low. The command imperative is not urgency — it is discipline. A rescue operation that creates three or four casualties instead of two is a command failure I am responsible for preventing. Tactical patience while the right resources stage is the correct command decision. I brief the supervisor: 'We are doing everything possible. We cannot put additional people at risk until we have the right resources in place.'<br><br>Dedicated ISO with confined space competency assigned before any entry operation begins. Entry permit process followed regardless of urgency pressure. Documentation started immediately."</div>
+    </div>
+  </div>
+  <div class="callout callout-gold">
+    <span class="callout-label">Chapter 33 Complete</span>
+    <p>Special operations leadership is the most unforgiving command environment in the fire service — because the hazards are less visible, the margin for error is narrowest, and the consequences of command decisions are most immediate and most irreversible. The BC who commands special operations from the correct command principles — zone discipline, identification before action, certified resources, safety officer authority, and tactical patience — protects both the victims and the rescuers. That protection is the definition of effective special operations command.</p>
+  </div>
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Operational Command</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">NFPA Operational Levels → Four Technical Rescue Disciplines → Span of Control at Scale → CRM</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the special ops type → apply NFPA level → establish command → close with Discipline and Service</div></div></div></div>
+
+  <span class="sbar-label">5/5 Pattern</span>
+  <div class="sbar-card">Physical interception first · command established · specialized resources requested · atmospheric monitoring before approach · SCBA requirement · hazmat/confined space escalation · explicit articulation of tactical patience principle · ISO assigned · entry permit commitment.</div>
+  <span class="sbar-label">3/5 Gap</span>
+  <div class="sbar-card">"Stop the bystander" = correct but passive. "I would request" = weak command language for a life-safety emergency. No mention of atmospheric monitoring, entry permit, ISO, or the tactical patience justification.</div>
+  <span class="sbar-label">The Sentence That Signals 5/5</span>
+  <div class="sbar-card">"A rescue operation that creates three or four casualties instead of two is a command failure I am responsible for preventing." This sentence names the command principle explicitly — not as a policy citation but as a personal accountability statement.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Assessment Center Application</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"You receive a scenario about special operations. Walk me through your complete response using the frameworks from this chapter."</div><div class="ob-note">Use LEAD: Label the bucket (Special Operations), Engage the specific framework (reference Practice Scenario — Industrial Confined Space explicitly), Address the operational and organizational impact, Drive to a concrete first action with a timeline.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 6 — Key Takeaways</div>
+  <div class="tk-item">Practice Scenario — Industrial Confined Space — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Special Operations question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Operational Command</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">NFPA Operational Levels → Four Technical Rescue Disciplines → Span of Control at Scale → CRM</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the special ops type → apply NFPA level → establish command → close with Discipline and Service</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Managing SO Resources</button>
+  <div class="lnb-info"><div class="lnb-name">AC Application</div><div class="lnb-num">Lesson 6 of 6</div></div>
+  <button class="lnb-btn primary" onclick="window.scrollTo({top:0,behavior:'smooth'})">Module Complete ✓</button>
+</div>
+</div>
+
+</main>
+<script>
+let cur=0;
+const ls=document.querySelectorAll('.lesson-view');
+const ps=document.querySelectorAll('.nav-pill');
+const mbs=document.querySelectorAll('.mh-lesson-btn');
+function showLesson(n){ls.forEach(l=>l.classList.remove('active'));ps.forEach(p=>p.classList.remove('active'));mbs.forEach(m=>m.classList.remove('active'));if(ls[n])ls[n].classList.add('active');if(ps[n])ps[n].classList.add('active');if(mbs[n])mbs[n].classList.add('active');cur=n;window.scrollTo({top:0,behavior:'smooth'});document.getElementById('prog').style.width='0%';}
+function nextLesson(){if(cur<ls.length-1)showLesson(cur+1);}
+function prevLesson(){if(cur>0)showLesson(cur-1);}
+window.addEventListener('scroll',()=>{const s=document.documentElement.scrollTop;const h=document.documentElement.scrollHeight-window.innerHeight;if(h>0)document.getElementById('prog').style.width=Math.min(100,(s/h*100))+'%';});
+document.addEventListener('DOMContentLoaded',()=>showLesson(0));
+
+function lfNext(el,stepNum){
+  var wrap=el.closest('.lf-wrap');
+  if(!wrap)return;
+  var steps=wrap.querySelectorAll('.lf-step');
+  var dots=wrap.querySelectorAll('.lf-dot');
+  steps.forEach(function(s,i){s.classList.remove('active');if(i<stepNum)s.classList.add('done');});
+  dots.forEach(function(d,i){d.classList.remove('active');if(i<stepNum)d.classList.add('done');if(i===stepNum)d.classList.add('active');});
+  if(steps[stepNum])steps[stepNum].classList.add('active');
+}
+</script>
+<script>function toggleFT(el){var sw=el.querySelector('.ft-toggle-switch');var desc=el.querySelector('.ft-toggle-desc');var mains=document.querySelectorAll('.lesson-main');sw.classList.toggle('on');var on=sw.classList.contains('on');desc.textContent=on?'Frameworks + OB cards only':'Full lesson content';mains.forEach(function(m){m.classList.toggle('ft-on',on);});}</script>
+</body>
+</html>

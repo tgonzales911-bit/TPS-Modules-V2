@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Chapter 39 — The Presentation Exercise | The Promotional Standard</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Crimson+Pro:wght@300;400;500;600&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --navy:#0C2340;--navy2:#1A3A5C;--gold:#C9A84C;--gold2:#F5F0E8;--gold3:#6B4F10;
+  --cream:#F5F0E8;--offwhite:#F5F0E8;--light:#EAE5DC;--mid:#2A3D50;--gray:#8FA8C0;
+  --red:#B22222;--red-light:#FFF0F0;--green:#1A5C3A;--green-light:#EAF3DE;
+  --teal:#006B6B;--teal-light:#E0F4F4;--purple:#4A2570;--purple-light:#F0EAF8;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:var(--navy);font-size:18px;line-height:1.8;}
+.top-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(12,35,64,0.98);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,168,76,0.2);height:64px;display:flex;align-items:center;padding:0 2rem;gap:1rem;}
+.nav-left{display:flex;align-items:center;gap:12px;flex:1;}
+.nav-brand{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;color:var(--cream);line-height:1.3;}
+.nav-brand span{display:block;font-size:8px;color:var(--gold);letter-spacing:2px;}
+.nav-pills{display:flex;gap:5px;flex:2;justify-content:center;overflow-x:auto;}
+.nav-pill{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#8FA8C0;padding:6px 11px;border-radius:20px;cursor:pointer;transition:all 0.2s;border:none;background:transparent;white-space:nowrap;}
+.nav-pill:hover{color:var(--cream);background:rgba(255,255,255,0.05);}
+.nav-pill.active{color:var(--gold);background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.25);}
+.progress-bar{position:fixed;top:64px;left:0;height:3px;background:linear-gradient(90deg,var(--navy2),var(--gold));z-index:199;width:0%;transition:width 0.3s;}
+.lesson-view{display:none;}.lesson-view.active{display:block;}
+.module-hero{background:var(--navy);padding:4.5rem 3rem 3.5rem;margin-top:64px;position:relative;overflow:hidden;border-bottom:3px solid var(--gold);}
+.module-hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 60px,rgba(201,168,76,0.015) 60px,rgba(201,168,76,0.015) 61px);}
+.module-hero::after{content:'';position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(180deg,var(--navy2),var(--gold));}
+.mh-inner{max-width:900px;position:relative;z-index:2;}
+.mh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.mh-title{font-family:'EB Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:800;color:var(--cream);line-height:1.1;margin-bottom:0.75rem;}
+.mh-title em{font-style:italic;color:var(--gold);}
+.mh-sub{font-size:1.05rem;color:#8FA8C0;max-width:700px;line-height:1.7;margin-bottom:2rem;}
+.mh-badges{display:flex;gap:10px;margin-bottom:1.5rem;flex-wrap:wrap;}
+.mh-badge{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border-radius:3px;}
+.badge-track{background:rgba(201,168,76,0.15);color:var(--gold);border:1px solid rgba(201,168,76,0.3);}
+.badge-nfpa{background:rgba(100,160,220,0.15);color:#8FA8C0;border:1px solid rgba(100,160,220,0.3);}
+.badge-new{background:rgba(50,180,100,0.15);color:#3AB464;border:1px solid rgba(50,180,100,0.3);}
+.mh-thread{background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);border-left:3px solid var(--gold);padding:1rem 1.5rem;margin-bottom:2rem;max-width:700px;}
+.mh-thread-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+.mh-thread-text{font-size:0.92rem;color:var(--cream);line-height:1.65;}
+.mh-lesson-nav{display:flex;gap:8px;flex-wrap:wrap;}
+.mh-lesson-btn{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:8px 14px;border-radius:6px;cursor:pointer;transition:all 0.2s;border:1px solid rgba(201,168,76,0.25);background:transparent;color:#8FA8C0;}
+.mh-lesson-btn:hover{background:rgba(255,255,255,0.05);color:var(--cream);}
+.mh-lesson-btn.active{background:rgba(201,168,76,0.12);color:var(--gold);border-color:rgba(201,168,76,0.4);}
+.lesson-container{display:grid;grid-template-columns:1fr 310px;gap:0;}
+.lesson-main{padding:3rem 3.5rem;border-right:1px solid var(--light);}
+.lesson-sidebar{padding:2rem 1.75rem;background:var(--offwhite);position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;}
+.lesson-header{margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:2px solid var(--light);}
+.lh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold3);margin-bottom:0.6rem;}
+.lh-title{font-family:'EB Garamond',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;color:var(--navy);line-height:1.15;margin-bottom:0.6rem;}
+.lh-title em{font-style:italic;color:var(--gold);}
+.lh-meta{display:flex;gap:1.5rem;flex-wrap:wrap;}
+.lh-meta-item{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);}
+.lesson-main h2{font-family:'EB Garamond',serif;font-size:1.7rem;font-weight:700;color:var(--navy);margin:3rem 0 0.9rem;padding-bottom:0.5rem;border-bottom:2px solid var(--light);}
+.lesson-main h3{font-family:'EB Garamond',serif;font-size:1.25rem;font-weight:600;color:var(--navy);margin:2.25rem 0 0.65rem;}
+.lesson-main p{margin-bottom:1.25rem;color:#2A3D50;line-height:1.82;}
+.lesson-main ul,.lesson-main ol{margin:0 0 1.25rem 1.5rem;color:#2A3D50;}
+.lesson-main li{margin-bottom:0.6rem;line-height:1.72;}
+.lesson-main strong{color:var(--navy);font-weight:600;}
+.callout{padding:1.4rem 1.6rem;margin:2rem 0;}
+.callout-gold{background:var(--gold2);border-left:3px solid var(--gold);}.callout-gold p{color:var(--gold3);font-size:0.97rem;line-height:1.75;}
+.callout-navy{background:var(--navy);border-left:3px solid var(--gold);}.callout-navy p{color:#8FA8C0;font-size:0.95rem;line-height:1.75;}
+.callout-red{background:var(--red-light);border-left:4px solid var(--red);}.callout-red p{color:#6B4F10;font-size:0.97rem;line-height:1.75;}
+.callout-green{background:var(--green-light);border-left:4px solid var(--green);}.callout-green p{color:#1A3A5C;font-size:0.97rem;line-height:1.75;}
+.callout-teal{background:var(--teal-light);border-left:4px solid var(--teal);}.callout-teal p{color:#003A3A;font-size:0.97rem;line-height:1.75;}
+.callout-purple{background:var(--purple-light);border-left:4px solid var(--purple);}.callout-purple p{color:#2A1040;font-size:0.97rem;line-height:1.75;}
+.callout-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:0.5rem;display:block;}
+.callout-gold .callout-label{color:var(--gold3);}
+.callout-navy .callout-label{color:var(--gold);}
+.callout-red .callout-label{color:var(--red);}
+.callout-green .callout-label{color:var(--green);}
+.callout-teal .callout-label{color:var(--teal);}
+.callout-purple .callout-label{color:var(--purple);}
+.framework-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.fw-card{background:white;border:1px solid #EAE5DC;padding:1.25rem;border-radius:8px;}
+.fw-card-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:6px;}
+.fw-card-title{font-family:'EB Garamond',serif;font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.fw-card-desc{font-size:0.9rem;color:var(--mid);line-height:1.6;}
+.acro-grid{display:flex;flex-direction:column;gap:0;margin:1.5rem 0;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;}
+.acro-row{display:grid;grid-template-columns:52px 1fr;gap:0;border-bottom:1px solid #EAE5DC;}
+.acro-row:last-child{border-bottom:none;}
+.acro-letter{background:var(--navy);color:var(--gold);font-family:'EB Garamond',serif;font-size:1.8rem;font-weight:800;display:flex;align-items:center;justify-content:center;}
+.acro-content{padding:0.9rem 1.1rem;background:white;}
+.acro-word{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:3px;}
+.acro-desc{font-size:0.85rem;color:var(--mid);line-height:1.55;}
+.sbar-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:0.65rem;margin-top:1.5rem;display:block;}
+.sbar-label:first-child{margin-top:0;}
+.sbar-card{background:white;border:1px solid #EAE5DC;border-radius:8px;padding:0.9rem 1rem;margin-bottom:8px;font-size:0.9rem;color:var(--mid);line-height:1.55;}
+.sbar-card strong{color:var(--navy);display:block;margin-bottom:3px;font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;}
+/* Nav bar — full standard */
+.lesson-nav-bar{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 3rem;border-top:3px solid var(--gold);background:var(--navy);gap:1rem;}
+.lnb-btn{background:rgba(255,255,255,0.08);border:2px solid rgba(201,168,76,0.4);padding:14px 28px;font-family:'Cinzel',serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border-radius:6px;color:var(--cream);transition:all 0.2s;white-space:nowrap;}
+.lnb-btn:hover{background:rgba(201,168,76,0.15);border-color:var(--gold);color:var(--gold);}
+.lnb-btn:disabled,.lnb-btn[disabled]{opacity:0.25;cursor:not-allowed;background:transparent;}
+.lnb-btn:disabled:hover,.lnb-btn[disabled]:hover{background:transparent;border-color:rgba(201,168,76,0.4);color:var(--cream);}
+.lnb-btn.primary{background:var(--gold);color:var(--navy);border-color:var(--gold);font-weight:800;}
+.lnb-btn.primary:hover{background:#C9A84C;border-color:#C9A84C;}
+.lnb-info{text-align:center;flex:1;}
+.lnb-name{font-family:'EB Garamond',serif;font-size:1rem;font-weight:700;color:var(--cream);}
+.lnb-num{font-size:0.85rem;color:var(--gold);font-family:'Cinzel',serif;letter-spacing:1px;}
+/* Monroe sequence visual */
+.monroe-flow{display:flex;flex-direction:column;gap:0;margin:1.5rem 0;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;}
+.monroe-step{display:grid;grid-template-columns:64px 1fr;border-bottom:1px solid #EAE5DC;}
+.monroe-step:last-child{border-bottom:none;}
+.monroe-num{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1rem 0.5rem;gap:3px;}
+.monroe-badge{font-family:'EB Garamond',serif;font-size:1.5rem;font-weight:800;color:var(--gold);line-height:1;}
+.monroe-pct{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1px;color:rgba(201,168,76,0.6);}
+.monroe-body{padding:1rem 1.25rem;background:white;}
+.monroe-title{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:4px;}
+.monroe-desc{font-size:0.9rem;color:var(--mid);line-height:1.58;}
+.monroe-example{font-size:0.88rem;color:var(--gold3);margin-top:5px;font-style:italic;line-height:1.5;}
+/* Audience cards */
+.audience-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin:1.5rem 0;}
+.aud-card{background:white;border:1px solid #EAE5DC;border-radius:8px;padding:1.1rem;}
+.aud-rank{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:5px;}
+.aud-audience{font-family:'EB Garamond',serif;font-size:1rem;font-weight:700;color:var(--gold3);margin-bottom:5px;}
+.aud-desc{font-size:0.88rem;color:var(--mid);line-height:1.5;}
+/* Score compare */
+.score-compare{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.sc-card{padding:1.25rem;border-radius:8px;}
+.sc-card.miss{background:var(--red-light);border:1px solid #F0C0C0;}
+.sc-card.hit{background:var(--green-light);border:1px solid #9DCCA8;}
+.sc-title{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:0.75rem;}
+.sc-card.miss .sc-title{color:var(--red);}
+.sc-card.hit .sc-title{color:var(--green);}
+.sc-body{font-size:0.9rem;line-height:1.6;}
+.sc-card.miss .sc-body{color:#6B4F10;}
+.sc-card.hit .sc-body{color:#1A3A5C;}
+/* Dialogue */
+.dialogue{background:white;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;margin:1.5rem 0;}
+.dl-header{background:var(--navy);padding:0.9rem 1.5rem;}
+.dl-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);}
+.dl-line{display:grid;grid-template-columns:110px 1fr;gap:0.75rem;padding:0.85rem 1.5rem;border-bottom:1px solid var(--light);align-items:start;}
+.dl-line:last-child{border-bottom:none;}
+.dl-speaker{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;padding-top:2px;}
+.dl-speaker.officer{color:var(--navy);}
+.dl-speaker.audience{color:var(--purple);}
+.dl-speaker.note{color:var(--gold3);}
+.dl-text{font-size:0.87rem;color:#2A3D50;line-height:1.65;}
+.dl-text em{color:var(--gold3);font-style:italic;}
+@media(max-width:900px){.lesson-container{grid-template-columns:1fr;}.lesson-sidebar{position:relative;height:auto;}.lesson-main{padding:2rem 1.5rem;}.lesson-nav-bar{padding:1rem 1.5rem;flex-wrap:wrap;}.score-compare{grid-template-columns:1fr;}.framework-grid{grid-template-columns:1fr;}.audience-grid{grid-template-columns:1fr;}.dl-line{grid-template-columns:80px 1fr;}}
+
+/* OB CARD */
+.ob-card{background:var(--navy);margin:2rem 0;overflow:hidden;}
+.ob-header{padding:0.85rem 1.5rem;background:rgba(201,168,76,0.08);border-bottom:1px solid rgba(201,168,76,0.15);}
+.ob-label{font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);}
+.ob-body{padding:1.25rem 1.5rem;}
+.ob-q{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;}
+.ob-q-tag{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);background:rgba(201,168,76,0.1);padding:4px 10px;border-radius:3px;white-space:nowrap;}
+.ob-q-text{font-family:'EB Garamond',serif;font-size:1.08rem;font-weight:600;color:var(--cream);line-height:1.5;margin-bottom:8px;}
+.ob-note{font-size:0.88rem;color:#8FA8C0;line-height:1.6;font-style:italic;}
+/* TAKEAWAYS */
+.takeaways{background:var(--navy);padding:2.25rem;margin:3rem 0 0;border-top:3px solid var(--gold);}
+.tk-lbl{font-family:'Cinzel',serif;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.tk-item{color:#8FA8C0;font-size:0.92rem;line-height:1.7;padding:0.5rem 0 0.5rem 1.25rem;border-left:2px solid rgba(201,168,76,0.2);margin-bottom:0.5rem;}
+
+
+.lead-nav{background:var(--navy);border-radius:8px;padding:14px 16px;margin-bottom:16px;border:1px solid rgba(201,168,76,0.2)}
+.lead-nav-header{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.lead-nav-row{display:grid;grid-template-columns:20px 1fr;gap:6px;margin-bottom:6px;align-items:start}
+.lead-nav-letter{font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:var(--gold)}
+.lead-nav-content{}
+.lead-nav-name{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:2px}
+.lead-nav-app{font-size:11px;color:#8FA8C0;line-height:1.5}
+
+.lf-wrap{margin:2.5rem 0 1.5rem;border:2px solid var(--gold);border-radius:10px;overflow:hidden}
+.lf-header{background:var(--navy);padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
+.lf-title{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+.lf-dots{display:flex;gap:6px}
+.lf-dot{width:8px;height:8px;border-radius:50%;background:rgba(201,168,76,0.25);transition:all 0.3s}
+.lf-dot.active{background:var(--gold);transform:scale(1.3)}
+.lf-dot.done{background:var(--gold)}
+.lf-step{display:none;padding:20px}
+.lf-step.active{display:block}
+.lf-step-num{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:6px}
+.lf-step-title{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:10px}
+.lf-chain{background:var(--navy);border-radius:6px;padding:14px 18px;margin:10px 0}
+.lf-chain-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.lf-chain-text{font-size:13px;color:#8FA8C0;line-height:1.6}
+.lf-chain-close{font-size:12px;color:var(--cream);margin-top:6px;font-style:italic}
+.lf-btn{background:var(--navy);color:var(--gold);border:2px solid var(--gold);padding:12px 24px;border-radius:6px;font-family:'Cinzel',serif;font-size:12px;letter-spacing:1.5px;font-weight:600;cursor:pointer;margin-top:12px;transition:all 0.2s;display:inline-block}
+.lf-btn:hover{background:var(--gold);color:var(--navy)}
+.lf-timer{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:var(--gold);padding:6px 14px;border-radius:4px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:1px;margin-top:10px}
+.lesson-main.ft>p{display:none!important}.lesson-main.ft>.callout{display:none!important}.ft-toggle{display:flex;align-items:center;gap:10px;padding:10px 16px;background:var(--navy);border-radius:6px;cursor:pointer;border:1px solid rgba(201,168,76,0.25)}.ft-toggle-switch{width:36px;height:20px;background:rgba(201,168,76,0.2);border-radius:10px;position:relative;transition:background .2s}.ft-toggle-switch.on{background:var(--gold)}.ft-toggle-knob{width:14px;height:14px;background:#fff;border-radius:50%;position:absolute;top:3px;left:3px;transition:left .2s}.ft-toggle-switch.on .ft-toggle-knob{left:19px}.ft-toggle-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}.ft-toggle-desc{font-size:11px;color:var(--mid)}.lesson-main.ft-on>p,.lesson-main.ft-on>.callout,.lesson-main.ft-on h3{display:none!important}.lesson-main.ft-on .ob-card,.lesson-main.ft-on .lf-wrap,.lesson-main.ft-on .lead-nav,.lesson-main.ft-on h2{display:block!important}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <div class="nav-left">
+    <div class="nav-brand">The Promotional Standard<span>Universal · Chapter 39</span></div>
+  </div>
+  <div class="nav-pills">
+    <button class="nav-pill active" onclick="showLesson(0)">What It Is</button>
+    <button class="nav-pill" onclick="showLesson(1)">Monroe's Sequence</button>
+    <button class="nav-pill" onclick="showLesson(2)">Audience Analysis</button>
+    <button class="nav-pill" onclick="showLesson(3)">Delivery + Q&A</button>
+    <button class="nav-pill" onclick="showLesson(4)">Scenarios by Rank</button>
+    <button class="nav-pill" onclick="showLesson(5)">LEAD Applied</button>
+    <button class="nav-pill" onclick="showLesson(6)">⭐ TED Talk Structure</button>
+  </div>
+</nav>
+<div class="progress-bar" id="prog"></div>
+
+<div class="module-hero">
+  <div class="mh-inner">
+    <div class="mh-eyebrow">Chapter 39 · Universal · All Ranks</div>
+    <h1 class="mh-title">The<br><em>Presentation Exercise</em></h1>
+    <p class="mh-sub">The presentation exercise is the most underestimated component of the assessment center. Candidates prepare for oral boards and written exercises — and treat the presentation as an afterthought. Assessors know this. They watch specifically for the candidates whose presentation structure, audience calibration, and persuasive logic demonstrate that they prepared for this exercise with the same rigor they brought to everything else. This module gives you that rigor.</p>
+    <div class="mh-badges">
+      <span class="mh-badge badge-track">Universal — All Tracks</span>
+      <span class="mh-badge badge-nfpa">NFPA 1021 FO I–IV · Admin JPRs</span>
+      <span class="mh-badge badge-new">New Module</span>
+    </div>
+    <div class="mh-thread">
+      <div class="mh-thread-label">Before You Begin</div>
+      <div class="mh-thread-text">Complete Module 6 (Oral Communication) and Module 7 (Written Communication) before this module. The presentation exercise is the convergence of both — the structural discipline of written communication delivered with the presence and persuasion of oral communication. Monroe's Motivated Sequence, introduced here, becomes the primary TPS framework for every presentation scenario at every rank.</div>
+    </div>
+    <div class="mh-lesson-nav">
+      <button class="mh-lesson-btn active" onclick="showLesson(0)">1. What It Is</button>
+      <button class="mh-lesson-btn" onclick="showLesson(1)">2. Monroe's Sequence</button>
+      <button class="mh-lesson-btn" onclick="showLesson(2)">3. Audience Analysis</button>
+      <button class="mh-lesson-btn" onclick="showLesson(3)">4. Delivery + Q&A</button>
+      <button class="mh-lesson-btn" onclick="showLesson(4)">5. Scenarios by Rank</button>
+      <button class="mh-lesson-btn" onclick="showLesson(5)">6. LEAD Applied</button>
+      <button class="mh-lesson-btn" onclick="showLesson(6)">⭐ Bonus: TED Talk</button>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- LESSON 1 -->
+<div class="lesson-view active" id="lesson-0">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 39 · Lesson 1 of 6</div>
+    <h1 class="lh-title">The Presentation Exercise —<br><em>What It Is and How It's Scored</em></h1>
+    <div class="lh-meta">
+      <span class="lh-meta-item">⏱ 14 min</span>
+      <span class="lh-meta-item">🎤 Universal Exercise Type</span>
+    </div>
+  </div>
+
+  <p>The presentation exercise is not an oral board question with a longer answer. It is a structurally distinct exercise type with its own scoring criteria, its own preparation protocol, and its own framework. Candidates who treat it as an extended oral board response — delivering a STAR-P structured answer to a presentation prompt — score at the Meets Standard level. Candidates who apply Monroe's Motivated Sequence, calibrate to their specified audience, and manage the Q&A phase as a separate scored component score at the Above Standard level.</p>
+
+  <p>The core difference between the presentation exercise and the oral board is audience and purpose. In an oral board you respond to a scenario in front of a panel of assessors. In a presentation exercise you present to an audience — which may be your crew, a community group, a city council, or your Fire Chief — and the assessors observe how effectively you communicate to that specified audience. The assessors are not the audience. Understanding this distinction determines your entire approach.</p>
+
+  <h2>How the Presentation Exercise Works</h2>
+  <div class="framework-grid">
+    <div class="fw-card">
+      <div class="fw-card-label">Prep Time</div>
+      <div class="fw-card-title">15–30 Minutes</div>
+      <div class="fw-card-desc">You receive the topic, the specified audience, and any supporting materials. You prepare your presentation — typically with note cards or an outline allowed. This is where Monroe's Sequence is applied. Your entire structure is built in prep time.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Presentation</div>
+      <div class="fw-card-title">10–15 Minutes</div>
+      <div class="fw-card-desc">You deliver to the specified audience — role played by assessors or a mix of assessors and role players. Eye contact, pacing, clarity, and audience calibration are all scored during delivery. Your note cards are allowed — reading from them verbatim is not.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Q&A Phase</div>
+      <div class="fw-card-title">5–10 Minutes</div>
+      <div class="fw-card-desc">Audience members ask questions. This is a separately scored component that most candidates underestimate. How you handle a difficult question from a resistant audience member is assessed independently from your presentation quality.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Visual Aids</div>
+      <div class="fw-card-title">Varies by Department</div>
+      <div class="fw-card-desc">Some exercises provide flip charts, whiteboards, or handout materials. Others allow only note cards. Always ask during prep time what materials are available. Using a whiteboard effectively — when provided — is itself a scored behavior.</div>
+    </div>
+  </div>
+
+  <h2>What Assessors Score in the Presentation Exercise</h2>
+  <div class="acro-grid">
+    <div class="acro-row">
+      <div class="acro-letter" style="font-size:1rem;padding:0.5rem 0.3rem;text-align:center;font-family:'Cinzel',serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);">01</div>
+      <div class="acro-content">
+        <div class="acro-word">Structure — Does the Presentation Have Architecture?</div>
+        <div class="acro-desc">Assessors listen for Monroe's five-step sequence — or an equivalent persuasive structure. A presentation without clear structure scores at Meets Standard regardless of content quality. The candidate who can be followed — whose argument has visible logical progression — scores Above Standard.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter" style="font-size:1rem;padding:0.5rem 0.3rem;text-align:center;font-family:'Cinzel',serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);">02</div>
+      <div class="acro-content">
+        <div class="acro-word">Audience Calibration — Does the Candidate Know Who They're Talking To?</div>
+        <div class="acro-desc">A presentation to a crew uses different language, different examples, and a different level of technical detail than a presentation to a city council. Assessors score whether the candidate demonstrates awareness of the specified audience — not just delivery quality in the abstract.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter" style="font-size:1rem;padding:0.5rem 0.3rem;text-align:center;font-family:'Cinzel',serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);">03</div>
+      <div class="acro-content">
+        <div class="acro-word">Delivery Presence — Command of the Room</div>
+        <div class="acro-desc">Eye contact distributed across the audience, not fixed on notes. Pacing that allows comprehension, not rushed to finish. Voice modulation — not a monotone recitation. Composure when questions are difficult. Assessors are watching whether the candidate owns the room.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter" style="font-size:1rem;padding:0.5rem 0.3rem;text-align:center;font-family:'Cinzel',serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);">04</div>
+      <div class="acro-content">
+        <div class="acro-word">Q&A Management — Handles Pressure with Grace</div>
+        <div class="acro-desc">A difficult question is not the end of a good presentation. Assessors specifically insert challenging, hostile, or off-topic questions to observe how the candidate manages them. The candidate who acknowledges, clarifies, and answers without becoming defensive or flustered demonstrates executive-level composure.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter" style="font-size:1rem;padding:0.5rem 0.3rem;text-align:center;font-family:'Cinzel',serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);">05</div>
+      <div class="acro-content">
+        <div class="acro-word">Principle Close — Connects to Leadership Identity</div>
+        <div class="acro-desc">The final sentence of the presentation — before inviting questions — should close with a named TPS principle connecting the presentation content to the candidate's leadership philosophy. Most candidates end with "Thank you." The candidate who ends with a principle statement is remembered.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-gold">
+    <span class="callout-label">The Exercise Most Underestimated by Candidates</span>
+    <p>In every assessment center debrief, assessors consistently note that candidates who perform well in oral board scenarios often underperform in presentation exercises — because they apply the same framework to a different exercise type. The presentation exercise rewards preparation discipline, audience intelligence, and persuasive logic. It does not reward the same instincts that score well in a spontaneous oral board. This module is built for the candidate who wants to prepare for this exercise with the same intentionality they bring to everything else.</p>
+  </div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="ft-toggle" onclick="toggleFT(this)" style="margin-bottom:16px;max-width:320px">
+<div class="ft-toggle-switch"><div class="ft-toggle-knob"></div></div>
+<div><div class="ft-toggle-label">Fast Track Mode</div><div class="ft-toggle-desc">Full lesson content</div></div>
+</div>
+
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Communication</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Monroe's Motivated Sequence → Six Scoring Dimensions → Pre-Exercise Protocol</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Structure with Monroe → score each dimension → deliver with presence → close with Commitment and Service</div></div></div></div>
+
+  <span class="sbar-label">The Three-Phase Format</span>
+  <div class="sbar-card"><strong>Prep (15–30 min)</strong>Build your Monroe structure. Know your audience. Prepare note cards — never a full script.</div>
+  <div class="sbar-card"><strong>Presentation (10–15 min)</strong>Deliver to specified audience. Eye contact. Pacing. Audience language.</div>
+  <div class="sbar-card"><strong>Q&A (5–10 min)</strong>Separately scored. Difficult questions are deliberate. Composure is the test.</div>
+  <span class="sbar-label">Five Scored Behaviors</span>
+  <div class="sbar-card">Structure · Audience calibration · Delivery presence · Q&A management · Principle close</div>
+  <span class="sbar-label">The Core Insight</span>
+  <div class="sbar-card">The assessors are not your audience. The specified role players are. Every presentation decision — language, examples, technical depth — is calibrated to the specified audience, not to who is scoring you.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — The Presentation Exercise</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"Describe your understanding of how the presentation exercise works and how you would apply it in a real scenario."</div><div class="ob-note">Name your presentation structure (Monroe's Motivated Sequence, Rule of Three, or mnemonic architecture). Show that your presentation is designed, not improvised. Delivery and structure are scored equally.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 1 — Key Takeaways</div>
+  <div class="tk-item">How the Presentation Exercise Works — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">What Assessors Score in the Presentation Exercise — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Presentation Exercise question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Communication</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Monroe's Motivated Sequence → Six Scoring Dimensions → Pre-Exercise Protocol</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Structure with Monroe → score each dimension → deliver with presence → close with Commitment and Service</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" disabled>← Previous</button>
+  <div class="lnb-info"><div class="lnb-name">What It Is</div><div class="lnb-num">Lesson 1 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Monroe's Motivated Sequence →</button>
+</div>
+</div>
+
+<!-- LESSON 2 -->
+<div class="lesson-view" id="lesson-1">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 39 · Lesson 2 of 6</div>
+    <h1 class="lh-title">Monroe's<br><em>Motivated Sequence</em></h1>
+    <div class="lh-meta">
+      <span class="lh-meta-item">⏱ 20 min</span>
+      <span class="lh-meta-item">📋 Primary TPS Framework</span>
+    </div>
+  </div>
+
+  <p>Monroe's Motivated Sequence is the TPS primary framework for every presentation exercise at every rank. Developed by Alan Monroe at Purdue University in the 1930s, it is the most widely taught persuasive speech structure in communication education — and it is directly applicable to fire service assessment center presentations because assessors are listening for exactly the logic it produces: a clear problem, a credible solution, and a specific call to action.</p>
+
+  <p>The five steps of Monroe's Motivated Sequence are not five equal sections. They have different purposes, different lengths, and different scoring weights. Understanding which step carries the most persuasive weight — and allocating your prep time accordingly — is the difference between a technically competent presentation and one that genuinely moves the audience toward your intended outcome.</p>
+
+  <h2>The Five Steps — With Timing and Purpose</h2>
+
+  <div class="monroe-flow">
+    <div class="monroe-step">
+      <div class="monroe-num" style="background:var(--navy);">
+        <div class="monroe-badge">1</div>
+        <div class="monroe-pct">10%</div>
+      </div>
+      <div class="monroe-body">
+        <div class="monroe-title">Attention — Earn the Right to Be Heard</div>
+        <div class="monroe-desc">Your opening must earn the audience's attention before they will process your content. A startling statistic, a brief scenario, a direct question, or a bold statement of what is at stake. Not "thank you for having me" — something that makes the audience lean in within the first thirty seconds.</div>
+        <div class="monroe-example">Example (Lieutenant crew safety presentation): "In the last 18 months, three firefighters in our region were injured during overhaul operations — two of them on scenes cleared by officers who made the same assumption you've probably made. I want to talk about that assumption today."</div>
+      </div>
+    </div>
+    <div class="monroe-step">
+      <div class="monroe-num" style="background:#2E5C8A;">
+        <div class="monroe-badge">2</div>
+        <div class="monroe-pct">20%</div>
+      </div>
+      <div class="monroe-body">
+        <div class="monroe-title">Need — Make the Problem Real</div>
+        <div class="monroe-desc">Establish the specific problem your presentation addresses. Why does this audience need to hear this? What is the current gap between where things are and where they should be? This step must be grounded in facts, specific consequences, and a connection to the audience's direct experience. The audience must feel the need — not just understand it intellectually.</div>
+        <div class="monroe-example">Example: "Our incident reports show that 60% of our near-miss events in the last year occurred during overhaul — not during active fire attack. The protocols we follow most consistently are the ones taught in recruit training. Overhaul safety has not received the same consistent reinforcement. That gap is the reason I'm here today."</div>
+      </div>
+    </div>
+    <div class="monroe-step">
+      <div class="monroe-num" style="background:var(--gold3);">
+        <div class="monroe-badge">3</div>
+        <div class="monroe-pct">40%</div>
+      </div>
+      <div class="monroe-body">
+        <div class="monroe-title">Satisfaction — Your Solution</div>
+        <div class="monroe-desc">Present your specific, actionable solution to the need you established. This is the longest and most detailed section — 40% of your total time. Assessors score whether the solution is specific enough to act on, whether it addresses the need directly, and whether it is appropriate to the authority level of the presenter and audience. Vague solutions score at Meets Standard regardless of delivery quality.</div>
+        <div class="monroe-example">Example: "The three-part solution I am recommending: first, a 15-minute overhaul safety refresher at the start of each shift in October. Second, a revised overhaul checklist placed on every apparatus by November 1st. Third, a post-incident overhaul review added to our debrief protocol beginning this week. Each of these is within current shift resources — none requires additional budget or personnel."</div>
+      </div>
+    </div>
+    <div class="monroe-step">
+      <div class="monroe-num" style="background:#3A7A4A;">
+        <div class="monroe-badge">4</div>
+        <div class="monroe-pct">20%</div>
+      </div>
+      <div class="monroe-body">
+        <div class="monroe-title">Visualization — Make the Future Real</div>
+        <div class="monroe-desc">Help the audience see what success looks like — and what continued failure looks like. This is a two-sided picture: the positive outcome if your solution is adopted, and the negative outcome if it is not. Visualization makes the abstract concrete and the future immediate. It converts intellectual agreement into emotional commitment to action.</div>
+        <div class="monroe-example">Example: "If we implement these three steps, we reduce overhaul risk at every scene. Your crews leave every call knowing the risk was managed — not assumed away. If we don't act, we continue accepting a gap that our own incident data tells us is producing preventable injuries."</div>
+      </div>
+    </div>
+    <div class="monroe-step">
+      <div class="monroe-num" style="background:#8B3030;">
+        <div class="monroe-badge">5</div>
+        <div class="monroe-pct">10%</div>
+      </div>
+      <div class="monroe-body">
+        <div class="monroe-title">Action — Specific Ask + Principle Close</div>
+        <div class="monroe-desc">The final step tells the audience exactly what you need them to do — and when. Not "I hope you'll consider this" — a direct, specific request. Then close with your leadership principle. The Action step is where most candidates either leave a strong presentation incomplete (no specific ask) or miss the scoring opportunity of the principle close entirely.</div>
+        <div class="monroe-example">Example: "I am asking for your authorization to begin the shift briefings this Monday. I will lead the first two personally. The Dedication element of my leadership philosophy requires me to close the gap between what I know and what I ask of my crew. This is how I close it. Questions?"</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Allocating Your Prep Time to Monroe's Structure</h2>
+  <p>Your 15–30 minutes of prep time should be allocated to building the five steps — not to writing a script. The goal of prep time is an outline — specific enough that you have every key point, brief enough that you can speak from it rather than read it.</p>
+
+  <div class="callout callout-gold">
+    <span class="callout-label">The Prep Time Formula</span>
+    <p><strong>First 5 minutes:</strong> Read the prompt twice. Identify your audience. Identify the core problem (Step 2 — Need). Write one sentence stating it.<br><br>
+    <strong>Next 10 minutes:</strong> Build your Satisfaction section (Step 3). This is your solution. Be specific. Be actionable. This is the step assessors score most heavily on content.<br><br>
+    <strong>Final 5 minutes:</strong> Write your Attention opener (Step 1). Write your Visualization (Step 4). Write your Action ask and principle close (Step 5).<br><br>
+    Do not write your Attention step first. Write your Need and Satisfaction first — then your Attention opener will naturally reflect the most important part of what you are about to say.</p>
+  </div>
+
+  <div class="callout callout-purple">
+    <span class="callout-label">Monroe's Source</span>
+    <p>Monroe's Motivated Sequence was developed by Alan Monroe, professor of speech at Purdue University, first published in 1935. It became the foundation of modern persuasive communication training and is still taught in graduate communication programs worldwide. When you reference it in a presentation exercise, you are invoking a framework with nearly a century of application behind it. Name it explicitly in your Action close: "This presentation followed Monroe's Motivated Sequence — the persuasive framework I use for every recommendation I bring to this organization."</p>
+  </div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Communication</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Monroe's Motivated Sequence → Six Scoring Dimensions → Pre-Exercise Protocol</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Structure with Monroe → score each dimension → deliver with presence → close with Commitment and Service</div></div></div></div>
+
+  <span class="sbar-label">Monroe's Five Steps</span>
+  <div class="sbar-card"><strong style="color:var(--navy);">1 — Attention (10%)</strong>Earn the right to be heard. 30 seconds. Startling, relevant, specific.</div>
+  <div class="sbar-card"><strong style="color:#2E5C8A;">2 — Need (20%)</strong>Make the problem real. Facts + consequences + audience connection.</div>
+  <div class="sbar-card"><strong style="color:var(--gold3);">3 — Satisfaction (40%)</strong>Specific, actionable solution. Longest section. Most scored content.</div>
+  <div class="sbar-card"><strong style="color:#3A7A4A;">4 — Visualization (20%)</strong>Positive and negative futures. Make the outcome concrete.</div>
+  <div class="sbar-card"><strong style="color:#8B3030;">5 — Action (10%)</strong>Specific ask + timeline + principle close. Never just "thank you."</div>
+  <span class="sbar-label">Prep Time Protocol</span>
+  <div class="sbar-card">Write Need + Satisfaction first. Then Attention. Then Visualization + Action. Structure before language.</div>
+  <span class="sbar-label">Source</span>
+  <div class="sbar-card">Alan Monroe, Purdue University, 1935. Name the framework explicitly in your close. It signals professional preparation depth.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Monroe's Motivated Sequence</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"Describe your understanding of the five steps — with timing and purpose and how you would apply it in a real scenario."</div><div class="ob-note">Name your presentation structure (Monroe's Motivated Sequence, Rule of Three, or mnemonic architecture). Show that your presentation is designed, not improvised. Delivery and structure are scored equally.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 2 — Key Takeaways</div>
+  <div class="tk-item">The Five Steps — With Timing and Purpose — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">Allocating Your Prep Time to Monroe's Structure — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Presentation Exercise question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Communication</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Monroe's Motivated Sequence → Six Scoring Dimensions → Pre-Exercise Protocol</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Structure with Monroe → score each dimension → deliver with presence → close with Commitment and Service</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Previous</button>
+  <div class="lnb-info"><div class="lnb-name">Monroe's Motivated Sequence</div><div class="lnb-num">Lesson 2 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Audience Analysis →</button>
+</div>
+</div>
+
+<!-- LESSON 3 -->
+<div class="lesson-view" id="lesson-2">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 39 · Lesson 3 of 6</div>
+    <h1 class="lh-title">Audience<br><em>Analysis</em></h1>
+    <div class="lh-meta">
+      <span class="lh-meta-item">⏱ 16 min</span>
+      <span class="lh-meta-item">🎯 The Scored Differentiator</span>
+    </div>
+  </div>
+
+  <p>The single most common reason a technically well-structured presentation scores at Meets Standard instead of Above Standard is audience miscalibration. The candidate delivers the right content — to the wrong audience. They present a firefighter safety topic to a city council using fireground jargon. They present a budget proposal to their crew using administrative language. They deliver a community education presentation to assessors as if they are experienced fire service professionals.</p>
+
+  <p>Audience calibration is the scored differentiator in the presentation exercise because it requires the candidate to do something most candidates do not pause to do: think about who is in the room and what they actually need from this presentation — before building the content.</p>
+
+  <h2>The Four Audience Analysis Questions</h2>
+
+  <div class="acro-grid">
+    <div class="acro-row">
+      <div class="acro-letter">W</div>
+      <div class="acro-content">
+        <div class="acro-word">What Do They Already Know?</div>
+        <div class="acro-desc">A crew presentation assumes operational knowledge — no need to explain what a PAR is. A city council presentation assumes zero fire service technical knowledge — every term requires a plain-language translation. Presenting at the wrong knowledge level signals to assessors that you did not think about your audience. Over-explaining to experts is disrespectful. Under-explaining to non-experts is ineffective.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">W</div>
+      <div class="acro-content">
+        <div class="acro-word">What Do They Care About?</div>
+        <div class="acro-desc">Crew members care about safety, workload, and operational effectiveness. Community members care about response times, public safety, and trust. City council members care about budget, liability, public perception, and constituent impact. The Satisfaction section of your Monroe structure must connect to what the specified audience actually cares about — not what you think they should care about.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">W</div>
+      <div class="acro-content">
+        <div class="acro-word">What Do They Need From You?</div>
+        <div class="acro-desc">Crew members need clear expectations and operational guidance. Community members need information, reassurance, and a way to act on what they learn. City council members need a recommendation they can approve, a risk they can mitigate, and a rationale they can defend to constituents. The Action step of your Monroe structure must give the audience something they can actually do — appropriate to their role.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">W</div>
+      <div class="acro-content">
+        <div class="acro-word">What Resistance Might They Have?</div>
+        <div class="acro-desc">Every audience has a potential objection. Build your Satisfaction section to address the most likely objection before it surfaces as a Q&A question. "You might be wondering about the cost of this proposal — so let me address that directly." Anticipating and addressing resistance in the body of the presentation is a scored Above Standard behavior. Waiting for the question to arrive and improvising a response is a Meets Standard behavior.</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Audience Calibration by Rank</h2>
+  <p>The audience type changes with the rank being tested. This is deliberate — it scales the communication complexity alongside the leadership scope.</p>
+
+  <div class="audience-grid">
+    <div class="aud-card">
+      <div class="aud-rank">Lieutenant</div>
+      <div class="aud-audience">Your Crew</div>
+      <div class="aud-desc">Operational language acceptable. Focus on safety, effectiveness, and how this affects their daily work. Examples from the fireground. Action: specific behavior change or protocol adoption.</div>
+    </div>
+    <div class="aud-card">
+      <div class="aud-rank">Captain</div>
+      <div class="aud-audience">Community Group or Station</div>
+      <div class="aud-desc">Mixed audience — plain language required for community, operational for station. Focus on impact and trust. Action: community members get a resource; station members get an expectation.</div>
+    </div>
+    <div class="aud-card">
+      <div class="aud-rank">Battalion Chief</div>
+      <div class="aud-audience">Fire Chief or Staff Leadership</div>
+      <div class="aud-desc">Executive language. Data and organizational implications. Cost and risk. Focus on department-wide impact. Action: policy recommendation or resource allocation approval.</div>
+    </div>
+    <div class="aud-card">
+      <div class="aud-rank">Deputy / Fire Chief</div>
+      <div class="aud-audience">City Council or Mayor</div>
+      <div class="aud-desc">Zero fire service jargon. Political and fiscal language. Community impact first. Action: legislative or budget approval. Anticipate political objections explicitly.</div>
+    </div>
+  </div>
+
+  <div class="callout callout-teal">
+    <span class="callout-label">The Audience Calibration Test</span>
+    <p>Before your first word in any presentation exercise: look at your Satisfaction section and ask these two questions. First: if a member of this specified audience read this section with no fire service background, would they understand every sentence? Second: does every point in this section connect to something this audience actually cares about — not something the fire service cares about in the abstract? If the answer to either question is no — revise before you begin delivering.</p>
+  </div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Communication</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Monroe's Motivated Sequence → Six Scoring Dimensions → Pre-Exercise Protocol</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Structure with Monroe → score each dimension → deliver with presence → close with Commitment and Service</div></div></div></div>
+
+  <span class="sbar-label">The Four Audience Questions</span>
+  <div class="sbar-card"><strong>What do they know?</strong>Calibrate technical language to actual audience knowledge level.</div>
+  <div class="sbar-card"><strong>What do they care about?</strong>Connect Satisfaction section to audience priorities — not fire service priorities.</div>
+  <div class="sbar-card"><strong>What do they need from you?</strong>Action step must be appropriate to audience role and authority.</div>
+  <div class="sbar-card"><strong>What resistance might they have?</strong>Address the most likely objection in Satisfaction — before Q&A.</div>
+  <span class="sbar-label">Audience by Rank</span>
+  <div class="sbar-card">Lt → Crew. Capt → Community/Station. BC → Fire Chief/Staff. DC/FC → City Council/Mayor.</div>
+  <span class="sbar-label">The Calibration Test</span>
+  <div class="sbar-card">Read your Satisfaction section through the audience's eyes — not yours. Zero jargon where the audience has zero fire service background.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Audience Analysis</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"Describe your understanding of the four audience analysis questions and how you would apply it in a real scenario."</div><div class="ob-note">Name your presentation structure (Monroe's Motivated Sequence, Rule of Three, or mnemonic architecture). Show that your presentation is designed, not improvised. Delivery and structure are scored equally.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 3 — Key Takeaways</div>
+  <div class="tk-item">The Four Audience Analysis Questions — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">Audience Calibration by Rank — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Presentation Exercise question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Communication</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Monroe's Motivated Sequence → Six Scoring Dimensions → Pre-Exercise Protocol</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Structure with Monroe → score each dimension → deliver with presence → close with Commitment and Service</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Previous</button>
+  <div class="lnb-info"><div class="lnb-name">Audience Analysis</div><div class="lnb-num">Lesson 3 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Delivery + Q&A →</button>
+</div>
+</div>
+
+<!-- LESSON 4 -->
+<div class="lesson-view" id="lesson-3">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 39 · Lesson 4 of 6</div>
+    <h1 class="lh-title">Delivery<br><em>+ Q&A Management</em></h1>
+    <div class="lh-meta">
+      <span class="lh-meta-item">⏱ 18 min</span>
+      <span class="lh-meta-item">🎙 Presence + Real-Time Pressure</span>
+    </div>
+  </div>
+
+  <p>A presentation with perfect Monroe structure and precise audience calibration still scores at Meets Standard if the delivery is flat, the candidate reads from their notes, and they lose composure when the first Q&A question arrives. Delivery and Q&A management are separately scored from content quality — and for good reason. Assessors are specifically evaluating whether this candidate can own a room and hold their ground under questioning. Both are core leadership capabilities at every rank.</p>
+
+  <h2>The Four Delivery Behaviors Assessors Score</h2>
+
+  <div class="framework-grid">
+    <div class="fw-card">
+      <div class="fw-card-label">Scored Behavior 1</div>
+      <div class="fw-card-title">Eye Contact Distribution</div>
+      <div class="fw-card-desc">Distribute eye contact across all audience members — not fixed on notes, not locked on one person, not directed at the ceiling while thinking. Three-second connection with each section of the room, cycling through. This signals confidence and audience awareness simultaneously.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Scored Behavior 2</div>
+      <div class="fw-card-title">Pacing and Pause</div>
+      <div class="fw-card-desc">Rushing signals anxiety. Deliberate pausing after key points signals confidence and gives the audience time to absorb what matters most. After your Attention opener — pause. After your Need statement — pause. After your Action ask — pause. Silence in a presentation is not awkward. It is a tool.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Scored Behavior 3</div>
+      <div class="fw-card-title">Note Card Discipline</div>
+      <div class="fw-card-desc">Notes are allowed — reading verbatim from them is not. Your note cards should have key phrases and transition markers, not full sentences. If you are looking at your cards more than at your audience, assessors write: candidate not sufficiently prepared to present fluently. Practice your structure until the notes are a backup, not a crutch.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Scored Behavior 4</div>
+      <div class="fw-card-title">Closing with Conviction</div>
+      <div class="fw-card-desc">The last impression of your presentation is the last thing assessors hear before Q&A begins. A strong principle close — delivered with genuine conviction rather than read from a card — elevates the entire presentation retroactively. Assessors remember the close. Make it deliberate.</div>
+    </div>
+  </div>
+
+  <h2>Q&A Management — The Separately Scored Phase</h2>
+  <p>The Q&A phase is not a continuation of your presentation. It is a separate exercise scored on its own criteria. Three behaviors separate 4/5 Q&A performance from 3/5 Q&A performance: how you receive a difficult question, how you clarify before answering, and how you stay on your leadership framework when answering.</p>
+
+  <div class="acro-grid">
+    <div class="acro-row">
+      <div class="acro-letter">R</div>
+      <div class="acro-content">
+        <div class="acro-word">Receive — Acknowledge Before Answering</div>
+        <div class="acro-desc">"That is an important question — thank you for raising it." This is not filler. It is a pause mechanism that gives you two seconds to think, signals respect for the questioner, and prevents the defensive knee-jerk response that assessors watch for. Say it naturally — not as a script. Every question, every time.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">C</div>
+      <div class="acro-content">
+        <div class="acro-word">Clarify — When the Question Is Unclear</div>
+        <div class="acro-desc">"Let me make sure I understand your question — are you asking about [interpretation A] or [interpretation B]?" Clarifying before answering prevents a confident answer to the wrong question. Assessors score the clarification behavior positively — it demonstrates that you listen before responding, a core leadership quality.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">A</div>
+      <div class="acro-content">
+        <div class="acro-word">Answer — With Framework Anchoring</div>
+        <div class="acro-desc">Your Q&A answer should connect back to your Monroe structure or to a named TPS framework. Not just an improvised response — a grounded answer. "That connects to the Need I identified — specifically [restate the relevant need element]." Or: "That question gets to the core of my recommendation — the Satisfaction step I outlined addresses that concern directly by [specific element]." This signals structural fluency, not just content recall.</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>The Difficult Q&A Question — Model Exchange</h2>
+  <p>This is what a 4/5 Q&A exchange looks like when an assessor role-playing an audience member asks a challenging question designed to test composure and framework fluency.</p>
+
+  <div class="dialogue">
+    <div class="dl-header"><div class="dl-label">Q&A Exchange — Budget Proposal · Battalion Chief Level · Assessor Playing City Council Member</div></div>
+    <div class="dl-line">
+      <div class="dl-speaker audience">Council Member</div>
+      <div class="dl-text">"Chief, I appreciate the presentation, but frankly this feels like another fire department ask for more money. We've funded three capital requests in the last two years. Why should we believe this one is actually necessary?" <em>(Hostile framing, budget skepticism)</em></div>
+    </div>
+    <div class="dl-line">
+      <div class="dl-speaker officer">Candidate</div>
+      <div class="dl-text">"That is a fair challenge, and I want to address it directly." <em>(Receive — acknowledges without becoming defensive)</em></div>
+    </div>
+    <div class="dl-line">
+      <div class="dl-speaker officer">Candidate</div>
+      <div class="dl-text">"The distinction I want to draw is between capital investment and risk mitigation. The two previous requests were facility upgrades. This proposal addresses a documented operational gap — the incident data I shared shows a 23% increase in response time to the northern district over 18 months. That is not a comfort issue. It is a liability issue for this council." <em>(Answer — connects to Need section data, reframes as council's concern)</em></div>
+    </div>
+    <div class="dl-line">
+      <div class="dl-speaker officer">Candidate</div>
+      <div class="dl-text">"I want to be honest with you — I am not here asking for resources. I am here asking you to close a gap that exists whether or not you act on it. The Courage element of my leadership philosophy requires me to bring that directly to this council rather than manage around it." <em>(Principle close embedded in Q&A answer — signals identity under pressure)</em></div>
+    </div>
+    <div class="dl-line">
+      <div class="dl-speaker note">Coach Note</div>
+      <div class="dl-text"><em>The candidate received the hostile question without defensiveness, reframed using the council's own risk language (liability), and closed with a principle statement. Assessors note: candidate maintained composure and leadership identity under adversarial Q&A pressure. Above Standard.</em></div>
+    </div>
+  </div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Communication</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Monroe's Motivated Sequence → Six Scoring Dimensions → Pre-Exercise Protocol</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Structure with Monroe → score each dimension → deliver with presence → close with Commitment and Service</div></div></div></div>
+
+  <span class="sbar-label">Four Delivery Behaviors</span>
+  <div class="sbar-card"><strong>Eye Contact</strong>Distribute across room. Three-second connections. Never fixed on notes.</div>
+  <div class="sbar-card"><strong>Pacing + Pause</strong>Pause after key points. Silence is confidence. Rushing is anxiety.</div>
+  <div class="sbar-card"><strong>Note Card Discipline</strong>Key phrases only. Notes are backup — not script. Practice until fluent.</div>
+  <div class="sbar-card"><strong>Conviction Close</strong>Principle close delivered — not read. Last impression sets the Q&A tone.</div>
+  <span class="sbar-label">Q&A Protocol</span>
+  <div class="sbar-card"><strong>R — Receive</strong>"That's an important question." Two-second pause. Every time.</div>
+  <div class="sbar-card"><strong>C — Clarify</strong>When unclear — clarify before answering. Prevents the confident wrong answer.</div>
+  <div class="sbar-card"><strong>A — Answer</strong>Connect back to Monroe structure or named TPS framework. Grounded — not improvised.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Delivery + Q&A Management</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"Describe your understanding of the four delivery behaviors assessors score and how you would apply it in a real scenario."</div><div class="ob-note">Name your presentation structure (Monroe's Motivated Sequence, Rule of Three, or mnemonic architecture). Show that your presentation is designed, not improvised. Delivery and structure are scored equally.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 4 — Key Takeaways</div>
+  <div class="tk-item">The Four Delivery Behaviors Assessors Score — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">Q&A Management — The Separately Scored Phase — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Presentation Exercise question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Communication</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Monroe's Motivated Sequence → Six Scoring Dimensions → Pre-Exercise Protocol</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Structure with Monroe → score each dimension → deliver with presence → close with Commitment and Service</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Previous</button>
+  <div class="lnb-info"><div class="lnb-name">Delivery + Q&A</div><div class="lnb-num">Lesson 4 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Scenarios by Rank →</button>
+</div>
+</div>
+
+<!-- LESSON 5 -->
+<div class="lesson-view" id="lesson-4">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 39 · Lesson 5 of 6</div>
+    <h1 class="lh-title">Presentation<br><em>Scenarios by Rank</em></h1>
+    <div class="lh-meta">
+      <span class="lh-meta-item">⏱ 20 min</span>
+      <span class="lh-meta-item">🎯 Rank-Calibrated Application</span>
+    </div>
+  </div>
+
+  <p>Presentation topics scale with rank — not just in complexity, but in audience type, organizational scope, and the nature of the recommendation being made. A Lieutenant presents operational guidance to a crew. A Fire Chief presents strategic direction to a city council. The Monroe structure is identical. The calibration is completely different.</p>
+
+  <p>This lesson walks through the five most common presentation scenario types at each rank level — with the specific audience, the specific challenge each presents, and the principle close that fits each topic naturally.</p>
+
+  <h3>Lieutenant Level — Crew or Community Presentation</h3>
+  <div class="framework-grid">
+    <div class="fw-card">
+      <div class="fw-card-label">Common Topics</div>
+      <div class="fw-card-title">Safety, Policy Change, Community Education</div>
+      <div class="fw-card-desc">New SOP implementation. Equipment change briefing. Community safety education (home fire safety, car seat installation, Stop the Bleed). Shift leadership announcement or crew goal-setting.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">The Specific Challenge</div>
+      <div class="fw-card-title">Crew Buy-In Under Skepticism</div>
+      <div class="fw-card-desc">A crew that has seen policies come and go may be skeptical of new initiatives. Your Satisfaction section must address the "why now" question directly. Your Visualization must make the crew's daily experience better — not just the organization's metrics. Principle close: Dedication or Trust.</div>
+    </div>
+  </div>
+
+  <h3>Captain Level — Station or Community Group</h3>
+  <div class="framework-grid">
+    <div class="fw-card">
+      <div class="fw-card-label">Common Topics</div>
+      <div class="fw-card-title">Station Improvement, Community Partnership</div>
+      <div class="fw-card-desc">Station safety culture initiative. Neighborhood community risk reduction program. Multi-company training proposal. After-action review process improvement. Local business or school community education partnership.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">The Specific Challenge</div>
+      <div class="fw-card-title">Mixed Audience Calibration</div>
+      <div class="fw-card-desc">A community presentation requires zero fire service jargon — your crew might be in the room but the audience is the community. Translate everything. "Apparatus" becomes "fire engine." "PAR" becomes "crew accountability check." Principle close: Service or Empathy.</div>
+    </div>
+  </div>
+
+  <h3>Battalion Chief Level — Fire Chief or Staff Leadership</h3>
+  <div class="framework-grid">
+    <div class="fw-card">
+      <div class="fw-card-label">Common Topics</div>
+      <div class="fw-card-title">Resource Proposals, Policy Recommendations</div>
+      <div class="fw-card-desc">Staffing change recommendation. New apparatus request with data. Response time improvement plan. Training program proposal. Budget request justification. Critical incident stress management program proposal.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">The Specific Challenge</div>
+      <div class="fw-card-title">Data Credibility + Organizational Scope</div>
+      <div class="fw-card-desc">A Fire Chief needs data — not anecdote. Your Need section must include specific statistics, incident reports, or comparative department data. Your Satisfaction must address cost, timeline, and implementation ownership. Principle close: Ownership or Dedication.</div>
+    </div>
+  </div>
+
+  <h3>Deputy / Fire Chief Level — City Council or Mayor</h3>
+  <div class="framework-grid">
+    <div class="fw-card">
+      <div class="fw-card-label">Common Topics</div>
+      <div class="fw-card-title">Budget, Policy, Strategic Initiative</div>
+      <div class="fw-card-desc">Annual budget request. New station proposal. Emergency management partnership. Community risk reduction strategic plan. Labor contract impact presentation. Emergency preparedness community initiative.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">The Specific Challenge</div>
+      <div class="fw-card-title">Political Framing Without Jargon</div>
+      <div class="fw-card-desc">City council members respond to constituent impact, liability, and fiscal responsibility. Every metric must be translated to community impact. "Response time" becomes "the time between a citizen's call and the moment help arrives." Principle close: Service — always at the executive level addressing elected officials.</div>
+    </div>
+  </div>
+
+  <div class="callout callout-navy">
+    <span class="callout-label">The Rank Scope Test for Presentations</span>
+    <p>Apply the same scope discipline to your presentation that you apply to oral board responses. Every recommendation in your Satisfaction section must be within the authority of the rank being tested. A Lieutenant does not recommend department policy changes. A Captain does not propose budget reallocations without BC authorization. A Battalion Chief does not commit to labor contract terms. Scope errors in a presentation are as damaging as scope errors in an oral board — and they signal the same thing to assessors: this candidate is not yet thinking at the rank they are seeking.</p>
+  </div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Communication</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Monroe's Motivated Sequence → Six Scoring Dimensions → Pre-Exercise Protocol</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Structure with Monroe → score each dimension → deliver with presence → close with Commitment and Service</div></div></div></div>
+
+  <span class="sbar-label">Presentation Topics by Rank</span>
+  <div class="sbar-card"><strong>Lieutenant → Crew</strong>Safety, policy change, community education. Audience: operational. Language: fireground.</div>
+  <div class="sbar-card"><strong>Captain → Station/Community</strong>Station culture, community partnership. Mixed audience — translate jargon.</div>
+  <div class="sbar-card"><strong>Battalion Chief → Fire Chief</strong>Resource proposals, policy recommendations. Data-driven. Organizational scope.</div>
+  <div class="sbar-card"><strong>DC/FC → City Council</strong>Budget, strategic direction. Zero jargon. Constituent impact. Political framing.</div>
+  <span class="sbar-label">Principle Closes by Topic</span>
+  <div class="sbar-card">Crew safety → <strong>Dedication</strong></div>
+  <div class="sbar-card">Community trust → <strong>Service or Empathy</strong></div>
+  <div class="sbar-card">Resource proposal → <strong>Ownership</strong></div>
+  <div class="sbar-card">Council/elected official → <strong>Service</strong> (always)</div>
+  <span class="sbar-label">Scope Rule</span>
+  <div class="sbar-card">Every recommendation must belong to the target rank's authority. Scope errors in presentations score the same as scope errors in oral board responses.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Presentation Scenarios by Rank</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"How does presentation  scenarios by rank apply to your daily leadership practice? Give me a specific example."</div><div class="ob-note">Name your presentation structure (Monroe's Motivated Sequence, Rule of Three, or mnemonic architecture). Show that your presentation is designed, not improvised. Delivery and structure are scored equally.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 5 — Key Takeaways</div>
+  <div class="tk-item">LEAD integration: Label this as a Presentation Exercise question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Communication</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Monroe's Motivated Sequence → Six Scoring Dimensions → Pre-Exercise Protocol</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Structure with Monroe → score each dimension → deliver with presence → close with Commitment and Service</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Previous</button>
+  <div class="lnb-info"><div class="lnb-name">Scenarios by Rank</div><div class="lnb-num">Lesson 5 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: LEAD Applied →</button>
+</div>
+</div>
+
+<!-- LESSON 6 -->
+<div class="lesson-view" id="lesson-5">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 39 · Lesson 6 of 7</div>
+    <h1 class="lh-title">L·E·A·D<br><em>Applied to Presentations</em></h1>
+    <div class="lh-meta">
+      <span class="lh-meta-item">⏱ 14 min</span>
+      <span class="lh-meta-item">⚡ Full Integration</span>
+    </div>
+  </div>
+
+  <p>The presentation exercise uses L·E·A·D as your prep time protocol — not your delivery script. By the time you walk into the room, L·E·A·D has already done its work. What you deliver is the result of having run all four steps with discipline during your prep time.</p>
+
+  <h2>L·E·A·D in the Presentation Exercise</h2>
+
+  <div class="acro-grid">
+    <div class="acro-row">
+      <div class="acro-letter">L</div>
+      <div class="acro-content">
+        <div class="acro-word">Label — Topic Type + Audience + Primary Framework</div>
+        <div class="acro-desc">First two minutes of prep time: What type of presentation is this — operational, community, executive proposal, policy recommendation? Who is the specified audience — crew, community group, Fire Chief, city council? The primary framework is always Monroe's Motivated Sequence. But Label also includes: what audience knowledge do they have, what do they care about, what resistance should my Satisfaction section pre-empt?</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">E</div>
+      <div class="acro-content">
+        <div class="acro-word">Engage — Monroe's Five Steps as Your Structure</div>
+        <div class="acro-desc">Your structure is always Monroe's Motivated Sequence. Commit to it completely. Write your five step headings on your note card first — Attention, Need, Satisfaction, Visualization, Action. Then fill in key points under each. The structure does not change. Your content fills it. Your audience calibration shapes the language. But the architecture is fixed before you write your first content word.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">A</div>
+      <div class="acro-content">
+        <div class="acro-word">Apply — Target Rank Scope + Audience Language</div>
+        <div class="acro-desc">Every recommendation in your Satisfaction section belongs to the target rank's authority. Every word in your presentation is calibrated to the specified audience's knowledge and concerns. Apply scope discipline to content: does this recommendation belong to a [target rank]? Apply audience discipline to language: would this sentence make sense to someone who has never been inside a fire station?</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">D</div>
+      <div class="acro-content">
+        <div class="acro-word">Deliver — Action Step + Principle Close + Q&A with RCA Protocol</div>
+        <div class="acro-desc">Your Deliver step in the presentation exercise has three components. First: the Action step — specific ask, specific timeline, specific commitment. Second: the principle close — named T·C·H·O·E·D·S element connecting this recommendation to your leadership philosophy. Third: Q&A — Receive, Clarify, Answer with framework anchoring on every question. The Deliver step is not over when your presentation ends. It is over when the Q&A is complete.</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Full Prep Time Protocol — L·E·A·D Applied</h2>
+
+  <div class="callout callout-navy">
+    <span class="callout-label">15-Minute Prep Time — L·E·A·D Protocol</span>
+    <p><strong>Minutes 0–2 (L — Label):</strong> Read prompt twice. Identify: presentation type, specified audience, their knowledge level, their concerns, likely resistance. Write one sentence stating the core problem (your Need step).<br><br>
+    <strong>Minutes 2–10 (E — Engage + A — Apply):</strong> Write five Monroe headings on note card. Build Satisfaction section first — specific, actionable, rank-scope checked, audience-language calibrated. Then Need — facts and audience-relevant consequences. Then Attention opener — specific and surprising. Then Visualization — positive and negative futures. Then Action — specific ask, timeline, principle close written out.<br><br>
+    <strong>Minutes 10–13 (D — Deliver prep):</strong> Read your note card outline once out loud at presentation pace. Identify where you will pause deliberately. Confirm your principle close language sounds natural.<br><br>
+    <strong>Minutes 13–15 (Q&A anticipation):</strong> Name the two most likely challenging questions. Write one-sentence framework-anchored answers. Walk in ready — not hoping they are not asked.</p>
+  </div>
+
+  <h2>Your Practice Target for This Module</h2>
+  <ol>
+    <li>Run three Practice Engine presentation scenarios — one at each of your two nearest rank levels.</li>
+    <li>Write a full Monroe outline for each before submitting. Five headings, key points under each.</li>
+    <li>For each scenario — identify the specified audience and write one sentence for each of the four audience analysis questions before building content.</li>
+    <li>Record yourself on Loom delivering one presentation at timed pace. Watch specifically for: did you look at your notes more than the camera? Did you pause after key points? Did your close sound genuine?</li>
+    <li>Prepare two challenging Q&A questions for each presentation. Practice your RCA response to each.</li>
+  </ol>
+
+  <div class="callout callout-gold">
+    <span class="callout-label">Chapter 39 Complete</span>
+    <p>The presentation exercise rewards the candidate who prepares for it as a distinct exercise type with its own framework, its own audience intelligence requirements, and its own Q&A discipline. Most candidates don't. That gap is your advantage. A Monroe-structured presentation, calibrated precisely to the specified audience, delivered with conviction and closed with a genuine principle — followed by Q&A handled with composure and framework fluency — is not what assessors typically see at any rank. It is exactly what they are looking for.</p>
+  </div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Communication</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Monroe's Motivated Sequence → Six Scoring Dimensions → Pre-Exercise Protocol</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Structure with Monroe → score each dimension → deliver with presence → close with Commitment and Service</div></div></div></div>
+
+  <span class="sbar-label">L·E·A·D — Presentation</span>
+  <div class="sbar-card"><strong>L — Label</strong>Prep time: topic type, audience, four analysis questions, resistance to pre-empt.</div>
+  <div class="sbar-card"><strong>E — Engage</strong>Monroe's five steps. Write headings first. Fill content after. Satisfaction before Attention.</div>
+  <div class="sbar-card"><strong>A — Apply</strong>Rank scope on every recommendation. Audience language on every sentence.</div>
+  <div class="sbar-card"><strong>D — Deliver</strong>Action + Principle + Q&A (RCA protocol). Deliver step ends after last Q&A answer.</div>
+  <span class="sbar-label">The 15-Minute Protocol</span>
+  <div class="sbar-card">0–2: Label. 2–10: Build Satisfaction then Need then Attention then Viz then Action. 10–13: Read aloud once. 13–15: Anticipate 2 Q&A questions.</div>
+  <span class="sbar-label">Next Module</span>
+  <div class="sbar-card">Module 41 — Assessment Day Mental Preparation. The preparation most candidates skip entirely — and the one that determines whether everything you've built in this program actually shows up in the room.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — L·E·A·D Applied to Presentations</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"Integrate everything you have learned in this chapter into a single board response. Walk me through your complete approach."</div><div class="ob-note">Use LEAD: Label the bucket (Presentation Exercise), Engage the specific framework (reference L·E·A·D in the Presentation Exercise explicitly), Address the operational and organizational impact, Drive to a concrete first action with a timeline.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 6 — Key Takeaways</div>
+  <div class="tk-item">L·E·A·D in the Presentation Exercise — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">Full Prep Time Protocol — L·E·A·D Applied — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Presentation Exercise question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Communication</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Monroe's Motivated Sequence → Six Scoring Dimensions → Pre-Exercise Protocol</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Structure with Monroe → score each dimension → deliver with presence → close with Commitment and Service</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Previous</button>
+  <div class="lnb-info"><div class="lnb-name">LEAD Applied</div><div class="lnb-num">Lesson 6 of 7</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: TED Talk Structure →</button>
+</div>
+</div>
+
+<!-- LESSON 7 — BONUS: TED TALK DELIVERY STRUCTURE -->
+<div class="lesson-view" id="lesson-6">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 39 · Lesson 7 of 7 · Bonus</div>
+    <h1 class="lh-title">TED Talk<br><em>Delivery Structure</em></h1>
+    <div class="lh-meta">
+      <span class="lh-meta-item">⏱ 18 min</span>
+      <span class="lh-meta-item">⭐ Emerging Assessment Center Format</span>
+    </div>
+  </div>
+
+  <p>TED Talk delivery is becoming an increasingly recognized format in assessment center presentations — particularly at the Captain level and above, and particularly for leadership philosophy, culture change, and community vision presentations. Assessors and assessment center designers are moving toward it because it reveals something Monroe's Motivated Sequence cannot: whether the candidate has a genuine leadership identity, or whether they have learned to construct one for a rubric.</p>
+
+  <p>TED Talk structure is not easier than Monroe's Motivated Sequence. It is more demanding — because it requires authenticity rather than logic. A Monroe presentation can be built from information. A TED Talk presentation can only be built from something you actually believe. The reward is proportional: a well-executed TED Talk presentation is the most memorable assessment center performance an assessor can witness at any rank.</p>
+
+  <h2>How TED Talk Structure Differs from Monroe</h2>
+
+  <div class="score-compare">
+    <div class="sc-card miss" style="background:#F0F4FF;border-color:#A0B0D0;">
+      <div class="sc-title" style="color:#2A4070;">Monroe's Motivated Sequence</div>
+      <div class="sc-body" style="color:#2A3D50;">Logic-driven. Problem to Solution to Action. Best for proposals, resource requests, policy recommendations. Assessors follow your argument. The structure does the persuasive work. Requires preparation rigor. Does not require personal disclosure.</div>
+    </div>
+    <div class="sc-card hit">
+      <div class="sc-title">TED Talk Structure</div>
+      <div class="sc-body">Identity-driven. Idea to Story to Revelation to Action. Best for leadership philosophy, vision, culture change, community connection. Assessors follow your thinking. Authenticity does the persuasive work. Requires personal investment. Requires genuine belief in what you are saying.</div>
+    </div>
+  </div>
+
+  <h2>The Five Elements of TED Talk Structure</h2>
+
+  <div class="acro-grid">
+    <div class="acro-row">
+      <div class="acro-letter" style="font-size:0.85rem;padding:0.5rem 0.2rem;text-align:center;font-family:'Cinzel',serif;letter-spacing:1px;text-transform:uppercase;color:var(--gold);">HOOK</div>
+      <div class="acro-content">
+        <div class="acro-word">The Hook — Not a Thank You</div>
+        <div class="acro-desc">TED Talk presentations open with a hook that creates immediate curiosity, tension, or surprise. Not "Good morning, thank you for having me today." A story fragment. A counterintuitive statement. A question that has no obvious answer. The hook must be relevant to your One Big Idea — and it must make the audience lean forward before you have said anything of substance. You have fifteen seconds. Use them.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter" style="font-size:0.85rem;padding:0.5rem 0.2rem;text-align:center;font-family:'Cinzel',serif;letter-spacing:1px;text-transform:uppercase;color:var(--gold);">IDEA</div>
+      <div class="acro-content">
+        <div class="acro-word">The One Big Idea — State It Clearly by 90 Seconds</div>
+        <div class="acro-desc">Every TED Talk is built around one central idea — stated clearly and specifically within the first 90 seconds. Not a topic. An idea. "Leadership is not about having all the answers — it is about creating the conditions where the right answers emerge" is an idea. "Leadership in the fire service" is a topic. Your One Big Idea should be a single sentence that, if someone remembered only that sentence, would represent everything you wanted them to take away.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter" style="font-size:0.85rem;padding:0.5rem 0.2rem;text-align:center;font-family:'Cinzel',serif;letter-spacing:1px;text-transform:uppercase;color:var(--gold);">STORY</div>
+      <div class="acro-content">
+        <div class="acro-word">The Story Arc — Three Illustrations</div>
+        <div class="acro-desc">TED Talks use stories — not bullet points — to develop the One Big Idea. In an assessment center presentation, three brief stories or examples build your case. Each illustrates a different dimension of your idea. At least one story must be personal — from your actual career. Personal stories are the element that makes a TED-style presentation unmemorable as a performance and unforgettable as a person.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter" style="font-size:0.85rem;padding:0.5rem 0.2rem;text-align:center;font-family:'Cinzel',serif;letter-spacing:1px;text-transform:uppercase;color:var(--gold);">TURN</div>
+      <div class="acro-content">
+        <div class="acro-word">The Turn — Challenge the Expected View</div>
+        <div class="acro-desc">The turn is the moment your One Big Idea challenges something the audience assumes to be true. It creates the intellectual engagement that separates a TED-style presentation from an extended biography. After the turn — pause deliberately. The audience needs a moment to register that something just challenged their assumptions. Filling this silence is the most common TED delivery error.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter" style="font-size:0.85rem;padding:0.5rem 0.2rem;text-align:center;font-family:'Cinzel',serif;letter-spacing:1px;text-transform:uppercase;color:var(--gold);">LAND</div>
+      <div class="acro-content">
+        <div class="acro-word">The Landing — Restate, Action, Principle</div>
+        <div class="acro-desc">The close restates the One Big Idea — now deepened by everything the audience just experienced. Then the specific ask or call to action. Then the T·C·H·O·E·D·S principle close. The landing should feel like the resolution of a story — not the conclusion of an argument. The audience should leave feeling they understood something — not just that they agreed with something. No "thank you." Clean stop.</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>When to Use TED Talk vs Monroe</h2>
+
+  <div class="framework-grid">
+    <div class="fw-card">
+      <div class="fw-card-label">Use Monroe When</div>
+      <div class="fw-card-title">You Have a Specific Recommendation</div>
+      <div class="fw-card-desc">Resource request. Policy proposal. Budget justification. Safety initiative with implementation steps. Any presentation where a role-player must approve or act on something. Monroe's logic structure produces the actionable outcome these scenarios require.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Use TED Talk When</div>
+      <div class="fw-card-title">You Are Sharing a Leadership Vision</div>
+      <div class="fw-card-desc">Leadership philosophy. Culture change vision. Community connection. Personal SWOT or Personal Lens. Any scenario where assessors want to understand who you are as a leader — not just what you would do as an officer. TED Talk structure is built for these moments.</div>
+    </div>
+  </div>
+
+  <div class="callout callout-red">
+    <span class="callout-label">When TED Talk Structure Fails</span>
+    <p><strong>Wrong scenario type:</strong> When the presentation requires a specific approval — story alone does not produce a budget authorization. Use Monroe.<br><br>
+    <strong>Performed authenticity:</strong> Assessors trained in behavioral assessment identify performed authenticity within sixty seconds. If you do not genuinely believe what you are saying — do not use this structure.<br><br>
+    <strong>Reading from notes:</strong> A candidate who is clearly reading a TED Talk from cards loses the entire benefit of the format. TED Talk delivery requires fluency. If you need notes to get through it — you are not ready to use this structure in a live assessment.</p>
+  </div>
+
+  <h2>The Physical Dimension of TED Talk Delivery</h2>
+
+  <div class="callout callout-teal">
+    <span class="callout-label">Four Physical Delivery Principles</span>
+    <p><strong>No notes barrier:</strong> Step away from the table edge if possible. This physical choice signals confidence before you have spoken a word.<br><br>
+    <strong>Stillness over movement:</strong> TED presenters do not pace. Stand still at key moments — stillness draws focus. Move only to signal transitions.<br><br>
+    <strong>Conversational tone:</strong> Speak as if talking to one person at a time. Not broadcasting. Not reciting. TED Talk delivery sounds like a direct, honest conversation — slightly amplified.<br><br>
+    <strong>The intentional pause:</strong> After the One Big Idea is stated — pause. After the turn — pause. Silence in a TED-style presentation is not awkward. It is the moment the audience does the work you came to prompt.</p>
+  </div>
+
+  <h2>TED Talk in Practice — Full Model Exchange</h2>
+
+  <div class="dialogue">
+    <div class="dl-header"><div class="dl-label">TED Talk — Leadership Philosophy Presentation · Captain Level · 4/5 to 5/5 Range</div></div>
+    <div class="dl-line">
+      <div class="dl-speaker officer">Hook</div>
+      <div class="dl-text">"There was a morning in my sixth year on the job where I watched a rookie firefighter walk into a burning room and do something I had seen fifteen-year veterans fail to do. Not because he was more experienced. Because someone had told him — clearly and specifically — who he was as a firefighter." <em>(Story fragment. No introduction. Immediate curiosity.)</em></div>
+    </div>
+    <div class="dl-line">
+      <div class="dl-speaker officer">One Big Idea</div>
+      <div class="dl-text">"I believe leadership development is not primarily about teaching people what to do. It is about giving people a clear picture of who they already are." <em>(Stated at 45 seconds. One sentence. The entire presentation flows from this.)</em></div>
+    </div>
+    <div class="dl-line">
+      <div class="dl-speaker officer">Story Arc</div>
+      <div class="dl-text">"That rookie knew who he was because his Lieutenant had spent six months telling him — specifically, behaviorally, with evidence. Not flattery. A behavioral observation delivered as an identity statement. He walked into that room as the person his Lieutenant had described." <em>(Personal story. Brief. Specific. Anchors the idea.)</em></div>
+    </div>
+    <div class="dl-line">
+      <div class="dl-speaker officer">The Turn</div>
+      <div class="dl-text">"We tend to think of identity as something that develops over time through experience. But what I have observed — as both a firefighter and an officer — is that identity is something we do to each other. Deliberately, or by accident. The Captain who tells a firefighter only what they got wrong is shaping their identity as surely as the Captain who tells them who they are at their best." <em>(Challenges assumption. Assessors write notes. Then — pause.)</em></div>
+    </div>
+    <div class="dl-line">
+      <div class="dl-speaker officer">Landing</div>
+      <div class="dl-text">"The Captain I intend to be gives every person on my station a clear picture of who they are as a firefighter — not just what they need to fix. That is the Service element of my leadership philosophy. And it is the reason this promotion matters beyond the rank." <em>(One Big Idea restated through identity. Principle named. No thank you. Clean stop.)</em></div>
+    </div>
+    <div class="dl-line">
+      <div class="dl-speaker note">Coach Note</div>
+      <div class="dl-text"><em>No data. No policy. No Monroe structure. Scores 4/5 to 5/5 because it demonstrates a genuine leadership identity grounded in real experience. Assessors write: "candidate demonstrates authentic leadership philosophy." That is the highest notation in the presentation scoring rubric.</em></div>
+    </div>
+  </div>
+
+  <div class="callout callout-navy">
+    <span class="callout-label">The Honest Preparation Requirement</span>
+    <p>TED Talk structure cannot be built the night before. The stories you tell must be real — specific memories from your actual career. If you do not have three specific stories that illustrate your One Big Idea, you are not ready to use this structure. The preparation for a TED-style assessment center presentation begins months before — every time you have an experience worth remembering and you actually remember it. Start noticing. Start storing. The presentations that change scores are built from a career of paying attention.</p>
+  </div>
+
+  <div class="callout callout-gold">
+    <span class="callout-label">Chapter 39 Complete</span>
+    <p>You now have two complete presentation frameworks: Monroe's Motivated Sequence for proposals requiring approval, and TED Talk structure for leadership philosophy and vision requiring belief. The assessment center will give you the topic. Your job is to recognize which structure it calls for — and to have prepared both well enough to execute either under pressure. That combination is what produces scores assessors remember long after the process is over.</p>
+  </div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Communication</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Monroe's Motivated Sequence → Six Scoring Dimensions → Pre-Exercise Protocol</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Structure with Monroe → score each dimension → deliver with presence → close with Commitment and Service</div></div></div></div>
+
+  <span class="sbar-label">TED Talk vs Monroe</span>
+  <div class="sbar-card"><strong>Monroe</strong>Logic-driven. Problem to Solution to Action. Use for proposals needing approval.</div>
+  <div class="sbar-card"><strong>TED Talk</strong>Identity-driven. Idea to Story to Turn to Landing. Use for leadership vision and philosophy.</div>
+  <span class="sbar-label">The Five TED Elements</span>
+  <div class="sbar-card"><strong>Hook</strong>Fifteen seconds. Story fragment or counterintuitive statement. No thank yous.</div>
+  <div class="sbar-card"><strong>One Big Idea</strong>One sentence. Stated by 90 seconds. The whole presentation in one claim.</div>
+  <div class="sbar-card"><strong>Story Arc</strong>Three illustrations. At least one personal. Stories — not bullet points.</div>
+  <div class="sbar-card"><strong>The Turn</strong>Challenge an assumption. Then pause. Let it land.</div>
+  <div class="sbar-card"><strong>Landing</strong>Restate idea + call to action + T·C·H·O·E·D·S principle. No thank you.</div>
+  <span class="sbar-label">Physical Delivery</span>
+  <div class="sbar-card">No notes barrier. Stillness over pacing. Conversational tone. Intentional silence after key moments.</div>
+  <span class="sbar-label">The Honest Requirement</span>
+  <div class="sbar-card">Stories must be real. Start collecting career moments now. TED Talk presentations are built from years of paying attention — not from the night before.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — TED Talk Delivery Structure</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"Integrate everything you have learned in this chapter into a single board response. Walk me through your complete approach."</div><div class="ob-note">Use LEAD: Label the bucket (Presentation Exercise), Engage the specific framework (reference How TED Talk Structure Differs from Monroe explicitly), Address the operational and organizational impact, Drive to a concrete first action with a timeline.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 7 — Key Takeaways</div>
+  <div class="tk-item">How TED Talk Structure Differs from Monroe — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">The Five Elements of TED Talk Structure — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Presentation Exercise question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Communication</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Monroe's Motivated Sequence → Six Scoring Dimensions → Pre-Exercise Protocol</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Structure with Monroe → score each dimension → deliver with presence → close with Commitment and Service</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Previous</button>
+  <div class="lnb-info"><div class="lnb-name">TED Talk Structure</div><div class="lnb-num">Lesson 7 of 7</div></div>
+  <button class="lnb-btn primary" onclick="window.scrollTo({top:0,behavior:'smooth'})">Module Complete ✓</button>
+</div>
+</div>
+
+</main>
+
+<script>
+let cur=0;
+const ls=document.querySelectorAll('.lesson-view');
+const ps=document.querySelectorAll('.nav-pill');
+const mbs=document.querySelectorAll('.mh-lesson-btn');
+
+function showLesson(i){
+  ls.forEach(l=>l.classList.remove('active'));
+  ps.forEach(p=>p.classList.remove('active'));
+  mbs.forEach(m=>m.classList.remove('active'));
+  ls[i].classList.add('active');
+  ps[i].classList.add('active');
+  mbs[i].classList.add('active');
+  cur=i;
+  window.scrollTo({top:0,behavior:'smooth'});
+  document.getElementById('prog').style.width='0%';
+}
+
+function nextLesson(){if(cur<ls.length-1)showLesson(cur+1);}
+function prevLesson(){if(cur>0)showLesson(cur-1);}
+
+window.addEventListener('scroll',()=>{
+  const s=document.documentElement.scrollTop;
+  const h=document.documentElement.scrollHeight-window.innerHeight;
+  if(h>0)document.getElementById('prog').style.width=Math.min(100,(s/h*100))+'%';
+});
+
+document.addEventListener('DOMContentLoaded',()=>showLesson(0));
+
+function lfNext(el,stepNum){
+  var wrap=el.closest('.lf-wrap');
+  if(!wrap)return;
+  var steps=wrap.querySelectorAll('.lf-step');
+  var dots=wrap.querySelectorAll('.lf-dot');
+  steps.forEach(function(s,i){s.classList.remove('active');if(i<stepNum)s.classList.add('done');});
+  dots.forEach(function(d,i){d.classList.remove('active');if(i<stepNum)d.classList.add('done');if(i===stepNum)d.classList.add('active');});
+  if(steps[stepNum])steps[stepNum].classList.add('active');
+}
+</script>
+<script>function toggleFT(el){var sw=el.querySelector('.ft-toggle-switch');var desc=el.querySelector('.ft-toggle-desc');var mains=document.querySelectorAll('.lesson-main');sw.classList.toggle('on');var on=sw.classList.contains('on');desc.textContent=on?'Frameworks + OB cards only':'Full lesson content';mains.forEach(function(m){m.classList.toggle('ft-on',on);});}</script>
+</body>
+</html>

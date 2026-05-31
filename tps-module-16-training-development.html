@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Chapter 14 — Training + Development | The Promotional Standard</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Crimson+Pro:wght@300;400;500;600&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --navy:#0C2340;--navy2:#1A3A5C;--gold:#C9A84C;--gold2:#F5F0E8;--gold3:#6B4F10;
+  --cream:#F5F0E8;--offwhite:#F5F0E8;--light:#EAE5DC;--mid:#2A3D50;--gray:#8FA8C0;
+  --red:#B22222;--green:#1A5C3A;--green-light:#EAF3DE;
+  --teal:#006B6B;--teal-light:#E0F4F4;--purple:#4A2570;--purple-light:#F0EAF8;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:var(--navy);font-size:18px;line-height:1.8;}
+.top-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(12,35,64,0.98);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,168,76,0.2);height:64px;display:flex;align-items:center;padding:0 2rem;gap:1rem;}
+.nav-left{display:flex;align-items:center;gap:12px;flex:1;}
+.nav-brand{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;color:var(--cream);line-height:1.3;}
+.nav-brand span{display:block;font-size:8px;color:var(--gold);letter-spacing:2px;}
+.nav-pills{display:flex;gap:5px;flex:2;justify-content:center;overflow-x:auto;}
+.nav-pill{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#8FA8C0;padding:6px 11px;border-radius:20px;cursor:pointer;transition:all 0.2s;border:none;background:transparent;white-space:nowrap;}
+.nav-pill:hover{color:var(--cream);background:rgba(255,255,255,0.05);}
+.nav-pill.active{color:var(--gold);background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.25);}
+.progress-bar{position:fixed;top:64px;left:0;height:3px;background:linear-gradient(90deg,var(--navy2),var(--gold));z-index:199;width:0%;transition:width 0.3s;}
+.lesson-view{display:none;}.lesson-view.active{display:block;}
+.module-hero{background:var(--navy);padding:4.5rem 3rem 3.5rem;margin-top:64px;position:relative;overflow:hidden;border-bottom:3px solid var(--gold);}
+.module-hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 60px,rgba(201,168,76,0.015) 60px,rgba(201,168,76,0.015) 61px);}
+.module-hero::after{content:'';position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(180deg,var(--navy2),var(--gold));}
+.mh-inner{max-width:900px;position:relative;z-index:2;}
+.mh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.mh-title{font-family:'EB Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:800;color:var(--cream);line-height:1.1;margin-bottom:0.75rem;}
+.mh-title em{font-style:italic;color:var(--gold);}
+.mh-sub{font-size:1.05rem;color:#8FA8C0;max-width:700px;line-height:1.7;margin-bottom:2rem;}
+.mh-badges{display:flex;gap:10px;margin-bottom:1.5rem;flex-wrap:wrap;}
+.mh-badge{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border-radius:3px;}
+.badge-track{background:rgba(201,168,76,0.15);color:var(--gold);border:1px solid rgba(201,168,76,0.3);}
+.badge-nfpa{background:rgba(100,160,220,0.15);color:#8FA8C0;border:1px solid rgba(100,160,220,0.3);}
+.badge-new{background:rgba(50,180,100,0.15);color:#3AB464;border:1px solid rgba(50,180,100,0.3);}
+.mh-thread{background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);border-left:3px solid var(--gold);padding:1rem 1.5rem;margin-bottom:2rem;max-width:700px;}
+.mh-thread-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+.mh-thread-text{font-size:0.92rem;color:var(--cream);line-height:1.65;}
+.mh-lesson-nav{display:flex;gap:8px;flex-wrap:wrap;}
+.mh-lesson-btn{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:8px 14px;border-radius:6px;cursor:pointer;transition:all 0.2s;border:1px solid rgba(201,168,76,0.25);background:transparent;color:#8FA8C0;}
+.mh-lesson-btn:hover{background:rgba(255,255,255,0.05);color:var(--cream);}
+.mh-lesson-btn.active{background:rgba(201,168,76,0.12);color:var(--gold);border-color:rgba(201,168,76,0.4);}
+.lesson-container{display:grid;grid-template-columns:1fr 310px;gap:0;}
+.lesson-main{padding:3rem 3.5rem;border-right:1px solid var(--light);}
+.lesson-sidebar{padding:2rem 1.75rem;background:var(--offwhite);position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;}
+.lesson-header{margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:2px solid var(--light);}
+.lh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold3);margin-bottom:0.6rem;}
+.lh-title{font-family:'EB Garamond',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;color:var(--navy);line-height:1.15;margin-bottom:0.6rem;}
+.lh-title em{font-style:italic;color:var(--gold);}
+.lh-meta{display:flex;gap:1.5rem;flex-wrap:wrap;}
+.lh-meta-item{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);}
+.lesson-main h2{font-family:'EB Garamond',serif;font-size:1.7rem;font-weight:700;color:var(--navy);margin:3rem 0 0.9rem;padding-bottom:0.5rem;border-bottom:2px solid var(--light);}
+.lesson-main h3{font-family:'EB Garamond',serif;font-size:1.25rem;font-weight:600;color:var(--navy);margin:2.25rem 0 0.65rem;}
+.lesson-main p{margin-bottom:1.25rem;color:#2A3D50;line-height:1.82;}
+.lesson-main ul,.lesson-main ol{margin:0 0 1.25rem 1.5rem;color:#2A3D50;}
+.lesson-main li{margin-bottom:0.6rem;line-height:1.72;}
+.lesson-main strong{color:var(--navy);font-weight:600;}
+.callout{padding:1.4rem 1.6rem;margin:2rem 0;}
+.callout-gold{background:var(--gold2);border-left:3px solid var(--gold);}.callout-gold p{color:var(--gold3);font-size:0.97rem;line-height:1.75;}
+.callout-navy{background:var(--navy);border-left:3px solid var(--gold);}.callout-navy p{color:#8FA8C0;font-size:0.95rem;line-height:1.75;}
+.callout-red{background:#FFF0F0;border-left:4px solid var(--red);}.callout-red p{color:#6B4F10;font-size:0.97rem;line-height:1.75;}
+.callout-green{background:var(--green-light);border-left:4px solid var(--green);}.callout-green p{color:#1A3A5C;font-size:0.97rem;line-height:1.75;}
+.callout-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:0.5rem;display:block;}
+.callout-gold .callout-label{color:var(--gold3);}
+.callout-navy .callout-label{color:var(--gold);}
+.callout-red .callout-label{color:var(--red);}
+.callout-green .callout-label{color:var(--green);}
+.framework-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.fw-card{background:white;border:1px solid #EAE5DC;padding:1.25rem;border-radius:8px;}
+.fw-card-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:6px;}
+.fw-card-title{font-family:'EB Garamond',serif;font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.fw-card-desc{font-size:0.9rem;color:var(--mid);line-height:1.6;}
+.acro-grid{display:flex;flex-direction:column;gap:0;margin:1.5rem 0;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;}
+.acro-row{display:grid;grid-template-columns:52px 1fr;gap:0;border-bottom:1px solid #EAE5DC;}
+.acro-row:last-child{border-bottom:none;}
+.acro-letter{background:var(--navy);color:var(--gold);font-family:'EB Garamond',serif;font-size:1.8rem;font-weight:800;display:flex;align-items:center;justify-content:center;}
+.acro-content{padding:0.9rem 1.1rem;background:white;}
+.acro-word{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:3px;}
+.acro-desc{font-size:0.85rem;color:var(--mid);line-height:1.55;}
+.sbar-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold3);margin-bottom:0.65rem;margin-top:1.5rem;display:block;}
+.sbar-label:first-child{margin-top:0;}
+.sbar-card{background:white;border:1px solid #EAE5DC;border-radius:8px;padding:0.9rem 1rem;margin-bottom:8px;font-size:0.9rem;color:var(--mid);line-height:1.55;}
+.sbar-card strong{color:var(--navy);display:block;margin-bottom:3px;font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;}
+.lesson-nav-bar{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 3rem;border-top:3px solid var(--gold);background:var(--navy);gap:1rem;}
+.lnb-btn{background:rgba(255,255,255,0.08);border:2px solid rgba(201,168,76,0.4);padding:14px 28px;font-family:'Cinzel',serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border-radius:6px;color:var(--cream);transition:all 0.2s;white-space:nowrap;}
+.lnb-btn:hover{background:rgba(201,168,76,0.15);border-color:var(--gold);color:var(--gold);}
+.lnb-btn:disabled,.lnb-btn[disabled]{opacity:0.25;cursor:not-allowed;background:transparent;}
+.lnb-btn:disabled:hover,.lnb-btn[disabled]:hover{background:transparent;border-color:rgba(201,168,76,0.4);color:var(--cream);}
+.lnb-btn.primary{background:var(--gold);color:var(--navy);border-color:var(--gold);font-weight:800;}
+.lnb-btn.primary:hover{background:#C9A84C;border-color:#C9A84C;}
+.lnb-info{text-align:center;flex:1;}
+.lnb-name{font-family:'EB Garamond',serif;font-size:1rem;font-weight:700;color:var(--cream);}
+.lnb-num{font-size:0.85rem;color:var(--gold);font-family:'Cinzel',serif;letter-spacing:1px;}
+/* ICS-specific styles */
+.dim-cards{display:flex;flex-direction:column;gap:0.75rem;margin:1.5rem 0;}
+.dim-card{background:white;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;display:grid;grid-template-columns:64px 1fr;}
+.dim-card.dim-highlight{border-color:var(--gold);border-width:2px;}
+.dim-num-col{background:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1rem 0.5rem;gap:4px;}
+.dim-card.dim-highlight .dim-num-col{background:var(--gold);}
+.dim-badge{font-family:'EB Garamond',serif;font-size:1.6rem;font-weight:800;color:var(--gold);line-height:1;}
+.dim-card.dim-highlight .dim-badge{color:var(--navy);}
+.dim-body{padding:1rem 1.25rem;}
+.dim-title{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:5px;}
+.dim-card.dim-highlight .dim-title{color:var(--gold3);}
+.dim-desc{font-size:0.85rem;color:var(--mid);line-height:1.6;}
+.dim-scored{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold3);margin-top:6px;display:block;}
+.dim-card.dim-highlight .dim-scored{color:var(--gold3);}
+/* Legacy ics styles kept for ICS structure table in lesson 2 */
+.ics-structure{background:white;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;margin:1.5rem 0;}
+.ics-level{padding:0.9rem 1.25rem;border-bottom:1px solid #EAE5DC;display:grid;grid-template-columns:150px 1fr;gap:1rem;align-items:start;}
+.ics-level:last-child{border-bottom:none;}
+.ics-level-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:white;background:var(--navy);padding:4px 8px;border-radius:3px;display:inline-block;margin-top:2px;}
+.ics-level-desc{font-size:0.85rem;color:#2A3D50;line-height:1.6;}
+.ics-level-desc strong{color:var(--navy);font-family:'Cinzel',serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;}
+.ics-level.highlight{background:rgba(201,168,76,0.08);border-left:3px solid var(--gold);}
+.ics-level.highlight .ics-level-label{background:var(--gold);color:var(--navy);}
+.sizeup-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.75rem;margin:1.5rem 0;}
+.su-card{background:white;border:1px solid #EAE5DC;border-radius:8px;padding:1.1rem;text-align:center;}
+.su-num{font-family:'EB Garamond',serif;font-size:2rem;font-weight:800;color:var(--gold);line-height:1;}
+.su-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);font-weight:700;margin:5px 0 6px;}
+.su-desc{font-size:0.9rem;color:var(--mid);line-height:1.55;}
+.command-script{background:var(--navy);border-radius:8px;padding:1.5rem 1.75rem;margin:1.5rem 0;}
+.cs-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:block;}
+.cs-line{display:grid;grid-template-columns:100px 1fr;gap:0.75rem;margin-bottom:0.75rem;align-items:start;}
+.cs-line:last-child{margin-bottom:0;}
+.cs-role{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(201,168,76,0.6);padding-top:2px;}
+.cs-text{font-size:0.88rem;color:var(--cream);line-height:1.6;font-style:italic;}
+.score-compare{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.sc-card{padding:1.25rem;border-radius:8px;}
+.sc-card.miss{background:#FFF0F0;border:1px solid #F0C0C0;}
+.sc-card.hit{background:var(--green-light);border:1px solid #9DCCA8;}
+.sc-title{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;margin-bottom:0.75rem;}
+.sc-card.miss .sc-title{color:var(--red);}
+.sc-card.hit .sc-title{color:var(--green);}
+.sc-body{font-size:0.9rem;line-height:1.6;}
+.sc-card.miss .sc-body{color:#6B4F10;}
+.sc-card.hit .sc-body{color:#1A3A5C;}
+@media(max-width:900px){.lesson-container{grid-template-columns:1fr;}.lesson-sidebar{position:relative;height:auto;}.lesson-main{padding:2rem 1.5rem;}.lesson-nav-bar{padding:1rem 1.5rem;}.sizeup-grid{grid-template-columns:1fr 1fr;}.score-compare{grid-template-columns:1fr;}}
+.score-compare{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}.sc-card{padding:1.25rem;border-radius:8px;}.sc-card.miss{background:var(--red-light);border:1px solid #F0C0C0;}.sc-card.hit{background:var(--green-light);border:1px solid #9DCCA8;}.sc-title{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:0.75rem;}.sc-card.miss .sc-title{color:var(--red);}.sc-card.hit .sc-title{color:var(--green);}.sc-body{font-size:0.87rem;line-height:1.6;}.sc-card.miss .sc-body{color:#6B4F10;}.sc-card.hit .sc-body{color:#1A3A5C;}.callout-teal{background:var(--teal-light);border-left:4px solid var(--teal);}.callout-teal p{color:#003A3A;font-size:0.97rem;line-height:1.75;}.callout-teal .callout-label{color:var(--teal);}.badge-blue{background:rgba(30,80,180,0.12);color:#4A7FD0;border:1px solid rgba(30,80,180,0.25);}.badge-gold{background:rgba(201,168,76,0.15);color:var(--gold);border:1px solid rgba(201,168,76,0.3);}.badge-purple{background:rgba(74,37,112,0.15);color:#8B5FBF;border:1px solid rgba(74,37,112,0.3);}.badge-nfpa{background:rgba(100,160,220,0.15);color:#8FA8C0;border:1px solid rgba(100,160,220,0.3);}
+/* OB CARD */
+.ob-card{background:var(--navy);margin:2rem 0;overflow:hidden;}
+.ob-header{padding:0.85rem 1.5rem;background:rgba(201,168,76,0.08);border-bottom:1px solid rgba(201,168,76,0.15);}
+.ob-label{font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);}
+.ob-body{padding:1.25rem 1.5rem;}
+.ob-q{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;}
+.ob-q-tag{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);background:rgba(201,168,76,0.1);padding:4px 10px;border-radius:3px;white-space:nowrap;}
+.ob-q-text{font-family:'EB Garamond',serif;font-size:1.08rem;font-weight:600;color:var(--cream);line-height:1.5;margin-bottom:8px;}
+.ob-note{font-size:0.88rem;color:#8FA8C0;line-height:1.6;font-style:italic;}
+/* TAKEAWAYS */
+.takeaways{background:var(--navy);padding:2.25rem;margin:3rem 0 0;border-top:3px solid var(--gold);}
+.tk-lbl{font-family:'Cinzel',serif;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.tk-item{color:#8FA8C0;font-size:0.92rem;line-height:1.7;padding:0.5rem 0 0.5rem 1.25rem;border-left:2px solid rgba(201,168,76,0.2);margin-bottom:0.5rem;}
+
+
+.lead-nav{background:var(--navy);border-radius:8px;padding:14px 16px;margin-bottom:16px;border:1px solid rgba(201,168,76,0.2)}
+.lead-nav-header{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.lead-nav-row{display:grid;grid-template-columns:20px 1fr;gap:6px;margin-bottom:6px;align-items:start}
+.lead-nav-letter{font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:var(--gold)}
+.lead-nav-content{}
+.lead-nav-name{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:2px}
+.lead-nav-app{font-size:11px;color:#8FA8C0;line-height:1.5}
+
+.lf-wrap{margin:2.5rem 0 1.5rem;border:2px solid var(--gold);border-radius:10px;overflow:hidden}
+.lf-header{background:var(--navy);padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
+.lf-title{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+.lf-dots{display:flex;gap:6px}
+.lf-dot{width:8px;height:8px;border-radius:50%;background:rgba(201,168,76,0.25);transition:all 0.3s}
+.lf-dot.active{background:var(--gold);transform:scale(1.3)}
+.lf-dot.done{background:var(--gold)}
+.lf-step{display:none;padding:20px}
+.lf-step.active{display:block}
+.lf-step-num{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:6px}
+.lf-step-title{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:10px}
+.lf-chain{background:var(--navy);border-radius:6px;padding:14px 18px;margin:10px 0}
+.lf-chain-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.lf-chain-text{font-size:13px;color:#8FA8C0;line-height:1.6}
+.lf-chain-close{font-size:12px;color:var(--cream);margin-top:6px;font-style:italic}
+.lf-btn{background:var(--navy);color:var(--gold);border:2px solid var(--gold);padding:12px 24px;border-radius:6px;font-family:'Cinzel',serif;font-size:12px;letter-spacing:1.5px;font-weight:600;cursor:pointer;margin-top:12px;transition:all 0.2s;display:inline-block}
+.lf-btn:hover{background:var(--gold);color:var(--navy)}
+.lf-timer{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:var(--gold);padding:6px 14px;border-radius:4px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:1px;margin-top:10px}
+.lesson-main.ft>p{display:none!important}.lesson-main.ft>.callout{display:none!important}.ft-toggle{display:flex;align-items:center;gap:10px;padding:10px 16px;background:var(--navy);border-radius:6px;cursor:pointer;border:1px solid rgba(201,168,76,0.25)}.ft-toggle-switch{width:36px;height:20px;background:rgba(201,168,76,0.2);border-radius:10px;position:relative;transition:background .2s}.ft-toggle-switch.on{background:var(--gold)}.ft-toggle-knob{width:14px;height:14px;background:#fff;border-radius:50%;position:absolute;top:3px;left:3px;transition:left .2s}.ft-toggle-switch.on .ft-toggle-knob{left:19px}.ft-toggle-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}.ft-toggle-desc{font-size:11px;color:var(--mid)}.lesson-main.ft-on>p,.lesson-main.ft-on>.callout,.lesson-main.ft-on h3{display:none!important}.lesson-main.ft-on .ob-card,.lesson-main.ft-on .lf-wrap,.lesson-main.ft-on .lead-nav,.lesson-main.ft-on h2{display:block!important}
+</style>
+</head>
+<body>
+<nav class="top-nav"><div class="nav-left"><div class="nav-brand">The Promotional Standard<span>Lieutenant Track · Chapter 14</span></div></div>
+  <div class="nav-pills">    <button class="nav-pill active" onclick="showLesson(0)">Why Training Ownership Matters</button>
+    <button class="nav-pill" onclick="showLesson(1)">Needs Assessment</button>
+    <button class="nav-pill" onclick="showLesson(2)">Lesson Design</button>
+    <button class="nav-pill" onclick="showLesson(3)">Documentation + Records</button>
+    <button class="nav-pill" onclick="showLesson(4)">Training Safety</button>
+    <button class="nav-pill" onclick="showLesson(5)">AC Application</button></div></nav>
+<div class="progress-bar" id="prog"></div>
+<div class="module-hero"><div class="mh-inner">
+  <div class="mh-eyebrow">Chapter 14 · Lieutenant Track · Fire Officer I</div>
+  <h1 class="mh-title">Training + Development<br><em>The Company Officer as Lead Trainer</em></h1>
+  <p class="mh-sub">Adult learning theory, training needs assessment, lesson design using the four-phase approach, training documentation per NFPA 1401, live fire training safety under NFPA 1403, and the systematic 90-day training program build. The complete training and development curriculum for the company officer who owns their crew's performance.</p>
+  <div class="mh-badges"><span class="mh-badge badge-badge-blue">Lieutenant Track</span><span class="mh-badge badge-badge-nfpa">NFPA 1021 · FO I</span></div>
+  <div class="mh-thread"><div class="mh-thread-label">Before You Begin</div><div class="mh-thread-text">Training ownership is a core NFPA 1021 FO I competency. This module builds the systematic approach that separates training that develops crews from training that fills calendar blocks.</div></div>
+  <div class="mh-lesson-nav">      <button class="mh-lesson-btn active" onclick="showLesson(0)">1. Why Training Ownership Matters</button>
+      <button class="mh-lesson-btn" onclick="showLesson(1)">2. Needs Assessment</button>
+      <button class="mh-lesson-btn" onclick="showLesson(2)">3. Lesson Design</button>
+      <button class="mh-lesson-btn" onclick="showLesson(3)">4. Documentation + Records</button>
+      <button class="mh-lesson-btn" onclick="showLesson(4)">5. Training Safety</button>
+      <button class="mh-lesson-btn" onclick="showLesson(5)">6. AC Application</button></div>
+</div></div>
+<main><div class="lesson-view active" id="lesson-0">
+<div class="lesson-container"><div class="lesson-main">
+<div class="lesson-header"><div class="lh-eyebrow">Chapter 14 · Lesson 1 of 6</div>
+<h1 class="lh-title">The Company Officer as Lead Trainer —<br><em>Why Training Ownership Matters</em></h1><div class="lh-meta"><span class="lh-meta-item">⏱ 12 min</span><span class="lh-meta-item">🎓 Adult Learning · Training Culture</span></div></div>
+<p>Training is the company officer's most important ongoing leadership function — because it is the only function that directly determines whether the crew can perform safely and effectively when the stakes are highest. The Lieutenant who treats training as an administrative burden delegates the most critical officer responsibility they hold.</p><div class="callout callout-gold"><span class="callout-label">The NFPA 1021 Training Requirement</span><p>NFPA 1021 FO I requires the company officer to design and conduct training programs for their crew. This is not a suggestion or a supplemental activity — it is a core competency of the rank. The company officer who cannot design, conduct, and evaluate training is not meeting the NFPA standard for their position.</p></div><div class="framework-grid"><div class="fw-card"><div class="fw-card-label">Why Adults Learn Differently</div><div class="fw-card-title">Andragogy, Not Pedagogy</div><div class="fw-card-desc">Malcolm Knowles' adult learning theory identifies key differences between adult and child learners: adults are self-directed, draw on existing experience, learn best when they see relevance to immediate problems, and prefer problem-centered over subject-centered learning. The company officer who designs training around real operational scenarios rather than abstract concepts is applying andragogy correctly.</div></div><div class="fw-card"><div class="fw-card-label">The Training Culture Signal</div><div class="fw-card-title">What the Officer Models</div><div class="fw-card-desc">The officer who trains with the crew — who is visibly invested in skill development, who takes the training as seriously as they expect the crew to, and who treats every drill as preparation for performance — creates a training culture. The one who delegates training to the newest member and checks their phone during drills creates a different culture.</div></div></div>
+</div><div class="lesson-sidebar">
+<div class="ft-toggle" onclick="toggleFT(this)" style="margin-bottom:16px;max-width:320px">
+<div class="ft-toggle-switch"><div class="ft-toggle-knob"></div></div>
+<div><div class="ft-toggle-label">Fast Track Mode</div><div class="ft-toggle-desc">Full lesson content</div></div>
+</div>
+
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Development & Mentoring</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Company Officer as Lead Trainer → 70-20-10 Model → Kolb Experiential Cycle → NFPA 1041</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Diagnose the training need → apply 70-20-10 → design the evolution → close with Commitment</div></div></div></div>
+<span class="sbar-label">NFPA 1021 Requirement</span><div class="sbar-card">FO I: design, conduct, evaluate training. Core competency — not supplemental.</div><span class="sbar-label">Adult Learning</span><div class="sbar-card">Self-directed · experience-based · relevance-required · problem-centered. Real scenarios > abstract content.</div><span class="sbar-label">Culture Signal</span><div class="sbar-card">Officer visible investment in training = training culture. Delegation + phone = different culture.</div></div></div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — The Company Officer as Lead Trainer</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"How does the company officer as lead trainer apply to your daily leadership practice? Give me a specific example."</div><div class="ob-note">Name the training needs assessment process. Describe how you design a training session that meets adult learning principles. Show that you own training as a leadership responsibility.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 1 — Key Takeaways</div>
+  <div class="tk-item">LEAD integration: Label this as a Training Development question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Development & Mentoring</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Company Officer as Lead Trainer → 70-20-10 Model → Kolb Experiential Cycle → NFPA 1041</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Diagnose the training need → apply 70-20-10 → design the evolution → close with Commitment</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar"><button class="lnb-btn" disabled>← Previous</button>
+<div class="lnb-info"><div class="lnb-name">Lesson 1 of 6</div><div class="lnb-num">Chapter 14</div></div>
+<button class="lnb-btn primary" onclick="nextLesson()">Next: Needs Assessment →</button></div></div><div class="lesson-view" id="lesson-1">
+<div class="lesson-container"><div class="lesson-main">
+<div class="lesson-header"><div class="lh-eyebrow">Chapter 14 · Lesson 2 of 6</div>
+<h1 class="lh-title">Training Needs Assessment —<br><em>What Does My Crew Actually Need?</em></h1><div class="lh-meta"><span class="lh-meta-item">⏱ 14 min</span><span class="lh-meta-item">📊 Needs Assessment · Gap Analysis</span></div></div>
+<p>Effective training begins with an honest assessment of what the crew needs to learn or improve — not what was scheduled last year, not what is easiest to deliver, but what the data says about actual performance gaps. The company officer who trains based on needs analysis produces better outcomes than the one who trains based on calendar.</p><div class="acro-grid"><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-weight:800;font-family:'EB Garamond',serif;">OBS</div><div class="acro-content"><div class="acro-word">Observation — What Do I See During Operations?</div><div class="acro-desc">The most accessible needs assessment data is direct observation: how does the crew perform during training exercises, during routine calls, and during significant incidents? The officer who observes systematically — noting specific performance gaps rather than general impressions — builds the data that drives targeted training.</div></div></div><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-weight:800;font-family:'EB Garamond',serif;">AFT</div><div class="acro-content"><div class="acro-word">After-Action Review Data — What Did the AAR Reveal?</div><div class="acro-desc">After-action reviews of significant incidents (covered in Module 21) produce specific, actionable training needs. "The attack crew lost their orientation to the entry door during the second-floor search" is a specific training need. "We need to work on teamwork" is not.</div></div></div><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-weight:800;font-family:'EB Garamond',serif;">REC</div><div class="acro-content"><div class="acro-word">Records Analysis — What Do Certification and Training Records Show?</div><div class="acro-desc">Training records that show certification gaps, recertification approaching, or skills not drilled in 6+ months are a needs assessment data source. The officer who reviews records before planning the monthly training calendar is doing data-driven training.</div></div></div><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-weight:800;font-family:'EB Garamond',serif;">BEN</div><div class="acro-content"><div class="acro-word">Benchmark Standards — What Does the NFPA Standard Require?</div><div class="acro-desc">NFPA standards, department SOGs, and certification requirements define the minimum performance standards. The gap between current demonstrated performance and required standard is the training need.</div></div></div><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-weight:800;font-family:'EB Garamond',serif;">INC</div><div class="acro-content"><div class="acro-word">Incident Data — What Patterns Appear in the Department's Incident History?</div><div class="acro-desc">Near-miss reports, LODD investigations, and incident reviews from other departments are valuable training needs data. The training that prevents the incident that happened to another company is the training with the highest return.</div></div></div></div><div class="callout callout-teal"><span class="callout-label">The Learning Objectives Standard</span><p>Every training session should begin with clear learning objectives — specific, behavioral, and measurable. "Participants will be able to perform a complete building survey using COAL WAS WEALTH within 15 minutes with 90% information accuracy" is a learning objective. "We'll practice size-up today" is a topic. Learning objectives allow the trainer to evaluate whether learning occurred.</p></div>
+</div><div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Development & Mentoring</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Company Officer as Lead Trainer → 70-20-10 Model → Kolb Experiential Cycle → NFPA 1041</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Diagnose the training need → apply 70-20-10 → design the evolution → close with Commitment</div></div></div></div>
+<span class="sbar-label">Five Needs Sources</span><div class="sbar-card">Observation · AAR data · records analysis · benchmark standards · incident/near-miss data.</div><span class="sbar-label">Learning Objectives</span><div class="sbar-card">Specific + behavioral + measurable. "Participants will be able to [do X] to [standard Y]." Enables evaluation of whether learning occurred.</div></div></div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Training Needs Assessment</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"How does training needs assessment apply to your daily leadership practice? Give me a specific example."</div><div class="ob-note">Name the training needs assessment process. Describe how you design a training session that meets adult learning principles. Show that you own training as a leadership responsibility.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 2 — Key Takeaways</div>
+  <div class="tk-item">LEAD integration: Label this as a Training Development question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Development & Mentoring</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Company Officer as Lead Trainer → 70-20-10 Model → Kolb Experiential Cycle → NFPA 1041</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Diagnose the training need → apply 70-20-10 → design the evolution → close with Commitment</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar"><button class="lnb-btn" onclick="prevLesson()">← Why Training Matters</button>
+<div class="lnb-info"><div class="lnb-name">Lesson 2 of 6</div><div class="lnb-num">Chapter 14</div></div>
+<button class="lnb-btn primary" onclick="nextLesson()">Next: Lesson Design →</button></div></div><div class="lesson-view" id="lesson-2">
+<div class="lesson-container"><div class="lesson-main">
+<div class="lesson-header"><div class="lh-eyebrow">Chapter 14 · Lesson 3 of 6</div>
+<h1 class="lh-title">Lesson Design and Delivery —<br><em>The Four-Phase Approach</em></h1><div class="lh-meta"><span class="lh-meta-item">⏱ 14 min</span><span class="lh-meta-item">📐 Lesson Plan · Delivery · Evaluation</span></div></div>
+<p>A well-designed training session follows a predictable structure that research shows maximizes adult learning and retention. The company officer who uses this structure produces training that sticks rather than training that fills time.</p><div class="acro-grid"><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-weight:800;font-family:'EB Garamond',serif;">MOT</div><div class="acro-content"><div class="acro-word">Motivation — Why Should They Care?</div><div class="acro-desc">Every effective training session begins with establishing relevance: why does this skill or knowledge matter to this crew, in their specific operational context? The motivation phase connects the training content to actual operational performance, to crew safety, or to outcomes the crew cares about. Adults who understand why they're learning something retain it better.</div></div></div><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-weight:800;font-family:'EB Garamond',serif;">CON</div><div class="acro-content"><div class="acro-word">Concept/Content — What Are We Learning?</div><div class="acro-desc">The content delivery phase: the specific knowledge, skill, or process being trained. Uses demonstration, lecture, visual aids, case studies, or readings — selected based on the type of learning required. Motor skills require demonstration and practice. Knowledge requires explanation and application. Attitude change requires reflection and discussion.</div></div></div><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-weight:800;font-family:'EB Garamond',serif;">APP</div><div class="acro-content"><div class="acro-word">Application — Let Them Do It</div><div class="acro-desc">Adult learners retain most effectively when they apply what they've learned in a practice context that is as realistic as possible. The training session that ends with demonstration without application is a training session that produced 20% retention rather than 60–70%.</div></div></div><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-weight:800;font-family:'EB Garamond',serif;">EVL</div><div class="acro-content"><div class="acro-word">Evaluation — Did Learning Occur?</div><div class="acro-desc">Evaluation confirms whether the learning objective was met. Observation of skill performance, verbal quiz, written assessment, or demonstration under simulated conditions — all appropriate depending on the learning objective. Evaluation without feedback to the learner is incomplete: they need to know not just that they were evaluated but what the evaluation showed.</div></div></div></div><div class="callout callout-gold"><span class="callout-label">The Tabletop vs Functional vs Full-Scale Spectrum</span><p>Not every training need requires a full-scale drill. Tabletop exercises — verbal walk-throughs of scenarios — are effective for decision-making and knowledge-based objectives. Functional drills — executing specific functions with equipment — build skill for specific tasks. Full-scale exercises are reserved for complex, multi-company, or multi-agency scenarios where the full coordination is the training objective. Matching the exercise type to the learning objective saves resources and improves training effectiveness.</p></div>
+</div><div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Development & Mentoring</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Company Officer as Lead Trainer → 70-20-10 Model → Kolb Experiential Cycle → NFPA 1041</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Diagnose the training need → apply 70-20-10 → design the evolution → close with Commitment</div></div></div></div>
+<span class="sbar-label">Four-Phase Design</span><div class="sbar-card">Motivation (why) → Concept (what) → Application (practice) → Evaluation (did learning occur?). Skip application = 20% retention.</div><span class="sbar-label">Exercise Types</span><div class="sbar-card">Tabletop: decision-making, knowledge. Functional: specific skill with equipment. Full-scale: complex coordination. Match type to objective.</div></div></div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Lesson Design and Delivery</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"How does lesson design and delivery apply to your daily leadership practice? Give me a specific example."</div><div class="ob-note">Name the training needs assessment process. Describe how you design a training session that meets adult learning principles. Show that you own training as a leadership responsibility.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 3 — Key Takeaways</div>
+  <div class="tk-item">LEAD integration: Label this as a Training Development question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Development & Mentoring</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Company Officer as Lead Trainer → 70-20-10 Model → Kolb Experiential Cycle → NFPA 1041</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Diagnose the training need → apply 70-20-10 → design the evolution → close with Commitment</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar"><button class="lnb-btn" onclick="prevLesson()">← Needs Assessment</button>
+<div class="lnb-info"><div class="lnb-name">Lesson 3 of 6</div><div class="lnb-num">Chapter 14</div></div>
+<button class="lnb-btn primary" onclick="nextLesson()">Next: Documentation + Records →</button></div></div><div class="lesson-view" id="lesson-3">
+<div class="lesson-container"><div class="lesson-main">
+<div class="lesson-header"><div class="lh-eyebrow">Chapter 14 · Lesson 4 of 6</div>
+<h1 class="lh-title">Documentation + Training Records</h1><div class="lh-meta"><span class="lh-meta-item">⏱ 12 min</span><span class="lh-meta-item">📄 Records · NFPA 1401 · Liability</span></div></div>
+<p>Training documentation is simultaneously a learning reinforcement tool, a personnel record, a certification maintenance record, and an organizational liability protection mechanism. The company officer who maintains accurate, current training records is protecting their crew, themselves, and the organization.</p><div class="framework-grid"><div class="fw-card"><div class="fw-card-label">What to Document</div><div class="fw-card-title">Every Training Event</div><div class="fw-card-desc">Date, location, duration, topic, learning objectives, attendees, and evaluation results for every training event — formal and informal. The drill that isn't documented may as well not have happened from a liability and certification perspective.</div></div><div class="fw-card"><div class="fw-card-label">Certification Tracking</div><div class="fw-card-title">The Officer's Currency Matrix</div><div class="fw-card-desc">Each crew member's certifications — Firefighter I/II, Hazmat Awareness/Operations, EMS certifications, technical rescue, driver-operator — with expiration dates. The officer who finds out a certification expired by receiving notice of a training failure has been managing records reactively. Proactive tracking prevents gaps.</div></div><div class="fw-card"><div class="fw-card-label">NFPA 1401</div><div class="fw-card-title">Recommended Practice for Fire Service Training Reports and Records</div><div class="fw-card-desc">NFPA 1401 provides guidance on what training records should contain, how they should be maintained, and what retention periods are appropriate. Following this standard protects the department in litigation and ensures records are useful for evaluation and improvement.</div></div><div class="fw-card"><div class="fw-card-label">The Liability Connection</div><div class="fw-card-title">Documentation as Legal Protection</div><div class="fw-card-desc">In litigation following a firefighter injury or death, one of the first questions is: what training was provided? The department that can demonstrate a consistent, documented training program meeting professional standards is in a fundamentally different legal position than the one that cannot. Training records are organizational protection.</div></div></div><div class="callout callout-teal"><span class="callout-label">The Informal Training Record</span><p>The brief company drill, the tailgate training, the in-station skill review — these informal training events are often the most frequent and most practically impactful training the crew receives. They also frequently go undocumented. The company officer who documents even brief informal training events builds a comprehensive record that reflects actual training investment.</p></div>
+</div><div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Development & Mentoring</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Company Officer as Lead Trainer → 70-20-10 Model → Kolb Experiential Cycle → NFPA 1041</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Diagnose the training need → apply 70-20-10 → design the evolution → close with Commitment</div></div></div></div>
+<span class="sbar-label">What to Document</span><div class="sbar-card">Date · location · duration · topic · objectives · attendees · evaluation. Every event — formal and informal.</div><span class="sbar-label">NFPA 1401</span><div class="sbar-card">Training records standard. Protects department in litigation. Follow it.</div><span class="sbar-label">Certification Matrix</span><div class="sbar-card">Every crew member · every certification · expiration dates. Proactive tracking prevents gap surprises.</div></div></div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Documentation + Training Records</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"How does documentation + training records apply to your daily leadership practice? Give me a specific example."</div><div class="ob-note">Name the training needs assessment process. Describe how you design a training session that meets adult learning principles. Show that you own training as a leadership responsibility.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 4 — Key Takeaways</div>
+  <div class="tk-item">LEAD integration: Label this as a Training Development question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Development & Mentoring</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Company Officer as Lead Trainer → 70-20-10 Model → Kolb Experiential Cycle → NFPA 1041</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Diagnose the training need → apply 70-20-10 → design the evolution → close with Commitment</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar"><button class="lnb-btn" onclick="prevLesson()">← Lesson Design</button>
+<div class="lnb-info"><div class="lnb-name">Lesson 4 of 6</div><div class="lnb-num">Chapter 14</div></div>
+<button class="lnb-btn primary" onclick="nextLesson()">Next: Training Safety →</button></div></div><div class="lesson-view" id="lesson-4">
+<div class="lesson-container"><div class="lesson-main">
+<div class="lesson-header"><div class="lh-eyebrow">Chapter 14 · Lesson 5 of 6</div>
+<h1 class="lh-title">Training Safety and Live-Fire Protocol</h1><div class="lh-meta"><span class="lh-meta-item">⏱ 12 min</span><span class="lh-meta-item">🔥 NFPA 1403 · Live Fire Safety</span></div></div>
+<p>Training exercises — particularly live-fire training — carry their own risk profiles. Multiple firefighter fatalities and injuries have occurred during training evolutions. The company officer who manages training safety with the same rigor applied to operational incident safety is managing a real risk, not a theoretical one.</p><div class="acro-grid"><div class="acro-row"><div class="acro-letter" style="font-size:0.82rem;font-weight:800;font-family:'EB Garamond',serif;">1403</div><div class="acro-content"><div class="acro-word">NFPA 1403 — Standard on Live Fire Training Evolutions</div><div class="acro-desc">NFPA 1403 establishes the minimum safety requirements for live fire training: safety officer assignment, building inspection and preparation, accountability system, medical standby, hose line requirements, instructor-to-student ratios, and prohibited scenarios. Compliance with NFPA 1403 is not optional at live fire training — it is the documented standard against which training fatalities are measured.</div></div></div><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-weight:800;font-family:'EB Garamond',serif;">ISO</div><div class="acro-content"><div class="acro-word">Training Safety Officer — Required, Not Optional</div><div class="acro-desc">A dedicated training safety officer (TSO) — separate from the instructors — is required for live fire training. The TSO has the authority to stop any evolution that presents an unsafe condition, without the need to consult instructors or the officer in charge. The TSO who cannot exercise stop authority is not providing real safety oversight.</div></div></div><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-weight:800;font-family:'EB Garamond',serif;">STD</div><div class="acro-content"><div class="acro-word">Stopping Standard — When to Stop</div><div class="acro-desc">Every training session should have a pre-established stopping criterion: the specific unsafe condition that will cause the evolution to stop immediately. Making this explicit before the training begins — rather than leaving it to judgment in the moment — removes the pressure to continue despite emerging safety concerns.</div></div></div></div><div class="callout callout-red"><span class="callout-label">The Training Complacency Problem</span><p>Training fatalities often share a contributing factor: the training environment is treated as lower-risk than operational incidents because "it's just training." Complacency about PPE compliance, accountability, and safety protocols in training creates exactly the conditions that lead to training injuries and deaths. The company officer who enforces the same safety standards in training that they enforce at incidents is not being overly cautious — they are being professionally consistent.</p></div>
+</div><div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Development & Mentoring</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Company Officer as Lead Trainer → 70-20-10 Model → Kolb Experiential Cycle → NFPA 1041</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Diagnose the training need → apply 70-20-10 → design the evolution → close with Commitment</div></div></div></div>
+<span class="sbar-label">NFPA 1403</span><div class="sbar-card">Live fire minimum standard. Safety officer · building inspection · accountability · medical standby · hose lines · instructor ratios. Non-negotiable compliance.</div><span class="sbar-label">Training Safety Officer</span><div class="sbar-card">Dedicated TSO separate from instructors. Stop authority without consultation. TSO without stop authority = theater.</div><span class="sbar-label">Stopping Standard</span><div class="sbar-card">Pre-established before evolution begins. Removes in-the-moment pressure to continue.</div></div></div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Training Safety and Live-Fire Protocol</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"How does training safety and live-fire protocol apply to your daily leadership practice? Give me a specific example."</div><div class="ob-note">Name the training needs assessment process. Describe how you design a training session that meets adult learning principles. Show that you own training as a leadership responsibility.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 5 — Key Takeaways</div>
+  <div class="tk-item">LEAD integration: Label this as a Training Development question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Development & Mentoring</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Company Officer as Lead Trainer → 70-20-10 Model → Kolb Experiential Cycle → NFPA 1041</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Diagnose the training need → apply 70-20-10 → design the evolution → close with Commitment</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar"><button class="lnb-btn" onclick="prevLesson()">← Documentation + Records</button>
+<div class="lnb-info"><div class="lnb-name">Lesson 5 of 6</div><div class="lnb-num">Chapter 14</div></div>
+<button class="lnb-btn primary" onclick="nextLesson()">Next: AC Application →</button></div></div><div class="lesson-view" id="lesson-5">
+<div class="lesson-container"><div class="lesson-main">
+<div class="lesson-header"><div class="lh-eyebrow">Chapter 14 · Lesson 6 of 6 · Assessment Application</div>
+<h1 class="lh-title">Assessment Center Application —<br><em>Training and Development Scenarios</em></h1><div class="lh-meta"><span class="lh-meta-item">⏱ 10 min</span><span class="lh-meta-item">🎯 Scoring</span></div></div>
+<p>Training and development questions at Lieutenant level most often appear in supervisory judgment or administrative scenarios. The 5/5 response demonstrates systematic approach and genuine investment in crew development rather than treating training as an obligation.</p><div class="callout callout-navy"><span class="callout-label">Oral Board Prompt</span><p>"You have just taken over a company that has had the same officer for eight years. The crew is experienced but the training records show that no systematic training program has been conducted in the past two years — training has been ad hoc and largely undocumented. How do you approach training in your first 90 days?"</p></div><div class="score-compare"><div class="sc-card miss"><div class="sc-title">3/5 Response</div><div class="sc-body">"I would assess the crew's skills and identify areas for improvement. I would create a training schedule and ensure we are meeting all certification requirements. I would document all training going forward."</div></div><div class="sc-card hit"><div class="sc-title">5/5 Response</div><div class="sc-body">"My first step is a needs assessment, not a training schedule. I want to know: what do the certification records show for gaps and approaching expiration dates? What does the incident history show — any near-misses, any performance patterns I should know about? I'll also observe the crew in the first few weeks before drawing conclusions about what they need.<br><br>I'd then sit down with the crew and be direct about what I found: 'We have a gap in documented training over the past two years. Part of my job is making sure we build that back up — both because it's required and because it protects all of us operationally and legally.' I'm framing it as shared interest, not criticism of the previous officer or the crew.<br><br>Ninety-day plan: first month, certification audit and emergency backfill for anyone with expired credentials. Months 2 and 3, systematic needs-based training — one documented drill per shift, with learning objectives written before the drill and evaluation notes after. I'll use the NFPA 1403 standard for any live fire components and ensure I have a designated training safety officer for every live evolution.<br><br>Longer term: monthly training calendar built from needs assessment data, not from what's convenient. Records documented in real time. And I train with them — I'm not setting up a drill and observing. I'm in it."</div></div></div><div class="callout callout-gold"><span class="callout-label">Chapter 14 Complete</span><p>Training and development is the company officer's most consistent investment in crew performance and organizational safety. The officer who builds a systematic, documented, needs-based training program is protecting their crew, their organization, and themselves — and is developing the competency the rank requires.</p></div>
+</div><div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Development & Mentoring</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Company Officer as Lead Trainer → 70-20-10 Model → Kolb Experiential Cycle → NFPA 1041</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Diagnose the training need → apply 70-20-10 → design the evolution → close with Commitment</div></div></div></div>
+<span class="sbar-label">5/5 Pattern</span><div class="sbar-card">Needs assessment first · direct communication with crew · shared interest framing · systematic 90-day plan · certification audit · NFPA 1403 for live fire · trains with the crew.</div></div></div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Assessment Center Application</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"You receive a scenario about training development. Walk me through your complete response using the frameworks from this chapter."</div><div class="ob-note">Use LEAD: Label the bucket (Training Development), Engage the specific framework (reference Assessment Center Application explicitly), Address the operational and organizational impact, Drive to a concrete first action with a timeline.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 6 — Key Takeaways</div>
+  <div class="tk-item">LEAD integration: Label this as a Training Development question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Development & Mentoring</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Company Officer as Lead Trainer → 70-20-10 Model → Kolb Experiential Cycle → NFPA 1041</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Diagnose the training need → apply 70-20-10 → design the evolution → close with Commitment</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar"><button class="lnb-btn" onclick="prevLesson()">← Training Safety</button>
+<div class="lnb-info"><div class="lnb-name">Lesson 6 of 6</div><div class="lnb-num">Chapter 14</div></div>
+<button class="lnb-btn primary" onclick="window.scrollTo({{top:0,behavior:'smooth'}})">Module Complete ✓</button></div></div></main>
+<script>
+let cur=0;const ls=document.querySelectorAll('.lesson-view');const ps=document.querySelectorAll('.nav-pill');const mbs=document.querySelectorAll('.mh-lesson-btn');
+function showLesson(n){ls.forEach(l=>l.classList.remove('active'));ps.forEach(p=>p.classList.remove('active'));mbs.forEach(m=>m.classList.remove('active'));if(ls[n])ls[n].classList.add('active');if(ps[n])ps[n].classList.add('active');if(mbs[n])mbs[n].classList.add('active');cur=n;window.scrollTo({top:0,behavior:'smooth'});document.getElementById('prog').style.width='0%';}
+function nextLesson(){if(cur<ls.length-1)showLesson(cur+1);}
+function prevLesson(){if(cur>0)showLesson(cur-1);}
+window.addEventListener('scroll',()=>{const s=document.documentElement.scrollTop;const h=document.documentElement.scrollHeight-window.innerHeight;if(h>0)document.getElementById('prog').style.width=Math.min(100,(s/h*100))+'%';});
+document.addEventListener('DOMContentLoaded',()=>showLesson(0));
+
+function lfNext(el,stepNum){
+  var wrap=el.closest('.lf-wrap');
+  if(!wrap)return;
+  var steps=wrap.querySelectorAll('.lf-step');
+  var dots=wrap.querySelectorAll('.lf-dot');
+  steps.forEach(function(s,i){s.classList.remove('active');if(i<stepNum)s.classList.add('done');});
+  dots.forEach(function(d,i){d.classList.remove('active');if(i<stepNum)d.classList.add('done');if(i===stepNum)d.classList.add('active');});
+  if(steps[stepNum])steps[stepNum].classList.add('active');
+}
+</script><script>function toggleFT(el){var sw=el.querySelector('.ft-toggle-switch');var desc=el.querySelector('.ft-toggle-desc');var mains=document.querySelectorAll('.lesson-main');sw.classList.toggle('on');var on=sw.classList.contains('on');desc.textContent=on?'Frameworks + OB cards only':'Full lesson content';mains.forEach(function(m){m.classList.toggle('ft-on',on);});}</script>
+</body></html>

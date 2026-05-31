@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Before You Promote: Captain | The Promotional Standard</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Crimson+Pro:wght@300;400;500;600&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --navy:#0C2340;--navy2:#1A3A5C;--gold:#C9A84C;--gold2:#F5F0E8;--gold3:#6B4F10;
+  --cream:#F5F0E8;--offwhite:#F5F0E8;--light:#EAE5DC;--mid:#2A3D50;--gray:#8FA8C0;
+  --red:#B22222;--green:#1A5C3A;--green-light:#EAF3DE;
+  --teal:#006B6B;--teal-light:#E0F4F4;--purple:#4A2570;--purple-light:#F0EAF8;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:var(--navy);font-size:18px;line-height:1.8;}
+.top-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(12,35,64,0.98);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,168,76,0.2);height:64px;display:flex;align-items:center;padding:0 2rem;gap:1rem;}
+.nav-left{display:flex;align-items:center;gap:12px;flex:1;}
+.nav-brand{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;color:var(--cream);line-height:1.3;}
+.nav-brand span{display:block;font-size:8px;color:var(--gold);letter-spacing:2px;}
+.nav-pills{display:flex;gap:5px;flex:2;justify-content:center;overflow-x:auto;}
+.nav-pill{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#8FA8C0;padding:6px 11px;border-radius:20px;cursor:pointer;transition:all 0.2s;border:none;background:transparent;white-space:nowrap;}
+.nav-pill:hover{color:var(--cream);background:rgba(255,255,255,0.05);}
+.nav-pill.active{color:var(--gold);background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.25);}
+.progress-bar{position:fixed;top:64px;left:0;height:3px;background:linear-gradient(90deg,var(--navy2),var(--gold));z-index:199;width:0%;transition:width 0.3s;}
+.lesson-view{display:none;}.lesson-view.active{display:block;}
+.module-hero{background:var(--navy);padding:4.5rem 3rem 3.5rem;margin-top:64px;position:relative;overflow:hidden;border-bottom:3px solid var(--gold);}
+.module-hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 60px,rgba(201,168,76,0.015) 60px,rgba(201,168,76,0.015) 61px);}
+.module-hero::after{content:'';position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(180deg,var(--navy2),var(--gold));}
+.mh-inner{max-width:900px;position:relative;z-index:2;}
+.mh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.mh-title{font-family:'EB Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:800;color:var(--cream);line-height:1.1;margin-bottom:0.75rem;}
+.mh-title em{font-style:italic;color:var(--gold);}
+.mh-sub{font-size:1.05rem;color:#8FA8C0;max-width:700px;line-height:1.7;margin-bottom:2rem;}
+.mh-badges{display:flex;gap:10px;margin-bottom:1.5rem;flex-wrap:wrap;}
+.mh-badge{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border-radius:3px;}
+.badge-track{background:rgba(201,168,76,0.15);color:var(--gold);border:1px solid rgba(201,168,76,0.3);}
+.badge-nfpa{background:rgba(100,160,220,0.15);color:#8FA8C0;border:1px solid rgba(100,160,220,0.3);}
+.badge-new{background:rgba(50,180,100,0.15);color:#3AB464;border:1px solid rgba(50,180,100,0.3);}
+.mh-thread{background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);border-left:4px solid var(--gold);padding:1rem 1.5rem;margin-bottom:2rem;max-width:700px;}
+.mh-thread-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+.mh-thread-text{font-size:0.92rem;color:var(--cream);line-height:1.65;}
+.mh-lesson-nav{display:flex;gap:8px;flex-wrap:wrap;}
+.mh-lesson-btn{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:8px 14px;border-radius:6px;cursor:pointer;transition:all 0.2s;border:1px solid rgba(201,168,76,0.25);background:transparent;color:#8FA8C0;}
+.mh-lesson-btn:hover{background:rgba(255,255,255,0.05);color:var(--cream);}
+.mh-lesson-btn.active{background:rgba(201,168,76,0.12);color:var(--gold);border-color:rgba(201,168,76,0.4);}
+.lesson-container{display:grid;grid-template-columns:1fr 310px;gap:0;}
+.lesson-main{padding:3rem 3.5rem;border-right:1px solid var(--light);}
+.lesson-sidebar{padding:2rem 1.75rem;background:var(--offwhite);position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;}
+.lesson-header{margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:2px solid var(--light);}
+.lh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold3);margin-bottom:0.6rem;}
+.lh-title{font-family:'EB Garamond',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;color:var(--navy);line-height:1.15;margin-bottom:0.6rem;}
+.lh-title em{font-style:italic;color:var(--gold);}
+.lh-meta{display:flex;gap:1.5rem;flex-wrap:wrap;}
+.lh-meta-item{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);}
+.lesson-main h2{font-family:'EB Garamond',serif;font-size:1.7rem;font-weight:700;color:var(--navy);margin:3rem 0 0.9rem;padding-bottom:0.5rem;border-bottom:2px solid var(--light);}
+.lesson-main h3{font-family:'EB Garamond',serif;font-size:1.25rem;font-weight:600;color:var(--navy);margin:2.25rem 0 0.65rem;}
+.lesson-main p{margin-bottom:1.25rem;color:#2A3D50;line-height:1.82;}
+.lesson-main ul,.lesson-main ol{margin:0 0 1.25rem 1.5rem;color:#2A3D50;}
+.lesson-main li{margin-bottom:0.6rem;line-height:1.72;}
+.lesson-main strong{color:var(--navy);font-weight:600;}
+.callout{padding:1.4rem 1.6rem;margin:2rem 0;}
+.callout-gold{background:var(--gold2);border-left:4px solid var(--gold);}.callout-gold p{color:var(--gold3) !important;font-size:0.97rem;line-height:1.75;}
+.callout-navy{background:var(--navy);border-left:4px solid var(--gold);}.callout-navy p{color:#8FA8C0 !important;font-size:0.95rem;line-height:1.75;}
+.callout-red{background:#FFF0F0;border-left:4px solid var(--red);}.callout-red p{color:#6B4F10 !important;font-size:0.97rem;line-height:1.75;}
+.callout-green{background:var(--green-light);border-left:4px solid var(--green);}.callout-green p{color:#1A3A5C;font-size:0.97rem;line-height:1.75;}
+.callout-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:0.5rem;display:block;}
+.callout-gold .callout-label{color:var(--gold3) !important;}
+.callout-navy .callout-label{color:var(--gold) !important;}
+.callout-red .callout-label{color:var(--red) !important;}
+.callout-green .callout-label{color:var(--green);}
+.framework-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.fw-card{background:white;border:1px solid #EAE5DC;padding:1.25rem;border-radius:8px;}
+.fw-card-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:6px;}
+.fw-card-title{font-family:'EB Garamond',serif;font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.fw-card-desc{font-size:0.9rem;color:var(--mid);line-height:1.6;}
+.acro-grid{display:flex;flex-direction:column;gap:0;margin:1.5rem 0;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;}
+.acro-row{display:grid;grid-template-columns:52px 1fr;gap:0;border-bottom:1px solid #EAE5DC;}
+.acro-row:last-child{border-bottom:none;}
+.acro-letter{background:var(--navy);color:var(--gold);font-family:'EB Garamond',serif;font-size:1.8rem;font-weight:800;display:flex;align-items:center;justify-content:center;}
+.acro-content{padding:0.9rem 1.1rem;background:white;}
+.acro-word{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:3px;}
+.acro-desc{font-size:0.85rem;color:var(--mid);line-height:1.55;}
+.sbar-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold3);margin-bottom:0.65rem;margin-top:1.5rem;display:block;}
+.sbar-label:first-child{margin-top:0;}
+.sbar-card{background:white;border:1px solid #EAE5DC;border-radius:8px;padding:0.9rem 1rem;margin-bottom:8px;font-size:0.9rem;color:var(--mid);line-height:1.55;}
+.sbar-card strong{color:var(--navy);display:block;margin-bottom:3px;font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;}
+.lesson-nav-bar{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 3rem;border-top:3px solid var(--gold);background:var(--navy);gap:1rem;}
+.lnb-btn{background:rgba(255,255,255,0.08);border:2px solid rgba(201,168,76,0.4);padding:14px 28px;font-family:'Cinzel',serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border-radius:6px;color:var(--cream);transition:all 0.2s;white-space:nowrap;}
+.lnb-btn:hover{background:rgba(201,168,76,0.15);border-color:var(--gold);color:var(--gold);}
+.lnb-btn:disabled,.lnb-btn[disabled]{opacity:0.25;cursor:not-allowed;background:transparent;}
+.lnb-btn:disabled:hover,.lnb-btn[disabled]:hover{background:transparent;border-color:rgba(201,168,76,0.4);color:var(--cream);}
+.lnb-btn.primary{background:var(--gold);color:var(--navy);border-color:var(--gold);font-weight:800;}
+.lnb-btn.primary:hover{background:#C9A84C;border-color:#C9A84C;}
+.lnb-info{text-align:center;flex:1;}
+.lnb-name{font-family:'EB Garamond',serif;font-size:1rem;font-weight:700;color:var(--cream);}
+.lnb-num{font-size:0.85rem;color:var(--gold);font-family:'Cinzel',serif;letter-spacing:1px;}
+/* ICS-specific styles */
+.dim-cards{display:flex;flex-direction:column;gap:0.75rem;margin:1.5rem 0;}
+.dim-card{background:white;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;display:grid;grid-template-columns:64px 1fr;}
+.dim-card.dim-highlight{border-color:var(--gold);border-width:2px;}
+.dim-num-col{background:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1rem 0.5rem;gap:4px;}
+.dim-card.dim-highlight .dim-num-col{background:var(--gold);}
+.dim-badge{font-family:'EB Garamond',serif;font-size:1.6rem;font-weight:800;color:var(--gold);line-height:1;}
+.dim-card.dim-highlight .dim-badge{color:var(--navy);}
+.dim-body{padding:1rem 1.25rem;}
+.dim-title{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:5px;}
+.dim-card.dim-highlight .dim-title{color:var(--gold3);}
+.dim-desc{font-size:0.85rem;color:var(--mid);line-height:1.6;}
+.dim-scored{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold3);margin-top:6px;display:block;}
+.dim-card.dim-highlight .dim-scored{color:var(--gold3);}
+/* Legacy ics styles kept for ICS structure table in lesson 2 */
+.ics-structure{background:white;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;margin:1.5rem 0;}
+.ics-level{padding:0.9rem 1.25rem;border-bottom:1px solid #EAE5DC;display:grid;grid-template-columns:150px 1fr;gap:1rem;align-items:start;}
+.ics-level:last-child{border-bottom:none;}
+.ics-level-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:white;background:var(--navy);padding:4px 8px;border-radius:3px;display:inline-block;margin-top:2px;}
+.ics-level-desc{font-size:0.85rem;color:#2A3D50;line-height:1.6;}
+.ics-level-desc strong{color:var(--navy);font-family:'Cinzel',serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;}
+.ics-level.highlight{background:rgba(201,168,76,0.08);border-left:3px solid var(--gold);}
+.ics-level.highlight .ics-level-label{background:var(--gold);color:var(--navy);}
+.sizeup-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.75rem;margin:1.5rem 0;}
+.su-card{background:white;border:1px solid #EAE5DC;border-radius:8px;padding:1.1rem;text-align:center;}
+.su-num{font-family:'EB Garamond',serif;font-size:2rem;font-weight:800;color:var(--gold);line-height:1;}
+.su-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);font-weight:700;margin:5px 0 6px;}
+.su-desc{font-size:0.9rem;color:var(--mid);line-height:1.55;}
+.command-script{background:var(--navy);border-radius:8px;padding:1.5rem 1.75rem;margin:1.5rem 0;}
+.cs-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:block;}
+.cs-line{display:grid;grid-template-columns:100px 1fr;gap:0.75rem;margin-bottom:0.75rem;align-items:start;}
+.cs-line:last-child{margin-bottom:0;}
+.cs-role{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(201,168,76,0.6);padding-top:2px;}
+.cs-text{font-size:0.88rem;color:var(--cream);line-height:1.6;font-style:italic;}
+.score-compare{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.sc-card{padding:1.25rem;border-radius:8px;}
+.sc-card.miss{background:#FFF0F0;border:1px solid #F0C0C0;}
+.sc-card.hit{background:var(--green-light);border:1px solid #9DCCA8;}
+.sc-title{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;margin-bottom:0.75rem;}
+.sc-card.miss .sc-title{color:var(--red);}
+.sc-card.hit .sc-title{color:var(--green);}
+.sc-body{font-size:0.9rem;line-height:1.6;}
+.sc-card.miss .sc-body{color:#6B4F10;}
+.sc-card.hit .sc-body{color:#1A3A5C;}
+@media(max-width:900px){.lesson-container{grid-template-columns:1fr;}.lesson-sidebar{position:relative;height:auto;}.lesson-main{padding:2rem 1.5rem;}.lesson-nav-bar{padding:1rem 1.5rem;}.sizeup-grid{grid-template-columns:1fr 1fr;}.score-compare{grid-template-columns:1fr;}}
+
+.anchor-quote{background:var(--navy);border-left:6px solid var(--gold);padding:2rem 2.5rem;margin:2.5rem 0;position:relative;}
+.anchor-quote::before{content:'"';position:absolute;top:-0.5rem;left:1.5rem;font-family:'EB Garamond',serif;font-size:5rem;color:var(--gold);opacity:0.15;line-height:1;}
+.aq-text{font-family:'EB Garamond',serif;font-size:1.55rem;font-weight:600;font-style:italic;color:var(--gold) !important;line-height:1.5;margin-bottom:0.75rem;}
+.aq-attr{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:2.5px;text-transform:uppercase;color:#8FA8C0 !important;}
+.ratio-wrap{margin:2rem 0;}
+.ratio-bar{display:flex;height:52px;border-radius:6px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);}
+.ratio-seg{display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;font-weight:700;padding:0 4px;text-align:center;line-height:1.3;}
+.ratio-seg.sup{background:#2A5FBF;color:white;}
+.ratio-seg.mgmt{background:#C9A84C;color:#0C2340;}
+.ratio-seg.lead{background:#1A5C3A;color:white;}
+.ratio-legend{display:flex;gap:1.5rem;margin-top:10px;flex-wrap:wrap;}
+.ratio-legend-item{display:flex;align-items:center;gap:6px;font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);}
+.ratio-legend-dot{width:10px;height:10px;border-radius:2px;flex-shrink:0;}
+.gate-hero{background:var(--navy);padding:5rem 3rem 4rem;margin-top:64px;position:relative;overflow:hidden;border-bottom:3px solid var(--gold);}
+.gate-hero::after{content:'';position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(180deg,var(--navy2),var(--gold));}
+.gate-hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 60px,rgba(201,168,76,0.015) 60px,rgba(201,168,76,0.015) 61px);}
+.gate-inner{max-width:900px;position:relative;z-index:2;}
+.gate-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;opacity:0.8;}
+.gate-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#C06030;background:rgba(139,50,20,0.15);border:1px solid rgba(139,50,20,0.35);display:inline-block;padding:5px 14px;border-radius:3px;margin-bottom:1.5rem;}
+.gate-title{font-family:'EB Garamond',serif;font-size:clamp(2.4rem,4vw,3.8rem);font-weight:800;color:var(--cream);line-height:1.05;margin-bottom:0.6rem;}
+.gate-title em{font-style:italic;color:var(--gold);}
+.gate-sub{font-size:1.05rem;color:#8FA8C0;max-width:720px;line-height:1.7;margin-bottom:2rem;}
+.gate-thread{background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);border-left:4px solid var(--gold);padding:1rem 1.5rem;max-width:750px;}
+.gate-thread-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+.gate-thread-text{font-size:0.92rem;color:var(--cream);line-height:1.65;}
+.gate-content{max-width:900px;margin:0 auto;padding:3.5rem 3rem 5rem;}
+.gate-content h2{font-family:'EB Garamond',serif;font-size:1.75rem;font-weight:700;color:var(--navy);margin:3rem 0 0.9rem;padding-bottom:0.5rem;border-bottom:2px solid var(--light);}
+.gate-content h3{font-family:'EB Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--navy2);margin:2rem 0 0.5rem;}
+.gate-content p{color:#2A3D50;line-height:1.82;margin-bottom:1.25rem;font-size:1rem;}
+.gate-content ul{margin:0 0 1.25rem 1.5rem;color:#2A3D50;}.gate-content .anchor-quote,.gate-content .scope-col,.gate-content .callout-navy,.gate-content .callout-gold,.gate-content .callout-red{color:inherit;}
+.gate-content li{margin-bottom:0.5rem;line-height:1.7;}
+.gate-content strong{color:var(--navy);font-weight:600;}
+.scope-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.scope-col{background:var(--navy);border-radius:8px;padding:1.25rem 1.5rem;}
+.scope-col h4{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:2px;text-transform:uppercase;margin-bottom:0.75rem;padding-bottom:0.5rem;border-bottom:1px solid rgba(255,255,255,0.1);}
+.scope-col.yes h4{color:#3DBFBF !important;}
+.scope-col.no h4{color:#C06030 !important;}
+.scope-col ul{margin:0 0 0 1rem;padding:0;}
+.scope-col li{font-size:0.87rem;line-height:1.65;color:#8FA8C0 !important;margin-bottom:5px;}
+.gate-cta{background:linear-gradient(135deg,var(--navy2),var(--navy));border:2px solid var(--gold);border-radius:8px;padding:2.5rem;text-align:center;margin:3.5rem 0 0;}
+.gate-cta-quote{font-family:'EB Garamond',serif;font-size:1.25rem;font-style:italic;color:var(--cream) !important;margin-bottom:0.5rem;}
+.gate-cta-attr{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold) !important;}
+.callout{padding:1.4rem 1.6rem;margin:2rem 0;}
+.callout-gold{background:var(--gold2);border-left:4px solid var(--gold);}
+.callout-gold p{color:var(--gold3) !important;font-size:0.97rem;line-height:1.75;}
+.callout-navy{background:var(--navy);border-left:4px solid var(--gold);}
+.callout-navy p{color:#8FA8C0 !important;font-size:0.95rem;line-height:1.75;}
+.callout-red{background:var(--red-light);border-left:4px solid var(--red);}
+.callout-red p{color:#6B4F10 !important;font-size:0.97rem;line-height:1.75;}
+.callout-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:0.5rem;display:block;}
+.callout-gold .callout-label{color:var(--gold3) !important;}
+.callout-navy .callout-label{color:var(--gold) !important;}
+.callout-red .callout-label{color:var(--red) !important;}
+@media(max-width:900px){.gate-content{padding:2rem 1.5rem;}.gate-hero{padding:3rem 1.5rem 2.5rem;}.scope-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav class="top-nav">
+  <div class="nav-left">
+    <div class="nav-brand">The Promotional Standard<span>Promotion Gate · Captain Track</span></div>
+  </div>
+</nav>
+<div class="gate-hero">
+  <div class="gate-inner">
+    <div class="gate-eyebrow">The Promotional Standard · Promotion Gate</div>
+    <div class="gate-label">Before You Promote — Captain</div>
+    <h1 class="gate-title">Before You Promote:<br><em>Captain</em></h1>
+    <p class="gate-sub">The Captain is the first rank in the fire service where management becomes the primary function and supervision becomes secondary. Most candidates miss this. This gate ensures you don’t walk in and demonstrate excellent Lieutenant competency when the assessors are evaluating Captain-level thinking.</p>
+    <div class="gate-thread">
+      <div class="gate-thread-label">The Anchor Principle</div>
+      <div class="gate-thread-text">Interview for the job you want, not the job you have.</div>
+    </div>
+  </div>
+</div>
+<div class="gate-content">
+
+<div class="anchor-quote"><p class="aq-text">Interview for the job you want, not the job you have.</p><p class="aq-attr">TPS Coaching — The Promotional Standard</p></div>
+
+<h2>Part 1 — Do You Know What a Captain Actually Does?</h2>
+<p>Every Captain candidate in a competitive promotional process has served under a Captain. Some have served under excellent ones. Most have a mental model of the rank built from what they observed — the Captain as the person who runs the station, handles problems, goes to meetings, and signs off on things. That mental model is incomplete for an assessment center. You need the operational definition: what the Captain owns, what the Captain doesn’t, and where the scope of this rank lives in the chain.</p>
+
+<div style="background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);border-radius:8px;padding:1.5rem 2rem;margin:2rem 0;">
+<span style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold3);display:block;margin-bottom:1rem;">Captain — Fire Officer II (NFPA 1021) — The Position at a Glance</span>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.25rem;">
+  <div><div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);margin-bottom:4px;">Span of Control</div><div style="font-size:0.95rem;color:var(--navy);font-weight:600;">10–30 personnel<br><span style="font-weight:400;font-size:0.85rem;color:var(--mid);">Your station or shift</span></div></div>
+  <div><div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);margin-bottom:4px;">You Supervise</div><div style="font-size:0.95rem;color:var(--navy);font-weight:600;">Lieutenants<br><span style="font-weight:400;font-size:0.85rem;color:var(--mid);">You manage supervisors now</span></div></div>
+  <div><div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);margin-bottom:4px;">You Report To</div><div style="font-size:0.95rem;color:var(--navy);font-weight:600;">Battalion Chief<br><span style="font-weight:400;font-size:0.85rem;color:var(--mid);">Station-level accountability</span></div></div>
+</div>
+</div>
+
+<h3>What a Captain Does</h3>
+<div class="scope-grid"><div class="scope-col yes"><h4>This rank does</h4><ul><li>Manages the station as an organizational unit</li><li>Supervises and evaluates Lieutenants</li><li>Conducts formal annual performance evaluations</li><li>Manages station budget — supplies, equipment, training resources</li><li>Develops and implements station training programs</li><li>Handles first-level formal discipline (verbal and written reprimands)</li><li>Coordinates with community stakeholders, business owners, code officials</li><li>Serves on department committees and projects</li><li>Manages crew scheduling and staffing at the station level</li><li>Commands multi-company incidents until relieved by BC</li><li>Ensures SOG compliance across all companies at the station</li></ul></div><div class="scope-col no"><h4>This rank does not</h4><ul><li>Set battalion-level or department-wide policy</li><li>Make organizational budget decisions</li><li>Handle grievances beyond the first formal step (typically)</li><li>Command routine battalion-level incidents</li><li>Manage department-wide programs unilaterally</li><li>Supervise individual firefighters directly over the Lieutenant's head</li><li>Make battalion staffing decisions</li></ul></div></div>
+
+<div class="callout callout-gold"><span class="callout-label">The Most Significant Transition in the Fire Service Leadership Ladder</span><p>The Captain is the first rank that directly supervises other supervisors. This changes everything about how accountability works. When a Lieutenant fails to supervise a crew member, the Captain has a crew problem. When a Captain fails to supervise a Lieutenant, the Captain has allowed a failure of leadership to propagate through the chain. Managing a supervisor requires a fundamentally different skillset than managing a firefighter — and assessment centers for Captain test specifically whether the candidate understands this distinction.</p></div>
+
+<h2>Part 2 — Supervision, Management, and Leadership at the Captain Level</h2>
+<p>The ratio shifts significantly from Lieutenant to Captain. The Captain’s primary function is management — not supervision. This is the shift most candidates miss. They study how to be better supervisors and walk into a Captain oral board demonstrating excellent supervisory instincts at the crew level. Assessors note the competence and score them a 3/5 because the question was asking for management, not supervision.</p>
+
+<div class="ratio-wrap">
+<div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:8px;">Captain — Supervision / Management / Leadership Ratio</div>
+<div class="ratio-bar">
+  <div class="ratio-seg sup" style="flex:25;">25%<br>Supervision</div>
+  <div class="ratio-seg mgmt" style="flex:55;">55%<br>Management</div>
+  <div class="ratio-seg lead" style="flex:20;">20%<br>Leadership</div>
+</div>
+<div class="ratio-legend">
+  <div class="ratio-legend-item"><div class="ratio-legend-dot" style="background:#2A5FBF;"></div>Supervision — direct observation and correction of individual behavior</div>
+  <div class="ratio-legend-item"><div class="ratio-legend-dot" style="background:#C9A84C;"></div>Management — systems, resources, time, processes</div>
+  <div class="ratio-legend-item"><div class="ratio-legend-dot" style="background:#1A5C3A;"></div>Leadership — culture, direction, development, identity</div>
+</div>
+</div>
+
+<h3>Supervision — Reduced, But Not Eliminated</h3>
+<p>The Captain still supervises — but they supervise Lieutenants, not firefighters. The Captain who is counseling a firefighter directly (over the Lieutenant’s head) is either solving a problem the Lieutenant should be solving or undermining the Lieutenant’s authority. Both are management failures. Direct supervision of firefighters belongs to the Lieutenant. The Captain’s supervisory function is to ensure the Lieutenants are supervising effectively.</p>
+
+<h3>Management — Your Primary Function</h3>
+<p>Station management is the Captain’s defining function. This means: the training program is designed, scheduled, and documented. The budget is tracked and spent against real needs. The equipment inventory is current. The scheduling produces adequate staffing. The formal evaluations are completed accurately and on time. The performance issues that reach the Captain’s desk are handled within policy. The Captain who manages the station well is almost invisible to the Battalion Chief — because nothing breaks, nothing escalates, and the station runs.</p>
+<p>What makes a Captain score 5/5 in management scenarios: specificity. Not "I would address the budget issue" but "I would review the current quarter spend against the allotment, identify the variance, and bring a line-item recommendation to the BC by the next shift." Specific. Actionable. Within scope.</p>
+
+<h3>Leadership — Emerging Seriously at This Level</h3>
+<p>The Captain begins to genuinely lead — not just manage and supervise. Station culture is set at the Captain level. The Captain who models intellectual honesty, who develops Lieutenants deliberately, who represents their crews’ interests up the chain, and who builds a station identity that personnel want to belong to is leading. This is where the "lead hearts" dimension of the framework becomes operationally significant for the first time.</p>
+
+<div class="callout callout-red"><span class="callout-label">The Assessment Center Trap — Presenting as a Super-Lieutenant</span><p>The most common Captain candidate failure: they demonstrate excellent Lieutenant-level supervisory competence and almost no Captain-level management thinking. They talk about how they would handle the crew member. They describe the counseling conversation. They focus on the individual. Assessors see a skilled supervisor who is not yet thinking at station scale. The 3/5 note often reads: "candidate addressed crew-level concern but did not demonstrate station management perspective or supervisory accountability for the Lieutenant." Shift your default from "what would I do with this person" to "what would I put in place as a system, and how do I hold the Lieutenant accountable for executing it."</p></div>
+
+<div class="anchor-quote"><p class="aq-text">You supervise people. You manage time and resources. You lead hearts.</p><p class="aq-attr">TPS Coaching — The Promotional Standard</p></div>
+
+<div class="gate-cta">
+  <p class="gate-cta-quote">The Captain who says “my crew” in a Captain oral board has already told the panel they’re still thinking like a Lieutenant. The one who says “my station” and means it has told them they’re ready for the rank.</p>
+  <span class="gate-cta-attr">Begin the Captain Track — Chapter 22</span>
+</div>
+
+</div>
+</body>
+</html>

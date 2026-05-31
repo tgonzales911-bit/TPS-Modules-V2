@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Chapter 40 — The Subordinate Counseling Exercise | The Promotional Standard</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Crimson+Pro:wght@300;400;500;600&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --navy:#0C2340;--navy2:#1A3A5C;--gold:#C9A84C;--gold2:#F5F0E8;--gold3:#6B4F10;
+  --cream:#F5F0E8;--offwhite:#F5F0E8;--light:#EAE5DC;--mid:#2A3D50;--gray:#8FA8C0;
+  --red:#B22222;--red-light:#FFF0F0;--green:#1A5C3A;--green-light:#EAF3DE;
+  --teal:#006B6B;--teal-light:#E0F4F4;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:var(--navy);font-size:18px;line-height:1.8;}
+.top-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(12,35,64,0.98);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,168,76,0.2);height:64px;display:flex;align-items:center;padding:0 2rem;gap:1rem;}
+.nav-left{display:flex;align-items:center;gap:12px;flex:1;}
+.nav-brand{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;color:var(--cream);line-height:1.3;}
+.nav-brand span{display:block;font-size:8px;color:var(--gold);letter-spacing:2px;}
+.nav-pills{display:flex;gap:5px;flex:2;justify-content:center;overflow-x:auto;}
+.nav-pill{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#8FA8C0;padding:6px 11px;border-radius:20px;cursor:pointer;transition:all 0.2s;border:none;background:transparent;white-space:nowrap;}
+.nav-pill:hover{color:var(--cream);background:rgba(255,255,255,0.05);}
+.nav-pill.active{color:var(--gold);background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.25);}
+.progress-bar{position:fixed;top:64px;left:0;height:3px;background:linear-gradient(90deg,var(--navy2),var(--gold));z-index:199;width:0%;transition:width 0.3s;}
+.lesson-view{display:none;}.lesson-view.active{display:block;}
+.module-hero{background:var(--navy);padding:4.5rem 3rem 3.5rem;margin-top:64px;position:relative;overflow:hidden;border-bottom:3px solid var(--gold);}
+.module-hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 60px,rgba(201,168,76,0.015) 60px,rgba(201,168,76,0.015) 61px);}
+.module-hero::after{content:'';position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(180deg,var(--navy2),var(--gold));}
+.mh-inner{max-width:900px;position:relative;z-index:2;}
+.mh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.mh-title{font-family:'EB Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:800;color:var(--cream);line-height:1.1;margin-bottom:0.75rem;}
+.mh-title em{font-style:italic;color:var(--gold);}
+.mh-sub{font-size:1.05rem;color:#8FA8C0;max-width:700px;line-height:1.7;margin-bottom:2rem;}
+.mh-badges{display:flex;gap:10px;margin-bottom:1.5rem;flex-wrap:wrap;}
+.mh-badge{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border-radius:3px;}
+.badge-track{background:rgba(201,168,76,0.15);color:var(--gold);border:1px solid rgba(201,168,76,0.3);}
+.badge-nfpa{background:rgba(100,160,220,0.15);color:#8FA8C0;border:1px solid rgba(100,160,220,0.3);}
+.badge-new{background:rgba(50,180,100,0.15);color:#3AB464;border:1px solid rgba(50,180,100,0.3);}
+.mh-thread{background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);border-left:3px solid var(--gold);padding:1rem 1.5rem;margin-bottom:2rem;max-width:700px;}
+.mh-thread-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+.mh-thread-text{font-size:0.92rem;color:var(--cream);line-height:1.65;}
+.mh-lesson-nav{display:flex;gap:8px;flex-wrap:wrap;}
+.mh-lesson-btn{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:8px 14px;border-radius:6px;cursor:pointer;transition:all 0.2s;border:1px solid rgba(201,168,76,0.25);background:transparent;color:#8FA8C0;}
+.mh-lesson-btn:hover{background:rgba(255,255,255,0.05);color:var(--cream);}
+.mh-lesson-btn.active{background:rgba(201,168,76,0.12);color:var(--gold);border-color:rgba(201,168,76,0.4);}
+.lesson-container{display:grid;grid-template-columns:1fr 310px;gap:0;}
+.lesson-main{padding:3rem 3.5rem;border-right:1px solid var(--light);}
+.lesson-sidebar{padding:2rem 1.75rem;background:var(--offwhite);position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;}
+.lesson-header{margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:2px solid var(--light);}
+.lh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold3);margin-bottom:0.6rem;}
+.lh-title{font-family:'EB Garamond',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;color:var(--navy);line-height:1.15;margin-bottom:0.6rem;}
+.lh-title em{font-style:italic;color:var(--gold);}
+.lh-meta{display:flex;gap:1.5rem;flex-wrap:wrap;}
+.lh-meta-item{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);}
+.lesson-main h2{font-family:'EB Garamond',serif;font-size:1.7rem;font-weight:700;color:var(--navy);margin:3rem 0 0.9rem;padding-bottom:0.5rem;border-bottom:2px solid var(--light);}
+.lesson-main h3{font-family:'EB Garamond',serif;font-size:1.25rem;font-weight:600;color:var(--navy);margin:2.25rem 0 0.65rem;}
+.lesson-main p{margin-bottom:1.25rem;color:#2A3D50;line-height:1.82;}
+.lesson-main ul,.lesson-main ol{margin:0 0 1.25rem 1.5rem;color:#2A3D50;}
+.lesson-main li{margin-bottom:0.6rem;line-height:1.72;}
+.lesson-main strong{color:var(--navy);font-weight:600;}
+.callout{padding:1.4rem 1.6rem;margin:2rem 0;}
+.callout-gold{background:var(--gold2);border-left:3px solid var(--gold);}.callout-gold p{color:var(--gold3);font-size:0.97rem;line-height:1.75;}
+.callout-navy{background:var(--navy);border-left:3px solid var(--gold);}.callout-navy p{color:#8FA8C0;font-size:0.95rem;line-height:1.75;}
+.callout-red{background:var(--red-light);border-left:4px solid var(--red);}.callout-red p{color:#6B4F10;font-size:0.97rem;line-height:1.75;}
+.callout-green{background:var(--green-light);border-left:4px solid var(--green);}.callout-green p{color:#1A3A5C;font-size:0.97rem;line-height:1.75;}
+.callout-teal{background:var(--teal-light);border-left:4px solid var(--teal);}.callout-teal p{color:#003A3A;font-size:0.97rem;line-height:1.75;}
+.callout-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:0.5rem;display:block;}
+.callout-gold .callout-label{color:var(--gold3);}
+.callout-navy .callout-label{color:var(--gold);}
+.callout-red .callout-label{color:var(--red);}
+.callout-green .callout-label{color:var(--green);}
+.callout-teal .callout-label{color:var(--teal);}
+.framework-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.fw-card{background:white;border:1px solid #EAE5DC;padding:1.25rem;border-radius:8px;}
+.fw-card-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:6px;}
+.fw-card-title{font-family:'EB Garamond',serif;font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.fw-card-desc{font-size:0.9rem;color:var(--mid);line-height:1.6;}
+.acro-grid{display:flex;flex-direction:column;gap:0;margin:1.5rem 0;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;}
+.acro-row{display:grid;grid-template-columns:52px 1fr;gap:0;border-bottom:1px solid #EAE5DC;}
+.acro-row:last-child{border-bottom:none;}
+.acro-letter{background:var(--navy);color:var(--gold);font-family:'EB Garamond',serif;font-size:1.8rem;font-weight:800;display:flex;align-items:center;justify-content:center;}
+.acro-content{padding:0.9rem 1.1rem;background:white;}
+.acro-word{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:3px;}
+.acro-desc{font-size:0.85rem;color:var(--mid);line-height:1.55;}
+.sbar-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:0.65rem;margin-top:1.5rem;display:block;}
+.sbar-label:first-child{margin-top:0;}
+.sbar-card{background:white;border:1px solid #EAE5DC;border-radius:8px;padding:0.9rem 1rem;margin-bottom:8px;font-size:0.9rem;color:var(--mid);line-height:1.55;}
+.sbar-card strong{color:var(--navy);display:block;margin-bottom:3px;font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;}
+/* Nav bar — full M25/M27 standard */
+.lesson-nav-bar{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 3rem;border-top:3px solid var(--gold);background:var(--navy);gap:1rem;}
+.lnb-btn{background:rgba(255,255,255,0.08);border:2px solid rgba(201,168,76,0.4);padding:14px 28px;font-family:'Cinzel',serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border-radius:6px;color:var(--cream);transition:all 0.2s;white-space:nowrap;}
+.lnb-btn:hover{background:rgba(201,168,76,0.15);border-color:var(--gold);color:var(--gold);}
+.lnb-btn:disabled,.lnb-btn[disabled]{opacity:0.25;cursor:not-allowed;background:transparent;}
+.lnb-btn:disabled:hover,.lnb-btn[disabled]:hover{background:transparent;border-color:rgba(201,168,76,0.4);color:var(--cream);}
+.lnb-btn.primary{background:var(--gold);color:var(--navy);border-color:var(--gold);font-weight:800;}
+.lnb-btn.primary:hover{background:#C9A84C;border-color:#C9A84C;}
+.lnb-info{text-align:center;flex:1;}
+.lnb-name{font-family:'EB Garamond',serif;font-size:1rem;font-weight:700;color:var(--cream);}
+.lnb-num{font-size:0.85rem;color:var(--gold);font-family:'Cinzel',serif;letter-spacing:1px;}
+/* Counseling-specific: dialogue script */
+.dialogue{background:white;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;margin:1.5rem 0;}
+.dl-header{background:var(--navy);padding:0.9rem 1.5rem;}
+.dl-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);}
+.dl-line{display:grid;grid-template-columns:110px 1fr;gap:0.75rem;padding:0.85rem 1.5rem;border-bottom:1px solid var(--light);align-items:start;}
+.dl-line:last-child{border-bottom:none;}
+.dl-speaker{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;padding-top:2px;}
+.dl-speaker.officer{color:var(--navy);}
+.dl-speaker.role{color:var(--red);}
+.dl-speaker.note{color:var(--gold3);}
+.dl-text{font-size:0.87rem;color:#2A3D50;line-height:1.65;}
+.dl-text em{color:var(--gold3);font-style:italic;}
+/* Score compare */
+.score-compare{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.sc-card{padding:1.25rem;border-radius:8px;}
+.sc-card.miss{background:var(--red-light);border:1px solid #F0C0C0;}
+.sc-card.hit{background:var(--green-light);border:1px solid #9DCCA8;}
+.sc-title{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:0.75rem;}
+.sc-card.miss .sc-title{color:var(--red);}
+.sc-card.hit .sc-title{color:var(--green);}
+.sc-body{font-size:0.9rem;line-height:1.6;}
+.sc-card.miss .sc-body{color:#6B4F10;}
+.sc-card.hit .sc-body{color:#1A3A5C;}
+/* Phase cards */
+.phase-cards{display:flex;flex-direction:column;gap:0.75rem;margin:1.5rem 0;}
+.phase-card{background:white;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;display:grid;grid-template-columns:64px 1fr;}
+.phase-num-col{background:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1rem 0.5rem;gap:4px;}
+.phase-badge{font-family:'EB Garamond',serif;font-size:1.5rem;font-weight:800;color:var(--gold);line-height:1;}
+.phase-body{padding:1rem 1.25rem;}
+.phase-title{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:4px;}
+.phase-desc{font-size:0.9rem;color:var(--mid);line-height:1.58;}
+.phase-time{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold3);margin-top:5px;display:block;font-weight:700;}
+@media(max-width:900px){.lesson-container{grid-template-columns:1fr;}.lesson-sidebar{position:relative;height:auto;}.lesson-main{padding:2rem 1.5rem;}.lesson-nav-bar{padding:1rem 1.5rem;flex-wrap:wrap;}.score-compare{grid-template-columns:1fr;}.framework-grid{grid-template-columns:1fr;}.dl-line{grid-template-columns:80px 1fr;}}
+
+/* OB CARD */
+.ob-card{background:var(--navy);margin:2rem 0;overflow:hidden;}
+.ob-header{padding:0.85rem 1.5rem;background:rgba(201,168,76,0.08);border-bottom:1px solid rgba(201,168,76,0.15);}
+.ob-label{font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);}
+.ob-body{padding:1.25rem 1.5rem;}
+.ob-q{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;}
+.ob-q-tag{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);background:rgba(201,168,76,0.1);padding:4px 10px;border-radius:3px;white-space:nowrap;}
+.ob-q-text{font-family:'EB Garamond',serif;font-size:1.08rem;font-weight:600;color:var(--cream);line-height:1.5;margin-bottom:8px;}
+.ob-note{font-size:0.88rem;color:#8FA8C0;line-height:1.6;font-style:italic;}
+/* TAKEAWAYS */
+.takeaways{background:var(--navy);padding:2.25rem;margin:3rem 0 0;border-top:3px solid var(--gold);}
+.tk-lbl{font-family:'Cinzel',serif;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.tk-item{color:#8FA8C0;font-size:0.92rem;line-height:1.7;padding:0.5rem 0 0.5rem 1.25rem;border-left:2px solid rgba(201,168,76,0.2);margin-bottom:0.5rem;}
+
+
+.lead-nav{background:var(--navy);border-radius:8px;padding:14px 16px;margin-bottom:16px;border:1px solid rgba(201,168,76,0.2)}
+.lead-nav-header{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.lead-nav-row{display:grid;grid-template-columns:20px 1fr;gap:6px;margin-bottom:6px;align-items:start}
+.lead-nav-letter{font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:var(--gold)}
+.lead-nav-content{}
+.lead-nav-name{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:2px}
+.lead-nav-app{font-size:11px;color:#8FA8C0;line-height:1.5}
+
+.lf-wrap{margin:2.5rem 0 1.5rem;border:2px solid var(--gold);border-radius:10px;overflow:hidden}
+.lf-header{background:var(--navy);padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
+.lf-title{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+.lf-dots{display:flex;gap:6px}
+.lf-dot{width:8px;height:8px;border-radius:50%;background:rgba(201,168,76,0.25);transition:all 0.3s}
+.lf-dot.active{background:var(--gold);transform:scale(1.3)}
+.lf-dot.done{background:var(--gold)}
+.lf-step{display:none;padding:20px}
+.lf-step.active{display:block}
+.lf-step-num{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:6px}
+.lf-step-title{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:10px}
+.lf-chain{background:var(--navy);border-radius:6px;padding:14px 18px;margin:10px 0}
+.lf-chain-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.lf-chain-text{font-size:13px;color:#8FA8C0;line-height:1.6}
+.lf-chain-close{font-size:12px;color:var(--cream);margin-top:6px;font-style:italic}
+.lf-btn{background:var(--navy);color:var(--gold);border:2px solid var(--gold);padding:12px 24px;border-radius:6px;font-family:'Cinzel',serif;font-size:12px;letter-spacing:1.5px;font-weight:600;cursor:pointer;margin-top:12px;transition:all 0.2s;display:inline-block}
+.lf-btn:hover{background:var(--gold);color:var(--navy)}
+.lf-timer{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:var(--gold);padding:6px 14px;border-radius:4px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:1px;margin-top:10px}
+.lesson-main.ft>p{display:none!important}.lesson-main.ft>.callout{display:none!important}.ft-toggle{display:flex;align-items:center;gap:10px;padding:10px 16px;background:var(--navy);border-radius:6px;cursor:pointer;border:1px solid rgba(201,168,76,0.25)}.ft-toggle-switch{width:36px;height:20px;background:rgba(201,168,76,0.2);border-radius:10px;position:relative;transition:background .2s}.ft-toggle-switch.on{background:var(--gold)}.ft-toggle-knob{width:14px;height:14px;background:#fff;border-radius:50%;position:absolute;top:3px;left:3px;transition:left .2s}.ft-toggle-switch.on .ft-toggle-knob{left:19px}.ft-toggle-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}.ft-toggle-desc{font-size:11px;color:var(--mid)}.lesson-main.ft-on>p,.lesson-main.ft-on>.callout,.lesson-main.ft-on h3{display:none!important}.lesson-main.ft-on .ob-card,.lesson-main.ft-on .lf-wrap,.lesson-main.ft-on .lead-nav,.lesson-main.ft-on h2{display:block!important}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <div class="nav-left">
+    <div class="nav-brand">The Promotional Standard<span>Universal · Chapter 40</span></div>
+  </div>
+  <div class="nav-pills">
+    <button class="nav-pill active" onclick="showLesson(0)">What It Is</button>
+    <button class="nav-pill" onclick="showLesson(1)">The First 60 Seconds</button>
+    <button class="nav-pill" onclick="showLesson(2)">SBI Feedback Framework</button>
+    <button class="nav-pill" onclick="showLesson(3)">Managing Resistance</button>
+    <button class="nav-pill" onclick="showLesson(4)">Five Scenario Types</button>
+    <button class="nav-pill" onclick="showLesson(5)">LEAD Applied</button>
+  </div>
+</nav>
+<div class="progress-bar" id="prog"></div>
+
+<div class="module-hero">
+  <div class="mh-inner">
+    <div class="mh-eyebrow">Chapter 40 · Universal · All Ranks</div>
+    <h1 class="mh-title">The Subordinate<br><em>Counseling Exercise</em></h1>
+    <p class="mh-sub">The counseling exercise is the most interpersonally demanding component of any assessment center — because it is not hypothetical. A role player is sitting across from you. They will respond to what you actually say, push back on how you say it, and create the kind of real-time pressure that no oral board question can replicate. This module gives you the structure, the language, and the real-time discipline to lead a counseling session that assessors score as Above Standard.</p>
+    <div class="mh-badges">
+      <span class="mh-badge badge-track">Universal — All Tracks</span>
+      <span class="mh-badge badge-nfpa">NFPA 1021 FO I–IV · HR JPRs</span>
+      <span class="mh-badge badge-new">New Module</span>
+    </div>
+    <div class="mh-thread">
+      <div class="mh-thread-label">Before You Begin</div>
+      <div class="mh-thread-text">Complete Module 4 (Supervisory Judgment), Module 5 (Interpersonal Skills), and Module 27 (Progressive Discipline) before this module. The counseling exercise applies all three simultaneously — your 3 U's diagnostic from M4, your bias awareness and CALM model from M5, and your documentation and due process knowledge from M27. This module is where those three converge in real-time performance.</div>
+    </div>
+    <div class="mh-lesson-nav">
+      <button class="mh-lesson-btn active" onclick="showLesson(0)">1. What It Is</button>
+      <button class="mh-lesson-btn" onclick="showLesson(1)">2. First 60 Seconds</button>
+      <button class="mh-lesson-btn" onclick="showLesson(2)">3. SBI Framework</button>
+      <button class="mh-lesson-btn" onclick="showLesson(3)">4. Managing Resistance</button>
+      <button class="mh-lesson-btn" onclick="showLesson(4)">5. Five Scenarios</button>
+      <button class="mh-lesson-btn" onclick="showLesson(5)">6. LEAD Applied</button>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- LESSON 1 -->
+<div class="lesson-view active" id="lesson-0">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 40 · Lesson 1 of 6</div>
+    <h1 class="lh-title">The Counseling Exercise —<br><em>What It Is and How It's Scored</em></h1>
+    <div class="lh-meta">
+      <span class="lh-meta-item">⏱ 15 min</span>
+      <span class="lh-meta-item">👥 Universal Exercise Type</span>
+    </div>
+  </div>
+
+  <p>The subordinate counseling exercise is fundamentally different from every other assessment center exercise — and most candidates underestimate that difference until they are in the room. In an oral board you deliver a response to a panel. In a written exercise you produce a document. In both cases, the assessors receive whatever you give them.</p>
+
+  <p>In a counseling exercise, the role player gives it back. What you say determines what happens next. The role player is trained to respond to your words, your tone, your structure — and your hesitation. Assessors are not watching what you know. They are watching what you do when another person pushes back on what you know.</p>
+
+  <h2>How the Counseling Exercise Works</h2>
+  <p>The format is consistent across departments and ranks. You receive a briefing document — typically 15 minutes of prep time — describing the situation, the subordinate's background, and the issue to be addressed. You then meet with the role player, who plays the subordinate, for 15–20 minutes. Assessors observe from a corner of the room or behind a one-way mirror, scoring every behavior in real time.</p>
+
+  <div class="phase-cards">
+    <div class="phase-card">
+      <div class="phase-num-col"><div class="phase-badge">1</div></div>
+      <div class="phase-body">
+        <div class="phase-title">Prep Time</div>
+        <div class="phase-desc">You receive the briefing document. Read it twice. Run your 3 U's diagnostic before you walk in the room. Know your SBI elements — what Situation, what Behavior, what Impact — before your first word. Plan your opening. Know where you want the session to end.</div>
+        <span class="phase-time">Typical: 15 minutes</span>
+      </div>
+    </div>
+    <div class="phase-card">
+      <div class="phase-num-col"><div class="phase-badge">2</div></div>
+      <div class="phase-body">
+        <div class="phase-title">Opening Phase</div>
+        <div class="phase-desc">Establish the context and purpose of the session. Not a preamble — a clear, direct statement of why you are meeting. This is the most scored phase of the exercise. How you open determines whether the role player cooperates or escalates, and whether assessors hear leadership or hesitation.</div>
+        <span class="phase-time">First 2–3 minutes — highest scoring density</span>
+      </div>
+    </div>
+    <div class="phase-card">
+      <div class="phase-num-col"><div class="phase-badge">3</div></div>
+      <div class="phase-body">
+        <div class="phase-title">Information Gathering</div>
+        <div class="phase-desc">Before presenting your assessment — gather. Ask open-ended questions. Listen to the role player's perspective. This is where assessors score whether you diagnose before you act. The candidate who gathers before concluding demonstrates 4/5 thinking. The candidate who arrives with a verdict and delivers it scores 3/5.</div>
+        <span class="phase-time">3–5 minutes</span>
+      </div>
+    </div>
+    <div class="phase-card">
+      <div class="phase-num-col"><div class="phase-badge">4</div></div>
+      <div class="phase-body">
+        <div class="phase-title">Feedback Delivery</div>
+        <div class="phase-desc">Using SBI — state the Situation, describe the specific Behavior, name the Impact. This is the core of the session. Specific. Behavioral. Non-judgmental in language. Directional in purpose. The feedback must be clear enough that the role player — and any assessor — knows exactly what behavior needs to change and why.</div>
+        <span class="phase-time">5–8 minutes — longest phase</span>
+      </div>
+    </div>
+    <div class="phase-card">
+      <div class="phase-num-col"><div class="phase-badge">5</div></div>
+      <div class="phase-body">
+        <div class="phase-title">Close and Commitment</div>
+        <div class="phase-desc">State the expected standard going forward. Establish a follow-up timeline. Invite the subordinate to ask questions. Close with your leadership principle — the T·C·H·O·E·D·S element that guides how you approach development conversations. Do not leave the room without a stated expectation and a named next step.</div>
+        <span class="phase-time">2–3 minutes — close matters as much as the open</span>
+      </div>
+    </div>
+  </div>
+
+  <h2>What Assessors Are Scoring</h2>
+  <div class="framework-grid">
+    <div class="fw-card">
+      <div class="fw-card-label">Scored Behavior 1</div>
+      <div class="fw-card-title">Opens with Purpose</div>
+      <div class="fw-card-desc">Does the candidate clearly state the purpose of the meeting within the first 60 seconds? Vague or tentative openings signal avoidance — a scored negative behavior at every rank.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Scored Behavior 2</div>
+      <div class="fw-card-title">Gathers Before Concluding</div>
+      <div class="fw-card-desc">Does the candidate ask questions and listen before delivering their assessment? Candidates who arrive with a verdict score lower than candidates who investigate even when they already know the answer.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Scored Behavior 3</div>
+      <div class="fw-card-title">Behavioral Specificity</div>
+      <div class="fw-card-desc">Is the feedback specific to observable behavior — or is it about character and attitude? "You have been arriving late on these three dates" scores above "you don't seem to care about the job."</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Scored Behavior 4</div>
+      <div class="fw-card-title">Manages Resistance</div>
+      <div class="fw-card-desc">Does the candidate maintain structure when the role player pushes back, deflects, or becomes emotional? Candidates who lose their framework under pressure demonstrate that the framework was not genuinely theirs.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Scored Behavior 5</div>
+      <div class="fw-card-title">Clear Close</div>
+      <div class="fw-card-desc">Does the session end with a stated expectation, a follow-up plan, and an invitation for questions? Sessions that drift to a close — or end awkwardly — lose points that the candidate earned earlier in the exercise.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Scored Behavior 6</div>
+      <div class="fw-card-title">Principle Close</div>
+      <div class="fw-card-desc">Does the candidate close with a named T·C·H·O·E·D·S element — not as a scripted phrase, but as a genuine statement of why this conversation matters to them as a leader? This is the separator.</div>
+    </div>
+  </div>
+
+  <div class="callout callout-gold">
+    <span class="callout-label">The Core Difference from an Oral Board</span>
+    <p>In an oral board you describe what you would do. In a counseling exercise you do it. The role player will not give you the cooperative, attentive response you rehearsed. They will deflect, minimize, get emotional, or go quiet at the worst moment. The discipline you are building in this module is not content knowledge — it is behavioral consistency under real-time interpersonal pressure. That is a different kind of preparation entirely.</p>
+  </div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="ft-toggle" onclick="toggleFT(this)" style="margin-bottom:16px;max-width:320px">
+<div class="ft-toggle-switch"><div class="ft-toggle-knob"></div></div>
+<div><div class="ft-toggle-label">Fast Track Mode</div><div class="ft-toggle-desc">Full lesson content</div></div>
+</div>
+
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Personnel Issues</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Four-P Opening → Five-Phase Counseling Arc → 3 U's Diagnosis → CALM Framework</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Open with Four-P → diagnose (3 U's) → develop the plan → close with Empathy and Commitment</div></div></div></div>
+
+  <span class="sbar-label">The Five Phases</span>
+  <div class="sbar-card"><strong>1 — Prep</strong>Read twice. Run 3 U's. Plan SBI elements. Know your close before you open.</div>
+  <div class="sbar-card"><strong>2 — Open</strong>Clear purpose within 60 seconds. Highest scoring density in the exercise.</div>
+  <div class="sbar-card"><strong>3 — Gather</strong>Questions before conclusions. Listen. Diagnose in real time.</div>
+  <div class="sbar-card"><strong>4 — Feedback</strong>SBI delivery. Specific behavior. Observable. Directional.</div>
+  <div class="sbar-card"><strong>5 — Close</strong>Stated expectation. Follow-up timeline. Principle close. Invite questions.</div>
+  <span class="sbar-label">Six Scored Behaviors</span>
+  <div class="sbar-card">Opens with purpose · Gathers before concluding · Behavioral specificity · Manages resistance · Clear close · Principle close</div>
+  <span class="sbar-label">What Makes This Different</span>
+  <div class="sbar-card">The role player responds to what you actually say. You cannot edit. You cannot start over. You cannot describe what you would do. You have to do it.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — The Counseling Exercise</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"Describe your understanding of how the counseling exercise works and how you would apply it in a real scenario."</div><div class="ob-note">Name the SBI framework (Situation, Behavior, Impact). Show that you lead with specific observed behavior, not character judgment. The first 60 seconds set the tone for the entire conversation.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 1 — Key Takeaways</div>
+  <div class="tk-item">How the Counseling Exercise Works — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">What Assessors Are Scoring — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Subordinate Counseling question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Personnel Issues</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Four-P Opening → Five-Phase Counseling Arc → 3 U's Diagnosis → CALM Framework</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Open with Four-P → diagnose (3 U's) → develop the plan → close with Empathy and Commitment</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" disabled>← Previous</button>
+  <div class="lnb-info"><div class="lnb-name">What It Is</div><div class="lnb-num">Lesson 1 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: The First 60 Seconds →</button>
+</div>
+</div>
+
+<!-- LESSON 2 -->
+<div class="lesson-view" id="lesson-1">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 40 · Lesson 2 of 6</div>
+    <h1 class="lh-title">The<br><em>First 60 Seconds</em></h1>
+    <div class="lh-meta">
+      <span class="lh-meta-item">⏱ 16 min</span>
+      <span class="lh-meta-item">🎙 Highest Scoring Density</span>
+    </div>
+  </div>
+
+  <p>The first 60 seconds of a counseling exercise carry more scoring weight than any other 60 seconds in the session. Assessors form their initial impression of your command presence and interpersonal authority in the first minute — and research on assessment center scoring consistently shows that initial impressions are difficult to reverse.</p>
+
+  <p>Most candidates lose points in the opening because of two errors. The first is tentative language — apologetic preambles, hedging, over-explaining the purpose of the meeting before stating it. The second is the opposite: arriving too hard — launching directly into the issue before establishing the relational context that makes the conversation productive. Both errors signal to assessors that the candidate is more focused on their own discomfort with the conversation than on the subordinate's development.</p>
+
+  <h2>The Opening Formula</h2>
+  <p>The TPS counseling exercise opening has four elements — delivered in under 90 seconds. Every word before these four elements is filler that costs you time and signals avoidance. Every word after them should be a question.</p>
+
+  <div class="acro-grid">
+    <div class="acro-row">
+      <div class="acro-letter">P</div>
+      <div class="acro-content">
+        <div class="acro-word">Purpose — State it in One Sentence</div>
+        <div class="acro-desc">"I wanted to meet with you today to talk about [specific topic]." Not "I've been meaning to talk to you" or "I hope this won't take long." One sentence. The purpose of this meeting. Clear and direct. Assessors write this down within the first thirty seconds.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">P</div>
+      <div class="acro-content">
+        <div class="acro-word">Posture — Set the Relational Frame</div>
+        <div class="acro-desc">"This conversation is about your development — not your character. I want to be direct with you because I believe that is what good leadership looks like." This sentence does three things: it separates the behavior from the person, it names your intent, and it signals that you are here to help rather than to punish. It takes twelve seconds. It changes the entire dynamic of the session.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">P</div>
+      <div class="acro-content">
+        <div class="acro-word">Perspective — Ask Before You Tell</div>
+        <div class="acro-desc">"Before I share what I've observed, I want to hear from you. How have things been going for you lately?" This question accomplishes two things assessors specifically score: it demonstrates that you gather before concluding, and it gives the role player an opening to provide context that may change your approach. It is also the question that reveals whether this is an Unwilling, Unable, or Unaware situation.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">P</div>
+      <div class="acro-content">
+        <div class="acro-word">Patience — Listen Without Filling the Silence</div>
+        <div class="acro-desc">After you ask the Perspective question — stop talking. The most common error in the opening phase is answering your own question because the silence feels uncomfortable. Silence is information. A role player who goes quiet after your opening question is telling you something. A role player who responds with defensiveness or deflection is telling you something. Listen to both.</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>The Opening in Practice — Scored and Unscored Versions</h2>
+
+  <div class="score-compare">
+    <div class="sc-card miss">
+      <div class="sc-title">❌ Tentative Opening — Loses Points</div>
+      <div class="sc-body">"Hey, so... I wanted to check in with you. I don't want this to be a big deal or anything, but I've noticed a few things lately and I just wanted to talk about it, you know, just between us. Is that okay?" Apologetic. Minimizing. No stated purpose. No relational frame. Signals avoidance. Assessors note: candidate uncomfortable with difficult conversation.</div>
+    </div>
+    <div class="sc-card hit">
+      <div class="sc-title">✅ Clear Opening — Scores High</div>
+      <div class="sc-body">"FF Martinez, I want to meet with you to talk about your attendance pattern over the past three weeks. This conversation is about your development — not your character — and I'm going to be direct with you because I think that's what good leadership looks like. Before I share what I've observed, I want to hear from you. How have things been going?" Purpose. Posture. Perspective. Then silence.</div>
+    </div>
+  </div>
+
+  <h2>The Bias Check — Before You Walk In</h2>
+  <p>During your 15-minute prep time — before you enter the room — run your four bias checks from Module 5. This is not a formality. It directly affects how you open the session and how assessors score your interpersonal awareness.</p>
+
+  <div class="callout callout-teal">
+    <span class="callout-label">Pre-Session Bias Check Protocol</span>
+    <p><strong>Affinity Bias:</strong> Am I more likely to give this person a pass because I like them or because they remind me of myself?<br><br>
+    <strong>Confirmation Bias:</strong> Have I already decided what the problem is before I gather any information? Am I walking in to confirm a conclusion rather than investigate a situation?<br><br>
+    <strong>Recency Bias:</strong> Am I overweighting the most recent incident relative to the person's overall performance history?<br><br>
+    <strong>Attribution Bias:</strong> Am I attributing this behavior to character rather than circumstance — before I have asked a single question?<br><br>
+    Run this check in the last two minutes of your prep time. If you identify a bias — name it silently and consciously set it aside. This is the Humility element of T·C·H·O·E·D·S in practice.</p>
+  </div>
+
+  <div class="callout callout-navy">
+    <span class="callout-label">The One Sentence That Changes Everything</span>
+    <p>"This conversation is about your development — not your character." Practice saying this sentence out loud until it sounds natural and genuine. It is the most important sentence in the opening phase. It reframes the entire session from evaluation to development — and assessors score the moment they hear it because it signals that you understand the difference between managing behavior and judging a person.</p>
+  </div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Personnel Issues</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Four-P Opening → Five-Phase Counseling Arc → 3 U's Diagnosis → CALM Framework</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Open with Four-P → diagnose (3 U's) → develop the plan → close with Empathy and Commitment</div></div></div></div>
+
+  <span class="sbar-label">The Four-P Opening Formula</span>
+  <div class="sbar-card"><strong>P — Purpose</strong>"I wanted to meet with you to discuss [specific topic]." One sentence. Clear. First 30 seconds.</div>
+  <div class="sbar-card"><strong>P — Posture</strong>"This is about your development — not your character." Sets relational frame. 12 seconds.</div>
+  <div class="sbar-card"><strong>P — Perspective</strong>"Before I share what I observed — how have things been going?" Gather before concluding.</div>
+  <div class="sbar-card"><strong>P — Patience</strong>After the question — stop talking. Silence is information. Let it arrive.</div>
+  <span class="sbar-label">Bias Check — Run During Prep</span>
+  <div class="sbar-card">Affinity · Confirmation · Recency · Attribution. Two minutes before you walk in. Every counseling session.</div>
+  <span class="sbar-label">The Most Important Sentence</span>
+  <div class="sbar-card">"This conversation is about your development — not your character." Practice until natural. Assessors score it every time they hear it.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — The First 60 Seconds</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"Describe your understanding of the opening formula and how you would apply it in a real scenario."</div><div class="ob-note">Name the SBI framework (Situation, Behavior, Impact). Show that you lead with specific observed behavior, not character judgment. The first 60 seconds set the tone for the entire conversation.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 2 — Key Takeaways</div>
+  <div class="tk-item">The Opening Formula — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">The Opening in Practice — Scored and Unscored Versions — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Subordinate Counseling question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Personnel Issues</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Four-P Opening → Five-Phase Counseling Arc → 3 U's Diagnosis → CALM Framework</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Open with Four-P → diagnose (3 U's) → develop the plan → close with Empathy and Commitment</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Previous</button>
+  <div class="lnb-info"><div class="lnb-name">The First 60 Seconds</div><div class="lnb-num">Lesson 2 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: SBI Feedback Framework →</button>
+</div>
+</div>
+
+<!-- LESSON 3 -->
+<div class="lesson-view" id="lesson-2">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 40 · Lesson 3 of 6</div>
+    <h1 class="lh-title">The SBI<br><em>Feedback Framework</em></h1>
+    <div class="lh-meta">
+      <span class="lh-meta-item">⏱ 20 min</span>
+      <span class="lh-meta-item">📋 Core Feedback Tool</span>
+    </div>
+  </div>
+
+  <p>The SBI Feedback Model — Situation, Behavior, Impact — is the TPS core framework for delivering feedback in any counseling scenario. It is the most important tool in this module because it gives your feedback three qualities that assessors specifically score: specificity, neutrality, and organizational relevance.</p>
+
+  <p>Candidates who deliver feedback without SBI tend to deliver it in one of two ways. The first is vague — "you need to take your responsibilities more seriously." The second is personal — "you don't seem to care about this crew." Both approaches fail the scored criteria, provoke defensive responses from the role player, and demonstrate that the candidate is operating from instinct rather than framework. SBI prevents both errors simultaneously.</p>
+
+  <h2>The Three SBI Elements</h2>
+
+  <div class="acro-grid">
+    <div class="acro-row">
+      <div class="acro-letter">S</div>
+      <div class="acro-content">
+        <div class="acro-word">Situation — When and Where</div>
+        <div class="acro-desc">The specific context in which the behavior occurred. Not a general pattern statement — the specific situation. "On the morning of March 4th, during shift changeover at Station 7." The situation grounds the feedback in observable reality. It signals to the role player — and to assessors — that you are working from documented observation, not impression.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">B</div>
+      <div class="acro-content">
+        <div class="acro-word">Behavior — Observable and Specific</div>
+        <div class="acro-desc">What the person specifically did or failed to do. "You arrived at 0814 — fourteen minutes after the start of your shift — and had not completed your apparatus check by 0830." Not "you were late and didn't do your job." The behavior. Observable. Specific. Free of interpretation. A behavior statement describes what a video camera would have captured — nothing more.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">I</div>
+      <div class="acro-content">
+        <div class="acro-word">Impact — Why It Matters</div>
+        <div class="acro-desc">The organizational consequence of the behavior. "This required FF Chen to staff the apparatus without relief for fourteen minutes. On March 13th, when we received a call at 0803, you were not operationally ready at dispatch." Impact connects the individual behavior to the crew, the mission, and the organization. Without it, the feedback is personal. With it, the feedback is institutional.</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>SBI Delivered — Scored and Unscored Versions</h2>
+  <p>This is the difference between a 3/5 feedback delivery and a 4/5 feedback delivery for the same behavior. The situation is identical. The score is determined entirely by the framework application.</p>
+
+  <div class="score-compare">
+    <div class="sc-card miss">
+      <div class="sc-title">❌ No SBI — 3/5 Maximum</div>
+      <div class="sc-body">"Look, I've noticed you've been late a lot recently and it's creating problems. The crew is frustrated and honestly so am I. You need to get it together and start taking this more seriously." Personal. Vague. Emotional. No Situation. No specific Behavior. No organizational Impact. Invites defensiveness. Demonstrates the candidate is reacting rather than leading.</div>
+    </div>
+    <div class="sc-card hit">
+      <div class="sc-title">✅ Full SBI — 4/5 Range</div>
+      <div class="sc-body">"On March 4th, 11th, and 18th during shift changeover, you arrived after the 0800 start time — fourteen, seventeen, and twenty-two minutes late respectively. On each occasion the apparatus check was not complete at the time of your arrival. The impact is this: FF Chen had to staff the apparatus without relief on all three mornings, and on March 13th when we received a call at 0803, you were not operationally ready at dispatch." Specific. Behavioral. Organizational impact named. Defensible.</div>
+    </div>
+  </div>
+
+  <h2>The SBI Dialogue — What It Sounds Like in Real Time</h2>
+  <p>This is a model counseling session excerpt showing SBI delivered with the gathering phase included. This is the Lesson 3 integration target — not a script to memorize, but a language pattern to internalize.</p>
+
+  <div class="dialogue">
+    <div class="dl-header"><div class="dl-label">SBI Delivery — Model Exchange · Lieutenant/Captain Level</div></div>
+    <div class="dl-line">
+      <div class="dl-speaker officer">Officer</div>
+      <div class="dl-text">"Before I share what I observed, I want to hear from you. The last few weeks — how have things been going?" <em>(Perspective question — gathering phase)</em></div>
+    </div>
+    <div class="dl-line">
+      <div class="dl-speaker role">Role Player</div>
+      <div class="dl-text">"Things have been fine. I don't know what you're talking about." <em>(Defensive — minimal information)</em></div>
+    </div>
+    <div class="dl-line">
+      <div class="dl-speaker officer">Officer</div>
+      <div class="dl-text">"I appreciate you saying that. Let me share specifically what I've observed — and I want you to tell me if I'm missing something. On March 4th, 11th, and 18th, during shift changeover, you arrived after 0800 — on those dates, fourteen, seventeen, and twenty-two minutes late. On each morning, the apparatus check had not been completed by your arrival." <em>(S and B delivered — specific and behavioral)</em></div>
+    </div>
+    <div class="dl-line">
+      <div class="dl-speaker role">Role Player</div>
+      <div class="dl-text">"I've had some stuff going on at home. It's not like I do it on purpose." <em>(Partial disclosure — possible Unable or Unaware signal)</em></div>
+    </div>
+    <div class="dl-line">
+      <div class="dl-speaker officer">Officer</div>
+      <div class="dl-text">"I hear you, and I want to understand what's happening. Before we get to that — let me share the impact so you understand why I needed this conversation. On March 13th we received a call at 0803. You were not operationally ready at dispatch. That created a safety gap for this crew." <em>(Impact delivered — organizational relevance named)</em></div>
+    </div>
+    <div class="dl-line">
+      <div class="dl-speaker officer">Officer</div>
+      <div class="dl-text">"Now — tell me what's been going on at home." <em>(Information gathering resumes — diagnosis continues)</em></div>
+    </div>
+    <div class="dl-line">
+      <div class="dl-speaker note">Coach Note</div>
+      <div class="dl-text"><em>This sequence delivers full SBI before gathering more information about the contributing factor. The officer does not delay the SBI to avoid discomfort — they deliver it, then return to gathering. This is the 4/5 sequence.</em></div>
+    </div>
+  </div>
+
+  <div class="callout callout-gold">
+    <span class="callout-label">SBI Source</span>
+    <p>The SBI Feedback Model was developed by the Center for Creative Leadership and is used by leadership development programs worldwide. It is one of the most empirically validated feedback frameworks in organizational psychology. When you deliver SBI in an assessment center, you are demonstrating familiarity with a recognized professional development standard — which itself signals to assessors that you take development seriously as a leadership practice.</p>
+  </div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Personnel Issues</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Four-P Opening → Five-Phase Counseling Arc → 3 U's Diagnosis → CALM Framework</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Open with Four-P → diagnose (3 U's) → develop the plan → close with Empathy and Commitment</div></div></div></div>
+
+  <span class="sbar-label">The SBI Framework</span>
+  <div class="sbar-card"><strong>S — Situation</strong>When and where. Specific context. Not a general pattern statement.</div>
+  <div class="sbar-card"><strong>B — Behavior</strong>What the video camera would capture. Observable. Specific. No interpretation.</div>
+  <div class="sbar-card"><strong>I — Impact</strong>Organizational consequence. Crew safety, operational readiness, mission impact.</div>
+  <span class="sbar-label">The Sequence</span>
+  <div class="sbar-card">Gather first (Perspective question) → Deliver SBI → Return to gather (contributing factors) → Diagnose → Close with expectation and principle.</div>
+  <span class="sbar-label">Source</span>
+  <div class="sbar-card">Center for Creative Leadership. One of the most validated feedback frameworks in organizational psychology. Name the source in your response to signal professional development depth.</div>
+  <span class="sbar-label">The Behavioral Test</span>
+  <div class="sbar-card">Read your Behavior statement out loud. If a union representative could challenge it — rewrite it. If it describes what a video camera would show — it passes.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — The SBI Feedback Framework</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"Describe your understanding of the three sbi elements and how you would apply it in a real scenario."</div><div class="ob-note">Name the SBI framework (Situation, Behavior, Impact). Show that you lead with specific observed behavior, not character judgment. The first 60 seconds set the tone for the entire conversation.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 3 — Key Takeaways</div>
+  <div class="tk-item">The Three SBI Elements — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">SBI Delivered — Scored and Unscored Versions — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Subordinate Counseling question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Personnel Issues</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Four-P Opening → Five-Phase Counseling Arc → 3 U's Diagnosis → CALM Framework</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Open with Four-P → diagnose (3 U's) → develop the plan → close with Empathy and Commitment</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Previous</button>
+  <div class="lnb-info"><div class="lnb-name">SBI Feedback Framework</div><div class="lnb-num">Lesson 3 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Managing Resistance →</button>
+</div>
+</div>
+
+<!-- LESSON 4 -->
+<div class="lesson-view" id="lesson-3">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 40 · Lesson 4 of 6</div>
+    <h1 class="lh-title">Managing<br><em>Resistance in Real Time</em></h1>
+    <div class="lh-meta">
+      <span class="lh-meta-item">⏱ 18 min</span>
+      <span class="lh-meta-item">⚡ Real-Time Performance</span>
+    </div>
+  </div>
+
+  <p>Resistance is not a complication in the counseling exercise. It is the exercise. The role player is trained to push back — because assessors need to see how you lead when the person across from you is not cooperative. The candidate who maintains their structure, their tone, and their purpose under resistance demonstrates genuine leadership. The candidate who loses their framework when challenged demonstrates that the framework was borrowed — not internalized.</p>
+
+  <p>There are four resistance patterns role players use consistently across assessment center counseling exercises. Knowing them before you walk in the room is the difference between being surprised by resistance and managing it with practiced confidence.</p>
+
+  <h2>The Four Resistance Patterns and Responses</h2>
+
+  <div class="acro-grid">
+    <div class="acro-row">
+      <div class="acro-letter" style="font-size:1rem;padding:0.5rem 0.3rem;text-align:center;letter-spacing:0;">DE</div>
+      <div class="acro-content">
+        <div class="acro-word">Deflection — "That's Not the Real Issue"</div>
+        <div class="acro-desc">The role player redirects the conversation to a different problem — typically something involving you, another crew member, or the organization. "You want to talk about my tardiness? What about [other officer] who shows up late every Tuesday?" Your response: acknowledge and return. "I hear you, and if there are other concerns I want to address them. Right now I need to finish this conversation about [the specific behavior]. Let's come back to the other concern after." Do not chase the deflection. Return to your structure.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter" style="font-size:1rem;padding:0.5rem 0.3rem;text-align:center;letter-spacing:0;">MI</div>
+      <div class="acro-content">
+        <div class="acro-word">Minimization — "It's Not a Big Deal"</div>
+        <div class="acro-desc">"I was late a few times — everyone does it. You're making this into something it isn't." Your response: name the impact again. Not with more emotion — with more specificity. "I understand it may not feel significant. The reason I'm raising it is [specific Impact statement]. That is the reason it is a concern." Impact makes the minimization untenable without requiring an argument. You are not debating the severity — you are naming the organizational consequence.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter" style="font-size:1rem;padding:0.5rem 0.3rem;text-align:center;letter-spacing:0;">EM</div>
+      <div class="acro-content">
+        <div class="acro-word">Emotional Escalation — Anger or Tears</div>
+        <div class="acro-desc">The role player becomes visibly upset — angry, tearful, or withdrawn. Your response: pause and acknowledge before proceeding. "I can see this is difficult. I want to give you a moment." Then wait. Do not continue the SBI delivery until the role player is emotionally available. Continuing to deliver feedback to someone who is visibly dysregulated signals to assessors that you prioritize your agenda over the person. Once they are regulated: return to where you were. "Are you okay to continue?"</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter" style="font-size:1rem;padding:0.5rem 0.3rem;text-align:center;letter-spacing:0;">SI</div>
+      <div class="acro-content">
+        <div class="acro-word">Silence — Complete Withdrawal</div>
+        <div class="acro-desc">The role player goes quiet. One-word answers. Withdrawn posture. Avoidance of eye contact. Your response: name what you observe without interpreting it. "I notice you've gone quiet. I want to make sure I'm not missing something. Is there anything I haven't asked about that you want me to understand?" This gives the role player an opening without pressuring them — and it signals to assessors that you are attentive to interpersonal cues, not just agenda completion.</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>The CALM Model Under Resistance</h2>
+  <p>The CALM Model from Module 5 applies directly to resistance management in the counseling exercise. When you feel the session losing structure — run CALM internally before your next sentence.</p>
+
+  <div class="acro-grid">
+    <div class="acro-row">
+      <div class="acro-letter">C</div>
+      <div class="acro-content">
+        <div class="acro-word">Curious — Not Reactive</div>
+        <div class="acro-desc">When the role player resists, pushes back, or deflects — your first internal move is curiosity. What is this resistance telling you about their experience? What information are you missing? Curiosity prevents the defensive reaction that escalates the session.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">A</div>
+      <div class="acro-content">
+        <div class="acro-word">Acknowledge — Before You Proceed</div>
+        <div class="acro-desc">Name what you heard before you respond to it. "I hear that this feels unfair to you." Not agreement — acknowledgment. The role player needs to know their perspective has been received before they can receive yours.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">L</div>
+      <div class="acro-content">
+        <div class="acro-word">Listen — Completely</div>
+        <div class="acro-desc">While the role player is speaking — you are listening, not preparing your response. Assessors score whether you appear to actually hear the role player or whether you are visibly waiting for your turn to speak. The candidate who listens looks different in a room from the candidate who waits.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">M</div>
+      <div class="acro-content">
+        <div class="acro-word">Manage — Your Response, Not Theirs</div>
+        <div class="acro-desc">You cannot control how the role player behaves. You can control your tone, your pace, your language, and your structure. Managing your response is what assessors are watching. A candidate who stays measured and purposeful while the role player escalates demonstrates the composure assessors want to see at every rank.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-navy">
+    <span class="callout-label">The Rule for Resistance</span>
+    <p>Acknowledge every resistance before you respond to it. Never argue. Never escalate. Never abandon your structure. The role player's resistance does not change your purpose — it may change your pace, your tone, or your information-gathering approach. But the session still ends in the same place: a stated expectation, a follow-up plan, and a principle close. Resistance is the test. Maintaining structure under resistance is the answer.</p>
+  </div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Personnel Issues</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Four-P Opening → Five-Phase Counseling Arc → 3 U's Diagnosis → CALM Framework</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Open with Four-P → diagnose (3 U's) → develop the plan → close with Empathy and Commitment</div></div></div></div>
+
+  <span class="sbar-label">The Four Resistance Patterns</span>
+  <div class="sbar-card"><strong>DE — Deflection</strong>Acknowledge and return. Don't chase. "Let's come back to that after."</div>
+  <div class="sbar-card"><strong>MI — Minimization</strong>Restate the Impact. More specificity — not more emotion. Let the organizational consequence speak.</div>
+  <div class="sbar-card"><strong>EM — Emotional Escalation</strong>Pause. Acknowledge. Wait for regulation. Then return to where you were.</div>
+  <div class="sbar-card"><strong>SI — Silence</strong>Name what you observe without interpreting. "I notice you've gone quiet — is there something I haven't asked about?"</div>
+  <span class="sbar-label">CALM Under Resistance</span>
+  <div class="sbar-card">Curious → Acknowledge → Listen → Manage your response. Run this sequence internally before every response to resistance.</div>
+  <span class="sbar-label">The Rule</span>
+  <div class="sbar-card">Acknowledge every resistance before responding to it. Never argue. The session still ends in the same place — expectation, follow-up, principle close.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Managing Resistance in Real Time</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"Describe your understanding of the four resistance patterns and responses and how you would apply it in a real scenario."</div><div class="ob-note">Name the SBI framework (Situation, Behavior, Impact). Show that you lead with specific observed behavior, not character judgment. The first 60 seconds set the tone for the entire conversation.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 4 — Key Takeaways</div>
+  <div class="tk-item">The Four Resistance Patterns and Responses — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">The CALM Model Under Resistance — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Subordinate Counseling question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Personnel Issues</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Four-P Opening → Five-Phase Counseling Arc → 3 U's Diagnosis → CALM Framework</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Open with Four-P → diagnose (3 U's) → develop the plan → close with Empathy and Commitment</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Previous</button>
+  <div class="lnb-info"><div class="lnb-name">Managing Resistance</div><div class="lnb-num">Lesson 4 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Five Scenario Types →</button>
+</div>
+</div>
+
+<!-- LESSON 5 -->
+<div class="lesson-view" id="lesson-4">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 40 · Lesson 5 of 6</div>
+    <h1 class="lh-title">The Five<br><em>Counseling Scenario Types</em></h1>
+    <div class="lh-meta">
+      <span class="lh-meta-item">⏱ 20 min</span>
+      <span class="lh-meta-item">🎯 Scenario Application</span>
+    </div>
+  </div>
+
+  <p>Every counseling scenario in every assessment center at every rank falls into one of five types. Knowing the type before you enter the room changes your preparation, your diagnostic approach, and your principle close. The Situation changes — the structure never does.</p>
+
+  <h3>Type 1 — The Performance Gap</h3>
+  <p>A measurable, observable performance standard is not being met. Attendance, apparatus maintenance, report completion, physical fitness standards. The most common counseling scenario type at every rank.</p>
+  <div class="framework-grid">
+    <div class="fw-card">
+      <div class="fw-card-label">Diagnostic Priority</div>
+      <div class="fw-card-title">Which U Before Any Action</div>
+      <div class="fw-card-desc">Is this Unaware (standard not communicated), Unable (standard known but capability lacking), or Unwilling (standard known, capable, choosing not)? The diagnostic answer determines whether the session is a coaching conversation, a development plan, or the opening of a discipline process.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Principle Close</div>
+      <div class="fw-card-title">Ownership or Dedication</div>
+      <div class="fw-card-desc">"Ownership element — I own the performance environment of this crew, which means I own this conversation." Or "Dedication element — my commitment to your development is the reason I am having this conversation directly rather than documenting it and moving on."</div>
+    </div>
+  </div>
+
+  <h3>Type 2 — The Interpersonal Conflict</h3>
+  <p>A crew member's behavior is creating friction with teammates — complaints from peers, disrupted dynamics, or observed interpersonal aggression. The counseling session involves both the interpersonal behavior and its impact on crew cohesion.</p>
+  <p>The specific challenge: the role player will frequently minimize interpersonal behavior ("I was just joking" or "they're too sensitive") in ways that invite you to adjudicate the conflict rather than address the behavior. Your SBI must focus exclusively on the observable behavior and its organizational impact — not on who is right in the interpersonal dispute.</p>
+  <p><strong>Principle close:</strong> "The Empathy element of T·C·H·O·E·D·S is what guides this conversation — not just empathy for you, but genuine understanding of the experience of every person on this crew who is affected by the dynamic I've described."</p>
+
+  <h3>Type 3 — The Personal Crisis Affecting Performance</h3>
+  <p>Performance has deteriorated and the contributing factor is a personal situation — health, family, financial stress. The counseling session requires the candidate to address both the performance impact and the human dimension simultaneously.</p>
+  <div class="callout callout-teal">
+    <span class="callout-label">The Balance This Scenario Tests</span>
+    <p>Assessors are specifically watching whether the candidate can hold both truths simultaneously: this person is going through something difficult AND the performance standard still applies. The candidate who excuses the behavior because of the personal situation scores below the candidate who addresses the impact with compassion and maintains the standard with clarity. "I hear what you're going through, and I want to support you — and the crew's operational readiness still requires [specific expectation]. Those two things are both true."</p>
+  </div>
+  <p><strong>Principle close:</strong> "The Empathy element of T·C·H·O·E·D·S doesn't mean lowering the standard — it means holding the standard in a way that communicates genuine care for the person I'm holding it to."</p>
+
+  <h3>Type 4 — The Conduct Issue</h3>
+  <p>A behavior that violates department policy, professional standards, or safety protocols — not a performance gap but a conduct problem. Insubordination, inappropriate language, policy violation. The counseling session is the opening of a formal discipline process.</p>
+  <p>The specific requirement: name the conduct as distinct from performance. Use SBI. State the policy violated specifically. Name the due process elements — Weingarten rights, documentation intent, follow-up timeline. Do not soften the purpose of the session: "This conversation is the first step in our formal progressive discipline process."</p>
+
+  <h3>Type 5 — The Rank-Aspirant Who Is Underperforming</h3>
+  <p>A crew member who openly wants to promote is not meeting performance standards — and their current performance would not support a positive reference from you. This scenario tests whether the candidate can hold the development conversation honestly, without false encouragement, while maintaining the relationship and the crew member's motivation.</p>
+  <div class="callout callout-gold">
+    <span class="callout-label">The Honesty Requirement</span>
+    <p>The most common error in this scenario is false reassurance — telling the crew member they are "on the right track" when they are not, to avoid the discomfort of an honest developmental conversation. Assessors score this error severely. The Courage element of T·C·H·O·E·D·S is specifically relevant here: "The Courage element of my leadership philosophy requires me to be honest with you about where you are — not just encouraging. Honest feedback from your supervisor is one of the most valuable things you can receive as someone who wants to promote."</p>
+  </div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Personnel Issues</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Four-P Opening → Five-Phase Counseling Arc → 3 U's Diagnosis → CALM Framework</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Open with Four-P → diagnose (3 U's) → develop the plan → close with Empathy and Commitment</div></div></div></div>
+
+  <span class="sbar-label">Five Counseling Scenario Types</span>
+  <div class="sbar-card"><strong>Type 1 — Performance Gap</strong>3 U's diagnostic first. SBI on the measurable gap. Principle: Ownership or Dedication.</div>
+  <div class="sbar-card"><strong>Type 2 — Interpersonal</strong>SBI on observable behavior only — not who is right. Principle: Empathy.</div>
+  <div class="sbar-card"><strong>Type 3 — Personal Crisis</strong>Hold both truths: care for the person AND maintain the standard. Principle: Empathy without exemption.</div>
+  <div class="sbar-card"><strong>Type 4 — Conduct</strong>Name it as formal process. Policy cited. Due process elements present. Principle: Courage.</div>
+  <div class="sbar-card"><strong>Type 5 — Rank Aspirant</strong>Honest over reassuring. Courage to give the developmental truth. Principle: Courage.</div>
+  <span class="sbar-label">The Universal Close</span>
+  <div class="sbar-card">Every scenario type ends the same: stated expectation + follow-up timeline + invite questions + principle close. The session is not complete without all four.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — The Five Counseling Scenario Types</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"How does the five  counseling scenario types apply to your daily leadership practice? Give me a specific example."</div><div class="ob-note">Name the SBI framework (Situation, Behavior, Impact). Show that you lead with specific observed behavior, not character judgment. The first 60 seconds set the tone for the entire conversation.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 5 — Key Takeaways</div>
+  <div class="tk-item">LEAD integration: Label this as a Subordinate Counseling question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Personnel Issues</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Four-P Opening → Five-Phase Counseling Arc → 3 U's Diagnosis → CALM Framework</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Open with Four-P → diagnose (3 U's) → develop the plan → close with Empathy and Commitment</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Previous</button>
+  <div class="lnb-info"><div class="lnb-name">Five Scenario Types</div><div class="lnb-num">Lesson 5 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: LEAD Applied →</button>
+</div>
+</div>
+
+<!-- LESSON 6 -->
+<div class="lesson-view" id="lesson-5">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 40 · Lesson 6 of 6</div>
+    <h1 class="lh-title">L·E·A·D<br><em>Applied to Counseling</em></h1>
+    <div class="lh-meta">
+      <span class="lh-meta-item">⏱ 14 min</span>
+      <span class="lh-meta-item">⚡ Full Integration</span>
+    </div>
+  </div>
+
+  <p>The counseling exercise uses L·E·A·D differently than an oral board does — because the exercise unfolds in real time across fifteen to twenty minutes rather than in a single response. L·E·A·D governs your preparation and your opening. The rest of the session is governed by the structure you committed to in those first sixty seconds.</p>
+
+  <h2>L·E·A·D in the Counseling Exercise</h2>
+
+  <div class="acro-grid">
+    <div class="acro-row">
+      <div class="acro-letter">L</div>
+      <div class="acro-content">
+        <div class="acro-word">Label — Scenario Type + Diagnostic Gate</div>
+        <div class="acro-desc">During prep time — label the scenario type (performance, interpersonal, personal crisis, conduct, rank aspirant). Then run the 3 U's diagnostic on what you know from the briefing document. Label your preliminary diagnostic: Unaware, Unable, or Unwilling — and note that you will confirm this in the gathering phase. Write your SBI elements — Situation, Behavior, Impact — before you walk in the room. The Label step is your entire prep time, used deliberately.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">E</div>
+      <div class="acro-content">
+        <div class="acro-word">Engage — Four-P Opening + Session Structure</div>
+        <div class="acro-desc">Your structure is the Five-Phase session arc: Open (four-P formula) → Gather (perspective question + listening) → Deliver (SBI) → Manage resistance (CALM) → Close (expectation + follow-up + principle). Commit to this structure before your first word. The structure does not change when the role player resists. Your pace, tone, and sequence may adapt — the destination does not.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">A</div>
+      <div class="acro-content">
+        <div class="acro-word">Apply — Rank-Level Authority and Scope</div>
+        <div class="acro-desc">Every decision made during the session must reflect the authority of your target rank. A Lieutenant-level counseling session does not initiate formal HR processes — it identifies performance gaps and establishes clear expectations. A Captain-level session may open formal progressive discipline. Name your authority boundary where relevant: "As your Captain, the next step within my authority is a written reprimand. If the behavior continues I will recommend suspension to my Battalion Chief."</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">D</div>
+      <div class="acro-content">
+        <div class="acro-word">Deliver — The Closing Principle</div>
+        <div class="acro-desc">The principle close in the counseling exercise is different from the oral board. It is not a monologue — it is a final statement of intent delivered directly to the role player. "Before we close, I want you to know why I had this conversation. The Empathy element of my leadership philosophy means I understand your experience matters. The Courage element means I have this conversation directly rather than documenting it and hoping it resolves itself. That is why we are here." Then invite questions. Then close.</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>The Complete Session — L·E·A·D Integrated</h2>
+
+  <div class="callout callout-navy">
+    <span class="callout-label">Full Session Arc — Performance Gap · Lieutenant Level · 4/5 Range</span>
+    <p><strong>L (Prep):</strong> Type 1 — Performance Gap. Preliminary 3 U's: Unwilling (pattern documented, standard known). SBI prepared: March 4, 11, 18 / late arrivals / safety gap on March 13th call. Principle close: Ownership element.<br><br>
+    <strong>E (Open):</strong> "FF Martinez, I wanted to meet with you to discuss your attendance pattern over the past three weeks. This conversation is about your development — not your character. Before I share what I've observed, I want to hear from you. How have things been going?"<br><br>
+    <strong>E (Gather + SBI):</strong> Listen. Receive response. Deliver SBI: Situation March 4/11/18, Behavior late arrivals + incomplete apparatus check, Impact — FF Chen relief gap and March 13th dispatch readiness. Return to gather if personal factors emerge.<br><br>
+    <strong>A (Scope):</strong> "I'm documenting this conversation as a verbal counseling. The expectation going forward is [specific standard]. If the pattern continues, the next step will be a formal written reprimand — which is within my authority to issue."<br><br>
+    <strong>D (Close):</strong> "Before we close — I want you to know why I'm having this conversation directly. The Ownership element of how I lead means I own the performance environment of this crew. That includes making sure you have a clear expectation and a fair opportunity to meet it. What questions do you have?"</p>
+  </div>
+
+  <h2>Your Practice Target for This Module</h2>
+  <p>The counseling exercise requires a different kind of practice than the Practice Engine. Written reps help — but the real development happens in role play. Before your assessment:</p>
+  <ol>
+    <li>Run three Practice Engine sessions with counseling scenarios. Write your four-P opening and full SBI before submitting.</li>
+    <li>Find a practice partner and run two live role plays — one where the role player cooperates, one where they resist using the deflection or minimization pattern.</li>
+    <li>Record yourself on Loom. Watch the recording specifically for: did you ask a question before delivering SBI? Did you fill silence or let it exist? Did you close with a named principle?</li>
+    <li>Submit your strongest Loom recording to your coach for CLEAR feedback.</li>
+  </ol>
+
+  <div class="callout callout-gold">
+    <span class="callout-label">Chapter 40 Complete</span>
+    <p>The subordinate counseling exercise is the most revealing exercise in the assessment center — because it cannot be faked. A candidate who has genuinely internalized the 3 U's diagnostic, the SBI framework, the CALM model for resistance, and the T·C·H·O·E·D·S principle close will lead a counseling session that assessors recognize as the real thing. Not a performance of leadership — the actual thing. That is what this module was built to develop.</p>
+  </div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Personnel Issues</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Four-P Opening → Five-Phase Counseling Arc → 3 U's Diagnosis → CALM Framework</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Open with Four-P → diagnose (3 U's) → develop the plan → close with Empathy and Commitment</div></div></div></div>
+
+  <span class="sbar-label">L·E·A·D — Counseling</span>
+  <div class="sbar-card"><strong>L — Label</strong>Prep time. Scenario type + 3 U's diagnostic + SBI written out. Before you walk in.</div>
+  <div class="sbar-card"><strong>E — Engage</strong>Four-P opening. Five-phase session arc committed. Structure holds under resistance.</div>
+  <div class="sbar-card"><strong>A — Apply</strong>Target rank authority. Name the boundary. Document intent where appropriate.</div>
+  <div class="sbar-card"><strong>D — Deliver</strong>Principle close directed at the role player — not the assessors. Then invite questions. Then close.</div>
+  <span class="sbar-label">Practice Protocol</span>
+  <div class="sbar-card">Practice Engine reps for written SBI development. Live role plays for real-time resistance practice. Loom recording for self-assessment. Coach submission for CLEAR feedback.</div>
+  <span class="sbar-label">Next Module</span>
+  <div class="sbar-card">Module 39 — The Presentation Exercise. The other standalone exercise type most candidates under-prepare for — and the one that rewards the same structural discipline you just built here.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — L·E·A·D Applied to Counseling</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"You receive a scenario about subordinate counseling. Walk me through your complete response using the frameworks from this chapter."</div><div class="ob-note">Use LEAD: Label the bucket (Subordinate Counseling), Engage the specific framework (reference L·E·A·D in the Counseling Exercise explicitly), Address the operational and organizational impact, Drive to a concrete first action with a timeline.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 6 — Key Takeaways</div>
+  <div class="tk-item">L·E·A·D in the Counseling Exercise — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">The Complete Session — L·E·A·D Integrated — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Subordinate Counseling question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Personnel Issues</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Four-P Opening → Five-Phase Counseling Arc → 3 U's Diagnosis → CALM Framework</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Open with Four-P → diagnose (3 U's) → develop the plan → close with Empathy and Commitment</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Previous</button>
+  <div class="lnb-info"><div class="lnb-name">LEAD Applied</div><div class="lnb-num">Lesson 6 of 6</div></div>
+  <button class="lnb-btn primary" onclick="window.scrollTo({top:0,behavior:'smooth'})">Module Complete ✓</button>
+</div>
+</div>
+
+</main>
+
+<script>
+let cur=0;
+const ls=document.querySelectorAll('.lesson-view');
+const ps=document.querySelectorAll('.nav-pill');
+const mbs=document.querySelectorAll('.mh-lesson-btn');
+
+function showLesson(i){
+  ls.forEach(l=>l.classList.remove('active'));
+  ps.forEach(p=>p.classList.remove('active'));
+  mbs.forEach(m=>m.classList.remove('active'));
+  ls[i].classList.add('active');
+  ps[i].classList.add('active');
+  mbs[i].classList.add('active');
+  cur=i;
+  window.scrollTo({top:0,behavior:'smooth'});
+  document.getElementById('prog').style.width='0%';
+}
+
+function nextLesson(){if(cur<ls.length-1)showLesson(cur+1);}
+function prevLesson(){if(cur>0)showLesson(cur-1);}
+
+window.addEventListener('scroll',()=>{
+  const s=document.documentElement.scrollTop;
+  const h=document.documentElement.scrollHeight-window.innerHeight;
+  if(h>0)document.getElementById('prog').style.width=Math.min(100,(s/h*100))+'%';
+});
+
+document.addEventListener('DOMContentLoaded',()=>showLesson(0));
+
+function lfNext(el,stepNum){
+  var wrap=el.closest('.lf-wrap');
+  if(!wrap)return;
+  var steps=wrap.querySelectorAll('.lf-step');
+  var dots=wrap.querySelectorAll('.lf-dot');
+  steps.forEach(function(s,i){s.classList.remove('active');if(i<stepNum)s.classList.add('done');});
+  dots.forEach(function(d,i){d.classList.remove('active');if(i<stepNum)d.classList.add('done');if(i===stepNum)d.classList.add('active');});
+  if(steps[stepNum])steps[stepNum].classList.add('active');
+}
+</script>
+<script>function toggleFT(el){var sw=el.querySelector('.ft-toggle-switch');var desc=el.querySelector('.ft-toggle-desc');var mains=document.querySelectorAll('.lesson-main');sw.classList.toggle('on');var on=sw.classList.contains('on');desc.textContent=on?'Frameworks + OB cards only':'Full lesson content';mains.forEach(function(m){m.classList.toggle('ft-on',on);});}</script>
+</body>
+</html>

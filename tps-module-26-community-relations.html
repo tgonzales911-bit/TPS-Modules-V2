@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Chapter 21 — Community Relations | The Promotional Standard</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Crimson+Pro:wght@300;400;500;600&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --navy:#0C2340;--navy2:#1A3A5C;--gold:#C9A84C;--gold2:#F5F0E8;--gold3:#6B4F10;
+  --cream:#F5F0E8;--offwhite:#F5F0E8;--light:#EAE5DC;--mid:#2A3D50;--gray:#8FA8C0;
+  --red:#B22222;--red-light:#FFF0F0;--green:#1A5C3A;--green-light:#EAF3DE;
+  --teal:#006B6B;--teal-light:#E0F4F4;--blue:#1A3A7A;--blue-light:#E8EEF8;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:var(--navy);font-size:18px;line-height:1.8;}
+.top-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(12,35,64,0.98);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,168,76,0.2);height:64px;display:flex;align-items:center;padding:0 2rem;gap:1rem;}
+.nav-left{display:flex;align-items:center;gap:12px;flex:1;}
+.nav-brand{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;color:var(--cream);line-height:1.3;}
+.nav-brand span{display:block;font-size:8px;color:var(--gold);letter-spacing:2px;}
+.nav-pills{display:flex;gap:5px;flex:2;justify-content:center;overflow-x:auto;}
+.nav-pill{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#8FA8C0;padding:6px 11px;border-radius:20px;cursor:pointer;transition:all 0.2s;border:none;background:transparent;white-space:nowrap;}
+.nav-pill:hover{color:var(--cream);background:rgba(255,255,255,0.05);}
+.nav-pill.active{color:var(--gold);background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.25);}
+.progress-bar{position:fixed;top:64px;left:0;height:3px;background:linear-gradient(90deg,var(--navy2),var(--gold));z-index:199;width:0%;transition:width 0.3s;}
+.lesson-view{display:none;}.lesson-view.active{display:block;}
+.module-hero{background:var(--navy);padding:4.5rem 3rem 3.5rem;margin-top:64px;position:relative;overflow:hidden;border-bottom:3px solid var(--gold);}
+.module-hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 60px,rgba(201,168,76,0.015) 60px,rgba(201,168,76,0.015) 61px);}
+.module-hero::after{content:'';position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(180deg,var(--navy2),var(--gold));}
+.mh-inner{max-width:900px;position:relative;z-index:2;}
+.mh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.mh-title{font-family:'EB Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:800;color:var(--cream);line-height:1.1;margin-bottom:0.75rem;}
+.mh-title em{font-style:italic;color:var(--gold);}
+.mh-sub{font-size:1.05rem;color:#8FA8C0;max-width:700px;line-height:1.7;margin-bottom:2rem;}
+.mh-badges{display:flex;gap:10px;margin-bottom:1.5rem;flex-wrap:wrap;}
+.mh-badge{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border-radius:3px;}
+.badge-blue{background:rgba(30,80,180,0.12);color:#4A7FD0;border:1px solid rgba(30,80,180,0.25);}
+.badge-nfpa{background:rgba(100,160,220,0.15);color:#8FA8C0;border:1px solid rgba(100,160,220,0.3);}
+.mh-thread{background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);border-left:3px solid var(--gold);padding:1rem 1.5rem;margin-bottom:2rem;max-width:700px;}
+.mh-thread-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+.mh-thread-text{font-size:0.92rem;color:var(--cream);line-height:1.65;}
+.mh-lesson-nav{display:flex;gap:8px;flex-wrap:wrap;}
+.mh-lesson-btn{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:8px 14px;border-radius:6px;cursor:pointer;transition:all 0.2s;border:1px solid rgba(201,168,76,0.25);background:transparent;color:#8FA8C0;}
+.mh-lesson-btn:hover{background:rgba(255,255,255,0.05);color:var(--cream);}
+.mh-lesson-btn.active{background:rgba(201,168,76,0.12);color:var(--gold);border-color:rgba(201,168,76,0.4);}
+.lesson-container{display:grid;grid-template-columns:1fr 310px;gap:0;}
+.lesson-main{padding:3rem 3.5rem;border-right:1px solid var(--light);}
+.lesson-sidebar{padding:2rem 1.75rem;background:var(--offwhite);position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;}
+.lesson-header{margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:2px solid var(--light);}
+.lh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold3);margin-bottom:0.6rem;}
+.lh-title{font-family:'EB Garamond',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;color:var(--navy);line-height:1.15;margin-bottom:0.6rem;}
+.lh-title em{font-style:italic;color:var(--gold);}
+.lh-meta{display:flex;gap:1.5rem;flex-wrap:wrap;}
+.lh-meta-item{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);}
+.lesson-main h2{font-family:'EB Garamond',serif;font-size:1.7rem;font-weight:700;color:var(--navy);margin:3rem 0 0.9rem;padding-bottom:0.5rem;border-bottom:2px solid var(--light);}
+.lesson-main h3{font-family:'EB Garamond',serif;font-size:1.25rem;font-weight:600;color:var(--navy);margin:2.25rem 0 0.65rem;}
+.lesson-main p{margin-bottom:1.25rem;color:#2A3D50;line-height:1.82;}
+.lesson-main ul,.lesson-main ol{margin:0 0 1.25rem 1.5rem;color:#2A3D50;}
+.lesson-main li{margin-bottom:0.6rem;line-height:1.72;}
+.lesson-main strong{color:var(--navy);font-weight:600;}
+.callout{padding:1.4rem 1.6rem;margin:2rem 0;}
+.callout-gold{background:var(--gold2);border-left:3px solid var(--gold);}.callout-gold p{color:var(--gold3);font-size:0.97rem;line-height:1.75;}
+.callout-navy{background:var(--navy);border-left:3px solid var(--gold);}.callout-navy p{color:#8FA8C0;font-size:0.95rem;line-height:1.75;}
+.callout-red{background:var(--red-light);border-left:4px solid var(--red);}.callout-red p{color:#6B4F10;font-size:0.97rem;line-height:1.75;}
+.callout-green{background:var(--green-light);border-left:4px solid var(--green);}.callout-green p{color:#1A3A5C;font-size:0.97rem;line-height:1.75;}
+.callout-teal{background:var(--teal-light);border-left:4px solid var(--teal);}.callout-teal p{color:#003A3A;font-size:0.97rem;line-height:1.75;}
+.callout-blue{background:var(--blue-light);border-left:4px solid var(--blue);}.callout-blue p{color:#0A1A3A;font-size:0.97rem;line-height:1.75;}
+.callout-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:0.5rem;display:block;}
+.callout-gold .callout-label{color:var(--gold3);}
+.callout-navy .callout-label{color:var(--gold);}
+.callout-red .callout-label{color:var(--red);}
+.callout-green .callout-label{color:var(--green);}
+.callout-teal .callout-label{color:var(--teal);}
+.callout-blue .callout-label{color:var(--blue);}
+.framework-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.fw-card{background:white;border:1px solid #EAE5DC;padding:1.25rem;border-radius:8px;}
+.fw-card-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:6px;}
+.fw-card-title{font-family:'EB Garamond',serif;font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.fw-card-desc{font-size:0.9rem;color:var(--mid);line-height:1.6;}
+.acro-grid{display:flex;flex-direction:column;gap:0;margin:1.5rem 0;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;}
+.acro-row{display:grid;grid-template-columns:52px 1fr;gap:0;border-bottom:1px solid #EAE5DC;}
+.acro-row:last-child{border-bottom:none;}
+.acro-letter{background:var(--navy);color:var(--gold);font-family:'EB Garamond',serif;font-size:1.8rem;font-weight:800;display:flex;align-items:center;justify-content:center;}
+.acro-content{padding:0.9rem 1.1rem;background:white;}
+.acro-word{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:3px;}
+.acro-desc{font-size:0.85rem;color:var(--mid);line-height:1.55;}
+.sbar-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold3);margin-bottom:0.65rem;margin-top:1.5rem;display:block;}
+.sbar-label:first-child{margin-top:0;}
+.sbar-card{background:white;border:1px solid #EAE5DC;border-radius:8px;padding:0.9rem 1rem;margin-bottom:8px;font-size:0.9rem;color:var(--mid);line-height:1.55;}
+.sbar-card strong{color:var(--navy);display:block;margin-bottom:3px;font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;}
+.score-compare{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.sc-card{padding:1.25rem;border-radius:8px;}
+.sc-card.miss{background:var(--red-light);border:1px solid #F0C0C0;}
+.sc-card.hit{background:var(--green-light);border:1px solid #9DCCA8;}
+.sc-title{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:0.75rem;}
+.sc-card.miss .sc-title{color:var(--red);}
+.sc-card.hit .sc-title{color:var(--green);}
+.sc-body{font-size:0.87rem;line-height:1.6;}
+.sc-card.miss .sc-body{color:#6B4F10;}
+.sc-card.hit .sc-body{color:#1A3A5C;}
+.dialogue{background:white;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;margin:1.5rem 0;}
+.dl-header{background:var(--navy);padding:0.9rem 1.5rem;}
+.dl-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);}
+.dl-line{display:grid;grid-template-columns:100px 1fr;gap:0.75rem;padding:0.85rem 1.5rem;border-bottom:1px solid var(--light);align-items:start;}
+.dl-line:last-child{border-bottom:none;}
+.dl-speaker{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;padding-top:2px;}
+.dl-speaker.resident{color:var(--mid);}
+.dl-speaker.officer{color:#4A7FD0;}
+.dl-speaker.note{color:var(--gold3);}
+.dl-text{font-size:0.87rem;color:#2A3D50;line-height:1.65;}
+.dl-text em{color:var(--gold3);font-style:italic;}
+.stakeholder-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.75rem;margin:1.5rem 0;}
+.sh-card{background:white;border:1px solid #EAE5DC;border-radius:8px;padding:1rem;text-align:center;}
+.sh-icon{font-size:1.5rem;margin-bottom:6px;}
+.sh-label{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:4px;}
+.sh-desc{font-size:0.82rem;color:var(--mid);line-height:1.5;}
+.lesson-nav-bar{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 3rem;border-top:3px solid var(--gold);background:var(--navy);gap:1rem;}
+.lnb-btn{background:rgba(255,255,255,0.08);border:2px solid rgba(201,168,76,0.4);padding:14px 28px;font-family:'Cinzel',serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border-radius:6px;color:var(--cream);transition:all 0.2s;white-space:nowrap;}
+.lnb-btn:hover{background:rgba(201,168,76,0.15);border-color:var(--gold);color:var(--gold);}
+.lnb-btn:disabled,.lnb-btn[disabled]{opacity:0.25;cursor:not-allowed;background:transparent;}
+.lnb-btn:disabled:hover,.lnb-btn[disabled]:hover{background:transparent;border-color:rgba(201,168,76,0.4);color:var(--cream);}
+.lnb-btn.primary{background:var(--gold);color:var(--navy);border-color:var(--gold);font-weight:800;}
+.lnb-btn.primary:hover{background:#C9A84C;border-color:#C9A84C;}
+.lnb-info{text-align:center;flex:1;}
+.lnb-name{font-family:'EB Garamond',serif;font-size:1rem;font-weight:700;color:var(--cream);}
+.lnb-num{font-size:0.85rem;color:var(--gold);font-family:'Cinzel',serif;letter-spacing:1px;}
+@media(max-width:900px){.lesson-container{grid-template-columns:1fr;}.lesson-sidebar{position:relative;height:auto;}.lesson-main{padding:2rem 1.5rem;}.lesson-nav-bar{padding:1rem 1.5rem;flex-wrap:wrap;}.framework-grid,.score-compare,.stakeholder-grid{grid-template-columns:1fr;}.nav-pills{display:none;}}
+
+/* OB CARD */
+.ob-card{background:var(--navy);margin:2rem 0;overflow:hidden;}
+.ob-header{padding:0.85rem 1.5rem;background:rgba(201,168,76,0.08);border-bottom:1px solid rgba(201,168,76,0.15);}
+.ob-label{font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);}
+.ob-body{padding:1.25rem 1.5rem;}
+.ob-q{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;}
+.ob-q-tag{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);background:rgba(201,168,76,0.1);padding:4px 10px;border-radius:3px;white-space:nowrap;}
+.ob-q-text{font-family:'EB Garamond',serif;font-size:1.08rem;font-weight:600;color:var(--cream);line-height:1.5;margin-bottom:8px;}
+.ob-note{font-size:0.88rem;color:#8FA8C0;line-height:1.6;font-style:italic;}
+/* TAKEAWAYS */
+.takeaways{background:var(--navy);padding:2.25rem;margin:3rem 0 0;border-top:3px solid var(--gold);}
+.tk-lbl{font-family:'Cinzel',serif;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.tk-item{color:#8FA8C0;font-size:0.92rem;line-height:1.7;padding:0.5rem 0 0.5rem 1.25rem;border-left:2px solid rgba(201,168,76,0.2);margin-bottom:0.5rem;}
+
+
+.lead-nav{background:var(--navy);border-radius:8px;padding:14px 16px;margin-bottom:16px;border:1px solid rgba(201,168,76,0.2)}
+.lead-nav-header{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.lead-nav-row{display:grid;grid-template-columns:20px 1fr;gap:6px;margin-bottom:6px;align-items:start}
+.lead-nav-letter{font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:var(--gold)}
+.lead-nav-content{}
+.lead-nav-name{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:2px}
+.lead-nav-app{font-size:11px;color:#8FA8C0;line-height:1.5}
+
+.lf-wrap{margin:2.5rem 0 1.5rem;border:2px solid var(--gold);border-radius:10px;overflow:hidden}
+.lf-header{background:var(--navy);padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
+.lf-title{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+.lf-dots{display:flex;gap:6px}
+.lf-dot{width:8px;height:8px;border-radius:50%;background:rgba(201,168,76,0.25);transition:all 0.3s}
+.lf-dot.active{background:var(--gold);transform:scale(1.3)}
+.lf-dot.done{background:var(--gold)}
+.lf-step{display:none;padding:20px}
+.lf-step.active{display:block}
+.lf-step-num{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:6px}
+.lf-step-title{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:10px}
+.lf-chain{background:var(--navy);border-radius:6px;padding:14px 18px;margin:10px 0}
+.lf-chain-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.lf-chain-text{font-size:13px;color:#8FA8C0;line-height:1.6}
+.lf-chain-close{font-size:12px;color:var(--cream);margin-top:6px;font-style:italic}
+.lf-btn{background:var(--navy);color:var(--gold);border:2px solid var(--gold);padding:12px 24px;border-radius:6px;font-family:'Cinzel',serif;font-size:12px;letter-spacing:1.5px;font-weight:600;cursor:pointer;margin-top:12px;transition:all 0.2s;display:inline-block}
+.lf-btn:hover{background:var(--gold);color:var(--navy)}
+.lf-timer{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:var(--gold);padding:6px 14px;border-radius:4px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:1px;margin-top:10px}
+.lesson-main.ft>p{display:none!important}.lesson-main.ft>.callout{display:none!important}.ft-toggle{display:flex;align-items:center;gap:10px;padding:10px 16px;background:var(--navy);border-radius:6px;cursor:pointer;border:1px solid rgba(201,168,76,0.25)}.ft-toggle-switch{width:36px;height:20px;background:rgba(201,168,76,0.2);border-radius:10px;position:relative;transition:background .2s}.ft-toggle-switch.on{background:var(--gold)}.ft-toggle-knob{width:14px;height:14px;background:#fff;border-radius:50%;position:absolute;top:3px;left:3px;transition:left .2s}.ft-toggle-switch.on .ft-toggle-knob{left:19px}.ft-toggle-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}.ft-toggle-desc{font-size:11px;color:var(--mid)}.lesson-main.ft-on>p,.lesson-main.ft-on>.callout,.lesson-main.ft-on h3{display:none!important}.lesson-main.ft-on .ob-card,.lesson-main.ft-on .lf-wrap,.lesson-main.ft-on .lead-nav,.lesson-main.ft-on h2{display:block!important}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <div class="nav-left">
+    <div class="nav-brand">The Promotional Standard<span>Lieutenant Track · Chapter 21</span></div>
+  </div>
+  <div class="nav-pills">
+    <button class="nav-pill active" onclick="showLesson(0)">Why It's Scored</button>
+    <button class="nav-pill" onclick="showLesson(1)">Your Stakeholders</button>
+    <button class="nav-pill" onclick="showLesson(2)">Community Programs</button>
+    <button class="nav-pill" onclick="showLesson(3)">Media Relations</button>
+    <button class="nav-pill" onclick="showLesson(4)">CRR at Lt Level</button>
+    <button class="nav-pill" onclick="showLesson(5)">AC Application</button>
+  </div>
+</nav>
+<div class="progress-bar" id="prog"></div>
+
+<div class="module-hero">
+  <div class="mh-inner">
+    <div class="mh-eyebrow">Chapter 21 · Lieutenant Track · Fire Officer I</div>
+    <h1 class="mh-title">Community Relations<br><em>+ Public Information</em></h1>
+    <p class="mh-sub">The Lieutenant's role as the primary interface between the fire department and the community it serves. Stakeholder relationships, community outreach, public information, media interactions, and Community Risk Reduction — what assessors score, and how to demonstrate it at the company officer level.</p>
+    <div class="mh-badges">
+      <span class="mh-badge badge-blue">Lieutenant Track</span>
+      <span class="mh-badge badge-nfpa">NFPA 1021 · FO I · JPR 5.6</span>
+    </div>
+    <div class="mh-thread">
+      <div class="mh-thread-label">Before You Begin</div>
+      <div class="mh-thread-text">Community relations scenarios appear across multiple assessment center question buckets — they can surface as Leadership Philosophy questions, Administrative questions, or standalone Community Relations scenarios. The candidate who understands why this dimension matters — not just what to say — performs significantly better under supplemental questioning. Start with Lesson 1.</div>
+    </div>
+    <div class="mh-lesson-nav">
+      <button class="mh-lesson-btn active" onclick="showLesson(0)">1. Why It's Scored</button>
+      <button class="mh-lesson-btn" onclick="showLesson(1)">2. Your Stakeholders</button>
+      <button class="mh-lesson-btn" onclick="showLesson(2)">3. Community Programs</button>
+      <button class="mh-lesson-btn" onclick="showLesson(3)">4. Media Relations</button>
+      <button class="mh-lesson-btn" onclick="showLesson(4)">5. CRR at Lt Level</button>
+      <button class="mh-lesson-btn" onclick="showLesson(5)">6. AC Application</button>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- LESSON 1 -->
+<div class="lesson-view active" id="lesson-0">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 21 · Lesson 1 of 6</div>
+    <h1 class="lh-title">Why Community Relations<br><em>Is Scored at Every Rank</em></h1>
+    <div class="lh-meta">
+      <span class="lh-meta-item">⏱ 14 min</span>
+      <span class="lh-meta-item">🏛️ Foundation + Context</span>
+    </div>
+  </div>
+
+  <p>Most candidates treat community relations as a box to check — name a program, mention Fire Prevention Week, close with a principle. Assessors know this pattern and it scores 3/5 reliably. The candidate who understands <em>why</em> community relations is assessed — what organizational function it serves and what leadership capacity it reveals — can speak about it with the depth that separates 4/5 from 5/5.</p>
+
+  <h2>Why Assessors Score Community Relations</h2>
+
+  <p>Community relations is not a public affairs add-on to the fire service mission. It is central to it. The department's ability to operate — its budget, its staffing, its public support for new stations and apparatus — depends entirely on the community's trust and understanding of what the fire service does and why it matters. The officer who builds and maintains that trust is protecting the organization's operational capacity as surely as any tactical decision.</p>
+
+  <p>Assessors score community relations because it reveals three specific leadership capacities that cannot be easily faked:</p>
+
+  <div class="acro-grid">
+    <div class="acro-row">
+      <div class="acro-letter" style="font-size:0.85rem;font-family:'Cinzel',serif;letter-spacing:1px;padding:0.5rem 0.2rem;">SRV</div>
+      <div class="acro-content">
+        <div class="acro-word">Service Orientation — Do You See the Community as Your Client?</div>
+        <div class="acro-desc">The candidate who approaches community relations as an obligation or a performance is demonstrating something about how they see the public — as an audience to manage, not a community to serve. The candidate who speaks about it with genuine investment is demonstrating the Service element of T·C·H·O·E·D·S in its most visible form. Assessors score this distinction consistently.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter" style="font-size:0.85rem;font-family:'Cinzel',serif;letter-spacing:1px;padding:0.5rem 0.2rem;">SYS</div>
+      <div class="acro-content">
+        <div class="acro-word">Systems Thinking — Does the Candidate Connect Crew Behavior to Organizational Reputation?</div>
+        <div class="acro-desc">Every interaction a crew has with a community member — whether at a routine call, during a public education event, or in casual conversation — either builds or erodes the department's relationship with that community. The Lieutenant who understands this is managing the department's most important long-term asset. That understanding is what assessors are testing when they ask community relations questions.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter" style="font-size:0.85rem;font-family:'Cinzel',serif;letter-spacing:1px;padding:0.5rem 0.2rem;">PRO</div>
+      <div class="acro-content">
+        <div class="acro-word">Proactive Leadership — Does the Candidate Wait for Problems or Create Conditions?</div>
+        <div class="acro-desc">The reactive officer deals with community complaints after they arise. The proactive officer creates the relationships and programs that prevent complaints from arising in the first place — and that generate community support when difficult organizational decisions need public backing. This proactive vs reactive distinction maps directly to the locus of control framework from Module 24 and is consistently scored at every rank.</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>What NFPA 1021 Requires at the Company Officer Level</h2>
+  <p>NFPA 1021 Standard for Fire Officer Professional Qualifications identifies specific community relations competencies at the Fire Officer I level. JPR 5.6 requires the Fire Officer I candidate to demonstrate the ability to initiate action on a community need by coordinating public information activities and participating in community and government relations functions.</p>
+
+  <p>This is not a vague expectation — it names three distinct competencies: public information, community relations, and government relations. Each has a specific behavioral expression at the Lieutenant level that assessors look for.</p>
+
+  <div class="framework-grid">
+    <div class="fw-card">
+      <div class="fw-card-label">Public Information</div>
+      <div class="fw-card-title">Communicating the Department's Work</div>
+      <div class="fw-card-desc">What the department does, how it does it, and why it matters — communicated clearly to community members, media, and elected officials. At the Lieutenant level, this includes managing public messaging during incidents, handling media at scene, and participating in department information activities.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Community Relations</div>
+      <div class="fw-card-title">Building the Relationship Before the Call</div>
+      <div class="fw-card-desc">The ongoing relationship between the company and its service area — built through presence, familiarity, trust, and service. Community relations at the Lieutenant level means knowing your community, its vulnerabilities, its concerns, and its character well enough to serve it effectively and to advocate for it within the organization.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Government Relations</div>
+      <div class="fw-card-title">Understanding Organizational Context</div>
+      <div class="fw-card-desc">At the FO I level, government relations competency means understanding how the department relates to its governing structure — city council, city management, boards and commissions — and being able to explain that relationship accurately to community members who ask about budget decisions, staffing levels, or service policies.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">The Integration Point</div>
+      <div class="fw-card-title">T·C·H·O·E·D·S at the Community Level</div>
+      <div class="fw-card-desc">Every element of T·C·H·O·E·D·S has a community relations expression. Transparency means honest communication during difficult incidents. Courage means delivering difficult public messages clearly. Humility means listening before responding. Service means prioritizing community need above convenience. Dedication means showing up for community programs consistently, not just during evaluation periods.</div>
+    </div>
+  </div>
+
+  <div class="callout callout-gold">
+    <span class="callout-label">The Assessment Center Implication</span>
+    <p>When an assessor asks "How do you approach community relations at your station?" the 3/5 answer names programs and activities. The 4/5 answer names programs and connects them to organizational goals — trust-building, risk reduction, public support for the department's mission. The 5/5 answer does both of those things and names the leadership principle that drives the approach — Service, Transparency, or Dedication — and connects community relations work to the candidate's identity as a leader. That integration is what this module is designed to build.</p>
+  </div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="ft-toggle" onclick="toggleFT(this)" style="margin-bottom:16px;max-width:320px">
+<div class="ft-toggle-switch"><div class="ft-toggle-knob"></div></div>
+<div><div class="ft-toggle-label">Fast Track Mode</div><div class="ft-toggle-desc">Full lesson content</div></div>
+</div>
+
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Community & Stakeholder</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Stakeholder Map → CRR Five E's → NFPA 1021 Community Relations → Coalition Building</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the stakeholders → apply CRR Five E's → build the coalition → close with Service</div></div></div></div>
+
+  <span class="sbar-label">Why It's Scored</span>
+  <div class="sbar-card"><strong>Service Orientation</strong>Assessors score whether the candidate sees the community as a client or an audience. The distinction is immediate and consistent.</div>
+  <div class="sbar-card"><strong>Systems Thinking</strong>Every crew interaction is a community relations event. The Lt who understands this manages the department's most important long-term asset.</div>
+  <div class="sbar-card"><strong>Proactive Leadership</strong>Reactive officers handle complaints. Proactive officers build relationships that prevent complaints and generate support.</div>
+  <span class="sbar-label">NFPA 1021 JPR 5.6</span>
+  <div class="sbar-card">Three competencies: Public Information · Community Relations · Government Relations. All three scored at FO I level.</div>
+  <span class="sbar-label">T·C·H·O·E·D·S Connection</span>
+  <div class="sbar-card">Transparency at incidents. Courage in difficult messaging. Service above convenience. Dedication = consistency, not performance.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Why Community Relations Is Scored at Every Ra</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"Describe your understanding of why assessors score community relations and how you would apply it in a real scenario."</div><div class="ob-note">Name specific community engagement strategies. Connect community relations to organizational trust and political support. Show that community work is strategic, not optional.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 1 — Key Takeaways</div>
+  <div class="tk-item">Why Assessors Score Community Relations — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">What NFPA 1021 Requires at the Company Officer Level — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Community Relations question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Community & Stakeholder</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Stakeholder Map → CRR Five E's → NFPA 1021 Community Relations → Coalition Building</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the stakeholders → apply CRR Five E's → build the coalition → close with Service</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" disabled>← Previous</button>
+  <div class="lnb-info"><div class="lnb-name">Why It's Scored</div><div class="lnb-num">Lesson 1 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Your Stakeholders →</button>
+</div>
+</div>
+
+<!-- LESSON 2 -->
+<div class="lesson-view" id="lesson-1">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 21 · Lesson 2 of 6</div>
+    <h1 class="lh-title">Mapping Your Stakeholders —<br><em>Who Needs What from Your Station</em></h1>
+    <div class="lh-meta">
+      <span class="lh-meta-item">⏱ 16 min</span>
+      <span class="lh-meta-item">🗺️ Stakeholder Analysis</span>
+    </div>
+  </div>
+
+  <p>Effective community relations begins with knowing who you are in a relationship with. Most officers think of "the community" as a single undifferentiated audience — and then wonder why generic programs produce generic results. The Lieutenant who maps their stakeholders — who they are, what they need, how they interact with the fire service — delivers community relations work that actually connects.</p>
+
+  <h2>The Company Officer's Stakeholder Map</h2>
+
+  <div class="stakeholder-grid">
+    <div class="sh-card">
+      <div class="sh-icon">🏠</div>
+      <div class="sh-label">Residents</div>
+      <div class="sh-desc">Homeowners, renters, families. They want to know the department is present, capable, and on their side. Most interactions are during emergency response.</div>
+    </div>
+    <div class="sh-card">
+      <div class="sh-icon">🏢</div>
+      <div class="sh-label">Businesses</div>
+      <div class="sh-desc">Owners and managers. Pre-incident plans, inspections, and fire prevention are the primary touchpoints. Business relationships often generate the most durable community support.</div>
+    </div>
+    <div class="sh-card">
+      <div class="sh-icon">🏫</div>
+      <div class="sh-label">Schools</div>
+      <div class="sh-desc">Teachers, administrators, students. Fire prevention education and station tours. School relationships build community trust across generations.</div>
+    </div>
+    <div class="sh-card">
+      <div class="sh-icon">🙏</div>
+      <div class="sh-label">Faith Communities</div>
+      <div class="sh-desc">Churches, mosques, temples, synagogues. High-trust organizations with established community networks. Especially important for reaching vulnerable populations.</div>
+    </div>
+    <div class="sh-card">
+      <div class="sh-icon">🏥</div>
+      <div class="sh-label">Healthcare Partners</div>
+      <div class="sh-desc">Hospitals, clinics, dialysis centers, nursing facilities. Life safety and evacuation planning. EMS protocols and patient advocacy.</div>
+    </div>
+    <div class="sh-card">
+      <div class="sh-icon">👥</div>
+      <div class="sh-label">Community Organizations</div>
+      <div class="sh-desc">Neighborhood associations, civic groups, HOAs, nonprofits. Organized voices for specific communities. Key partners for CRR initiatives.</div>
+    </div>
+  </div>
+
+  <h2>Vulnerable Populations — The Lieutenant's Responsibility</h2>
+  <p>Every service area contains populations that face elevated risk and reduced capacity to protect themselves. NFPA 1300 and fire service research consistently identify these groups as deserving specific community relations attention — not out of charity, but because effective emergency services requires knowing and serving the full community.</p>
+
+  <div class="acro-grid">
+    <div class="acro-row">
+      <div class="acro-letter">ELD</div>
+      <div class="acro-content">
+        <div class="acro-word">Elderly Residents — Elevated Risk, Reduced Response Capacity</div>
+        <div class="acro-desc">Older adults are disproportionately represented in fire fatalities. Mobility limitations, hearing/vision loss, and cognitive changes reduce escape time and increase injury severity. Specific programs: smoke alarm installation for those who cannot self-install, fire safety home visits, evacuation plan development. Relationships with senior centers and assisted living facilities are primary access points.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">SES</div>
+      <div class="acro-content">
+        <div class="acro-word">Lower-Income Households — Resource Gaps and Housing Vulnerabilities</div>
+        <div class="acro-desc">Lower-income households are more likely to have non-functioning smoke alarms, older electrical systems, space heaters as primary heat sources, and overcrowding — all significant fire risk factors. Community relations at the station level means knowing these risk concentrations in your service area and directing prevention resources toward them rather than toward more convenient or visible populations.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">LNG</div>
+      <div class="acro-content">
+        <div class="acro-word">Language Access — Non-English Speakers Need Services Too</div>
+        <div class="acro-desc">Emergency communications, fire safety education, and public information all require language access to be effective. This means knowing the primary non-English languages in your service area, having translated materials available, and connecting with community organizations that serve non-English speaking populations as trusted intermediaries for fire safety information.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">DIS</div>
+      <div class="acro-content">
+        <div class="acro-word">Individuals with Disabilities — Special Needs Registry and Pre-Incident Planning</div>
+        <div class="acro-desc">Many jurisdictions maintain special needs registries for residents with mobility, cognitive, or medical needs that affect emergency response. The Lieutenant who knows which residents in their service area are registered — and what their specific needs are — is in a fundamentally different response position than the one who discovers those needs at 3am during a working structure fire.</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Building the Stakeholder Relationship — The Station's Role</h2>
+  <p>Stakeholder relationships are not built through programs. They are built through consistent presence, reliable service, and genuine engagement over time. Programs are the mechanism — trust is the product. The Lieutenant who understands this invests in relationships continuously rather than activating them when inspection season or budget hearings approach.</p>
+
+  <div class="callout callout-navy">
+    <span class="callout-label">The Pre-Incident Planning Connection</span>
+    <p>Community relations and pre-incident planning are not separate functions — they are the same function seen from different angles. The Lieutenant who has a strong relationship with a business owner gets walk-throughs, floor plan access, and honest information about storage and hazardous materials because that relationship exists before the business calls 911. The Lieutenant who shows up only when required gets what's legally required and nothing more. Which officer provides better emergency service to that business?</p>
+  </div>
+
+  <div class="callout callout-gold">
+    <span class="callout-label">Assessment Center Application</span>
+    <p>Stakeholder mapping is one of the most powerful community relations tools in assessment center responses because it demonstrates systematic thinking rather than anecdote. "I would engage the community" scores 3/5. "I would identify the three highest-risk populations in this service area — elderly residents in the apartment complexes on 5th, the light manufacturing corridor, and the ESL-speaking neighborhood north of Main — and build specific outreach protocols for each" scores 4/5 and opens the door to a 5/5 integration with CRR and T·C·H·O·E·D·S.</p>
+  </div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Community & Stakeholder</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Stakeholder Map → CRR Five E's → NFPA 1021 Community Relations → Coalition Building</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the stakeholders → apply CRR Five E's → build the coalition → close with Service</div></div></div></div>
+
+  <span class="sbar-label">Six Stakeholder Groups</span>
+  <div class="sbar-card"><strong>Residents</strong>Homeowners and renters. Primary touchpoint: emergency response quality.</div>
+  <div class="sbar-card"><strong>Businesses</strong>Pre-incident plans, inspections, prevention. Most durable long-term relationships.</div>
+  <div class="sbar-card"><strong>Schools</strong>Prevention education and station tours. Multi-generational trust-building.</div>
+  <div class="sbar-card"><strong>Faith Communities</strong>High-trust intermediaries. Critical for reaching vulnerable populations.</div>
+  <div class="sbar-card"><strong>Healthcare Partners</strong>Life safety planning, evacuation protocols, EMS coordination.</div>
+  <div class="sbar-card"><strong>Community Organizations</strong>HOAs, civic groups, nonprofits. Organized community voices.</div>
+  <span class="sbar-label">Vulnerable Populations</span>
+  <div class="sbar-card">Elderly · Lower-income · Non-English speakers · Individuals with disabilities. Each needs specific, targeted outreach — not generic programs.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Mapping Your Stakeholders</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"Describe your understanding of the company officer's stakeholder map and how you would apply it in a real scenario."</div><div class="ob-note">Name specific community engagement strategies. Connect community relations to organizational trust and political support. Show that community work is strategic, not optional.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 2 — Key Takeaways</div>
+  <div class="tk-item">The Company Officer's Stakeholder Map — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">Vulnerable Populations — The Lieutenant's Responsibility — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Community Relations question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Community & Stakeholder</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Stakeholder Map → CRR Five E's → NFPA 1021 Community Relations → Coalition Building</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the stakeholders → apply CRR Five E's → build the coalition → close with Service</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Why It's Scored</button>
+  <div class="lnb-info"><div class="lnb-name">Your Stakeholders</div><div class="lnb-num">Lesson 2 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Community Programs →</button>
+</div>
+</div>
+
+<!-- LESSON 3 -->
+<div class="lesson-view" id="lesson-2">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 21 · Lesson 3 of 6</div>
+    <h1 class="lh-title">Community Programs —<br><em>Building Relationships Through Consistent Presence</em></h1>
+    <div class="lh-meta">
+      <span class="lh-meta-item">⏱ 16 min</span>
+      <span class="lh-meta-item">📋 Programs + Partnerships</span>
+    </div>
+  </div>
+
+  <p>Community programs are the structured mechanisms through which the Lieutenant builds relationships, delivers fire safety education, and creates department presence in the service area. Knowing the programs is not enough — assessors consistently probe for <em>why</em> a program exists, what it accomplishes, how it connects to organizational goals, and how the Lieutenant manages it within the constraints of operational responsibility.</p>
+
+  <h2>Core Community Programs — What the Lieutenant Manages</h2>
+
+  <div class="acro-grid">
+    <div class="acro-row">
+      <div class="acro-letter">SPR</div>
+      <div class="acro-content">
+        <div class="acro-word">Smoke Alarm Programs — The Highest-ROI Prevention Tool</div>
+        <div class="acro-desc">Smoke alarm installation programs — particularly those targeting elderly, lower-income, and vulnerable populations — consistently show the highest return on investment of any residential fire prevention intervention. NFPA data shows that homes with working smoke alarms have a 50% lower risk of fire death. At the station level, this means coordinating with community partners (faith organizations, senior centers, housing authorities) for access, managing equipment and installation logistics, and tracking outcomes. The Lieutenant's role is coordination, not just participation.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">FPW</div>
+      <div class="acro-content">
+        <div class="acro-word">Fire Prevention Week — The Annual Platform</div>
+        <div class="acro-desc">Held each October in the week that includes October 9th (anniversary of the Great Chicago Fire), Fire Prevention Week is the highest-profile annual community relations platform in the fire service. Station-level activities typically include school presentations, public open houses, media engagement, and smoke alarm distribution. The Lieutenant who treats Fire Prevention Week as an isolated annual event misses its relationship-building potential — it is most effective when it deepens relationships already built throughout the year, not initiates them.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">CPST</div>
+      <div class="acro-content">
+        <div class="acro-word">Child Passenger Safety — A Broader Public Safety Role</div>
+        <div class="acro-desc">Many fire departments run or participate in child passenger safety seat inspection programs — either through dedicated technicians or broader community events. These programs extend the department's community safety role beyond fire and EMS, build relationships with new parents and young families, and create sustained community touchpoints over time. The Lieutenant who oversees certified technicians on their crew needs to understand the program's operational requirements and community relationship function.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">STR</div>
+      <div class="acro-content">
+        <div class="acro-word">Station Tours — Demystifying the Fire Service</div>
+        <div class="acro-desc">Station tours for school groups, community organizations, and individuals build familiarity and trust in ways that no formal program can replicate. A child who has touched the apparatus, worn the gear, and spoken with the crew does not fear the firefighters who respond to their home. An adult who has met the Lieutenant personally does not assume malice or incompetence when something goes wrong. Tours are low-cost, high-impact community relations investments that require only organized commitment from the company.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">CPR</div>
+      <div class="acro-content">
+        <div class="acro-word">Community CPR Training — Creating Lay Responders</div>
+        <div class="acro-desc">CPR and basic life safety training programs — Hands-Only CPR events, Stop the Bleed instruction, Hands-Only CPR at community events — serve dual purposes: they build community preparedness (and therefore improve patient outcomes before EMS arrives) and they build department relationships with community members in a context of genuine mutual benefit. Participants often become advocates for the department in community discussions about funding and operations.</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Managing Programs — The Lieutenant's Coordination Role</h2>
+  <p>Community programs require management, not just participation. The Lieutenant who builds an effective community relations program addresses four operational questions:</p>
+
+  <div class="framework-grid">
+    <div class="fw-card">
+      <div class="fw-card-label">Resource Allocation</div>
+      <div class="fw-card-title">Time, Personnel, Equipment</div>
+      <div class="fw-card-desc">Community programs compete with training time, maintenance schedules, and rest requirements. The Lieutenant who treats community relations as extra work creates a crew that resents it. The one who integrates it as part of the station's professional identity creates a crew that sustains it.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Documentation</div>
+      <div class="fw-card-title">Tracking Outcomes and Justifying Investment</div>
+      <div class="fw-card-desc">Programs that can be measured — smoke alarms installed, households reached, students educated, CPR certifications delivered — can be defended in budget discussions and scaled based on evidence. The Lieutenant who tracks outcomes is building the organizational case for continued investment.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Partnership Development</div>
+      <div class="fw-card-title">Leveraging Community Organizations</div>
+      <div class="fw-card-desc">The most effective community programs are delivered through partnerships that extend the department's reach. A faith organization that co-sponsors smoke alarm installation events provides access to populations the department cannot reach alone. A school that integrates fire safety into curriculum provides sustained education. Partnerships multiply impact.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Crew Engagement</div>
+      <div class="fw-card-title">Building a Community-Serving Culture</div>
+      <div class="fw-card-desc">The Lieutenant sets the tone. A crew that hears their officer talk about community relations as "soft" work develops a corresponding attitude. A crew that watches their officer treat every community interaction with professionalism and investment develops a professional identity that extends to every call, every conversation, every encounter.</div>
+    </div>
+  </div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Community & Stakeholder</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Stakeholder Map → CRR Five E's → NFPA 1021 Community Relations → Coalition Building</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the stakeholders → apply CRR Five E's → build the coalition → close with Service</div></div></div></div>
+
+  <span class="sbar-label">Core Programs</span>
+  <div class="sbar-card"><strong>Smoke Alarms</strong>Highest-ROI prevention tool. 50% lower death risk in homes with working alarms. Coordinate through community partners.</div>
+  <div class="sbar-card"><strong>Fire Prevention Week</strong>October, week of 9th. Deepens existing relationships — doesn't replace them.</div>
+  <div class="sbar-card"><strong>Child Passenger Safety</strong>Extends safety role beyond fire/EMS. Builds sustained family relationships.</div>
+  <div class="sbar-card"><strong>Station Tours</strong>Demystifies the department. Low cost, high trust impact.</div>
+  <div class="sbar-card"><strong>Community CPR</strong>Builds lay responders AND community advocates for the department.</div>
+  <span class="sbar-label">Management Questions</span>
+  <div class="sbar-card">Resource Allocation · Documentation · Partnership Development · Crew Engagement. All four required for sustained program success.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Community Programs</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"Describe your understanding of core community programs — what the lieutenant mana and how you would apply it in a real scenario."</div><div class="ob-note">Name specific community engagement strategies. Connect community relations to organizational trust and political support. Show that community work is strategic, not optional.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 3 — Key Takeaways</div>
+  <div class="tk-item">Core Community Programs — What the Lieutenant Manages — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">Managing Programs — The Lieutenant's Coordination Role — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Community Relations question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Community & Stakeholder</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Stakeholder Map → CRR Five E's → NFPA 1021 Community Relations → Coalition Building</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the stakeholders → apply CRR Five E's → build the coalition → close with Service</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Your Stakeholders</button>
+  <div class="lnb-info"><div class="lnb-name">Community Programs</div><div class="lnb-num">Lesson 3 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Media Relations →</button>
+</div>
+</div>
+
+<!-- LESSON 4 -->
+<div class="lesson-view" id="lesson-3">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 21 · Lesson 4 of 6</div>
+    <h1 class="lh-title">Media Relations —<br><em>Speaking on Record, At Scene, and Online</em></h1>
+    <div class="lh-meta">
+      <span class="lh-meta-item">⏱ 16 min</span>
+      <span class="lh-meta-item">📰 Media · Social Media · PIO Protocol</span>
+    </div>
+  </div>
+
+  <p>Media interactions are among the highest-stakes community relations events a Lieutenant encounters — and among the least prepared for. A single poorly worded comment at a working fire can damage department credibility, compromise an investigation, or create legal exposure for the organization. A well-handled media interaction builds public confidence and demonstrates the professionalism assessors are looking for when they ask how you handle the media.</p>
+
+  <h2>The PIO Relationship — Know Your Chain Before the Camera Finds You</h2>
+  <p>Most departments have a Public Information Officer (PIO) — a designated spokesperson who manages media relations at significant incidents. The Lieutenant's primary media relations responsibility is knowing and respecting this chain of communication. Unauthorized statements — even accurate ones — can undermine coordinated messaging, contradict an ongoing investigation, or create liability the officer did not intend.</p>
+
+  <div class="callout callout-navy">
+    <span class="callout-label">The Protocol Before Anything Else</span>
+    <p>Before any media interaction at a significant incident: notify your chain of command that media is present. Determine whether a PIO is en route or has been designated. Confirm what information has been authorized for release. The five minutes you spend getting clarity on this before speaking protects the organization and protects you. The Lieutenant who freelances with media at a working fire because "they seemed friendly" has created a problem their chief will be managing for the next three days.</p>
+  </div>
+
+  <h2>What to Say — and What Never to Say — At Scene</h2>
+
+  <div class="score-compare">
+    <div class="sc-card miss">
+      <div class="sc-title">Never Say at Scene</div>
+      <div class="sc-body">
+        <strong>Cause speculation:</strong> "It looks like it started in the kitchen" — investigators have not confirmed cause.<br><br>
+        <strong>Injury/fatality details:</strong> "We found one victim" — before family notification is complete.<br><br>
+        <strong>Dollar estimates:</strong> "The house is a total loss, probably $400,000" — not your assessment to make.<br><br>
+        <strong>Criticism of others:</strong> "If they'd had working smoke alarms..." — blaming victims is never appropriate.<br><br>
+        <strong>Operational criticism:</strong> "We could have used two more units on this one" — resource discussions happen internally.
+      </div>
+    </div>
+    <div class="sc-card hit">
+      <div class="sc-title">Appropriate at Scene</div>
+      <div class="sc-body">
+        <strong>Confirmed facts only:</strong> "We responded to a report of a structure fire at this address at [time]."<br><br>
+        <strong>Current status:</strong> "The fire is under control / we are still working the scene."<br><br>
+        <strong>PIO referral:</strong> "For additional information, our Public Information Officer will be available to speak with you at [location/time]."<br><br>
+        <strong>Safety messaging:</strong> "We want to remind residents that working smoke alarms save lives."<br><br>
+        <strong>Honest uncertainty:</strong> "I'm not able to confirm that at this time" is always appropriate.
+      </div>
+    </div>
+  </div>
+
+  <h2>Social Media — The Lieutenant's New Media Responsibility</h2>
+  <p>Social media has fundamentally changed the media relations landscape for company officers. The bystander with a smartphone is now a real-time broadcaster. The crew member who posts incident photos without authorization creates liability. The officer who comments on department policy on a personal account creates organizational problems. And the department's own social media presence is increasingly a primary community relations channel that the Lieutenant may be asked to contribute to.</p>
+
+  <div class="acro-grid">
+    <div class="acro-row">
+      <div class="acro-letter">POL</div>
+      <div class="acro-content">
+        <div class="acro-word">Know Your Department's Social Media Policy</div>
+        <div class="acro-desc">Most departments have specific policies about what officers and crew members may post about department operations, incidents, and personnel. Not knowing this policy is not a defense. The Lieutenant is responsible for knowing it, following it, and ensuring their crew knows and follows it. Social media violations can result in disciplinary action, compromise investigations, and generate significant media attention of an unwanted kind.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">INC</div>
+      <div class="acro-content">
+        <div class="acro-word">Incident Photography and Video — Chain of Authorization</div>
+        <div class="acro-desc">Incident photos and video — even taken for training or documentation purposes — may capture patient information, structural vulnerabilities, or tactical details that should not be publicly shared. The authorization chain for incident photography typically runs through the PIO or department administration. Crew members who share incident photos on personal accounts "just to show what we do" have likely violated both department policy and potentially HIPAA.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">PER</div>
+      <div class="acro-content">
+        <div class="acro-word">Personal Accounts and Professional Identity</div>
+        <div class="acro-desc">Officers who comment on department policy, local politics, or community issues on personal social media accounts do not separate their personal and professional identities in the reader's mind. "Lt. Johnson from Station 7 says the department is underfunded" reads as a department position statement, not a personal opinion. The Courage element of T·C·H·O·E·D·S applies here: if the message is worth sharing publicly, share it through appropriate organizational channels.</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>The On-Camera Fundamentals</h2>
+  <p>When authorized to speak on camera — at community events, during planned media interactions, or in appropriate incident circumstances — the Lieutenant applies the same communication principles that produce 4/5 oral board scores:</p>
+  <ul>
+    <li><strong>One message, repeated clearly.</strong> Identify the single most important thing you want the community to know and say it directly, not buried in context.</li>
+    <li><strong>Specific and factual.</strong> Concrete details are more credible than general statements. "We installed 47 smoke alarms in this neighborhood last month" is more compelling than "we've been doing a lot of outreach."</li>
+    <li><strong>Calm and unhurried.</strong> Officers who speak quickly under media pressure appear anxious. The professional pause before answering is as appropriate on camera as it is in an oral board.</li>
+    <li><strong>Redirect when appropriate.</strong> "I'm not able to confirm that, but what I can tell you is..." returns the conversation to your message without appearing evasive.</li>
+  </ul>
+
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Community & Stakeholder</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Stakeholder Map → CRR Five E's → NFPA 1021 Community Relations → Coalition Building</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the stakeholders → apply CRR Five E's → build the coalition → close with Service</div></div></div></div>
+
+  <span class="sbar-label">PIO Protocol</span>
+  <div class="sbar-card">Notify chain → confirm PIO → confirm authorized information → then speak. Five minutes of protocol protects the organization and the officer.</div>
+  <span class="sbar-label">Never Say at Scene</span>
+  <div class="sbar-card">Cause speculation · injury details before notification · dollar estimates · victim criticism · operational resource criticism.</div>
+  <span class="sbar-label">Always Appropriate</span>
+  <div class="sbar-card">Confirmed facts · current operational status · PIO referral · safety messaging · "I can't confirm that at this time."</div>
+  <span class="sbar-label">Social Media</span>
+  <div class="sbar-card">Know the policy. Enforce it with crew. Incident photography requires authorization chain. Personal accounts carry professional identity.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Media Relations</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"Describe your understanding of the pio relationship — know your chain before the  and how you would apply it in a real scenario."</div><div class="ob-note">Name specific community engagement strategies. Connect community relations to organizational trust and political support. Show that community work is strategic, not optional.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 4 — Key Takeaways</div>
+  <div class="tk-item">The PIO Relationship — Know Your Chain Before the Camera Fin — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">What to Say — and What Never to Say — At Scene — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Community Relations question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Community & Stakeholder</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Stakeholder Map → CRR Five E's → NFPA 1021 Community Relations → Coalition Building</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the stakeholders → apply CRR Five E's → build the coalition → close with Service</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Community Programs</button>
+  <div class="lnb-info"><div class="lnb-name">Media Relations</div><div class="lnb-num">Lesson 4 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: CRR at Lt Level →</button>
+</div>
+</div>
+
+<!-- LESSON 5 -->
+<div class="lesson-view" id="lesson-4">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 21 · Lesson 5 of 6</div>
+    <h1 class="lh-title">Community Risk Reduction<br><em>at the Lieutenant Level</em></h1>
+    <div class="lh-meta">
+      <span class="lh-meta-item">⏱ 18 min</span>
+      <span class="lh-meta-item">🌍 NFPA 1300 · Five E's · Data-Driven Prevention</span>
+    </div>
+  </div>
+
+  <p>Community Risk Reduction is the framework that connects community relations to the department's strategic mission. The distinction between an officer who does community outreach and an officer who practices CRR is the same as the distinction between an officer who responds to fires and an officer who commands incidents: the same activities, organized by a strategic framework, produce fundamentally different results.</p>
+
+  <h2>CRR at the Company Level — What NFPA 1300 Expects</h2>
+  <p>NFPA 1300 (Standard on Community Risk Assessment and Community Risk Reduction Plan Development, 2020) establishes the framework for systematic risk reduction at the organizational level. At the company officer level, CRR practice means applying this framework within the station's service area — identifying the highest-risk populations and conditions, deploying the most effective interventions, and measuring results.</p>
+
+  <h2>The Five E's — The CRR Intervention Framework</h2>
+  <p>CRR interventions fall into five categories — the Five E's — that represent different mechanisms for reducing community risk. Module 12 covers the Five E's in depth in the context of strategic planning. At the Lieutenant level, the relevant application is knowing which E's are within company officer authority and how they connect to specific risk profiles in the service area.</p>
+
+  <div class="acro-grid">
+    <div class="acro-row">
+      <div class="acro-letter">E1</div>
+      <div class="acro-content">
+        <div class="acro-word">Education — Building Community Knowledge and Behavior</div>
+        <div class="acro-desc">Fire safety education — school presentations, CPR training, smoke alarm demonstrations, cooking fire prevention — is the most common E at the company level. Education changes knowledge and, over time, behavior. Assessors score whether candidates understand education's limitations (knowledge does not always produce behavior change) and strengths (cost-effective, relationship-building, scalable through partners).</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">E2</div>
+      <div class="acro-content">
+        <div class="acro-word">Engineering — Changing the Physical Environment</div>
+        <div class="acro-desc">Engineering interventions change the environment to reduce risk regardless of human behavior — sprinkler systems, smoke alarms, fire-resistant construction, automatic door closers. At the company officer level, engineering engagement happens primarily through pre-incident planning (noting the presence or absence of suppression systems), fire inspections (identifying code violations), and advocacy for local ordinances requiring engineering solutions in high-risk occupancies.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">E3</div>
+      <div class="acro-content">
+        <div class="acro-word">Enforcement — Using Code and Regulation</div>
+        <div class="acro-desc">Enforcement interventions use the legal system to compel risk reduction — fire codes, building codes, occupancy regulations, citation and penalty structures. Company officers are often involved in enforcement through fire inspections and code compliance activities. The Lieutenant who approaches enforcement as a community service (helping the occupant understand and correct violations) rather than purely as a punitive function builds better long-term relationships and better compliance.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">E4</div>
+      <div class="acro-content">
+        <div class="acro-word">Economic Incentives — Making Risk Reduction Financially Attractive</div>
+        <div class="acro-desc">Insurance discounts for sprinkler installation, grant programs for smoke alarm distribution, tax incentives for fire-resistant renovation — economic incentives make risk-reducing behavior more financially attractive. At the company level, this primarily means knowing what programs exist in your jurisdiction and connecting residents and businesses to them. The Lieutenant who knows the local home fire safety grant program is adding tangible value to every community interaction.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">E5</div>
+      <div class="acro-content">
+        <div class="acro-word">Emergency Response — The Last Line of Defense</div>
+        <div class="acro-desc">Emergency response is the intervention that occurs after all other E's have failed to prevent the incident. It is the most expensive and the most visible E — and the one the traditional fire service has over-invested in relative to the others. The assessment-center-ready Lieutenant frames emergency response as part of a CRR continuum, not as the department's primary product. "We protect lives and property through prevention as much as through response" is a 4/5 framing. Naming all five E's and explaining their integration is a 5/5 framing.</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Data-Driven Risk Reduction — The Lt's Analytical Role</h2>
+  <p>Effective CRR at the company level is not random. It is directed by data — incident history in the service area, demographic risk profiles, housing stock characteristics, code compliance history, and national research on high-risk populations and behaviors. The Lieutenant who can say "our incident data shows a concentration of cooking fires in the multi-family corridor on the east side of our service area — so we are deploying specific cooking fire prevention education and outreach to those buildings" is demonstrating the analytical capacity assessors associate with Captain-level readiness.</p>
+
+  <div class="callout callout-teal">
+    <span class="callout-label">The Strategic Connection</span>
+    <p>CRR at the company level is the operational expression of the organizational strategy covered in Module 12 (Strategic Thinking + Planning). The department-level CRR plan sets direction; the company-level Lieutenant executes it in their service area. The Lieutenant who can connect their station's CRR activities to the department's strategic goals is demonstrating the vertical alignment that assessors score as organizational leadership — a competency explicitly associated with promotion to Captain and beyond.</p>
+  </div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Community & Stakeholder</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Stakeholder Map → CRR Five E's → NFPA 1021 Community Relations → Coalition Building</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the stakeholders → apply CRR Five E's → build the coalition → close with Service</div></div></div></div>
+
+  <span class="sbar-label">CRR vs Community Outreach</span>
+  <div class="sbar-card">CRR = strategic framework organizing community activities by risk data and outcomes. Outreach = activities without systematic direction. Same work, different architecture.</div>
+  <span class="sbar-label">The Five E's at Lt Level</span>
+  <div class="sbar-card"><strong>E1 Education</strong>Most common. Changes knowledge → behavior over time.</div>
+  <div class="sbar-card"><strong>E2 Engineering</strong>Code compliance, inspection, sprinkler advocacy.</div>
+  <div class="sbar-card"><strong>E3 Enforcement</strong>Service-oriented enforcement builds better compliance.</div>
+  <div class="sbar-card"><strong>E4 Economic</strong>Know what grant/incentive programs exist locally.</div>
+  <div class="sbar-card"><strong>E5 Emergency Response</strong>Last line of defense. Frame it as part of the continuum.</div>
+  <span class="sbar-label">Data-Driven CRR</span>
+  <div class="sbar-card">Incident history + demographic risk + housing stock = directed prevention. Not random programs — targeted interventions.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Community Risk Reduction at the Lieutenant Le</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"Describe your understanding of crr at the company level — what nfpa 1300 expects and how you would apply it in a real scenario."</div><div class="ob-note">Name specific community engagement strategies. Connect community relations to organizational trust and political support. Show that community work is strategic, not optional.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 5 — Key Takeaways</div>
+  <div class="tk-item">CRR at the Company Level — What NFPA 1300 Expects — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">The Five E's — The CRR Intervention Framework — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Community Relations question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Community & Stakeholder</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Stakeholder Map → CRR Five E's → NFPA 1021 Community Relations → Coalition Building</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the stakeholders → apply CRR Five E's → build the coalition → close with Service</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Media Relations</button>
+  <div class="lnb-info"><div class="lnb-name">CRR at Lt Level</div><div class="lnb-num">Lesson 5 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: AC Application →</button>
+</div>
+</div>
+
+<!-- LESSON 6 -->
+<div class="lesson-view" id="lesson-5">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 21 · Lesson 6 of 6 · Assessment Application</div>
+    <h1 class="lh-title">Assessment Center Application —<br><em>Community Relations Scenarios</em></h1>
+    <div class="lh-meta">
+      <span class="lh-meta-item">⏱ 16 min</span>
+      <span class="lh-meta-item">🎯 Scoring + Practice Scenarios</span>
+    </div>
+  </div>
+
+  <p>Community relations scenarios appear in multiple assessment center formats — oral boards, in-baskets, written exercises, and role plays. The scoring framework is consistent across formats: assessors are looking for the same three things that Lesson 1 identified as the core of community relations leadership — service orientation, systems thinking, and proactive leadership.</p>
+
+  <h2>How Community Relations Is Scored by Dimension</h2>
+
+  <div class="framework-grid">
+    <div class="fw-card">
+      <div class="fw-card-label">Supervisory Judgment</div>
+      <div class="fw-card-title">Decisions That Affect Community Relationship</div>
+      <div class="fw-card-desc">When supervisory judgment scenarios involve community impact — a crew member who made an inappropriate comment to a resident, a team that declined a community event, a media incident at a call — community relations knowledge informs the response. The 4/5 answer addresses the immediate supervisory issue AND names the community relations principle being protected.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Interpersonal Skills</div>
+      <div class="fw-card-title">Community Member Interactions as Role Plays</div>
+      <div class="fw-card-desc">Community member role plays — an angry resident at a scene, a concerned parent at a school presentation, a business owner upset about an inspection finding — test whether the candidate can apply interpersonal communication skills in a community context. The dialogue template from Module 5 applies directly; the community relations layer is the organizational relationship being protected.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Leadership Philosophy</div>
+      <div class="fw-card-title">Community Relations as Identity</div>
+      <div class="fw-card-desc">Leadership philosophy questions that touch community relations test whether the candidate has an integrated view of the department's public service role. The 5/5 answer connects community relations to Service and Transparency from T·C·H·O·E·D·S, to CRR's Five E's, and to the identity statement: "I am the kind of Lieutenant who treats every community interaction as a reflection of the department's commitment to the people we serve."</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Administration / Management</div>
+      <div class="fw-card-title">Program Planning and Resource Deployment</div>
+      <div class="fw-card-desc">Administrative scenarios about community relations test planning and resource management capacity. In-basket items about community program scheduling, budget requests for prevention materials, or media relations protocols require the candidate to demonstrate organized, systems-level thinking — not just good intentions.</div>
+    </div>
+  </div>
+
+  <h2>Practice Scenarios</h2>
+
+  <h3>Scenario 1 — The Upset Resident (Oral Board / Role Play)</h3>
+  <div class="dialogue">
+    <div class="dl-header"><div class="dl-label">Community Relations Role Play — Resident Complaint at Scene</div></div>
+    <div class="dl-line">
+      <div class="dl-speaker note">Scenario</div>
+      <div class="dl-text"><em>You are the Lieutenant on a residential structure fire. The incident is under control. A neighbor approaches you visibly upset: "Your crew drove across my lawn and broke my irrigation system. Nobody has apologized or even talked to me about it. This is completely unacceptable."</em></div>
+    </div>
+    <div class="dl-line">
+      <div class="dl-speaker resident">Resident</div>
+      <div class="dl-text">"Your crew drove across my lawn and broke my irrigation system. Nobody has apologized or even talked to me."</div>
+    </div>
+    <div class="dl-line">
+      <div class="dl-speaker officer">Lt Response</div>
+      <div class="dl-text">"You're absolutely right to bring this to me directly, and I apologize that no one has addressed this with you yet — that should have happened already. I'm Lieutenant [name] from Station [X]. Tell me what you observed and show me the damage if you're able to."</div>
+    </div>
+    <div class="dl-line">
+      <div class="dl-speaker note">Coach Note</div>
+      <div class="dl-text"><em>The 4/5 response: validates the concern immediately, takes ownership without making excuses, introduces self professionally, and asks for the resident's account before defending crew action. No "but we were doing our jobs." The department's community relationship is always worth protecting — even when the crew may have been justified.</em></div>
+    </div>
+    <div class="dl-line">
+      <div class="dl-speaker officer">Follow-through</div>
+      <div class="dl-text">"I will document this, speak with my crew about what occurred, and ensure you have the department's claims process information before we leave the scene. I also want to make sure we follow up with you within [timeframe] — can I take your contact information?"</div>
+    </div>
+    <div class="dl-line">
+      <div class="dl-speaker note">Close</div>
+      <div class="dl-text"><em>5/5 close connects to Transparency and Service: "My responsibility as a Lieutenant is to ensure this community can trust that we handle these situations professionally — both the emergency and everything that comes after it."</em></div>
+    </div>
+  </div>
+
+  <h3>Scenario 2 — New to Station (Oral Board)</h3>
+
+  <div class="callout callout-navy">
+    <span class="callout-label">Prompt</span>
+    <p>"You have just been promoted to Lieutenant and assigned to a new station. How would you approach building community relations in your service area in your first 90 days?"</p>
+  </div>
+
+  <div class="score-compare">
+    <div class="sc-card miss">
+      <div class="sc-title">3/5 Response</div>
+      <div class="sc-body">"I would get out in the community and introduce myself. We'd do some station tours and participate in Fire Prevention Week. I'd make sure we had smoke alarms available for residents who need them and that we were visible at community events."</div>
+    </div>
+    <div class="sc-card hit">
+      <div class="sc-title">4/5–5/5 Response</div>
+      <div class="sc-body">"My first step would be assessment — reviewing incident data for the service area to identify risk concentrations, meeting with local community organizations to understand what they know about the neighborhood that we don't, and identifying the vulnerable populations that require targeted outreach. From there I'd build a CRR-informed plan: which of the Five E's are most needed, which stakeholder relationships to prioritize, and what program investments would produce measurable outcomes. Fire Prevention Week is a platform — I'd want established relationships going into it, not starting them there. I'd also establish the media protocol with my crew from day one — who speaks at scenes, what we confirm, and who the PIO contact is. The leadership principle driving all of this: Service. My station's relationship with this community is one of the most important things I manage."</div>
+    </div>
+  </div>
+
+  <div class="callout callout-gold">
+    <span class="callout-label">Chapter 21 Complete</span>
+    <p>Community relations is one of the most consistently underestimated competencies in fire service promotional preparation — because it appears soft relative to tactical knowledge and supervisory judgment. The candidates who understand its strategic importance, its connection to the department's long-term operational capacity, and its expression through T·C·H·O·E·D·S frameworks perform at a level that distinguishes them. You now have that understanding. Apply it in every scenario where the department's relationship with the public is at stake — which is every scenario involving a community member.</p>
+  </div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Community & Stakeholder</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Stakeholder Map → CRR Five E's → NFPA 1021 Community Relations → Coalition Building</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the stakeholders → apply CRR Five E's → build the coalition → close with Service</div></div></div></div>
+
+  <span class="sbar-label">Scored in Four Dimensions</span>
+  <div class="sbar-card"><strong>Supervisory Judgment</strong>Community relationship impact of crew behavior decisions.</div>
+  <div class="sbar-card"><strong>Interpersonal Skills</strong>Community member role plays — apply Module 5 dialogue skills.</div>
+  <div class="sbar-card"><strong>Leadership Philosophy</strong>Service + Transparency + identity statement integration.</div>
+  <div class="sbar-card"><strong>Administration</strong>Program planning and resource deployment systems.</div>
+  <span class="sbar-label">The 3/5 vs 5/5 Pattern</span>
+  <div class="sbar-card">3/5: names programs. 4/5: connects programs to goals. 5/5: integrates CRR framework + Five E's + T·C·H·O·E·D·S + identity statement.</div>
+  <span class="sbar-label">Key Identity Statement</span>
+  <div class="sbar-card">"I am the kind of Lieutenant who treats every community interaction as a reflection of the department's commitment to the people we serve."</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Assessment Center Application</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"You receive a scenario about community relations. Walk me through your complete response using the frameworks from this chapter."</div><div class="ob-note">Use LEAD: Label the bucket (Community Relations), Engage the specific framework (reference How Community Relations Is Scored by Dimension explicitly), Address the operational and organizational impact, Drive to a concrete first action with a timeline.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 6 — Key Takeaways</div>
+  <div class="tk-item">How Community Relations Is Scored by Dimension — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">Practice Scenarios — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Community Relations question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Community & Stakeholder</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Stakeholder Map → CRR Five E's → NFPA 1021 Community Relations → Coalition Building</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the stakeholders → apply CRR Five E's → build the coalition → close with Service</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← CRR at Lt Level</button>
+  <div class="lnb-info"><div class="lnb-name">AC Application</div><div class="lnb-num">Lesson 6 of 6</div></div>
+  <button class="lnb-btn primary" onclick="window.scrollTo({top:0,behavior:'smooth'})">Module Complete ✓</button>
+</div>
+</div>
+
+</main>
+
+<script>
+let cur=0;
+const ls=document.querySelectorAll('.lesson-view');
+const ps=document.querySelectorAll('.nav-pill');
+const mbs=document.querySelectorAll('.mh-lesson-btn');
+function showLesson(n){
+  ls.forEach(l=>l.classList.remove('active'));
+  ps.forEach(p=>p.classList.remove('active'));
+  mbs.forEach(m=>m.classList.remove('active'));
+  if(ls[n])ls[n].classList.add('active');
+  if(ps[n])ps[n].classList.add('active');
+  if(mbs[n])mbs[n].classList.add('active');
+  cur=n;
+  window.scrollTo({top:0,behavior:'smooth'});
+  document.getElementById('prog').style.width='0%';
+}
+function nextLesson(){if(cur<ls.length-1)showLesson(cur+1);}
+function prevLesson(){if(cur>0)showLesson(cur-1);}
+window.addEventListener('scroll',()=>{
+  const s=document.documentElement.scrollTop;
+  const h=document.documentElement.scrollHeight-window.innerHeight;
+  if(h>0)document.getElementById('prog').style.width=Math.min(100,(s/h*100))+'%';
+});
+document.addEventListener('DOMContentLoaded',()=>showLesson(0));
+
+function lfNext(el,stepNum){
+  var wrap=el.closest('.lf-wrap');
+  if(!wrap)return;
+  var steps=wrap.querySelectorAll('.lf-step');
+  var dots=wrap.querySelectorAll('.lf-dot');
+  steps.forEach(function(s,i){s.classList.remove('active');if(i<stepNum)s.classList.add('done');});
+  dots.forEach(function(d,i){d.classList.remove('active');if(i<stepNum)d.classList.add('done');if(i===stepNum)d.classList.add('active');});
+  if(steps[stepNum])steps[stepNum].classList.add('active');
+}
+</script>
+<script>function toggleFT(el){var sw=el.querySelector('.ft-toggle-switch');var desc=el.querySelector('.ft-toggle-desc');var mains=document.querySelectorAll('.lesson-main');sw.classList.toggle('on');var on=sw.classList.contains('on');desc.textContent=on?'Frameworks + OB cards only':'Full lesson content';mains.forEach(function(m){m.classList.toggle('ft-on',on);});}</script>
+</body>
+</html>

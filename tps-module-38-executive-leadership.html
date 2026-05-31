@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Chapter 36 — Executive Leadership + Political Acumen | The Promotional Standard</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Crimson+Pro:wght@300;400;500;600&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{--navy:#0C2340;--navy2:#1A3A5C;--gold:#C9A84C;--gold2:#F5F0E8;--gold3:#6B4F10;--cream:#F5F0E8;--offwhite:#F5F0E8;--light:#EAE5DC;--mid:#2A3D50;--gray:#8FA8C0;--red:#B22222;--red-light:#FFF0F0;--green:#1A5C3A;--green-light:#EAF3DE;--teal:#006B6B;--teal-light:#E0F4F4;--purple:#4A2570;--purple-light:#F0EAF8;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:var(--navy);font-size:18px;line-height:1.8;}
+.top-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(12,35,64,0.98);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,168,76,0.2);height:64px;display:flex;align-items:center;padding:0 2rem;gap:1rem;}
+.nav-left{display:flex;align-items:center;gap:12px;flex:1;}
+.nav-brand{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;color:var(--cream);line-height:1.3;}
+.nav-brand span{display:block;font-size:8px;color:var(--gold);letter-spacing:2px;}
+.nav-pills{display:flex;gap:5px;flex:2;justify-content:center;overflow-x:auto;}
+.nav-pill{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#8FA8C0;padding:6px 11px;border-radius:20px;cursor:pointer;transition:all 0.2s;border:none;background:transparent;white-space:nowrap;}
+.nav-pill:hover{color:var(--cream);background:rgba(255,255,255,0.05);}
+.nav-pill.active{color:var(--gold);background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.25);}
+.progress-bar{position:fixed;top:64px;left:0;height:3px;background:linear-gradient(90deg,var(--navy2),var(--gold));z-index:199;width:0%;transition:width 0.3s;}
+.lesson-view{display:none;}.lesson-view.active{display:block;}
+.module-hero{background:var(--navy);padding:4.5rem 3rem 3.5rem;margin-top:64px;position:relative;overflow:hidden;border-bottom:3px solid var(--gold);}
+.module-hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 60px,rgba(201,168,76,0.015) 60px,rgba(201,168,76,0.015) 61px);}
+.module-hero::after{content:'';position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(180deg,var(--navy2),var(--gold));}
+.mh-inner{max-width:900px;position:relative;z-index:2;}
+.mh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.mh-title{font-family:'EB Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:800;color:var(--cream);line-height:1.1;margin-bottom:0.75rem;}
+.mh-title em{font-style:italic;color:var(--gold);}
+.mh-sub{font-size:1.05rem;color:#8FA8C0;max-width:700px;line-height:1.7;margin-bottom:2rem;}
+.mh-badges{display:flex;gap:10px;margin-bottom:1.5rem;flex-wrap:wrap;}
+.mh-badge{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border-radius:3px;}
+.badge-dc{background:rgba(139,58,10,0.12);color:#C07030;border:1px solid rgba(139,58,10,0.25);}
+.badge-chief{background:rgba(74,37,112,0.15);color:#8B5FBF;border:1px solid rgba(74,37,112,0.3);}
+.mh-thread{background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);border-left:3px solid var(--gold);padding:1rem 1.5rem;margin-bottom:2rem;max-width:700px;}
+.mh-thread-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+.mh-thread-text{font-size:0.92rem;color:var(--cream);line-height:1.65;}
+.mh-lesson-nav{display:flex;gap:8px;flex-wrap:wrap;}
+.mh-lesson-btn{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:8px 14px;border-radius:6px;cursor:pointer;transition:all 0.2s;border:1px solid rgba(201,168,76,0.25);background:transparent;color:#8FA8C0;}
+.mh-lesson-btn:hover{background:rgba(255,255,255,0.05);color:var(--cream);}
+.mh-lesson-btn.active{background:rgba(201,168,76,0.12);color:var(--gold);border-color:rgba(201,168,76,0.4);}
+.lesson-container{display:grid;grid-template-columns:1fr 310px;gap:0;}
+.lesson-main{padding:3rem 3.5rem;border-right:1px solid var(--light);}
+.lesson-sidebar{padding:2rem 1.75rem;background:var(--offwhite);position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;}
+.lesson-header{margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:2px solid var(--light);}
+.lh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold3);margin-bottom:0.6rem;}
+.lh-title{font-family:'EB Garamond',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;color:var(--navy);line-height:1.15;margin-bottom:0.6rem;}
+.lh-title em{font-style:italic;color:var(--gold);}
+.lh-meta{display:flex;gap:1.5rem;flex-wrap:wrap;}
+.lh-meta-item{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);}
+.lesson-main h2{font-family:'EB Garamond',serif;font-size:1.7rem;font-weight:700;color:var(--navy);margin:3rem 0 0.9rem;padding-bottom:0.5rem;border-bottom:2px solid var(--light);}
+.lesson-main h3{font-family:'EB Garamond',serif;font-size:1.25rem;font-weight:600;color:var(--navy);margin:2.25rem 0 0.65rem;}
+.lesson-main p{margin-bottom:1.25rem;color:#2A3D50;line-height:1.82;}
+.lesson-main ul,.lesson-main ol{margin:0 0 1.25rem 1.5rem;color:#2A3D50;}
+.lesson-main li{margin-bottom:0.6rem;line-height:1.72;}
+.lesson-main strong{color:var(--navy);font-weight:600;}
+.callout{padding:1.4rem 1.6rem;margin:2rem 0;}
+.callout-gold{background:var(--gold2);border-left:3px solid var(--gold);}.callout-gold p{color:var(--gold3);font-size:0.97rem;line-height:1.75;}
+.callout-navy{background:var(--navy);border-left:3px solid var(--gold);}.callout-navy p{color:#8FA8C0;font-size:0.95rem;line-height:1.75;}
+.callout-red{background:var(--red-light);border-left:4px solid var(--red);}.callout-red p{color:#6B4F10;font-size:0.97rem;line-height:1.75;}
+.callout-green{background:var(--green-light);border-left:4px solid var(--green);}.callout-green p{color:#1A3A5C;font-size:0.97rem;line-height:1.75;}
+.callout-teal{background:var(--teal-light);border-left:4px solid var(--teal);}.callout-teal p{color:#003A3A;font-size:0.97rem;line-height:1.75;}
+.callout-purple{background:var(--purple-light);border-left:4px solid var(--purple);}.callout-purple p{color:#2A0A40;font-size:0.97rem;line-height:1.75;}
+.callout-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:0.5rem;display:block;}
+.callout-gold .callout-label{color:var(--gold3);}.callout-navy .callout-label{color:var(--gold);}.callout-red .callout-label{color:var(--red);}.callout-green .callout-label{color:var(--green);}.callout-teal .callout-label{color:var(--teal);}.callout-purple .callout-label{color:var(--purple);}
+.framework-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.fw-card{background:white;border:1px solid #EAE5DC;padding:1.25rem;border-radius:8px;}
+.fw-card-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:6px;}
+.fw-card-title{font-family:'EB Garamond',serif;font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.fw-card-desc{font-size:0.9rem;color:var(--mid);line-height:1.6;}
+.acro-grid{display:flex;flex-direction:column;gap:0;margin:1.5rem 0;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;}
+.acro-row{display:grid;grid-template-columns:52px 1fr;gap:0;border-bottom:1px solid #EAE5DC;}
+.acro-row:last-child{border-bottom:none;}
+.acro-letter{background:var(--navy);color:var(--gold);font-family:'EB Garamond',serif;font-size:1.8rem;font-weight:800;display:flex;align-items:center;justify-content:center;}
+.acro-content{padding:0.9rem 1.1rem;background:white;}
+.acro-word{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:3px;}
+.acro-desc{font-size:0.85rem;color:var(--mid);line-height:1.55;}
+.sbar-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold3);margin-bottom:0.65rem;margin-top:1.5rem;display:block;}
+.sbar-label:first-child{margin-top:0;}
+.sbar-card{background:white;border:1px solid #EAE5DC;border-radius:8px;padding:0.9rem 1rem;margin-bottom:8px;font-size:0.9rem;color:var(--mid);line-height:1.55;}
+.sbar-card strong{color:var(--navy);display:block;margin-bottom:3px;font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;}
+.score-compare{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.sc-card{padding:1.25rem;border-radius:8px;}
+.sc-card.miss{background:var(--red-light);border:1px solid #F0C0C0;}
+.sc-card.hit{background:var(--green-light);border:1px solid #9DCCA8;}
+.sc-title{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:0.75rem;}
+.sc-card.miss .sc-title{color:var(--red);}.sc-card.hit .sc-title{color:var(--green);}
+.sc-body{font-size:0.87rem;line-height:1.6;}
+.sc-card.miss .sc-body{color:#6B4F10;}.sc-card.hit .sc-body{color:#1A3A5C;}
+.lesson-nav-bar{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 3rem;border-top:3px solid var(--gold);background:var(--navy);gap:1rem;}
+.lnb-btn{background:rgba(255,255,255,0.08);border:2px solid rgba(201,168,76,0.4);padding:14px 28px;font-family:'Cinzel',serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border-radius:6px;color:var(--cream);transition:all 0.2s;white-space:nowrap;}
+.lnb-btn:hover{background:rgba(201,168,76,0.15);border-color:var(--gold);color:var(--gold);}
+.lnb-btn:disabled,.lnb-btn[disabled]{opacity:0.25;cursor:not-allowed;background:transparent;}
+.lnb-btn:disabled:hover,.lnb-btn[disabled]:hover{background:transparent;border-color:rgba(201,168,76,0.4);color:var(--cream);}
+.lnb-btn.primary{background:var(--gold);color:var(--navy);border-color:var(--gold);font-weight:800;}
+.lnb-btn.primary:hover{background:#C9A84C;border-color:#C9A84C;}
+.lnb-info{text-align:center;flex:1;}
+.lnb-name{font-family:'EB Garamond',serif;font-size:1rem;font-weight:700;color:var(--cream);}
+.lnb-num{font-size:0.85rem;color:var(--gold);font-family:'Cinzel',serif;letter-spacing:1px;}
+@media(max-width:900px){.lesson-container{grid-template-columns:1fr;}.lesson-sidebar{position:relative;height:auto;}.lesson-main{padding:2rem 1.5rem;}.lesson-nav-bar{padding:1rem 1.5rem;flex-wrap:wrap;}.framework-grid,.score-compare{grid-template-columns:1fr;}.nav-pills{display:none;}}
+
+/* OB CARD */
+.ob-card{background:var(--navy);margin:2rem 0;overflow:hidden;}
+.ob-header{padding:0.85rem 1.5rem;background:rgba(201,168,76,0.08);border-bottom:1px solid rgba(201,168,76,0.15);}
+.ob-label{font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);}
+.ob-body{padding:1.25rem 1.5rem;}
+.ob-q{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;}
+.ob-q-tag{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);background:rgba(201,168,76,0.1);padding:4px 10px;border-radius:3px;white-space:nowrap;}
+.ob-q-text{font-family:'EB Garamond',serif;font-size:1.08rem;font-weight:600;color:var(--cream);line-height:1.5;margin-bottom:8px;}
+.ob-note{font-size:0.88rem;color:#8FA8C0;line-height:1.6;font-style:italic;}
+/* TAKEAWAYS */
+.takeaways{background:var(--navy);padding:2.25rem;margin:3rem 0 0;border-top:3px solid var(--gold);}
+.tk-lbl{font-family:'Cinzel',serif;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.tk-item{color:#8FA8C0;font-size:0.92rem;line-height:1.7;padding:0.5rem 0 0.5rem 1.25rem;border-left:2px solid rgba(201,168,76,0.2);margin-bottom:0.5rem;}
+
+
+.lead-nav{background:var(--navy);border-radius:8px;padding:14px 16px;margin-bottom:16px;border:1px solid rgba(201,168,76,0.2)}
+.lead-nav-header{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.lead-nav-row{display:grid;grid-template-columns:20px 1fr;gap:6px;margin-bottom:6px;align-items:start}
+.lead-nav-letter{font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:var(--gold)}
+.lead-nav-content{}
+.lead-nav-name{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:2px}
+.lead-nav-app{font-size:11px;color:#8FA8C0;line-height:1.5}
+
+.lf-wrap{margin:2.5rem 0 1.5rem;border:2px solid var(--gold);border-radius:10px;overflow:hidden}
+.lf-header{background:var(--navy);padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
+.lf-title{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+.lf-dots{display:flex;gap:6px}
+.lf-dot{width:8px;height:8px;border-radius:50%;background:rgba(201,168,76,0.25);transition:all 0.3s}
+.lf-dot.active{background:var(--gold);transform:scale(1.3)}
+.lf-dot.done{background:var(--gold)}
+.lf-step{display:none;padding:20px}
+.lf-step.active{display:block}
+.lf-step-num{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:6px}
+.lf-step-title{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:10px}
+.lf-chain{background:var(--navy);border-radius:6px;padding:14px 18px;margin:10px 0}
+.lf-chain-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.lf-chain-text{font-size:13px;color:#8FA8C0;line-height:1.6}
+.lf-chain-close{font-size:12px;color:var(--cream);margin-top:6px;font-style:italic}
+.lf-btn{background:var(--navy);color:var(--gold);border:2px solid var(--gold);padding:12px 24px;border-radius:6px;font-family:'Cinzel',serif;font-size:12px;letter-spacing:1.5px;font-weight:600;cursor:pointer;margin-top:12px;transition:all 0.2s;display:inline-block}
+.lf-btn:hover{background:var(--gold);color:var(--navy)}
+.lf-timer{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:var(--gold);padding:6px 14px;border-radius:4px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:1px;margin-top:10px}
+.lesson-main.ft>p{display:none!important}.lesson-main.ft>.callout{display:none!important}.ft-toggle{display:flex;align-items:center;gap:10px;padding:10px 16px;background:var(--navy);border-radius:6px;cursor:pointer;border:1px solid rgba(201,168,76,0.25)}.ft-toggle-switch{width:36px;height:20px;background:rgba(201,168,76,0.2);border-radius:10px;position:relative;transition:background .2s}.ft-toggle-switch.on{background:var(--gold)}.ft-toggle-knob{width:14px;height:14px;background:#fff;border-radius:50%;position:absolute;top:3px;left:3px;transition:left .2s}.ft-toggle-switch.on .ft-toggle-knob{left:19px}.ft-toggle-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}.ft-toggle-desc{font-size:11px;color:var(--mid)}.lesson-main.ft-on>p,.lesson-main.ft-on>.callout,.lesson-main.ft-on h3{display:none!important}.lesson-main.ft-on .ob-card,.lesson-main.ft-on .lf-wrap,.lesson-main.ft-on .lead-nav,.lesson-main.ft-on h2{display:block!important}
+</style>
+</head>
+<body>
+<nav class="top-nav">
+  <div class="nav-left"><div class="nav-brand">The Promotional Standard<span>DC / Fire Chief · Chapter 36</span></div></div>
+  <div class="nav-pills">
+    <button class="nav-pill active" onclick="showLesson(0)">The Executive Role</button>
+    <button class="nav-pill" onclick="showLesson(1)">Governing Bodies</button>
+    <button class="nav-pill" onclick="showLesson(2)">Executive Media Relations</button>
+    <button class="nav-pill" onclick="showLesson(3)">Political Acumen</button>
+    <button class="nav-pill" onclick="showLesson(4)">Succession + Legacy</button>
+    <button class="nav-pill" onclick="showLesson(5)">AC Application</button>
+  </div>
+</nav>
+<div class="progress-bar" id="prog"></div>
+<div class="module-hero">
+  <div class="mh-inner">
+    <div class="mh-eyebrow">Chapter 36 · Deputy Chief / Fire Chief · Capstone</div>
+    <h1 class="mh-title">Executive Leadership<br><em>+ Political Acumen</em></h1>
+    <p class="mh-sub">The transition from senior officer to executive — the relationship with the city manager and governing body, working with elected officials without becoming political, executive media relations at the crisis level, navigating organizational politics while maintaining integrity, and building the succession and legacy that outlasts any individual's tenure. The capstone module for Deputy Chief and Fire Chief candidates.</p>
+    <div class="mh-badges">
+      <span class="mh-badge badge-dc">Deputy Chief</span>
+      <span class="mh-badge badge-chief">Fire Chief</span>
+    </div>
+    <div class="mh-thread">
+      <div class="mh-thread-label">Before You Begin</div>
+      <div class="mh-thread-text">This is the capstone module of the TPS BC/DC series. It draws on every previous module — leadership philosophy, ethics, change management, budget, labor relations, accreditation, emergency management — and applies them in the context of the executive role. The DC and Fire Chief are the organization's most public face and its ultimate accountability holder. This module is about what that means in practice.</div>
+    </div>
+    <div class="mh-lesson-nav">
+      <button class="mh-lesson-btn active" onclick="showLesson(0)">1. The Executive Role</button>
+      <button class="mh-lesson-btn" onclick="showLesson(1)">2. Governing Bodies</button>
+      <button class="mh-lesson-btn" onclick="showLesson(2)">3. Executive Media Relations</button>
+      <button class="mh-lesson-btn" onclick="showLesson(3)">4. Political Acumen</button>
+      <button class="mh-lesson-btn" onclick="showLesson(4)">5. Succession + Legacy</button>
+      <button class="mh-lesson-btn" onclick="showLesson(5)">6. AC Application</button>
+    </div>
+  </div>
+</div>
+<main>
+
+<!-- LESSON 1 -->
+<div class="lesson-view active" id="lesson-0">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 36 · Lesson 1 of 6</div>
+    <h1 class="lh-title">The Executive Role —<br><em>What Changes at DC and Above</em></h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 14 min</span><span class="lh-meta-item">🏛️ Executive Transition · Accountability · Identity</span></div>
+  </div>
+  <p>The transition from Battalion Chief to Deputy Chief is not a promotion to a larger version of the same job. It is a role transition — a fundamental change in what the job is, who the primary constituents are, and what success looks like. The DC and Fire Chief are not the organization's most senior technical experts (though they may be) — they are the organization's executive leaders, accountable not primarily to the operations floor but to the governing structure, the community, and the future of the organization.</p>
+  <h2>The Four Role Shifts</h2>
+  <div class="acro-grid">
+    <div class="acro-row">
+      <div class="acro-letter">EXT</div>
+      <div class="acro-content">
+        <div class="acro-word">External Orientation — The Constituency Shifts Outward</div>
+        <div class="acro-desc">The Battalion Chief's primary constituency is the crews they supervise. The Deputy Chief and Fire Chief's primary constituency expands to include the city manager, the city council, the community, peer agency executives, professional organizations, and media. The executive who continues to orient primarily inward — managing operations, supervising directly, attending every incident — is not doing the executive job. The external relationships that protect and advance the organization require investment that only the executive can make.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">POL</div>
+      <div class="acro-content">
+        <div class="acro-word">Political Awareness — Understanding the Environment</div>
+        <div class="acro-desc">At the executive level, organizational decisions occur within a political environment — local government politics, community dynamics, labor relations, interagency relationships, and the dynamics of the governing body. The executive who is politically naive — who makes decisions without understanding their political implications — creates organizational problems that their technical competence cannot solve. Political awareness is not the same as being political; it is understanding the environment in which the organization operates.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">STR</div>
+      <div class="acro-content">
+        <div class="acro-word">Strategic Time Horizon — Thinking in Years, Not Shifts</div>
+        <div class="acro-desc">The Battalion Chief manages in operational time — shifts, incidents, immediate personnel issues. The executive manages in strategic time — years, budget cycles, contract periods, capital program timelines, succession pipelines. The executive who cannot shift their planning horizon from immediate to long-term is operating at the wrong level for their role. The decisions the Fire Chief makes today about hiring, capital investment, organizational culture, and professional development will shape the organization for the next decade.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">ACC</div>
+      <div class="acro-content">
+        <div class="acro-word">Ultimate Accountability — The Buck Stops Here</div>
+        <div class="acro-desc">At the executive level, accountability is no longer shared — it is singular. When a member of the organization commits misconduct, the city manager and council look to the Fire Chief. When a major incident goes badly, the public and media look to the Fire Chief. When the department fails to meet its standards, the governing body holds the Fire Chief responsible. This is not unfair — it is the nature of the role. The executive who is not prepared to hold ultimate accountability for organizational outcomes should not be in the executive role.</div>
+      </div>
+    </div>
+  </div>
+  <h2>The City Manager Relationship — The Foundational Alliance</h2>
+  <p>In most city manager forms of government, the Fire Chief serves at the pleasure of the city manager — who is appointed by the city council. The city manager is the Fire Chief's immediate supervisor and the primary conduit between the department and the governing body. The Fire Chief who has the city manager's genuine confidence is in a fundamentally different organizational position than the one who doesn't.</p>
+  <div class="callout callout-gold">
+    <span class="callout-label">Building the City Manager Relationship</span>
+    <p>Three practices build genuine city manager confidence: First, no surprises — the city manager should never learn about a significant organizational event, problem, or decision from anyone other than the Fire Chief. First, proactive communication builds trust; reactive communication after the fact creates doubt. Second, data fluency — the Fire Chief who can speak in financial and organizational performance terms (budget implications, response time data, accreditation status, ISO rating) is speaking the city manager's language. Third, organizational credibility — the city manager's confidence is based partly on the Fire Chief and partly on the department's reputation. A department that performs well, manages its budget honestly, and handles its personnel issues professionally makes the city manager's job easier. That ease converts to organizational support.</p>
+  </div>
+</div>
+<div class="lesson-sidebar">
+<div class="ft-toggle" onclick="toggleFT(this)" style="margin-bottom:16px;max-width:320px">
+<div class="ft-toggle-switch"><div class="ft-toggle-knob"></div></div>
+<div><div class="ft-toggle-label">Fast Track Mode</div><div class="ft-toggle-desc">Full lesson content</div></div>
+</div>
+
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Four Role Shifts → City Manager Relationship → Governing Body Framework → Political Navigation Model</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the political dimension → apply executive framework → build stakeholder relationship → close with Humility</div></div></div></div>
+
+  <span class="sbar-label">Four Role Shifts</span>
+  <div class="sbar-card"><strong>External Orientation</strong>Primary constituency expands to city manager · council · community · peers · media. Internal focus at DC level = wrong job.</div>
+  <div class="sbar-card"><strong>Political Awareness</strong>Understanding the political environment ≠ being political. Naive executives create problems technical competence can't solve.</div>
+  <div class="sbar-card"><strong>Strategic Time</strong>Years not shifts. Decisions today shape the org for a decade.</div>
+  <div class="sbar-card"><strong>Ultimate Accountability</strong>Singular. The buck stops here. Not a burden to resent — the nature of the role.</div>
+  <span class="sbar-label">City Manager Relationship</span>
+  <div class="sbar-card">No surprises · data fluency (their language) · organizational credibility that makes their job easier. All three build genuine confidence.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — The Executive Role</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"Describe your understanding of the four role shifts and how you would apply it in a real scenario."</div><div class="ob-note">Name the shift: from operational decisions to organizational strategy, from managing personnel to managing stakeholders, from incident command to political navigation. Show self-awareness about the transition.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 1 — Key Takeaways</div>
+  <div class="tk-item">The Four Role Shifts — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">The City Manager Relationship — The Foundational Alliance — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Executive Leadership question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Four Role Shifts → City Manager Relationship → Governing Body Framework → Political Navigation Model</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the political dimension → apply executive framework → build stakeholder relationship → close with Humility</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" disabled>← Previous</button>
+  <div class="lnb-info"><div class="lnb-name">The Executive Role</div><div class="lnb-num">Lesson 1 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Governing Bodies →</button>
+</div>
+</div>
+
+<!-- LESSON 2 -->
+<div class="lesson-view" id="lesson-1">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 36 · Lesson 2 of 6</div>
+    <h1 class="lh-title">Governing Bodies —<br><em>Working with Councils, Commissions, and Boards</em></h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 16 min</span><span class="lh-meta-item">🏛️ City Council · Presentations · Advocacy</span></div>
+  </div>
+  <p>The city council, board of supervisors, or equivalent governing body is the elected representative of the community the fire department serves. Understanding how to work with the governing body — not for it and not against it, but in a professional relationship that advances the department's mission within the constraints of democratic governance — is a foundational executive competency.</p>
+  <h2>The Governing Body's Role and the Executive's Relationship to It</h2>
+  <p>The governing body sets policy and allocates resources. The Fire Chief implements policy and manages operations. This division is not just organizational — it is a constitutional and democratic principle. The Fire Chief who attempts to make policy rather than implement it is exceeding their role. The governing body that attempts to manage operations rather than set policy is exceeding its role. Both are organizational problems, and the executive who understands the boundary can navigate both violations when they occur.</p>
+  <div class="framework-grid">
+    <div class="fw-card">
+      <div class="fw-card-label">Policy vs Operations</div>
+      <div class="fw-card-title">The Line That Matters</div>
+      <div class="fw-card-desc">Policy: what level of service, at what cost, deployed how, to serve what priorities. Operations: how that service is actually delivered on a day-to-day basis. The council sets the first; the Fire Chief manages the second. When a council member asks "why didn't Station 4 respond to the Maple Street call?" they are asking an operational question that the Fire Chief answers. When they ask "what staffing level does the department need to meet our response time standard?" they are asking a policy question that shapes the budget decision.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Individual Councilmembers vs the Body</div>
+      <div class="fw-card-title">Relationships Without Creating Inequity</div>
+      <div class="fw-card-desc">Council members are individuals who represent different constituencies, hold different views, and have different relationships with the fire department. The executive who builds genuine individual relationships with council members is better positioned to advance organizational priorities. The one who favors some council members over others, provides information to some that isn't available to all, or is perceived as aligned with a political faction creates organizational vulnerability. Build all the relationships; favor none.</div>
+    </div>
+  </div>
+  <h2>Presenting to the Governing Body — The Executive Standard</h2>
+  <div class="acro-grid">
+    <div class="acro-row">
+      <div class="acro-letter">PRE</div>
+      <div class="acro-content">
+        <div class="acro-word">Prepare for Their Questions, Not Just Your Presentation</div>
+        <div class="acro-desc">The council member who asks the question you didn't prepare for at a public hearing has just handed you a public credibility problem. The Fire Chief who can answer every relevant question about the department's operations, budget, performance, and plans — fluently and factually, without notes — has demonstrated the mastery the rank requires. Preparation for a council presentation includes anticipating and preparing for every question a council member reasonably might ask, not just rehearsing the slides.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">LAY</div>
+      <div class="acro-content">
+        <div class="acro-word">Translate Technical Into Accessible</div>
+        <div class="acro-desc">Council members are generalists, not fire service specialists. Presentations that rely on fire service jargon, assume knowledge of NFPA standards, or lead with operational detail before establishing relevance to community outcomes are not communicating effectively. The effective executive can explain why the NFPA 1710 response time standard matters in terms of survival probability curves, can explain the ISO PPC rating in terms of community insurance costs, and can translate every technical organizational fact into its community impact equivalent.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">HON</div>
+      <div class="acro-content">
+        <div class="acro-word">Honest Answers to Difficult Questions</div>
+        <div class="acro-desc">The council member who asks "is the department meeting its response time objectives?" when the answer is no deserves an honest answer — delivered with context, with explanation of contributing factors, and with the department's improvement plan. The Fire Chief who softens, deflects, or avoids a difficult answer to a direct question has chosen short-term comfort over the long-term credibility that the relationship requires. Governing bodies work with executives they trust. Trust is built through honesty, including honesty about problems.</div>
+      </div>
+    </div>
+  </div>
+  <div class="callout callout-navy">
+    <span class="callout-label">The Advocacy Role — Making the Case for the Department</span>
+    <p>The Fire Chief is the organization's advocate before the governing body — not a neutral civil servant presenting information without position. Advocacy means making the evidence-based case for the resources, policies, and decisions the department needs to fulfill its mission effectively. The executive who never advocates is not serving the organization. The one who advocates dishonestly — overstating need, hiding problems, manipulating data — destroys the credibility that makes advocacy effective. Honest advocacy, grounded in evidence, delivered consistently over time, is the most effective approach. It also happens to be the ethical requirement.</p>
+  </div>
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Four Role Shifts → City Manager Relationship → Governing Body Framework → Political Navigation Model</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the political dimension → apply executive framework → build stakeholder relationship → close with Humility</div></div></div></div>
+
+  <span class="sbar-label">Policy vs Operations Boundary</span>
+  <div class="sbar-card">Council sets policy (service level, resource allocation, priorities). Fire Chief manages operations (how service is delivered). Both violations are organizational problems — executive must navigate both.</div>
+  <span class="sbar-label">Individual Council Relationships</span>
+  <div class="sbar-card">Build all relationships. Favor none. Information available to one council member must be available to all. Perceived faction alignment = organizational vulnerability.</div>
+  <span class="sbar-label">Presentation Standard</span>
+  <div class="sbar-card">Prepare for their questions, not just your slides · translate technical to community impact · honest answers to difficult questions. Governing bodies work with executives they trust.</div>
+  <span class="sbar-label">Honest Advocacy</span>
+  <div class="sbar-card">Evidence-based case for what the department needs. Not neutral — the Fire Chief is the department's advocate. But dishonest advocacy destroys the credibility that makes advocacy effective.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Governing Bodies</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"Describe your understanding of the governing body's role and the executive's rela and how you would apply it in a real scenario."</div><div class="ob-note">Name the shift: from operational decisions to organizational strategy, from managing personnel to managing stakeholders, from incident command to political navigation. Show self-awareness about the transition.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 2 — Key Takeaways</div>
+  <div class="tk-item">The Governing Body's Role and the Executive's Relationship t — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">Presenting to the Governing Body — The Executive Standard — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Executive Leadership question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Four Role Shifts → City Manager Relationship → Governing Body Framework → Political Navigation Model</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the political dimension → apply executive framework → build stakeholder relationship → close with Humility</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← The Executive Role</button>
+  <div class="lnb-info"><div class="lnb-name">Governing Bodies</div><div class="lnb-num">Lesson 2 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Executive Media Relations →</button>
+</div>
+</div>
+
+<!-- LESSON 3 -->
+<div class="lesson-view" id="lesson-2">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 36 · Lesson 3 of 6</div>
+    <h1 class="lh-title">Executive Media Relations —<br><em>Crisis Communication at the Highest Stakes</em></h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 16 min</span><span class="lh-meta-item">📰 Crisis Comm · Press Conferences · Social Media</span></div>
+  </div>
+  <p>At the executive level, media relations is no longer about managing PIO protocols at incidents — it is about being the organization's spokesperson in the highest-stakes communications the department ever faces: a line-of-duty death, an allegation of misconduct, a major operational failure, a contract dispute that becomes public, or a community-changing catastrophic event. The executive who is not prepared for these moments has left the organization's most critical communications to chance.</p>
+  <h2>The Crisis Communication Framework</h2>
+  <div class="acro-grid">
+    <div class="acro-row">
+      <div class="acro-letter">SPD</div>
+      <div class="acro-content">
+        <div class="acro-word">Speed — Get in Front of the Story</div>
+        <div class="acro-desc">In crisis communication, the first narrative that reaches the public becomes the default frame — and changing it is far harder than establishing it. The executive who goes silent while a story develops is ceding the narrative to whoever fills the information vacuum. The response to a significant incident, allegation, or failure should include an executive statement within hours, not days. "We are aware of the situation, we are investigating, and we will have a full update at [specific time]" is better than silence — it establishes presence and a timeline without premature commitment to facts that may change.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">TRU</div>
+      <div class="acro-content">
+        <div class="acro-word">Truth — Everything You Say Must Be Accurate</div>
+        <div class="acro-desc">In crisis communication, the temptation to soften, qualify, or delay the full truth is intense — and almost always counterproductive. The story that comes out in pieces, with later corrections that contradict earlier statements, does far more organizational damage than the same story told accurately and completely from the beginning. The executive who cannot yet confirm all facts says so explicitly: "I want to give you accurate information. Here is what I can confirm: [facts]. Here is what we are still investigating: [gaps]. I will update you as the picture becomes clearer." That statement is more credible than a statement that later has to be retracted.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">CAR</div>
+      <div class="acro-content">
+        <div class="acro-word">Care — Communicate Genuine Human Concern</div>
+        <div class="acro-desc">The executive who communicates about a line-of-duty death, a community tragedy, or a member misconduct incident without visible genuine concern for the human dimensions of the event is communicating something the organization did not intend. The community hears management-speak where it expected human response. The press conference where the Fire Chief reads a prepared statement without visible emotional investment in the people affected is not the press conference that builds community trust. Genuine care, expressed directly and without performance, is the communication standard.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">ACT</div>
+      <div class="acro-content">
+        <div class="acro-word">Action — What Is Being Done</div>
+        <div class="acro-desc">Every crisis communication must include what is being done — not just what happened. The community and media are not only asking "what occurred?" They are asking "what is the organization doing about it?" The executive who communicates clearly about the investigation, the corrective action, the support being provided to affected individuals, and the systemic changes being considered is demonstrating organizational accountability in action, not just in statement.</div>
+      </div>
+    </div>
+  </div>
+  <h2>Specific Scenario — Line-of-Duty Death</h2>
+  <p>The LODD press conference is the highest-stakes media communication the Fire Chief faces. Protocol:</p>
+  <ul>
+    <li><strong>Family first.</strong> The family is notified personally by the Fire Chief before any public announcement. No exceptions. The family learns about their loss from department leadership — not from media.</li>
+    <li><strong>Coordinate with PIO and city communications.</strong> A single coordinated statement prevents contradictions and ensures legal review.</li>
+    <li><strong>Honor the member before the operational details.</strong> Begin with who they were — their service, their character, their family — before discussing the operational circumstances. The person is the story; the incident is the context.</li>
+    <li><strong>Commit to the investigation.</strong> Promise a thorough, independent review of the circumstances. Name a timeline. Follow through publicly.</li>
+    <li><strong>Do not speculate on cause.</strong> Investigations take time. Preliminary statements about cause that are later revised undermine credibility and can affect legal proceedings.</li>
+  </ul>
+  <div class="callout callout-teal">
+    <span class="callout-label">Social Media at the Executive Level</span>
+    <p>The Fire Chief's official social media presence — whether a department account, a personal professional account, or both — is an ongoing media relationship with the community. Posting frequency, tone, and content choices all communicate organizational values. The chief who posts exclusively about operational incidents communicates that the department's identity is purely reactive. The one who posts about CRR programs, wellness initiatives, community partnerships, and team development communicates an organization with a broader mission. Manage it intentionally. And on personal accounts: the same rules apply as for any senior officer — if you wouldn't be comfortable with the city manager and council seeing it, it shouldn't be posted.</p>
+  </div>
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Four Role Shifts → City Manager Relationship → Governing Body Framework → Political Navigation Model</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the political dimension → apply executive framework → build stakeholder relationship → close with Humility</div></div></div></div>
+
+  <span class="sbar-label">Crisis Communication Framework</span>
+  <div class="sbar-card"><strong>Speed</strong>Get in front of the story. Silence cedes narrative. Statement within hours, not days.</div>
+  <div class="sbar-card"><strong>Truth</strong>Accurate and complete. Corrections undermine credibility more than the original truth. Say what you don't know yet — explicitly.</div>
+  <div class="sbar-card"><strong>Care</strong>Visible genuine human concern. Management-speak without care communicates indifference. Not performance — genuine.</div>
+  <div class="sbar-card"><strong>Action</strong>What is being done. Community asks "what are you doing about it?" Every crisis statement must answer this.</div>
+  <span class="sbar-label">LODD Protocol</span>
+  <div class="sbar-card">Family notified by Fire Chief first, always · coordinate with PIO/city comms · honor the member before operational details · commit to thorough investigation with timeline · never speculate on cause.</div>
+  <span class="sbar-label">Executive Social Media</span>
+  <div class="sbar-card">Intentional strategy. Posts communicate organizational values. Mix: operations + CRR + wellness + community + team. Personal account: same standards as organizational account.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Executive Media Relations</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"Describe your understanding of the crisis communication framework and how you would apply it in a real scenario."</div><div class="ob-note">Name the shift: from operational decisions to organizational strategy, from managing personnel to managing stakeholders, from incident command to political navigation. Show self-awareness about the transition.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 3 — Key Takeaways</div>
+  <div class="tk-item">The Crisis Communication Framework — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">Specific Scenario — Line-of-Duty Death — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Executive Leadership question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Four Role Shifts → City Manager Relationship → Governing Body Framework → Political Navigation Model</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the political dimension → apply executive framework → build stakeholder relationship → close with Humility</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Governing Bodies</button>
+  <div class="lnb-info"><div class="lnb-name">Executive Media Relations</div><div class="lnb-num">Lesson 3 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Political Acumen →</button>
+</div>
+</div>
+
+<!-- LESSON 4 -->
+<div class="lesson-view" id="lesson-3">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 36 · Lesson 4 of 6</div>
+    <h1 class="lh-title">Political Acumen —<br><em>Navigating Politics Without Becoming Political</em></h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 16 min</span><span class="lh-meta-item">🧭 Political Intelligence · Organizational Navigation</span></div>
+  </div>
+  <p>Political acumen — the ability to understand and navigate the political dimensions of organizational life without compromising integrity — is one of the most important and least discussed executive competencies. The executive who is politically naive is ineffective; the one who is politically compromised is dangerous. The balance between these extremes is the productive ground where effective executive leadership lives.</p>
+  <h2>What Political Acumen Actually Is</h2>
+  
+<h3>Political acumen is not the</h3>
+<p>Political acumen is not the ability to be all things to all people, to tell people what they want to hear, or to trade favors for advantage. It is the ability to:</p>
+  <ul>
+    <li><strong>Understand motivations.</strong> What does each stakeholder — council member, city manager, union, community group, media outlet — actually want, and why? Understanding this allows the executive to frame organizational messages in terms that resonate with each audience without misrepresenting the facts.</li>
+    <li><strong>Read the environment.</strong> What organizational dynamics, political currents, and community concerns are operating in the background of any given decision? The executive who makes decisions without reading the environment creates avoidable friction. The one who reads it accurately can time decisions, build coalitions, and anticipate objections before they become crises.</li>
+    <li><strong>Build and maintain relationships.</strong> Political capital — the accumulated trust and goodwill that makes organizational goals achievable — is built through consistent integrity, visible competence, and genuine investment in relationships. It is spent in difficult moments. The executive who never invests in political capital has none to spend when they need it.</li>
+    <li><strong>Advance organizational interests without violating personal integrity.</strong> This is the hard one. The executive who compromises their integrity to advance organizational interests has sacrificed the very thing that makes their advocacy credible. The one who maintains integrity in the face of political pressure — at personal cost when necessary — is building the reputation that makes them effective long-term.</li>
+  </ul>
+  <h2>Four Political Navigation Challenges</h2>
+  <div class="framework-grid">
+    <div class="fw-card">
+      <div class="fw-card-label">The Politically Motivated Request</div>
+      <div class="fw-card-title">When the Council Member Asks for a Favor</div>
+      <div class="fw-card-desc">A council member asks the Fire Chief to assign a specific employee to a specific station, to delay a personnel action until after an election, or to provide a constituent with special service. The executive who complies has traded operational integrity for political favor. The one who declines professionally — "I manage operations based on operational needs and established standards; I'm happy to explain how assignment decisions are made" — maintains integrity while not making an enemy. The relationship survives; the favor does not happen.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">The Labor-Management Tension</div>
+      <div class="fw-card-title">When the Union Goes to Council</div>
+      <div class="fw-card-desc">The fire service union has direct access to the governing body and frequently uses it when labor-management relations are strained. The executive who manages labor relations professionally — following the contract, engaging the union respectfully, and addressing legitimate concerns — is in a much stronger position when the union attempts to leverage council relationships than the one who has managed by unilateral authority. Professional labor relations is also political protection.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">The Organizational Critic</div>
+      <div class="fw-card-title">When a Community Voice Attacks the Department</div>
+      <div class="fw-card-desc">Community organizations, media, or individual activists who criticize the department publicly create a communication challenge. The executive who responds defensively or dismissively amplifies the criticism. The one who engages genuinely — acknowledging legitimate concerns, providing accurate data, inviting dialogue — often converts critics into informed stakeholders, or at minimum demonstrates organizational confidence that the defensive response does not.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">The Internal Political Faction</div>
+      <div class="fw-card-title">When Senior Staff Are Divided</div>
+      <div class="fw-card-desc">Senior executive teams develop internal factions, alliances, and political dynamics as consistently as any human organization. The Fire Chief who allows these dynamics to persist — where senior staff are aligned with different factions rather than with the organizational mission — is managing a structurally dysfunctional leadership team. The resolution: explicit expectations for professional conduct, transparent decision-making processes that don't advantage factions, and consistent accountability for senior leadership behavior.</div>
+    </div>
+  </div>
+  <div class="callout callout-purple">
+    <span class="callout-label">The Integrity Test in Political Environments</span>
+    <p>When political pressure and personal integrity are in conflict, the question the executive must answer is: which identity do I want to be known for when this decision is examined in retrospect? The executive who traded operational standards for political favor is known for that trade — by their staff, by the governing body, and eventually by the public. The one who maintained their standards at political cost is known for that too — and that reputation is cumulative, compounding, and ultimately the most valuable professional asset an executive can hold. Political capital is real. Integrity capital lasts longer.</p>
+  </div>
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Four Role Shifts → City Manager Relationship → Governing Body Framework → Political Navigation Model</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the political dimension → apply executive framework → build stakeholder relationship → close with Humility</div></div></div></div>
+
+  <span class="sbar-label">What Political Acumen Is</span>
+  <div class="sbar-card">Understand motivations · read the environment · build and maintain relationships · advance org interests without violating personal integrity. Not telling people what they want to hear.</div>
+  <span class="sbar-label">Four Navigation Challenges</span>
+  <div class="sbar-card"><strong>Political Request</strong>Decline professionally. Relationship survives; favor doesn't happen.</div>
+  <div class="sbar-card"><strong>Union-Council Dynamic</strong>Professional labor relations = political protection. Unilateral authority creates vulnerability.</div>
+  <div class="sbar-card"><strong>Organizational Critic</strong>Genuine engagement > defensive response. Sometimes converts critics to stakeholders.</div>
+  <div class="sbar-card"><strong>Internal Factions</strong>Explicit expectations + transparent processes + consistent accountability. No faction-advantaged decision-making.</div>
+  <span class="sbar-label">Integrity > Political Capital</span>
+  <div class="sbar-card">Political capital is real. Integrity capital lasts longer. The trade — operational standards for political favor — is known by staff, council, and eventually public. The reputation compounds over time.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Political Acumen</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"Describe your understanding of what political acumen actually is and how you would apply it in a real scenario."</div><div class="ob-note">Name the shift: from operational decisions to organizational strategy, from managing personnel to managing stakeholders, from incident command to political navigation. Show self-awareness about the transition.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 4 — Key Takeaways</div>
+  <div class="tk-item">What Political Acumen Actually Is — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">Four Political Navigation Challenges — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Executive Leadership question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Four Role Shifts → City Manager Relationship → Governing Body Framework → Political Navigation Model</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the political dimension → apply executive framework → build stakeholder relationship → close with Humility</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Executive Media Relations</button>
+  <div class="lnb-info"><div class="lnb-name">Political Acumen</div><div class="lnb-num">Lesson 4 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Succession + Legacy →</button>
+</div>
+</div>
+
+<!-- LESSON 5 -->
+<div class="lesson-view" id="lesson-4">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 36 · Lesson 5 of 6</div>
+    <h1 class="lh-title">Succession Planning + Organizational Legacy —<br><em>What the Executive Owes the Organization's Future</em></h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 14 min</span><span class="lh-meta-item">🌱 Succession · Legacy · Stewardship</span></div>
+  </div>
+  <p>Every executive's tenure ends. The measure of executive leadership — in hindsight, which is the only perspective that matters for legacy — is not what the organization accomplished while the executive was present. It is what the organization was capable of after they left. The executive who builds people, systems, and culture that outlast their tenure has created something genuinely valuable. The one who builds primarily their own authority has created nothing that persists.</p>
+  <h2>Succession Planning — The Organizational Responsibility</h2>
+  <p>Succession planning is the systematic development of the next generation of organizational leaders — not as a favor to individuals with potential, but as a strategic investment in organizational capability. Fire departments that do not actively develop their next generation of senior leaders are organizationally fragile: dependent on a single individual's continued presence and vulnerable to the leadership vacuum that follows unexpected departures.</p>
+  <div class="acro-grid">
+    <div class="acro-row">
+      <div class="acro-letter">IDN</div>
+      <div class="acro-content">
+        <div class="acro-word">Identify High-Potential Leaders — Broadly, Not from the Inner Circle</div>
+        <div class="acro-desc">Succession planning that draws only from the executive's existing inner circle produces narrow organizations that cannot adapt when the environment changes. The executive who actively looks for high-potential leaders across the organization — including people who are different from themselves in background, approach, and perspective — is building an organization that can succeed in futures they cannot fully anticipate. Identify potential early; develop it deliberately.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">DEV</div>
+      <div class="acro-content">
+        <div class="acro-word">Develop Deliberately — Assignments, Exposure, Mentorship</div>
+        <div class="acro-desc">Development that consists of hoping talented people figure it out on their own is not a succession plan. Deliberate development means: strategic assignment decisions that expose high-potential leaders to organizational functions they haven't experienced, formal mentorship and coaching, connections to professional development programs (NFA, EFO, executive leadership programs), and progressive leadership opportunities with increasing scope and accountability. The executive who makes strategic assignment decisions with development intent is investing in the organization's future with every placement decision.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">DOC</div>
+      <div class="acro-content">
+        <div class="acro-word">Document and Institutionalize — Beyond Informal Knowledge</div>
+        <div class="acro-desc">Organizational knowledge that exists only in the executive's head is not organizational knowledge — it is individual knowledge that leaves when the individual does. The executive who documents organizational processes, decision frameworks, key relationships, and institutional history is creating knowledge that persists. Strategic plans, SOG manuals, accreditation documentation, and succession documentation are all forms of institutional knowledge investment that outlast their authors.</div>
+      </div>
+    </div>
+  </div>
+  <h2>The Legacy Question — What Kind of Organization Do You Leave Behind?</h2>
+  <p>Legacy is not built through singular achievements — it is built through the cumulative effect of consistent leadership choices over time. The executives whose legacies are remembered most positively share common characteristics: they left their organizations more capable than they found them, they developed people who went on to lead effectively, they built systems that survived leadership transitions, and they advanced the organization's standing in its community and profession.</p>
+  <div class="callout callout-gold">
+    <span class="callout-label">The Stewardship Frame</span>
+    <p>The most useful mental model for executive leadership is stewardship — the temporary custodianship of an institution that was built by others before you and will continue after you. The steward's obligation is not to maximize their own legacy but to advance the institution's capacity to serve its mission. The executive who makes decisions from this frame — asking "does this make the organization better positioned to serve its community after I leave?" rather than "does this make me look good while I'm here?" — is practicing the kind of leadership that produces the legacy worth having.</p>
+  </div>
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Four Role Shifts → City Manager Relationship → Governing Body Framework → Political Navigation Model</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the political dimension → apply executive framework → build stakeholder relationship → close with Humility</div></div></div></div>
+
+  <span class="sbar-label">Succession Planning</span>
+  <div class="sbar-card"><strong>Identify Broadly</strong>Not just inner circle. Different backgrounds and perspectives = organizational adaptability.</div>
+  <div class="sbar-card"><strong>Develop Deliberately</strong>Strategic assignments · mentorship · professional programs · progressive opportunities with increasing scope.</div>
+  <div class="sbar-card"><strong>Document + Institutionalize</strong>Knowledge in one person's head leaves with them. Strategic plans, SOGs, accreditation docs, institutional history = knowledge that persists.</div>
+  <span class="sbar-label">Legacy Characteristics</span>
+  <div class="sbar-card">Left org more capable · developed people who led effectively · built systems that survived transitions · advanced standing in community and profession.</div>
+  <span class="sbar-label">The Stewardship Frame</span>
+  <div class="sbar-card">"Does this make the org better positioned to serve its community after I leave?" > "Does this make me look good while I'm here?" Stewardship is the frame; legacy is the outcome.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Succession Planning + Organizational Legacy</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"Describe your understanding of succession planning — the organizational responsib and how you would apply it in a real scenario."</div><div class="ob-note">Name the shift: from operational decisions to organizational strategy, from managing personnel to managing stakeholders, from incident command to political navigation. Show self-awareness about the transition.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 5 — Key Takeaways</div>
+  <div class="tk-item">Succession Planning — The Organizational Responsibility — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">The Legacy Question — What Kind of Organization Do You Leave — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Executive Leadership question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Four Role Shifts → City Manager Relationship → Governing Body Framework → Political Navigation Model</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the political dimension → apply executive framework → build stakeholder relationship → close with Humility</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Political Acumen</button>
+  <div class="lnb-info"><div class="lnb-name">Succession + Legacy</div><div class="lnb-num">Lesson 5 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: AC Application →</button>
+</div>
+</div>
+
+<!-- LESSON 6 -->
+<div class="lesson-view" id="lesson-5">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 36 · Lesson 6 of 6 · Assessment Application + Series Capstone</div>
+    <h1 class="lh-title">Assessment Center Application —<br><em>Executive Leadership Scenarios</em></h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 18 min</span><span class="lh-meta-item">🎯 Scoring + Series Capstone</span></div>
+  </div>
+  <p>Executive leadership scenarios at DC and Fire Chief level are comprehensive — they test the full integration of every competency the candidate has developed across the TPS curriculum. They do not test a single framework in isolation. They test whether the candidate can navigate genuinely complex situations where leadership philosophy, ethics, political acumen, media relations, organizational knowledge, and genuine human care all converge simultaneously.</p>
+  <h2>Practice Scenario — The Inherited Crisis</h2>
+  <div class="callout callout-navy">
+    <span class="callout-label">Oral Board Prompt</span>
+    <p>"You have recently been selected as Fire Chief following the retirement of your predecessor. On your third day, a local investigative journalist calls you directly and tells you they are publishing a story tomorrow alleging that your predecessor covered up a sexual harassment complaint from three years ago — that a battalion chief filed a complaint against a captain, the complaint was substantiated by HR, but the predecessor intervened and the captain received no discipline and was later promoted. The journalist has documents they say corroborate the story. They are giving you the opportunity to comment before publication. How do you respond?"</p>
+  </div>
+  <div class="score-compare">
+    <div class="sc-card miss">
+      <div class="sc-title">3/5 Response</div>
+      <div class="sc-body">"I would tell the journalist that I was just appointed and am not familiar with the details of this matter. I would ask for time to look into it and get back to them. I would review the personnel files and talk to HR. I would consult with the city manager and city attorney about how to respond."</div>
+    </div>
+    <div class="sc-card hit">
+      <div class="sc-title">5/5 Response</div>
+      <div class="sc-body">"I immediately request 30 minutes before commenting — enough time to call the city manager and city attorney, brief them, confirm they are aware, and align on a response framework. This is exactly the 'no surprises' principle — the city manager does not learn about this story from the newspaper.<br><br>My statement to the journalist, coordinated with city communications: 'I became aware of this allegation within the last hour. I am not in a position to confirm or deny the specific details of what you're describing — not because I'm avoiding the question, but because I genuinely don't know the history of this matter yet. What I can tell you, and what I want to be very clear about, is this: if what you are describing occurred, it represents a serious failure of the standards I am committed to leading by. I am beginning an immediate review of the personnel actions in question, and I will have a full response for you once I have accurate information — no later than [specific time, ideally within the reporting day]. I am committed to transparency on this.'<br><br>Simultaneously: I am calling HR, reviewing the complaint file, and establishing the factual baseline before the story publishes. If the documents the journalist has are accurate, I need to know that before making any further public statements — because every word I say from here will either be consistent with the facts or will become part of the story.<br><br>Longer term: If the allegation is substantiated by my review, the organization faces a significant challenge that requires: acknowledgment of what occurred, accountability for those involved consistent with current standards, meaningful support for the original complainant, and demonstrated systemic changes that make reoccurrence less likely. The ethics from Module 31 are unambiguous — cover-up compounds the original harm; transparency and accountability are both the ethical requirement and the organizationally correct response.<br><br>This is the kind of situation where every instinct might be to minimize and protect. That instinct is exactly wrong. The organization I was asked to lead deserves better — and so does the person who filed that complaint three years ago and got nothing."</div>
+    </div>
+  </div>
+  <h2>The BC/DC Track Capstone</h2>
+  <div class="callout callout-gold">
+    <span class="callout-label">Chapter 36 + BC/DC Track Complete</span>
+    <p>The modules you have completed across the BC/DC track — ethics, wellness, labor relations, budget, personnel management, change management, CRR, emergency management, accreditation, special operations, and executive leadership — are the complete architecture of senior fire service leadership. None of these topics is peripheral. All of them will appear in your assessment center. All of them will appear in your career. The candidate who has genuinely integrated this material — not memorized it but made it part of how they think — is prepared not just to perform well in an assessment center but to lead effectively at the highest levels of the profession. That is what TPS is built to produce.</p>
+  </div>
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Four Role Shifts → City Manager Relationship → Governing Body Framework → Political Navigation Model</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the political dimension → apply executive framework → build stakeholder relationship → close with Humility</div></div></div></div>
+
+  <span class="sbar-label">5/5 Integration</span>
+  <div class="sbar-card">No surprises principle (city manager call first) · media relations (speed + truth + care) · ethics integration (Module 31 cover-up pattern) · genuine human care for complainant · longer-term accountability framework · honesty about what you don't know yet.</div>
+  <span class="sbar-label">3/5 Gap</span>
+  <div class="sbar-card">"I'm new and don't know" + "ask for time" = passive. Misses: city manager notification, coordinated response, ethics commitment, care for the person harmed, and the explicit acknowledgment that if true, it's serious.</div>
+  <span class="sbar-label">BC/DC Track Modules</span>
+  <div class="sbar-card">M31 Ethics · M32 Wellness · M33 Labor · M34 CRR Strategic · M35 Emergency Mgmt · M36 Accreditation · M37 Special Ops · M38 Executive Leadership. Eight modules. Complete architecture of senior leadership.</div>
+  <span class="sbar-label">The Final Identity Statement</span>
+  <div class="sbar-card">"The organization I was asked to lead deserves better — and so does the person who filed that complaint three years ago and got nothing." This sentence is the integration of ethics, genuine care, and organizational accountability in a single human statement. That integration is what 5/5 looks like at the top.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Assessment Center Application</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"You receive a scenario about executive leadership. Walk me through your complete response using the frameworks from this chapter."</div><div class="ob-note">Use LEAD: Label the bucket (Executive Leadership), Engage the specific framework (reference Practice Scenario — The Inherited Crisis explicitly), Address the operational and organizational impact, Drive to a concrete first action with a timeline.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 6 — Key Takeaways</div>
+  <div class="tk-item">Practice Scenario — The Inherited Crisis — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">The BC/DC Track Capstone — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Executive Leadership question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Four Role Shifts → City Manager Relationship → Governing Body Framework → Political Navigation Model</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the political dimension → apply executive framework → build stakeholder relationship → close with Humility</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Succession + Legacy</button>
+  <div class="lnb-info"><div class="lnb-name">AC Application</div><div class="lnb-num">Lesson 6 of 6</div></div>
+  <button class="lnb-btn primary" onclick="window.scrollTo({top:0,behavior:'smooth'})">Module Complete ✓</button>
+</div>
+</div>
+
+</main>
+<script>
+let cur=0;
+const ls=document.querySelectorAll('.lesson-view');
+const ps=document.querySelectorAll('.nav-pill');
+const mbs=document.querySelectorAll('.mh-lesson-btn');
+function showLesson(n){ls.forEach(l=>l.classList.remove('active'));ps.forEach(p=>p.classList.remove('active'));mbs.forEach(m=>m.classList.remove('active'));if(ls[n])ls[n].classList.add('active');if(ps[n])ps[n].classList.add('active');if(mbs[n])mbs[n].classList.add('active');cur=n;window.scrollTo({top:0,behavior:'smooth'});document.getElementById('prog').style.width='0%';}
+function nextLesson(){if(cur<ls.length-1)showLesson(cur+1);}
+function prevLesson(){if(cur>0)showLesson(cur-1);}
+window.addEventListener('scroll',()=>{const s=document.documentElement.scrollTop;const h=document.documentElement.scrollHeight-window.innerHeight;if(h>0)document.getElementById('prog').style.width=Math.min(100,(s/h*100))+'%';});
+document.addEventListener('DOMContentLoaded',()=>showLesson(0));
+
+function lfNext(el,stepNum){
+  var wrap=el.closest('.lf-wrap');
+  if(!wrap)return;
+  var steps=wrap.querySelectorAll('.lf-step');
+  var dots=wrap.querySelectorAll('.lf-dot');
+  steps.forEach(function(s,i){s.classList.remove('active');if(i<stepNum)s.classList.add('done');});
+  dots.forEach(function(d,i){d.classList.remove('active');if(i<stepNum)d.classList.add('done');if(i===stepNum)d.classList.add('active');});
+  if(steps[stepNum])steps[stepNum].classList.add('active');
+}
+</script>
+<script>function toggleFT(el){var sw=el.querySelector('.ft-toggle-switch');var desc=el.querySelector('.ft-toggle-desc');var mains=document.querySelectorAll('.lesson-main');sw.classList.toggle('on');var on=sw.classList.contains('on');desc.textContent=on?'Frameworks + OB cards only':'Full lesson content';mains.forEach(function(m){m.classList.toggle('ft-on',on);});}</script>
+</body>
+</html>

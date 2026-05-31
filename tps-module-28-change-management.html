@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Chapter 27 — Change Management + Adaptive Leadership | The Promotional Standard</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Crimson+Pro:wght@300;400;500;600&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --navy:#0C2340;--navy2:#1A3A5C;--gold:#C9A84C;--gold2:#F5F0E8;--gold3:#6B4F10;
+  --cream:#F5F0E8;--offwhite:#F5F0E8;--light:#EAE5DC;--mid:#2A3D50;--gray:#8FA8C0;
+  --red:#B22222;--red-light:#FFF0F0;--green:#1A5C3A;--green-light:#EAF3DE;
+  --teal:#006B6B;--teal-light:#E0F4F4;--blue:#1A3A7A;--blue-light:#E8EEF8;
+  --purple:#4A2570;--purple-light:#F0EAF8;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:var(--navy);font-size:18px;line-height:1.8;}
+.top-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(12,35,64,0.98);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,168,76,0.2);height:64px;display:flex;align-items:center;padding:0 2rem;gap:1rem;}
+.nav-left{display:flex;align-items:center;gap:12px;flex:1;}
+.nav-brand{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;color:var(--cream);line-height:1.3;}
+.nav-brand span{display:block;font-size:8px;color:var(--gold);letter-spacing:2px;}
+.nav-pills{display:flex;gap:5px;flex:2;justify-content:center;overflow-x:auto;}
+.nav-pill{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#8FA8C0;padding:6px 11px;border-radius:20px;cursor:pointer;transition:all 0.2s;border:none;background:transparent;white-space:nowrap;}
+.nav-pill:hover{color:var(--cream);background:rgba(255,255,255,0.05);}
+.nav-pill.active{color:var(--gold);background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.25);}
+.progress-bar{position:fixed;top:64px;left:0;height:3px;background:linear-gradient(90deg,var(--navy2),var(--gold));z-index:199;width:0%;transition:width 0.3s;}
+.lesson-view{display:none;}.lesson-view.active{display:block;}
+.module-hero{background:var(--navy);padding:4.5rem 3rem 3.5rem;margin-top:64px;position:relative;overflow:hidden;border-bottom:3px solid var(--gold);}
+.module-hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 60px,rgba(201,168,76,0.015) 60px,rgba(201,168,76,0.015) 61px);}
+.module-hero::after{content:'';position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(180deg,var(--navy2),var(--gold));}
+.mh-inner{max-width:900px;position:relative;z-index:2;}
+.mh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.mh-title{font-family:'EB Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:800;color:var(--cream);line-height:1.1;margin-bottom:0.75rem;}
+.mh-title em{font-style:italic;color:var(--gold);}
+.mh-sub{font-size:1.05rem;color:#8FA8C0;max-width:700px;line-height:1.7;margin-bottom:2rem;}
+.mh-badges{display:flex;gap:10px;margin-bottom:1.5rem;flex-wrap:wrap;}
+.mh-badge{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border-radius:3px;}
+.badge-teal{background:rgba(0,107,107,0.15);color:#009999;border:1px solid rgba(0,107,107,0.3);}
+.badge-nfpa{background:rgba(100,160,220,0.15);color:#8FA8C0;border:1px solid rgba(100,160,220,0.3);}
+.mh-thread{background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);border-left:3px solid var(--gold);padding:1rem 1.5rem;margin-bottom:2rem;max-width:700px;}
+.mh-thread-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+.mh-thread-text{font-size:0.92rem;color:var(--cream);line-height:1.65;}
+.mh-lesson-nav{display:flex;gap:8px;flex-wrap:wrap;}
+.mh-lesson-btn{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:8px 14px;border-radius:6px;cursor:pointer;transition:all 0.2s;border:1px solid rgba(201,168,76,0.25);background:transparent;color:#8FA8C0;}
+.mh-lesson-btn:hover{background:rgba(255,255,255,0.05);color:var(--cream);}
+.mh-lesson-btn.active{background:rgba(201,168,76,0.12);color:var(--gold);border-color:rgba(201,168,76,0.4);}
+.lesson-container{display:grid;grid-template-columns:1fr 310px;gap:0;}
+.lesson-main{padding:3rem 3.5rem;border-right:1px solid var(--light);}
+.lesson-sidebar{padding:2rem 1.75rem;background:var(--offwhite);position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;}
+.lesson-header{margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:2px solid var(--light);}
+.lh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold3);margin-bottom:0.6rem;}
+.lh-title{font-family:'EB Garamond',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;color:var(--navy);line-height:1.15;margin-bottom:0.6rem;}
+.lh-title em{font-style:italic;color:var(--gold);}
+.lh-meta{display:flex;gap:1.5rem;flex-wrap:wrap;}
+.lh-meta-item{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);}
+.lesson-main h2{font-family:'EB Garamond',serif;font-size:1.7rem;font-weight:700;color:var(--navy);margin:3rem 0 0.9rem;padding-bottom:0.5rem;border-bottom:2px solid var(--light);}
+.lesson-main h3{font-family:'EB Garamond',serif;font-size:1.25rem;font-weight:600;color:var(--navy);margin:2.25rem 0 0.65rem;}
+.lesson-main p{margin-bottom:1.25rem;color:#2A3D50;line-height:1.82;}
+.lesson-main ul,.lesson-main ol{margin:0 0 1.25rem 1.5rem;color:#2A3D50;}
+.lesson-main li{margin-bottom:0.6rem;line-height:1.72;}
+.lesson-main strong{color:var(--navy);font-weight:600;}
+.callout{padding:1.4rem 1.6rem;margin:2rem 0;}
+.callout-gold{background:var(--gold2);border-left:3px solid var(--gold);}.callout-gold p{color:var(--gold3);font-size:0.97rem;line-height:1.75;}
+.callout-navy{background:var(--navy);border-left:3px solid var(--gold);}.callout-navy p{color:#8FA8C0;font-size:0.95rem;line-height:1.75;}
+.callout-red{background:var(--red-light);border-left:4px solid var(--red);}.callout-red p{color:#6B4F10;font-size:0.97rem;line-height:1.75;}
+.callout-green{background:var(--green-light);border-left:4px solid var(--green);}.callout-green p{color:#1A3A5C;font-size:0.97rem;line-height:1.75;}
+.callout-teal{background:var(--teal-light);border-left:4px solid var(--teal);}.callout-teal p{color:#003A3A;font-size:0.97rem;line-height:1.75;}
+.callout-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:0.5rem;display:block;}
+.callout-gold .callout-label{color:var(--gold3);}
+.callout-navy .callout-label{color:var(--gold);}
+.callout-red .callout-label{color:var(--red);}
+.callout-green .callout-label{color:var(--green);}
+.callout-teal .callout-label{color:var(--teal);}
+.framework-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.fw-card{background:white;border:1px solid #EAE5DC;padding:1.25rem;border-radius:8px;}
+.fw-card-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:6px;}
+.fw-card-title{font-family:'EB Garamond',serif;font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.fw-card-desc{font-size:0.9rem;color:var(--mid);line-height:1.6;}
+.acro-grid{display:flex;flex-direction:column;gap:0;margin:1.5rem 0;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;}
+.acro-row{display:grid;grid-template-columns:52px 1fr;gap:0;border-bottom:1px solid #EAE5DC;}
+.acro-row:last-child{border-bottom:none;}
+.acro-letter{background:var(--navy);color:var(--gold);font-family:'EB Garamond',serif;font-size:1.8rem;font-weight:800;display:flex;align-items:center;justify-content:center;}
+.acro-content{padding:0.9rem 1.1rem;background:white;}
+.acro-word{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:3px;}
+.acro-desc{font-size:0.85rem;color:var(--mid);line-height:1.55;}
+.sbar-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold3);margin-bottom:0.65rem;margin-top:1.5rem;display:block;}
+.sbar-label:first-child{margin-top:0;}
+.sbar-card{background:white;border:1px solid #EAE5DC;border-radius:8px;padding:0.9rem 1rem;margin-bottom:8px;font-size:0.9rem;color:var(--mid);line-height:1.55;}
+.sbar-card strong{color:var(--navy);display:block;margin-bottom:3px;font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;}
+.kotter-step{display:grid;grid-template-columns:48px 1fr;gap:0;border-bottom:1px solid var(--light);background:white;}
+.kotter-step:first-child{border-radius:8px 8px 0 0;}
+.kotter-step:last-child{border-bottom:none;border-radius:0 0 8px 8px;}
+.kotter-wrap{border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;margin:1.5rem 0;}
+.kotter-phase{background:rgba(201,168,76,0.1);padding:0.5rem 1rem;font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);border-bottom:1px solid var(--light);}
+.kotter-num{background:var(--navy);color:var(--gold);font-family:'EB Garamond',serif;font-size:1.4rem;font-weight:800;display:flex;align-items:center;justify-content:center;}
+.kotter-body{padding:0.85rem 1.1rem;}
+.kotter-title{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:3px;}
+.kotter-desc{font-size:0.85rem;color:var(--mid);line-height:1.55;}
+.kotter-fire{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1px;color:var(--teal);font-style:italic;margin-top:4px;}
+.resist-grid{display:flex;flex-direction:column;gap:0.75rem;margin:1.5rem 0;}
+.resist-card{background:white;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;display:grid;grid-template-columns:120px 1fr;}
+.resist-type{background:var(--navy2);padding:1rem;display:flex;align-items:center;justify-content:center;text-align:center;}
+.resist-label{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);line-height:1.4;}
+.resist-body{padding:0.9rem 1.1rem;}
+.resist-what{font-size:0.87rem;color:var(--mid);line-height:1.55;margin-bottom:6px;}
+.resist-response{font-size:0.85rem;color:var(--green);line-height:1.5;border-top:1px solid var(--light);padding-top:6px;margin-top:4px;}
+.resist-response::before{content:'Response: ';font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--green);font-style:normal;}
+.score-compare{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.sc-card{padding:1.25rem;border-radius:8px;}
+.sc-card.miss{background:var(--red-light);border:1px solid #F0C0C0;}
+.sc-card.hit{background:var(--green-light);border:1px solid #9DCCA8;}
+.sc-title{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:0.75rem;}
+.sc-card.miss .sc-title{color:var(--red);}
+.sc-card.hit .sc-title{color:var(--green);}
+.sc-body{font-size:0.87rem;line-height:1.6;}
+.sc-card.miss .sc-body{color:#6B4F10;}
+.sc-card.hit .sc-body{color:#1A3A5C;}
+.lesson-nav-bar{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 3rem;border-top:3px solid var(--gold);background:var(--navy);gap:1rem;}
+.lnb-btn{background:rgba(255,255,255,0.08);border:2px solid rgba(201,168,76,0.4);padding:14px 28px;font-family:'Cinzel',serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border-radius:6px;color:var(--cream);transition:all 0.2s;white-space:nowrap;}
+.lnb-btn:hover{background:rgba(201,168,76,0.15);border-color:var(--gold);color:var(--gold);}
+.lnb-btn:disabled,.lnb-btn[disabled]{opacity:0.25;cursor:not-allowed;background:transparent;}
+.lnb-btn:disabled:hover,.lnb-btn[disabled]:hover{background:transparent;border-color:rgba(201,168,76,0.4);color:var(--cream);}
+.lnb-btn.primary{background:var(--gold);color:var(--navy);border-color:var(--gold);font-weight:800;}
+.lnb-btn.primary:hover{background:#C9A84C;border-color:#C9A84C;}
+.lnb-info{text-align:center;flex:1;}
+.lnb-name{font-family:'EB Garamond',serif;font-size:1rem;font-weight:700;color:var(--cream);}
+.lnb-num{font-size:0.85rem;color:var(--gold);font-family:'Cinzel',serif;letter-spacing:1px;}
+@media(max-width:900px){.lesson-container{grid-template-columns:1fr;}.lesson-sidebar{position:relative;height:auto;}.lesson-main{padding:2rem 1.5rem;}.lesson-nav-bar{padding:1rem 1.5rem;flex-wrap:wrap;}.framework-grid,.score-compare{grid-template-columns:1fr;}.nav-pills{display:none;}}
+
+/* OB CARD */
+.ob-card{background:var(--navy);margin:2rem 0;overflow:hidden;}
+.ob-header{padding:0.85rem 1.5rem;background:rgba(201,168,76,0.08);border-bottom:1px solid rgba(201,168,76,0.15);}
+.ob-label{font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);}
+.ob-body{padding:1.25rem 1.5rem;}
+.ob-q{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;}
+.ob-q-tag{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);background:rgba(201,168,76,0.1);padding:4px 10px;border-radius:3px;white-space:nowrap;}
+.ob-q-text{font-family:'EB Garamond',serif;font-size:1.08rem;font-weight:600;color:var(--cream);line-height:1.5;margin-bottom:8px;}
+.ob-note{font-size:0.88rem;color:#8FA8C0;line-height:1.6;font-style:italic;}
+/* TAKEAWAYS */
+.takeaways{background:var(--navy);padding:2.25rem;margin:3rem 0 0;border-top:3px solid var(--gold);}
+.tk-lbl{font-family:'Cinzel',serif;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.tk-item{color:#8FA8C0;font-size:0.92rem;line-height:1.7;padding:0.5rem 0 0.5rem 1.25rem;border-left:2px solid rgba(201,168,76,0.2);margin-bottom:0.5rem;}
+
+
+.lead-nav{background:var(--navy);border-radius:8px;padding:14px 16px;margin-bottom:16px;border:1px solid rgba(201,168,76,0.2)}
+.lead-nav-header{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.lead-nav-row{display:grid;grid-template-columns:20px 1fr;gap:6px;margin-bottom:6px;align-items:start}
+.lead-nav-letter{font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:var(--gold)}
+.lead-nav-content{}
+.lead-nav-name{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:2px}
+.lead-nav-app{font-size:11px;color:#8FA8C0;line-height:1.5}
+
+.lf-wrap{margin:2.5rem 0 1.5rem;border:2px solid var(--gold);border-radius:10px;overflow:hidden}
+.lf-header{background:var(--navy);padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
+.lf-title{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+.lf-dots{display:flex;gap:6px}
+.lf-dot{width:8px;height:8px;border-radius:50%;background:rgba(201,168,76,0.25);transition:all 0.3s}
+.lf-dot.active{background:var(--gold);transform:scale(1.3)}
+.lf-dot.done{background:var(--gold)}
+.lf-step{display:none;padding:20px}
+.lf-step.active{display:block}
+.lf-step-num{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:6px}
+.lf-step-title{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:10px}
+.lf-chain{background:var(--navy);border-radius:6px;padding:14px 18px;margin:10px 0}
+.lf-chain-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.lf-chain-text{font-size:13px;color:#8FA8C0;line-height:1.6}
+.lf-chain-close{font-size:12px;color:var(--cream);margin-top:6px;font-style:italic}
+.lf-btn{background:var(--navy);color:var(--gold);border:2px solid var(--gold);padding:12px 24px;border-radius:6px;font-family:'Cinzel',serif;font-size:12px;letter-spacing:1.5px;font-weight:600;cursor:pointer;margin-top:12px;transition:all 0.2s;display:inline-block}
+.lf-btn:hover{background:var(--gold);color:var(--navy)}
+.lf-timer{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:var(--gold);padding:6px 14px;border-radius:4px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:1px;margin-top:10px}
+.lesson-main.ft>p{display:none!important}.lesson-main.ft>.callout{display:none!important}.ft-toggle{display:flex;align-items:center;gap:10px;padding:10px 16px;background:var(--navy);border-radius:6px;cursor:pointer;border:1px solid rgba(201,168,76,0.25)}.ft-toggle-switch{width:36px;height:20px;background:rgba(201,168,76,0.2);border-radius:10px;position:relative;transition:background .2s}.ft-toggle-switch.on{background:var(--gold)}.ft-toggle-knob{width:14px;height:14px;background:#fff;border-radius:50%;position:absolute;top:3px;left:3px;transition:left .2s}.ft-toggle-switch.on .ft-toggle-knob{left:19px}.ft-toggle-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}.ft-toggle-desc{font-size:11px;color:var(--mid)}.lesson-main.ft-on>p,.lesson-main.ft-on>.callout,.lesson-main.ft-on h3{display:none!important}.lesson-main.ft-on .ob-card,.lesson-main.ft-on .lf-wrap,.lesson-main.ft-on .lead-nav,.lesson-main.ft-on h2{display:block!important}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <div class="nav-left">
+    <div class="nav-brand">The Promotional Standard<span>Captain Track · Chapter 27</span></div>
+  </div>
+  <div class="nav-pills">
+    <button class="nav-pill active" onclick="showLesson(0)">Technical vs Adaptive</button>
+    <button class="nav-pill" onclick="showLesson(1)">Kotter's 8 Steps</button>
+    <button class="nav-pill" onclick="showLesson(2)">Resistance</button>
+    <button class="nav-pill" onclick="showLesson(3)">Culture Change</button>
+    <button class="nav-pill" onclick="showLesson(4)">Change at Company Level</button>
+    <button class="nav-pill" onclick="showLesson(5)">AC Application</button>
+  </div>
+</nav>
+<div class="progress-bar" id="prog"></div>
+
+<div class="module-hero">
+  <div class="mh-inner">
+    <div class="mh-eyebrow">Chapter 27 · Captain Track · Fire Officer II–III</div>
+    <h1 class="mh-title">Change Management<br><em>+ Adaptive Leadership</em></h1>
+    <p class="mh-sub">Heifetz's technical vs adaptive distinction, Kotter's 8-step model, the anatomy of resistance, and the cultural change framework that separates compliant organizations from committed ones. The complete change leadership curriculum for Captain and above — and the framework assessors use when they ask how you lead when no one wants to follow.</p>
+    <div class="mh-badges">
+      <span class="mh-badge badge-teal">Captain Track</span>
+      <span class="mh-badge badge-nfpa">NFPA 1021 · FO II–III</span>
+    </div>
+    <div class="mh-thread">
+      <div class="mh-thread-label">Before You Begin</div>
+      <div class="mh-thread-text">Change management is one of the most heavily scored Captain-level competencies because it reveals whether a candidate leads by authority or by influence. Every fire department is in continuous organizational change — new SOGs, new apparatus, new staffing models, new technology, new expectations from administration. The Captain who can lead change without crushing morale or generating organizational damage is genuinely rare. This module builds that capacity.</div>
+    </div>
+    <div class="mh-lesson-nav">
+      <button class="mh-lesson-btn active" onclick="showLesson(0)">1. Technical vs Adaptive</button>
+      <button class="mh-lesson-btn" onclick="showLesson(1)">2. Kotter's 8 Steps</button>
+      <button class="mh-lesson-btn" onclick="showLesson(2)">3. Resistance</button>
+      <button class="mh-lesson-btn" onclick="showLesson(3)">4. Culture Change</button>
+      <button class="mh-lesson-btn" onclick="showLesson(4)">5. Change at Company Level</button>
+      <button class="mh-lesson-btn" onclick="showLesson(5)">6. AC Application</button>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- LESSON 1 -->
+<div class="lesson-view active" id="lesson-0">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 27 · Lesson 1 of 6</div>
+    <h1 class="lh-title">Technical vs Adaptive —<br><em>The Most Important Distinction in Change Leadership</em></h1>
+    <div class="lh-meta">
+      <span class="lh-meta-item">⏱ 16 min</span>
+      <span class="lh-meta-item">📐 Heifetz · Adaptive Leadership</span>
+    </div>
+  </div>
+
+  <p>Ronald Heifetz, leadership theorist at Harvard's Kennedy School, draws a distinction that transforms how effective leaders approach organizational problems. The distinction is between <strong>technical problems</strong> and <strong>adaptive challenges</strong> — and getting it wrong is one of the most common and most damaging mistakes leaders make when attempting to lead change.</p>
+
+  <h2>The Technical Problem</h2>
+  <p>A technical problem has a known solution. The knowledge and methods required to solve it already exist — they may need to be applied by someone with expertise, but the solution is not in question. A broken pump needs a mechanic. A malfunctioning SCBA needs a tech. A crew member who is violating a specific SOG needs corrective coaching on that SOG. Technical problems are solved through the application of existing expertise to the existing problem.</p>
+
+  <div class="callout callout-teal">
+    <span class="callout-label">Technical Problem — Fire Service Example</span>
+    <p>The department is purchasing a new aerial apparatus. Training on the new apparatus is needed. This is a technical problem with a technical solution: identify the training curriculum, schedule the training, certify the operators. The challenge is logistical and expertise-based. Leadership role: resource acquisition and coordination. Clear authority, clear solution, clear timeline.</p>
+  </div>
+
+  <h2>The Adaptive Challenge</h2>
+  <p>An adaptive challenge is different in a fundamental way: <strong>the solution requires the people affected by the problem to change their values, beliefs, habits, or priorities.</strong> No external expert can solve an adaptive challenge. The expert can diagnose, can provide frameworks, can create conditions — but the change itself must come from within the people and the organization.</p>
+
+  <div class="callout callout-navy">
+    <span class="callout-label">Adaptive Challenge — Fire Service Example</span>
+    <p>The department has determined that its culture of ignoring health and safety protocols — skipping PPC, dismissing post-exposure decontamination, treating cancer prevention as weakness — is killing firefighters. Fixing this is not a technical problem. Training on cancer risk exists. The knowledge exists. But changing the culture requires every member to examine and revise deeply held beliefs about toughness, tradition, and professional identity. That is an adaptive challenge. No amount of training solves it without a genuine shift in values.</p>
+  </div>
+
+  <h2>Why Leaders Get This Wrong — and What Happens When They Do</h2>
+  <p>Heifetz's central observation is that leaders consistently misdiagnose adaptive challenges as technical problems — and then apply technical solutions that fail to produce the needed change. The result is predictable: the change initiative fails, leadership loses credibility, and the organization becomes more resistant to future change efforts.</p>
+
+  <div class="framework-grid">
+    <div class="fw-card">
+      <div class="fw-card-label">Technical Solution to Technical Problem</div>
+      <div class="fw-card-title">✓ Correct Match</div>
+      <div class="fw-card-desc">New SOG issued → training delivered → compliance verified. Problem solved through expertise. Most of what leaders do in routine operations.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Technical Solution to Adaptive Challenge</div>
+      <div class="fw-card-title">✗ Most Common Leadership Failure</div>
+      <div class="fw-card-desc">Culture problem → mandatory training issued. Morale problem → new policy written. Trust problem → org chart restructured. These "solutions" feel like leadership action but produce no genuine change — only surface compliance at best.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Adaptive Work on Technical Problem</div>
+      <div class="fw-card-title">⚠ Overcomplicated</div>
+      <div class="fw-card-desc">Inviting crew discussion and values exploration about whether to use the new pump. Adaptive work takes time and generates ambiguity — don't apply it where expertise and authority are sufficient.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Adaptive Work on Adaptive Challenge</div>
+      <div class="fw-card-title">✓ Required — and Difficult</div>
+      <div class="fw-card-desc">Creating conditions for the people affected to examine their own values and assumptions, face the gap between current reality and needed change, and develop their own solutions with appropriate support. The hardest work in leadership.</div>
+    </div>
+  </div>
+
+  <h2>Adaptive Leadership at the Captain Level</h2>
+  <p>The Captain-level competency Heifetz describes has three components. Assessors listen for all three when change management scenarios come up in oral boards and written exercises:</p>
+
+  <div class="acro-grid">
+    <div class="acro-row">
+      <div class="acro-letter">DX</div>
+      <div class="acro-content">
+        <div class="acro-word">Diagnose First — Is This Technical or Adaptive?</div>
+        <div class="acro-desc">Before determining a response to any change challenge, the Captain correctly identifies whether it requires expertise (technical) or values/belief change (adaptive). This diagnosis determines everything that follows. The assessment-center-ready answer names the distinction explicitly: "This is an adaptive challenge because it requires members to change their assumptions about X, not just learn a new procedure."</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">REG</div>
+      <div class="acro-content">
+        <div class="acro-word">Regulate Distress — Change Requires Productive Discomfort</div>
+        <div class="acro-desc">Adaptive change requires people to confront uncomfortable realities about themselves and their organization. Leaders who eliminate all discomfort eliminate the motivation for change. Leaders who allow too much distress create defensive shutdown. The Captain's job in adaptive change is to maintain what Heifetz calls the "productive zone of disequilibrium" — enough discomfort to motivate, not enough to paralyze. This is one of the most nuanced leadership skills in the entire TPS framework.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">ATT</div>
+      <div class="acro-content">
+        <div class="acro-word">Attend to Voices from the Margins</div>
+        <div class="acro-desc">The people who resist change most visibly often represent a concern the organization needs to hear. The member who pushes back hardest on a new protocol may be surfacing a legitimate operational issue that leadership missed in the change design. Adaptive leaders don't silence these voices — they listen to the concern beneath the resistance, separate the legitimate issue from the defensive reaction, and use what they find to improve the change initiative.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-gold">
+    <span class="callout-label">Assessment Center Integration</span>
+    <p>When a change management scenario appears in an oral board or written exercise, the 5/5 response opens by identifying whether the challenge is technical or adaptive. This single move demonstrates a level of conceptual sophistication that most candidates do not display — because most candidates haven't been taught this distinction. "Before determining my approach, I would assess whether this is a technical problem requiring an expertise-based solution, or an adaptive challenge requiring the people affected to examine their own assumptions. The distinction fundamentally changes how I lead." That sentence alone signals 4/5 thinking. What follows it determines whether it reaches 5/5.</p>
+  </div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="ft-toggle" onclick="toggleFT(this)" style="margin-bottom:16px;max-width:320px">
+<div class="ft-toggle-switch"><div class="ft-toggle-knob"></div></div>
+<div><div class="ft-toggle-label">Fast Track Mode</div><div class="ft-toggle-desc">Full lesson content</div></div>
+</div>
+
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Change Management</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Kotter's 8 Steps → Technical vs Adaptive Problem Framework → Resistance Spectrum</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify technical vs adaptive → apply Kotter → manage resistance → close with Humility and Openness</div></div></div></div>
+
+  <span class="sbar-label">Heifetz's Core Distinction</span>
+  <div class="sbar-card"><strong>Technical Problem</strong>Known solution. Apply existing expertise. Leader coordinates resources and knowledge.</div>
+  <div class="sbar-card"><strong>Adaptive Challenge</strong>No known solution. Requires people to change values, beliefs, or habits. Leader creates conditions — cannot solve it for them.</div>
+  <span class="sbar-label">The Most Common Failure</span>
+  <div class="sbar-card">Applying technical solutions to adaptive challenges. Feels like action. Produces compliance at best, resistance at worst, and zero genuine change.</div>
+  <span class="sbar-label">Three Adaptive Capacities</span>
+  <div class="sbar-card">Diagnose first · Regulate distress · Attend to voices from the margins.</div>
+  <span class="sbar-label">The AC Signal Line</span>
+  <div class="sbar-card">"Before determining my approach, I would assess whether this is a technical or adaptive challenge — because the distinction fundamentally changes how I lead."</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Technical vs Adaptive</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"Describe your understanding of the technical problem and how you would apply it in a real scenario."</div><div class="ob-note">Name a change management framework (Kotter's 8 Steps, ADKAR, or technical vs. adaptive). Show that resistance is predictable and manageable, not a character flaw in your people.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 1 — Key Takeaways</div>
+  <div class="tk-item">The Technical Problem — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">The Adaptive Challenge — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Change Management question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Change Management</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Kotter's 8 Steps → Technical vs Adaptive Problem Framework → Resistance Spectrum</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify technical vs adaptive → apply Kotter → manage resistance → close with Humility and Openness</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" disabled>← Previous</button>
+  <div class="lnb-info"><div class="lnb-name">Technical vs Adaptive</div><div class="lnb-num">Lesson 1 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Kotter's 8 Steps →</button>
+</div>
+</div>
+
+<!-- LESSON 2 -->
+<div class="lesson-view" id="lesson-1">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 27 · Lesson 2 of 6</div>
+    <h1 class="lh-title">Kotter's 8 Steps —<br><em>The Sequential Architecture of Organizational Change</em></h1>
+    <div class="lh-meta">
+      <span class="lh-meta-item">⏱ 18 min</span>
+      <span class="lh-meta-item">🔢 Kotter · Process Architecture</span>
+    </div>
+  </div>
+
+  <p>John Kotter's 8-step model, developed from research on why major organizational change initiatives fail, provides a sequential process architecture for leading change at the organizational level. Published in <em>Leading Change</em> (1996) and refined in subsequent work, Kotter's model addresses the most common change leadership errors — rushing urgency, neglecting coalition-building, under-communicating the vision — and provides a structured alternative.</p>
+
+  <p>At the Captain level, Kotter's 8 Steps functions as both a planning framework (how to architect a change initiative) and a diagnostic tool (where is this existing change effort going wrong?). Both applications are assessed.</p>
+
+  <div class="kotter-wrap">
+    <div class="kotter-phase">Phase 1 — Creating the Climate for Change</div>
+    <div class="kotter-step">
+      <div class="kotter-num">1</div>
+      <div class="kotter-body">
+        <div class="kotter-title">Create Urgency</div>
+        <div class="kotter-desc">Help people understand why change is necessary now. Without genuine urgency — not manufactured panic, but honest data about the gap between current state and required future state — people do not move. Most change initiatives fail before they begin because leadership assumes people see the urgency they see.</div>
+        <div class="kotter-fire">Fire service: "Our cancer death rate is not an abstract statistic. Here are the numbers for our department over the last decade. This is why we are changing how we operate."</div>
+      </div>
+    </div>
+    <div class="kotter-step">
+      <div class="kotter-num">2</div>
+      <div class="kotter-body">
+        <div class="kotter-title">Build a Guiding Coalition</div>
+        <div class="kotter-desc">Change led by a single person rarely sustains. Kotter's research shows successful change is driven by a coalition of respected individuals — not just authority figures — who are committed to the change and visible in their commitment. In fire service terms: the informal leaders, the senior members whose buy-in signals legitimacy to the crew.</div>
+        <div class="kotter-fire">Fire service: Identify the two or three crew members whose opinion others follow — not necessarily the most senior. Get them genuinely on board before rolling out to the full crew.</div>
+      </div>
+    </div>
+    <div class="kotter-step">
+      <div class="kotter-num">3</div>
+      <div class="kotter-body">
+        <div class="kotter-title">Form a Strategic Vision</div>
+        <div class="kotter-desc">A clear, compelling picture of what the organization looks like after the change. The vision must be simple enough to communicate in under two minutes and compelling enough to motivate. Visions that are vague, overly complex, or purely compliance-driven ("we need to do this because administration said so") cannot drive change.</div>
+        <div class="kotter-fire">Fire service: "In two years, this station is known in our department as the crew that demonstrates every shift that high performance and health protection are not in conflict."</div>
+      </div>
+    </div>
+    <div class="kotter-phase">Phase 2 — Engaging and Enabling the Organization</div>
+    <div class="kotter-step">
+      <div class="kotter-num">4</div>
+      <div class="kotter-body">
+        <div class="kotter-title">Communicate the Vision</div>
+        <div class="kotter-desc">Kotter's research found that most change initiatives under-communicate the vision by a factor of 10. Sending one email or holding one meeting is not communication — it is announcement. Effective vision communication is consistent, multi-channel, personally modeled by leadership, and repeated until it becomes the assumed frame for organizational conversation.</div>
+        <div class="kotter-fire">Fire service: The Captain who talks about the vision at every shift briefing, models the new behavior personally and visibly, and connects daily decisions back to the vision is communicating effectively. The one who holds one town hall and wonders why nothing changed is not.</div>
+      </div>
+    </div>
+    <div class="kotter-step">
+      <div class="kotter-num">5</div>
+      <div class="kotter-body">
+        <div class="kotter-title">Enable Action by Removing Barriers</div>
+        <div class="kotter-desc">Identify and remove the structural, resource, and cultural barriers that prevent people from acting on the vision. These can be physical (lack of equipment), procedural (SOGs that contradict the new direction), or human (supervisors actively undermining the change). The Captain who says "I want you to decon after every structure fire" and provides no decon equipment has created urgency and vision without enabling action.</div>
+        <div class="kotter-fire">Fire service: If the new protocol requires decon equipment that isn't on the apparatus, that barrier must be addressed before the protocol is enforceable. Barriers that are not removed produce frustration, cynicism, and abandonment of the change.</div>
+      </div>
+    </div>
+    <div class="kotter-step">
+      <div class="kotter-num">6</div>
+      <div class="kotter-body">
+        <div class="kotter-title">Generate Short-Term Wins</div>
+        <div class="kotter-desc">Long change initiatives require visible evidence that progress is happening. Short-term wins — early achievements that are clearly connected to the change vision — sustain momentum, validate the effort, and neutralize cynics. Without wins in the first 12–18 months, most organizational change stalls. The Captain plans for short-term wins deliberately, rather than hoping they occur organically.</div>
+        <div class="kotter-fire">Fire service: "We have completed 30-day decon compliance for every structure fire response this month. That is 100% — something this crew has never done before. That matters."</div>
+      </div>
+    </div>
+    <div class="kotter-phase">Phase 3 — Implementing and Sustaining the Change</div>
+    <div class="kotter-step">
+      <div class="kotter-num">7</div>
+      <div class="kotter-body">
+        <div class="kotter-title">Sustain Acceleration</div>
+        <div class="kotter-desc">The most common change failure point. Early wins generate premature declarations of victory, and the intensity of the effort relaxes before the change is embedded in the organization's culture and systems. Kotter calls this "declaring victory too soon." The change leader's job at step 7 is to use the momentum of early wins to drive deeper change — not to wind down the effort.</div>
+        <div class="kotter-fire">Fire service: The first month of decon compliance is a win. The question is whether it becomes normative — whether it requires active enforcement or whether it becomes what this crew just does automatically. Only continued acceleration drives from win to norm.</div>
+      </div>
+    </div>
+    <div class="kotter-step">
+      <div class="kotter-num">8</div>
+      <div class="kotter-body">
+        <div class="kotter-title">Institute the Change in Culture</div>
+        <div class="kotter-desc">Change is sustainable only when it is embedded in the organization's culture — when it is "the way we do things here" rather than "the current initiative." This requires two conditions: demonstrating the connection between the new behaviors and organizational success, and ensuring the change is reflected in how people are recognized, promoted, and developed. The Captain who installs a change in culture creates something that outlasts their assignment.</div>
+        <div class="kotter-fire">Fire service: When new crew members arrive and the senior members — not the officer — explain "this is how we do things here," the change is in the culture. That is the goal of step 8.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-gold">
+    <span class="callout-label">Kotter's Most Common Failure Points — What Assessors Probe</span>
+    <p>Assessors who know Kotter's model will probe specifically for the steps candidates skip. The most commonly missed: building the guiding coalition (candidates jump straight to announcing the vision), enabling action by removing barriers (candidates create expectation without creating capacity), and instituting change in culture (candidates declare success after initial compliance). Name these explicitly when they're relevant to your scenario — they are 5/5 detail.</p>
+  </div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Change Management</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Kotter's 8 Steps → Technical vs Adaptive Problem Framework → Resistance Spectrum</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify technical vs adaptive → apply Kotter → manage resistance → close with Humility and Openness</div></div></div></div>
+
+  <span class="sbar-label">Phase 1 — Create Climate</span>
+  <div class="sbar-card"><strong>Step 1</strong>Create Urgency — honest data about the gap</div>
+  <div class="sbar-card"><strong>Step 2</strong>Build Guiding Coalition — informal leaders, not just authority</div>
+  <div class="sbar-card"><strong>Step 3</strong>Form Vision — simple, compelling, under 2 min</div>
+  <span class="sbar-label">Phase 2 — Enable</span>
+  <div class="sbar-card"><strong>Step 4</strong>Communicate Vision — 10x more than you think</div>
+  <div class="sbar-card"><strong>Step 5</strong>Remove Barriers — structural, procedural, human</div>
+  <div class="sbar-card"><strong>Step 6</strong>Short-Term Wins — planned, not hoped for</div>
+  <span class="sbar-label">Phase 3 — Sustain</span>
+  <div class="sbar-card"><strong>Step 7</strong>Sustain Acceleration — don't declare victory too soon</div>
+  <div class="sbar-card"><strong>Step 8</strong>Institute in Culture — "the way we do things here"</div>
+  <span class="sbar-label">Most Skipped Steps</span>
+  <div class="sbar-card">Guiding coalition (Step 2) · Removing barriers (Step 5) · Embedding in culture (Step 8). Name these in scenarios — they're 5/5 detail.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Kotter's 8 Steps</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"How does kotter's 8 steps apply to your daily leadership practice? Give me a specific example."</div><div class="ob-note">Name a change management framework (Kotter's 8 Steps, ADKAR, or technical vs. adaptive). Show that resistance is predictable and manageable, not a character flaw in your people.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 2 — Key Takeaways</div>
+  <div class="tk-item">LEAD integration: Label this as a Change Management question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Change Management</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Kotter's 8 Steps → Technical vs Adaptive Problem Framework → Resistance Spectrum</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify technical vs adaptive → apply Kotter → manage resistance → close with Humility and Openness</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Technical vs Adaptive</button>
+  <div class="lnb-info"><div class="lnb-name">Kotter's 8 Steps</div><div class="lnb-num">Lesson 2 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Resistance →</button>
+</div>
+</div>
+
+<!-- LESSON 3 -->
+<div class="lesson-view" id="lesson-2">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 27 · Lesson 3 of 6</div>
+    <h1 class="lh-title">The Anatomy of Resistance —<br><em>What It Actually Is and How to Lead Through It</em></h1>
+    <div class="lh-meta">
+      <span class="lh-meta-item">⏱ 16 min</span>
+      <span class="lh-meta-item">🧠 Resistance · Psychology of Change</span>
+    </div>
+  </div>
+
+  <p>Resistance to change is the most predictable element of any change initiative — and the most consistently mishandled by leaders who treat it as an obstacle to overcome rather than information to understand. The Captain who understands what resistance actually is — where it comes from, what it expresses, and how it functions — leads through it rather than against it.</p>
+
+  <h2>What Resistance Actually Is</h2>
+  <p>Resistance is not obstinacy, lack of professionalism, or insufficient loyalty to the organization. It is almost always one of three things:</p>
+
+  <div class="acro-grid">
+    <div class="acro-row">
+      <div class="acro-letter">LOS</div>
+      <div class="acro-content">
+        <div class="acro-word">Loss — People Are Protecting Something Real</div>
+        <div class="acro-desc">Every change requires someone to give something up — familiarity, competence, status, relationships, autonomy, or identity. Heifetz's most important insight about resistance: people resist not the change itself, but the loss the change requires. The senior driver who resists new apparatus technology is not lazy — they are protecting the competence and status they built over 15 years on the old apparatus. The leader who recognizes this can address the loss rather than attacking the resistance.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">UNC</div>
+      <div class="acro-content">
+        <div class="acro-word">Uncertainty — The Change Feels Ambiguous or Unsafe</div>
+        <div class="acro-desc">When people cannot clearly see what the change will require of them, what success looks like, or whether they will be capable of performing under the new conditions, anxiety produces resistance as a defensive response. This resistance is addressed not by commanding compliance but by providing clarity — specific, concrete information about what the change looks like in practice, what support will be available, and how performance will be evaluated during the transition period.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">TRU</div>
+      <div class="acro-content">
+        <div class="acro-word">Trust Deficit — Past Change Failures Have Eroded Confidence</div>
+        <div class="acro-desc">Organizations and crews that have experienced change initiatives that were abandoned, poorly executed, or dishonestly communicated develop a justified skepticism about new change efforts. "Here we go again" is not cynicism — it is organizational memory. The Captain who acknowledges this history honestly and demonstrates through early actions (keeping commitments, removing barriers, generating wins) that this time is different builds the trust that resistance-from-history requires.</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Five Types of Resistant Behavior and How to Respond</h2>
+
+  <div class="resist-grid">
+    <div class="resist-card">
+      <div class="resist-type"><div class="resist-label">Active Opposition</div></div>
+      <div class="resist-body">
+        <div class="resist-what">Vocal, public disagreement. Actively recruits others to oppose the change. Sometimes includes deliberate non-compliance to force confrontation.</div>
+        <div class="resist-response">Listen for the legitimate concern beneath the opposition. Address it directly. Then — and only then — address the behavior. Public opposition that contains a valid organizational concern is data. Public opposition that is purely defensive requires coaching on professional behavior, not just the change itself.</div>
+      </div>
+    </div>
+    <div class="resist-card">
+      <div class="resist-type"><div class="resist-label">Passive Resistance</div></div>
+      <div class="resist-body">
+        <div class="resist-what">Verbal compliance, behavioral non-compliance. "Yes, Captain" in briefing, nothing changes in practice. The hardest resistance to address because it is invisible until you look for it.</div>
+        <div class="resist-response">Make the expected behavior specific and observable. Create feedback mechanisms that surface non-compliance. Have the direct conversation when the gap between stated and demonstrated commitment is identified — not as a disciplinary action, but as a genuine inquiry: "I want to understand what's making this difficult in practice."</div>
+      </div>
+    </div>
+    <div class="resist-card">
+      <div class="resist-type"><div class="resist-label">Procedural Delay</div></div>
+      <div class="resist-body">
+        <div class="resist-what">Using process, questions, and legitimate organizational mechanisms to slow or stop change without explicit opposition. Endless requests for clarification, procedural objections, committee referrals.</div>
+        <div class="resist-response">Distinguish between legitimate process concerns (which may have real merit) and procedural delay as avoidance strategy. Acknowledge the concerns, address the legitimate ones, and set clear timelines for when the change proceeds regardless of remaining questions.</div>
+      </div>
+    </div>
+    <div class="resist-card">
+      <div class="resist-type"><div class="resist-label">Cynicism and Fatalism</div></div>
+      <div class="resist-body">
+        <div class="resist-what">"Nothing changes here anyway." "We tried this before." "Administration will change their minds in six months." Expressed as disengagement and withdrawal rather than opposition.</div>
+        <div class="resist-response">This is organizational memory speaking. Acknowledge the history explicitly: "I understand why you might feel that way given what's happened before. Here's what I'm committing to, and here's how you'll know whether I'm following through." Then follow through visibly and early.</div>
+      </div>
+    </div>
+    <div class="resist-card">
+      <div class="resist-type"><div class="resist-label">Coalition Building Against</div></div>
+      <div class="resist-body">
+        <div class="resist-what">Organized opposition — the resistant informal leader working to build a bloc against the change within the crew or organization.</div>
+        <div class="resist-response">This requires a direct, private conversation about what's driving the opposition. The informal leader who opposes change publicly has significant organizational power — they are either surfacing a real concern the change initiative has not addressed, or they are protecting something that needs to be directly named. Either way, the conversation cannot be avoided.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-gold">
+    <span class="callout-label">The Resistance Inversion Principle</span>
+    <p>Heifetz's most practically useful insight for company officers: <strong>the most resistant person in the room often cares most about what is being changed.</strong> The firefighter who pushes back hardest on new SOGs is often the one who has the deepest professional investment in operational effectiveness. Their resistance is an expression of that investment — misdirected, but not meaningless. The Captain who leads with "Help me understand your concern" rather than "You need to comply" finds information, builds relationship, and occasionally finds a better answer than the one they started with.</p>
+  </div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Change Management</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Kotter's 8 Steps → Technical vs Adaptive Problem Framework → Resistance Spectrum</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify technical vs adaptive → apply Kotter → manage resistance → close with Humility and Openness</div></div></div></div>
+
+  <span class="sbar-label">What Resistance Actually Is</span>
+  <div class="sbar-card"><strong>Loss</strong>People protect competence, status, identity, relationships. Address the loss, not just the behavior.</div>
+  <div class="sbar-card"><strong>Uncertainty</strong>Ambiguity produces defensive resistance. Clarity dissolves it.</div>
+  <div class="sbar-card"><strong>Trust Deficit</strong>Organizational memory of past failures. Acknowledge history. Demonstrate through early action.</div>
+  <span class="sbar-label">Five Resistance Types</span>
+  <div class="sbar-card">Active Opposition · Passive Resistance · Procedural Delay · Cynicism &amp; Fatalism · Coalition Building Against</div>
+  <span class="sbar-label">Resistance Inversion</span>
+  <div class="sbar-card">Most resistant person often cares most. "Help me understand your concern" before "you need to comply." Their pushback may contain the information you need.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — The Anatomy of Resistance</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"Describe your understanding of what resistance actually is and how you would apply it in a real scenario."</div><div class="ob-note">Name a change management framework (Kotter's 8 Steps, ADKAR, or technical vs. adaptive). Show that resistance is predictable and manageable, not a character flaw in your people.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 3 — Key Takeaways</div>
+  <div class="tk-item">What Resistance Actually Is — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">Five Types of Resistant Behavior and How to Respond — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Change Management question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Change Management</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Kotter's 8 Steps → Technical vs Adaptive Problem Framework → Resistance Spectrum</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify technical vs adaptive → apply Kotter → manage resistance → close with Humility and Openness</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div>
+<h3>Use the OB card question</h3>
+<p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Kotter's 8 Steps</button>
+  <div class="lnb-info"><div class="lnb-name">Resistance</div><div class="lnb-num">Lesson 3 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Culture Change →</button>
+</div>
+</div>
+
+<!-- LESSON 4 -->
+<div class="lesson-view" id="lesson-3">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 27 · Lesson 4 of 6</div>
+    <h1 class="lh-title">Culture Change —<br><em>Compliance vs Commitment</em></h1>
+    <div class="lh-meta">
+      <span class="lh-meta-item">⏱ 16 min</span>
+      <span class="lh-meta-item">🏛️ Organizational Culture · Schein</span>
+    </div>
+  </div>
+
+  <p>Organizational culture is the set of shared assumptions, values, and behaviors that determine "how things are done here." Edgar Schein's three-level model of culture is the foundational framework for understanding what culture actually is and where it can be changed — and it reveals why so many culture change initiatives fail before they begin.</p>
+
+  <h2>Schein's Three Levels of Culture</h2>
+
+  <div class="acro-grid">
+    <div class="acro-row">
+      <div class="acro-letter">ART</div>
+      <div class="acro-content">
+        <div class="acro-word">Level 1 — Artifacts (What You Can See)</div>
+        <div class="acro-desc">The visible expressions of culture: uniform and appearance standards, station housekeeping, how people address each other, what's on the walls, how briefings are run, the language people use. Artifacts are easy to observe and easy to change — but changing them does not change culture, it changes the surface. Organizations that focus change efforts exclusively on artifacts produce compliance theater: the appearance of culture change without the substance.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">VAL</div>
+      <div class="acro-content">
+        <div class="acro-word">Level 2 — Espoused Values (What People Say They Believe)</div>
+        <div class="acro-desc">The values the organization officially endorses — its mission statement, its stated principles, its published behavioral expectations. Most fire departments have these: integrity, service, courage, excellence. They are not meaningless, but they are insufficient as drivers of culture change. The gap between espoused values and actual behavior is where cultural dysfunction lives — and where the most revealing diagnostic questions live.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">ASS</div>
+      <div class="acro-content">
+        <div class="acro-word">Level 3 — Basic Assumptions (What People Actually Believe)</div>
+        <div class="acro-desc">The deepest and most powerful level: the taken-for-granted assumptions about reality, human nature, and appropriate behavior that are so embedded they are rarely examined. "Firefighters don't complain." "Officers handle problems internally." "You earn respect by how you perform under fire, not by your title." These assumptions are not written anywhere — but they govern behavior more reliably than any policy or training program. Culture change that does not reach this level is not culture change.</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Compliance vs Commitment — The Distinction That Defines Sustainability</h2>
+
+  <div class="framework-grid">
+    <div class="fw-card">
+      <div class="fw-card-label">Compliance Culture</div>
+      <div class="fw-card-title">Change Through Authority</div>
+      <div class="fw-card-desc">People follow the new policy because they are required to. Behavior changes when the supervisor is present; reverts when they are not. Enforcement is required indefinitely. The change exists only as long as the authority enforcing it exists. Compliance is achievable through positional power alone.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Commitment Culture</div>
+      <div class="fw-card-title">Change Through Genuine Buy-In</div>
+      <div class="fw-card-desc">People follow the new approach because they believe in it. Behavior is consistent whether or not the supervisor is present. The change is self-reinforcing — members hold each other accountable because they share the underlying value. Commitment requires that people understand and endorse the <em>why</em>, not just the <em>what</em>. It cannot be commanded.</div>
+    </div>
+  </div>
+
+  <p>The Captain who leads through authority alone produces compliance. The Captain who leads through influence — through vision, relationship, modeling, and the consistent connection of new behaviors to shared values — produces commitment. Both are accessible, but only commitment creates durable organizational change.</p>
+
+  <h2>How the Captain Creates Conditions for Commitment</h2>
+
+  <div class="acro-grid">
+    <div class="acro-row">
+      <div class="acro-letter">VIS</div>
+      <div class="acro-content">
+        <div class="acro-word">Model the Change Personally and Visibly</div>
+        <div class="acro-desc">The single most powerful culture signal a Captain sends is their own behavior. The Captain who requires decon and is the first to do it, every time, without exception, creates a different culture than the Captain who requires it and allows themselves occasional exceptions. Personal modeling is not optional — it is the non-negotiable foundation of culture change leadership.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">WHY</div>
+      <div class="acro-content">
+        <div class="acro-word">Connect Every Change to a Value, Not Just a Rule</div>
+        <div class="acro-desc">"Because administration requires it" produces compliance. "Because our people are dying of preventable cancers and I am not willing to lose another member to something we could have prevented" produces commitment — in the people for whom that value resonates. The Captain who leads with the why creates the emotional foundation that sustains behavior when the supervisor isn't watching.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">REC</div>
+      <div class="acro-content">
+        <div class="acro-word">Recognize and Reinforce New Behavior Specifically and Publicly</div>
+        <div class="acro-desc">What gets recognized gets repeated. The Captain who specifically names and publicly acknowledges members who demonstrate the new behaviors is creating cultural signal — this is what valued performance looks like here. Vague positive feedback ("good job today") reinforces compliance. Specific, values-connected recognition ("I want to name what Martinez did today — that is exactly what commitment to this crew looks like") builds culture.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-navy">
+    <span class="callout-label">The Culture Change Timeline</span>
+    <p>Genuine culture change at the organizational level takes three to seven years. At the company level — a single station — a committed Captain working consistently can shift observable culture in 12 to 18 months and embed it at the basic assumptions level in three years. This timeline matters for assessment center responses: the candidate who describes culture change as something achievable in weeks through the right intervention reveals that they don't understand what culture is. The candidate who frames it accurately — as a multi-year investment in modeling, relationship, recognition, and patience — demonstrates the organizational depth assessors associate with senior leadership capacity.</p>
+  </div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Change Management</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Kotter's 8 Steps → Technical vs Adaptive Problem Framework → Resistance Spectrum</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify technical vs adaptive → apply Kotter → manage resistance → close with Humility and Openness</div></div></div></div>
+
+  <span class="sbar-label">Schein's Three Levels</span>
+  <div class="sbar-card"><strong>Level 1 — Artifacts</strong>What you can see. Easy to change, doesn't change culture.</div>
+  <div class="sbar-card"><strong>Level 2 — Espoused Values</strong>What people say. Insufficient without Level 3.</div>
+  <div class="sbar-card"><strong>Level 3 — Basic Assumptions</strong>What people actually believe. Where culture actually lives.</div>
+  <span class="sbar-label">Compliance vs Commitment</span>
+  <div class="sbar-card"><strong>Compliance</strong>Authority-driven. Reverts when supervisor leaves. Requires enforcement indefinitely.</div>
+  <div class="sbar-card"><strong>Commitment</strong>Value-driven. Self-reinforcing. Created through modeling, why, and recognition.</div>
+  <span class="sbar-label">Culture Change Timeline</span>
+  <div class="sbar-card">Company level: 12–18 months visible, 3 years embedded. Organizational level: 3–7 years. Candidates who say "weeks" reveal limited understanding.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Culture Change</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"Describe your understanding of schein's three levels of culture and how you would apply it in a real scenario."</div><div class="ob-note">Name a change management framework (Kotter's 8 Steps, ADKAR, or technical vs. adaptive). Show that resistance is predictable and manageable, not a character flaw in your people.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 4 — Key Takeaways</div>
+  <div class="tk-item">Schein's Three Levels of Culture — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">Compliance vs Commitment — The Distinction That Defines Sust — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Change Management question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Change Management</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Kotter's 8 Steps → Technical vs Adaptive Problem Framework → Resistance Spectrum</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify technical vs adaptive → apply Kotter → manage resistance → close with Humility and Openness</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Resistance</button>
+  <div class="lnb-info"><div class="lnb-name">Culture Change</div><div class="lnb-num">Lesson 4 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Change at Company Level →</button>
+</div>
+</div>
+
+<!-- LESSON 5 -->
+<div class="lesson-view" id="lesson-4">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 27 · Lesson 5 of 6</div>
+    <h1 class="lh-title">Change at the Company Level —<br><em>What a Captain Actually Does</em></h1>
+    <div class="lh-meta">
+      <span class="lh-meta-item">⏱ 14 min</span>
+      <span class="lh-meta-item">⚙️ Operational Application</span>
+    </div>
+  </div>
+
+  <p>The frameworks from the previous four lessons converge here: what does a Captain actually do — in practice, on shift, over months — to lead change effectively? Three scenarios cover the most common change contexts a Captain faces: implementing a departmental directive the crew resists, leading a culture shift initiated by the Captain themselves, and managing a crew through organizational change happening above them.</p>
+
+  <h2>Scenario A — Implementing a Directive That Generates Resistance</h2>
+  <p>The most common change scenario in assessment centers. Administration issues a new policy or operational change. The crew's response ranges from skeptical to actively opposed. The Captain is accountable for implementation.</p>
+
+  <div class="acro-grid">
+    <div class="acro-row">
+      <div class="acro-letter">1</div>
+      <div class="acro-content">
+        <div class="acro-word">Understand the Change Fully Before Communicating It</div>
+        <div class="acro-desc">The Captain who delivers a directive they don't understand — or worse, one they visibly disagree with — destroys credibility before the change begins. Seek briefings from administration, understand the rationale, address your own concerns through proper channels before briefing the crew. Present the change with complete information and genuine professional commitment — even when you have reservations.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">2</div>
+      <div class="acro-content">
+        <div class="acro-word">Brief the Change as a Leader, Not as a Messenger</div>
+        <div class="acro-desc">The Lieutenant who says "administration wants us to do this" and the Captain who says "here's what we're doing and here's why" are not communicating the same thing. Own the change as yours, not as something being done to you and the crew. Connect it to the crew's values, not just to the requirement. "I know this changes how we've been doing things. Here's why it matters and here's my commitment to making the transition as smooth as possible."</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">3</div>
+      <div class="acro-content">
+        <div class="acro-word">Create Feedback Channel Without Creating a Vote</div>
+        <div class="acro-desc">Crew members who feel heard during a change initiative implement it more effectively than those who feel overridden. Create a genuine channel for concerns — private conversations, briefing discussions — while being clear that the change is happening. "I want to hear what concerns you, and I will address what I can. This is not a vote — it is a commitment. But your experience of the transition matters to me."</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Scenario B — Leading Culture Change You've Initiated</h2>
+  <p>The Captain who comes to a station with a vision for a different culture — higher accountability, stronger training culture, better community relations, improved safety practices — is leading the most personally demanding form of change. They are the source of the urgency, the vision, and the modeling. There is no organizational directive to shelter behind.</p>
+
+  <ul>
+    <li><strong>Start with relationships before agendas.</strong> The first 30–60 days in a new assignment are for learning the crew, not announcing the new direction. The Captain who arrives with an immediate agenda has not earned the credibility to implement it.</li>
+    <li><strong>Build the coalition first.</strong> Identify the two or three informal leaders whose buy-in will signal legitimacy to the rest. Get genuinely on board — not compliance, but actual understanding and endorsement — before expanding.</li>
+    <li><strong>Make one change at a time, durably.</strong> The Captain who simultaneously changes training standards, station culture, community engagement, and administrative practices overwhelms the crew's adaptive capacity. One genuine change, embedded before the next, produces more durable culture shift than multiple simultaneous initiatives.</li>
+    <li><strong>Model without comment, then name it.</strong> Demonstrate the new behavior consistently for weeks before making it a formal expectation. When it becomes visible, name what you've been doing and why: "You've probably noticed I've been doing X. Here's what I'm trying to create." This approach reduces the perception of unilateral imposition.</li>
+  </ul>
+
+  <h2>Scenario C — Managing a Crew Through Organizational Change Above Them</h2>
+  <p>Budget cuts, station closures, staffing reductions, apparatus consolidations, district realignments. The Captain cannot control the change — but they can control how they lead their crew through it.</p>
+
+  <div class="callout callout-navy">
+    <span class="callout-label">The Captain's Non-Negotiable in Organizational Turbulence</span>
+    <p>The crew does not need the Captain to pretend the change is easy, fair, or well-designed. They need the Captain to remain steady — clear about what they know, honest about what they don't, and consistent in their commitment to the crew's welfare within the new conditions. The Captain who processes their own frustration with administration in front of the crew destroys the organizational trust that holds professional commitment together. Process it through appropriate channels. Bring stability to the crew.</p>
+  </div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Change Management</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Kotter's 8 Steps → Technical vs Adaptive Problem Framework → Resistance Spectrum</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify technical vs adaptive → apply Kotter → manage resistance → close with Humility and Openness</div></div></div></div>
+
+  <span class="sbar-label">Implementing a Directive</span>
+  <div class="sbar-card">Understand fully first · brief as a leader not a messenger · create feedback channel without creating a vote.</div>
+  <span class="sbar-label">Leading Culture You've Initiated</span>
+  <div class="sbar-card">Relationships before agendas · build coalition first · one change at a time · model before naming.</div>
+  <span class="sbar-label">Organizational Change Above You</span>
+  <div class="sbar-card">Remain steady. Clear on what's known, honest on what's not. Process your own frustration through proper channels — not in front of the crew.</div>
+  <span class="sbar-label">The Credibility Question</span>
+  <div class="sbar-card">The Captain who says "administration wants this" has transferred ownership away from themselves. The one who says "here's what we're doing and why" has claimed it. Credibility lives in ownership.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Change at the Company Level</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"Describe your understanding of scenario a — implementing a directive that generat and how you would apply it in a real scenario."</div><div class="ob-note">Name a change management framework (Kotter's 8 Steps, ADKAR, or technical vs. adaptive). Show that resistance is predictable and manageable, not a character flaw in your people.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 5 — Key Takeaways</div>
+  <div class="tk-item">Scenario A — Implementing a Directive That Generates Resista — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">Scenario B — Leading Culture Change You've Initiated — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Change Management question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Change Management</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Kotter's 8 Steps → Technical vs Adaptive Problem Framework → Resistance Spectrum</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify technical vs adaptive → apply Kotter → manage resistance → close with Humility and Openness</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Culture Change</button>
+  <div class="lnb-info"><div class="lnb-name">Change at Company Level</div><div class="lnb-num">Lesson 5 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: AC Application →</button>
+</div>
+</div>
+
+<!-- LESSON 6 -->
+<div class="lesson-view" id="lesson-5">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 27 · Lesson 6 of 6 · Assessment Application</div>
+    <h1 class="lh-title">Assessment Center Application —<br><em>Change Management Scenarios</em></h1>
+    <div class="lh-meta">
+      <span class="lh-meta-item">⏱ 16 min</span>
+      <span class="lh-meta-item">🎯 Scoring + Practice Scenarios</span>
+    </div>
+  </div>
+
+  <p>Change management scenarios are among the most frequently used Captain-level assessment center prompts because they test the full range of senior officer competencies simultaneously — supervisory judgment, interpersonal skills, organizational understanding, leadership philosophy, and strategic thinking. The frameworks from this module combine in every scenario response.</p>
+
+  <h2>How Change Management Is Scored by Dimension</h2>
+
+  <div class="framework-grid">
+    <div class="fw-card">
+      <div class="fw-card-label">Supervisory Judgment</div>
+      <div class="fw-card-title">Change as a Supervisory Problem</div>
+      <div class="fw-card-desc">When a member's resistance to change creates a supervisory issue — non-compliance, open undermining, passive obstruction — the Captain applies the change frameworks within the supervisory judgment structure. The 5/5 answer addresses both the supervisory behavior AND the underlying change management dynamic. "This is a performance issue AND it signals that something in how we've communicated this change isn't working — so I address both."</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Leadership Philosophy</div>
+      <div class="fw-card-title">Change as an Expression of Leadership Identity</div>
+      <div class="fw-card-desc">Leadership philosophy questions that touch change management test whether the candidate has an integrated view of what change leadership requires. The 5/5 answer integrates Heifetz (technical vs adaptive), Kotter (process architecture), and T·C·H·O·E·D·S (Transparency, Courage, and Dedication as the non-negotiables of change leadership): "Leading change requires the Transparency to be honest about what change demands, the Courage to hold the line when resistance builds, and the Dedication to sustain the effort long after the initial urgency has faded."</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Written Exercise</div>
+      <div class="fw-card-title">Change Planning as Administrative Task</div>
+      <div class="fw-card-desc">Written exercises that require change management planning test organizational and strategic thinking. The response should demonstrate: stakeholder analysis (who is affected, how), process architecture (which Kotter steps apply), communication plan, timeline, and success metrics. Generic "I would communicate clearly and involve the crew" answers score 3/5. A structured plan with named frameworks and specific action steps scores 4–5/5.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">In-Basket</div>
+      <div class="fw-card-title">Change Under Constraint</div>
+      <div class="fw-card-desc">In-basket items about change — an email from a resistant senior member, a memo requiring new compliance, a directive with an unrealistic timeline — test the candidate's ability to prioritize, communicate, and apply change frameworks under time and resource pressure. The 5/5 in-basket response addresses urgency, names the adaptive or technical nature of the challenge, and maps a realistic path forward within constraints.</div>
+    </div>
+  </div>
+
+  <h2>Practice Scenario — The Resistant Senior Member</h2>
+
+  <div class="callout callout-navy">
+    <span class="callout-label">Prompt</span>
+    <p>"You are a newly promoted Captain at a station with a strong traditional culture. Your predecessor was well-regarded and operated loosely — he gave the crew autonomy and rarely held them to formal standards. Administration has tasked you with implementing a new post-incident decontamination protocol that requires full gear removal and on-scene decon after every structure fire. Your senior engineer, 22 years on, a highly respected informal leader, told another crew member 'this Captain doesn't understand how we do things here. We'll wait him out.' How do you respond?"</p>
+  </div>
+
+  <div class="score-compare">
+    <div class="sc-card miss">
+      <div class="sc-title">3/5 Response</div>
+      <div class="sc-body">"I would meet with the engineer privately and make it clear that this is a departmental requirement and that non-compliance is not an option. I would document the conversation and follow progressive discipline if necessary. I would also hold a crew briefing to ensure everyone understands the new protocol."</div>
+    </div>
+    <div class="sc-card hit">
+      <div class="sc-title">5/5 Response</div>
+      <div class="sc-body">"Before anything else, I recognize this as an adaptive challenge — not a compliance problem. The engineer's comment tells me he has real concerns about the change and the credibility of the person leading it. Those concerns deserve a direct conversation, not an immediate disciplinary response.<br><br>I would sit down with him privately. Not to brief him on the policy — he knows the policy. To hear what's driving the resistance. In my experience, a 22-year senior member who resists a safety protocol is almost never indifferent to safety. He may believe the protocol is operationally unworkable, or that I haven't earned the credibility to require it yet, or that it represents a cultural shift he doesn't trust yet.<br><br>I would name what I observed — not the secondhand comment, but the pattern — and ask him directly: 'I want this crew to succeed with this change. I need to understand what concerns you about it.' Then I would listen.<br><br>If his concerns have merit, I incorporate what I can and explain the constraints on what I cannot. If they are about me — my credibility, my experience, my right to lead this crew — I acknowledge that directly: 'You've been here 22 years. I understand I haven't earned full trust yet. I'm asking for the professional commitment to this protocol while I build it.' Then I hold the line.<br><br>What I won't do: brief the crew on the policy and hope that changes the culture. Compliance without his informal endorsement will be fragile. This conversation is the change initiative."</div>
+    </div>
+  </div>
+
+  <div class="callout callout-gold">
+    <span class="callout-label">Chapter 27 Complete</span>
+    <p>Change management is where leadership theory becomes leadership practice — because it requires applying every framework you know in the face of genuine human resistance. The Heifetz distinction helps you diagnose. Kotter's model helps you architect. The resistance framework helps you understand. The culture model helps you sustain. And T·C·H·O·E·D·S provides the identity through which all of it moves. You now have the vocabulary and the frameworks. The work is applying them consistently when resistance is real and the easy path is to command rather than lead.</p>
+  </div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Change Management</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Kotter's 8 Steps → Technical vs Adaptive Problem Framework → Resistance Spectrum</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify technical vs adaptive → apply Kotter → manage resistance → close with Humility and Openness</div></div></div></div>
+
+  <span class="sbar-label">Scored in Four Formats</span>
+  <div class="sbar-card"><strong>Supervisory Judgment</strong>Address the behavior AND the change dynamic behind it.</div>
+  <div class="sbar-card"><strong>Leadership Philosophy</strong>Heifetz + Kotter + T·C·H·O·E·D·S integration = 5/5.</div>
+  <div class="sbar-card"><strong>Written Exercise</strong>Stakeholder analysis · Kotter steps · comms plan · success metrics.</div>
+  <div class="sbar-card"><strong>In-Basket</strong>Prioritize, name adaptive/technical, map realistic path under constraints.</div>
+  <span class="sbar-label">The 5/5 Pattern</span>
+  <div class="sbar-card">Diagnose before responding · acknowledge the human dynamic · listen before directing · hold the line with relationship, not just authority · connect to T·C·H·O·E·D·S.</div>
+  <span class="sbar-label">Key Integration Line</span>
+  <div class="sbar-card">"Leading change requires the Transparency to be honest about what it demands, the Courage to hold the line when resistance builds, and the Dedication to sustain the effort long after the initial urgency fades."</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Assessment Center Application</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"You receive a scenario about change management. Walk me through your complete response using the frameworks from this chapter."</div><div class="ob-note">Use LEAD: Label the bucket (Change Management), Engage the specific framework (reference How Change Management Is Scored by Dimension explicitly), Address the operational and organizational impact, Drive to a concrete first action with a timeline.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 6 — Key Takeaways</div>
+  <div class="tk-item">How Change Management Is Scored by Dimension — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">Practice Scenario — The Resistant Senior Member — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Change Management question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Change Management</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Kotter's 8 Steps → Technical vs Adaptive Problem Framework → Resistance Spectrum</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify technical vs adaptive → apply Kotter → manage resistance → close with Humility and Openness</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Change at Company Level</button>
+  <div class="lnb-info"><div class="lnb-name">AC Application</div><div class="lnb-num">Lesson 6 of 6</div></div>
+  <button class="lnb-btn primary" onclick="window.scrollTo({top:0,behavior:'smooth'})">Module Complete ✓</button>
+</div>
+</div>
+
+</main>
+
+<script>
+let cur=0;
+const ls=document.querySelectorAll('.lesson-view');
+const ps=document.querySelectorAll('.nav-pill');
+const mbs=document.querySelectorAll('.mh-lesson-btn');
+function showLesson(n){
+  ls.forEach(l=>l.classList.remove('active'));
+  ps.forEach(p=>p.classList.remove('active'));
+  mbs.forEach(m=>m.classList.remove('active'));
+  if(ls[n])ls[n].classList.add('active');
+  if(ps[n])ps[n].classList.add('active');
+  if(mbs[n])mbs[n].classList.add('active');
+  cur=n;
+  window.scrollTo({top:0,behavior:'smooth'});
+  document.getElementById('prog').style.width='0%';
+}
+function nextLesson(){if(cur<ls.length-1)showLesson(cur+1);}
+function prevLesson(){if(cur>0)showLesson(cur-1);}
+window.addEventListener('scroll',()=>{
+  const s=document.documentElement.scrollTop;
+  const h=document.documentElement.scrollHeight-window.innerHeight;
+  if(h>0)document.getElementById('prog').style.width=Math.min(100,(s/h*100))+'%';
+});
+document.addEventListener('DOMContentLoaded',()=>showLesson(0));
+
+function lfNext(el,stepNum){
+  var wrap=el.closest('.lf-wrap');
+  if(!wrap)return;
+  var steps=wrap.querySelectorAll('.lf-step');
+  var dots=wrap.querySelectorAll('.lf-dot');
+  steps.forEach(function(s,i){s.classList.remove('active');if(i<stepNum)s.classList.add('done');});
+  dots.forEach(function(d,i){d.classList.remove('active');if(i<stepNum)d.classList.add('done');if(i===stepNum)d.classList.add('active');});
+  if(steps[stepNum])steps[stepNum].classList.add('active');
+}
+</script>
+<script>function toggleFT(el){var sw=el.querySelector('.ft-toggle-switch');var desc=el.querySelector('.ft-toggle-desc');var mains=document.querySelectorAll('.lesson-main');sw.classList.toggle('on');var on=sw.classList.contains('on');desc.textContent=on?'Frameworks + OB cards only':'Full lesson content';mains.forEach(function(m){m.classList.toggle('ft-on',on);});}</script>
+</body>
+</html>

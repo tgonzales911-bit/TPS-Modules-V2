@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>TFD SAM Module — The Shift Safety &amp; Medical Officer | The Promotional Standard</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Crimson+Pro:wght@300;400;500;600&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --navy:#0C2340;--navy2:#0F2A4A;--navy-deep:#071828;
+  --gold:#C9A84C;--gold-light:#E4C97A;--gold-dim:#8B6914;
+  --cream:#F5F0E8;--cream2:#EDE4D0;--offwhite:#F5F0E8;--light:#EAE5DC;
+  --on-dark-1:#F0E8D8;--on-dark-2:#C8DCF0;--on-dark-3:#98B8D0;
+  --on-light-1:#1A2E42;--on-light-2:#3A5068;--on-light-3:#6A7A8A;
+  --tfd:#1A3D2B;--tfd2:#2A5C3F;--tfd3:#0D2018;
+  --tfd-gold:#7ED8A0;--tfd-gold-dim:#3A8050;
+  --tfd-bg:rgba(26,61,43,0.18);--tfd-border:rgba(42,92,63,0.4);--tfd-text:#80D8A0;
+  /* SAM capacity colors */
+  --sentinel:#5C1A10;--sentinel2:#8C3020;--sentinel-text:#F0A080;--sentinel-bg:rgba(92,26,16,0.15);
+  --caduceus:#1A3A6B;--caduceus2:#2A5A9B;--caduceus-text:#90C0F0;--caduceus-bg:rgba(26,58,107,0.15);
+  --commander:#4A2A08;--commander2:#7A4A10;--commander-text:#E8C060;--commander-bg:rgba(74,42,8,0.15);
+  --steward:#2A1A4A;--steward2:#4A2A7A;--steward-text:#C0A0F0;--steward-bg:rgba(42,26,74,0.15);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:var(--on-light-1);font-size:18px;line-height:1.8;}
+.top-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(13,32,24,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(126,216,160,0.25);height:68px;display:flex;align-items:center;padding:0 2rem;gap:1rem;}
+.nav-left{display:flex;align-items:center;gap:14px;flex:1;min-width:0;}
+.nav-brand{font-family:'Cinzel',serif;font-size:12px;letter-spacing:1.8px;color:var(--cream);line-height:1.3;white-space:nowrap;}
+.nav-brand span{display:block;font-size:8px;color:var(--tfd-gold);letter-spacing:2.5px;}
+.nav-divider{width:1px;height:28px;background:rgba(126,216,160,0.2);flex-shrink:0;}
+.nav-tfd-badge{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;background:var(--tfd-bg);border:1px solid var(--tfd-border);color:var(--tfd-text);padding:5px 11px;border-radius:4px;white-space:nowrap;flex-shrink:0;}
+.nav-pills{display:flex;gap:4px;flex:2;justify-content:center;overflow-x:auto;scrollbar-width:none;}
+.nav-pills::-webkit-scrollbar{display:none;}
+.nav-pill{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;color:rgba(126,216,160,0.5);padding:7px 13px;border-radius:20px;cursor:pointer;transition:all .2s;border:1px solid transparent;background:transparent;white-space:nowrap;}
+.nav-pill:hover{color:var(--cream);background:rgba(255,255,255,.06);}
+.nav-pill.active{color:var(--tfd-gold);background:rgba(126,216,160,.12);border-color:rgba(126,216,160,.3);}
+.progress-bar{position:fixed;top:68px;left:0;height:3px;background:linear-gradient(90deg,var(--tfd2),var(--tfd-gold));z-index:199;width:0%;transition:width .15s;}
+.lesson-view{display:none;}.lesson-view.active{display:block;}
+.module-hero{background:linear-gradient(155deg,var(--tfd3) 0%,#0A1A12 40%,var(--tfd) 100%);padding:5rem 3rem 4rem;margin-top:68px;position:relative;overflow:hidden;border-bottom:3px solid var(--tfd-gold);}
+.module-hero::after{content:'';position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--tfd-gold),var(--tfd-gold-dim));}
+.hero-glow{position:absolute;right:-100px;top:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(42,92,63,.2) 0%,transparent 70%);pointer-events:none;}
+.mh-inner{max-width:920px;position:relative;z-index:2;}
+.mh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--tfd-gold);margin-bottom:.5rem;}
+.mh-track-badge{display:inline-flex;align-items:center;gap:6px;font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:2.5px;text-transform:uppercase;background:var(--tfd-bg);border:1px solid var(--tfd-border);color:var(--tfd-text);padding:5px 12px;border-radius:4px;margin-bottom:1.25rem;}
+.mh-title{font-family:'EB Garamond',serif;font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:800;color:var(--cream);line-height:1.08;margin-bottom:.85rem;}
+.mh-title em{font-style:italic;color:var(--tfd-gold);}
+.mh-sub{font-size:1.1rem;color:var(--on-dark-2);max-width:680px;line-height:1.75;margin-bottom:2rem;}
+.mh-thread{background:rgba(126,216,160,.07);border:1px solid rgba(126,216,160,.2);border-left:4px solid var(--tfd-gold);padding:1.1rem 1.6rem;max-width:680px;}
+.mh-thread-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--tfd-gold);margin-bottom:6px;}
+.mh-thread-text{font-size:.95rem;color:var(--cream2);line-height:1.7;}
+/* CAPACITY COLORS */
+.cap-sentinel{border-top:4px solid var(--sentinel2)!important;}
+.cap-caduceus{border-top:4px solid var(--caduceus2)!important;}
+.cap-commander{border-top:4px solid var(--commander2)!important;}
+.cap-steward{border-top:4px solid var(--steward2)!important;}
+.badge-sentinel{background:var(--sentinel-bg);border:1px solid rgba(92,26,16,.4);color:var(--sentinel-text);}
+.badge-caduceus{background:var(--caduceus-bg);border:1px solid rgba(26,58,107,.4);color:var(--caduceus-text);}
+.badge-commander{background:var(--commander-bg);border:1px solid rgba(74,42,8,.4);color:var(--commander-text);}
+.badge-steward{background:var(--steward-bg);border:1px solid rgba(42,26,74,.4);color:var(--steward-text);}
+.cap-badge{display:inline-flex;align-items:center;gap:6px;font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:4px 10px;border-radius:20px;margin:.25rem .25rem 0 0;}
+/* LAYOUT */
+.lesson-container{display:grid;grid-template-columns:1fr 320px;gap:0;}
+.lesson-main{padding:3rem 3.5rem;border-right:1px solid var(--light);min-height:70vh;}
+.lesson-sidebar{padding:2rem 1.75rem;background:#EFF5F0;position:sticky;top:68px;height:calc(100vh - 68px);overflow-y:auto;}
+.lesson-header{margin-bottom:2.5rem;padding-bottom:1.75rem;border-bottom:2px solid var(--light);}
+.lh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--tfd-gold-dim);margin-bottom:.5rem;}
+.lh-track{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:2px;text-transform:uppercase;color:var(--tfd-text);background:var(--tfd-bg);border:1px solid var(--tfd-border);padding:3px 9px;border-radius:3px;display:inline-block;margin-bottom:.65rem;}
+.lh-title{font-family:'EB Garamond',serif;font-size:clamp(1.9rem,3vw,2.55rem);font-weight:800;color:var(--tfd);line-height:1.12;margin-bottom:.65rem;}
+.lh-title em{font-style:italic;color:var(--tfd-gold-dim);}
+.lh-meta{display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:.25rem;}
+.lh-meta-item{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--on-light-3);}
+.lesson-main h2{font-family:'EB Garamond',serif;font-size:1.75rem;font-weight:700;color:var(--tfd);margin:3rem 0 1rem;padding-bottom:.6rem;border-bottom:2px solid var(--light);}
+.lesson-main p{margin-bottom:1.35rem;color:var(--on-light-1);line-height:1.85;font-size:1rem;}
+.lesson-main ul{margin:0 0 1.35rem 1.6rem;color:var(--on-light-1);}
+.lesson-main li{margin-bottom:.65rem;line-height:1.75;}
+.lesson-main strong{color:var(--tfd);font-weight:600;}
+.callout{padding:1.5rem 1.75rem;margin:2.25rem 0;}
+.callout-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:.6rem;display:block;}
+.callout-tfd{background:rgba(26,61,43,.07);border-left:4px solid var(--tfd2);}
+.callout-tfd .callout-label{color:var(--tfd-gold-dim);}
+.callout-tfd p{color:var(--on-light-1);font-size:1rem;line-height:1.8;}
+.callout-gold{background:#FBF7E6;border-left:3px solid var(--gold);}
+.callout-gold .callout-label{color:var(--gold-dim);}
+.callout-gold p{color:#4A3A10;font-size:1rem;line-height:1.8;}
+.callout-navy{background:var(--tfd3);border-left:4px solid var(--tfd-gold);}
+.callout-navy .callout-label{color:var(--tfd-gold);}
+.callout-navy p{color:var(--on-dark-1);font-size:1rem;line-height:1.8;}
+.callout-sentinel{background:rgba(92,26,16,.08);border-left:4px solid var(--sentinel2);}
+.callout-sentinel .callout-label{color:var(--sentinel);}
+.callout-sentinel p{color:var(--on-light-1);font-size:1rem;line-height:1.8;}
+.infographic-wrap{background:var(--tfd3);border:1px solid rgba(126,216,160,.2);border-left:4px solid var(--tfd-gold);margin:2.25rem 0;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.3);}
+.ig-header{background:rgba(126,216,160,.07);padding:1.1rem 1.4rem 1rem;border-bottom:1px solid rgba(126,216,160,.15);}
+.ig-eyebrow{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:3px;text-transform:uppercase;color:var(--tfd-gold);display:block;margin-bottom:5px;}
+.ig-title{font-family:'EB Garamond',serif;font-size:1.3rem;font-weight:700;color:var(--cream);margin-bottom:4px;}
+.ig-sub{font-size:.97rem;color:var(--on-dark-2);line-height:1.65;}
+.ig-callout{margin:.6rem 1.4rem 1.1rem;padding:1rem 1.25rem;background:rgba(126,216,160,.07);border-left:3px solid var(--tfd-gold);font-size:.97rem;color:#7EC890;line-height:1.7;font-style:italic;}
+.capacity-grid-4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:1px;background:rgba(126,216,160,.08);}
+.cap-card{padding:1.35rem;background:var(--tfd3);}
+.cap-icon{font-size:1.8rem;margin-bottom:.65rem;}
+.cap-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:.4rem;}
+.cap-name{font-family:'EB Garamond',serif;font-size:1.2rem;font-weight:800;color:var(--on-dark-1);margin-bottom:.5rem;}
+.cap-desc{font-size:.93rem;color:var(--on-dark-2);line-height:1.6;}
+.cap-purpose{font-size:.85rem;font-style:italic;margin-top:.5rem;}
+.cap-card.cap-sentinel .cap-label{color:var(--sentinel-text);}
+.cap-card.cap-caduceus .cap-label{color:var(--caduceus-text);}
+.cap-card.cap-commander .cap-label{color:var(--commander-text);}
+.cap-card.cap-steward .cap-label{color:var(--steward-text);}
+.cap-card.cap-sentinel .cap-purpose{color:var(--sentinel-text);}
+.cap-card.cap-caduceus .cap-purpose{color:var(--caduceus-text);}
+.cap-card.cap-commander .cap-purpose{color:var(--commander-text);}
+.cap-card.cap-steward .cap-purpose{color:var(--steward-text);}
+.reads-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(126,216,160,.08);}
+.read-card{background:var(--tfd3);padding:1.25rem;}
+.read-num{font-family:'Cinzel',serif;font-size:1.8rem;font-weight:700;color:var(--tfd-gold);margin-bottom:.3rem;}
+.read-name{font-family:'EB Garamond',serif;font-size:1.1rem;font-weight:700;color:var(--on-dark-1);margin-bottom:.5rem;}
+.read-what{font-size:.93rem;color:var(--on-dark-2);line-height:1.6;margin-bottom:.4rem;}
+.read-iso{font-size:.88rem;color:var(--sentinel-text);font-style:italic;}
+.data-table{width:100%;border-collapse:collapse;font-size:.95rem;}
+.data-table th{background:rgba(26,61,43,.6);color:var(--tfd-gold);padding:.65rem 1rem;text-align:left;font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;}
+.data-table td{padding:.7rem 1rem;border-bottom:1px solid rgba(126,216,160,.1);vertical-align:top;color:var(--on-dark-2);line-height:1.55;}
+.data-table td strong{color:var(--on-dark-1);}
+.data-table tr:nth-child(even) td{background:rgba(26,61,43,.15);}
+.sbar-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--tfd-gold-dim);margin-bottom:.7rem;margin-top:1.75rem;display:block;}
+.sbar-label:first-child{margin-top:0;}
+.sbar-card{background:white;border:1px solid #C8D8C0;border-radius:8px;padding:1rem 1.15rem;margin-bottom:8px;font-size:.93rem;color:var(--on-light-2);line-height:1.65;box-shadow:0 1px 4px rgba(0,0,0,.04);}
+.sbar-card strong{color:var(--tfd);display:block;margin-bottom:4px;font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;}
+.sbar-card.accent-tfd{border-left:3px solid var(--tfd2);background:#F0F8F2;}
+.sbar-card.accent-tfd strong{color:var(--tfd);}
+.sbar-card.accent-sentinel{border-left:3px solid var(--sentinel2);background:#FFF5F0;}
+.sbar-card.accent-sentinel strong{color:var(--sentinel);}
+.sbar-card.accent-caduceus{border-left:3px solid var(--caduceus2);background:#F0F4FF;}
+.sbar-card.accent-caduceus strong{color:var(--caduceus);}
+.sbar-card.accent-commander{border-left:3px solid var(--commander2);background:#FFF8E8;}
+.sbar-card.accent-commander strong{color:var(--commander);}
+.sbar-card.accent-steward{border-left:3px solid var(--steward2);background:#F8F0FF;}
+.sbar-card.accent-steward strong{color:var(--steward);}
+.sbar-card.accent-gold{border-left:3px solid var(--gold);}
+.sbar-card.accent-gold strong{color:var(--gold-dim);}
+.sbar-card.accent-red{border-left:3px solid #B22222;background:#FFF5F5;}
+.sbar-card.accent-red strong{color:#8B1A1A;}
+.lesson-nav-bar{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 3rem;border-top:2px solid var(--light);background:white;box-shadow:0 -2px 12px rgba(0,0,0,.07);}
+.lnb-btn{background:transparent;border:1.5px solid #C8D8C0;padding:12px 28px;font-family:'Cinzel',serif;font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;border-radius:6px;color:var(--on-light-2);transition:all .2s;min-width:160px;}
+.lnb-btn:hover:not(:disabled){border-color:var(--tfd-gold);color:var(--tfd-gold-dim);}
+.lnb-btn:disabled{opacity:.35;cursor:default;}
+.lnb-btn.primary{background:linear-gradient(135deg,var(--tfd) 0%,var(--tfd2) 100%);color:var(--tfd-gold);border-color:var(--tfd);box-shadow:0 3px 12px rgba(26,61,43,.3);}
+.lnb-btn.primary:hover{background:linear-gradient(135deg,var(--tfd2) 0%,#3A7050 100%);}
+.lnb-btn.complete{background:linear-gradient(135deg,#1A5C3A 0%,#226644 100%);color:#80E0A0;border-color:#1A5C3A;cursor:default;}
+.lnb-info{text-align:center;}
+.lnb-name{font-family:'EB Garamond',serif;font-size:1rem;font-weight:600;color:var(--tfd);}
+.lnb-num{font-size:.78rem;color:var(--on-light-3);margin-top:2px;}
+.legal-disclaimer{margin:3rem 0 0;padding:1.25rem 1.5rem;background:#F0F5F0;border:1px solid #C8D8C0;border-top:3px solid var(--light);}
+.legal-disclaimer-label{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--on-light-3);margin-bottom:.5rem;display:block;}
+.legal-disclaimer p{font-size:.8rem!important;color:var(--on-light-3)!important;line-height:1.65!important;margin-bottom:0!important;font-style:italic;}
+@media(max-width:960px){.lesson-container{grid-template-columns:1fr;}.lesson-sidebar{position:relative;height:auto;}.capacity-grid-4,.reads-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.capacity-grid-4,.reads-grid{grid-template-columns:1fr;}}
+
+/* OB CARD */
+.ob-card{background:var(--navy);margin:2rem 0;overflow:hidden;}
+.ob-header{padding:0.85rem 1.5rem;background:rgba(201,168,76,0.08);border-bottom:1px solid rgba(201,168,76,0.15);}
+.ob-label{font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);}
+.ob-body{padding:1.25rem 1.5rem;}
+.ob-q{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;}
+.ob-q-tag{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);background:rgba(201,168,76,0.1);padding:4px 10px;border-radius:3px;white-space:nowrap;}
+.ob-q-text{font-family:'EB Garamond',serif;font-size:1.08rem;font-weight:600;color:var(--cream);line-height:1.5;margin-bottom:8px;}
+.ob-note{font-size:0.88rem;color:#8FA8C0;line-height:1.6;font-style:italic;}
+/* TAKEAWAYS */
+.takeaways{background:var(--navy);padding:2.25rem;margin:3rem 0 0;border-top:3px solid var(--gold);}
+.tk-lbl{font-family:'Cinzel',serif;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.tk-item{color:#8FA8C0;font-size:0.92rem;line-height:1.7;padding:0.5rem 0 0.5rem 1.25rem;border-left:2px solid rgba(201,168,76,0.2);margin-bottom:0.5rem;}
+
+
+.lead-nav{background:var(--navy);border-radius:8px;padding:14px 16px;margin-bottom:16px;border:1px solid rgba(201,168,76,0.2)}
+.lead-nav-header{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.lead-nav-row{display:grid;grid-template-columns:20px 1fr;gap:6px;margin-bottom:6px;align-items:start}
+.lead-nav-letter{font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:var(--gold)}
+.lead-nav-content{}
+.lead-nav-name{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:2px}
+.lead-nav-app{font-size:11px;color:#8FA8C0;line-height:1.5}
+
+.lf-wrap{margin:2.5rem 0 1.5rem;border:2px solid var(--gold);border-radius:10px;overflow:hidden}
+.lf-header{background:var(--navy);padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
+.lf-title{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+.lf-dots{display:flex;gap:6px}
+.lf-dot{width:8px;height:8px;border-radius:50%;background:rgba(201,168,76,0.25);transition:all 0.3s}
+.lf-dot.active{background:var(--gold);transform:scale(1.3)}
+.lf-dot.done{background:var(--gold)}
+.lf-step{display:none;padding:20px}
+.lf-step.active{display:block}
+.lf-step-num{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:6px}
+.lf-step-title{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:10px}
+.lf-chain{background:var(--navy);border-radius:6px;padding:14px 18px;margin:10px 0}
+.lf-chain-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.lf-chain-text{font-size:13px;color:#8FA8C0;line-height:1.6}
+.lf-chain-close{font-size:12px;color:var(--cream);margin-top:6px;font-style:italic}
+.lf-btn{background:var(--navy);color:var(--gold);border:2px solid var(--gold);padding:12px 24px;border-radius:6px;font-family:'Cinzel',serif;font-size:12px;letter-spacing:1.5px;font-weight:600;cursor:pointer;margin-top:12px;transition:all 0.2s;display:inline-block}
+.lf-btn:hover{background:var(--gold);color:var(--navy)}
+.lf-timer{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:var(--gold);padding:6px 14px;border-radius:4px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:1px;margin-top:10px}
+.lesson-main.ft>p{display:none!important}.lesson-main.ft>.callout{display:none!important}
+h3{font-family:'EB Garamond',serif;font-size:1.1rem;font-weight:700;color:var(--gold3);margin:1.5rem 0 0.5rem}
+.ft-toggle{display:flex;align-items:center;gap:10px;padding:10px 16px;background:var(--navy);border-radius:6px;cursor:pointer;border:1px solid rgba(201,168,76,0.25)}.ft-toggle-switch{width:36px;height:20px;background:rgba(201,168,76,0.2);border-radius:10px;position:relative;transition:background .2s}.ft-toggle-switch.on{background:var(--gold)}.ft-toggle-knob{width:14px;height:14px;background:#fff;border-radius:50%;position:absolute;top:3px;left:3px;transition:left .2s}.ft-toggle-switch.on .ft-toggle-knob{left:19px}.ft-toggle-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}.ft-toggle-desc{font-size:11px;color:var(--mid)}.lesson-main.ft-on>p,.lesson-main.ft-on>.callout,.lesson-main.ft-on h3{display:none!important}.lesson-main.ft-on .ob-card,.lesson-main.ft-on .lf-wrap,.lesson-main.ft-on .lead-nav,.lesson-main.ft-on h2{display:block!important}
+</style>
+</head>
+<body>
+<nav class="top-nav">
+  <div class="nav-left">
+    <div class="nav-brand">The Promotional Standard<span>Coaching Lab</span></div>
+    <div class="nav-divider"></div>
+    <div class="nav-tfd-badge">◆ TFD · SAM Module · Shift Safety &amp; Medical Officer</div>
+  </div>
+  <div class="nav-pills">
+    <button class="nav-pill active" onclick="showLesson(0)">The Dual Role</button>
+    <button class="nav-pill" onclick="showLesson(1)">The Sentinel</button>
+    <button class="nav-pill" onclick="showLesson(2)">The Caduceus</button>
+    <button class="nav-pill" onclick="showLesson(3)">The Commander</button>
+    <button class="nav-pill" onclick="showLesson(4)">The Steward</button>
+    <button class="nav-pill" onclick="showLesson(5)">The Integrated SAM</button>
+  </div>
+</nav>
+<div class="progress-bar" id="prog"></div>
+<main>
+<div class="module-hero">
+  <div class="hero-glow"></div>
+  <div class="mh-inner">
+    <div class="mh-eyebrow">Thornton Fire Department · EMS Division · SAM Module</div>
+    <div class="mh-track-badge">◆ TFD Exclusive · Managing Officer Level · Shift Safety &amp; Medical Officer</div>
+    <h1 class="mh-title">The Shift Safety &amp; Medical Officer —<br><em>The Sentinel · The Caduceus · The Commander · The Steward</em></h1>
+    <p class="mh-sub">The SAM is the only role in Thornton Fire that holds simultaneous authority over scene safety, clinical standards, shift operations, and personnel development. Four capacities. One officer. Every incident, every shift, every day — the SAM is the person the Division trusts to hold all four.</p>
+    <div class="mh-thread">
+      <div class="mh-thread-label">Module Thread</div>
+      <div class="mh-thread-text">Six lessons. The dual-role identity and four-capacity architecture. The Sentinel — ISO function, FDSOA framework, NFPA 1521, the 5 Reads, hazard assessment, and near-miss investigation. The Caduceus — medical oversight, protocol compliance, QA/QI, and Medical Director relationship. The Commander — shift supervision, EMSO oversight, conflict resolution, and operational authority. The Steward — mentorship, succession, QI leadership, and professional development culture. The Integrated SAM — all four capacities on a working incident and across a full tour.</div>
+    </div>
+  </div>
+</div>
+<!-- ══════════ LESSON 1 — THE DUAL ROLE ══════════ -->
+<div class="lesson-view active" id="lesson-0">
+<div class="lesson-container">
+<div class="lesson-main">
+<div class="lesson-header">
+  <div class="lh-eyebrow">SAM Module · Lesson 1 of 6</div>
+  <div class="lh-track">TFD Exclusive · Foundation · All Four Capacities</div>
+  <h1 class="lh-title">The Dual Role —<br><em>Identity and Architecture of the SAM</em></h1>
+  <div class="lh-meta"><span class="lh-meta-item">⏱ 14 min</span><span class="lh-meta-item">📘 Foundation</span><span class="lh-meta-item">Sentinel · Caduceus · Commander · Steward</span></div>
+</div>
+
+<p>The Shift Safety and Medical Officer holds the most complex role in the Thornton Fire EMS Division. It is not a supervisor with an additional safety collateral duty. It is not an EMS clinical lead who also handles shift paperwork. The SAM is a genuinely dual-authority officer — holding simultaneous formal responsibility for scene safety across all fire and rescue incidents and clinical standards oversight across all EMS operations on the shift. Neither responsibility is subordinate to the other. Both are primary.</p>
+
+<p>What makes this architecturally unusual — and genuinely demanding — is that the two primary responsibilities require fundamentally different modes of operation. The safety authority requires presence, mobility, and independent judgment at emergency scenes. The clinical authority requires relationship, pattern recognition, and system-level thinking across an entire shift's worth of patient care. Most officer roles operate in one mode at a time. The SAM operates in both simultaneously.</p>
+
+<div class="callout callout-tfd">
+  <span class="callout-label">The Core Identity</span>
+  <p>You are not primarily a safety officer who also does EMS. You are not primarily an EMS supervisor who also handles safety. You are the SAM — an officer whose authority specifically spans both domains because the Division determined that unified dual authority produces better outcomes than splitting the functions. That determination places a specific demand on you: you must be genuinely competent in both, not expert in one and adequate in the other.</p>
+</div>
+
+<h2>The Four Capacities</h2>
+<p>The SAM role maps to four distinct functional identities operating simultaneously across every shift and every incident.</p>
+
+<div class="infographic-wrap">
+  <div class="ig-header">
+    <span class="ig-eyebrow">◆ THE SAM — FOUR CAPACITIES</span>
+    <div class="ig-title">The Architecture of the SAM Role</div>
+    <div class="ig-sub">Four identities. One officer. The Sentinel and The Caduceus are the dual primary authorities. The Commander and The Steward are the shift leadership functions that support and extend both.</div>
+  </div>
+  <div class="capacity-grid-4">
+    <div class="cap-card cap-sentinel">
+      <div class="cap-icon">👁️</div>
+      <div class="cap-label" style="color:var(--sentinel-text);">Capacity One</div>
+      <div class="cap-name">The Sentinel</div>
+      <div class="cap-desc">ISO function on all fire and rescue incidents. Continuous hazard assessment, risk/benefit analysis, personnel accountability, near-miss investigation, and safety culture enforcement. The Sentinel's only job on scene is to watch — freed from all tactical responsibilities so that nothing else competes for the attention that safety requires.</div>
+      <div class="cap-purpose" style="color:var(--sentinel-text);">Purpose: See everything. Stop the incident if required. Protect everyone on scene.</div>
+    </div>
+    <div class="cap-card cap-caduceus">
+      <div class="cap-icon">⚕️</div>
+      <div class="cap-label" style="color:var(--caduceus-text);">Capacity Two</div>
+      <div class="cap-name">The Caduceus</div>
+      <div class="cap-desc">Medical supervision and clinical standards governance. Protocol compliance monitoring, medication oversight, QA/chart review, case consultation, and the Medical Director relationship. The Caduceus does not treat — it governs the standard of treatment. Clinical authority made present on the shift.</div>
+      <div class="cap-purpose" style="color:var(--caduceus-text);">Purpose: Hold the clinical standard. Never let it move.</div>
+    </div>
+    <div class="cap-card cap-commander">
+      <div class="cap-icon">⭐</div>
+      <div class="cap-label" style="color:var(--commander-text);">Capacity Three</div>
+      <div class="cap-name">The Commander</div>
+      <div class="cap-desc">Shift supervision of EMS personnel. Staffing, daily operations, resource management, EMSO oversight and support, conflict resolution, and the chain of command anchor for all EMSO GREEN/YELLOW/RED escalations. The Commander holds the shift together as an operational unit.</div>
+      <div class="cap-purpose" style="color:var(--commander-text);">Purpose: Hold the shift. Support the EMSOs. Be the authority that functions.</div>
+    </div>
+    <div class="cap-card cap-steward">
+      <div class="cap-icon">📚</div>
+      <div class="cap-label" style="color:var(--steward-text);">Capacity Four</div>
+      <div class="cap-name">The Steward</div>
+      <div class="cap-desc">Mentorship, succession, QI program participation, and professional development culture. The Steward validates EMSO pipeline nominations, develops EMSOs and High-Potential candidates, contributes to division-wide QI, and builds the organizational capacity that outlasts any individual tenure.</div>
+      <div class="cap-purpose" style="color:var(--steward-text);">Purpose: Build what comes next. Develop people. Invest in the division's future.</div>
+    </div>
+  </div>
+  <div class="ig-callout">The EMSO has three capacities operating at the station level. The SAM has four capacities operating across the division. Every EMSO capacity is supported by a SAM capacity: the EMSO's Shield is supported by the SAM Commander. The EMSO's Mentor is supported by the SAM Steward. The EMSO's Diplomat extends the SAM's reach into stations the SAM cannot physically occupy. The two roles are architecturally complementary — and understanding both is required to operate either one well.</div>
+</div>
+
+<h2>The Scope Distinction — SAM vs. EMSO</h2>
+<p>The most important architectural line to hold: the SAM operates at the division level. The EMSO operates at the station level. When those scopes collide — when a SAM begins managing individual station tasks that belong to EMSOs, or when an EMSO escalates decisions that belong in their own authority — both roles degrade.</p>
+
+<div class="infographic-wrap">
+  <div class="ig-header">
+    <span class="ig-eyebrow">◆ SAM vs. EMSO — SCOPE ARCHITECTURE</span>
+    <div class="ig-title">Where Each Role Operates and Why the Line Matters</div>
+  </div>
+  <div style="padding:.5rem 1rem 1rem;">
+    <table class="data-table">
+      <thead><tr><th>Function</th><th>EMSO Scope</th><th>SAM Scope</th></tr></thead>
+      <tbody>
+        <tr><td><strong>PCR Review</strong></td><td>First-line completeness and accuracy check. Flags issues.</td><td>Second-line review. Protocol deviation determination. Medical Director escalation.</td></tr>
+        <tr><td><strong>Mentorship</strong></td><td>Station-level active mentorship of High-Potential candidate. Monthly development conversations.</td><td>Validates EMSO pipeline nominations. Develops EMSOs. Division-wide succession awareness.</td></tr>
+        <tr><td><strong>Supply Authority</strong></td><td>GREEN: under $100 autonomous. PAR orders with notification threshold.</td><td>Escalation point for YELLOW denials. RED authority above $100.</td></tr>
+        <tr><td><strong>Conflict Resolution</strong></td><td>Initial YELLOW counseling for crew-level issues. Escalates formal discipline.</td><td>Formal personnel actions. HR coordination. Company Officer disagreements.</td></tr>
+        <tr><td><strong>Cultural Presence</strong></td><td>Kitchen Table Mandate at assigned and Spoke stations. Forward Observer function.</td><td>Receives Forward Observer intelligence. Acts on division-level cultural signals.</td></tr>
+        <tr><td><strong>Safety Authority</strong></td><td>No formal safety authority. Observes and reports safety concerns to SAM.</td><td>ISO on all fire/rescue incidents. NFPA 1521 authority. Full Sentinel function.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>Why This Role Exists</h2>
+<p>The SAM position was created because TFD determined that EMS quality and personnel safety could not be adequately governed by the fire chain of command alone — not because of capability, but because of domain specificity. A Battalion Chief managing a structure fire cannot simultaneously function as the ISO, monitor EMS protocol compliance across three ambulances, and oversee the development of six EMSOs. The SAM makes that possible by holding the EMS-specific authority that the fire chain cannot carry alone.</p>
+
+<p>The dual authority — safety and clinical — is not coincidental. It reflects a specific operational insight: the officer best positioned to govern EMS clinical standards on a fire/rescue incident is the same officer who understands scene dynamics well enough to assess safety risk. Splitting those functions creates a coordination problem that unified authority eliminates.</p>
+
+</div>
+<div class="lesson-sidebar">
+<div class="ft-toggle" onclick="toggleFT(this)" style="margin-bottom:16px;max-width:320px">
+<div class="ft-toggle-switch"><div class="ft-toggle-knob"></div></div>
+<div><div class="ft-toggle-label">Fast Track Mode</div><div class="ft-toggle-desc">Full lesson content</div></div>
+</div>
+
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Safety & Compliance</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Sentinel Role → SAM Authority Framework → Shift Safety Protocol</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the threat → invoke SAM authority → implement safety protocol → close with Trustworthiness</div></div></div></div>
+
+  <span class="sbar-label">The Four Capacities</span>
+  <div class="sbar-card accent-sentinel"><strong>The Sentinel</strong>ISO on all fire/rescue incidents. Freed from tactical responsibilities. Continuous hazard assessment and safety enforcement.</div>
+  <div class="sbar-card accent-caduceus"><strong>The Caduceus</strong>Clinical standards governance. Protocol compliance. QA. Medical Director relationship. Does not treat — governs treatment.</div>
+  <div class="sbar-card accent-commander"><strong>The Commander</strong>Shift supervision. EMSO oversight and escalation point. Conflict resolution. Operational authority.</div>
+  <div class="sbar-card accent-steward"><strong>The Steward</strong>Validates EMSO pipeline nominations. Develops EMSOs and High-Potential candidates. QI program participation.</div>
+  <span class="sbar-label">The EMSO-SAM Architecture</span>
+  <div class="sbar-card accent-tfd"><strong>EMSO Shield → SAM Commander</strong>Operational escalations flow up. SAM holds authority EMSO cannot.</div>
+  <div class="sbar-card accent-tfd"><strong>EMSO Mentor → SAM Steward</strong>Pipeline nominations flow up. SAM validates and develops at division level.</div>
+  <div class="sbar-card accent-tfd"><strong>EMSO Diplomat → SAM Intelligence</strong>Forward Observer reports flow up. SAM acts on what EMSO surfaces.</div>
+  <span class="sbar-label">The Core Distinction</span>
+  <div class="sbar-card accent-gold"><strong>SAM = Division Level · EMSO = Station Level</strong>When either role crosses into the other's scope, both degrade.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — The Dual Role</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">TFD</span><div><div class="ob-q-text">"You are given a scenario that requires knowledge of the dual role. How do you structure your response?"</div><div class="ob-note">Use LEAD: Label this as a Sam Module question. Engage the specific framework from this lesson — name it explicitly. Address impact at both the immediate and organizational level. Drive to a specific first action.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 1 — Key Takeaways</div>
+  <div class="tk-item">The Four Capacities — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">The Scope Distinction — SAM vs. EMSO — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Sam Module question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Safety & Compliance</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Sentinel Role → SAM Authority Framework → Shift Safety Protocol</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the threat → invoke SAM authority → implement safety protocol → close with Trustworthiness</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" disabled>← Start</button>
+  <div class="lnb-info"><div class="lnb-name">The Dual Role — Identity &amp; Architecture</div><div class="lnb-num">Lesson 1 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">The Sentinel →</button>
+</div>
+</div>
+<!-- ══════════ LESSON 2 — THE SENTINEL ══════════ -->
+<div class="lesson-view" id="lesson-1">
+<div class="lesson-container">
+<div class="lesson-main">
+<div class="lesson-header">
+  <div class="lh-eyebrow">SAM Module · Lesson 2 of 6</div>
+  <div class="lh-track">TFD Exclusive · ISO Function · FDSOA · NFPA 1521 · 5 Reads</div>
+  <h1 class="lh-title">The Sentinel —<br><em>ISO Function, the 5 Reads &amp; Scene Safety Authority</em></h1>
+  <div class="lh-meta"><span class="lh-meta-item">⏱ 22 min</span><span class="lh-meta-item">📘 Scene Safety · NFPA 1521 · FDSOA</span><span class="lh-meta-item">5 Reads · Hazard Assessment · Intervention Authority · Near-Miss</span></div>
+</div>
+
+<p>The Sentinel is the SAM's most operationally unique capacity — the one that exists nowhere else in the EMS Division and has no parallel in the EMSO role. On every fire and rescue incident, the SAM assumes the Incident Safety Officer function. This is not a collateral duty or a best-efforts responsibility. It is a formal NFPA 1521-defined role with specific authority, specific obligations, and a specific position in the Incident Command System.</p>
+
+<div class="callout callout-sentinel">
+  <span class="callout-label">NFPA 1521 — The Governing Standard</span>
+  <p>NFPA 1521: Standard for Fire Department Safety Officer Professional Qualifications defines the ISO role, authority, and responsibilities. The standard establishes that the ISO shall have the authority to alter, suspend, or terminate any activity that poses an imminent threat to personnel safety — independent of the Incident Commander's tactical direction. This is non-discretionary authority. When an imminent threat exists, the Sentinel acts.</p>
+</div>
+
+<h2>The ISO in ICS — Position and Authority</h2>
+<p>The ISO is a Command Staff position reporting directly to the Incident Commander. This positioning is architecturally significant: the ISO is not in the Operations Section, not in a division or group. The ISO sits at the command level — which means the ISO's safety interventions cannot be overridden by Operations Section personnel.</p>
+<ul>
+  <li><strong>The ISO advises</strong> — providing continuous safety intelligence to the IC about evolving hazards, personnel fatigue, and accountability gaps</li>
+  <li><strong>The ISO intervenes</strong> — when an imminent threat exists, the ISO stops the operation without waiting for IC approval</li>
+  <li><strong>The ISO coordinates</strong> — with Operations Section, Division/Group Supervisors, and medical personnel on safety concerns that require tactical adjustment rather than immediate stoppage</li>
+  <li><strong>The ISO documents</strong> — maintaining records that feed post-incident review, near-miss reporting, and trend analysis</li>
+</ul>
+
+<h2>The 5 Reads — The FDSOA ISO Continuous Assessment Framework</h2>
+<p>The FDSOA ISO curriculum identifies five continuous visual reads that the ISO performs from arrival through demobilization. These are not sequential steps — they run simultaneously and loop continuously throughout the incident. The ISO who masters the 5 Reads is never standing still watching a fire; they are actively processing five information streams at once and integrating them into a continuous risk/benefit assessment.</p>
+
+<div class="infographic-wrap">
+  <div class="ig-header">
+    <span class="ig-eyebrow">◆ THE 5 READS — FDSOA ISO CONTINUOUS ASSESSMENT</span>
+    <div class="ig-title">Five Information Streams — Running Simultaneously, Looping Continuously</div>
+    <div class="ig-sub">The ISO who is watching one thing has stopped being a safety officer. The 5 Reads is the discipline of simultaneous multi-stream awareness that makes the Sentinel function possible at the quality NFPA 1521 requires.</div>
+  </div>
+  <div class="reads-grid">
+    <div class="read-card">
+      <div class="read-num">01</div>
+      <div class="read-name">Read the Smoke</div>
+      <div class="read-what">Volume, velocity, density, and color. Black, thick, turbulent smoke pushing under pressure signals a ventilation-limited fire building toward flashover. Light gray, lazy smoke may indicate a decaying fire or a remote fire location. Smoke behavior is the earliest warning system available — it changes before structural conditions change.</div>
+      <div class="read-iso">ISO action: Communicate smoke read to IC at arrival and whenever conditions change. A shift from slow smoke to pressurized black smoke is an immediate radio transmission.</div>
+    </div>
+    <div class="read-card">
+      <div class="read-num">02</div>
+      <div class="read-name">Read the Fire</div>
+      <div class="read-what">Location, extension, and behavior. Where is the fire burning? Is it moving toward personnel positions? Is the flame character changing — from orange to white, from steady to rollover? Fire behavior change is a leading indicator of structural compromise and flashover risk. The ISO reads fire independently of the IC's tactical picture.</div>
+      <div class="read-iso">ISO action: Establish the fire's location relative to all personnel positions. Reassess every time a tactical action changes ventilation or suppression conditions.</div>
+    </div>
+    <div class="read-card">
+      <div class="read-num">03</div>
+      <div class="read-name">Read the Building</div>
+      <div class="read-what">Construction type, age, fire loading, and structural integrity indicators. Lightweight truss construction fails catastrophically with minimal fire exposure. Ordinary construction behaves differently than heavy timber. Visible structural deformation, bowing walls, cracking masonry, or floor deflection are immediate intervention triggers regardless of operational progress.</div>
+      <div class="read-iso">ISO action: Identify construction type on arrival. Establish time benchmarks — lightweight truss under fire involvement has a predictable failure window. Know it before personnel commit.</div>
+    </div>
+    <div class="read-card">
+      <div class="read-num">04</div>
+      <div class="read-name">Read the Resources</div>
+      <div class="read-what">Personnel accountability, staffing adequacy, and resource fatigue. Is Two-In/Two-Out maintained? Are Rapid Intervention Teams staged? Are personnel approaching physiological limits — visible fatigue, dehydration, heat stress? Resource reads inform the IC's operational sustainability and the ISO's accountability posture.</div>
+      <div class="read-iso">ISO action: Establish accountability from arrival. Know where every crew is. A personnel accountability report (PAR) called at every significant tactical transition is a Sentinel standard.</div>
+    </div>
+    <div class="read-card">
+      <div class="read-num">05</div>
+      <div class="read-name">Read the Crews</div>
+      <div class="read-what">Physical and behavioral indicators of distress, fatigue, and impaired judgment. Heat illness presents as behavioral changes — confusion, agitation, poor decision-making — before the physical signs are obvious. A crew that was sharp at arrival and is now moving slowly and communicating poorly is showing fatigue signals the ISO acts on before an injury occurs.</div>
+      <div class="read-iso">ISO action: Observe crew behavior continuously. Rotate crews before fatigue becomes impairment. A PAR that counts personnel is not enough — the ISO reads how they look and move.</div>
+    </div>
+    <div class="read-card" style="background:rgba(126,216,160,.05);border:1px solid rgba(126,216,160,.15);">
+      <div class="read-num" style="color:var(--tfd-gold);">∞</div>
+      <div class="read-name" style="color:var(--tfd-gold);">The Loop</div>
+      <div class="read-what">The 5 Reads do not complete — they loop. Every tactical change restarts the loop. A door opened for ventilation changes the smoke read, changes the fire read, and changes the building read simultaneously. The ISO who completed the 5 Reads at arrival and stopped reading has stopped being a safety officer.</div>
+      <div class="read-iso">ISO standard: When did you last update each read? If the answer is "at arrival" and significant time or tactical actions have elapsed — you are behind.</div>
+    </div>
+  </div>
+</div>
+
+<h2>Intervention Authority — When the Sentinel Acts</h2>
+<p>The Sentinel's intervention authority is the most consequential — and most demanding — aspect of the ISO role. NFPA 1521 grants the ISO authority to stop operations when an imminent threat to personnel safety exists. This authority does not require IC approval. It does not require consensus. It is unilateral, immediate, and non-negotiable.</p>
+
+<div class="infographic-wrap">
+  <div class="ig-header">
+    <span class="ig-eyebrow">◆ ISO INTERVENTION LEVELS — NFPA 1521</span>
+    <div class="ig-title">Three Levels of Intervention — When and How the Sentinel Acts</div>
+  </div>
+  <div style="padding:.5rem 1rem 1rem;">
+    <table class="data-table">
+      <thead><tr><th>Level</th><th>Condition</th><th>ISO Action</th><th>IC Notification</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Advisory</strong></td><td>Hazard identified — not yet imminent. Personnel can continue with modification.</td><td>Radio transmission to IC: hazard identified, recommended action. Continue monitoring.</td><td>Immediate — IC decides on tactical modification.</td></tr>
+        <tr><td><strong>Corrective</strong></td><td>Unsafe condition that can be corrected without stopping operations.</td><td>Direct communication to crew or crew supervisor. Correct the condition. Confirm compliance.</td><td>Advise IC of correction made. Document.</td></tr>
+        <tr><td><strong>Emergency — Stop</strong></td><td>Imminent threat to personnel safety. Structural failure indicators, immediate flashover conditions, accountability breakdown with personnel interior.</td><td>Emergency traffic on radio: "SAFETY — ALL UNITS EVACUATE." Activate emergency traffic. Sound apparatus air horns. Do not wait for IC acknowledgment.</td><td>After evacuation is initiated — IC is informed, not asked.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="ig-callout">The hardest ISO skill is not identifying the hazard — it is calling the emergency stop when operational momentum and crew investment make it feel wrong to stop. The Sentinel who hesitates at an emergency stop because the crew is "almost there" has allowed social pressure to override safety authority. NFPA 1521 grants this authority specifically because the IC cannot always see what the ISO sees. Use it.</div>
+</div>
+
+<h2>Near-Miss Investigation and Reporting</h2>
+<p>The Sentinel's responsibility does not end when the incident ends. Near-miss events — situations where injury or death could have occurred but did not — are among the most valuable data points in safety culture development. They reveal systemic vulnerabilities before they produce casualties.</p>
+<ul>
+  <li><strong>Document immediately</strong> — while details are clear, before the debrief, before the apparatus returns to quarters. The SAM's field notes are the foundation of the formal report.</li>
+  <li><strong>Conduct a factual debrief</strong> — what happened, in sequence, without blame framing. The near-miss debrief is an information-gathering exercise, not a performance review.</li>
+  <li><strong>Submit through the EMS chain</strong> — the report goes to the EMS Chief and follows any applicable departmental reporting requirements. Near-misses may also trigger NIFC (Near-Miss Reporting System) submissions depending on the nature of the event.</li>
+  <li><strong>Identify the systemic factor</strong> — near-misses almost always reveal a systemic vulnerability, not just an individual error. The SAM's investigation should identify what policy, training, equipment, or environmental factor contributed — not just who was involved.</li>
+</ul>
+
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Safety & Compliance</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Sentinel Role → SAM Authority Framework → Shift Safety Protocol</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the threat → invoke SAM authority → implement safety protocol → close with Trustworthiness</div></div></div></div>
+
+  <span class="sbar-label">NFPA 1521 — The Standard</span>
+  <div class="sbar-card accent-sentinel"><strong>ISO Authority</strong>Alter, suspend, or terminate any activity posing imminent threat to personnel — independent of IC tactical direction. Non-discretionary.</div>
+  <div class="sbar-card accent-sentinel"><strong>ICS Position</strong>Command Staff — reports to IC. Not in Operations Section. ISO interventions cannot be overridden by Operations.</div>
+  <span class="sbar-label">The 5 Reads</span>
+  <div class="sbar-card"><strong>01 — Smoke</strong>Volume, velocity, density, color. Earliest warning system.</div>
+  <div class="sbar-card"><strong>02 — Fire</strong>Location, extension, behavior change.</div>
+  <div class="sbar-card"><strong>03 — Building</strong>Construction type, age, structural indicators.</div>
+  <div class="sbar-card"><strong>04 — Resources</strong>Accountability, staffing, fatigue.</div>
+  <div class="sbar-card"><strong>05 — Crews</strong>Physical and behavioral distress indicators.</div>
+  <div class="sbar-card accent-gold"><strong>∞ — The Loop</strong>Every tactical change restarts the 5 Reads. Never stop reading.</div>
+  <span class="sbar-label">Intervention Levels</span>
+  <div class="sbar-card"><strong>Advisory</strong>Hazard identified — not imminent. Radio IC. Monitor.</div>
+  <div class="sbar-card"><strong>Corrective</strong>Unsafe condition — correct directly. Advise IC.</div>
+  <div class="sbar-card accent-red"><strong>Emergency Stop</strong>"SAFETY — ALL UNITS EVACUATE." No IC approval needed. Act, then notify.</div>
+  <span class="sbar-label">Near-Miss</span>
+  <div class="sbar-card accent-tfd"><strong>Document → Debrief → Report → Identify Systemic Factor</strong>Near-misses reveal vulnerabilities before they produce casualties. Every one is a mandatory investigation.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — The Sentinel</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">TFD</span><div><div class="ob-q-text">"You are given a scenario that requires knowledge of the sentinel. How do you structure your response?"</div><div class="ob-note">Use LEAD: Label this as a Sam Module question. Engage the specific framework from this lesson — name it explicitly. Address impact at both the immediate and organizational level. Drive to a specific first action.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 2 — Key Takeaways</div>
+  <div class="tk-item">The ISO in ICS — Position and Authority — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">The 5 Reads — The FDSOA ISO Continuous Assessment Framework — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Sam Module question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Safety & Compliance</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Sentinel Role → SAM Authority Framework → Shift Safety Protocol</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the threat → invoke SAM authority → implement safety protocol → close with Trustworthiness</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← The Dual Role</button>
+  <div class="lnb-info"><div class="lnb-name">The Sentinel</div><div class="lnb-num">Lesson 2 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">The Caduceus →</button>
+</div>
+</div>
+<!-- ══════════ LESSON 3 — THE CADUCEUS ══════════ -->
+<div class="lesson-view" id="lesson-2">
+<div class="lesson-container">
+<div class="lesson-main">
+<div class="lesson-header">
+  <div class="lh-eyebrow">SAM Module · Lesson 3 of 6</div>
+  <div class="lh-track">TFD Exclusive · Clinical Authority · The Caduceus</div>
+  <h1 class="lh-title">The Caduceus —<br><em>Medical Oversight, Protocol Compliance &amp; the QA/QI System</em></h1>
+  <div class="lh-meta"><span class="lh-meta-item">⏱ 18 min</span><span class="lh-meta-item">📘 Clinical Governance</span><span class="lh-meta-item">Protocol Compliance · QA/QI · Medical Director · Second-Line TQM</span></div>
+</div>
+
+<p>The Caduceus governs the clinical standard — not by providing care directly, but by ensuring that every provider on the shift delivers care in alignment with established protocols, standing orders, and quality benchmarks. This is a fundamentally different kind of authority than tactical command. It operates through observation, feedback, documentation, and a direct relationship with the Medical Director that no other officer in the chain holds.</p>
+
+<p>The symbol of the caduceus — the staff of Hermes, two serpents intertwined — represents the balance of authority and service that defines clinical governance. The SAM does not outrank the Medical Director on clinical matters. The SAM is the Medical Director's operational extension on the shift — translating clinical standards into observable practice and returning quality data that makes improvement possible.</p>
+
+<h2>Medical Supervision on Scene</h2>
+<p>The Caduceus function on active EMS calls is presence and observation — not intervention in the clinical management unless patient safety requires it. The SAM's presence on scene communicates to providers that the clinical standard is being watched, which alone elevates performance. When observation reveals a concern:</p>
+<ul>
+  <li><strong>On-scene correction</strong> — if an immediate patient safety issue is present, the SAM intervenes directly. The standard of care is non-negotiable. Address the clinical gap first, debrief the provider after.</li>
+  <li><strong>Post-call feedback</strong> — for performance issues that are not immediate safety concerns, the feedback conversation happens after the call, privately, using the CLEAR framework.</li>
+  <li><strong>Documentation flags</strong> — any potential protocol deviation is flagged to the Medical Director through the chain of command. The SAM does not determine that a protocol deviation occurred — that is Medical Director authority. The SAM surfaces the concern with documentation.</li>
+</ul>
+
+<h2>Second-Line TQM — The SAM's QA Role</h2>
+<p>The EMSO performs first-line PCR review — completeness and accuracy checks that catch surface-level issues early. The SAM performs second-line review — a deeper clinical analysis that evaluates whether care decisions were appropriate, protocol-aligned, and consistent with patient outcomes. The two-tier system creates a quality pipeline: EMSOs catch the easy issues, SAMs evaluate the harder ones.</p>
+
+<div class="infographic-wrap">
+  <div class="ig-header">
+    <span class="ig-eyebrow">◆ TWO-TIER TQM — EMSO FIRST LINE / SAM SECOND LINE</span>
+    <div class="ig-title">What Each Tier Reviews and What It Escalates</div>
+  </div>
+  <div style="padding:.5rem 1rem 1rem;">
+    <table class="data-table">
+      <thead><tr><th>Review Element</th><th>EMSO First Line</th><th>SAM Second Line</th></tr></thead>
+      <tbody>
+        <tr><td><strong>PCR Completeness</strong></td><td>All fields populated? Times in sequence? Signatures present?</td><td>Does the narrative reflect the clinical picture? Are assessments documented at appropriate intervals?</td></tr>
+        <tr><td><strong>Protocol Alignment</strong></td><td>Interventions listed consistent with standing orders?</td><td>Were interventions clinically indicated? Was the protocol applied correctly in context?</td></tr>
+        <tr><td><strong>Outcome Correlation</strong></td><td>Not in scope — EMSO does not evaluate clinical outcomes.</td><td>Does the patient outcome correlate with the care provided? Are there patterns across providers or shifts?</td></tr>
+        <tr><td><strong>Protocol Deviation</strong></td><td>Flags potential concern to SAM — does not conclude deviation occurred.</td><td>Determines whether deviation occurred. Reports to Medical Director with documentation.</td></tr>
+        <tr><td><strong>Provider Feedback</strong></td><td>Educational tone. Clarification requests. CLEAR framework.</td><td>Formal performance feedback. Competency concerns. Remediation recommendations to Medical Director/Training Captain.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="ig-callout">The two-tier system only works if both tiers actually function. A SAM who bypasses EMSO first-line review and conducts all PCR review directly recreates the administrative burden the EMSO role was designed to absorb. Trust the EMSO's first line. Review what they flag. The pipeline produces better outcomes than either tier operating alone.</div>
+</div>
+
+<h2>The Medical Director Relationship</h2>
+<p>The SAM is the Medical Director's primary operational partner on the shift. This relationship has specific obligations that most officer development programs do not address explicitly.</p>
+<ul>
+  <li><strong>Proactive communication</strong> — the SAM does not wait for the Medical Director to ask about quality concerns. When patterns emerge, when unusual cases occur, when provider performance raises clinical questions — the SAM initiates communication.</li>
+  <li><strong>Accurate representation</strong> — the SAM presents clinical situations to the Medical Director factually and completely, without advocacy for a particular outcome. The Medical Director makes clinical determinations. The SAM provides the data.</li>
+  <li><strong>Protocol feedback</strong> — when field experience suggests a protocol gap, ambiguity, or clinical challenge, the SAM documents and communicates that feedback to the Medical Director through appropriate channels. The SAM is the field-to-protocol feedback loop.</li>
+  <li><strong>Education partnership</strong> — the Medical Director is a resource, not just an authority. The SAM who builds a genuine working relationship with the Medical Director has access to clinical expertise that makes every other Caduceus function more effective.</li>
+</ul>
+
+<h2>Protocol Compliance Monitoring</h2>
+<p>The Caduceus monitors protocol compliance across the shift — not through punitive surveillance, but through systematic observation and feedback. Compliance issues are almost always developmental before they are disciplinary. A provider who consistently misapplies a protocol usually has a knowledge gap, not a willingness gap. Identifying which — using the same 3 U's Diagnostic the EMSO applies — determines the correct intervention.</p>
+
+<div class="callout callout-tfd">
+  <span class="callout-label">Protocol Compliance — The Caduceus Diagnostic</span>
+  <p><strong>Unaware:</strong> The provider does not know the correct protocol application — education is the intervention. Refer to Training Captain for CE. <strong>Unable:</strong> The provider knows but lacks the skill or resource — coaching and skill development. <strong>Unwilling:</strong> The provider knows, can, and chooses not to comply — this is the only scenario that activates formal accountability through the Medical Director and HR chain. Do not escalate to accountability before completing the diagnostic.</p>
+</div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Safety & Compliance</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Sentinel Role → SAM Authority Framework → Shift Safety Protocol</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the threat → invoke SAM authority → implement safety protocol → close with Trustworthiness</div></div></div></div>
+
+  <span class="sbar-label">The Caduceus Identity</span>
+  <div class="sbar-card accent-caduceus"><strong>Clinical Governance — Not Treatment</strong>The SAM governs the standard. Providers deliver care. Never conflate the two roles on scene.</div>
+  <span class="sbar-label">On-Scene Clinical Authority</span>
+  <div class="sbar-card accent-caduceus"><strong>Immediate Safety Issue</strong>Intervene directly. Address first, debrief after.</div>
+  <div class="sbar-card"><strong>Non-Urgent Performance</strong>Post-call feedback. Private. CLEAR framework.</div>
+  <div class="sbar-card accent-red"><strong>Potential Protocol Deviation</strong>Flag to Medical Director with documentation. SAM does not determine deviation occurred.</div>
+  <span class="sbar-label">Two-Tier TQM</span>
+  <div class="sbar-card accent-tfd"><strong>EMSO First Line</strong>Completeness, accuracy, surface flags. Educational tone.</div>
+  <div class="sbar-card accent-caduceus"><strong>SAM Second Line</strong>Clinical appropriateness, protocol alignment, outcome correlation, deviation determination.</div>
+  <span class="sbar-label">Medical Director Relationship</span>
+  <div class="sbar-card accent-gold"><strong>Proactive · Factual · Feedback Loop</strong>Don't wait to be asked. Report accurately. Bring field experience back to protocol development.</div>
+  <span class="sbar-label">Compliance Diagnostic</span>
+  <div class="sbar-card"><strong>Unaware → Educate · Unable → Coach · Unwilling → Escalate</strong>Run the diagnostic before determining the intervention.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — The Caduceus</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">TFD</span><div><div class="ob-q-text">"You are given a scenario that requires knowledge of the caduceus. How do you structure your response?"</div><div class="ob-note">Use LEAD: Label this as a Sam Module question. Engage the specific framework from this lesson — name it explicitly. Address impact at both the immediate and organizational level. Drive to a specific first action.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 3 — Key Takeaways</div>
+  <div class="tk-item">Medical Supervision on Scene — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">Second-Line TQM — The SAM's QA Role — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Sam Module question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Safety & Compliance</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Sentinel Role → SAM Authority Framework → Shift Safety Protocol</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the threat → invoke SAM authority → implement safety protocol → close with Trustworthiness</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← The Sentinel</button>
+  <div class="lnb-info"><div class="lnb-name">The Caduceus</div><div class="lnb-num">Lesson 3 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">The Commander →</button>
+</div>
+</div>
+
+<!-- ══════════ LESSON 4 — THE COMMANDER ══════════ -->
+<div class="lesson-view" id="lesson-3">
+<div class="lesson-container">
+<div class="lesson-main">
+<div class="lesson-header">
+  <div class="lh-eyebrow">SAM Module · Lesson 4 of 6</div>
+  <div class="lh-track">TFD Exclusive · Shift Leadership · The Commander</div>
+  <h1 class="lh-title">The Commander —<br><em>Shift Supervision, EMSO Oversight &amp; Operational Authority</em></h1>
+  <div class="lh-meta"><span class="lh-meta-item">⏱ 16 min</span><span class="lh-meta-item">📘 Shift Leadership</span><span class="lh-meta-item">EMSO Oversight · Conflict Resolution · Operational Chain</span></div>
+</div>
+
+
+<h3>The Commander capacity is where</h3>
+<p>The Commander capacity is where the SAM's authority over the shift's EMS personnel is formally exercised. This is the managing officer identity — responsible for ensuring that every EMSO is executing their three capacities, that escalations are handled at the appropriate level, that personnel issues are addressed through the correct process, and that the shift functions as a coherent operational unit rather than a collection of independent stations.</p>
+
+<h2>EMSO Oversight — The Commander's Primary Relationship</h2>
+<p>The SAM is the EMSO's direct reporting authority for daily operations. Every EMSO's GREEN/YELLOW/RED escalations flow to the SAM. The Weekly Huddle submissions arrive at the SAM. The 3x3 pipeline nominations require SAM validation. Understanding how to receive, process, and act on EMSO outputs — without taking over EMSO functions — is the Commander's most important skill.</p>
+
+<div class="infographic-wrap">
+  <div class="ig-header">
+    <span class="ig-eyebrow">◆ COMMANDER — EMSO OVERSIGHT ARCHITECTURE</span>
+    <div class="ig-title">What the SAM Receives from EMSOs and What to Do With It</div>
+  </div>
+  <div style="padding:.5rem 1rem 1rem;">
+    <table class="data-table">
+      <thead><tr><th>EMSO Output</th><th>SAM Action</th><th>What Not to Do</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Weekly Notion Summary</strong></td><td>Review within 24 hours. Identify any items requiring SAM follow-up. Acknowledge receipt. Ask one clarifying question if needed.</td><td>Ignore it. Or edit it. The summary is the EMSO's document — the SAM reads it, does not rewrite it.</td></tr>
+        <tr><td><strong>YELLOW escalation</strong></td><td>Consult and decide within 4 hours if possible. Give the EMSO a clear answer. Document the decision. Do not leave EMSO in limbo.</td><td>Turn YELLOW into RED by deferring indefinitely. The EMSO cannot act until the SAM responds — delay is a failure of the Commander function.</td></tr>
+        <tr><td><strong>RED escalation</strong></td><td>Own the decision. Gather additional information if needed. Act. Inform the EMSO of the outcome. Do not require the EMSO to follow up repeatedly.</td><td>Send it back to the EMSO with "handle it." RED items are SAM decisions. Routing them back is a scope failure.</td></tr>
+        <tr><td><strong>3x3 Pipeline nomination</strong></td><td>Review the EMSO's documented evidence. Validate or return with specific feedback on what additional observation is needed. Validated candidates enter the division-level succession awareness.</td><td>Validate without reviewing evidence. Or reject without feedback. Both undermine the pipeline system.</td></tr>
+        <tr><td><strong>Forward Observer intelligence</strong></td><td>Receive, assess, act at the appropriate level. Morale signals inform division planning. Individual crew welfare concerns trigger peer support coordination. Pattern misinformation triggers a Division communication response.</td><td>Dismiss it as noise. The EMSO's Forward Observer reports are early intelligence — the Commander who ignores them loses the early warning system the model was built to provide.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>Conflict Resolution at the SAM Level</h2>
+<p>Conflicts that reach the SAM have already exceeded EMSO authority — either because they involve formal discipline, Company Officer relationships, or issues that the EMSO correctly identified as RED. The Commander's approach mirrors the EMSO's Diplomat function but at a higher authority level and with access to formal HR processes.</p>
+<ul>
+  <li><strong>Individual first</strong> — private conversations before any group or formal process. No personnel issue gets addressed publicly.</li>
+  <li><strong>Facts before conclusions</strong> — the Commander gathers information from all relevant parties before determining what occurred. The first account is not the complete account.</li>
+  <li><strong>CALM framework</strong> — Clarify, Acknowledge, Lead, Monitor. The same framework the EMSO applies applies here, with greater formal authority and greater consequence when it fails.</li>
+  <li><strong>HR coordination for formal actions</strong> — any disciplinary action, formal counseling, or performance management process involves HR from the first formal step. The Commander who acts on formal personnel matters without HR coordination creates liability regardless of the merits of the action.</li>
+</ul>
+
+<h2>The Operational Chain — What the Commander Holds</h2>
+<p>On shift, the Commander is the EMS Division's operational authority. Battalion Chiefs have operational authority over fire resources and scene command. The Commander holds EMS operational authority — staffing decisions, resource allocation within EMS, EMSO assignments, and the escalation path when any EMS operational issue exceeds EMSO authority.</p>
+
+<div class="callout callout-navy">
+  <span class="callout-label">The Commander's Non-Negotiables</span>
+  <p>Respond to EMSO escalations within four hours — never leave an EMSO waiting on a YELLOW decision. Know where every EMSO is assigned and what their current operational status is. Read every Weekly Notion summary before the next tour. Validate or return every pipeline nomination within one tour cycle. Be reachable. The Commander who is hard to reach makes every EMSO less effective.</p>
+</div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Safety & Compliance</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Sentinel Role → SAM Authority Framework → Shift Safety Protocol</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the threat → invoke SAM authority → implement safety protocol → close with Trustworthiness</div></div></div></div>
+
+  <span class="sbar-label">EMSO Oversight — Response Standards</span>
+  <div class="sbar-card accent-commander"><strong>YELLOW Escalation</strong>Respond within 4 hours. Give a clear answer. Do not leave EMSO unable to act.</div>
+  <div class="sbar-card accent-commander"><strong>RED Escalation</strong>Own the decision. Act. Inform EMSO of outcome. Never send RED back to EMSO.</div>
+  <div class="sbar-card accent-commander"><strong>Weekly Summary</strong>Review within 24 hours. One clarifying question if needed. Acknowledge receipt.</div>
+  <div class="sbar-card accent-commander"><strong>Pipeline Nominations</strong>Review evidence. Validate or return with specific feedback. One tour cycle turnaround.</div>
+  <span class="sbar-label">Conflict Resolution</span>
+  <div class="sbar-card accent-tfd"><strong>Individual First · Facts Before Conclusions · CALM · HR Coordination for Formal Actions</strong></div>
+  <span class="sbar-label">Commander Non-Negotiables</span>
+  <div class="sbar-card accent-gold"><strong>Respond within 4 hours · Know where every EMSO is · Read every weekly summary · Be reachable</strong>The Commander who is hard to reach makes every EMSO less effective.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — The Commander</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">TFD</span><div><div class="ob-q-text">"You are given a scenario that requires knowledge of the commander. How do you structure your response?"</div><div class="ob-note">Use LEAD: Label this as a Sam Module question. Engage the specific framework from this lesson — name it explicitly. Address impact at both the immediate and organizational level. Drive to a specific first action.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 4 — Key Takeaways</div>
+  <div class="tk-item">EMSO Oversight — The Commander's Primary Relationship — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">Conflict Resolution at the SAM Level — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Sam Module question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Safety & Compliance</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Sentinel Role → SAM Authority Framework → Shift Safety Protocol</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the threat → invoke SAM authority → implement safety protocol → close with Trustworthiness</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← The Caduceus</button>
+  <div class="lnb-info"><div class="lnb-name">The Commander</div><div class="lnb-num">Lesson 4 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">The Steward →</button>
+</div>
+</div>
+<!-- ══════════ LESSON 5 — THE STEWARD ══════════ -->
+<div class="lesson-view" id="lesson-4">
+<div class="lesson-container">
+<div class="lesson-main">
+<div class="lesson-header">
+  <div class="lh-eyebrow">SAM Module · Lesson 5 of 6</div>
+  <div class="lh-track">TFD Exclusive · Development &amp; Succession · The Steward</div>
+  <h1 class="lh-title">The Steward —<br><em>Mentorship, QI Leadership &amp; Succession</em></h1>
+  <div class="lh-meta"><span class="lh-meta-item">⏱ 16 min</span><span class="lh-meta-item">📘 Development</span><span class="lh-meta-item">EMSO Development · Pipeline · QI · Professional Culture</span></div>
+</div>
+
+<p>The Steward is the SAM's forward-looking capacity — the one invested not in today's shift but in what the division becomes over the next three to five years. Every other capacity operates in the present: the Sentinel on the current incident, the Caduceus on the current shift's clinical standard, the Commander on the current operational picture. The Steward operates in the future, building the people and systems that will carry the division's standard long after the current SAM has moved on.</p>
+
+<p>This is the capacity most easily deferred when operational demands intensify — and the one with the longest lead time between investment and return. A Steward who consistently deprioritizes development work in favor of immediate operational tasks is making a trade that looks acceptable in the short term and becomes a succession crisis in the medium term.</p>
+
+<h2>EMSO Development — The Steward's Primary Relationship</h2>
+<p>The SAM is the EMSO's most important developmental resource. Not the training curriculum. Not the promotional prep program. The SAM — because the SAM sees the EMSO in the actual execution of the role and has the authority and credibility to give feedback that changes behavior.</p>
+
+<div class="infographic-wrap">
+  <div class="ig-header">
+    <span class="ig-eyebrow">◆ STEWARD — EMSO DEVELOPMENT ARCHITECTURE</span>
+    <div class="ig-title">How the SAM Develops EMSOs Across the Three Capacities</div>
+  </div>
+  <div style="padding:.5rem 1rem 1rem;">
+    <table class="data-table">
+      <thead><tr><th>EMSO Capacity</th><th>Steward Observation Focus</th><th>Feedback Approach</th></tr></thead>
+      <tbody>
+        <tr><td><strong>The Shield</strong></td><td>Is the EMSO executing all GREEN functions autonomously — or defaulting to YELLOW/RED unnecessarily? Are Notion logs current and accurate? Is the 30/60/90 cadence running?</td><td>CLEAR framework. Commend specific execution. Name the pattern if GREEN functions are being under-executed. Adjust toward autonomous operation.</td></tr>
+        <tr><td><strong>The Mentor</strong></td><td>Is the EMSO running Hot Wash debriefs after significant calls? Is the 3x3 pipeline observation documented with specific behavioral evidence? Is the High-Potential candidate receiving active development?</td><td>Review the EMSO's pipeline documentation. Ask one specific question about the High-Potential candidate's current growth edge. Make the Mentor function visible and valued.</td></tr>
+        <tr><td><strong>The Diplomat</strong></td><td>Is the EMSO present in common areas consistently — or disappearing into operational tasks? Are Kitchen Table briefings happening? Is Forward Observer intelligence reaching the SAM?</td><td>The Diplomat capacity is the hardest to measure. The SAM Steward creates accountability for it by asking specifically: "When did you last brief your crew? What came up? What are you hearing?"</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="ig-callout">The SAM who only engages with EMSOs when there is an escalation or a problem has defined the relationship as reactive. The Steward function requires proactive engagement — a regular cadence of developmental conversations that are not triggered by a problem but by a commitment to the EMSO's growth. Monthly is the minimum. Every tour cycle is better.</div>
+</div>
+
+<h2>QI Program Participation — The Steward's Division-Level Role</h2>
+<p>The SAM participates in the EMS Division's quality improvement program not just as a consumer of data but as a contributor to its design and direction. The Steward who attends monthly TQM meetings, reviews performance data, and contributes to action plan development is doing division-level work that no other capacity touches.</p>
+<ul>
+  <li><strong>Monthly TQM participation</strong> — active engagement, not passive attendance. The SAM brings shift-level observations to the division conversation and takes division-level insights back to the shift.</li>
+  <li><strong>Trend identification</strong> — the SAM's two-tier TQM review generates patterns over time. A single PCR issue is an individual feedback opportunity. The same issue appearing across three providers at two stations is a training gap that belongs in the TQM system.</li>
+  <li><strong>Action plan ownership</strong> — when the TQM process identifies an improvement opportunity within the SAM's authority, the Steward owns the implementation. Not just the awareness — the follow-through.</li>
+</ul>
+
+<h2>Building Professional Development Culture</h2>
+<p>The Steward's broadest function is cultural — creating an environment in the EMS Division where professional development is expected, valued, and modeled. This does not happen through policy. It happens through the SAM's own behavior and through the development investments the SAM makes visibly in individual providers.</p>
+<ul>
+  <li><strong>Model it</strong> — the SAM who pursues CE, who references frameworks, who talks about their own development signals that development is what officers in this division do. Modeling is more powerful than any mandate.</li>
+  <li><strong>Name it when you see it</strong> — when a provider demonstrates initiative, clinical growth, or leadership behavior, the Steward names it specifically and connects it to the division's standard. "That's what a high-potential EMS officer looks like" changes the ambient culture one conversation at a time.</li>
+  <li><strong>Protect the pipeline</strong> — the 3x3 pipeline nominations from EMSOs represent the division's succession investment. The Steward who validates nominations thoughtfully, develops validated candidates actively, and advocates for High-Potential providers in division planning is building the bench that every healthy organization requires.</li>
+</ul>
+
+<div class="callout callout-gold">
+  <span class="callout-label">The Steward's Standard</span>
+  <p>Name one EMSO whose Shield execution has measurably improved since your last development conversation with them. Name one High-Potential candidate in the pipeline and their current growth edge. Name one QI trend you are tracking from TQM data. If you cannot answer all three, the Steward capacity needs attention — not in the next quarterly review, but in the next tour cycle.</p>
+</div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Safety & Compliance</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Sentinel Role → SAM Authority Framework → Shift Safety Protocol</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the threat → invoke SAM authority → implement safety protocol → close with Trustworthiness</div></div></div></div>
+
+  <span class="sbar-label">EMSO Development Cadence</span>
+  <div class="sbar-card accent-steward"><strong>Monthly Minimum · Every Tour Cycle Better</strong>Proactive development conversations — not triggered by problems. Reactive-only engagement is not the Steward function.</div>
+  <span class="sbar-label">Development by Capacity</span>
+  <div class="sbar-card"><strong>Shield Development</strong>Is the EMSO autonomous on GREEN? Notion current? 30/60/90 running?</div>
+  <div class="sbar-card"><strong>Mentor Development</strong>Hot Washes happening? Pipeline documentation specific? High-Potential candidate active?</div>
+  <div class="sbar-card"><strong>Diplomat Development</strong>Common area presence consistent? Kitchen Table briefings documented? Forward Observer active?</div>
+  <span class="sbar-label">QI Role</span>
+  <div class="sbar-card accent-tfd"><strong>Active TQM Participation · Trend Identification · Action Plan Ownership</strong>Bring shift observations up. Take division insights back down.</div>
+  <span class="sbar-label">Culture Building</span>
+  <div class="sbar-card accent-steward"><strong>Model it · Name it · Protect the pipeline</strong>Professional development culture is built through behavior, not policy.</div>
+  <span class="sbar-label">Steward Self-Check</span>
+  <div class="sbar-card accent-gold"><strong>Can you name: one EMSO whose execution improved, one High-Potential candidate's current growth edge, one QI trend you are tracking?</strong>If not — the Steward needs attention this tour cycle.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — The Steward</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">TFD</span><div><div class="ob-q-text">"You are given a scenario that requires knowledge of the steward. How do you structure your response?"</div><div class="ob-note">Use LEAD: Label this as a Sam Module question. Engage the specific framework from this lesson — name it explicitly. Address impact at both the immediate and organizational level. Drive to a specific first action.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 5 — Key Takeaways</div>
+  <div class="tk-item">EMSO Development — The Steward's Primary Relationship — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">QI Program Participation — The Steward's Division-Level Role — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Sam Module question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Safety & Compliance</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Sentinel Role → SAM Authority Framework → Shift Safety Protocol</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the threat → invoke SAM authority → implement safety protocol → close with Trustworthiness</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← The Commander</button>
+  <div class="lnb-info"><div class="lnb-name">The Steward</div><div class="lnb-num">Lesson 5 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">The Integrated SAM →</button>
+</div>
+</div>
+
+<!-- ══════════ LESSON 6 — THE INTEGRATED SAM ══════════ -->
+<div class="lesson-view" id="lesson-5">
+<div class="lesson-container">
+<div class="lesson-main">
+<div class="lesson-header">
+  <div class="lh-eyebrow">SAM Module · Lesson 6 of 6</div>
+  <div class="lh-track">TFD Exclusive · Integration · All Four Capacities</div>
+  <h1 class="lh-title">The Integrated SAM —<br><em>All Four Capacities on a Working Incident and Across a Full Tour</em></h1>
+  <div class="lh-meta"><span class="lh-meta-item">⏱ 16 min</span><span class="lh-meta-item">📘 Integration</span><span class="lh-meta-item">Sentinel · Caduceus · Commander · Steward · Simultaneous</span></div>
+</div>
+
+<p>The SAM's four capacities do not operate in shifts. There is no moment during a working structure fire when the Caduceus takes over and the Sentinel steps back. There is no point in a shift where the Commander clocks out and the Steward begins. All four capacities are running simultaneously — and the skill of the integrated SAM is the ability to allocate attention across them without losing any of them entirely.</p>
+
+<p>This is the most demanding aspect of the role. It is also what makes the SAM irreplaceable. The four capacities held by one officer, in one unified awareness, produce outcomes that no committee of specialists can replicate — because the integration itself is the advantage.</p>
+
+<h2>On a Working Incident — All Four Capacities Active</h2>
+
+<div class="infographic-wrap">
+  <div class="ig-header">
+    <span class="ig-eyebrow">◆ THE INTEGRATED SAM — STRUCTURE FIRE WALKTHROUGH</span>
+    <div class="ig-title">One Incident · Four Capacities Running Simultaneously</div>
+    <div class="ig-sub">This walkthrough illustrates how the capacities interact during a working incident. Real incidents are more complex and less sequential — the purpose is to show integration, not prescription.</div>
+  </div>
+  <div style="padding:.5rem 1rem 1rem;">
+    <table class="data-table">
+      <thead><tr><th>Phase / Event</th><th>Primary Capacity</th><th>What the SAM Is Doing</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Arrival — size-up</strong></td><td><span class="cap-badge badge-sentinel">Sentinel</span></td><td>Begins 5 Reads immediately. Smoke read: black, pressurized, pushing under eaves — ventilation-limited. Building read: lightweight wood-frame construction, 1970s. Radio IC: "Safety arriving, reading ventilation-limited conditions, lightweight construction — monitoring." First loop complete in 90 seconds.</td></tr>
+        <tr><td><strong>EMS unit on scene</strong></td><td><span class="cap-badge badge-caduceus">Caduceus</span><span class="cap-badge badge-sentinel">Sentinel</span></td><td>Brief confirmation with EMS crew — staging position correct, med kit ready, RIT medic in position. Caduceus function takes 60 seconds while Sentinel loop continues. Smoke read update: velocity increasing. Radio IC second time.</td></tr>
+        <tr><td><strong>Interior operations committed</strong></td><td><span class="cap-badge badge-sentinel">Sentinel</span></td><td>Sentinel is primary. Two crews interior. Two-In/Two-Out maintained. Accountability established. SAM positioned for 360-degree visual access — not at command post, not at entry point. Moving.</td></tr>
+        <tr><td><strong>EMSO arrives — requests guidance</strong></td><td><span class="cap-badge badge-commander">Commander</span></td><td>Brief, direct answer. 90 seconds maximum. Return to Sentinel. The Commander function on scene is triage — handle the escalation, return to the primary safety task. An EMSO question that takes five minutes is five minutes the Sentinel was not watching.</td></tr>
+        <tr><td><strong>Floor deflection observed</strong></td><td><span class="cap-badge badge-sentinel">Sentinel</span></td><td>Emergency traffic: "SAFETY — ALL UNITS EVACUATE." Apparatus air horns. No deliberation. The Sentinel acts on structural indicators without waiting for IC confirmation. After evacuation: brief IC on specific observation, assist with accountability PAR, document.</td></tr>
+        <tr><td><strong>Rehab established</strong></td><td><span class="cap-badge badge-caduceus">Caduceus</span><span class="cap-badge badge-sentinel">Sentinel</span></td><td>Caduceus: monitor personnel in rehab — heat stress indicators, hydration, vital signs on any at-risk personnel. Sentinel: perimeter watch continues. Two capacities sharing attention — rehab is the Caduceus domain, the perimeter remains the Sentinel's.</td></tr>
+        <tr><td><strong>Post-incident — significant call debrief</strong></td><td><span class="cap-badge badge-steward">Steward</span><span class="cap-badge badge-caduceus">Caduceus</span></td><td>Steward: run a Hot Wash with EMSOs present — what did we observe, what did we learn. This is Steward work because it is developmental. Caduceus: note any clinical observations from the EMS operations. Both feed the Notion documentation the EMSO will complete.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="ig-callout">The evacuation call in this walkthrough is the moment that defines the Sentinel. Every other capacity was temporarily background when that floor deflection appeared. The integrated SAM knows which capacity is primary in any given ten-second window — and executes that capacity fully while keeping the others alive in peripheral awareness.</div>
+</div>
+
+<h2>Across a Full Tour — The Four-Capacity Rhythm</h2>
+<p>On incidents, the Sentinel is typically primary. Between incidents, the Commander, Caduceus, and Steward share the foreground. The integrated SAM develops a tour rhythm that ensures no capacity goes dark for an entire shift.</p>
+<ul>
+  <li><strong>Morning</strong> — Commander function: confirm EMSO assignments, review overnight Notion summaries, know what each station is carrying. Caduceus function: any overnight PCR flags that need second-line review before tour end.</li>
+  <li><strong>Mid-tour</strong> — Steward function: one development conversation with an EMSO. Not a check-in — a deliberate developmental exchange. Ten to fifteen minutes. Ask about the High-Potential candidate. Give specific feedback on one Shield or Mentor observation.</li>
+  <li><strong>Active incidents</strong> — Sentinel primary. All other capacities in support mode.</li>
+  <li><strong>Post-incident</strong> — Caduceus and Steward: clinical debrief, Hot Wash, documentation review.</li>
+  <li><strong>Tour end</strong> — Commander: verify all EMSO Notion summaries submitted. Review Weekly Huddle. Any RED items requiring decision before next tour? Steward: one pipeline note updated.</li>
+</ul>
+
+<h2>When a Capacity Is Missing</h2>
+<p>The four capacities are not interchangeable. Each one fails differently when absent — and the failure of one degrades the others.</p>
+<ul>
+  <li><strong>No Sentinel</strong> — personnel are injured or killed. The most catastrophic failure mode of the SAM role. The ISO function is not optional, not delegatable, and not partially executable. It either runs or it does not.</li>
+  <li><strong>No Caduceus</strong> — clinical standards drift. Protocol deviations compound undetected. The Medical Director loses the operational partner that makes real-time quality governance possible. Patient outcomes decline before the data reveals why.</li>
+  <li><strong>No Commander</strong> — EMSOs are unsupported. YELLOW decisions sit unanswered. Escalations pile up or get resolved below their authority level. The division's operational coherence fractures at the shift level.</li>
+  <li><strong>No Steward</strong> — the pipeline dries. EMSOs stop developing. Quality improvement becomes reactive instead of systematic. The division runs on current capacity indefinitely, with no investment in future capacity.</li>
+</ul>
+
+<div class="callout callout-navy">
+  <span class="callout-label">The Standard</span>
+  <p>The SAM is accountable to the EMS Chief for shift performance across all four capacities. This module — the FDSOA ISO framework, the NFPA 1521 standard, the clinical governance architecture, the EMSO oversight system, and the development framework — is the operational foundation of that accountability. Study it. Execute it. The division's safety, clinical quality, and future capability depend on the officer who holds this role doing it completely.</p>
+</div>
+
+<div class="legal-disclaimer">
+  <span class="legal-disclaimer-label">TFD Internal Use · Educational Content</span>
+  <p>This module was developed for Thornton Fire Department EMS Division internal professional development purposes. The Sentinel capacity references the FDSOA ISO curriculum framework and NFPA 1521: Standard for Fire Department Safety Officer Professional Qualifications (2020 Edition). ISO authority and intervention protocols are governed by NFPA 1521 — this educational content is supplementary and does not supersede the standard or TFD operational policies. Content reflects the SAM role as described in the Shift SAM Job Aid and EMSO Position Description (Revision 2.0, February 28, 2026). Always consult your EMS Chief or the applicable standard for authoritative guidance on specific operational decisions. The Promotional Standard LLC · thepromotionalstandard.com</p>
+</div>
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Safety & Compliance</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Sentinel Role → SAM Authority Framework → Shift Safety Protocol</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the threat → invoke SAM authority → implement safety protocol → close with Trustworthiness</div></div></div></div>
+
+  <span class="sbar-label">Integration Principle</span>
+  <div class="sbar-card accent-tfd"><strong>All Four — Simultaneously</strong>The Sentinel does not pause for the Commander. The Steward does not wait for a quiet shift. All four are running — the skill is knowing which one is primary in any given moment.</div>
+  <span class="sbar-label">On-Incident Priority</span>
+  <div class="sbar-card accent-sentinel"><strong>Sentinel is primary on working incidents.</strong>All other capacities in support mode. An EMSO question that takes five minutes is five minutes the Sentinel was not watching.</div>
+  <span class="sbar-label">Tour Rhythm</span>
+  <div class="sbar-card"><strong>Morning</strong>Commander: EMSO assignments + Notion review. Caduceus: overnight PCR flags.</div>
+  <div class="sbar-card"><strong>Mid-Tour</strong>Steward: one deliberate EMSO development conversation.</div>
+  <div class="sbar-card"><strong>Post-Incident</strong>Caduceus + Steward: clinical debrief + Hot Wash + documentation.</div>
+  <div class="sbar-card"><strong>Tour End</strong>Commander: summaries verified + Huddle reviewed. Steward: pipeline note updated.</div>
+  <span class="sbar-label">When a Capacity Is Missing</span>
+  <div class="sbar-card accent-red"><strong>No Sentinel</strong>Personnel are injured. Most catastrophic failure. Not optional.</div>
+  <div class="sbar-card accent-red"><strong>No Caduceus</strong>Clinical drift. Protocol deviations compound. Patient outcomes decline.</div>
+  <div class="sbar-card accent-red"><strong>No Commander</strong>EMSOs unsupported. Escalations unresolved. Shift fractures.</div>
+  <div class="sbar-card accent-red"><strong>No Steward</strong>Pipeline dries. Division runs on current capacity with no future investment.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — The Integrated SAM</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">TFD</span><div><div class="ob-q-text">"You receive a scenario about sam module. Walk me through your complete response using the frameworks from this chapter."</div><div class="ob-note">Use LEAD: Label the bucket (Sam Module), Engage the specific framework (reference On a Working Incident — All Four Capacities Active explicitly), Address the operational and organizational impact, Drive to a concrete first action with a timeline.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 6 — Key Takeaways</div>
+  <div class="tk-item">On a Working Incident — All Four Capacities Active — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">Across a Full Tour — The Four-Capacity Rhythm — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Sam Module question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Safety & Compliance</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Sentinel Role → SAM Authority Framework → Shift Safety Protocol</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the threat → invoke SAM authority → implement safety protocol → close with Trustworthiness</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← The Steward</button>
+  <div class="lnb-info"><div class="lnb-name">The Integrated SAM</div><div class="lnb-num">Lesson 6 of 6</div></div>
+  <button class="lnb-btn complete" disabled>Module Complete ✓</button>
+</div>
+</div>
+</main>
+<script>
+let cur=0;
+const ls=document.querySelectorAll('.lesson-view');
+const ps=document.querySelectorAll('.nav-pill');
+function showLesson(i){ls.forEach(l=>l.classList.remove('active'));ps.forEach(p=>p.classList.remove('active'));ls[i].classList.add('active');ps[i].classList.add('active');cur=i;window.scrollTo({top:0,behavior:'smooth'});document.getElementById('prog').style.width='0%';}
+function nextLesson(){if(cur<ls.length-1)showLesson(cur+1);}
+function prevLesson(){if(cur>0)showLesson(cur-1);}
+window.addEventListener('scroll',()=>{const s=document.documentElement.scrollTop;const h=document.documentElement.scrollHeight-window.innerHeight;if(h>0)document.getElementById('prog').style.width=Math.min(100,(s/h*100))+'%';});
+document.addEventListener('DOMContentLoaded',()=>showLesson(0));
+
+function lfNext(el,stepNum){
+  var wrap=el.closest('.lf-wrap');
+  if(!wrap)return;
+  var steps=wrap.querySelectorAll('.lf-step');
+  var dots=wrap.querySelectorAll('.lf-dot');
+  steps.forEach(function(s,i){s.classList.remove('active');if(i<stepNum)s.classList.add('done');});
+  dots.forEach(function(d,i){d.classList.remove('active');if(i<stepNum)d.classList.add('done');if(i===stepNum)d.classList.add('active');});
+  if(steps[stepNum])steps[stepNum].classList.add('active');
+}
+</script>
+<script>function toggleFT(el){var sw=el.querySelector('.ft-toggle-switch');var desc=el.querySelector('.ft-toggle-desc');var mains=document.querySelectorAll('.lesson-main');sw.classList.toggle('on');var on=sw.classList.contains('on');desc.textContent=on?'Frameworks + OB cards only':'Full lesson content';mains.forEach(function(m){m.classList.toggle('ft-on',on);});}</script>
+</body>
+</html>

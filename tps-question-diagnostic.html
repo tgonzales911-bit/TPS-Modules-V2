@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>TPS Question Diagnostic · The Promotional Standard</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --ink: #06101C;
+  --surface: #0C1829;
+  --card: #0F1E30;
+  --card-hover: #132235;
+  --border: #1C3050;
+  --border-bright: #2A4568;
+  --gold: #C9A84C;
+  --gold-bright: #E5C46A;
+  --gold-dim: rgba(201,168,76,0.12);
+  --gold-glow: rgba(201,168,76,0.06);
+  --cream: #EDE4D0;
+  --cream-dim: rgba(237,228,208,0.65);
+  --muted: #6A7A8E;
+  --faint: rgba(237,228,208,0.04);
+  --red: #B22222;
+  --green: #1A5C3A;
+  --teal: #006B6B;
+  --blue-dark: #1A4A7C;
+  --purple: #4A2570;
+  --brown: #7A4520;
+  --slate: #2A3D50;
+  --emerald: #2E7D6B;
+  --ems-blue: #1A5C8A;
+}
+*,*::before,*::after {box-sizing:border-box;margin:0;padding:0}
+html {scroll-behavior:smooth}
+body {
+  font-family:'Crimson Pro',Georgia,serif;
+  background:var(--ink);
+  color:var(--cream);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* ── BACKGROUND ── */
+body::before {
+  content:'';
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(ellipse 80% 40% at 50% -10%, rgba(201,168,76,0.07) 0%, transparent 60%),
+    repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(201,168,76,0.025) 60px),
+    repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(201,168,76,0.025) 60px);
+  pointer-events:none;
+  z-index:0;
+}
+
+/* ── LAYOUT ── */
+.page-wrap {
+  position:relative;
+  z-index:1;
+  max-width:900px;
+  margin:0 auto;
+  padding:0 20px 80px;
+}
+
+/* ── HEADER ── */
+.site-header {
+  text-align:center;
+  padding:56px 0 40px;
+  animation:fadeDown 0.7s ease both;
+}
+.site-header .wordmark {
+  font-family:'Cinzel',serif;
+  font-size:10px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  color:var(--gold);
+  opacity:0.8;
+  margin-bottom:20px;
+  display:block;
+}
+.site-header h1 {
+  font-family:'Cinzel',serif;
+  font-size:clamp(28px,5vw,48px);
+  font-weight:900;
+  color:var(--cream);
+  letter-spacing:1px;
+  line-height:1.1;
+  margin-bottom:10px;
+}
+.header-rule {
+  display:flex;
+  align-items:center;
+  gap:16px;
+  justify-content:center;
+  margin:20px 0;
+}
+.header-rule .rule-line {
+  height:1px;
+  width:60px;
+  background:linear-gradient(90deg,transparent,var(--gold));
+}
+.header-rule .rule-line.right {
+  background:linear-gradient(90deg,var(--gold),transparent);
+}
+.header-rule .rule-diamond {
+  width:7px;
+  height:7px;
+  background:var(--gold);
+  transform:rotate(45deg);
+  flex-shrink:0;
+}
+.site-header p {
+  font-size:17px;
+  color:var(--cream-dim);
+  max-width:560px;
+  margin:0 auto;
+  line-height:1.6;
+  font-style:italic;
+}
+
+/* ── SEARCH ENGINE ── */
+.search-engine {
+  margin-bottom:40px;
+  animation:fadeUp 0.6s 0.2s ease both;
+}
+.search-title {
+  font-family:'Cinzel',serif;
+  font-size:10px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--gold);
+  opacity:0.7;
+  text-align:center;
+  margin-bottom:16px;
+}
+.search-row {
+  display:flex;
+  gap:10px;
+  align-items:stretch;
+}
+.search-input-wrap {
+  flex:1;
+  position:relative;
+}
+.search-input-wrap::before {
+  content:'';
+  position:absolute;
+  inset:0;
+  border-radius:6px;
+  padding:1px;
+  background:linear-gradient(135deg,var(--gold),transparent 60%);
+  -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  pointer-events:none;
+}
+#diag-input {
+  width:100%;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:6px;
+  padding:14px 18px;
+  font-family:'Crimson Pro',serif;
+  font-size:17px;
+  color:var(--cream);
+  outline:none;
+  transition:border-color 0.2s, box-shadow 0.2s;
+}
+#diag-input::placeholder {color:var(--muted);font-style:italic}
+#diag-input:focus {
+  border-color:var(--gold);
+  box-shadow:0 0 0 3px rgba(201,168,76,0.1);
+}
+.btn-diagnose {
+  background:var(--gold);
+  color:var(--ink);
+  border:none;
+  border-radius:6px;
+  padding:0 24px;
+  font-family:'Cinzel',serif;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:background 0.2s, transform 0.15s;
+  flex-shrink:0;
+}
+.btn-diagnose:hover {background:var(--gold-bright);transform:translateY(-1px)}
+.btn-clear {
+  background:transparent;
+  border:1px solid var(--border);
+  border-radius:6px;
+  padding:0 16px;
+  font-family:'Cinzel',serif;
+  font-size:10px;
+  letter-spacing:2px;
+  color:var(--muted);
+  cursor:pointer;
+  transition:border-color 0.2s, color 0.2s;
+  flex-shrink:0;
+}
+.btn-clear:hover {border-color:var(--gold);color:var(--gold)}
+
+/* ── DIAGNOSIS RESULT ── */
+.diag-result {
+  margin-top:14px;
+  min-height:38px;
+  transition:all 0.3s;
+}
+.dr-hint {
+  font-size:14px;
+  color:var(--muted);
+  text-align:center;
+  font-style:italic;
+  padding:8px 0;
+}
+.dr-match {
+  background:var(--gold-dim);
+  border:1px solid rgba(201,168,76,0.3);
+  border-radius:6px;
+  padding:12px 18px;
+  font-size:16px;
+  color:var(--gold-bright);
+  cursor:pointer;
+  font-weight:600;
+  letter-spacing:0.3px;
+  transition:background 0.2s;
+  text-align:center;
+}
+.dr-match:hover {background:rgba(201,168,76,0.2)}
+.dr-no-match {
+  padding:12px 18px;
+  font-size:14px;
+  color:var(--muted);
+  text-align:center;
+  font-style:italic;
+}
+
+/* ── QDE EXAMPLE ── */
+.qde-box {
+  background:var(--card);
+  border:1px solid var(--border);
+  border-top:2px solid var(--gold);
+  border-radius:8px;
+  padding:20px 24px;
+  margin-bottom:40px;
+  animation:fadeUp 0.6s 0.3s ease both;
+}
+.qde-label {
+  font-family:'Cinzel',serif;
+  font-size:9px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--gold);
+  opacity:0.7;
+  margin-bottom:14px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.qde-label::after {
+  content:'';
+  flex:1;
+  height:1px;
+  background:var(--border);
+}
+.qde-question {
+  font-size:16px;
+  color:var(--cream);
+  font-weight:500;
+  margin-bottom:14px;
+  padding:12px 16px;
+  background:var(--faint);
+  border-left:3px solid var(--gold);
+  border-radius:0 4px 4px 0;
+  font-style:italic;
+}
+.qde-step {
+  display:flex;
+  gap:12px;
+  padding:10px 14px;
+  margin-bottom:6px;
+  border-radius:4px;
+  transition:background 0.2s;
+}
+.qde-step:hover {background:var(--faint)}
+.qde-step-num {
+  font-family:'Cinzel',serif;
+  font-size:10px;
+  letter-spacing:2px;
+  color:var(--gold);
+  opacity:0.7;
+  flex-shrink:0;
+  padding-top:2px;
+  min-width:90px;
+  font-weight:600;
+}
+.qde-step-text {
+  font-size:14.5px;
+  color:var(--cream-dim);
+  line-height:1.55;
+}
+.qde-step.qde-prescription {
+  background:var(--gold-glow);
+  border:1px solid rgba(201,168,76,0.15);
+}
+.qde-step.qde-prescription .qde-step-text {color:var(--cream)}
+
+/* ── FILTER BAR ── */
+.filter-bar {
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:var(--ink);
+  padding:12px 0;
+  margin-bottom:24px;
+  border-bottom:1px solid var(--border);
+  animation:fadeUp 0.6s 0.4s ease both;
+}
+.filter-bar::before {
+  content:'';
+  position:absolute;
+  bottom:-1px;
+  left:0;
+  right:0;
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  opacity:0.3;
+}
+.filter-scroll {
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+  padding-bottom:2px;
+  scrollbar-width:none;
+}
+.filter-scroll::-webkit-scrollbar {display:none}
+.f-pill {
+  flex-shrink:0;
+  background:transparent;
+  border:1px solid var(--border);
+  border-radius:4px;
+  padding:6px 14px;
+  font-family:'Cinzel',serif;
+  font-size:9.5px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  color:var(--muted);
+  cursor:pointer;
+  transition:all 0.2s;
+  white-space:nowrap;
+}
+.f-pill:hover {border-color:var(--gold);color:var(--gold)}
+.f-pill.active {
+  background:var(--gold);
+  border-color:var(--gold);
+  color:var(--ink);
+  font-weight:700;
+}
+
+/* ── BUCKET CARDS ── */
+.bucket-list {display:flex;flex-direction:column;gap:10px}
+.bucket-card {
+  border-radius:8px;
+  overflow:hidden;
+  border:1px solid var(--border);
+  background:var(--card);
+  transition:border-color 0.2s, box-shadow 0.2s;
+  animation:fadeUp 0.5s ease both;
+}
+.bucket-card:hover {border-color:var(--border-bright)}
+.bucket-card.hidden {display:none}
+.bucket-card.highlighted {
+  border-color:var(--gold);
+  box-shadow:0 0 20px rgba(201,168,76,0.12);
+}
+
+/* Bucket header as button */
+.bucket-header {
+  width:100%;
+  background:transparent;
+  border:none;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  gap:0;
+  padding:0;
+  text-align:left;
+}
+.bucket-header:hover .b-name {color:var(--gold-bright)}
+.bh-accent {
+  width:4px;
+  align-self:stretch;
+  flex-shrink:0;
+}
+.bh-inner {
+  flex:1;
+  display:flex;
+  align-items:center;
+  padding:16px 18px;
+  gap:14px;
+}
+.b-icon {
+  font-size:22px;
+  flex-shrink:0;
+  width:32px;
+  text-align:center;
+  opacity:0.9;
+}
+.b-text {flex:1}
+.b-name {
+  font-family:'Cinzel',serif;
+  font-size:14px;
+  font-weight:700;
+  color:var(--cream);
+  letter-spacing:0.5px;
+  transition:color 0.2s;
+  margin-bottom:5px;
+}
+.b-keywords {
+  display:flex;
+  flex-wrap:wrap;
+  gap:5px;
+}
+.kw-pill {
+  font-size:11px;
+  color:var(--muted);
+  background:rgba(255,255,255,0.04);
+  padding:2px 8px;
+  border-radius:3px;
+  border:1px solid rgba(255,255,255,0.06);
+  letter-spacing:0.3px;
+}
+.bh-right {
+  padding:0 18px 0 10px;
+  flex-shrink:0;
+}
+.b-expand {
+  display:block;
+  font-size:12px;
+  color:var(--muted);
+  transition:transform 0.3s ease;
+}
+.b-expand.open {transform:rotate(180deg);color:var(--gold)}
+
+/* Bucket body */
+.bucket-body {
+  display:none;
+  border-top:1px solid var(--border);
+}
+.bucket-body.open {display:block}
+.bb-section {
+  padding:20px 22px;
+  border-bottom:1px solid var(--faint);
+}
+.bb-section:last-child {border-bottom:none}
+.bb-label {
+  font-family:'Cinzel',serif;
+  font-size:9px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--gold);
+  opacity:0.7;
+  margin-bottom:12px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.bb-label::after {
+  content:'';
+  flex:1;
+  height:1px;
+  background:var(--border);
+}
+.bb-text {
+  font-size:15.5px;
+  color:var(--cream-dim);
+  line-height:1.65;
+}
+.bb-text strong {color:var(--cream);font-weight:600}
+.steps {display:flex;flex-direction:column;gap:8px}
+.step-item {
+  display:flex;
+  gap:14px;
+  padding:12px 14px;
+  background:var(--faint);
+  border-radius:6px;
+  border:1px solid rgba(255,255,255,0.04);
+  transition:background 0.2s;
+}
+.step-item:hover {background:rgba(201,168,76,0.04)}
+.step-num {
+  width:26px;
+  height:26px;
+  background:var(--gold-dim);
+  border:1px solid rgba(201,168,76,0.3);
+  border-radius:50%;
+  flex-shrink:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:'Cinzel',serif;
+  font-size:11px;
+  font-weight:700;
+  color:var(--gold);
+}
+.step-text {
+  font-size:15px;
+  color:var(--cream-dim);
+  line-height:1.6;
+  padding-top:2px;
+}
+.fw-items {display:flex;flex-direction:column;gap:6px}
+.fw-item {
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  padding:10px 14px;
+  background:var(--faint);
+  border-radius:5px;
+  border:1px solid rgba(255,255,255,0.03);
+  transition:background 0.2s;
+}
+.fw-item:hover {background:rgba(201,168,76,0.04)}
+.fw-item-badge {
+  flex-shrink:0;
+  font-family:'Cinzel',serif;
+  font-size:9px;
+  letter-spacing:1px;
+  color:var(--gold);
+  background:var(--gold-dim);
+  border:1px solid rgba(201,168,76,0.25);
+  padding:3px 7px;
+  border-radius:3px;
+  white-space:nowrap;
+  margin-top:1px;
+}
+.fw-item-name {
+  font-size:15px;
+  font-weight:600;
+  color:var(--cream);
+  margin-bottom:2px;
+}
+.fw-item-use {
+  font-size:13.5px;
+  color:var(--muted);
+  line-height:1.45;
+}
+.bb-mods {
+  font-size:14px;
+  color:var(--muted);
+  font-style:italic;
+  line-height:1.6;
+}
+.bb-signal {
+  border-radius:6px;
+  padding:14px 18px;
+  border:1px solid rgba(201,168,76,0.2);
+  background:var(--gold-glow);
+}
+.bs-label {
+  font-family:'Cinzel',serif;
+  font-size:9px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:8px;
+  font-weight:700;
+}
+.bs-text {
+  font-size:15px;
+  color:var(--cream);
+  line-height:1.6;
+  font-weight:500;
+}
+
+/* ── EMPTY STATE ── */
+.empty-state {
+  text-align:center;
+  padding:60px 20px;
+  color:var(--muted);
+}
+.empty-state.hidden {display:none}
+.es-title {
+  font-family:'Cinzel',serif;
+  font-size:16px;
+  margin-bottom:8px;
+  color:var(--cream-dim);
+}
+.es-sub {font-size:14px;font-style:italic}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeDown {
+  from {opacity:0;transform:translateY(-16px)}
+  to {opacity:1;transform:translateY(0)}
+}
+@keyframes fadeUp {
+  from {opacity:0;transform:translateY(12px)}
+  to {opacity:1;transform:translateY(0)}
+}
+.bucket-card:nth-child(1)  {animation-delay:0.05s}
+.bucket-card:nth-child(2)  {animation-delay:0.10s}
+.bucket-card:nth-child(3)  {animation-delay:0.15s}
+.bucket-card:nth-child(4)  {animation-delay:0.20s}
+.bucket-card:nth-child(5)  {animation-delay:0.25s}
+.bucket-card:nth-child(6)  {animation-delay:0.30s}
+.bucket-card:nth-child(7)  {animation-delay:0.35s}
+.bucket-card:nth-child(8)  {animation-delay:0.40s}
+.bucket-card:nth-child(9)  {animation-delay:0.45s}
+.bucket-card:nth-child(10) {animation-delay:0.50s}
+.bucket-card:nth-child(11) {animation-delay:0.55s}
+.bucket-card:nth-child(12) {animation-delay:0.60s}
+.bucket-card:nth-child(13) {animation-delay:0.65s}
+
+/* ── RESPONSIVE ── */
+@media(max-width:600px) {
+  .search-row {flex-wrap:wrap}
+  .btn-diagnose, .btn-clear {flex:1; padding:12px; text-align:center}
+  .bh-inner {padding:13px 14px;gap:10px}
+  .bb-section {padding:16px 16px}
+  .step-item {padding:10px 12px}
+}
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <span class="wordmark">The Promotional Standard · TPS Coaching Lab</span>
+    <h1>Question Diagnostic</h1>
+    <div class="header-rule">
+      <div class="rule-line"></div>
+      <div class="rule-diamond"></div>
+      <div class="rule-line right"></div>
+    </div>
+    <p>Every assessment center question falls into one of thirteen buckets. Identify the bucket and you know exactly which TPS frameworks apply, how to structure your response, and what assessors are specifically scoring.</p>
+  </header>
+
+  <!-- SEARCH ENGINE -->
+  <section class="search-engine">
+    <div class="search-title">Bucket Diagnostic Engine</div>
+    <div class="search-row">
+      <div class="search-input-wrap">
+        <input id="diag-input" type="text" autocomplete="off"
+          placeholder="e.g. conflict · discipline · budget · policy · ethics · development..."
+          oninput="diagnose()"/>
+      </div>
+      <button class="btn-diagnose" onclick="diagnose()">Diagnose</button>
+      <button class="btn-clear" onclick="clearDiag()">Clear</button>
+    </div>
+    <div class="diag-result" id="diag-result">
+      <div class="dr-hint">Type a keyword above — or browse all thirteen buckets below</div>
+    </div>
+  </section>
+
+  <!-- SAMPLE QDE -->
+  <div class="qde-box">
+    <div class="qde-label">Sample Diagnosis · Live Example</div>
+    <div class="qde-question">"You have a 22-year veteran who has stopped showing initiative and seems disengaged from the crew. How do you handle it?"</div>
+    <div class="qde-step"><div class="qde-step-num">Bucket</div><div class="qde-step-text">Personnel Issue — this is a performance/engagement question, not a conflict question. The keyword 'disengaged' and 'veteran' point directly to the 3 U's diagnostic framework.</div></div>
+    <div class="qde-step"><div class="qde-step-num">L · Label</div><div class="qde-step-text">Open by naming the framework: "Before I respond, I need to diagnose whether this is an Unaware, Unable, or Unwilling situation — each requires a completely different approach."</div></div>
+    <div class="qde-step"><div class="qde-step-num">E · Engage</div><div class="qde-step-text">Apply the 3 U's explicitly to this scenario — a 22-year vet is almost certainly not Unaware or Unable. The question is whether this is Unwilling (disengaged by choice) or something else entirely.</div></div>
+    <div class="qde-step"><div class="qde-step-num">A · Apply</div><div class="qde-step-text">At Lieutenant: private direct conversation, Skill/Will Matrix diagnosis, Bank of Leadership investment before any corrective action.</div></div>
+    <div class="qde-step"><div class="qde-step-num">D · Deliver</div><div class="qde-step-text">Close by naming what this answer means at your target rank: "As a Lieutenant, handling this well means my crew sees that I hold the standard — and that I do it with enough relational equity that it lands as leadership, not discipline."</div></div>
+    <div class="qde-step qde-prescription"><div class="qde-step-num">Prescription</div><div class="qde-step-text">Frameworks: 3 U's (diagnose before responding), Bank of Leadership (deposits before withdrawals with a 22-year vet), T·C·H·O·E·D·S (Humility is your entry point).</div></div>
+  </div>
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar">
+    <div class="filter-scroll">
+      <button class="f-pill active" onclick="filterBuckets('all', this)">All Buckets</button>
+      <button class="f-pill" onclick="filterBuckets('personnel', this)">👤 Personnel</button>
+      <button class="f-pill" onclick="filterBuckets('conflict', this)">⚡ Conflict</button>
+      <button class="f-pill" onclick="filterBuckets('ethics', this)">⚖️ Ethics</button>
+      <button class="f-pill" onclick="filterBuckets('leadership-philosophy', this)">🧭 Leadership</button>
+      <button class="f-pill" onclick="filterBuckets('change-management', this)">🔄 Change</button>
+      <button class="f-pill" onclick="filterBuckets('development', this)">📈 Development</button>
+      <button class="f-pill" onclick="filterBuckets('strategic', this)">🏛️ Strategic</button>
+      <button class="f-pill" onclick="filterBuckets('communication', this)">🗣️ Communication</button>
+      <button class="f-pill" onclick="filterBuckets('inbasket', this)">📥 In-Basket</button>
+      <button class="f-pill" onclick="filterBuckets('team-building', this)">🤝 Team Building</button>
+      <button class="f-pill" onclick="filterBuckets('operational-command', this)">🚒 Operational</button>
+      <button class="f-pill" onclick="filterBuckets('ems-leadership', this)">🚑 EMS</button>
+      <button class="f-pill" onclick="filterBuckets('safety-compliance', this)">🛡️ Safety</button>
+    </div>
+  </div>
+
+  <div class="bucket-list" id="bucket-list">
+
+  
+<div class="bucket-card" id="bucket-personnel" data-id="personnel" data-search="personnel issue performance conduct discipline behavior late absent attitude insubordination complaint against struggling not meeting policy violation by crew">
+  <button class="bucket-header" onclick="toggleBucket('personnel')">
+    <div class="bh-accent" style="background:#B22222"></div>
+    <div class="bh-inner">
+    
+      <span class="b-icon">👤</span>
+      <div>
+        <div class="b-name">Personnel Issue</div>
+        <div class="b-keywords"><span class="kw-pill">performance</span><span class="kw-pill">conduct</span><span class="kw-pill">discipline</span><span class="kw-pill">behavior</span><span class="kw-pill">late</span><span class="kw-pill">absent</span></div>
+      </div>
+    </div><div class="bh-right"><span class="b-expand" id="bexp-personnel">▼</span></div></button>
+  <div class="bucket-body" id="bbody-personnel">
+
+    <div class="bb-section">
+      <div class="bb-label">What Assessors Are Scoring</div>
+      <div class="bb-text">Whether you diagnose before you respond. Assessors are watching for the 3 U's instinct — do you identify WHY the problem exists before selecting your intervention? Candidates who jump straight to discipline score 3/5. Candidates who diagnose first score 4–5/5.</div>
+    </div>
+
+    <div class="bb-section">
+      <div class="bb-label">Response Architecture — Follow This Sequence</div>
+      <div class="steps"><div class="step-item"><div class="step-num">1</div><div class="step-text">Open by naming the supervisory principle: 'Before I decide how to respond, I need to understand whether this is an Unaware, Unable, or Unwilling situation — because each requires a different approach.'</div></div><div class="step-item"><div class="step-num">2</div><div class="step-text">Gather information first — meet with the individual privately, review documentation, establish the facts.</div></div><div class="step-item"><div class="step-num">3</div><div class="step-text">Apply the 3 U's diagnosis explicitly — name which U you believe applies and why.</div></div><div class="step-item"><div class="step-num">4</div><div class="step-text">Select your intervention based on the diagnosis — development for Unaware/Unable, progressive documentation for Unwilling.</div></div><div class="step-item"><div class="step-num">5</div><div class="step-text">Close with a specific follow-up plan and documentation commitment.</div></div></div>
+    </div>
+
+    <div class="bb-section">
+      <div class="bb-label">TPS Frameworks to Apply</div>
+      <div class="fw-items"><div class="fw-item"><div class="fw-item-badge">M4</div><div><div class="fw-item-name">3 U's Diagnostic</div><div class="fw-item-use">Diagnose the root cause before selecting any intervention</div></div></div><div class="fw-item"><div class="fw-item-badge">M4</div><div><div class="fw-item-name">Skill/Will Matrix</div><div class="fw-item-use">Match your leadership style to the individual's specific situation</div></div></div><div class="fw-item"><div class="fw-item-badge">M4</div><div><div class="fw-item-name">Documentation Language</div><div class="fw-item-use">Specific, behavioral, impact-aware, action-oriented documentation</div></div></div><div class="fw-item"><div class="fw-item-badge">M10</div><div><div class="fw-item-name">SBI Feedback Model</div><div class="fw-item-use">Situation-Behavior-Impact — the structure for the direct conversation</div></div></div><div class="fw-item"><div class="fw-item-badge">M4</div><div><div class="fw-item-name">Five Trap Patterns</div><div class="fw-item-use">Avoid acting too quickly, overpromising, or avoiding the conversation</div></div></div></div>
+    </div>
+
+    <div class="bb-section">
+      <div class="bb-label">Modules to Review</div>
+      <div class="bb-mods">M4 — Supervisory Judgment · M10 — The Developing Leader</div>
+    </div>
+
+    <div class="bb-signal">
+      <div class="bs-label">🔑 Key Signal</div>
+      <div class="bs-text">Diagnose before you respond. Name the 3 U's explicitly. Assessors reward the diagnostic instinct, not just the correct response.</div>
+    </div>
+
+  </div>
+</div>
+<div class="bucket-card" id="bucket-conflict" data-id="conflict" data-search="conflict resolution disagreement tension fighting complaint hostile crew conflict not getting along friction argument dispute interpersonal">
+  <button class="bucket-header" onclick="toggleBucket('conflict')">
+    <div class="bh-accent" style="background:#C9A84C"></div>
+    <div class="bh-inner">
+    
+      <span class="b-icon">⚡</span>
+      <div>
+        <div class="b-name">Conflict Resolution</div>
+        <div class="b-keywords"><span class="kw-pill">disagreement</span><span class="kw-pill">tension</span><span class="kw-pill">fighting</span><span class="kw-pill">complaint</span><span class="kw-pill">hostile</span><span class="kw-pill">crew conflict</span></div>
+      </div>
+    </div><div class="bh-right"><span class="b-expand" id="bexp-conflict">▼</span></div></button>
+  <div class="bucket-body" id="bbody-conflict">
+
+    <div class="bb-section">
+      <div class="bb-label">What Assessors Are Scoring</div>
+      <div class="bb-text">Whether you recognize the phase of conflict and match your intervention to it. Assessors are watching for phase awareness — do you know the difference between a Phase 1 conversation and a Phase 2 administrative intervention? Using Phase 2 tools on Phase 1 conflict escalates it. That scores 2/5.</div>
+    </div>
+
+    <div class="bb-section">
+      <div class="bb-label">Response Architecture — Follow This Sequence</div>
+      <div class="steps"><div class="step-item"><div class="step-num">1</div><div class="step-text">Open by naming the conflict phase: 'Based on what you've described, this sounds like Phase 1 conflict — the parties can still communicate but have stopped doing so productively.'</div></div><div class="step-item"><div class="step-num">2</div><div class="step-text">State your intervention approach based on the phase — facilitating a direct conversation for Phase 1, structured administrative involvement for Phase 2.</div></div><div class="step-item"><div class="step-num">3</div><div class="step-text">Use IBR language: 'Before I propose a solution, I want to understand what both parties actually need — not just what they're asking for.'</div></div><div class="step-item"><div class="step-num">4</div><div class="step-text">Apply TKI awareness — name the conflict mode you're observing and the one you're using in your intervention.</div></div><div class="step-item"><div class="step-num">5</div><div class="step-text">Close with a follow-up plan, documentation, and a timeline for checking back.</div></div></div>
+    </div>
+
+    <div class="bb-section">
+      <div class="bb-label">TPS Frameworks to Apply</div>
+      <div class="fw-items"><div class="fw-item"><div class="fw-item-badge">M5/M11</div><div><div class="fw-item-name">Glasl Escalation Ladder</div><div class="fw-item-use">Identify the phase first — Phase 1, 2, or 3 determines your role</div></div></div><div class="fw-item"><div class="fw-item-badge">M5</div><div><div class="fw-item-name">IBR — Interest-Based Resolution</div><div class="fw-item-use">Move from positions to interests — find what each party actually needs</div></div></div><div class="fw-item"><div class="fw-item-badge">M11</div><div><div class="fw-item-name">TKI Five Modes</div><div class="fw-item-use">Name the conflict style you're observing and the one you're applying</div></div></div><div class="fw-item"><div class="fw-item-badge">M11</div><div><div class="fw-item-name">CALM Model</div><div class="fw-item-use">Clarify, Ask, Listen, Manage — the sequence for facilitated resolution</div></div></div><div class="fw-item"><div class="fw-item-badge">M11</div><div><div class="fw-item-name">DESC Script</div><div class="fw-item-use">Structured assertive communication for direct confrontation</div></div></div></div>
+    </div>
+
+    <div class="bb-section">
+      <div class="bb-label">Modules to Review</div>
+      <div class="bb-mods">M5 — Interpersonal Skills · M11 — Conflict Resolution</div>
+    </div>
+
+    <div class="bb-signal">
+      <div class="bs-label">🔑 Key Signal</div>
+      <div class="bs-text">Name the Glasl phase explicitly. Match your intervention to the phase. Assessors penalize Phase 2 tools applied to Phase 1 conflict.</div>
+    </div>
+
+  </div>
+</div>
+<div class="bucket-card" id="bucket-ethics" data-id="ethics" data-search="ethics & integrity stealing drinking misconduct covering up dishonesty integrity ethical moral falsifying inappropriate harassment bias discrimination">
+  <button class="bucket-header" onclick="toggleBucket('ethics')">
+    <div class="bh-accent" style="background:#1A5C3A"></div>
+    <div class="bh-inner">
+    
+      <span class="b-icon">⚖️</span>
+      <div>
+        <div class="b-name">Ethics & Integrity</div>
+        <div class="b-keywords"><span class="kw-pill">stealing</span><span class="kw-pill">drinking</span><span class="kw-pill">misconduct</span><span class="kw-pill">covering up</span><span class="kw-pill">dishonesty</span><span class="kw-pill">integrity</span></div>
+      </div>
+    </div><div class="bh-right"><span class="b-expand" id="bexp-ethics">▼</span></div></button>
+  <div class="bucket-body" id="bbody-ethics">
+
+    <div class="bb-section">
+      <div class="bb-label">What Assessors Are Scoring</div>
+      <div class="bb-text">Whether you demonstrate moral clarity without hesitation. Assessors are watching for decisiveness — do you name what the issue actually is, or do you dance around it? They are also watching for whether you act within your authority and involve the right people at the right level. Vague answers on ethics questions score 2–3/5.</div>
+    </div>
+
+    <div class="bb-section">
+      <div class="bb-label">Response Architecture — Follow This Sequence</div>
+      <div class="steps"><div class="step-item"><div class="step-num">1</div><div class="step-text">Open by naming the ethical principle directly: 'This is fundamentally an integrity issue — and integrity issues have to be addressed directly and without delay.'</div></div><div class="step-item"><div class="step-num">2</div><div class="step-text">Acknowledge the relational complexity without letting it change the response: 'I understand this person is a senior crew member and someone I have a relationship with. That does not change what the right action is.'</div></div><div class="step-item"><div class="step-num">3</div><div class="step-text">State your specific action clearly — what you will do, when, and with whom.</div></div><div class="step-item"><div class="step-num">4</div><div class="step-text">Name your authority level — what you can handle at your rank and what requires escalation.</div></div><div class="step-item"><div class="step-num">5</div><div class="step-text">Close with documentation commitment and follow-up timeline.</div></div></div>
+    </div>
+
+    <div class="bb-section">
+      <div class="bb-label">TPS Frameworks to Apply</div>
+      <div class="fw-items"><div class="fw-item"><div class="fw-item-badge">M8</div><div><div class="fw-item-name">T·C·H·O·E·D·S</div><div class="fw-item-use">Your leadership philosophy as the ethical anchor — Trust and Integrity are non-negotiable</div></div></div><div class="fw-item"><div class="fw-item-badge">M8</div><div><div class="fw-item-name">Bank of Leadership</div><div class="fw-item-use">Ethical failures are the largest withdrawals from the leadership account</div></div></div><div class="fw-item"><div class="fw-item-badge">M4</div><div><div class="fw-item-name">Documentation Language</div><div class="fw-item-use">Specific, behavioral documentation — every ethical intervention must be documented</div></div></div><div class="fw-item"><div class="fw-item-badge">M4</div><div><div class="fw-item-name">Five Trap Patterns</div><div class="fw-item-use">Avoid the trap of avoiding the difficult conversation — ethics demands directness</div></div></div></div>
+    </div>
+
+    <div class="bb-section">
+      <div class="bb-label">Modules to Review</div>
+      <div class="bb-mods">M8 — Leading with Purpose · M4 — Supervisory Judgment</div>
+    </div>
+
+    <div class="bb-signal">
+      <div class="bs-label">🔑 Key Signal</div>
+      <div class="bs-text">Name the ethical issue directly. Don't soften it. Moral clarity without hesitation is the behavior assessors score highest.</div>
+    </div>
+
+  </div>
+</div>
+<div class="bucket-card" id="bucket-leadership-philosophy" data-id="leadership-philosophy" data-search="leadership philosophy style values approach what kind of leader describe yourself philosophy believe your role what does leadership mean how do you lead">
+  <button class="bucket-header" onclick="toggleBucket('leadership-philosophy')">
+    <div class="bh-accent" style="background:#1A4A7C"></div>
+    <div class="bh-inner">
+    
+      <span class="b-icon">🧭</span>
+      <div>
+        <div class="b-name">Leadership Philosophy</div>
+        <div class="b-keywords"><span class="kw-pill">style</span><span class="kw-pill">values</span><span class="kw-pill">approach</span><span class="kw-pill">what kind of leader</span><span class="kw-pill">describe yourself</span><span class="kw-pill">philosophy</span></div>
+      </div>
+    </div><div class="bh-right"><span class="b-expand" id="bexp-leadership-philosophy">▼</span></div></button>
+  <div class="bucket-body" id="bbody-leadership-philosophy">
+
+    <div class="bb-section">
+      <div class="bb-label">What Assessors Are Scoring</div>
+      <div class="bb-text">Whether you have a developed, specific, authentic leadership identity — or just a list of buzzwords. Assessors are watching for specificity and consistency. Candidates who say 'I'm a servant leader who values communication' score 3/5. Candidates who name specific frameworks, connect them to real examples, and articulate a philosophy they clearly live score 4–5/5.</div>
+    </div>
+
+    <div class="bb-section">
+      <div class="bb-label">Response Architecture — Follow This Sequence</div>
+      <div class="steps"><div class="step-item"><div class="step-num">1</div><div class="step-text">Open by naming your philosophy architecture: 'My leadership philosophy is built around seven core principles — Trust, Courage, Humility, Ownership, Empathy, Dedication, and Service.'</div></div><div class="step-item"><div class="step-num">2</div><div class="step-text">Select two or three elements that are most relevant to the question and develop them specifically with examples.</div></div><div class="step-item"><div class="step-num">3</div><div class="step-text">Connect to the Bank of Leadership concept — name what you are consistently depositing.</div></div><div class="step-item"><div class="step-num">4</div><div class="step-text">Close with your identity statement — not what you want to be, but who you already are as a leader.</div></div><div class="step-item"><div class="step-num">5</div><div class="step-text">Apply the James Clear identity architecture: 'I am the kind of leader who...'</div></div></div>
+    </div>
+
+    <div class="bb-section">
+      <div class="bb-label">TPS Frameworks to Apply</div>
+      <div class="fw-items"><div class="fw-item"><div class="fw-item-badge">M8</div><div><div class="fw-item-name">T·C·H·O·E·D·S</div><div class="fw-item-use">Your seven-element leadership philosophy architecture — know all seven cold</div></div></div><div class="fw-item"><div class="fw-item-badge">M8</div><div><div class="fw-item-name">Bank of Leadership</div><div class="fw-item-use">The equity metaphor — what are you consistently depositing</div></div></div><div class="fw-item"><div class="fw-item-badge">M21</div><div><div class="fw-item-name">James Clear Identity Architecture</div><div class="fw-item-use">Identity-based leadership — 'I am the kind of leader who...'</div></div></div><div class="fw-item"><div class="fw-item-badge">M8</div><div><div class="fw-item-name">Crewnity / Promotivation</div><div class="fw-item-use">Department culture terms that demonstrate your specific leadership language</div></div></div><div class="fw-item"><div class="fw-item-badge">M17</div><div><div class="fw-item-name">Iceberg Model</div><div class="fw-item-use">Below-the-waterline development — show you think deeper than surface behavior</div></div></div></div>
+    </div>
+
+    <div class="bb-section">
+      <div class="bb-label">Modules to Review</div>
+      <div class="bb-mods">M8 — Leading with Purpose · M21 — Adaptive Leadership & Identity</div>
+    </div>
+
+    <div class="bb-signal">
+      <div class="bs-label">🔑 Key Signal</div>
+      <div class="bs-text">Be specific. Name your framework. Cite your department culture language. Generic buzzwords score 3/5. Developed philosophy scores 5/5.</div>
+    </div>
+
+  </div>
+</div>
+<div class="bucket-card" id="bucket-change-management" data-id="change-management" data-search="change management new policy unpopular resistance culture transition change implementing crew won't accept pushback new program rollout">
+  <button class="bucket-header" onclick="toggleBucket('change-management')">
+    <div class="bh-accent" style="background:#4A2570"></div>
+    <div class="bh-inner">
+    
+      <span class="b-icon">🔄</span>
+      <div>
+        <div class="b-name">Change Management</div>
+        <div class="b-keywords"><span class="kw-pill">new policy</span><span class="kw-pill">unpopular</span><span class="kw-pill">resistance</span><span class="kw-pill">culture</span><span class="kw-pill">transition</span><span class="kw-pill">change</span></div>
+      </div>
+    </div><div class="bh-right"><span class="b-expand" id="bexp-change-management">▼</span></div></button>
+  <div class="bucket-body" id="bbody-change-management">
+
+    <div class="bb-section">
+      <div class="bb-label">What Assessors Are Scoring</div>
+      <div class="bb-text">Whether you distinguish between technical and adaptive challenges, and whether you understand that resistant people are not always wrong. Assessors are watching for whether you apply authority (technical solution) to a challenge that requires hearts and minds (adaptive challenge). That mismatch scores 2–3/5.</div>
+    </div>
+
+    <div class="bb-section">
+      <div class="bb-label">Response Architecture — Follow This Sequence</div>
+      <div class="steps"><div class="step-item"><div class="step-num">1</div><div class="step-text">Open by naming the challenge type: 'This is an adaptive challenge — the technical answer is clear, but the real work is in the hearts and minds of the people who have to change.'</div></div><div class="step-item"><div class="step-num">2</div><div class="step-text">Acknowledge legitimate resistance without dismissing it: 'Resistance often contains information. My first step is to understand what's driving it before I decide how to address it.'</div></div><div class="step-item"><div class="step-num">3</div><div class="step-text">Apply Schein's culture model — name which level of culture you're working with: artifacts, values, or basic assumptions.</div></div><div class="step-item"><div class="step-num">4</div><div class="step-text">Describe your communication approach — how you deliver an unpopular message while maintaining crew trust.</div></div><div class="step-item"><div class="step-num">5</div><div class="step-text">Close with a specific implementation plan, timeline, and how you will follow up.</div></div></div>
+    </div>
+
+    <div class="bb-section">
+      <div class="bb-label">TPS Frameworks to Apply</div>
+      <div class="fw-items"><div class="fw-item"><div class="fw-item-badge">M21</div><div><div class="fw-item-name">Heifetz — Adaptive vs Technical</div><div class="fw-item-use">Diagnose whether this is a technical or adaptive challenge first</div></div></div><div class="fw-item"><div class="fw-item-badge">M16</div><div><div class="fw-item-name">Schein's Culture Model</div><div class="fw-item-use">Identify which level of culture you're working with — artifacts, values, or assumptions</div></div></div><div class="fw-item"><div class="fw-item-badge">M5/M11</div><div><div class="fw-item-name">Glasl Phase 1</div><div class="fw-item-use">Resistance is often Phase 1 conflict — address it before it escalates</div></div></div><div class="fw-item"><div class="fw-item-badge">M8</div><div><div class="fw-item-name">T·C·H·O·E·D·S</div><div class="fw-item-use">Humility and Empathy — validate before you direct</div></div></div></div>
+    </div>
+
+    <div class="bb-section">
+      <div class="bb-label">Modules to Review</div>
+      <div class="bb-mods">M21 — Adaptive Leadership & Identity · M16 — Culture Architecture</div>
+    </div>
+
+    <div class="bb-signal">
+      <div class="bs-label">🔑 Key Signal</div>
+      <div class="bs-text">Name the Heifetz distinction. Resistance contains information — acknowledge it before you address it. Assessors reward adaptive thinking.</div>
+    </div>
+
+  </div>
+</div>
+<div class="bucket-card" id="bucket-development" data-id="development" data-search="development & mentoring developing coaching mentoring feedback helping grow new member struggling crew member potential talent career development training">
+  <button class="bucket-header" onclick="toggleBucket('development')">
+    <div class="bh-accent" style="background:#006B6B"></div>
+    <div class="bh-inner">
+    
+      <span class="b-icon">📈</span>
+      <div>
+        <div class="b-name">Development & Mentoring</div>
+        <div class="b-keywords"><span class="kw-pill">developing</span><span class="kw-pill">coaching</span><span class="kw-pill">mentoring</span><span class="kw-pill">feedback</span><span class="kw-pill">helping grow</span><span class="kw-pill">new member</span></div>
+      </div>
+    </div><div class="bh-right"><span class="b-expand" id="bexp-development">▼</span></div></button>
+  <div class="bucket-body" id="bbody-development">
+
+    <div class="bb-section">
+      <div class="bb-label">What Assessors Are Scoring</div>
+      <div class="bb-text">Whether you understand that development is your primary job as a company officer — not just task completion. Assessors are watching for whether you can match your development approach to the individual's specific needs using diagnostic tools, not generic coaching language.</div>
+    </div>
+
+    <div class="bb-section">
+      <div class="bb-label">Response Architecture — Follow This Sequence</div>
+      <div class="steps"><div class="step-item"><div class="step-num">1</div><div class="step-text">Open by stating the development principle: 'My job is not just to get the work done — it is to leave everyone around me more capable than I found them.'</div></div><div class="step-item"><div class="step-num">2</div><div class="step-text">Apply the Skill/Will Matrix to diagnose the individual's development position.</div></div><div class="step-item"><div class="step-num">3</div><div class="step-text">Name your specific development approach based on the diagnosis — coaching for Low Skill/High Will, motivation investigation for High Skill/Low Will.</div></div><div class="step-item"><div class="step-num">4</div><div class="step-text">Reference the 70-20-10 model — describe how you create experiential development opportunities, not just formal training.</div></div><div class="step-item"><div class="step-num">5</div><div class="step-text">Close with a specific development plan, milestone, and follow-up.</div></div></div>
+    </div>
+
+    <div class="bb-section">
+      <div class="bb-label">TPS Frameworks to Apply</div>
+      <div class="fw-items"><div class="fw-item"><div class="fw-item-badge">M10</div><div><div class="fw-item-name">70-20-10 Model</div><div class="fw-item-use">70% experiential, 20% relational, 10% formal — how development actually happens</div></div></div><div class="fw-item"><div class="fw-item-badge">M4</div><div><div class="fw-item-name">Skill/Will Matrix</div><div class="fw-item-use">Diagnose the individual's position before selecting your approach</div></div></div><div class="fw-item"><div class="fw-item-badge">M10</div><div><div class="fw-item-name">SBI Feedback Model</div><div class="fw-item-use">Situation-Behavior-Impact — the structure for developmental feedback conversations</div></div></div><div class="fw-item"><div class="fw-item-badge">M10</div><div><div class="fw-item-name">Kolb Learning Cycle</div><div class="fw-item-use">How to design experiential learning that produces lasting change</div></div></div><div class="fw-item"><div class="fw-item-badge">M4</div><div><div class="fw-item-name">3 U's Diagnostic</div><div class="fw-item-use">Is this a development problem (Unaware/Unable) or a willingness problem (Unwilling)?</div></div></div></div>
+    </div>
+
+    <div class="bb-section">
+      <div class="bb-label">Modules to Review</div>
+      <div class="bb-mods">M10 — The Developing Leader · M4 — Supervisory Judgment</div>
+    </div>
+
+    <div class="bb-signal">
+      <div class="bs-label">🔑 Key Signal</div>
+      <div class="bs-text">Name the 70-20-10 principle. Show that development is intentional and individualized. Generic 'mentoring' language scores 3/5.</div>
+    </div>
+
+  </div>
+</div>
+<div class="bucket-card" id="bucket-strategic" data-id="strategic" data-search="strategic & organizational budget planning improvement initiative program department community resource proposal recommend implement policy strategic">
+  <button class="bucket-header" onclick="toggleBucket('strategic')">
+    <div class="bh-accent" style="background:#8B4513"></div>
+    <div class="bh-inner">
+    
+      <span class="b-icon">🏛️</span>
+      <div>
+        <div class="b-name">Strategic & Organizational</div>
+        <div class="b-keywords"><span class="kw-pill">budget</span><span class="kw-pill">planning</span><span class="kw-pill">improvement</span><span class="kw-pill">initiative</span><span class="kw-pill">program</span><span class="kw-pill">department</span></div>
+      </div>
+    </div><div class="bh-right"><span class="b-expand" id="bexp-strategic">▼</span></div></button>
+  <div class="bucket-body" id="bbody-strategic">
+
+    <div class="bb-section">
+      <div class="bb-label">What Assessors Are Scoring</div>
+      <div class="bb-text">Whether you think organizationally — beyond your station and your crew. Assessors are watching for whether you can analyze a situation using strategic frameworks, identify organizational implications, and propose specific actionable recommendations. Vague proposals score 3/5. Specific, framework-driven analysis scores 4–5/5.</div>
+    </div>
+
+    <div class="bb-section">
+      <div class="bb-label">Response Architecture — Follow This Sequence</div>
+      <div class="steps"><div class="step-item"><div class="step-num">1</div><div class="step-text">Open by framing the organizational context: 'Before I propose a solution, I want to analyze the situation from a strategic perspective — looking at internal strengths and weaknesses and external factors.'</div></div><div class="step-item"><div class="step-num">2</div><div class="step-text">Apply SWOT or PESTLE explicitly — name the framework and walk through the relevant elements briefly.</div></div><div class="step-item"><div class="step-num">3</div><div class="step-text">Connect to OKRs — frame your recommendation as an Objective with measurable Key Results.</div></div><div class="step-item"><div class="step-num">4</div><div class="step-text">Use RACI to clarify roles in your proposed implementation — who is Responsible, Accountable, Consulted, and Informed.</div></div><div class="step-item"><div class="step-num">5</div><div class="step-text">Close with a specific timeline, success metric, and how you will report progress up the chain.</div></div></div>
+    </div>
+
+    <div class="bb-section">
+      <div class="bb-label">TPS Frameworks to Apply</div>
+      <div class="fw-items"><div class="fw-item"><div class="fw-item-badge">M12</div><div><div class="fw-item-name">SWOT Analysis</div><div class="fw-item-use">Situational assessment — internal strengths/weaknesses, external opportunities/threats</div></div></div><div class="fw-item"><div class="fw-item-badge">M12</div><div><div class="fw-item-name">PESTLE Analysis</div><div class="fw-item-use">Macro environment scan — political, economic, social, technological, legal, environmental</div></div></div><div class="fw-item"><div class="fw-item-badge">M12</div><div><div class="fw-item-name">OKRs Framework</div><div class="fw-item-use">Frame recommendations as an Objective with measurable Key Results</div></div></div><div class="fw-item"><div class="fw-item-badge">M13</div><div><div class="fw-item-name">RACI Matrix</div><div class="fw-item-use">Clarify roles in implementation — prevents accountability gaps</div></div></div><div class="fw-item"><div class="fw-item-badge">M9</div><div><div class="fw-item-name">Eisenhower Matrix</div><div class="fw-item-use">Priority framework for multi-task strategic scenarios</div></div></div></div>
+    </div>
+
+    <div class="bb-section">
+      <div class="bb-label">Modules to Review</div>
+      <div class="bb-mods">M12 — Strategic Thinking · M13 — Strategic Execution</div>
+    </div>
+
+    <div class="bb-signal">
+      <div class="bs-label">🔑 Key Signal</div>
+      <div class="bs-text">Name a strategic framework explicitly. Assessors scoring Captain and above expect organizational thinking, not just station-level thinking.</div>
+    </div>
+
+  </div>
+</div>
+<div class="bucket-card" id="bucket-communication" data-id="communication" data-search="communication & interpersonal briefing community citizen chain of command message explain communicate upset irate media public inform notify present">
+  <button class="bucket-header" onclick="toggleBucket('communication')">
+    <div class="bh-accent" style="background:#2A3D50"></div>
+    <div class="bh-inner">
+    
+      <span class="b-icon">🗣️</span>
+      <div>
+        <div class="b-name">Communication & Interpersonal</div>
+        <div class="b-keywords"><span class="kw-pill">briefing</span><span class="kw-pill">community</span><span class="kw-pill">citizen</span><span class="kw-pill">chain of command</span><span class="kw-pill">message</span><span class="kw-pill">explain</span></div>
+      </div>
+    </div><div class="bh-right"><span class="b-expand" id="bexp-communication">▼</span></div></button>
+  <div class="bucket-body" id="bbody-communication">
+
+    <div class="bb-section">
+      <div class="bb-label">What Assessors Are Scoring</div>
+      <div class="bb-text">Whether you adapt your communication style to your audience while maintaining professional register. Assessors are watching for whether you listen before you speak, whether you manage your own emotional response to a difficult communicator, and whether your communication reflects organizational awareness — not just personal style.</div>
+    </div>
+
+    <div class="bb-section">
+      <div class="bb-label">Response Architecture — Follow This Sequence</div>
+      <div class="steps"><div class="step-item"><div class="step-num">1</div><div class="step-text">Open by naming the communication principle: 'Effective communication in this situation requires me to listen first, adapt to my audience, and represent the organization professionally regardless of the emotional temperature.'</div></div><div class="step-item"><div class="step-num">2</div><div class="step-text">Apply the Pre-Exercise Protocol — what dimension is this primarily testing?</div></div><div class="step-item"><div class="step-num">3</div><div class="step-text">Use de-escalation instinct for an upset citizen or crew member — acknowledge before you direct.</div></div><div class="step-item"><div class="step-num">4</div><div class="step-text">Name the bias awareness check: 'I want to make sure my prior impressions aren't shaping how I'm reading this situation.'</div></div><div class="step-item"><div class="step-num">5</div><div class="step-text">Close with a specific outcome statement — what the communication will accomplish and how you will follow up.</div></div></div>
+    </div>
+
+    <div class="bb-section">
+      <div class="bb-label">TPS Frameworks to Apply</div>
+      <div class="fw-items"><div class="fw-item"><div class="fw-item-badge">M6</div><div><div class="fw-item-name">STAR-P Method</div><div class="fw-item-use">Structure your verbal response — 50% of time in Action component</div></div></div><div class="fw-item"><div class="fw-item-badge">M5</div><div><div class="fw-item-name">Four Key Biases</div><div class="fw-item-use">Check your own assumptions before communicating — name the bias check explicitly</div></div></div><div class="fw-item"><div class="fw-item-badge">M5</div><div><div class="fw-item-name">Emotional Competence</div><div class="fw-item-use">Three-breath protocol — maintain composure under difficult communicators</div></div></div><div class="fw-item"><div class="fw-item-badge">M8</div><div><div class="fw-item-name">T·C·H·O·E·D·S — Empathy</div><div class="fw-item-use">Acknowledge before you direct — empathy as a communication tool</div></div></div><div class="fw-item"><div class="fw-item-badge">M11</div><div><div class="fw-item-name">DESC Script</div><div class="fw-item-use">For assertive professional communication in difficult conversations</div></div></div></div>
+    </div>
+
+    <div class="bb-section">
+      <div class="bb-label">Modules to Review</div>
+      <div class="bb-mods">M6 — Oral Communication · M5 — Interpersonal Skills</div>
+    </div>
+
+    <div class="bb-signal">
+      <div class="bs-label">🔑 Key Signal</div>
+      <div class="bs-text">Listen before you speak. Name the bias check. Adapt to your audience. The three-breath protocol under a difficult role player is visible to assessors.</div>
+    </div>
+
+  </div>
+</div>
+<div class="bucket-card" id="bucket-inbasket" data-id="inbasket" data-search="in-basket & priority triage priority multiple tasks competing demands first order delegate what do you do items memos emails tasks workload">
+  <button class="bucket-header" onclick="toggleBucket('inbasket')">
+    <div class="bh-accent" style="background:#6B4F10"></div>
+    <div class="bh-inner">
+    
+      <span class="b-icon">📥</span>
+      <div>
+        <div class="b-name">In-Basket & Priority</div>
+        <div class="b-keywords"><span class="kw-pill">triage</span><span class="kw-pill">priority</span><span class="kw-pill">multiple tasks</span><span class="kw-pill">competing demands</span><span class="kw-pill">first</span><span class="kw-pill">order</span></div>
+      </div>
+    </div><div class="bh-right"><span class="b-expand" id="bexp-inbasket">▼</span></div></button>
+  <div class="bucket-body" id="bbody-inbasket">
+
+    <div class="bb-section">
+      <div class="bb-label">What Assessors Are Scoring</div>
+      <div class="bb-text">Whether you can triage accurately and delegate appropriately. Assessors are watching for whether your prioritization reflects organizational awareness — not just urgency. Items that feel urgent but aren't important score lower when over-prioritized. Delegation decisions reveal Skill/Will awareness.</div>
+    </div>
+
+    <div class="bb-section">
+      <div class="bb-label">Response Architecture — Follow This Sequence</div>
+      <div class="steps"><div class="step-item"><div class="step-num">1</div><div class="step-text">Open by naming your triage approach: 'I'll organize these items using the Eisenhower Matrix — separating what is urgent and important from what can be scheduled, delegated, or eliminated.'</div></div><div class="step-item"><div class="step-num">2</div><div class="step-text">Apply Pareto — identify the 20% of items that require your direct attention and name them first.</div></div><div class="step-item"><div class="step-num">3</div><div class="step-text">Delegate explicitly — name who gets what and why, demonstrating Skill/Will awareness.</div></div><div class="step-item"><div class="step-num">4</div><div class="step-text">Address political items carefully — items involving chain of command, community relations, or media require awareness beyond urgency.</div></div><div class="step-item"><div class="step-num">5</div><div class="step-text">Close with a timeline for follow-up on each delegated item and a note on what you will document.</div></div></div>
+    </div>
+
+    <div class="bb-section">
+      <div class="bb-label">TPS Frameworks to Apply</div>
+      <div class="fw-items"><div class="fw-item"><div class="fw-item-badge">M9</div><div><div class="fw-item-name">Eisenhower Matrix</div><div class="fw-item-use">Primary triage tool — Urgent/Important four-quadrant prioritization</div></div></div><div class="fw-item"><div class="fw-item-badge">M9</div><div><div class="fw-item-name">Pareto Principle</div><div class="fw-item-use">Identify the 20% of items producing 80% of impact — protect time for those</div></div></div><div class="fw-item"><div class="fw-item-badge">M9</div><div><div class="fw-item-name">OODA Loop</div><div class="fw-item-use">Rapid decision cycle for time-pressured in-basket conditions</div></div></div><div class="fw-item"><div class="fw-item-badge">M13</div><div><div class="fw-item-name">RACI Matrix</div><div class="fw-item-use">Clarify delegation — who is Responsible vs Accountable for each item</div></div></div><div class="fw-item"><div class="fw-item-badge">M4</div><div><div class="fw-item-name">Skill/Will Matrix</div><div class="fw-item-use">Match delegation to the individual's capability and motivation</div></div></div></div>
+    </div>
+
+    <div class="bb-section">
+      <div class="bb-label">Modules to Review</div>
+      <div class="bb-mods">M9 — The Organized Leader · M13 — Strategic Execution</div>
+    </div>
+
+    <div class="bb-signal">
+      <div class="bs-label">🔑 Key Signal</div>
+      <div class="bs-text">Name the Eisenhower Matrix immediately. Show your triage logic explicitly. Delegation decisions with rationale score significantly higher than lists of actions.</div>
+    </div>
+
+  </div>
+</div>
+<div class="bucket-card" id="bucket-team-building" data-id="team-building" data-search="team building cohesion culture crew dynamics morale trust forming storming norming performing dysfunctional disengaged psychological safety low morale disconnected">
+  <button class="bucket-header" onclick="toggleBucket('team-building')">
+    <div class="bh-accent" style="background:#2E7D6B"></div>
+    <div class="bh-inner">
+    
+      <span class="b-icon">🤝</span>
+      <div>
+        <div class="b-name">Team Building</div>
+        <div class="b-keywords"><span class="kw-pill">cohesion</span><span class="kw-pill">crew dynamics</span><span class="kw-pill">morale</span><span class="kw-pill">culture</span><span class="kw-pill">trust</span><span class="kw-pill">disengaged</span></div>
+      </div>
+    </div><div class="bh-right"><span class="b-expand" id="bexp-team-building">▼</span></div></button>
+  <div class="bucket-body" id="bbody-team-building">
+    <div class="bb-section">
+      <div class="bb-label">What Assessors Are Scoring</div>
+      <div class="bb-text">Whether you can diagnose where your team is in its development cycle and apply the right intervention. Assessors are watching for Tuckman stage identification — do you know the difference between a Forming crew and a Storming crew? Using the wrong stage intervention scores 2–3/5. Identifying the stage and matching the approach scores 4–5/5.</div>
+    </div>
+    <div class="bb-section">
+      <div class="bb-label">Response Architecture — Follow This Sequence</div>
+      <div class="steps"><div class="step-item"><div class="step-num">1</div><div class="step-text">Open by naming the Tuckman stage: 'Based on what I'm observing, this crew is in the Storming phase — the initial politeness has broken down and the real dynamics are surfacing.'</div></div><div class="step-item"><div class="step-num">2</div><div class="step-text">Diagnose using the Followership Matrix — where does each crew member sit on engagement vs competence?</div></div><div class="step-item"><div class="step-num">3</div><div class="step-text">Name your team development approach — what specific deposits are you making into the Bank of Leadership?</div></div><div class="step-item"><div class="step-num">4</div><div class="step-text">Reference Edmondson psychological safety — is your crew able to speak up without fear? Name the specific safety behavior you're building.</div></div><div class="step-item"><div class="step-num">5</div><div class="step-text">Close with a specific culture-building action, timeline, and how you will measure change.</div></div></div>
+    </div>
+    <div class="bb-section">
+      <div class="bb-label">TPS Frameworks to Apply</div>
+      <div class="fw-items"><div class="fw-item"><div class="fw-item-badge">Ch13</div><div><div class="fw-item-name">Tuckman Team Development Model</div><div class="fw-item-use">Name the stage — Forming, Storming, Norming, Performing — before selecting intervention</div></div></div><div class="fw-item"><div class="fw-item-badge">Ch13</div><div><div class="fw-item-name">Followership Matrix</div><div class="fw-item-use">Map each crew member on engagement vs competence axes</div></div></div><div class="fw-item"><div class="fw-item-badge">Ch20</div><div><div class="fw-item-name">Edmondson Psychological Safety</div><div class="fw-item-use">The team can't perform if members fear speaking up — name the safety deficit</div></div></div><div class="fw-item"><div class="fw-item-badge">Ch8</div><div><div class="fw-item-name">Bank of Leadership</div><div class="fw-item-use">Name the specific deposit you are making — credibility, consistency, or development</div></div></div><div class="fw-item"><div class="fw-item-badge">Ch19</div><div><div class="fw-item-name">Lencioni Five Dysfunctions</div><div class="fw-item-use">Diagnose which dysfunction is active — absence of trust is always at the base</div></div></div></div>
+    </div>
+    <div class="bb-section">
+      <div class="bb-label">Chapters to Review</div>
+      <div class="bb-mods">Ch13 — Crew Conflict Resolution · Ch20 — Psychological Safety · Ch22 — The Developing Leader</div>
+    </div>
+    <div class="bb-signal">
+      <div class="bs-label">🔑 Key Signal</div>
+      <div class="bs-text">Name the Tuckman stage first. Match your intervention to the stage. Culture problems are not solved with policy — they're solved with consistent leadership behavior.</div>
+    </div>
+  </div>
+</div>
+
+<div class="bucket-card" id="bucket-operational-command" data-id="operational-command" data-search="operational command emergency scene fire rescue incident command ICS size-up mayday tactical ventilation search water supply structure fire multi-company">
+  <button class="bucket-header" onclick="toggleBucket('operational-command')">
+    <div class="bh-accent" style="background:#B22222"></div>
+    <div class="bh-inner">
+    
+      <span class="b-icon">🚒</span>
+      <div>
+        <div class="b-name">Operational Command</div>
+        <div class="b-keywords"><span class="kw-pill">emergency scene</span><span class="kw-pill">incident command</span><span class="kw-pill">size-up</span><span class="kw-pill">mayday</span><span class="kw-pill">tactical</span><span class="kw-pill">structure fire</span></div>
+      </div>
+    </div><div class="bh-right"><span class="b-expand" id="bexp-operational-command">▼</span></div></button>
+  <div class="bucket-body" id="bbody-operational-command">
+    <div class="bb-section">
+      <div class="bb-label">What Assessors Are Scoring</div>
+      <div class="bb-text">Whether you demonstrate command presence and ICS discipline under pressure. Assessors are watching for size-up completeness, span of control awareness, and whether your tactical decisions reflect rank-appropriate authority. A Lieutenant commanding at Captain scope — or a Captain failing to establish ICS — scores 2–3/5.</div>
+    </div>
+    <div class="bb-section">
+      <div class="bb-label">Response Architecture — Follow This Sequence</div>
+      <div class="steps"><div class="step-item"><div class="step-num">1</div><div class="step-text">Open with the TPS Six-Element Size-Up: Life safety → Incident stabilization → Property protection → Resources → Hazards → Rescue priority. Name it explicitly.</div></div><div class="step-item"><div class="step-num">2</div><div class="step-text">Establish ICS structure immediately — name your command, your span of control, and your first three assignments.</div></div><div class="step-item"><div class="step-num">3</div><div class="step-text">Apply COAL WAS WEALTH for structure fire scenarios — walk through the relevant elements concisely.</div></div><div class="step-item"><div class="step-num">4</div><div class="step-text">Name your life safety priority — Two-In Two-Out compliance, PAR accountability, MAYDAY protocol if applicable.</div></div><div class="step-item"><div class="step-num">5</div><div class="step-text">Close with your rank-level decision authority — what you handle, what you escalate, and your T·C·H·O·E·D·S close on Courage or Ownership.</div></div></div>
+    </div>
+    <div class="bb-section">
+      <div class="bb-label">TPS Frameworks to Apply</div>
+      <div class="fw-items"><div class="fw-item"><div class="fw-item-badge">Ch25</div><div><div class="fw-item-name">TPS Six-Element Size-Up Protocol</div><div class="fw-item-use">Life safety → Stabilization → Property → Resources → Hazards → Rescue priority</div></div></div><div class="fw-item"><div class="fw-item-badge">Ch25</div><div><div class="fw-item-name">ICS/NIMS Five Concepts</div><div class="fw-item-use">Unified Command, Span of Control, Modular Expansion, Resource Management, Communications</div></div></div><div class="fw-item"><div class="fw-item-badge">Ch25</div><div><div class="fw-item-name">COAL WAS WEALTH</div><div class="fw-item-use">Construction, Occupancy, Apparatus, Life Safety, Water, Auxiliary, Street, Weather, Exposures, Area, Location, Time, Hazmat</div></div></div><div class="fw-item"><div class="fw-item-badge">Ch18</div><div><div class="fw-item-name">Two-In Two-Out / PAR</div><div class="fw-item-use">Non-negotiable safety standards — name them explicitly in any tactical scenario</div></div></div></div>
+    </div>
+    <div class="bb-section">
+      <div class="bb-label">Chapters to Review</div>
+      <div class="bb-mods">Ch25 — Emergency Scene Command · Ch26 — Multi-Unit Coordination · Ch33 — Large Scale Incident Command</div>
+    </div>
+    <div class="bb-signal">
+      <div class="bs-label">🔑 Key Signal</div>
+      <div class="bs-text">Open with size-up. Establish ICS immediately. Life safety is always your first priority — name it before you name anything else. Command presence is visible in the first 30 seconds.</div>
+    </div>
+  </div>
+</div>
+
+<div class="bucket-card" id="bucket-ems-leadership" data-id="ems-leadership" data-search="ems leadership medical emergency patient care quality assurance protocol MCI triage mass casualty EMS performance crew member patient complaint clinical">
+  <button class="bucket-header" onclick="toggleBucket('ems-leadership')">
+    <div class="bh-accent" style="background:#1A5C8A"></div>
+    <div class="bh-inner">
+    
+      <span class="b-icon">🚑</span>
+      <div>
+        <div class="b-name">EMS Leadership</div>
+        <div class="b-keywords"><span class="kw-pill">patient care</span><span class="kw-pill">quality assurance</span><span class="kw-pill">protocol</span><span class="kw-pill">MCI</span><span class="kw-pill">triage</span><span class="kw-pill">clinical</span></div>
+      </div>
+    </div><div class="bh-right"><span class="b-expand" id="bexp-ems-leadership">▼</span></div></button>
+  <div class="bucket-body" id="bbody-ems-leadership">
+    <div class="bb-section">
+      <div class="bb-label">What Assessors Are Scoring</div>
+      <div class="bb-text">Whether you apply clinical frameworks accurately and lead EMS quality at your rank level. Assessors are watching for protocol knowledge, QA/QI process awareness, and crew development on EMS competence. Missing clinical frameworks in an EMS scenario scores 2–3/5. Demonstrating both clinical accuracy and leadership application scores 4–5/5.</div>
+    </div>
+    <div class="bb-section">
+      <div class="bb-label">Response Architecture — Follow This Sequence</div>
+      <div class="steps"><div class="step-item"><div class="step-num">1</div><div class="step-text">Open by naming the clinical priority: 'My first concern is patient safety and protocol compliance — before I address the crew performance issue, I need to confirm what actually happened on this call.'</div></div><div class="step-item"><div class="step-num">2</div><div class="step-text">Apply the relevant clinical framework — SAMPLE history, ABCDE primary survey, or START triage for MCI scenarios — and demonstrate you understand what should have happened.</div></div><div class="step-item"><div class="step-num">3</div><div class="step-text">Address the crew performance dimension using 3 U's — was this a knowledge deficit (Unaware/Unable) or a willingness issue (Unwilling)?</div></div><div class="step-item"><div class="step-num">4</div><div class="step-text">Name the QA/QI process — how you document, report, and follow up to prevent recurrence at your rank level.</div></div><div class="step-item"><div class="step-num">5</div><div class="step-text">Close with your rank-level accountability statement and T·C·H·O·E·D·S principle — typically Ownership or Dedication.</div></div></div>
+    </div>
+    <div class="bb-section">
+      <div class="bb-label">TPS Frameworks to Apply</div>
+      <div class="fw-items"><div class="fw-item"><div class="fw-item-badge">Ch32</div><div><div class="fw-item-name">SAMPLE History</div><div class="fw-item-use">Signs/Symptoms, Allergies, Medications, Past history, Last intake, Events — standard patient assessment</div></div></div><div class="fw-item"><div class="fw-item-badge">Ch32</div><div><div class="fw-item-name">ABCDE Primary Survey</div><div class="fw-item-use">Airway, Breathing, Circulation, Disability, Exposure — life threat sequence</div></div></div><div class="fw-item"><div class="fw-item-badge">Ch33</div><div><div class="fw-item-name">START Triage</div><div class="fw-item-use">RED (immediate), YELLOW (delayed), GREEN (minor), BLACK (expectant) — MCI scenarios</div></div></div><div class="fw-item"><div class="fw-item-badge">Ch4</div><div><div class="fw-item-name">3 U's Diagnostic</div><div class="fw-item-use">Apply to the crew member's clinical performance gap — diagnose before intervening</div></div></div></div>
+    </div>
+    <div class="bb-section">
+      <div class="bb-label">Chapters to Review</div>
+      <div class="bb-mods">Ch32 — Written Assessments · Ch33 — Large Scale Incident Command</div>
+    </div>
+    <div class="bb-signal">
+      <div class="bs-label">🔑 Key Signal</div>
+      <div class="bs-text">Clinical accuracy first, leadership second. Name the clinical framework before you address the personnel issue. Assessors in EMS scenarios are scoring both — missing either costs you two score levels.</div>
+    </div>
+  </div>
+</div>
+
+<div class="bucket-card" id="bucket-safety-compliance" data-id="safety-compliance" data-search="safety compliance PPE violation near miss hazard unsafe behavior accountability safety culture reporting LCES two-in two-out crew safety standard">
+  <button class="bucket-header" onclick="toggleBucket('safety-compliance')">
+    <div class="bh-accent" style="background:#8B4513"></div>
+    <div class="bh-inner">
+    
+      <span class="b-icon">🛡️</span>
+      <div>
+        <div class="b-name">Safety & Compliance</div>
+        <div class="b-keywords"><span class="kw-pill">PPE violation</span><span class="kw-pill">near miss</span><span class="kw-pill">hazard</span><span class="kw-pill">unsafe behavior</span><span class="kw-pill">accountability</span><span class="kw-pill">safety culture</span></div>
+      </div>
+    </div><div class="bh-right"><span class="b-expand" id="bexp-safety-compliance">▼</span></div></button>
+  <div class="bucket-body" id="bbody-safety-compliance">
+    <div class="bb-section">
+      <div class="bb-label">What Assessors Are Scoring</div>
+      <div class="bb-text">Whether you treat safety as a culture issue, not just a compliance issue. Assessors are watching for whether you understand the difference between enforcing a standard (compliance) and building a culture where people want to report near-misses (safety culture). Punitive safety responses score 3/5. Culture-building safety responses score 4–5/5.</div>
+    </div>
+    <div class="bb-section">
+      <div class="bb-label">Response Architecture — Follow This Sequence</div>
+      <div class="steps"><div class="step-item"><div class="step-num">1</div><div class="step-text">Open by naming the safety principle: 'Safety is not a compliance issue — it is a culture issue. My job is to build a crew where near-misses get reported, not hidden.'</div></div><div class="step-item"><div class="step-num">2</div><div class="step-text">Apply the 3 U's to the safety violation — is this Unaware (they don't know the standard), Unable (they know but lack skill), or Unwilling (they know and choose not to comply)?</div></div><div class="step-item"><div class="step-num">3</div><div class="step-text">Name the relevant safety standard explicitly — Two-In Two-Out, PAR, LCES, or department PPE policy — and state why it exists.</div></div><div class="step-item"><div class="step-num">4</div><div class="step-text">Apply Edmondson psychological safety — a crew that fears reporting near-misses is a crew that will have accidents. Name the safety reporting culture you are building.</div></div><div class="step-item"><div class="step-num">5</div><div class="step-text">Close with documentation, follow-up, and your T·C·H·O·E·D·S principle — Courage to address the violation and Ownership of the crew's safety standard.</div></div></div>
+    </div>
+    <div class="bb-section">
+      <div class="bb-label">TPS Frameworks to Apply</div>
+      <div class="fw-items"><div class="fw-item"><div class="fw-item-badge">Ch18</div><div><div class="fw-item-name">Two-In Two-Out (OSHA 1910.134)</div><div class="fw-item-use">Non-negotiable IDLH crew safety requirement — name it in any safety scenario</div></div></div><div class="fw-item"><div class="fw-item-badge">Ch18</div><div><div class="fw-item-name">PAR — Personnel Accountability Report</div><div class="fw-item-use">Crew accountability during operations — accountability check system</div></div></div><div class="fw-item"><div class="fw-item-badge">Ch18</div><div><div class="fw-item-name">LCES</div><div class="fw-item-use">Lookouts, Communications, Escape Routes, Safety Zones — WUI and non-standard hazard environments</div></div></div><div class="fw-item"><div class="fw-item-badge">Ch20</div><div><div class="fw-item-name">Edmondson Psychological Safety</div><div class="fw-item-use">Near-miss reporting requires psychological safety — crews that fear reporting will have accidents</div></div></div><div class="fw-item"><div class="fw-item-badge">Ch4</div><div><div class="fw-item-name">3 U's Diagnostic</div><div class="fw-item-use">Diagnose the safety violation root cause before applying intervention</div></div></div></div>
+    </div>
+    <div class="bb-section">
+      <div class="bb-label">Chapters to Review</div>
+      <div class="bb-mods">Ch18 — Grievance and Due Process · Ch20 — Legal Foundations · Ch16 — Performance Management</div>
+    </div>
+    <div class="bb-signal">
+      <div class="bs-label">🔑 Key Signal</div>
+      <div class="bs-text">Safety culture over compliance enforcement. Name the standard, name the violation, name the 3 U's diagnosis. A crew that hides near-misses is more dangerous than a crew that makes them.</div>
+    </div>
+  </div>
+</div>
+
+  <div class="empty-state hidden" id="empty-state">
+    <div class="es-title">No buckets found</div>
+    <div class="es-sub">Try a different keyword</div>
+  </div>
+
+  <div class="empty-state hidden" id="empty-state">
+    <div class="es-title">No buckets found</div>
+    <div class="es-sub">Try a different keyword — every question maps to one of thirteen buckets</div>
+  </div>
+  </div>
+
+</div>
+<script>
+const KEYWORD_MAP = {"performance": "personnel", "conduct": "personnel", "discipline": "personnel", "behavior": "personnel", "late": "personnel", "absent": "personnel", "attitude": "personnel", "insubordination": "personnel", "complaint against": "personnel", "struggling": "personnel", "not meeting": "personnel", "policy violation by crew": "personnel", "disagreement": "conflict", "tension": "conflict", "fighting": "conflict", "complaint": "conflict", "hostile": "conflict", "crew conflict": "conflict", "not getting along": "conflict", "friction": "conflict", "argument": "conflict", "dispute": "conflict", "interpersonal": "conflict", "stealing": "ethics", "drinking": "ethics", "misconduct": "ethics", "covering up": "ethics", "dishonesty": "ethics", "integrity": "ethics", "ethical": "ethics", "moral": "ethics", "falsifying": "ethics", "inappropriate": "ethics", "harassment": "ethics", "bias": "ethics", "discrimination": "ethics", "style": "leadership-philosophy", "values": "leadership-philosophy", "approach": "leadership-philosophy", "what kind of leader": "leadership-philosophy", "describe yourself": "leadership-philosophy", "philosophy": "leadership-philosophy", "believe": "leadership-philosophy", "your role": "leadership-philosophy", "what does leadership mean": "leadership-philosophy", "how do you lead": "leadership-philosophy", "new policy": "change-management", "unpopular": "change-management", "resistance": "change-management", "culture": "change-management", "transition": "change-management", "change": "change-management", "implementing": "change-management", "crew wont accept": "change-management", "pushback": "change-management", "new program": "change-management", "rollout": "change-management", "developing": "development", "coaching": "development", "mentoring": "development", "feedback": "development", "helping grow": "development", "new member": "development", "struggling crew member": "development", "potential": "development", "talent": "development", "career development": "development", "training": "development", "budget": "strategic", "planning": "strategic", "improvement": "strategic", "initiative": "strategic", "program": "strategic", "department": "strategic", "community": "communication", "resource": "strategic", "proposal": "strategic", "recommend": "strategic", "implement": "strategic", "policy": "strategic", "strategic": "strategic", "briefing": "communication", "citizen": "communication", "chain of command": "communication", "message": "communication", "explain": "communication", "communicate": "communication", "upset": "communication", "irate": "communication", "media": "communication", "public": "communication", "inform": "communication", "notify": "communication", "present": "communication", "triage": "inbasket", "priority": "inbasket", "multiple tasks": "inbasket", "competing demands": "inbasket", "first": "inbasket", "order": "inbasket", "delegate": "inbasket", "what do you do": "inbasket", "items": "inbasket", "memos": "inbasket", "emails": "inbasket", "tasks": "inbasket", "workload": "inbasket", "cohesion": "team-building", "crew dynamics": "team-building", "morale": "team-building", "disengaged": "team-building", "psychological safety": "team-building", "dysfunctional": "team-building", "forming": "team-building", "storming": "team-building", "norming": "team-building", "team culture": "team-building", "low morale": "team-building", "disconnected": "team-building", "emergency scene": "operational-command", "incident command": "operational-command", "size-up": "operational-command", "mayday": "operational-command", "tactical": "operational-command", "structure fire": "operational-command", "ventilation": "operational-command", "search": "operational-command", "water supply": "operational-command", "multi-company": "operational-command", "ICS": "operational-command", "fire scene": "operational-command", "patient care": "ems-leadership", "quality assurance": "ems-leadership", "protocol": "ems-leadership", "MCI": "ems-leadership", "mass casualty": "ems-leadership", "clinical": "ems-leadership", "EMS": "ems-leadership", "patient complaint": "ems-leadership", "medical": "ems-leadership", "PPE violation": "safety-compliance", "near miss": "safety-compliance", "hazard": "safety-compliance", "unsafe behavior": "safety-compliance", "safety culture": "safety-compliance", "reporting": "safety-compliance", "LCES": "safety-compliance", "two-in two-out": "safety-compliance", "compliance": "safety-compliance", "safety standard": "safety-compliance"}
+
+function toggleBucket(id) {
+  const body = document.getElementById('bbody-' + id);
+  const exp = document.getElementById('bexp-' + id);
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  exp.classList.toggle('open', !isOpen);
+}
+
+function openBucket(id) {
+  const body = document.getElementById('bbody-' + id);
+  const exp = document.getElementById('bexp-' + id);
+  body.classList.add('open');
+  exp.classList.add('open');
+  const card = document.getElementById('bucket-' + id);
+  card.classList.add('highlighted');
+  setTimeout(() => card.classList.remove('highlighted'), 2500);
+  setTimeout(() => card.scrollIntoView({behavior:'smooth', block:'center'}), 100);
+}
+
+function diagnose() {
+  const q = document.getElementById('diag-input').value.toLowerCase().trim();
+  const result = document.getElementById('diag-result');
+  if (!q) {
+    result.innerHTML = '<div class="dr-hint">Type a keyword above — or browse all thirteen buckets below</div>';
+    showAllBuckets(); return;
+  }
+  if (KEYWORD_MAP[q]) {
+    const bucketId = KEYWORD_MAP[q];
+    const bucket = getBucketById(bucketId);
+    result.innerHTML = `<div class="dr-match" onclick="openBucket('${bucketId}')">✦ Bucket identified: ${bucket.name} — tap to jump ↓</div>`;
+    filterBuckets(bucketId, null);
+    setTimeout(() => openBucket(bucketId), 300); return;
+  }
+  for (const [kw, bucketId] of Object.entries(KEYWORD_MAP)) {
+    if (kw.includes(q) || q.includes(kw)) {
+      const bucket = getBucketById(bucketId);
+      result.innerHTML = `<div class="dr-match" onclick="openBucket('${bucketId}')">✦ Closest match: ${bucket.name} — tap to jump ↓</div>`;
+      filterBuckets(bucketId, null);
+      setTimeout(() => openBucket(bucketId), 300); return;
+    }
+  }
+  result.innerHTML = '<div class="dr-no-match">No match found — browse below or try another keyword</div>';
+  showAllBuckets();
+}
+
+function getBucketById(id) {
+  const buckets = [{"id":"personnel","icon":"👤","name":"Personnel Issue"},{"id":"conflict","icon":"⚡","name":"Conflict Resolution"},{"id":"ethics","icon":"⚖️","name":"Ethics & Integrity"},{"id":"leadership-philosophy","icon":"🧭","name":"Leadership Philosophy"},{"id":"change-management","icon":"🔄","name":"Change Management"},{"id":"development","icon":"📈","name":"Development & Mentoring"},{"id":"strategic","icon":"🏛️","name":"Strategic & Organizational"},{"id":"communication","icon":"🗣️","name":"Communication & Interpersonal"},{"id":"inbasket","icon":"📥","name":"In-Basket & Priority"},{"id":"team-building","icon":"🤝","name":"Team Building"},{"id":"operational-command","icon":"🚒","name":"Operational Command"},{"id":"ems-leadership","icon":"🚑","name":"EMS Leadership"},{"id":"safety-compliance","icon":"🛡️","name":"Safety & Compliance"}];
+  return buckets.find(b => b.id === id) || {};
+}
+
+function filterBuckets(id, btn) {
+  const cards = document.querySelectorAll('.bucket-card');
+  let visible = 0;
+  cards.forEach(card => {
+    const show = id === 'all' || card.dataset.id === id;
+    card.classList.toggle('hidden', !show);
+    if (show) visible++;
+  });
+  document.getElementById('empty-state').classList.toggle('hidden', visible > 0);
+  if (btn) {
+    document.querySelectorAll('.f-pill').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+  }
+}
+
+function showAllBuckets() {
+  document.querySelectorAll('.bucket-card').forEach(c => c.classList.remove('hidden'));
+  document.getElementById('empty-state').classList.add('hidden');
+  document.querySelectorAll('.f-pill').forEach((p, i) => p.classList.toggle('active', i === 0));
+}
+
+function clearDiag() {
+  document.getElementById('diag-input').value = '';
+  document.getElementById('diag-result').innerHTML = '<div class="dr-hint">Type a keyword above — or browse all thirteen buckets below</div>';
+  showAllBuckets();
+}
+
+document.getElementById('diag-input').addEventListener('keydown', e => {
+  if (e.key === 'Enter') diagnose();
+});
+</script>
+</body>
+</html>

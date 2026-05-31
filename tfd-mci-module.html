@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>TFD MCI Module — Mass Casualty &amp; Active Shooter Command | The Promotional Standard</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Crimson+Pro:wght@300;400;500;600&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --navy:#0C2340;--gold:#C9A84C;--gold-dim:#8B6914;--gold-light:#E4C97A;
+  --cream:#F5F0E8;--cream2:#EDE4D0;--offwhite:#F5F0E8;--light:#EAE5DC;
+  --on-dark-1:#F0E8D8;--on-dark-2:#C8DCF0;--on-dark-3:#98B8D0;
+  --on-light-1:#1A2E42;--on-light-2:#3A5068;--on-light-3:#6A7A8A;
+  --tfd:#1A3D2B;--tfd2:#2A5C3F;--tfd3:#0D2018;
+  --tfd-gold:#7ED8A0;--tfd-gold-dim:#3A8050;
+  --tfd-bg:rgba(26,61,43,0.18);--tfd-border:rgba(42,92,63,0.4);--tfd-text:#80D8A0;
+  --sentinel:#5C1A10;--sentinel2:#8C3020;--sentinel-text:#F0A080;--sentinel-bg:rgba(92,26,16,0.12);
+  --commander:#4A2A08;--commander2:#7A4A10;--commander-text:#E8C060;--commander-bg:rgba(74,42,8,0.12);
+  --emso:#1A3D2B;--emso2:#2A5C3F;--emso-text:#7ED8A0;--emso-bg:rgba(26,61,43,0.12);
+  --alert:#8B1A1A;--alert2:#C03030;--alert-text:#F08080;--alert-bg:rgba(139,26,26,0.12);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:var(--on-light-1);font-size:18px;line-height:1.8;}
+.top-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(13,32,24,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(126,216,160,0.25);height:68px;display:flex;align-items:center;padding:0 2rem;gap:1rem;}
+.nav-left{display:flex;align-items:center;gap:14px;flex:1;min-width:0;}
+.nav-brand{font-family:'Cinzel',serif;font-size:12px;letter-spacing:1.8px;color:var(--cream);line-height:1.3;white-space:nowrap;}
+.nav-brand span{display:block;font-size:8px;color:var(--tfd-gold);letter-spacing:2.5px;}
+.nav-divider{width:1px;height:28px;background:rgba(126,216,160,0.2);flex-shrink:0;}
+.nav-tfd-badge{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;background:var(--tfd-bg);border:1px solid var(--tfd-border);color:var(--tfd-text);padding:5px 11px;border-radius:4px;white-space:nowrap;}
+.nav-pills{display:flex;gap:4px;flex:2;justify-content:center;overflow-x:auto;scrollbar-width:none;}
+.nav-pills::-webkit-scrollbar{display:none;}
+.nav-pill{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;color:rgba(126,216,160,0.5);padding:7px 13px;border-radius:20px;cursor:pointer;transition:all .2s;border:1px solid transparent;background:transparent;white-space:nowrap;}
+.nav-pill:hover{color:var(--cream);background:rgba(255,255,255,.06);}
+.nav-pill.active{color:var(--tfd-gold);background:rgba(126,216,160,.12);border-color:rgba(126,216,160,.3);}
+.progress-bar{position:fixed;top:68px;left:0;height:3px;background:linear-gradient(90deg,var(--tfd2),var(--tfd-gold));z-index:199;width:0%;transition:width .15s;}
+.lesson-view{display:none;}.lesson-view.active{display:block;}
+.module-hero{background:linear-gradient(155deg,var(--tfd3) 0%,#0A1A12 40%,#1A0808 100%);padding:5rem 3rem 4rem;margin-top:68px;position:relative;overflow:hidden;border-bottom:3px solid var(--tfd-gold);}
+.module-hero::after{content:'';position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--tfd-gold),var(--tfd-gold-dim));}
+.hero-glow{position:absolute;right:-100px;top:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(140,48,32,.2) 0%,transparent 70%);pointer-events:none;}
+.mh-inner{max-width:920px;position:relative;z-index:2;}
+.mh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--tfd-gold);margin-bottom:.5rem;}
+.mh-track-badge{display:inline-flex;align-items:center;gap:6px;font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:2.5px;text-transform:uppercase;background:var(--tfd-bg);border:1px solid var(--tfd-border);color:var(--tfd-text);padding:5px 12px;border-radius:4px;margin-bottom:1.25rem;}
+.mh-title{font-family:'EB Garamond',serif;font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:800;color:var(--cream);line-height:1.08;margin-bottom:.85rem;}
+.mh-title em{font-style:italic;color:var(--tfd-gold);}
+.mh-sub{font-size:1.1rem;color:var(--on-dark-2);max-width:680px;line-height:1.75;margin-bottom:2rem;}
+.mh-thread{background:rgba(126,216,160,.07);border:1px solid rgba(126,216,160,.2);border-left:4px solid var(--tfd-gold);padding:1.1rem 1.6rem;max-width:680px;}
+.mh-thread-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--tfd-gold);margin-bottom:6px;}
+.mh-thread-text{font-size:.95rem;color:var(--cream2);line-height:1.7;}
+.lesson-container{display:grid;grid-template-columns:1fr 320px;gap:0;}
+.lesson-main{padding:3rem 3.5rem;border-right:1px solid var(--light);min-height:70vh;}
+.lesson-sidebar{padding:2rem 1.75rem;background:#EFF5F0;position:sticky;top:68px;height:calc(100vh - 68px);overflow-y:auto;}
+.lesson-header{margin-bottom:2.5rem;padding-bottom:1.75rem;border-bottom:2px solid var(--light);}
+.lh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--tfd-gold-dim);margin-bottom:.5rem;}
+.lh-track{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:2px;text-transform:uppercase;color:var(--tfd-text);background:var(--tfd-bg);border:1px solid var(--tfd-border);padding:3px 9px;border-radius:3px;display:inline-block;margin-bottom:.65rem;}
+.lh-title{font-family:'EB Garamond',serif;font-size:clamp(1.9rem,3vw,2.55rem);font-weight:800;color:var(--tfd);line-height:1.12;margin-bottom:.65rem;}
+.lh-title em{font-style:italic;color:var(--tfd-gold-dim);}
+.lh-meta{display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:.25rem;}
+.lh-meta-item{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--on-light-3);}
+.lesson-main h2{font-family:'EB Garamond',serif;font-size:1.75rem;font-weight:700;color:var(--tfd);margin:3rem 0 1rem;padding-bottom:.6rem;border-bottom:2px solid var(--light);}
+.lesson-main p{margin-bottom:1.35rem;color:var(--on-light-1);line-height:1.85;font-size:1rem;}
+.lesson-main ul{margin:0 0 1.35rem 1.6rem;color:var(--on-light-1);}
+.lesson-main li{margin-bottom:.65rem;line-height:1.75;}
+.lesson-main strong{color:var(--tfd);font-weight:600;}
+.callout{padding:1.5rem 1.75rem;margin:2.25rem 0;}
+.callout-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:.6rem;display:block;}
+.callout-tfd{background:rgba(26,61,43,.07);border-left:4px solid var(--tfd2);}
+.callout-tfd .callout-label{color:var(--tfd-gold-dim);}
+.callout-tfd p{color:var(--on-light-1);font-size:1rem;line-height:1.8;}
+.callout-gold{background:#FBF7E6;border-left:3px solid var(--gold);}
+.callout-gold .callout-label{color:var(--gold-dim);}
+.callout-gold p{color:#4A3A10;font-size:1rem;line-height:1.8;}
+.callout-alert{background:var(--alert-bg);border-left:4px solid var(--alert2);}
+.callout-alert .callout-label{color:var(--alert);}
+.callout-alert p{color:var(--on-light-1);font-size:1rem;line-height:1.8;}
+.callout-navy{background:var(--tfd3);border-left:4px solid var(--tfd-gold);}
+.callout-navy .callout-label{color:var(--tfd-gold);}
+.callout-navy p{color:var(--on-dark-1);font-size:1rem;line-height:1.8;}
+.infographic-wrap{background:var(--tfd3);border:1px solid rgba(126,216,160,.2);border-left:4px solid var(--tfd-gold);margin:2.25rem 0;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.3);}
+.ig-header{background:rgba(126,216,160,.07);padding:1.1rem 1.4rem 1rem;border-bottom:1px solid rgba(126,216,160,.15);}
+.ig-eyebrow{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:3px;text-transform:uppercase;color:var(--tfd-gold);display:block;margin-bottom:5px;}
+.ig-title{font-family:'EB Garamond',serif;font-size:1.3rem;font-weight:700;color:var(--cream);margin-bottom:4px;}
+.ig-sub{font-size:.97rem;color:var(--on-dark-2);line-height:1.65;}
+.ig-callout{margin:.6rem 1.4rem 1.1rem;padding:1rem 1.25rem;background:rgba(126,216,160,.07);border-left:3px solid var(--tfd-gold);font-size:.97rem;color:#7EC890;line-height:1.7;font-style:italic;}
+.data-table{width:100%;border-collapse:collapse;font-size:.95rem;}
+.data-table th{background:rgba(26,61,43,.6);color:var(--tfd-gold);padding:.65rem 1rem;text-align:left;font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;}
+.data-table td{padding:.7rem 1rem;border-bottom:1px solid rgba(126,216,160,.1);vertical-align:top;color:var(--on-dark-2);line-height:1.55;}
+.data-table td strong{color:var(--on-dark-1);}
+.data-table tr:nth-child(even) td{background:rgba(26,61,43,.15);}
+/* ROLE BANDS */
+.role-band{display:flex;align-items:center;gap:.75rem;padding:.6rem 1rem;margin:.5rem 0;border-radius:4px;font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;}
+.role-band.sam{background:var(--sentinel-bg);border-left:4px solid var(--sentinel2);color:var(--sentinel-text);}
+.role-band.emso{background:var(--emso-bg);border-left:4px solid var(--emso2);color:var(--emso-text);}
+.role-band.both{background:var(--commander-bg);border-left:4px solid var(--commander2);color:var(--commander-text);}
+/* MCI ALARM GRID */
+.alarm-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:rgba(126,216,160,.08);}
+.alarm-cell{background:var(--tfd3);padding:1rem .75rem;text-align:center;}
+.alarm-num{font-family:'Cinzel',serif;font-size:1.4rem;font-weight:700;margin-bottom:.3rem;}
+.alarm-cell:nth-child(1) .alarm-num{color:#7ED8A0;}
+.alarm-cell:nth-child(2) .alarm-num{color:#A8E060;}
+.alarm-cell:nth-child(3) .alarm-num{color:#E8C060;}
+.alarm-cell:nth-child(4) .alarm-num{color:#F0A040;}
+.alarm-cell:nth-child(5) .alarm-num{color:#F07040;}
+.alarm-cell:nth-child(6) .alarm-num{color:#F04040;}
+.alarm-pts{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1px;color:var(--on-dark-2);margin-bottom:.4rem;}
+.alarm-label{font-size:.85rem;color:var(--on-dark-3);line-height:1.4;}
+/* ZONE GRID */
+.zone-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:rgba(126,216,160,.08);}
+.zone-card{padding:1.25rem;background:var(--tfd3);}
+.zone-card.hot{border-top:4px solid #C03030;}
+.zone-card.warm{border-top:4px solid #C08030;}
+.zone-card.cold{border-top:4px solid var(--tfd-gold);}
+.zone-name{font-family:'Cinzel',serif;font-size:.9rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:.5rem;}
+.zone-card.hot .zone-name{color:#F08080;}
+.zone-card.warm .zone-name{color:#F0C080;}
+.zone-card.cold .zone-name{color:var(--tfd-gold);}
+.zone-def{font-size:.93rem;color:var(--on-dark-2);line-height:1.6;margin-bottom:.5rem;}
+.zone-who{font-size:.85rem;font-style:italic;}
+.zone-card.hot .zone-who{color:#F08080;}
+.zone-card.warm .zone-who{color:#F0C080;}
+.zone-card.cold .zone-who{color:var(--tfd-gold);}
+/* SIDEBAR */
+.sbar-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--tfd-gold-dim);margin-bottom:.7rem;margin-top:1.75rem;display:block;}
+.sbar-label:first-child{margin-top:0;}
+.sbar-card{background:white;border:1px solid #C8D8C0;border-radius:8px;padding:1rem 1.15rem;margin-bottom:8px;font-size:.93rem;color:var(--on-light-2);line-height:1.65;box-shadow:0 1px 4px rgba(0,0,0,.04);}
+.sbar-card strong{color:var(--tfd);display:block;margin-bottom:4px;font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;}
+.sbar-card.accent-tfd{border-left:3px solid var(--tfd2);background:#F0F8F2;}
+.sbar-card.accent-tfd strong{color:var(--tfd);}
+.sbar-card.accent-sam{border-left:3px solid var(--sentinel2);background:#FFF5F0;}
+.sbar-card.accent-sam strong{color:var(--sentinel);}
+.sbar-card.accent-emso{border-left:3px solid var(--emso2);background:#F0F8F2;}
+.sbar-card.accent-emso strong{color:var(--emso);}
+.sbar-card.accent-gold{border-left:3px solid var(--gold);}
+.sbar-card.accent-gold strong{color:var(--gold-dim);}
+.sbar-card.accent-red{border-left:3px solid #B22222;background:#FFF5F5;}
+.sbar-card.accent-red strong{color:#8B1A1A;}
+.lesson-nav-bar{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 3rem;border-top:2px solid var(--light);background:white;box-shadow:0 -2px 12px rgba(0,0,0,.07);}
+.lnb-btn{background:transparent;border:1.5px solid #C8D8C0;padding:12px 28px;font-family:'Cinzel',serif;font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;border-radius:6px;color:var(--on-light-2);transition:all .2s;min-width:160px;}
+.lnb-btn:hover:not(:disabled){border-color:var(--tfd-gold);color:var(--tfd-gold-dim);}
+.lnb-btn:disabled{opacity:.35;cursor:default;}
+.lnb-btn.primary{background:linear-gradient(135deg,var(--tfd) 0%,var(--tfd2) 100%);color:var(--tfd-gold);border-color:var(--tfd);box-shadow:0 3px 12px rgba(26,61,43,.3);}
+.lnb-btn.complete{background:linear-gradient(135deg,#1A5C3A 0%,#226644 100%);color:#80E0A0;border-color:#1A5C3A;cursor:default;}
+.lnb-info{text-align:center;}
+.lnb-name{font-family:'EB Garamond',serif;font-size:1rem;font-weight:600;color:var(--tfd);}
+.lnb-num{font-size:.78rem;color:var(--on-light-3);margin-top:2px;}
+.legal-disclaimer{margin:3rem 0 0;padding:1.25rem 1.5rem;background:#F0F5F0;border:1px solid #C8D8C0;border-top:3px solid var(--light);}
+.legal-disclaimer-label{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--on-light-3);margin-bottom:.5rem;display:block;}
+.legal-disclaimer p{font-size:.8rem!important;color:var(--on-light-3)!important;line-height:1.65!important;margin-bottom:0!important;font-style:italic;}
+@media(max-width:960px){.lesson-container{grid-template-columns:1fr;}.lesson-sidebar{position:relative;height:auto;}.alarm-grid{grid-template-columns:repeat(3,1fr);}.zone-grid{grid-template-columns:1fr;}}
+
+/* OB CARD */
+.ob-card{background:var(--navy);margin:2rem 0;overflow:hidden;}
+.ob-header{padding:0.85rem 1.5rem;background:rgba(201,168,76,0.08);border-bottom:1px solid rgba(201,168,76,0.15);}
+.ob-label{font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);}
+.ob-body{padding:1.25rem 1.5rem;}
+.ob-q{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;}
+.ob-q-tag{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);background:rgba(201,168,76,0.1);padding:4px 10px;border-radius:3px;white-space:nowrap;}
+.ob-q-text{font-family:'EB Garamond',serif;font-size:1.08rem;font-weight:600;color:var(--cream);line-height:1.5;margin-bottom:8px;}
+.ob-note{font-size:0.88rem;color:#8FA8C0;line-height:1.6;font-style:italic;}
+/* TAKEAWAYS */
+.takeaways{background:var(--navy);padding:2.25rem;margin:3rem 0 0;border-top:3px solid var(--gold);}
+.tk-lbl{font-family:'Cinzel',serif;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.tk-item{color:#8FA8C0;font-size:0.92rem;line-height:1.7;padding:0.5rem 0 0.5rem 1.25rem;border-left:2px solid rgba(201,168,76,0.2);margin-bottom:0.5rem;}
+
+
+.lead-nav{background:var(--navy);border-radius:8px;padding:14px 16px;margin-bottom:16px;border:1px solid rgba(201,168,76,0.2)}
+.lead-nav-header{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.lead-nav-row{display:grid;grid-template-columns:20px 1fr;gap:6px;margin-bottom:6px;align-items:start}
+.lead-nav-letter{font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:var(--gold)}
+.lead-nav-content{}
+.lead-nav-name{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:2px}
+.lead-nav-app{font-size:11px;color:#8FA8C0;line-height:1.5}
+
+.lf-wrap{margin:2.5rem 0 1.5rem;border:2px solid var(--gold);border-radius:10px;overflow:hidden}
+.lf-header{background:var(--navy);padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
+.lf-title{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+.lf-dots{display:flex;gap:6px}
+.lf-dot{width:8px;height:8px;border-radius:50%;background:rgba(201,168,76,0.25);transition:all 0.3s}
+.lf-dot.active{background:var(--gold);transform:scale(1.3)}
+.lf-dot.done{background:var(--gold)}
+.lf-step{display:none;padding:20px}
+.lf-step.active{display:block}
+.lf-step-num{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:6px}
+.lf-step-title{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:10px}
+.lf-chain{background:var(--navy);border-radius:6px;padding:14px 18px;margin:10px 0}
+.lf-chain-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.lf-chain-text{font-size:13px;color:#8FA8C0;line-height:1.6}
+.lf-chain-close{font-size:12px;color:var(--cream);margin-top:6px;font-style:italic}
+.lf-btn{background:var(--navy);color:var(--gold);border:2px solid var(--gold);padding:12px 24px;border-radius:6px;font-family:'Cinzel',serif;font-size:12px;letter-spacing:1.5px;font-weight:600;cursor:pointer;margin-top:12px;transition:all 0.2s;display:inline-block}
+.lf-btn:hover{background:var(--gold);color:var(--navy)}
+.lf-timer{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:var(--gold);padding:6px 14px;border-radius:4px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:1px;margin-top:10px}
+.lesson-main.ft>p{display:none!important}.lesson-main.ft>.callout{display:none!important}
+h3{font-family:'EB Garamond',serif;font-size:1.1rem;font-weight:700;color:var(--gold3);margin:1.5rem 0 0.5rem}
+.ft-toggle{display:flex;align-items:center;gap:10px;padding:10px 16px;background:var(--navy);border-radius:6px;cursor:pointer;border:1px solid rgba(201,168,76,0.25)}.ft-toggle-switch{width:36px;height:20px;background:rgba(201,168,76,0.2);border-radius:10px;position:relative;transition:background .2s}.ft-toggle-switch.on{background:var(--gold)}.ft-toggle-knob{width:14px;height:14px;background:#fff;border-radius:50%;position:absolute;top:3px;left:3px;transition:left .2s}.ft-toggle-switch.on .ft-toggle-knob{left:19px}.ft-toggle-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}.ft-toggle-desc{font-size:11px;color:var(--mid)}.lesson-main.ft-on>p,.lesson-main.ft-on>.callout,.lesson-main.ft-on h3{display:none!important}.lesson-main.ft-on .ob-card,.lesson-main.ft-on .lf-wrap,.lesson-main.ft-on .lead-nav,.lesson-main.ft-on h2{display:block!important}
+</style>
+</head>
+<body>
+<nav class="top-nav">
+  <div class="nav-left">
+    <div class="nav-brand">The Promotional Standard<span>Coaching Lab</span></div>
+    <div class="nav-divider"></div>
+    <div class="nav-tfd-badge">◆ TFD · MCI Module · Mass Casualty &amp; Active Shooter Command</div>
+  </div>
+  <div class="nav-pills">
+    <button class="nav-pill active" onclick="showLesson(0)">MCI Framework</button>
+    <button class="nav-pill" onclick="showLesson(1)">Active Shooter</button>
+    <button class="nav-pill" onclick="showLesson(2)">Command Roles</button>
+    <button class="nav-pill" onclick="showLesson(3)">RTF Operations</button>
+    <button class="nav-pill" onclick="showLesson(4)">Triage &amp; Transport</button>
+    <button class="nav-pill" onclick="showLesson(5)">Oral Board Application</button>
+  </div>
+</nav>
+<div class="progress-bar" id="prog"></div>
+<main>
+<div class="module-hero">
+  <div class="hero-glow"></div>
+  <div class="mh-inner">
+    <div class="mh-eyebrow">Thornton Fire Department · EMS Division · MCI Module</div>
+    <div class="mh-track-badge">◆ TFD Exclusive · Managing Officer Level · North Area SOG/SOP</div>
+    <h1 class="mh-title">Mass Casualty &amp; Active Shooter —<br><em>Command, Rescue &amp; Medical Operations</em></h1>
+    <p class="mh-sub">The MCI and Active Shooter environments are the most complex operational challenges in the North Area fire service. This module integrates the North Area MCI SOG and Active Shooter SOP into a command-level curriculum — built specifically for TFD EMSOs and SAMs who will be assigned to RTF, Rescue Group Supervisor, or Medical Group Supervisor roles when these incidents occur.</p>
+    <div class="mh-thread">
+      <div class="mh-thread-label">Module Thread</div>
+      <div class="mh-thread-text">Six lessons. The MCI alarm framework and size-up priorities. The Active Shooter SOP — zone architecture, Contact Teams, and RTF insertion. Command roles — Rescue Group Supervisor (SAM) and RTF Leader (EMSO). Rescue Task Force operations — assembly, warm zone insertion, sort/treat/extract. Triage and transport — team leadership, CCP management, hospital coordination. Oral board application — how assessors score MCI command scenarios and what separates 3/5 from 5/5 responses.</div>
+    </div>
+  </div>
+</div>
+<!-- ══════════ LESSON 1 — MCI FRAMEWORK ══════════ -->
+<div class="lesson-view active" id="lesson-0">
+<div class="lesson-container">
+<div class="lesson-main">
+<div class="lesson-header">
+  <div class="lh-eyebrow">MCI Module · Lesson 1 of 6</div>
+  <div class="lh-track">TFD · North Area MCI SOG · Foundation</div>
+  <h1 class="lh-title">The MCI Framework —<br><em>Alarm Scale, Size-Up &amp; Initial Priorities</em></h1>
+  <div class="lh-meta"><span class="lh-meta-item">⏱ 16 min</span><span class="lh-meta-item">📘 Foundation</span><span class="lh-meta-item">North Area SOG · Both Roles</span></div>
+</div>
+
+<p>A Mass Casualty Incident is not simply a large EMS call. It is a system-level event that overwhelms normal resource deployment and requires a fundamentally different operational framework — one built around providing the greatest good for the greatest number, not optimizing care for a single patient. The North Area MCI SOG exists precisely because improvising this framework under pressure produces inconsistent, slower, and less effective outcomes than having a practiced system in place before the incident occurs.</p>
+
+<p>For TFD EMSOs and SAMs, the MCI framework is not academic — it is the operational context in which your specific command roles (RTF member for EMSOs, Rescue Group Supervisor or Medical Group Supervisor for SAMs) will be assigned. Understanding the system you are operating inside is the prerequisite for executing your role within it.</p>
+
+<h2>The MCI Alarm Scale — North Area Standard</h2>
+<p>The North Area MCI SOG uses a standardized six-level alarm scale keyed to patient count. This allows dispatch to immediately deploy a calibrated resource package rather than improvising resource requests as the scope of the incident becomes clear.</p>
+
+<div class="infographic-wrap">
+  <div class="ig-header">
+    <span class="ig-eyebrow">◆ NORTH AREA MCI ALARM SCALE</span>
+    <div class="ig-title">Six Levels · Keyed to Patient Count · Standardized Deployment</div>
+    <div class="ig-sub">The IC declares the MCI Alarm level as soon as an approximate patient count is determined. Upgrading is expected — declare what you know, upgrade as the picture develops. Never delay declaration waiting for an exact count.</div>
+  </div>
+  <div class="alarm-grid">
+    <div class="alarm-cell"><div class="alarm-num">1</div><div class="alarm-pts">5–10 pts</div><div class="alarm-label">Local resources adequate with mutual aid monitoring</div></div>
+    <div class="alarm-cell"><div class="alarm-num">2</div><div class="alarm-pts">11–20 pts</div><div class="alarm-label">Mutual aid activated. Medical Group Supervisor assigned.</div></div>
+    <div class="alarm-cell"><div class="alarm-num">3</div><div class="alarm-pts">21–40 pts</div><div class="alarm-label">Regional resources activated. Unified Command established.</div></div>
+    <div class="alarm-cell"><div class="alarm-num">4</div><div class="alarm-pts">41–60 pts</div><div class="alarm-label">Multi-agency full activation. State resources requested.</div></div>
+    <div class="alarm-cell"><div class="alarm-num">5</div><div class="alarm-pts">61–100 pts</div><div class="alarm-label">Regional catastrophic. All available resources deployed.</div></div>
+    <div class="alarm-cell"><div class="alarm-num">6</div><div class="alarm-pts">100+ pts</div><div class="alarm-label">Mass casualty catastrophic. NIMS Type I/II activation.</div></div>
+  </div>
+  <div class="ig-callout">The MCI Alarm level determines the resource deployment package — not the quality of care delivered to individual patients. A correctly declared MCI Alarm 2 that gets resources on the road 8 minutes earlier saves more lives than a delayed declaration waiting for precision. Declare early, upgrade as needed.</div>
+</div>
+
+<h2>First-Arriving Officer Priorities — The Size-Up</h2>
+<p>The first-arriving Company Officer assumes Incident Command and sets the framework that every subsequent resource operates within. Errors made in the first three minutes of an MCI create cascading problems that persist throughout the incident. The North Area SOG establishes a clear priority sequence for the first-arriving IC:</p>
+
+<ul>
+  <li><strong>Declare the MCI and alarm level</strong> — as soon as approximate patient count is known. Do not wait for an exact number. Dispatch needs the declaration to begin the resource deployment package.</li>
+  <li><strong>Establish ingress and egress routes</strong> — designated and communicated on the radio immediately. Uncontrolled vehicle access to the scene is one of the most common MCI failure points. Route discipline from the first minute prevents gridlock that delays every subsequent transport.</li>
+  <li><strong>Assign Triage Team Leader and Transportation Team Leader</strong> — typically given to the crew of the first arriving medic unit. These positions provide continuity from first arrival through last patient transport.</li>
+  <li><strong>Establish Level 2 staging</strong> — incoming units stage away from the scene and await assignment. Self-deployment creates congestion and accountability gaps.</li>
+  <li><strong>Notify hospitals early</strong> — early EMSystem alert allows non-trauma centers to mobilize staff and potentially increase receiving capacity. A hospital notified at minute two has significantly more preparation time than one notified at minute twenty.</li>
+</ul>
+
+<h2>The Three Priorities — In Order</h2>
+<div class="callout callout-navy">
+  <span class="callout-label">North Area MCI SOG — Priority Sequence</span>
+  <p><strong>1. Life Safety</strong> — the safety of responders and the lives of viable victims. <strong>2. Incident Stabilization</strong> — establishing command, zones, resource deployment, and patient flow systems. <strong>3. Property and Crime Scene Preservation</strong> — evidence and scene integrity, after the first two are addressed. This sequence is non-negotiable. Responders who invert priorities — stopping to preserve crime scene evidence while viable victims are still in the warm zone — have made the wrong call regardless of their intent.</p>
+</div>
+
+<h2>The Risk Management Model</h2>
+<p>The North Area SOG codifies the fire service's foundational risk management principle for MCI operations: <em>"We will risk a lot to save a lot. We will risk little to save little. We will risk nothing to save what is already lost."</em></p>
+<p>In the MCI context this means: deploying RTFs into warm zones to reach viable victims (risk a lot to save a lot) is correct. Deploying RTFs into unsecured hot zones to reach non-viable victims (risk everything to save what is already lost) is not. The SAM as Rescue Group Supervisor makes this determination in real time in coordination with the Tactical Supervisor. The EMSO as RTF member executes within the zone boundaries the SAM establishes.</p>
+
+</div>
+<div class="lesson-sidebar">
+<div class="ft-toggle" onclick="toggleFT(this)" style="margin-bottom:16px;max-width:320px">
+<div class="ft-toggle-switch"><div class="ft-toggle-knob"></div></div>
+<div><div class="ft-toggle-label">Fast Track Mode</div><div class="ft-toggle-desc">Full lesson content</div></div>
+</div>
+
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Safety & Compliance + Operational Command</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">MCI Alarm Scale → START/SALT Triage → ICS Sector Assignments → CRM</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Size-up → assign sectors → communicate to Command → close with Discipline and Commitment</div></div></div></div>
+
+  <span class="sbar-label">MCI Alarm — Key Rules</span>
+  <div class="sbar-card accent-tfd"><strong>Declare Early, Upgrade As Needed</strong>Never delay declaration waiting for exact patient count. Declare what you know. The alarm level determines the resource package — get it on the road.</div>
+  <div class="sbar-card accent-gold"><strong>Alarm 6 = Most Severe</strong>NIMS Type I/II. State resources. Full regional activation.</div>
+  <span class="sbar-label">First-Arriving IC Priorities</span>
+  <div class="sbar-card"><strong>1</strong> Declare MCI + alarm level</div>
+  <div class="sbar-card"><strong>2</strong> Establish ingress/egress routes on radio</div>
+  <div class="sbar-card"><strong>3</strong> Assign Triage + Transport Team Leaders</div>
+  <div class="sbar-card"><strong>4</strong> Establish Level 2 staging</div>
+  <div class="sbar-card"><strong>5</strong> Notify hospitals via EMSystem early</div>
+  <span class="sbar-label">Priority Sequence</span>
+  <div class="sbar-card accent-tfd"><strong>1 — Life Safety · 2 — Stabilization · 3 — Crime Scene</strong>Non-negotiable. Never invert.</div>
+  <span class="sbar-label">Risk Management Model</span>
+  <div class="sbar-card accent-gold"><strong>Risk a lot to save a lot. Risk little to save little. Risk nothing to save what is already lost.</strong></div>
+  <span class="sbar-label">Role Note</span>
+  <div class="sbar-card accent-sam"><strong>SAM</strong>Rescue Group Supervisor or Medical Group Supervisor. Division-level command function.</div>
+  <div class="sbar-card accent-emso"><strong>EMSO</strong>RTF assignment. Station-level execution within zones SAM establishes.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — The MCI Framework</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">TFD</span><div><div class="ob-q-text">"You are given a scenario that requires knowledge of the mci framework. How do you structure your response?"</div><div class="ob-note">Use LEAD: Label this as a Mci Module question. Engage the specific framework from this lesson — name it explicitly. Address impact at both the immediate and organizational level. Drive to a specific first action.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 1 — Key Takeaways</div>
+  <div class="tk-item">The MCI Alarm Scale — North Area Standard — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">First-Arriving Officer Priorities — The Size-Up — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Mci Module question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Safety & Compliance + Operational Command</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">MCI Alarm Scale → START/SALT Triage → ICS Sector Assignments → CRM</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Size-up → assign sectors → communicate to Command → close with Discipline and Commitment</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" disabled>← Start</button>
+  <div class="lnb-info"><div class="lnb-name">The MCI Framework</div><div class="lnb-num">Lesson 1 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Active Shooter →</button>
+</div>
+</div>
+<!-- ══════════ LESSON 2 — ACTIVE SHOOTER ══════════ -->
+<div class="lesson-view" id="lesson-1">
+<div class="lesson-container">
+<div class="lesson-main">
+<div class="lesson-header">
+  <div class="lh-eyebrow">MCI Module · Lesson 2 of 6</div>
+  <div class="lh-track">TFD · North Area Active Shooter SOP · Zone Architecture</div>
+  <h1 class="lh-title">Active Shooter Operations —<br><em>Zone Architecture, Contact Teams &amp; RTF Insertion</em></h1>
+  <div class="lh-meta"><span class="lh-meta-item">⏱ 20 min</span><span class="lh-meta-item">📘 Active Shooter SOP</span><span class="lh-meta-item">Hot/Warm/Cold · RTF · TOC · Both Roles</span></div>
+</div>
+
+<p>The Active Shooter–Mass Casualty Incident is the highest-complexity scenario in the North Area first responder operational environment. It merges tactical law enforcement operations, mass casualty medical management, and multi-agency unified command simultaneously — in an environment where zones are dynamic, information is incomplete, and the cost of a wrong decision is measured in lives.</p>
+
+<p>The North Area Active Shooter SOP (adopted October 13, 2016, Adams and Broomfield Counties) establishes the operational framework that governs how TFD personnel operate in these incidents. For EMSOs and SAMs, the SOP defines specific roles — not general participation, but specific assignments with specific authority and specific boundaries.</p>
+
+<h2>Zone Architecture — The Operational Foundation</h2>
+<p>All active shooter operations are organized around three zones established and maintained by law enforcement. Fire and EMS personnel never establish zones — they operate within zones law enforcement defines. Understanding zone boundaries, how they change, and what operations are authorized in each zone is the foundational knowledge for every RTF assignment.</p>
+
+<div class="infographic-wrap">
+  <div class="ig-header">
+    <span class="ig-eyebrow">◆ NORTH AREA ACTIVE SHOOTER — ZONE ARCHITECTURE</span>
+    <div class="ig-title">Hot · Warm · Cold — Who Sets Them and What Happens In Each</div>
+    <div class="ig-sub">Zones are established by law enforcement. They are dynamic — a warm zone can become a hot zone without warning. The SAM as Rescue Group Supervisor monitors zone status continuously. RTFs never self-deploy into warm zones — they are inserted by the Rescue Group Supervisor at the direction of the Tactical Supervisor.</div>
+  </div>
+  <div class="zone-grid">
+    <div class="zone-card hot">
+      <div class="zone-name">🔴 Hot Zone</div>
+      <div class="zone-def">Known hazard or immediate life threat. Active suspect engagement area. Uncontrolled access for additional victims. Areas with confirmed or suspected IEDs.</div>
+      <div class="zone-who">Fire/EMS: No entry under any circumstances. Contact Teams (law enforcement) only.</div>
+    </div>
+    <div class="zone-card warm">
+      <div class="zone-name">🟡 Warm Zone</div>
+      <div class="zone-def">Law enforcement has cleared and is maintaining security. Minimal/mitigated risk — potential threat exists but is not direct and immediate. This is where RTFs operate to sort, treat, and extract victims.</div>
+      <div class="zone-who">RTFs: Entry only at direction of Rescue Group Supervisor. Law enforcement security escorts required at all times.</div>
+    </div>
+    <div class="zone-card cold">
+      <div class="zone-name">🟢 Cold Zone</div>
+      <div class="zone-def">No significant danger or threat reasonably anticipated. Incident Command Post, MCI area, Triage/Treatment/Transport, staging. Personnel operate without direct security.</div>
+      <div class="zone-who">All fire/EMS personnel not assigned to RTFs operate here. Medical Group Supervisor and Rescue Group Supervisor co-locate at ICP/TOC.</div>
+    </div>
+  </div>
+  <div class="ig-callout">Zone status changes without announcement. An RTF operating in a warm zone can find themselves in a hot zone if the tactical situation deteriorates. The law enforcement RTF Leader is responsible for RTF safety — fire personnel never separate from their law enforcement escort regardless of what they observe. Line-of-sight security is the minimum standard. If the escort leaves, the RTF leaves.</div>
+</div>
+
+<h2>The Tactical Operations Center — Where SAM and Law Enforcement Connect</h2>
+<p>The TOC is operated by law enforcement (Tactical Supervisor) and is the location where the Fire Rescue Group Supervisor co-locates to coordinate RTF operations. For the SAM assigned as Rescue Group Supervisor, the TOC is the operational center of gravity — this is where zone status is confirmed, RTF assignments are made, and victim location intelligence is received and acted upon.</p>
+
+<div class="callout callout-tfd">
+  <span class="callout-label">SAM at the TOC — The Rescue Group Supervisor Function</span>
+  <p>The Rescue Group Supervisor reports to the TOC at the direction of the Tactical Supervisor. The request comes through Dispatch. Upon arrival: identify the Tactical Supervisor, establish communication on the designated fire channel, confirm warm zone boundaries and entry points, and begin assembling and briefing RTFs. A scribe should be assigned to the Rescue Group Supervisor when available — the information flow at the TOC is too high to manage without documentation support.</p>
+</div>
+
+<h2>Contact Teams — What Fire/EMS Needs to Know</h2>
+<p>Contact Teams are law enforcement units whose sole objective is to locate and neutralize the suspect. Fire/EMS personnel never join Contact Teams. What EMSOs and SAMs need to know about Contact Teams is operational context — understanding what law enforcement is doing enables better coordination at the RTF insertion point.</p>
+<ul>
+  <li>Contact Teams move toward the threat using clockwise movement direction when threat location is unknown — this creates predictable movement patterns that reduce blue-on-blue risk</li>
+  <li>Contact Teams bypass non-life-threatening victims during suspect pursuit — they gather victim location intelligence and pass it to the TOC, which the Rescue Group Supervisor uses to assign RTF extraction priorities</li>
+  <li>First-responding fire personnel should monitor the law enforcement primary radio channel en route — victim numbers, locations, and hazard intelligence flows on that channel before the TOC is established</li>
+  <li>Secondary responding officers operate under the Rule of Ten — after ten minutes, law enforcement self-deployment into the operational area is controlled. Fire/EMS units should also avoid self-deployment and report to designated staging</li>
+</ul>
+
+<h2>RTF Insertion — The Critical Transition</h2>
+<p>Rescue Task Force insertion into the warm zone is the most consequential decision the Rescue Group Supervisor makes. The insertion decision requires confirmation of three things from the Tactical Supervisor before any RTF moves:</p>
+<ul>
+  <li><strong>Warm zone confirmed</strong> — law enforcement has cleared and is maintaining security of the insertion area</li>
+  <li><strong>Entry point identified</strong> — the specific entry point the RTF will use, communicated to the RTF Leader before deployment</li>
+  <li><strong>Victim location intelligence</strong> — where are the viable victims the RTF is being sent to reach</li>
+</ul>
+
+<div class="callout callout-alert">
+  <span class="callout-label">RTF Insertion — What Can Go Wrong</span>
+  <p>The most common RTF failure mode: deploying before warm zone confirmation because the operational pressure to "do something" feels overwhelming when viable victims are known to be injured and waiting. The Rescue Group Supervisor who inserts an RTF into an unconfirmed zone has put fire personnel in a hot zone without law enforcement security. That decision — however well-intentioned — can produce fire casualties on top of civilian casualties. Wait for the three confirmations. Every time.</p>
+</div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Safety & Compliance + Operational Command</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">MCI Alarm Scale → START/SALT Triage → ICS Sector Assignments → CRM</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Size-up → assign sectors → communicate to Command → close with Discipline and Commitment</div></div></div></div>
+
+  <span class="sbar-label">Zone Rules</span>
+  <div class="sbar-card accent-red"><strong>Hot Zone</strong>No fire/EMS entry. Law enforcement Contact Teams only. No exceptions.</div>
+  <div class="sbar-card accent-gold"><strong>Warm Zone</strong>RTF entry only at RGS direction. Law enforcement escort required. Never self-deploy.</div>
+  <div class="sbar-card accent-tfd"><strong>Cold Zone</strong>ICP, MCI area, staging. SAM/RGS co-located at TOC here.</div>
+  <span class="sbar-label">SAM at the TOC</span>
+  <div class="sbar-card accent-sam"><strong>Rescue Group Supervisor</strong>Co-locate with Tactical Supervisor. Confirm zones + entry points. Assemble + brief RTFs. Assign scribe if available.</div>
+  <span class="sbar-label">RTF Insertion — 3 Confirmations</span>
+  <div class="sbar-card"><strong>1</strong> Warm zone confirmed by law enforcement</div>
+  <div class="sbar-card"><strong>2</strong> Entry point identified and communicated</div>
+  <div class="sbar-card"><strong>3</strong> Victim location intelligence received</div>
+  <div class="sbar-card accent-red"><strong>Never insert before all three. Pressure is not confirmation.</strong></div>
+  <span class="sbar-label">EMSO as RTF Member</span>
+  <div class="sbar-card accent-emso"><strong>Never separate from law enforcement escort. If escort leaves — RTF leaves. Line-of-sight security minimum standard.</strong></div>
+  <span class="sbar-label">En Route Intelligence</span>
+  <div class="sbar-card accent-gold"><strong>Monitor law enforcement primary channel en route. Victim numbers, locations, and hazard intelligence flows there before TOC is established.</strong></div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Active Shooter Operations</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">TFD</span><div><div class="ob-q-text">"You are given a scenario that requires knowledge of active shooter operations. How do you structure your response?"</div><div class="ob-note">Use LEAD: Label this as a Mci Module question. Engage the specific framework from this lesson — name it explicitly. Address impact at both the immediate and organizational level. Drive to a specific first action.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 2 — Key Takeaways</div>
+  <div class="tk-item">Zone Architecture — The Operational Foundation — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">The Tactical Operations Center — Where SAM and Law Enforceme — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Mci Module question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Safety & Compliance + Operational Command</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">MCI Alarm Scale → START/SALT Triage → ICS Sector Assignments → CRM</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Size-up → assign sectors → communicate to Command → close with Discipline and Commitment</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← MCI Framework</button>
+  <div class="lnb-info"><div class="lnb-name">Active Shooter Operations</div><div class="lnb-num">Lesson 2 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Command Roles →</button>
+</div>
+</div>
+
+<!-- ══════════ LESSON 3 — COMMAND ROLES ══════════ -->
+<div class="lesson-view" id="lesson-2">
+<div class="lesson-container">
+<div class="lesson-main">
+<div class="lesson-header">
+  <div class="lh-eyebrow">MCI Module · Lesson 3 of 6</div>
+  <div class="lh-track">TFD · Command Architecture · SAM + EMSO Roles</div>
+  <h1 class="lh-title">Command Roles —<br><em>Rescue Group Supervisor (SAM) &amp; RTF Leader (EMSO)</em></h1>
+  <div class="lh-meta"><span class="lh-meta-item">⏱ 18 min</span><span class="lh-meta-item">📘 Command Architecture</span><span class="lh-meta-item">RGS · RTF Leader · Medical Group Supervisor</span></div>
+</div>
+
+<p>The North Area SOP establishes specific command roles for fire/EMS personnel in active shooter and MCI operations. For TFD's EMS Division, those roles map directly to the EMSO and SAM architecture — the SAM's Commander capacity becomes the Rescue Group Supervisor or Medical Group Supervisor function, and the EMSO's operational execution becomes the RTF deployment role. Understanding these assignments before the incident occurs is what separates officers who step into command roles fluidly from officers who have to be oriented to their function while viable victims are waiting.</p>
+
+<h2>The SAM — Two Possible Command Assignments</h2>
+<div class="infographic-wrap">
+  <div class="ig-header">
+    <span class="ig-eyebrow">◆ SAM COMMAND ASSIGNMENTS — MCI/ACTIVE SHOOTER</span>
+    <div class="ig-title">Rescue Group Supervisor · Medical Group Supervisor</div>
+    <div class="ig-sub">Assignment depends on incident type and IC direction. Active Shooter = Rescue Group Supervisor is the primary assignment. Pure MCI without active threat = Medical Group Supervisor is more likely. A SAM may be assigned to either — know both.</div>
+  </div>
+  <div style="padding:.5rem 1rem 1rem;">
+    <table class="data-table">
+      <thead><tr><th>Assignment</th><th>Location</th><th>Reports To</th><th>Primary Function</th><th>Key Actions</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Rescue Group Supervisor</strong></td>
+          <td>Tactical Operations Center (co-located with Tactical Supervisor)</td>
+          <td>Fire Incident Commander</td>
+          <td>Coordinate and account for all RTFs. Control warm zone insertion and extraction operations.</td>
+          <td>Confirm warm zones. Brief RTFs before insertion. Track RTF locations and assignments. Coordinate victim extraction to CCP. Assign scribe. Radio designator: Rescue Supervisor.</td>
+        </tr>
+        <tr>
+          <td><strong>Medical Group Supervisor</strong></td>
+          <td>Incident Command Post (cold zone)</td>
+          <td>Fire Incident Commander</td>
+          <td>Ensure Triage, Treatment, and Transportation functions are established and coordinated.</td>
+          <td>Assign Triage, Treatment, and Transport Team Leaders. Monitor patient flow from CCP to MCI area. Coordinate hospital notifications. Manage Medical Branch as incident expands.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="ig-callout">The Rescue Group Supervisor and Medical Group Supervisor are distinct roles — not the same person. On larger incidents both positions are filled simultaneously. The SAM who understands both functions and can articulate the difference in an oral board scenario is demonstrating exactly the division-level thinking the Managing Officer role requires.</div>
+</div>
+
+<h2>The EMSO — RTF Assignment</h2>
+<p>The EMSO is the station-level operational resource in an MCI/active shooter response. In most TFD deployments, the EMSO will be assigned to a Rescue Task Force — either as a fire/EMS member providing medical care within the warm zone, or as the RTF's fire-side leader directing systematic victim search and treatment operations.</p>
+
+<div class="callout callout-tfd">
+  <span class="callout-label">EMSO in the RTF — The Role of Fire Direction</span>
+  <p>The North Area SOP makes an important distinction: while the RTF Leader is law enforcement (responsible for team safety), radio operations and the direction of systematic victim searches are best performed by fire personnel. The EMSO in an RTF is the clinical and search direction resource — directing the team through the victim search pattern, managing bleeding control interventions, and communicating victim status back to the Rescue Group Supervisor. The EMSO does not command the RTF's security posture — that is law enforcement's function.</p>
+</div>
+
+<h2>Unified Command — How the Whole System Connects</h2>
+<p>As incidents expand, law enforcement and fire establish Unified Command at the ICP in the cold zone. The Fire Battalion Chief or senior command officer represents fire in Unified Command. The SAM's Rescue Group Supervisor role feeds into this structure — reporting to the Fire IC, who reports through Unified Command.</p>
+
+<div class="infographic-wrap">
+  <div class="ig-header">
+    <span class="ig-eyebrow">◆ COMMAND ARCHITECTURE — TFD EMS ROLES IN CONTEXT</span>
+    <div class="ig-title">Where SAM and EMSO Fit in the Full ICS Structure</div>
+  </div>
+  <div style="padding:.5rem 1rem 1rem;">
+    <table class="data-table">
+      <thead><tr><th>ICS Level</th><th>Position</th><th>TFD Role</th><th>Function</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Unified Command</strong></td><td>Fire Incident Commander</td><td>Battalion Chief</td><td>Strategic direction. Resource requests. Media. Unified Command with Law Enforcement IC.</td></tr>
+        <tr><td><strong>Command Staff</strong></td><td>Rescue Group Supervisor</td><td>SAM</td><td>RTF coordination, warm zone operations, victim extraction accountability. Reports to Fire IC.</td></tr>
+        <tr><td><strong>Command Staff</strong></td><td>Medical Group Supervisor</td><td>SAM (larger incidents)</td><td>Triage, Treatment, Transport coordination. Hospital notifications. Reports to Fire IC.</td></tr>
+        <tr><td><strong>Operations</strong></td><td>RTF Member / Fire Direction</td><td>EMSO</td><td>Warm zone victim search, TECC interventions, victim status reporting. Reports to RGS.</td></tr>
+        <tr><td><strong>Operations</strong></td><td>CCP Supervisor</td><td>Company Officer</td><td>CCP management, victim tracking, shuttle coordination. Reports to RGS.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Safety & Compliance + Operational Command</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">MCI Alarm Scale → START/SALT Triage → ICS Sector Assignments → CRM</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Size-up → assign sectors → communicate to Command → close with Discipline and Commitment</div></div></div></div>
+
+  <span class="sbar-label">SAM — Two Assignments</span>
+  <div class="sbar-card accent-sam"><strong>Rescue Group Supervisor</strong>TOC co-location. RTF coordination. Warm zone insertion control. Radio: Rescue Supervisor.</div>
+  <div class="sbar-card accent-sam"><strong>Medical Group Supervisor</strong>ICP cold zone. Triage/Treatment/Transport oversight. Hospital coordination.</div>
+  <div class="sbar-card accent-gold"><strong>Know Both</strong>Assignment depends on IC direction and incident type. A SAM who only knows one is prepared for half the scenarios.</div>
+  <span class="sbar-label">EMSO — RTF Assignment</span>
+  <div class="sbar-card accent-emso"><strong>Fire Direction in the RTF</strong>Systematic victim search direction. TECC interventions. Victim status to RGS. Law enforcement leads security — EMSO leads medical/search.</div>
+  <span class="sbar-label">ICS Reporting Chain</span>
+  <div class="sbar-card"><strong>RTF (EMSO) → Rescue Group Supervisor (SAM) → Fire IC (Battalion Chief) → Unified Command</strong></div>
+  <span class="sbar-label">Scribe Rule</span>
+  <div class="sbar-card accent-tfd"><strong>Assign a scribe to the RGS when available. The information flow at the TOC cannot be managed without documentation support.</strong></div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Command Roles</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">TFD</span><div><div class="ob-q-text">"Multiple victims are reported in a structure fire. How do you prioritize rescue operations?"</div><div class="ob-note">Name the rescue priority framework. Show how you balance victim savability against crew risk. The assessor is scoring your decision-making criteria, not just your decision.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 3 — Key Takeaways</div>
+  <div class="tk-item">The SAM — Two Possible Command Assignments — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">The EMSO — RTF Assignment — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Mci Module question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Safety & Compliance + Operational Command</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">MCI Alarm Scale → START/SALT Triage → ICS Sector Assignments → CRM</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Size-up → assign sectors → communicate to Command → close with Discipline and Commitment</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Active Shooter</button>
+  <div class="lnb-info"><div class="lnb-name">Command Roles</div><div class="lnb-num">Lesson 3 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">RTF Operations →</button>
+</div>
+</div>
+<!-- ══════════ LESSON 4 — RTF OPERATIONS ══════════ -->
+<div class="lesson-view" id="lesson-3">
+<div class="lesson-container">
+<div class="lesson-main">
+<div class="lesson-header">
+  <div class="lh-eyebrow">MCI Module · Lesson 4 of 6</div>
+  <div class="lh-track">TFD · RTF Assembly · Warm Zone Operations · TECC</div>
+  <h1 class="lh-title">RTF Operations —<br><em>Assembly, Insertion, Sort/Treat/Extract &amp; TECC</em></h1>
+  <div class="lh-meta"><span class="lh-meta-item">⏱ 18 min</span><span class="lh-meta-item">📘 RTF Operations · EMSO Primary</span><span class="lh-meta-item">TECC · CCP · Extraction</span></div>
+</div>
+
+<p>The Rescue Task Force is the operational unit that bridges the tactical law enforcement environment and the medical management environment. It is where the EMSO's training, clinical skills, and forward operating capability come together in the most demanding operational context the North Area fire service faces. Understanding RTF assembly, warm zone operations, and the sort/treat/extract mission sequence is the practical knowledge that determines whether an EMSO functions effectively or freezes when assigned.</p>
+
+<h2>RTF Composition and Assembly</h2>
+<p>Each RTF is composed of a minimum of two law enforcement officers and a minimum of two firefighters (maximum four firefighters). One law enforcement officer is designated the RTF Leader — responsible for team safety, security posture, and radio communication to the TOC. Fire personnel direct the medical and victim search operations.</p>
+
+
+<h3>Before insertion</h3>
+<p>Before insertion, every RTF receives a briefing from the Rescue Group Supervisor that covers:</p>
+<ul>
+  <li>Assignment type — Sort and Treat, or Extraction (not both unless victim count is low or warm zone is very small)</li>
+  <li>Warm zone entry point and boundaries</li>
+  <li>Known victim locations and approximate count</li>
+  <li>CCP location for extraction handoff</li>
+  <li>Radio channel and reporting expectations</li>
+  <li>Current tactical situation — where Contact Teams are operating</li>
+</ul>
+
+<h2>The Two RTF Missions</h2>
+<div class="infographic-wrap">
+  <div class="ig-header">
+    <span class="ig-eyebrow">◆ RTF MISSION TYPES — NORTH AREA SOP</span>
+    <div class="ig-title">Sort &amp; Treat · Extraction · When One RTF Does Both</div>
+  </div>
+  <div style="padding:.5rem 1rem 1rem;">
+    <table class="data-table">
+      <thead><tr><th>Mission</th><th>What the RTF Does</th><th>TECC Interventions</th><th>When Assigned</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Sort &amp; Treat</strong></td>
+          <td>Systematically locate victims, assess viability, provide minimal bleeding control, mark viable victims for extraction. Continue identifying and treating until out of victims or supplies.</td>
+          <td>Airway repositioning. Tourniquets. Wound packing. Occlusive/chest seals. No ALS interventions during this phase.</td>
+          <td>When victim count and warm zone size require dedicated sorting before extraction can begin.</td>
+        </tr>
+        <tr>
+          <td><strong>Extraction</strong></td>
+          <td>Remove viable victims identified by Sort &amp; Treat RTFs to the CCP. No patient treatment during extraction — movement only.</td>
+          <td>None during extraction phase. Treatment resumes at CCP.</td>
+          <td>When Sort &amp; Treat RTFs have identified and stabilized victims and CCP is established.</td>
+        </tr>
+        <tr>
+          <td><strong>Combined (Low Victim Count)</strong></td>
+          <td>RTF performs both sort/treat and extraction when victim count is small or warm zone is very limited in size.</td>
+          <td>Same as Sort &amp; Treat — minimal bleeding control per TECC before extraction.</td>
+          <td>When RGS determines victim count and zone size make combined mission appropriate.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="ig-callout">TECC (Tactical Emergency Casualty Care) is the clinical framework for warm zone medical operations. Interventions are deliberately limited to life-saving bleeding control — not comprehensive ALS assessment. The goal is to stop the dying, mark the victim, and extract them to where comprehensive care can happen safely. An RTF member who attempts full ALS management in the warm zone has extended the team's exposure and delayed extraction of every other viable victim.</div>
+</div>
+
+<h2>Non-Viable vs. Viable Victims</h2>
+<p>RTF Sort personnel make rapid viability determinations under the North Area SOP definitions:</p>
+<ul>
+  <li><strong>Viable (Injured)</strong> — injured, injuries likely survivable, cannot self-extricate. Mark and prioritize for extraction.</li>
+  <li><strong>Non-Viable (Deceased/Expectant)</strong> — pulseless with no respirations after airway repositioning, or obvious signs of death. Do not disturb for crime scene documentation unless necessary to access viable victims.</li>
+  <li><strong>Non-Injured</strong> — direct to shelter-in-place or evacuate as directed by law enforcement RTF Leader.</li>
+</ul>
+
+<h2>The CCP — Handoff and Accountability</h2>
+<p>The Casualty Collection Point is the transition point between warm zone operations and cold zone medical management. RTFs extract viable victims to the CCP where the CCP Supervisor receives them, records their arrival, and coordinates their movement to the MCI Treatment Area via shuttle or direct ambulance transport.</p>
+
+<div class="callout callout-tfd">
+  <span class="callout-label">CCP Standards — North Area SOP</span>
+  <p>Minimum two firefighters and two law enforcement at every CCP. One firefighter designated CCP Supervisor — radio designator CCP. CCP location confirmed by Tactical Supervisor and Rescue Group Supervisor at the TOC based on victim locations and operability. Preferred location: close to victims, providing cover, with shuttle and ambulance access. Mass Violence Response Kits staged at CCPs for RTF resupply. Multiple CCPs may be established if incident scope requires.</p>
+</div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Safety & Compliance + Operational Command</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">MCI Alarm Scale → START/SALT Triage → ICS Sector Assignments → CRM</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Size-up → assign sectors → communicate to Command → close with Discipline and Commitment</div></div></div></div>
+
+  <span class="sbar-label">RTF Composition</span>
+  <div class="sbar-card accent-tfd"><strong>Minimum: 2 LE + 2 Fire. Maximum: 4 Fire.</strong>LE RTF Leader = safety/security/radio. Fire = medical direction + victim search.</div>
+  <span class="sbar-label">Pre-Insertion Brief</span>
+  <div class="sbar-card"><strong>Assignment type · Entry point · Victim locations · CCP location · Radio channel · Tactical situation</strong>Every RTF gets this brief from RGS before insertion. No exceptions.</div>
+  <span class="sbar-label">TECC — Warm Zone Interventions</span>
+  <div class="sbar-card accent-emso"><strong>Airway repositioning · Tourniquets · Wound packing · Occlusive/chest seals</strong>Stop the dying. Mark. Extract. No comprehensive ALS in the warm zone.</div>
+  <span class="sbar-label">Victim Categories</span>
+  <div class="sbar-card accent-tfd"><strong>Viable</strong>Injured, survivable, cannot self-extricate. Mark. Prioritize extraction.</div>
+  <div class="sbar-card accent-red"><strong>Non-Viable</strong>Pulseless, no respirations after airway repositioning. Do not disturb for crime scene unless blocking viable victim access.</div>
+  <div class="sbar-card"><strong>Non-Injured</strong>Shelter-in-place or evacuate per LE RTF Leader direction.</div>
+  <span class="sbar-label">CCP Standard</span>
+  <div class="sbar-card accent-gold"><strong>Min 2 Fire + 2 LE · CCP Supervisor designated · Location confirmed by RGS + Tactical Supervisor · Mass Violence Kits staged here</strong></div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — RTF Operations</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">TFD</span><div><div class="ob-q-text">"You are given a scenario that requires knowledge of rtf operations. How do you structure your response?"</div><div class="ob-note">Use LEAD: Label this as a Mci Module question. Engage the specific framework from this lesson — name it explicitly. Address impact at both the immediate and organizational level. Drive to a specific first action.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 4 — Key Takeaways</div>
+  <div class="tk-item">RTF Composition and Assembly — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">The Two RTF Missions — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Mci Module question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Safety & Compliance + Operational Command</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">MCI Alarm Scale → START/SALT Triage → ICS Sector Assignments → CRM</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Size-up → assign sectors → communicate to Command → close with Discipline and Commitment</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Command Roles</button>
+  <div class="lnb-info"><div class="lnb-name">RTF Operations</div><div class="lnb-num">Lesson 4 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Triage &amp; Transport →</button>
+</div>
+</div>
+
+<!-- ══════════ LESSON 5 — TRIAGE & TRANSPORT ══════════ -->
+<div class="lesson-view" id="lesson-4">
+<div class="lesson-container">
+<div class="lesson-main">
+<div class="lesson-header">
+  <div class="lh-eyebrow">MCI Module · Lesson 5 of 6</div>
+  <div class="lh-track">TFD · Medical Operations · Triage · Transport · Hospital Coordination</div>
+  <h1 class="lh-title">Triage &amp; Transport —<br><em>Team Leadership, CCP Management &amp; Hospital Coordination</em></h1>
+  <div class="lh-meta"><span class="lh-meta-item">⏱ 16 min</span><span class="lh-meta-item">📘 Medical Operations · Both Roles</span><span class="lh-meta-item">Triage Team Leader · Transport Team Leader · EMSystem</span></div>
+</div>
+
+<p>The Triage and Transport functions are the medical management backbone of every MCI — the system that determines which patients get transported first, to which hospitals, by which units, in what order. Breakdowns in triage and transport management are the most common reason MCIs produce preventable deaths after viable victims have been successfully extracted from the warm zone. Getting patients out of the warm zone is only the beginning. Getting them to definitive care efficiently is the system that saves them.</p>
+
+<h2>Triage Team Leader — Priorities and Responsibilities</h2>
+<p>The Triage Team Leader position must be filled as early as possible — typically by the first arriving medic unit crew. The objective is rapid scope identification: how many victims, how severe, what resources are needed.</p>
+
+<div class="infographic-wrap">
+  <div class="ig-header">
+    <span class="ig-eyebrow">◆ TRIAGE TEAM LEADER — NORTH AREA MCI SOG</span>
+    <div class="ig-title">Five Priorities in Sequence</div>
+  </div>
+  <div style="padding:.5rem 1rem 1rem;">
+    <table class="data-table">
+      <thead><tr><th>#</th><th>Priority</th><th>How</th></tr></thead>
+      <tbody>
+        <tr><td><strong>1</strong></td><td><strong>Rapid triage — Immediate vs. Delayed</strong></td><td>Using local EMS protocols and RETAC guidelines. When victims are concentrated — TTL can triage directly. When scattered — organize a team to move victims to CCP first.</td></tr>
+        <tr><td><strong>2</strong></td><td><strong>Designate transport order</strong></td><td>Communicate Immediate patients to Transport Team Leader first. Identify patients requiring air transport or specialty resources.</td></tr>
+        <tr><td><strong>3</strong></td><td><strong>Assign personnel to patient care</strong></td><td>Sufficient personnel assigned to provide care while patients await transportation. TTL maintains triage oversight — not individual patient care.</td></tr>
+        <tr><td><strong>4</strong></td><td><strong>Coordinate with Transportation Team Leader</strong></td><td>Continuous communication — patient count, severity, transport order, special resource needs.</td></tr>
+        <tr><td><strong>5</strong></td><td><strong>Resume original assignment when last patient is prepared</strong></td><td>First arriving medic unit is typically last transporting unit. TTL resumes normal function when their unit is the last transport.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>Transportation Team Leader — The Flow Manager</h2>
+<p>The Transportation Team Leader manages the movement of patients from the scene to hospitals — the logistics function that determines whether the medical capacity of the region is efficiently used or whether some hospitals are overwhelmed while others sit empty.</p>
+<ul>
+  <li><strong>Don the vest</strong> — immediately upon assignment, so all incoming crews can identify the TTL without radio contact</li>
+  <li><strong>Hospital capacity check</strong> — determine divert status and available capacity at potential receiving hospitals. Non-trauma centers can often increase capacity if notified early — early notification is a force multiplier</li>
+  <li><strong>Transport Unit Loading Zone</strong> — designate, communicate to IC, evaluate ingress/egress adequacy continuously</li>
+  <li><strong>On-deck area</strong> — establish a defined staging area near the Loading Zone where the next patients to be transported wait, preventing transport unit crews from searching for patients</li>
+  <li><strong>Track every transport</strong> — maintain the MCI Transportation Form. Unit, destination, patient information, departure time. This is the accountability document that allows incident review and hospital notification accuracy</li>
+</ul>
+
+<h2>Hospital Coordination — The Early Notification Principle</h2>
+<p>The North Area SOG is explicit on this principle: non-trauma centers that receive early notification can mobilize staff, prepare operating rooms, and temporarily increase trauma capability. A hospital called at minute two has twenty additional minutes of preparation compared to one called at minute twenty-two. Those twenty minutes translate directly into patient outcomes.</p>
+
+<div class="callout callout-gold">
+  <span class="callout-label">EMSystem — The Regional Alert Tool</span>
+  <p>Dispatch posts an MCI Alert on EMSystem immediately upon declaration — this notifies area hospitals of the incident scope and requests a report of patient capacity per triage category. The Transportation Team Leader works with Dispatch to manage hospital assignments based on real-time capacity data. For TFD SAMs and EMSOs: know that EMSystem exists, know that Dispatch manages the initial alert, and know that the Transportation Team Leader uses it for ongoing hospital coordination.</p>
+</div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Safety & Compliance + Operational Command</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">MCI Alarm Scale → START/SALT Triage → ICS Sector Assignments → CRM</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Size-up → assign sectors → communicate to Command → close with Discipline and Commitment</div></div></div></div>
+
+  <span class="sbar-label">Triage Team Leader</span>
+  <div class="sbar-card accent-tfd"><strong>Fill this role early — first arriving medic unit crew.</strong>Rapid scope ID. Immediate vs. Delayed. Communicate to TTL. Maintain triage overview — not individual patient care.</div>
+  <span class="sbar-label">Transport Team Leader</span>
+  <div class="sbar-card accent-tfd"><strong>Don the vest immediately.</strong>Hospital capacity. Loading Zone. On-deck area. MCI Transportation Form. Track every transport.</div>
+  <span class="sbar-label">Hospital Notification</span>
+  <div class="sbar-card accent-gold"><strong>Early notification = more preparation time = better outcomes.</strong>Non-trauma centers can increase capacity if called early. Don't wait until transport units are ready to roll.</div>
+  <span class="sbar-label">EMSystem</span>
+  <div class="sbar-card"><strong>Dispatch posts MCI Alert on EMSystem at declaration. Transport Team Leader uses it for ongoing hospital capacity coordination.</strong></div>
+  <span class="sbar-label">Transport Form</span>
+  <div class="sbar-card accent-emso"><strong>Unit · Destination · Patient info · Departure time.</strong>Every transport documented. The accountability record for incident review and hospital tracking.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Triage &amp; Transport</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">TFD</span><div><div class="ob-q-text">"You are given a scenario that requires knowledge of triage &amp; transport. How do you structure your response?"</div><div class="ob-note">Use LEAD: Label this as a Mci Module question. Engage the specific framework from this lesson — name it explicitly. Address impact at both the immediate and organizational level. Drive to a specific first action.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 5 — Key Takeaways</div>
+  <div class="tk-item">Triage Team Leader — Priorities and Responsibilities — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">Transportation Team Leader — The Flow Manager — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Mci Module question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Safety & Compliance + Operational Command</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">MCI Alarm Scale → START/SALT Triage → ICS Sector Assignments → CRM</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Size-up → assign sectors → communicate to Command → close with Discipline and Commitment</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← RTF Operations</button>
+  <div class="lnb-info"><div class="lnb-name">Triage &amp; Transport</div><div class="lnb-num">Lesson 5 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Oral Board Application →</button>
+</div>
+</div>
+
+<!-- ══════════ LESSON 6 — ORAL BOARD APPLICATION ══════════ -->
+<div class="lesson-view" id="lesson-5">
+<div class="lesson-container">
+<div class="lesson-main">
+<div class="lesson-header">
+  <div class="lh-eyebrow">MCI Module · Lesson 6 of 6</div>
+  <div class="lh-track">TFD · Assessment Center Application · Both Roles</div>
+  <h1 class="lh-title">Oral Board Application —<br><em>How Assessors Score MCI Scenarios and What 5/5 Sounds Like</em></h1>
+  <div class="lh-meta"><span class="lh-meta-item">⏱ 16 min</span><span class="lh-meta-item">📘 Assessment Center Prep · Both Roles</span><span class="lh-meta-item">L·E·A·D · STAR-P · MCI Scenario Scoring</span></div>
+</div>
+
+<p>MCI and active shooter scenarios are among the most frequently used in EMS and fire officer assessment centers — and among the most commonly mishandled by candidates. Not because candidates lack knowledge, but because the pressure of the scenario triggers the same rapid-action instinct that fire/EMS training has spent years building. In the assessment center, that instinct produces answers that are operationally impressive and structurally thin — which is exactly what scores 2/5 and 3/5.</p>
+
+<p>The assessor scoring an MCI scenario is not evaluating whether you know the RTF composition minimum. They are evaluating whether you think at the level of the rank you are testing for — which means they are watching for systems thinking, command prioritization, role clarity, and the ability to hold multiple operational threads simultaneously.</p>
+
+<h2>What the Label Is — Identifying the Bucket</h2>
+<p>MCI and active shooter scenarios can present as several different question buckets. Correctly labeling the bucket before responding is the L step of L·E·A·D — and getting it wrong means the entire framework is wrong.</p>
+
+<div class="infographic-wrap">
+  <div class="ig-header">
+    <span class="ig-eyebrow">◆ MCI SCENARIO — QUESTION BUCKET IDENTIFICATION</span>
+    <div class="ig-title">Label First — The Bucket Determines the Framework</div>
+  </div>
+  <div style="padding:.5rem 1rem 1rem;">
+    <table class="data-table">
+      <thead><tr><th>Scenario Type</th><th>Bucket</th><th>Primary Framework</th><th>Secondary Framework</th></tr></thead>
+      <tbody>
+        <tr><td><strong>"You arrive first on scene — 30+ patients visible"</strong></td><td>Emergency Operations / MCI</td><td>North Area MCI SOG — IC priorities sequence</td><td>ICS structure, NIMS, risk management model</td></tr>
+        <tr><td><strong>"Active shooter reported, you are first fire unit"</strong></td><td>Emergency Operations / Multi-Agency</td><td>North Area Active Shooter SOP — zone architecture, TOC, RTF insertion</td><td>Unified Command, TECC, Rule of Ten</td></tr>
+        <tr><td><strong>"As SAM, describe your role at a working MCI"</strong></td><td>Leadership Philosophy / Role Knowledge</td><td>SAM four-capacity framework — Commander function, RGS role</td><td>ICS command architecture, scope discipline</td></tr>
+        <tr><td><strong>"RTF is ready to insert but zone is unconfirmed"</strong></td><td>Ethics / Decision-Making Under Pressure</td><td>TCHOEDS — Courage and Ownership</td><td>Risk management model, NFPA 1521 authority principle</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="ig-callout">The fourth scenario is the one most candidates get wrong. They label it as an operational question and answer with the SOP. Assessors label it as a decision-making under pressure question — and they are scoring whether the candidate holds the line on warm zone confirmation requirements when the operational pressure to insert is extreme. That is a 4/5 and 5/5 answer. Reciting the SOP under normal conditions is a 3/5 answer.</div>
+</div>
+
+<h2>What 3/5, 4/5, and 5/5 Sound Like</h2>
+
+<div class="callout callout-tfd">
+  <span class="callout-label">3/5 — Correct Content, No System</span>
+  <p>"I would declare an MCI, request additional resources, establish command, assign a triage leader and transport leader, and set up triage and treatment areas. I would coordinate with law enforcement for zone establishment and deploy RTFs into the warm zone once it was safe."</p>
+  <p style="margin-top:.75rem;font-style:italic;color:var(--on-light-3);font-size:.9rem;">Why it scores 3/5: Operationally accurate. No framework named. No command role articulation. No prioritization reasoning. No rank-calibrated close.</p>
+</div>
+
+<div class="callout callout-gold">
+  <span class="callout-label">4/5 — System Named, Role Clear</span>
+  <p>"Applying the North Area MCI SOG, my first priority as the arriving officer is declaring the MCI alarm level and getting that resource package on the road — because early declaration means resources arrive earlier, and in an MCI the resource gap is the primary constraint on patient outcomes. I immediately assign Triage and Transportation Team Leaders to the first arriving medic unit crew, establish ingress and egress routes on the radio, and initiate Level 2 staging to prevent the access gridlock that degrades every subsequent transport. As the SAM, my specific role at a developing MCI is Rescue Group Supervisor — I co-locate with the Tactical Supervisor at the TOC, confirm warm zone boundaries, and control RTF insertion. No RTF moves without my confirmation of three things: warm zone status, entry point, and victim location intelligence."</p>
+  <p style="margin-top:.75rem;font-style:italic;color:var(--on-light-3);font-size:.9rem;">Why it scores 4/5: Framework named. Priorities in sequence with reasoning. Role-specific. The three-confirmation rule demonstrates operational depth.</p>
+</div>
+
+<div class="callout callout-navy">
+  <span class="callout-label">5/5 — System + Role + Rank-Calibrated Close</span>
+  <p>Everything in the 4/5 answer, plus: "The decision I own as Rescue Group Supervisor that carries the highest consequence is RTF insertion timing. The operational pressure in an active shooter incident — knowing viable victims are in that warm zone — creates enormous pressure to insert before confirmation is complete. My job is to hold that line. The risk management model that governs every North Area MCI response is explicit: we risk a lot to save a lot. Inserting an RTF into an unconfirmed warm zone does not risk a lot to save a lot — it risks fire personnel to save victims who may already be non-viable. As a Managing Officer, I own that decision completely. The blame for a fire casualty that results from a premature insertion belongs to the Rescue Group Supervisor, not the RTF member who followed orders. That is the standard I hold and the authority I exercise."</p>
+  <p style="margin-top:.75rem;font-style:italic;color:var(--on-light-3);font-size:.9rem;">Why it scores 5/5: Demonstrates understanding of the highest-consequence decision in the role. Connects the risk management framework to a specific, non-obvious application. Closes with rank-calibrated ownership — the Managing Officer takes accountability, not deflection. Assessors write this down.</p>
+</div>
+
+<div class="legal-disclaimer">
+  <span class="legal-disclaimer-label">TFD Internal Use · Educational Content</span>
+  <p>This module was developed for Thornton Fire Department EMS Division internal professional development purposes. Content is based on the North Area Fire Chiefs Standard Operating Procedure — Active Shooter Mass Casualty Incident Resolution (Adopted October 13, 2016) and the North Area MCI Standard Operating Guideline (December 2020). These source documents govern operational decisions — this educational content is supplementary. Always consult current departmental SOPs and your chain of command for authoritative guidance on specific operational decisions. The Promotional Standard LLC · thepromotionalstandard.com</p>
+</div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Safety & Compliance + Operational Command</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">MCI Alarm Scale → START/SALT Triage → ICS Sector Assignments → CRM</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Size-up → assign sectors → communicate to Command → close with Discipline and Commitment</div></div></div></div>
+
+  <span class="sbar-label">Bucket Identification</span>
+  <div class="sbar-card"><strong>MCI Arrival</strong>Emergency Operations bucket. North Area MCI SOG framework.</div>
+  <div class="sbar-card"><strong>Active Shooter Arrival</strong>Emergency Operations / Multi-Agency. Active Shooter SOP framework.</div>
+  <div class="sbar-card"><strong>"Your role at an MCI"</strong>Leadership Philosophy. SAM four-capacity + Commander function.</div>
+  <div class="sbar-card accent-gold"><strong>Unconfirmed zone pressure</strong>Ethics / Decision-Making. TCHOEDS + risk management model. NOT an operational question.</div>
+  <span class="sbar-label">Score Separators</span>
+  <div class="sbar-card"><strong>3/5</strong>Correct. No framework named. No role articulation.</div>
+  <div class="sbar-card accent-tfd"><strong>4/5</strong>Framework named. Priorities in sequence. Role-specific. Three-confirmation rule applied.</div>
+  <div class="sbar-card accent-gold"><strong>5/5</strong>Everything in 4/5 plus: owns the highest-consequence decision with rank-calibrated accountability close. Assessors write it down.</div>
+  <span class="sbar-label">The Close — SAM Level</span>
+  <div class="sbar-card accent-sam"><strong>"The blame for a fire casualty from premature RTF insertion belongs to the Rescue Group Supervisor. That is the standard I hold and the authority I exercise."</strong>This is what 5/5 sounds like.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Oral Board Application</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">TFD</span><div><div class="ob-q-text">"You receive a scenario about mci module. Walk me through your complete response using the frameworks from this chapter."</div><div class="ob-note">Use LEAD: Label the bucket (Mci Module), Engage the specific framework (reference What the Label Is — Identifying the Bucket explicitly), Address the operational and organizational impact, Drive to a concrete first action with a timeline.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 6 — Key Takeaways</div>
+  <div class="tk-item">What the Label Is — Identifying the Bucket — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">What 3/5, 4/5, and 5/5 Sound Like — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Mci Module question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Safety & Compliance + Operational Command</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">MCI Alarm Scale → START/SALT Triage → ICS Sector Assignments → CRM</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Size-up → assign sectors → communicate to Command → close with Discipline and Commitment</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Triage &amp; Transport</button>
+  <div class="lnb-info"><div class="lnb-name">Oral Board Application</div><div class="lnb-num">Lesson 6 of 6</div></div>
+  <button class="lnb-btn complete" disabled>Module Complete ✓</button>
+</div>
+</div>
+</main>
+<script>
+let cur=0;
+const ls=document.querySelectorAll('.lesson-view');
+const ps=document.querySelectorAll('.nav-pill');
+function showLesson(i){ls.forEach(l=>l.classList.remove('active'));ps.forEach(p=>p.classList.remove('active'));ls[i].classList.add('active');ps[i].classList.add('active');cur=i;window.scrollTo({top:0,behavior:'smooth'});document.getElementById('prog').style.width='0%';}
+function nextLesson(){if(cur<ls.length-1)showLesson(cur+1);}
+function prevLesson(){if(cur>0)showLesson(cur-1);}
+window.addEventListener('scroll',()=>{const s=document.documentElement.scrollTop;const h=document.documentElement.scrollHeight-window.innerHeight;if(h>0)document.getElementById('prog').style.width=Math.min(100,(s/h*100))+'%';});
+document.addEventListener('DOMContentLoaded',()=>showLesson(0));
+
+function lfNext(el,stepNum){
+  var wrap=el.closest('.lf-wrap');
+  if(!wrap)return;
+  var steps=wrap.querySelectorAll('.lf-step');
+  var dots=wrap.querySelectorAll('.lf-dot');
+  steps.forEach(function(s,i){s.classList.remove('active');if(i<stepNum)s.classList.add('done');});
+  dots.forEach(function(d,i){d.classList.remove('active');if(i<stepNum)d.classList.add('done');if(i===stepNum)d.classList.add('active');});
+  if(steps[stepNum])steps[stepNum].classList.add('active');
+}
+</script>
+<script>function toggleFT(el){var sw=el.querySelector('.ft-toggle-switch');var desc=el.querySelector('.ft-toggle-desc');var mains=document.querySelectorAll('.lesson-main');sw.classList.toggle('on');var on=sw.classList.contains('on');desc.textContent=on?'Frameworks + OB cards only':'Full lesson content';mains.forEach(function(m){m.classList.toggle('ft-on',on);});}</script>
+</body>
+</html>

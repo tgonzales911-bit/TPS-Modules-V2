@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Chapter 31 — Labor Relations | The Promotional Standard</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Crimson+Pro:wght@300;400;500;600&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{--navy:#0C2340;--navy2:#1A3A5C;--gold:#C9A84C;--gold2:#F5F0E8;--gold3:#6B4F10;--cream:#F5F0E8;--offwhite:#F5F0E8;--light:#EAE5DC;--mid:#2A3D50;--gray:#8FA8C0;--red:#B22222;--red-light:#FFF0F0;--green:#1A5C3A;--green-light:#EAF3DE;--teal:#006B6B;--teal-light:#E0F4F4;--blue:#1A3A7A;--blue-light:#E8EEF8;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:var(--navy);font-size:18px;line-height:1.8;}
+.top-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(12,35,64,0.98);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,168,76,0.2);height:64px;display:flex;align-items:center;padding:0 2rem;gap:1rem;}
+.nav-left{display:flex;align-items:center;gap:12px;flex:1;}
+.nav-brand{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;color:var(--cream);line-height:1.3;}
+.nav-brand span{display:block;font-size:8px;color:var(--gold);letter-spacing:2px;}
+.nav-pills{display:flex;gap:5px;flex:2;justify-content:center;overflow-x:auto;}
+.nav-pill{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#8FA8C0;padding:6px 11px;border-radius:20px;cursor:pointer;transition:all 0.2s;border:none;background:transparent;white-space:nowrap;}
+.nav-pill:hover{color:var(--cream);background:rgba(255,255,255,0.05);}
+.nav-pill.active{color:var(--gold);background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.25);}
+.progress-bar{position:fixed;top:64px;left:0;height:3px;background:linear-gradient(90deg,var(--navy2),var(--gold));z-index:199;width:0%;transition:width 0.3s;}
+.lesson-view{display:none;}.lesson-view.active{display:block;}
+.module-hero{background:var(--navy);padding:4.5rem 3rem 3.5rem;margin-top:64px;position:relative;overflow:hidden;border-bottom:3px solid var(--gold);}
+.module-hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 60px,rgba(201,168,76,0.015) 60px,rgba(201,168,76,0.015) 61px);}
+.module-hero::after{content:'';position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(180deg,var(--navy2),var(--gold));}
+.mh-inner{max-width:900px;position:relative;z-index:2;}
+.mh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.mh-title{font-family:'EB Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:800;color:var(--cream);line-height:1.1;margin-bottom:0.75rem;}
+.mh-title em{font-style:italic;color:var(--gold);}
+.mh-sub{font-size:1.05rem;color:#8FA8C0;max-width:700px;line-height:1.7;margin-bottom:2rem;}
+.mh-badges{display:flex;gap:10px;margin-bottom:1.5rem;flex-wrap:wrap;}
+.mh-badge{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border-radius:3px;}
+.badge-bc{background:rgba(139,50,22,0.12);color:#C06030;border:1px solid rgba(139,50,22,0.25);}
+.badge-nfpa{background:rgba(100,160,220,0.15);color:#8FA8C0;border:1px solid rgba(100,160,220,0.3);}
+.mh-thread{background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);border-left:3px solid var(--gold);padding:1rem 1.5rem;margin-bottom:2rem;max-width:700px;}
+.mh-thread-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+.mh-thread-text{font-size:0.92rem;color:var(--cream);line-height:1.65;}
+.mh-lesson-nav{display:flex;gap:8px;flex-wrap:wrap;}
+.mh-lesson-btn{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:8px 14px;border-radius:6px;cursor:pointer;transition:all 0.2s;border:1px solid rgba(201,168,76,0.25);background:transparent;color:#8FA8C0;}
+.mh-lesson-btn:hover{background:rgba(255,255,255,0.05);color:var(--cream);}
+.mh-lesson-btn.active{background:rgba(201,168,76,0.12);color:var(--gold);border-color:rgba(201,168,76,0.4);}
+.lesson-container{display:grid;grid-template-columns:1fr 310px;gap:0;}
+.lesson-main{padding:3rem 3.5rem;border-right:1px solid var(--light);}
+.lesson-sidebar{padding:2rem 1.75rem;background:var(--offwhite);position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;}
+.lesson-header{margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:2px solid var(--light);}
+.lh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold3);margin-bottom:0.6rem;}
+.lh-title{font-family:'EB Garamond',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;color:var(--navy);line-height:1.15;margin-bottom:0.6rem;}
+.lh-title em{font-style:italic;color:var(--gold);}
+.lh-meta{display:flex;gap:1.5rem;flex-wrap:wrap;}
+.lh-meta-item{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);}
+.lesson-main h2{font-family:'EB Garamond',serif;font-size:1.7rem;font-weight:700;color:var(--navy);margin:3rem 0 0.9rem;padding-bottom:0.5rem;border-bottom:2px solid var(--light);}
+.lesson-main h3{font-family:'EB Garamond',serif;font-size:1.25rem;font-weight:600;color:var(--navy);margin:2.25rem 0 0.65rem;}
+.lesson-main p{margin-bottom:1.25rem;color:#2A3D50;line-height:1.82;}
+.lesson-main ul,.lesson-main ol{margin:0 0 1.25rem 1.5rem;color:#2A3D50;}
+.lesson-main li{margin-bottom:0.6rem;line-height:1.72;}
+.lesson-main strong{color:var(--navy);font-weight:600;}
+.callout{padding:1.4rem 1.6rem;margin:2rem 0;}
+.callout-gold{background:var(--gold2);border-left:3px solid var(--gold);}.callout-gold p{color:var(--gold3);font-size:0.97rem;line-height:1.75;}
+.callout-navy{background:var(--navy);border-left:3px solid var(--gold);}.callout-navy p{color:#8FA8C0;font-size:0.95rem;line-height:1.75;}
+.callout-red{background:var(--red-light);border-left:4px solid var(--red);}.callout-red p{color:#6B4F10;font-size:0.97rem;line-height:1.75;}
+.callout-green{background:var(--green-light);border-left:4px solid var(--green);}.callout-green p{color:#1A3A5C;font-size:0.97rem;line-height:1.75;}
+.callout-blue{background:var(--blue-light);border-left:4px solid var(--blue);}.callout-blue p{color:#0A1A3A;font-size:0.97rem;line-height:1.75;}
+.callout-teal{background:var(--teal-light);border-left:4px solid var(--teal);}.callout-teal p{color:#003A3A;font-size:0.97rem;line-height:1.75;}
+.callout-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:0.5rem;display:block;}
+.callout-gold .callout-label{color:var(--gold3);}.callout-navy .callout-label{color:var(--gold);}.callout-red .callout-label{color:var(--red);}.callout-green .callout-label{color:var(--green);}.callout-blue .callout-label{color:var(--blue);}.callout-teal .callout-label{color:var(--teal);}
+.framework-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.fw-card{background:white;border:1px solid #EAE5DC;padding:1.25rem;border-radius:8px;}
+.fw-card-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:6px;}
+.fw-card-title{font-family:'EB Garamond',serif;font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.fw-card-desc{font-size:0.9rem;color:var(--mid);line-height:1.6;}
+.acro-grid{display:flex;flex-direction:column;gap:0;margin:1.5rem 0;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;}
+.acro-row{display:grid;grid-template-columns:52px 1fr;gap:0;border-bottom:1px solid #EAE5DC;}
+.acro-row:last-child{border-bottom:none;}
+.acro-letter{background:var(--navy);color:var(--gold);font-family:'EB Garamond',serif;font-size:1.8rem;font-weight:800;display:flex;align-items:center;justify-content:center;}
+.acro-content{padding:0.9rem 1.1rem;background:white;}
+.acro-word{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:3px;}
+.acro-desc{font-size:0.85rem;color:var(--mid);line-height:1.55;}
+.just-cause{display:flex;flex-direction:column;gap:0;margin:1.5rem 0;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;}
+.jc-row{display:grid;grid-template-columns:44px 1fr;border-bottom:1px solid var(--light);}
+.jc-row:last-child{border-bottom:none;}
+.jc-num{background:var(--navy2);color:var(--gold);font-family:'Cinzel',serif;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.jc-body{padding:0.85rem 1.1rem;background:white;}
+.jc-title{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:3px;}
+.jc-desc{font-size:0.85rem;color:var(--mid);line-height:1.55;}
+.jc-fail{font-size:0.82rem;color:var(--red);margin-top:4px;font-style:italic;}
+.sbar-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold3);margin-bottom:0.65rem;margin-top:1.5rem;display:block;}
+.sbar-label:first-child{margin-top:0;}
+.sbar-card{background:white;border:1px solid #EAE5DC;border-radius:8px;padding:0.9rem 1rem;margin-bottom:8px;font-size:0.9rem;color:var(--mid);line-height:1.55;}
+.sbar-card strong{color:var(--navy);display:block;margin-bottom:3px;font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;}
+.score-compare{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.sc-card{padding:1.25rem;border-radius:8px;}
+.sc-card.miss{background:var(--red-light);border:1px solid #F0C0C0;}
+.sc-card.hit{background:var(--green-light);border:1px solid #9DCCA8;}
+.sc-title{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:0.75rem;}
+.sc-card.miss .sc-title{color:var(--red);}.sc-card.hit .sc-title{color:var(--green);}
+.sc-body{font-size:0.87rem;line-height:1.6;}
+.sc-card.miss .sc-body{color:#6B4F10;}.sc-card.hit .sc-body{color:#1A3A5C;}
+.lesson-nav-bar{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 3rem;border-top:3px solid var(--gold);background:var(--navy);gap:1rem;}
+.lnb-btn{background:rgba(255,255,255,0.08);border:2px solid rgba(201,168,76,0.4);padding:14px 28px;font-family:'Cinzel',serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border-radius:6px;color:var(--cream);transition:all 0.2s;white-space:nowrap;}
+.lnb-btn:hover{background:rgba(201,168,76,0.15);border-color:var(--gold);color:var(--gold);}
+.lnb-btn:disabled,.lnb-btn[disabled]{opacity:0.25;cursor:not-allowed;background:transparent;}
+.lnb-btn:disabled:hover,.lnb-btn[disabled]:hover{background:transparent;border-color:rgba(201,168,76,0.4);color:var(--cream);}
+.lnb-btn.primary{background:var(--gold);color:var(--navy);border-color:var(--gold);font-weight:800;}
+.lnb-btn.primary:hover{background:#C9A84C;border-color:#C9A84C;}
+.lnb-info{text-align:center;flex:1;}
+.lnb-name{font-family:'EB Garamond',serif;font-size:1rem;font-weight:700;color:var(--cream);}
+.lnb-num{font-size:0.85rem;color:var(--gold);font-family:'Cinzel',serif;letter-spacing:1px;}
+@media(max-width:900px){.lesson-container{grid-template-columns:1fr;}.lesson-sidebar{position:relative;height:auto;}.lesson-main{padding:2rem 1.5rem;}.lesson-nav-bar{padding:1rem 1.5rem;flex-wrap:wrap;}.framework-grid,.score-compare{grid-template-columns:1fr;}.nav-pills{display:none;}}
+
+/* OB CARD */
+.ob-card{background:var(--navy);margin:2rem 0;overflow:hidden;}
+.ob-header{padding:0.85rem 1.5rem;background:rgba(201,168,76,0.08);border-bottom:1px solid rgba(201,168,76,0.15);}
+.ob-label{font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);}
+.ob-body{padding:1.25rem 1.5rem;}
+.ob-q{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;}
+.ob-q-tag{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);background:rgba(201,168,76,0.1);padding:4px 10px;border-radius:3px;white-space:nowrap;}
+.ob-q-text{font-family:'EB Garamond',serif;font-size:1.08rem;font-weight:600;color:var(--cream);line-height:1.5;margin-bottom:8px;}
+.ob-note{font-size:0.88rem;color:#8FA8C0;line-height:1.6;font-style:italic;}
+/* TAKEAWAYS */
+.takeaways{background:var(--navy);padding:2.25rem;margin:3rem 0 0;border-top:3px solid var(--gold);}
+.tk-lbl{font-family:'Cinzel',serif;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.tk-item{color:#8FA8C0;font-size:0.92rem;line-height:1.7;padding:0.5rem 0 0.5rem 1.25rem;border-left:2px solid rgba(201,168,76,0.2);margin-bottom:0.5rem;}
+
+
+.lead-nav{background:var(--navy);border-radius:8px;padding:14px 16px;margin-bottom:16px;border:1px solid rgba(201,168,76,0.2)}
+.lead-nav-header{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.lead-nav-row{display:grid;grid-template-columns:20px 1fr;gap:6px;margin-bottom:6px;align-items:start}
+.lead-nav-letter{font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:var(--gold)}
+.lead-nav-content{}
+.lead-nav-name{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:2px}
+.lead-nav-app{font-size:11px;color:#8FA8C0;line-height:1.5}
+
+.lf-wrap{margin:2.5rem 0 1.5rem;border:2px solid var(--gold);border-radius:10px;overflow:hidden}
+.lf-header{background:var(--navy);padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
+.lf-title{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+.lf-dots{display:flex;gap:6px}
+.lf-dot{width:8px;height:8px;border-radius:50%;background:rgba(201,168,76,0.25);transition:all 0.3s}
+.lf-dot.active{background:var(--gold);transform:scale(1.3)}
+.lf-dot.done{background:var(--gold)}
+.lf-step{display:none;padding:20px}
+.lf-step.active{display:block}
+.lf-step-num{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:6px}
+.lf-step-title{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:10px}
+.lf-chain{background:var(--navy);border-radius:6px;padding:14px 18px;margin:10px 0}
+.lf-chain-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.lf-chain-text{font-size:13px;color:#8FA8C0;line-height:1.6}
+.lf-chain-close{font-size:12px;color:var(--cream);margin-top:6px;font-style:italic}
+.lf-btn{background:var(--navy);color:var(--gold);border:2px solid var(--gold);padding:12px 24px;border-radius:6px;font-family:'Cinzel',serif;font-size:12px;letter-spacing:1.5px;font-weight:600;cursor:pointer;margin-top:12px;transition:all 0.2s;display:inline-block}
+.lf-btn:hover{background:var(--gold);color:var(--navy)}
+.lf-timer{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:var(--gold);padding:6px 14px;border-radius:4px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:1px;margin-top:10px}
+.lesson-main.ft>p{display:none!important}.lesson-main.ft>.callout{display:none!important}.ft-toggle{display:flex;align-items:center;gap:10px;padding:10px 16px;background:var(--navy);border-radius:6px;cursor:pointer;border:1px solid rgba(201,168,76,0.25)}.ft-toggle-switch{width:36px;height:20px;background:rgba(201,168,76,0.2);border-radius:10px;position:relative;transition:background .2s}.ft-toggle-switch.on{background:var(--gold)}.ft-toggle-knob{width:14px;height:14px;background:#fff;border-radius:50%;position:absolute;top:3px;left:3px;transition:left .2s}.ft-toggle-switch.on .ft-toggle-knob{left:19px}.ft-toggle-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}.ft-toggle-desc{font-size:11px;color:var(--mid)}.lesson-main.ft-on>p,.lesson-main.ft-on>.callout,.lesson-main.ft-on h3{display:none!important}.lesson-main.ft-on .ob-card,.lesson-main.ft-on .lf-wrap,.lesson-main.ft-on .lead-nav,.lesson-main.ft-on h2{display:block!important}
+</style>
+</head>
+<body>
+<nav class="top-nav">
+  <div class="nav-left"><div class="nav-brand">The Promotional Standard<span>BC/AC Track · Chapter 31</span></div></div>
+  <div class="nav-pills">
+    <button class="nav-pill active" onclick="showLesson(0)">The Collective Bargaining Framework</button>
+    <button class="nav-pill" onclick="showLesson(1)">Reading the Contract</button>
+    <button class="nav-pill" onclick="showLesson(2)">Grievances</button>
+    <button class="nav-pill" onclick="showLesson(3)">Just Cause — Seven Tests</button>
+    <button class="nav-pill" onclick="showLesson(4)">Unfair Labor Practices</button>
+    <button class="nav-pill" onclick="showLesson(5)">AC Application</button>
+  </div>
+</nav>
+<div class="progress-bar" id="prog"></div>
+<div class="module-hero">
+  <div class="mh-inner">
+    <div class="mh-eyebrow">Chapter 31 · BC/AC Track · Fire Officer III–IV</div>
+    <h1 class="mh-title">Labor Relations<br><em>The BC's Legal and Organizational Framework</em></h1>
+    <p class="mh-sub">Collective bargaining fundamentals, reading and applying your MOU/CBA, the grievance process from investigation through arbitration, the seven just cause tests every disciplinary decision must satisfy, and unfair labor practices that expose the organization to legal liability. What every Battalion Chief and above must know to operate effectively in a unionized fire service environment.</p>
+    <div class="mh-badges">
+      <span class="mh-badge badge-bc">BC / AC Track</span>
+      <span class="mh-badge badge-nfpa">NFPA 1021 · FO III–IV</span>
+    </div>
+    <div class="mh-thread">
+      <div class="mh-thread-label">Before You Begin</div>
+      <div class="mh-thread-text">Labor relations is one of the most legally consequential competency areas at the Battalion Chief level — and one of the most frequently tested in written exercises and in-basket scenarios because it has clear right and wrong answers. The BC who doesn't know the grievance process, the just cause standard, or what constitutes an unfair labor practice is a liability risk for the organization. This module eliminates that risk.</div>
+    </div>
+    <div class="mh-lesson-nav">
+      <button class="mh-lesson-btn active" onclick="showLesson(0)">1. Collective Bargaining Framework</button>
+      <button class="mh-lesson-btn" onclick="showLesson(1)">2. Reading the Contract</button>
+      <button class="mh-lesson-btn" onclick="showLesson(2)">3. Grievances</button>
+      <button class="mh-lesson-btn" onclick="showLesson(3)">4. Just Cause — Seven Tests</button>
+      <button class="mh-lesson-btn" onclick="showLesson(4)">5. Unfair Labor Practices</button>
+      <button class="mh-lesson-btn" onclick="showLesson(5)">6. AC Application</button>
+    </div>
+  </div>
+</div>
+<main>
+
+<!-- LESSON 1 -->
+<div class="lesson-view active" id="lesson-0">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 31 · Lesson 1 of 6</div>
+    <h1 class="lh-title">The Collective Bargaining Framework —<br><em>How Labor Law Shapes the BC's World</em></h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 14 min</span><span class="lh-meta-item">⚖️ Labor Law · NLRA · NLRB · Public Sector</span></div>
+  </div>
+  <p>The Battalion Chief operates within a legal framework that governs the relationship between the employer and the bargaining unit representing fire service members. Not understanding this framework — what the union's rights are, what management's rights are, where they overlap, and where the law draws hard lines — is not just an operational disadvantage. It is a legal exposure that can invalidate disciplinary actions, generate costly arbitration losses, and produce unfair labor practice charges against the organization.</p>
+  <h2>Public Sector Labor Law — The Framework</h2>
+  <p>Most fire departments are public sector employers. Unlike private sector employees covered by the National Labor Relations Act (NLRA), public employees' labor rights are governed primarily by state law — which varies significantly by jurisdiction. However, most state public employee labor relations frameworks share common structural features:</p>
+  <div class="framework-grid">
+    <div class="fw-card">
+      <div class="fw-card-label">The Right to Organize</div>
+      <div class="fw-card-title">Collective Bargaining as a Legal Right</div>
+      <div class="fw-card-desc">In most states, public safety employees have a legal right to organize into a union and to bargain collectively with their employer over wages, hours, and conditions of employment. This right is not management's to grant or withhold — it is established by statute. The BC who treats union activity as inherently adversarial is misreading both the law and the organizational dynamic.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">The Bargaining Unit</div>
+      <div class="fw-card-title">Who the Union Represents</div>
+      <div class="fw-card-desc">The bargaining unit is the group of employees the union is certified to represent — typically all sworn fire service personnel below a specified management rank. In many jurisdictions, Captains and below are in the bargaining unit; Battalion Chiefs and above are management. Knowing which positions are in and out of the unit matters for every conversation about labor relations.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Management Rights</div>
+      <div class="fw-card-title">What Remains with the Employer</div>
+      <div class="fw-card-desc">Management rights — typically enumerated in the MOU or reserved by statute — include the right to direct the workforce, establish operational policies, determine staffing levels, make assignment decisions, and maintain discipline. These rights are not absolute — they may be modified by contract language — but they establish management's baseline authority. The BC who knows their management rights is in a fundamentally stronger operational position.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">Duty to Bargain</div>
+      <div class="fw-card-title">What Must Be Negotiated</div>
+      <div class="fw-card-desc">Mandatory subjects of bargaining — wages, hours, and other terms and conditions of employment — must be negotiated with the union before the employer can unilaterally change them. Permissive subjects may be bargained but need not be. Illegal subjects cannot be bargained even if both parties want to. The BC who unilaterally changes a mandatory subject of bargaining without going through the negotiation process has committed an unfair labor practice.</div>
+    </div>
+  </div>
+  <h2>The Union's Role — Neither Enemy Nor Partner by Definition</h2>
+  <p>The union's legal obligation is to represent the interests of bargaining unit members — including members who have committed misconduct. This is not optional: the duty of fair representation requires the union to represent all members, including those facing discipline, regardless of whether the union personally agrees with the member's conduct. Understanding this helps the BC understand why the union is at the table during disciplinary processes — not as an endorsement of the member's conduct, but as the fulfillment of a legal obligation.</p>
+  <div class="callout callout-gold">
+    <span class="callout-label">The Professional Relationship Standard</span>
+    <p>The most effective BC-union relationship is neither adversarial nor collusive — it is professional. The BC who treats every union interaction as a confrontation creates unnecessary friction that makes routine personnel management harder. The one who treats union involvement as an opportunity to avoid accountability creates organizational dysfunction. The professional standard: manage by the contract, document everything, involve HR and legal counsel when the situation warrants, and treat the union representative with the same professional respect you would any counterpart in a formal process. This approach wins grievances and builds the working relationship that makes the organization function.</p>
+  </div>
+</div>
+<div class="lesson-sidebar">
+<div class="ft-toggle" onclick="toggleFT(this)" style="margin-bottom:16px;max-width:320px">
+<div class="ft-toggle-switch"><div class="ft-toggle-knob"></div></div>
+<div><div class="ft-toggle-label">Fast Track Mode</div><div class="ft-toggle-desc">Full lesson content</div></div>
+</div>
+
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">CBA Framework → Grievance Ladder → FLSA Compliance → Good Faith Bargaining Standards</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the contract dimension → apply the legal framework → consult HR/counsel → close with Trustworthiness</div></div></div></div>
+
+  <span class="sbar-label">Public Sector Framework</span>
+  <div class="sbar-card">State law governs (not NLRA). Most states protect: right to organize · collective bargaining over wages, hours, conditions · duty of fair representation.</div>
+  <span class="sbar-label">Management Rights</span>
+  <div class="sbar-card">Direct workforce · establish policies · determine staffing · make assignments · maintain discipline. Modified by contract language — know what yours says.</div>
+  <span class="sbar-label">Mandatory Bargaining Subjects</span>
+  <div class="sbar-card">Wages · hours · terms and conditions. Unilateral change = unfair labor practice. Must go through negotiation process first.</div>
+  <span class="sbar-label">Union's Role</span>
+  <div class="sbar-card">Legal duty of fair representation — must represent all members including those facing discipline. Not endorsement of conduct. Legal obligation.</div>
+  <span class="sbar-label">The Professional Standard</span>
+  <div class="sbar-card">Manage by the contract. Document everything. Involve HR/legal when warranted. Professional respect for the union rep. This approach wins grievances.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — The Collective Bargaining Framework</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"Describe your understanding of public sector labor law — the framework and how you would apply it in a real scenario."</div><div class="ob-note">Name the CBA provisions that apply. Reference past practice doctrine. Show that you work within the contract, consult labor relations when needed, and document your reasoning.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 1 — Key Takeaways</div>
+  <div class="tk-item">Public Sector Labor Law — The Framework — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">The Union's Role — Neither Enemy Nor Partner by Definition — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Labor Relations question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">CBA Framework → Grievance Ladder → FLSA Compliance → Good Faith Bargaining Standards</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the contract dimension → apply the legal framework → consult HR/counsel → close with Trustworthiness</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" disabled>← Previous</button>
+  <div class="lnb-info"><div class="lnb-name">Collective Bargaining Framework</div><div class="lnb-num">Lesson 1 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Reading the Contract →</button>
+</div>
+</div>
+
+<!-- LESSON 2 -->
+<div class="lesson-view" id="lesson-1">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 31 · Lesson 2 of 6</div>
+    <h1 class="lh-title">Reading the Contract —<br><em>Your MOU Is the Operational Manual</em></h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 14 min</span><span class="lh-meta-item">📄 MOU · CBA · Contract Interpretation</span></div>
+  </div>
+  <p>The Memorandum of Understanding (MOU) or Collective Bargaining Agreement (CBA) is not an HR document — it is the BC's operational framework for managing personnel. Every decision that involves wages, hours, scheduling, overtime, assignment, leave, or discipline must be made in accordance with the contract. The BC who hasn't read their MOU is making decisions blindfolded.</p>
+  <h2>Key Contract Sections Every BC Must Know Cold</h2>
+  <div class="acro-grid">
+    <div class="acro-row">
+      <div class="acro-letter">GRV</div>
+      <div class="acro-content">
+        <div class="acro-word">Grievance and Arbitration Procedure</div>
+        <div class="acro-desc">The process by which members contest management actions they believe violate the contract. Timelines are critical — most grievance procedures have strict deadlines at each step, and missing them can result in the grievance being sustained regardless of the merits. Every BC must know the grievance steps, the timelines at each step, and what their role is when a grievance is filed against one of their decisions.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">DIS</div>
+      <div class="acro-content">
+        <div class="acro-word">Discipline Procedure — Progressive Discipline and Just Cause</div>
+        <div class="acro-desc">The contract's discipline section establishes what progressive discipline looks like, what due process rights members have (including the right to union representation during investigatory interviews — the Weingarten right), what the just cause standard requires, and what types of misconduct may bypass progressive discipline and go directly to termination. Every disciplinary decision the BC makes must satisfy both the contract language and the just cause standard.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">OVT</div>
+      <div class="acro-content">
+        <div class="acro-word">Overtime and Scheduling Provisions</div>
+        <div class="acro-desc">How overtime is offered, distributed, and mandated — the rotation system, the mandatory overtime hierarchy, the minimum rest requirements between shifts, and the premium pay triggers — are typically the most frequently invoked and most frequently grieved sections of fire service contracts. The BC who doesn't know the overtime provisions is filing grievances in reverse: creating them.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">SEN</div>
+      <div class="acro-content">
+        <div class="acro-word">Seniority and Assignment Rights</div>
+        <div class="acro-desc">Many fire service contracts give senior members specific rights in the assignment process — bidding rights for station or shift assignments, preference in specialty assignments, protections against involuntary transfer. The BC who makes assignment decisions without understanding the seniority provisions may be violating a contract right that the member can grieve — even if the assignment decision was operationally sound.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">LVS</div>
+      <div class="acro-content">
+        <div class="acro-word">Leave Provisions — Sick, FMLA, Military, and Personal</div>
+        <div class="acro-desc">Leave provisions are among the most legally complex sections of a fire service contract, particularly where they intersect with FMLA, ADA, and military leave protections. The BC who denies a leave request, disciplines a member for leave usage, or makes assignment decisions based on leave history without understanding both the contract and the applicable law is creating significant legal exposure. When in doubt, HR involvement is required before any leave-related personnel decision.</div>
+      </div>
+    </div>
+  </div>
+  <h2>Contract Interpretation — How Disputes Are Resolved</h2>
+  <p>When contract language is ambiguous, arbitrators apply established principles of contract interpretation to determine meaning. The BC who understands these principles is better prepared to apply contract language correctly the first time — and to defend management's position if a grievance results.</p>
+  <div class="callout callout-blue">
+    <span class="callout-label">The Three Interpretation Principles</span>
+    <p>First: the plain meaning rule — clear, unambiguous language means what it says, regardless of what either party intended. If the contract says "48 hours notice," it means 48 hours, not "a couple of days." Second: past practice — consistent, known, and mutually accepted practices that have developed over time may be used to interpret ambiguous language. Third: the contract as a whole — no single provision is read in isolation; it is read in the context of the entire agreement. Management decisions that seem to conflict with contract language should be reviewed by HR or labor counsel before implementation.</p>
+  </div>
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">CBA Framework → Grievance Ladder → FLSA Compliance → Good Faith Bargaining Standards</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the contract dimension → apply the legal framework → consult HR/counsel → close with Trustworthiness</div></div></div></div>
+
+  <span class="sbar-label">Five Sections to Know Cold</span>
+  <div class="sbar-card"><strong>Grievance Procedure</strong>Steps + timelines. Missing a deadline can sustain a grievance on its own.</div>
+  <div class="sbar-card"><strong>Discipline Procedure</strong>Progressive discipline · Weingarten rights · just cause standard · bypass provisions.</div>
+  <div class="sbar-card"><strong>Overtime + Scheduling</strong>Most-grieved section. Know the rotation, mandatory hierarchy, rest requirements.</div>
+  <div class="sbar-card"><strong>Seniority + Assignments</strong>Bid rights · specialty preference · involuntary transfer protections.</div>
+  <div class="sbar-card"><strong>Leave Provisions</strong>Intersects FMLA, ADA, military leave. HR involvement required before leave-related personnel decisions.</div>
+  <span class="sbar-label">Interpretation Principles</span>
+  <div class="sbar-card">Plain meaning · past practice · whole contract. When ambiguous: HR or labor counsel before implementing.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Reading the Contract</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"Describe your understanding of key contract sections every bc must know cold and how you would apply it in a real scenario."</div><div class="ob-note">Name the CBA provisions that apply. Reference past practice doctrine. Show that you work within the contract, consult labor relations when needed, and document your reasoning.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 2 — Key Takeaways</div>
+  <div class="tk-item">Key Contract Sections Every BC Must Know Cold — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">Contract Interpretation — How Disputes Are Resolved — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Labor Relations question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">CBA Framework → Grievance Ladder → FLSA Compliance → Good Faith Bargaining Standards</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the contract dimension → apply the legal framework → consult HR/counsel → close with Trustworthiness</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Collective Bargaining Framework</button>
+  <div class="lnb-info"><div class="lnb-name">Reading the Contract</div><div class="lnb-num">Lesson 2 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Grievances →</button>
+</div>
+</div>
+
+<!-- LESSON 3 -->
+<div class="lesson-view" id="lesson-2">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 31 · Lesson 3 of 6</div>
+    <h1 class="lh-title">Grievances —<br><em>Process, Roles, and How to Respond</em></h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 16 min</span><span class="lh-meta-item">📋 Grievance Steps · Investigation · Response</span></div>
+  </div>
+  <p>A grievance is a formal allegation by a bargaining unit member or the union that a provision of the collective bargaining agreement has been violated. Grievances are not personal attacks — they are a contractual mechanism for resolving disputes. The BC who treats grievances as attacks responds defensively; the one who treats them as a process to be managed correctly responds professionally — and wins more of them.</p>
+  <h2>The Typical Grievance Process</h2>
+  <div class="acro-grid">
+    <div class="acro-row">
+      <div class="acro-letter">S1</div>
+      <div class="acro-content">
+        <div class="acro-word">Step 1 — Informal Resolution (Company/Battalion Level)</div>
+        <div class="acro-desc">Most contracts require the grievant to attempt informal resolution before filing a formal grievance. The immediate supervisor — often the BC — attempts to resolve the dispute informally within a specified timeframe (typically 5–10 working days). Many grievances that would go through the full process are resolved here. The BC who listens genuinely, reviews the contract language, and is willing to acknowledge a management error when one occurred resolves more grievances at Step 1.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">S2</div>
+      <div class="acro-content">
+        <div class="acro-word">Step 2 — Formal Written Grievance</div>
+        <div class="acro-desc">The member or union files a written grievance identifying the contract provision allegedly violated, the facts supporting the allegation, and the remedy requested. Management has a specified timeframe to respond in writing. The BC's written response at this step is a legal document that becomes part of the grievance record. It should be reviewed by HR or labor counsel before submission — not drafted in isolation.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">S3</div>
+      <div class="acro-content">
+        <div class="acro-word">Step 3 — Department Head or Designee Review</div>
+        <div class="acro-desc">If the grievance is not resolved at Step 2, it escalates to a department head or HR director review. At this level, the grievance record — both parties' positions, supporting documentation, and the Step 2 responses — is reviewed for a final administrative determination before arbitration.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">ARB</div>
+      <div class="acro-content">
+        <div class="acro-word">Arbitration — The Final Step</div>
+        <div class="acro-desc">If the grievance is not resolved administratively, it may be submitted to binding arbitration — a private adjudicative process before a neutral arbitrator. Arbitration decisions are legally binding on both parties (subject to narrow grounds for court challenge). The BC who has documented their decisions thoroughly, followed the contract language precisely, and applied the just cause standard correctly is presenting the strongest possible case to the arbitrator. The one who hasn't is presenting the union's case for them.</div>
+      </div>
+    </div>
+  </div>
+  <h2>The Weingarten Right — The BC Must Know This</h2>
+  <p>Under the National Labor Relations Act and most public sector equivalents, bargaining unit members have the right to union representation during any investigatory interview that the member reasonably believes could result in disciplinary action. This is the Weingarten right, established in the 1975 Supreme Court decision.</p>
+  <div class="callout callout-red">
+    <span class="callout-label">Weingarten — What the BC Cannot Do</span>
+    <p>If a bargaining unit member requests union representation before or during an investigatory interview, you must either: (1) grant the request and wait for the union representative, (2) offer the member the choice to continue without representation or end the interview, or (3) end the interview. You may NOT continue the investigatory interview over the member's request for union representation. Doing so violates the member's Weingarten rights, which is an unfair labor practice that can invalidate any subsequent disciplinary action — regardless of whether the member's conduct justified discipline. Know the right. Honor it. Document that you honored it.</p>
+  </div>
+  <h2>How to Respond to a Grievance — The Professional Standard</h2>
+  <ul>
+    <li><strong>Read the grievance carefully.</strong> Identify the specific contract provision cited and the specific remedy requested.</li>
+    <li><strong>Gather the relevant documentation.</strong> The contract language, your decision documentation, any relevant past practice, and the member's relevant history.</li>
+    <li><strong>Consult HR before responding.</strong> Your written response is a legal document. It should not be drafted in isolation — especially if the grievance involves a discipline decision or a complex contractual question.</li>
+    <li><strong>Be precise and factual.</strong> Address the specific contract language cited. Do not include arguments you cannot support with documentation. Do not express frustration or characterize the grievance as frivolous — that appears in the record.</li>
+    <li><strong>Meet the deadline.</strong> Missing the management response deadline can result in the grievance being sustained by default regardless of its merits.</li>
+  </ul>
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">CBA Framework → Grievance Ladder → FLSA Compliance → Good Faith Bargaining Standards</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the contract dimension → apply the legal framework → consult HR/counsel → close with Trustworthiness</div></div></div></div>
+
+  <span class="sbar-label">Grievance Steps</span>
+  <div class="sbar-card"><strong>Step 1</strong>Informal — BC level. Resolve here if possible. Genuine listening + contract review + willingness to acknowledge errors.</div>
+  <div class="sbar-card"><strong>Step 2</strong>Formal written. BC response is a legal document. HR/labor counsel review before submission.</div>
+  <div class="sbar-card"><strong>Step 3</strong>Dept head / HR review. Full administrative record reviewed.</div>
+  <div class="sbar-card"><strong>Arbitration</strong>Binding. The record you built at Steps 1–3 is your case. Document everything correctly from the start.</div>
+  <span class="sbar-label">Weingarten Right</span>
+  <div class="sbar-card">Investigatory interview + reasonable belief of discipline = right to union rep. If requested: grant, offer choice, or end interview. NEVER continue over the request. Violation = ULP = discipline potentially invalidated.</div>
+  <span class="sbar-label">Response Protocol</span>
+  <div class="sbar-card">Read carefully · gather documentation · consult HR · precise and factual only · meet the deadline. Missing the deadline can sustain the grievance by default.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Grievances</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"Describe your understanding of the typical grievance process and how you would apply it in a real scenario."</div><div class="ob-note">Name the CBA provisions that apply. Reference past practice doctrine. Show that you work within the contract, consult labor relations when needed, and document your reasoning.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 3 — Key Takeaways</div>
+  <div class="tk-item">The Typical Grievance Process — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">The Weingarten Right — The BC Must Know This — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Labor Relations question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">CBA Framework → Grievance Ladder → FLSA Compliance → Good Faith Bargaining Standards</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the contract dimension → apply the legal framework → consult HR/counsel → close with Trustworthiness</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div>
+<h3>Use the OB card question</h3>
+<p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Reading the Contract</button>
+  <div class="lnb-info"><div class="lnb-name">Grievances</div><div class="lnb-num">Lesson 3 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Just Cause — Seven Tests →</button>
+</div>
+</div>
+
+<!-- LESSON 4 -->
+<div class="lesson-view" id="lesson-3">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 31 · Lesson 4 of 6</div>
+    <h1 class="lh-title">Just Cause —<br><em>The Seven Tests Every Discipline Must Pass</em></h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 18 min</span><span class="lh-meta-item">⚖️ Just Cause · Carroll Standards · Arbitration</span></div>
+  </div>
+  <p>Just cause is the standard that most collective bargaining agreements require management to satisfy before imposing discipline. It is not a vague fairness concept — it is a specific, multi-part test developed through decades of labor arbitration. The BC who doesn't know the seven just cause tests is routinely failing them without knowing it, and losing disciplinary actions in arbitration that they should have won.</p>
+  <h2>The Seven Just Cause Tests</h2>
+  <p>Labor arbitrator Carroll Daugherty articulated the seven-part just cause test in a 1966 arbitration decision. These tests — or close variants of them — are applied by labor arbitrators in virtually every discipline case. Every disciplinary action must satisfy all seven:</p>
+  <div class="just-cause">
+    <div class="jc-row">
+      <div class="jc-num">1</div>
+      <div class="jc-body">
+        <div class="jc-title">Notice — Did the Employee Know the Rule?</div>
+        <div class="jc-desc">The employee must have been given prior notice that the conduct was prohibited and that the applicable penalty would result. "I didn't know that was against the rules" is a complete defense to discipline if notice was genuinely absent.</div>
+        <div class="jc-fail">Fails when: The rule exists in policy but was never communicated, training was not provided, or the conduct was informally tolerated despite a written prohibition.</div>
+      </div>
+    </div>
+    <div class="jc-row">
+      <div class="jc-num">2</div>
+      <div class="jc-body">
+        <div class="jc-title">Reasonable Rule — Is the Rule Reasonably Related to Job Requirements?</div>
+        <div class="jc-desc">The rule or standard must be reasonably related to the orderly, efficient, and safe operation of the organization. Rules that bear no rational connection to legitimate organizational interests fail this test.</div>
+        <div class="jc-fail">Fails when: The rule is arbitrary, was created after the fact to justify a particular action, or applies to off-duty conduct that has no nexus to job performance.</div>
+      </div>
+    </div>
+    <div class="jc-row">
+      <div class="jc-num">3</div>
+      <div class="jc-body">
+        <div class="jc-title">Investigation — Was There a Fair and Objective Investigation?</div>
+        <div class="jc-desc">Before imposing discipline, management must conduct a fair and objective investigation to determine whether the employee actually committed the alleged violation. The investigation must be conducted before discipline is imposed — not designed to confirm a predetermined outcome.</div>
+        <div class="jc-fail">Fails when: The BC decided on discipline before investigating, only interviewed management-friendly witnesses, or didn't give the member an opportunity to present their account.</div>
+      </div>
+    </div>
+    <div class="jc-row">
+      <div class="jc-num">4</div>
+      <div class="jc-body">
+        <div class="jc-title">Substantial Evidence — Does the Evidence Support the Finding?</div>
+        <div class="jc-desc">The investigation must produce substantial evidence that the employee committed the violation. The standard is not beyond reasonable doubt (criminal) or preponderance of the evidence (civil), but there must be more than mere suspicion or management's subjective belief.</div>
+        <div class="jc-fail">Fails when: The conclusion rests on hearsay, circumstantial inference without corroboration, or the credibility assessment favors management without documented basis.</div>
+      </div>
+    </div>
+    <div class="jc-row">
+      <div class="jc-num">5</div>
+      <div class="jc-body">
+        <div class="jc-title">Equal Treatment — Has the Rule Been Applied Consistently?</div>
+        <div class="jc-desc">Similar violations must receive similar discipline. If management has imposed a lesser penalty for similar conduct in the past — or has tolerated the same conduct from other employees — the arbitrator will apply that precedent to moderate the current discipline. Disparate treatment based on personal relationships, favoritism, or selective enforcement is among the most common reasons discipline is overturned in arbitration.</div>
+        <div class="jc-fail">Fails when: The same conduct was excused for another member, a less senior member received a harsher penalty than a senior one for equivalent conduct, or there is any evidence of discriminatory selective enforcement.</div>
+      </div>
+    </div>
+    <div class="jc-row">
+      <div class="jc-num">6</div>
+      <div class="jc-body">
+        <div class="jc-title">Progressive Discipline — Was the Discipline Progressive?</div>
+        <div class="jc-desc">Except for serious misconduct that warrants immediate termination, discipline must be progressive — moving from verbal counseling, to written warning, to suspension, to termination over a pattern of violations. Skipping steps without documented justification or imposing the maximum penalty for a first offense in a non-termination-worthy situation fails this test.</div>
+        <div class="jc-fail">Fails when: Discipline skips progressive steps without documented justification, the severity of the action is disproportionate to the severity of the violation, or the member's long positive history was not considered.</div>
+      </div>
+    </div>
+    <div class="jc-row">
+      <div class="jc-num">7</div>
+      <div class="jc-body">
+        <div class="jc-title">Proportionality — Does the Penalty Fit the Offense?</div>
+        <div class="jc-desc">The penalty must be reasonably proportionate to the offense and the circumstances — including the member's length of service, work history, the severity of the conduct, and whether the conduct was a genuine aberration or part of a pattern. Arbitrators frequently reduce penalties that are disproportionate even when the underlying conduct was proven.</div>
+        <div class="jc-fail">Fails when: A termination is imposed for conduct that a reasonable employer would have addressed with a suspension, or the member's prior record and extenuating circumstances were not considered in determining the penalty level.</div>
+      </div>
+    </div>
+  </div>
+  <div class="callout callout-gold">
+    <span class="callout-label">The Just Cause Checklist — Before Every Disciplinary Action</span>
+    <p>Before imposing any disciplinary action, the BC should ask: Did the member know the rule? Is the rule reasonable? Was the investigation fair and objective? Does substantial evidence support the finding? Have similar violations been treated similarly? Is the discipline progressive? Is the penalty proportionate? A "no" on any of these is a problem that the union's arbitration representative will find. Find it first.</p>
+  </div>
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">CBA Framework → Grievance Ladder → FLSA Compliance → Good Faith Bargaining Standards</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the contract dimension → apply the legal framework → consult HR/counsel → close with Trustworthiness</div></div></div></div>
+
+  <span class="sbar-label">Seven Just Cause Tests</span>
+  <div class="sbar-card"><strong>1. Notice</strong>Did they know the rule? Was it communicated and trained?</div>
+  <div class="sbar-card"><strong>2. Reasonable Rule</strong>Does it relate to legitimate org needs?</div>
+  <div class="sbar-card"><strong>3. Investigation</strong>Fair, objective, before discipline imposed.</div>
+  <div class="sbar-card"><strong>4. Substantial Evidence</strong>More than suspicion. Not proof beyond doubt.</div>
+  <div class="sbar-card"><strong>5. Equal Treatment</strong>Same conduct = same discipline. Most common reason discipline is overturned.</div>
+  <div class="sbar-card"><strong>6. Progressive Discipline</strong>Steps in order. Skipping requires documented justification.</div>
+  <div class="sbar-card"><strong>7. Proportionality</strong>Penalty fits the offense + history + circumstances.</div>
+  <span class="sbar-label">Pre-Discipline Checklist</span>
+  <div class="sbar-card">Run all seven tests before imposing. A "no" on any = a grievance you will probably lose. Find it before the union rep does.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Just Cause</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"Describe your understanding of the seven just cause tests and how you would apply it in a real scenario."</div><div class="ob-note">Name the CBA provisions that apply. Reference past practice doctrine. Show that you work within the contract, consult labor relations when needed, and document your reasoning.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 4 — Key Takeaways</div>
+  <div class="tk-item">The Seven Just Cause Tests — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Labor Relations question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">CBA Framework → Grievance Ladder → FLSA Compliance → Good Faith Bargaining Standards</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the contract dimension → apply the legal framework → consult HR/counsel → close with Trustworthiness</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Grievances</button>
+  <div class="lnb-info"><div class="lnb-name">Just Cause — Seven Tests</div><div class="lnb-num">Lesson 4 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Unfair Labor Practices →</button>
+</div>
+</div>
+
+<!-- LESSON 5 -->
+<div class="lesson-view" id="lesson-4">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 31 · Lesson 5 of 6</div>
+    <h1 class="lh-title">Unfair Labor Practices —<br><em>The Lines the BC Cannot Cross</em></h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 14 min</span><span class="lh-meta-item">🚫 ULP · Protected Activity · PERB</span></div>
+  </div>
+  <p>Unfair labor practices (ULPs) are specific conduct by management (or by unions) that violates labor law. For management, ULPs most commonly involve interfering with employees' protected rights, retaliating for protected activity, or refusing to bargain in good faith. A ULP charge against a BC — even an inadvertent one — creates organizational legal exposure, draws regulatory scrutiny, and can invalidate personnel actions taken before or after the charge.</p>
+  <h2>The Five Most Common Management ULPs in Fire Service</h2>
+  <div class="acro-grid">
+    <div class="acro-row">
+      <div class="acro-letter">INT</div>
+      <div class="acro-content">
+        <div class="acro-word">Interference with Protected Activity</div>
+        <div class="acro-desc">Interfering with employees' rights to organize, join a union, or engage in concerted activity. This includes: discouraging union membership or activity, questioning employees about their union involvement, or making statements that could reasonably be perceived as threats or inducements related to union activity. The BC who says "things would go a lot smoother around here without the union stirring things up" has made a statement with potential ULP implications.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">RET</div>
+      <div class="acro-content">
+        <div class="acro-word">Retaliation for Protected Activity</div>
+        <div class="acro-desc">Taking adverse action — negative evaluations, assignment changes, discipline, hostile treatment — against a member because they filed a grievance, engaged in union activity, assisted other members in exercising their rights, or reported management misconduct. Retaliation is both a ULP and, in many circumstances, an independent legal violation. The temporal proximity test: adverse action that follows closely after protected activity looks like retaliation regardless of management's stated justification.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">UNI</div>
+      <div class="acro-content">
+        <div class="acro-word">Unilateral Change to Mandatory Bargaining Subjects</div>
+        <div class="acro-desc">Implementing changes to wages, hours, or working conditions without first bargaining with the union to impasse. This is the most common procedural ULP at the BC level — not because BCs intend to bypass bargaining, but because they implement operational changes without recognizing that the change constitutes a mandatory bargaining subject. When in doubt, check with HR before implementing any change that affects working conditions.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">DEN</div>
+      <div class="acro-content">
+        <div class="acro-word">Denying the Weingarten Right</div>
+        <div class="acro-desc">Continuing an investigatory interview after a member requests union representation — or refusing to allow a union representative to be present when the member has invoked their Weingarten right. As covered in Lesson 3: violation of this right is a ULP that can invalidate subsequent disciplinary action regardless of whether the member's conduct justified discipline.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">DIS</div>
+      <div class="acro-content">
+        <div class="acro-word">Discriminatory Enforcement</div>
+        <div class="acro-desc">Applying different standards, rules, or levels of scrutiny to members based on their union activity, their exercise of protected rights, or other protected characteristics. The BC who is stricter about policy compliance with active union stewards than with other members is creating both a ULP exposure and an equal treatment grievance. Consistency — documented and demonstrable — is the protection.</div>
+      </div>
+    </div>
+  </div>
+  <div class="callout callout-teal">
+    <span class="callout-label">The ULP Prevention Rule</span>
+    <p>The most effective ULP prevention practice is also the most basic: document all personnel decisions with objective, job-related reasons; apply standards consistently across the bargaining unit; involve HR before implementing operational changes that affect working conditions; and never make adverse personnel decisions based on a member's union activity or exercise of protected rights. The BC who can point to documented, consistent, job-related justification for every personnel decision is in the strongest possible position against a ULP charge.</p>
+  </div>
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">CBA Framework → Grievance Ladder → FLSA Compliance → Good Faith Bargaining Standards</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the contract dimension → apply the legal framework → consult HR/counsel → close with Trustworthiness</div></div></div></div>
+
+  <span class="sbar-label">Five Common Management ULPs</span>
+  <div class="sbar-card"><strong>Interference</strong>Discouraging or questioning union activity. Threats or inducements related to union status.</div>
+  <div class="sbar-card"><strong>Retaliation</strong>Adverse action after grievance, union activity, or protected reporting. Temporal proximity = evidence of retaliation.</div>
+  <div class="sbar-card"><strong>Unilateral Change</strong>Changing mandatory bargaining subjects without bargaining. Most common BC procedural ULP.</div>
+  <div class="sbar-card"><strong>Weingarten Denial</strong>Continuing investigatory interview after union rep request. Invalidates subsequent discipline.</div>
+  <div class="sbar-card"><strong>Discriminatory Enforcement</strong>Stricter scrutiny for union-active members. Inconsistency = evidence.</div>
+  <span class="sbar-label">ULP Prevention Rule</span>
+  <div class="sbar-card">Document objective job-related reasons · apply consistently · involve HR before changing working conditions · never base decisions on protected activity. Documented consistency is the shield.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Unfair Labor Practices</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"Describe your understanding of the five most common management ulps in fire servi and how you would apply it in a real scenario."</div><div class="ob-note">Name the CBA provisions that apply. Reference past practice doctrine. Show that you work within the contract, consult labor relations when needed, and document your reasoning.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 5 — Key Takeaways</div>
+  <div class="tk-item">The Five Most Common Management ULPs in Fire Service — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Labor Relations question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">CBA Framework → Grievance Ladder → FLSA Compliance → Good Faith Bargaining Standards</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the contract dimension → apply the legal framework → consult HR/counsel → close with Trustworthiness</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Just Cause — Seven Tests</button>
+  <div class="lnb-info"><div class="lnb-name">Unfair Labor Practices</div><div class="lnb-num">Lesson 5 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: AC Application →</button>
+</div>
+</div>
+
+<!-- LESSON 6 -->
+<div class="lesson-view" id="lesson-5">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 31 · Lesson 6 of 6 · Assessment Application</div>
+    <h1 class="lh-title">Assessment Center Application —<br><em>Labor Relations Scenarios</em></h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 14 min</span><span class="lh-meta-item">🎯 Scoring + Practice Scenarios</span></div>
+  </div>
+  <p>Labor relations scenarios at BC level most often appear in written exercises and in-basket items — because they test knowledge of specific legal and procedural requirements that have right and wrong answers. The scoring is clear: assessors look for knowledge of the process, engagement of HR and legal counsel at appropriate points, and management of the situation within the contractual and legal framework.</p>
+  <h2>Practice Scenario — The Investigatory Interview</h2>
+  <div class="callout callout-navy">
+    <span class="callout-label">In-Basket Item Prompt</span>
+    <p>"You are conducting an investigatory interview with a Firefighter regarding a complaint that she was rude to a member of the public during a community education event. Midway through the interview, she says: 'I want my union rep here before I answer any more questions.' You have two more witnesses to interview today and are trying to complete the investigation by end of shift. How do you proceed?"</p>
+  </div>
+  <div class="score-compare">
+    <div class="sc-card miss">
+      <div class="sc-title">3/5 Response</div>
+      <div class="sc-body">"I would explain to her that this is just an informal conversation and she doesn't need representation for this. I would try to finish the interview quickly and then get the union rep if she still felt she needed one after."</div>
+    </div>
+    <div class="sc-card hit">
+      <div class="sc-title">5/5 Response</div>
+      <div class="sc-body">"The firefighter has invoked her Weingarten right. The interview stops here — not at the end of this question, not after one more clarification. Right now.<br><br>I would acknowledge her request directly: 'Understood. We'll stop here and reconvene once your union representative is available.' I document in my investigation notes: date, time, that the Weingarten right was invoked, and that the interview was suspended at that point.<br><br>I then contact the union to arrange a time for the interview to resume with representation present — typically within a day or two. I continue the investigation with the other two witnesses in the meantime, since they are separate individuals and not affected by her invocation.<br><br>The pressure of completing the investigation by end of shift does not change any of this. A discipline case built on an interview that continued over a Weingarten invocation will be overturned in arbitration — every time — regardless of what the member said. The short-term convenience of finishing today is not worth the invalidation of the entire disciplinary action. HR is notified that the Weingarten right was invoked and the timeline has shifted accordingly."</div>
+    </div>
+  </div>
+  <div class="callout callout-gold">
+    <span class="callout-label">Chapter 31 Complete</span>
+    <p>Labor relations knowledge at the BC level is not optional — it is the infrastructure on which every personnel decision rests. The BC who understands the collective bargaining framework, knows their contract, manages grievances professionally, satisfies all seven just cause tests before disciplining, and never commits an unfair labor practice is not just legally protected — they are a more effective leader. Because the members who work under consistent, fair, contract-compliant management perform better, stay longer, and bring fewer grievances than those who work under arbitrary authority. Labor law and good leadership are the same discipline, viewed from different angles.</p>
+  </div>
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">CBA Framework → Grievance Ladder → FLSA Compliance → Good Faith Bargaining Standards</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the contract dimension → apply the legal framework → consult HR/counsel → close with Trustworthiness</div></div></div></div>
+
+  <span class="sbar-label">What the 5/5 Demonstrates</span>
+  <div class="sbar-card">Immediate recognition of Weingarten invocation · stops the interview at once · documents specifically · continues other aspects of investigation unaffected · notifies HR · explicitly names the arbitration risk of continuing. No hesitation.</div>
+  <span class="sbar-label">What the 3/5 Does Wrong</span>
+  <div class="sbar-card">"Informal conversation" framing doesn't override Weingarten. The right attaches to the reasonable belief of discipline — not to management's characterization of the meeting.</div>
+  <span class="sbar-label">The Integration Line</span>
+  <div class="sbar-card">"The pressure to finish today doesn't change this. A discipline case built on a Weingarten violation will be overturned regardless of what the member said." Clear consequence analysis = 5/5 reasoning.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Assessment Center Application</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"You receive a scenario about labor relations. Walk me through your complete response using the frameworks from this chapter."</div><div class="ob-note">Use LEAD: Label the bucket (Labor Relations), Engage the specific framework (reference Practice Scenario — The Investigatory Interview explicitly), Address the operational and organizational impact, Drive to a concrete first action with a timeline.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 6 — Key Takeaways</div>
+  <div class="tk-item">Practice Scenario — The Investigatory Interview — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Labor Relations question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">CBA Framework → Grievance Ladder → FLSA Compliance → Good Faith Bargaining Standards</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the contract dimension → apply the legal framework → consult HR/counsel → close with Trustworthiness</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Unfair Labor Practices</button>
+  <div class="lnb-info"><div class="lnb-name">AC Application</div><div class="lnb-num">Lesson 6 of 6</div></div>
+  <button class="lnb-btn primary" onclick="window.scrollTo({top:0,behavior:'smooth'})">Module Complete ✓</button>
+</div>
+</div>
+
+</main>
+<script>
+let cur=0;
+const ls=document.querySelectorAll('.lesson-view');
+const ps=document.querySelectorAll('.nav-pill');
+const mbs=document.querySelectorAll('.mh-lesson-btn');
+function showLesson(n){ls.forEach(l=>l.classList.remove('active'));ps.forEach(p=>p.classList.remove('active'));mbs.forEach(m=>m.classList.remove('active'));if(ls[n])ls[n].classList.add('active');if(ps[n])ps[n].classList.add('active');if(mbs[n])mbs[n].classList.add('active');cur=n;window.scrollTo({top:0,behavior:'smooth'});document.getElementById('prog').style.width='0%';}
+function nextLesson(){if(cur<ls.length-1)showLesson(cur+1);}
+function prevLesson(){if(cur>0)showLesson(cur-1);}
+window.addEventListener('scroll',()=>{const s=document.documentElement.scrollTop;const h=document.documentElement.scrollHeight-window.innerHeight;if(h>0)document.getElementById('prog').style.width=Math.min(100,(s/h*100))+'%';});
+document.addEventListener('DOMContentLoaded',()=>showLesson(0));
+
+function lfNext(el,stepNum){
+  var wrap=el.closest('.lf-wrap');
+  if(!wrap)return;
+  var steps=wrap.querySelectorAll('.lf-step');
+  var dots=wrap.querySelectorAll('.lf-dot');
+  steps.forEach(function(s,i){s.classList.remove('active');if(i<stepNum)s.classList.add('done');});
+  dots.forEach(function(d,i){d.classList.remove('active');if(i<stepNum)d.classList.add('done');if(i===stepNum)d.classList.add('active');});
+  if(steps[stepNum])steps[stepNum].classList.add('active');
+}
+</script>
+<script>function toggleFT(el){var sw=el.querySelector('.ft-toggle-switch');var desc=el.querySelector('.ft-toggle-desc');var mains=document.querySelectorAll('.lesson-main');sw.classList.toggle('on');var on=sw.classList.contains('on');desc.textContent=on?'Frameworks + OB cards only':'Full lesson content';mains.forEach(function(m){m.classList.toggle('ft-on',on);});}</script>
+</body>
+</html>

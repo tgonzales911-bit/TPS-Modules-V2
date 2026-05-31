@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Chapter 17 — Administrative Writing | The Promotional Standard</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Crimson+Pro:wght@300;400;500;600&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --navy:#0C2340;--navy2:#1A3A5C;--gold:#C9A84C;--gold2:#F5F0E8;--gold3:#6B4F10;
+  --cream:#F5F0E8;--offwhite:#F5F0E8;--light:#EAE5DC;--mid:#2A3D50;--gray:#8FA8C0;
+  --red:#B22222;--green:#1A5C3A;--green-light:#EAF3DE;
+  --teal:#006B6B;--teal-light:#E0F4F4;--purple:#4A2570;--purple-light:#F0EAF8;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:var(--navy);font-size:18px;line-height:1.8;}
+.top-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(12,35,64,0.98);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,168,76,0.2);height:64px;display:flex;align-items:center;padding:0 2rem;gap:1rem;}
+.nav-left{display:flex;align-items:center;gap:12px;flex:1;}
+.nav-brand{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;color:var(--cream);line-height:1.3;}
+.nav-brand span{display:block;font-size:8px;color:var(--gold);letter-spacing:2px;}
+.nav-pills{display:flex;gap:5px;flex:2;justify-content:center;overflow-x:auto;}
+.nav-pill{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#8FA8C0;padding:6px 11px;border-radius:20px;cursor:pointer;transition:all 0.2s;border:none;background:transparent;white-space:nowrap;}
+.nav-pill:hover{color:var(--cream);background:rgba(255,255,255,0.05);}
+.nav-pill.active{color:var(--gold);background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.25);}
+.progress-bar{position:fixed;top:64px;left:0;height:3px;background:linear-gradient(90deg,var(--navy2),var(--gold));z-index:199;width:0%;transition:width 0.3s;}
+.lesson-view{display:none;}.lesson-view.active{display:block;}
+.module-hero{background:var(--navy);padding:4.5rem 3rem 3.5rem;margin-top:64px;position:relative;overflow:hidden;border-bottom:3px solid var(--gold);}
+.module-hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 60px,rgba(201,168,76,0.015) 60px,rgba(201,168,76,0.015) 61px);}
+.module-hero::after{content:'';position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(180deg,var(--navy2),var(--gold));}
+.mh-inner{max-width:900px;position:relative;z-index:2;}
+.mh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.mh-title{font-family:'EB Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:800;color:var(--cream);line-height:1.1;margin-bottom:0.75rem;}
+.mh-title em{font-style:italic;color:var(--gold);}
+.mh-sub{font-size:1.05rem;color:#8FA8C0;max-width:700px;line-height:1.7;margin-bottom:2rem;}
+.mh-badges{display:flex;gap:10px;margin-bottom:1.5rem;flex-wrap:wrap;}
+.mh-badge{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border-radius:3px;}
+.badge-track{background:rgba(201,168,76,0.15);color:var(--gold);border:1px solid rgba(201,168,76,0.3);}
+.badge-nfpa{background:rgba(100,160,220,0.15);color:#8FA8C0;border:1px solid rgba(100,160,220,0.3);}
+.badge-new{background:rgba(50,180,100,0.15);color:#3AB464;border:1px solid rgba(50,180,100,0.3);}
+.mh-thread{background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);border-left:3px solid var(--gold);padding:1rem 1.5rem;margin-bottom:2rem;max-width:700px;}
+.mh-thread-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+.mh-thread-text{font-size:0.92rem;color:var(--cream);line-height:1.65;}
+.mh-lesson-nav{display:flex;gap:8px;flex-wrap:wrap;}
+.mh-lesson-btn{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:8px 14px;border-radius:6px;cursor:pointer;transition:all 0.2s;border:1px solid rgba(201,168,76,0.25);background:transparent;color:#8FA8C0;}
+.mh-lesson-btn:hover{background:rgba(255,255,255,0.05);color:var(--cream);}
+.mh-lesson-btn.active{background:rgba(201,168,76,0.12);color:var(--gold);border-color:rgba(201,168,76,0.4);}
+.lesson-container{display:grid;grid-template-columns:1fr 310px;gap:0;}
+.lesson-main{padding:3rem 3.5rem;border-right:1px solid var(--light);}
+.lesson-sidebar{padding:2rem 1.75rem;background:var(--offwhite);position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;}
+.lesson-header{margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:2px solid var(--light);}
+.lh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold3);margin-bottom:0.6rem;}
+.lh-title{font-family:'EB Garamond',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;color:var(--navy);line-height:1.15;margin-bottom:0.6rem;}
+.lh-title em{font-style:italic;color:var(--gold);}
+.lh-meta{display:flex;gap:1.5rem;flex-wrap:wrap;}
+.lh-meta-item{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);}
+.lesson-main h2{font-family:'EB Garamond',serif;font-size:1.7rem;font-weight:700;color:var(--navy);margin:3rem 0 0.9rem;padding-bottom:0.5rem;border-bottom:2px solid var(--light);}
+.lesson-main h3{font-family:'EB Garamond',serif;font-size:1.25rem;font-weight:600;color:var(--navy);margin:2.25rem 0 0.65rem;}
+.lesson-main p{margin-bottom:1.25rem;color:#2A3D50;line-height:1.82;}
+.lesson-main ul,.lesson-main ol{margin:0 0 1.25rem 1.5rem;color:#2A3D50;}
+.lesson-main li{margin-bottom:0.6rem;line-height:1.72;}
+.lesson-main strong{color:var(--navy);font-weight:600;}
+.callout{padding:1.4rem 1.6rem;margin:2rem 0;}
+.callout-gold{background:var(--gold2);border-left:3px solid var(--gold);}.callout-gold p{color:var(--gold3);font-size:0.97rem;line-height:1.75;}
+.callout-navy{background:var(--navy);border-left:3px solid var(--gold);}.callout-navy p{color:#8FA8C0;font-size:0.95rem;line-height:1.75;}
+.callout-red{background:#FFF0F0;border-left:4px solid var(--red);}.callout-red p{color:#6B4F10;font-size:0.97rem;line-height:1.75;}
+.callout-green{background:var(--green-light);border-left:4px solid var(--green);}.callout-green p{color:#1A3A5C;font-size:0.97rem;line-height:1.75;}
+.callout-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:0.5rem;display:block;}
+.callout-gold .callout-label{color:var(--gold3);}
+.callout-navy .callout-label{color:var(--gold);}
+.callout-red .callout-label{color:var(--red);}
+.callout-green .callout-label{color:var(--green);}
+.framework-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.fw-card{background:white;border:1px solid #EAE5DC;padding:1.25rem;border-radius:8px;}
+.fw-card-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:6px;}
+.fw-card-title{font-family:'EB Garamond',serif;font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.fw-card-desc{font-size:0.9rem;color:var(--mid);line-height:1.6;}
+.acro-grid{display:flex;flex-direction:column;gap:0;margin:1.5rem 0;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;}
+.acro-row{display:grid;grid-template-columns:52px 1fr;gap:0;border-bottom:1px solid #EAE5DC;}
+.acro-row:last-child{border-bottom:none;}
+.acro-letter{background:var(--navy);color:var(--gold);font-family:'EB Garamond',serif;font-size:1.8rem;font-weight:800;display:flex;align-items:center;justify-content:center;}
+.acro-content{padding:0.9rem 1.1rem;background:white;}
+.acro-word{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:3px;}
+.acro-desc{font-size:0.85rem;color:var(--mid);line-height:1.55;}
+.sbar-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold3);margin-bottom:0.65rem;margin-top:1.5rem;display:block;}
+.sbar-label:first-child{margin-top:0;}
+.sbar-card{background:white;border:1px solid #EAE5DC;border-radius:8px;padding:0.9rem 1rem;margin-bottom:8px;font-size:0.9rem;color:var(--mid);line-height:1.55;}
+.sbar-card strong{color:var(--navy);display:block;margin-bottom:3px;font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;}
+.lesson-nav-bar{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 3rem;border-top:3px solid var(--gold);background:var(--navy);gap:1rem;}
+.lnb-btn{background:rgba(255,255,255,0.08);border:2px solid rgba(201,168,76,0.4);padding:14px 28px;font-family:'Cinzel',serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border-radius:6px;color:var(--cream);transition:all 0.2s;white-space:nowrap;}
+.lnb-btn:hover{background:rgba(201,168,76,0.15);border-color:var(--gold);color:var(--gold);}
+.lnb-btn:disabled,.lnb-btn[disabled]{opacity:0.25;cursor:not-allowed;background:transparent;}
+.lnb-btn:disabled:hover,.lnb-btn[disabled]:hover{background:transparent;border-color:rgba(201,168,76,0.4);color:var(--cream);}
+.lnb-btn.primary{background:var(--gold);color:var(--navy);border-color:var(--gold);font-weight:800;}
+.lnb-btn.primary:hover{background:#C9A84C;border-color:#C9A84C;}
+.lnb-info{text-align:center;flex:1;}
+.lnb-name{font-family:'EB Garamond',serif;font-size:1rem;font-weight:700;color:var(--cream);}
+.lnb-num{font-size:0.85rem;color:var(--gold);font-family:'Cinzel',serif;letter-spacing:1px;}
+/* ICS-specific styles */
+.dim-cards{display:flex;flex-direction:column;gap:0.75rem;margin:1.5rem 0;}
+.dim-card{background:white;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;display:grid;grid-template-columns:64px 1fr;}
+.dim-card.dim-highlight{border-color:var(--gold);border-width:2px;}
+.dim-num-col{background:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1rem 0.5rem;gap:4px;}
+.dim-card.dim-highlight .dim-num-col{background:var(--gold);}
+.dim-badge{font-family:'EB Garamond',serif;font-size:1.6rem;font-weight:800;color:var(--gold);line-height:1;}
+.dim-card.dim-highlight .dim-badge{color:var(--navy);}
+.dim-body{padding:1rem 1.25rem;}
+.dim-title{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:5px;}
+.dim-card.dim-highlight .dim-title{color:var(--gold3);}
+.dim-desc{font-size:0.85rem;color:var(--mid);line-height:1.6;}
+.dim-scored{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold3);margin-top:6px;display:block;}
+.dim-card.dim-highlight .dim-scored{color:var(--gold3);}
+/* Legacy ics styles kept for ICS structure table in lesson 2 */
+.ics-structure{background:white;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;margin:1.5rem 0;}
+.ics-level{padding:0.9rem 1.25rem;border-bottom:1px solid #EAE5DC;display:grid;grid-template-columns:150px 1fr;gap:1rem;align-items:start;}
+.ics-level:last-child{border-bottom:none;}
+.ics-level-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:white;background:var(--navy);padding:4px 8px;border-radius:3px;display:inline-block;margin-top:2px;}
+.ics-level-desc{font-size:0.85rem;color:#2A3D50;line-height:1.6;}
+.ics-level-desc strong{color:var(--navy);font-family:'Cinzel',serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;}
+.ics-level.highlight{background:rgba(201,168,76,0.08);border-left:3px solid var(--gold);}
+.ics-level.highlight .ics-level-label{background:var(--gold);color:var(--navy);}
+.sizeup-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.75rem;margin:1.5rem 0;}
+.su-card{background:white;border:1px solid #EAE5DC;border-radius:8px;padding:1.1rem;text-align:center;}
+.su-num{font-family:'EB Garamond',serif;font-size:2rem;font-weight:800;color:var(--gold);line-height:1;}
+.su-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);font-weight:700;margin:5px 0 6px;}
+.su-desc{font-size:0.9rem;color:var(--mid);line-height:1.55;}
+.command-script{background:var(--navy);border-radius:8px;padding:1.5rem 1.75rem;margin:1.5rem 0;}
+.cs-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:block;}
+.cs-line{display:grid;grid-template-columns:100px 1fr;gap:0.75rem;margin-bottom:0.75rem;align-items:start;}
+.cs-line:last-child{margin-bottom:0;}
+.cs-role{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(201,168,76,0.6);padding-top:2px;}
+.cs-text{font-size:0.88rem;color:var(--cream);line-height:1.6;font-style:italic;}
+.score-compare{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.sc-card{padding:1.25rem;border-radius:8px;}
+.sc-card.miss{background:#FFF0F0;border:1px solid #F0C0C0;}
+.sc-card.hit{background:var(--green-light);border:1px solid #9DCCA8;}
+.sc-title{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;margin-bottom:0.75rem;}
+.sc-card.miss .sc-title{color:var(--red);}
+.sc-card.hit .sc-title{color:var(--green);}
+.sc-body{font-size:0.9rem;line-height:1.6;}
+.sc-card.miss .sc-body{color:#6B4F10;}
+.sc-card.hit .sc-body{color:#1A3A5C;}
+@media(max-width:900px){.lesson-container{grid-template-columns:1fr;}.lesson-sidebar{position:relative;height:auto;}.lesson-main{padding:2rem 1.5rem;}.lesson-nav-bar{padding:1rem 1.5rem;}.sizeup-grid{grid-template-columns:1fr 1fr;}.score-compare{grid-template-columns:1fr;}}
+.score-compare{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}.sc-card{padding:1.25rem;border-radius:8px;}.sc-card.miss{background:var(--red-light);border:1px solid #F0C0C0;}.sc-card.hit{background:var(--green-light);border:1px solid #9DCCA8;}.sc-title{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:0.75rem;}.sc-card.miss .sc-title{color:var(--red);}.sc-card.hit .sc-title{color:var(--green);}.sc-body{font-size:0.87rem;line-height:1.6;}.sc-card.miss .sc-body{color:#6B4F10;}.sc-card.hit .sc-body{color:#1A3A5C;}.callout-teal{background:var(--teal-light);border-left:4px solid var(--teal);}.callout-teal p{color:#003A3A;font-size:0.97rem;line-height:1.75;}.callout-teal .callout-label{color:var(--teal);}.badge-blue{background:rgba(30,80,180,0.12);color:#4A7FD0;border:1px solid rgba(30,80,180,0.25);}.badge-gold{background:rgba(201,168,76,0.15);color:var(--gold);border:1px solid rgba(201,168,76,0.3);}.badge-purple{background:rgba(74,37,112,0.15);color:#8B5FBF;border:1px solid rgba(74,37,112,0.3);}.badge-nfpa{background:rgba(100,160,220,0.15);color:#8FA8C0;border:1px solid rgba(100,160,220,0.3);}
+/* OB CARD */
+.ob-card{background:var(--navy);margin:2rem 0;overflow:hidden;}
+.ob-header{padding:0.85rem 1.5rem;background:rgba(201,168,76,0.08);border-bottom:1px solid rgba(201,168,76,0.15);}
+.ob-label{font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);}
+.ob-body{padding:1.25rem 1.5rem;}
+.ob-q{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;}
+.ob-q-tag{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);background:rgba(201,168,76,0.1);padding:4px 10px;border-radius:3px;white-space:nowrap;}
+.ob-q-text{font-family:'EB Garamond',serif;font-size:1.08rem;font-weight:600;color:var(--cream);line-height:1.5;margin-bottom:8px;}
+.ob-note{font-size:0.88rem;color:#8FA8C0;line-height:1.6;font-style:italic;}
+/* TAKEAWAYS */
+.takeaways{background:var(--navy);padding:2.25rem;margin:3rem 0 0;border-top:3px solid var(--gold);}
+.tk-lbl{font-family:'Cinzel',serif;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.tk-item{color:#8FA8C0;font-size:0.92rem;line-height:1.7;padding:0.5rem 0 0.5rem 1.25rem;border-left:2px solid rgba(201,168,76,0.2);margin-bottom:0.5rem;}
+
+
+.lead-nav{background:var(--navy);border-radius:8px;padding:14px 16px;margin-bottom:16px;border:1px solid rgba(201,168,76,0.2)}
+.lead-nav-header{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.lead-nav-row{display:grid;grid-template-columns:20px 1fr;gap:6px;margin-bottom:6px;align-items:start}
+.lead-nav-letter{font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:var(--gold)}
+.lead-nav-content{}
+.lead-nav-name{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:2px}
+.lead-nav-app{font-size:11px;color:#8FA8C0;line-height:1.5}
+
+.lf-wrap{margin:2.5rem 0 1.5rem;border:2px solid var(--gold);border-radius:10px;overflow:hidden}
+.lf-header{background:var(--navy);padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
+.lf-title{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+.lf-dots{display:flex;gap:6px}
+.lf-dot{width:8px;height:8px;border-radius:50%;background:rgba(201,168,76,0.25);transition:all 0.3s}
+.lf-dot.active{background:var(--gold);transform:scale(1.3)}
+.lf-dot.done{background:var(--gold)}
+.lf-step{display:none;padding:20px}
+.lf-step.active{display:block}
+.lf-step-num{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:6px}
+.lf-step-title{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:10px}
+.lf-chain{background:var(--navy);border-radius:6px;padding:14px 18px;margin:10px 0}
+.lf-chain-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.lf-chain-text{font-size:13px;color:#8FA8C0;line-height:1.6}
+.lf-chain-close{font-size:12px;color:var(--cream);margin-top:6px;font-style:italic}
+.lf-btn{background:var(--navy);color:var(--gold);border:2px solid var(--gold);padding:12px 24px;border-radius:6px;font-family:'Cinzel',serif;font-size:12px;letter-spacing:1.5px;font-weight:600;cursor:pointer;margin-top:12px;transition:all 0.2s;display:inline-block}
+.lf-btn:hover{background:var(--gold);color:var(--navy)}
+.lf-timer{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:var(--gold);padding:6px 14px;border-radius:4px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:1px;margin-top:10px}
+.lesson-main.ft>p{display:none!important}.lesson-main.ft>.callout{display:none!important}.ft-toggle{display:flex;align-items:center;gap:10px;padding:10px 16px;background:var(--navy);border-radius:6px;cursor:pointer;border:1px solid rgba(201,168,76,0.25)}.ft-toggle-switch{width:36px;height:20px;background:rgba(201,168,76,0.2);border-radius:10px;position:relative;transition:background .2s}.ft-toggle-switch.on{background:var(--gold)}.ft-toggle-knob{width:14px;height:14px;background:#fff;border-radius:50%;position:absolute;top:3px;left:3px;transition:left .2s}.ft-toggle-switch.on .ft-toggle-knob{left:19px}.ft-toggle-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}.ft-toggle-desc{font-size:11px;color:var(--mid)}.lesson-main.ft-on>p,.lesson-main.ft-on>.callout,.lesson-main.ft-on h3{display:none!important}.lesson-main.ft-on .ob-card,.lesson-main.ft-on .lf-wrap,.lesson-main.ft-on .lead-nav,.lesson-main.ft-on h2{display:block!important}
+</style>
+</head>
+<body>
+<nav class="top-nav"><div class="nav-left"><div class="nav-brand">The Promotional Standard<span>Lieutenant Track · Chapter 17</span></div></div>
+  <div class="nav-pills">    <button class="nav-pill active" onclick="showLesson(0)">Why Writing Matters</button>
+    <button class="nav-pill" onclick="showLesson(1)">Incident Reports</button>
+    <button class="nav-pill" onclick="showLesson(2)">Memoranda + Correspondence</button>
+    <button class="nav-pill" onclick="showLesson(3)">Counseling Documentation</button>
+    <button class="nav-pill" onclick="showLesson(4)">Reports to Administration</button>
+    <button class="nav-pill" onclick="showLesson(5)">AC Application</button></div></nav>
+<div class="progress-bar" id="prog"></div>
+<div class="module-hero"><div class="mh-inner">
+  <div class="mh-eyebrow">Chapter 17 · Lieutenant Track · Fire Officer I</div>
+  <h1 class="mh-title">Administrative Writing<br><em>+ Documentation</em></h1>
+  <p class="mh-sub">Incident reports and NFIRS accuracy standards, memo and formal correspondence structure and tone, counseling memo documentation standards, special incident and shift reports, recommendations with evidence-based structure, and the written exercise standard that assessment centers score. Administrative writing as professional competency.</p>
+  <div class="mh-badges"><span class="mh-badge badge-badge-blue">Lieutenant Track</span><span class="mh-badge badge-badge-nfpa">NFPA 1021 · FO I</span></div>
+  <div class="mh-thread"><div class="mh-thread-label">Before You Begin</div><div class="mh-thread-text">Administrative writing appears in virtually every assessment center format — written exercises, in-baskets, and the documentation component of supervisory judgment questions. The officer who writes well under assessment conditions writes well in daily operations.</div></div>
+  <div class="mh-lesson-nav">      <button class="mh-lesson-btn active" onclick="showLesson(0)">1. Why Writing Matters</button>
+      <button class="mh-lesson-btn" onclick="showLesson(1)">2. Incident Reports</button>
+      <button class="mh-lesson-btn" onclick="showLesson(2)">3. Memoranda + Correspondence</button>
+      <button class="mh-lesson-btn" onclick="showLesson(3)">4. Counseling Documentation</button>
+      <button class="mh-lesson-btn" onclick="showLesson(4)">5. Reports to Administration</button>
+      <button class="mh-lesson-btn" onclick="showLesson(5)">6. AC Application</button></div>
+</div></div>
+<main><div class="lesson-view active" id="lesson-0">
+<div class="lesson-container"><div class="lesson-main">
+<div class="lesson-header"><div class="lh-eyebrow">Chapter 17 · Lesson 1 of 6</div>
+<h1 class="lh-title">Why Administrative Writing Matters —<br><em>The Officer's Written Record</em></h1><div class="lh-meta"><span class="lh-meta-item">⏱ 10 min</span><span class="lh-meta-item">✍️ Written Communication · Record</span></div></div>
+<p>Administrative writing is the company officer's primary mechanism for creating the organizational record — the documented history of what occurred, what was decided, and why. The officer who cannot write clearly, accurately, and appropriately is a liability to the organization and a vulnerability to themselves. Every significant event the company officer manages will eventually be summarized in writing, and that summary may be reviewed by administration, labor relations, legal counsel, or the media.</p><div class="callout callout-gold"><span class="callout-label">The "Would It Hold Up?" Standard</span><p>Before submitting any administrative document — incident report, counseling memo, disciplinary recommendation, training record — the company officer asks: "If this document were reviewed by a labor arbitrator, a city attorney, or a news reporter, would it be accurate, professional, and defensible?" Documents that couldn't survive that review should not be submitted. Documents that could, should be submitted exactly as written, without softening or inflation.</p></div>
+</div><div class="lesson-sidebar">
+<div class="ft-toggle" onclick="toggleFT(this)" style="margin-bottom:16px;max-width:320px">
+<div class="ft-toggle-switch"><div class="ft-toggle-knob"></div></div>
+<div><div class="ft-toggle-label">Fast Track Mode</div><div class="ft-toggle-desc">Full lesson content</div></div>
+</div>
+
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Communication</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Five-Paragraph Formula → Memo Format → Documentation Standards</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the document type → apply Five-Paragraph → analyze before recommending → close with Trustworthiness</div></div></div></div>
+<span class="sbar-label">Why Writing Matters</span><div class="sbar-card">Permanent organizational record. May be reviewed by administration, labor, legal, or media. Every significant event eventually summarized in writing.</div><span class="sbar-label">The Hold-Up Standard</span><div class="sbar-card">"Would this document be accurate, professional, and defensible if reviewed by a labor arbitrator, city attorney, or reporter?" Write accordingly.</div></div></div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Why Administrative Writing Matters</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"How does why administrative writing matters apply to your daily leadership practice? Give me a specific example."</div><div class="ob-note">Name the document structure (heading, purpose, background, recommendation, closing). Show that your written communication is as structured as your oral communication.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 1 — Key Takeaways</div>
+  <div class="tk-item">LEAD integration: Label this as a Administrative Writing question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Communication</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Five-Paragraph Formula → Memo Format → Documentation Standards</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the document type → apply Five-Paragraph → analyze before recommending → close with Trustworthiness</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar"><button class="lnb-btn" disabled>← Previous</button>
+<div class="lnb-info"><div class="lnb-name">Lesson 1 of 6</div><div class="lnb-num">Chapter 17</div></div>
+<button class="lnb-btn primary" onclick="nextLesson()">Next: Incident Reports →</button></div></div><div class="lesson-view" id="lesson-1">
+<div class="lesson-container"><div class="lesson-main">
+<div class="lesson-header"><div class="lh-eyebrow">Chapter 17 · Lesson 2 of 6</div>
+<h1 class="lh-title">Incident Reports —<br><em>NFIRS, Accuracy, and What Gets Reviewed</em></h1><div class="lh-meta"><span class="lh-meta-item">⏱ 14 min</span><span class="lh-meta-item">📋 NFIRS · Incident Reporting · Accuracy</span></div></div>
+<p>The incident report — submitted through the National Fire Incident Reporting System (NFIRS) — is the primary operational documentation of fire service activity. It is also a legal document, a billing record for EMS-billing departments, a data source for performance measurement, and evidence in potential litigation. The company officer who treats NFIRS as a checkbox is missing the full consequence of what they're certifying.</p><div class="acro-grid"><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-weight:800;font-family:'EB Garamond',serif;">ACC</div><div class="acro-content"><div class="acro-word">Accuracy — Every Field, Every Time</div><div class="acro-desc">The incident report must accurately reflect what occurred — apparatus and personnel, times, actions taken, patient care, and outcomes. Errors of convenience (routing calls through wrong call types to manipulate statistics) and errors of omission (not documenting property damage, injuries, or protocol deviations) are both documentation integrity failures.</div></div></div><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-weight:800;font-family:'EB Garamond',serif;">TIM</div><div class="acro-content"><div class="acro-word">Timeliness — The 24-Hour Standard</div><div class="acro-desc">Most departments require incident reports within 24 hours of the incident. Delayed reports are completed from memory rather than from contemporaneous observation — reducing accuracy and creating gaps. The company officer who completes reports at the end of the shift completes them with the freshest and most accurate information available.</div></div></div><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-weight:800;font-family:'EB Garamond',serif;">EMS</div><div class="acro-content"><div class="acro-word">EMS Report Integration — PCR and NFIRS Consistency</div><div class="acro-desc">EMS incidents require both a PCR (patient care report) and an NFIRS report. The two documents should be consistent — same times, same patient demographics, same disposition. Inconsistencies between the two create credibility questions and documentation gaps that become problems in quality review and litigation.</div></div></div><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-weight:800;font-family:'EB Garamond',serif;">REV</div><div class="acro-content"><div class="acro-word">The Review Process — What Happens to Reports</div><div class="acro-desc">NFIRS data is reviewed by administration, state fire marshal offices, FEMA, and the US Fire Administration. Aggregated data from NFIRS informs national fire safety policy. The company officer who submits accurate, complete data is contributing to the evidence base that shapes the profession.</div></div></div></div><div class="callout callout-teal"><span class="callout-label">Documentation of Unusual Occurrences</span><p>When something unusual occurs at an incident — a protocol deviation, a crew member injury, a vehicle accident, a near-miss, or anything that may generate future inquiry — the company officer documents it immediately and completely. The officer who thinks "I'll document it if it becomes an issue" has already compromised the integrity of the record. Document at the time, completely, and factually.</p></div>
+</div><div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Communication</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Five-Paragraph Formula → Memo Format → Documentation Standards</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the document type → apply Five-Paragraph → analyze before recommending → close with Trustworthiness</div></div></div></div>
+<span class="sbar-label">NFIRS Accuracy</span><div class="sbar-card">Every field · every time. Convenience errors and omission errors both = documentation integrity failure.</div><span class="sbar-label">24-Hour Standard</span><div class="sbar-card">Complete at end of shift when memory is freshest. Delayed reports = reduced accuracy.</div><span class="sbar-label">Unusual Occurrences</span><div class="sbar-card">Document at the time. Not "if it becomes an issue." That decision has already compromised the record.</div></div></div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Incident Reports</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"How does incident reports apply to your daily leadership practice? Give me a specific example."</div><div class="ob-note">Name the document structure (heading, purpose, background, recommendation, closing). Show that your written communication is as structured as your oral communication.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 2 — Key Takeaways</div>
+  <div class="tk-item">LEAD integration: Label this as a Administrative Writing question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Communication</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Five-Paragraph Formula → Memo Format → Documentation Standards</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the document type → apply Five-Paragraph → analyze before recommending → close with Trustworthiness</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar"><button class="lnb-btn" onclick="prevLesson()">← Why Writing Matters</button>
+<div class="lnb-info"><div class="lnb-name">Lesson 2 of 6</div><div class="lnb-num">Chapter 17</div></div>
+<button class="lnb-btn primary" onclick="nextLesson()">Next: Memoranda + Correspondence →</button></div></div><div class="lesson-view" id="lesson-2">
+<div class="lesson-container"><div class="lesson-main">
+<div class="lesson-header"><div class="lh-eyebrow">Chapter 17 · Lesson 3 of 6</div>
+<h1 class="lh-title">Memoranda and Formal Correspondence —<br><em>Structure, Tone, and Purpose</em></h1><div class="lh-meta"><span class="lh-meta-item">⏱ 12 min</span><span class="lh-meta-item">📝 Memo Format · Professional Tone</span></div></div>
+<p>The administrative memorandum — the primary formal written communication in most fire service organizations — follows a consistent structure and requires a specific professional tone. The company officer who can produce a clear, well-structured memo is demonstrating an organizational capability that distinguishes them in assessment centers and in daily professional operations.</p><div class="framework-grid"><div class="fw-card"><div class="fw-card-label">Standard Memo Structure</div><div class="fw-card-title">TO: FROM: DATE: RE: + Body</div><div class="fw-card-desc">The standard memo format: TO (recipient), FROM (author with title), DATE, RE (subject line that is specific and searchable). Body: opening paragraph states purpose directly (not "I am writing to inform you..."), subsequent paragraphs provide supporting information in logical order, closing paragraph states the requested action or outcome. No narrative throat-clearing.</div></div><div class="fw-card"><div class="fw-card-label">Tone — Professional Without Being Cold</div><div class="fw-card-title">Formal + Direct + Respectful</div><div class="fw-card-desc">Administrative writing is formal — not casual — but not cold. Direct sentences in active voice. No bureaucratic hedging ("it would seem that..." or "it appears as though..."). State what happened, what the issue is, and what you are requesting or recommending. One clear main message per memo. If there are multiple unrelated issues, write multiple memos.</div></div></div><div class="acro-grid"><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-weight:800;font-family:'EB Garamond',serif;">CLR</div><div class="acro-content"><div class="acro-word">Clarity — One Main Message</div><div class="acro-desc">A memo with multiple unrelated points is a memo that doesn't get fully read and doesn't get filed correctly. One main message per memo. If there are five things to communicate, write five memos or one memo with a clearly organized list.</div></div></div><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-weight:800;font-family:'EB Garamond',serif;">AVO</div><div class="acro-content"><div class="acro-word">Avoid Jargon and Ambiguity</div><div class="acro-desc">Administrative writing that relies on fire service jargon (codes, acronyms, technical terms) assumes the reader shares the writer's vocabulary — which administrators, HR professionals, and legal counsel may not. Use plain language, define technical terms where necessary, and write for the least-familiar reader in the anticipated audience.</div></div></div><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-weight:800;font-family:'EB Garamond',serif;">DOC</div><div class="acro-content"><div class="acro-word">Document the Request or Decision</div><div class="acro-desc">Every memo should conclude with a clear statement of what is being requested or decided: "Please advise on approval by [date]," "This memorandum documents my concurrence with [decision]," "I request your approval for [action]." Administrative writing that ends without a clear requested action creates ambiguity about what happens next.</div></div></div></div><div class="callout callout-gold"><span class="callout-label">The Email Standard</span><p>Most administrative communication now occurs via email — which is also a formal organizational record. The same standards that apply to memos apply to email: specific subject lines, direct professional tone, clear request or decision statement. Emails that are vague, emotional, or unprofessionally written become organizational evidence when they are printed for a grievance or a lawsuit.</p></div>
+</div><div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Communication</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Five-Paragraph Formula → Memo Format → Documentation Standards</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the document type → apply Five-Paragraph → analyze before recommending → close with Trustworthiness</div></div></div></div>
+<span class="sbar-label">Memo Structure</span><div class="sbar-card">TO: FROM: DATE: RE: (specific) → Purpose (direct) → Supporting info → Requested action. No throat-clearing.</div><span class="sbar-label">Tone</span><div class="sbar-card">Formal + direct + respectful. Active voice. State what happened. No bureaucratic hedging.</div><span class="sbar-label">Email = Memo Standard</span><div class="sbar-card">Email is an organizational record. Same standards as memo. Subject line specific. Direct. Professional. Will be printed for grievances.</div></div></div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Memoranda and Formal Correspondence</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"How does memoranda and formal correspondence apply to your daily leadership practice? Give me a specific example."</div><div class="ob-note">Name the document structure (heading, purpose, background, recommendation, closing). Show that your written communication is as structured as your oral communication.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 3 — Key Takeaways</div>
+  <div class="tk-item">LEAD integration: Label this as a Administrative Writing question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Communication</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Five-Paragraph Formula → Memo Format → Documentation Standards</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the document type → apply Five-Paragraph → analyze before recommending → close with Trustworthiness</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar"><button class="lnb-btn" onclick="prevLesson()">← Incident Reports</button>
+<div class="lnb-info"><div class="lnb-name">Lesson 3 of 6</div><div class="lnb-num">Chapter 17</div></div>
+<button class="lnb-btn primary" onclick="nextLesson()">Next: Counseling Memos →</button></div></div><div class="lesson-view" id="lesson-3">
+<div class="lesson-container"><div class="lesson-main">
+<div class="lesson-header"><div class="lh-eyebrow">Chapter 17 · Lesson 4 of 6</div>
+<h1 class="lh-title">Counseling Memos and Disciplinary Documentation</h1><div class="lh-meta"><span class="lh-meta-item">⏱ 14 min</span><span class="lh-meta-item">📋 Counseling Memos · Disciplinary Records</span></div></div>
+<p>The counseling memo — a written record of a supervisory conversation about a performance issue — is covered in depth in Module 30 (Personnel Management). This lesson focuses specifically on the writing standards that make counseling documentation effective, defensible, and professionally appropriate.</p><div class="acro-grid"><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-weight:800;font-family:'EB Garamond',serif;">FAC</div><div class="acro-content"><div class="acro-word">Factual and Behavioral — Not Interpretive</div><div class="acro-desc">Document observable behavior: "Member arrived 12 minutes late for shift briefing on [date]." Not: "Member has an attitude problem and doesn't respect the schedule." Observable behavioral facts are documentable and defensible. Characterizations and interpretations are not.</div></div></div><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-weight:800;font-family:'EB Garamond',serif;">SPE</div><div class="acro-content"><div class="acro-word">Specific and Dated — Not General</div><div class="acro-desc">"Member has been late several times recently" is not a documentation standard. "Member arrived late for shift briefing on [date 1], [date 2], and [date 3]" is. Specific, dated, behavioral records create the foundation for progressive discipline and, if needed, arbitration defense.</div></div></div><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-weight:800;font-family:'EB Garamond',serif;">SND</div><div class="acro-content"><div class="acro-word">Standard Referenced — What Rule Was Violated?</div><div class="acro-desc">The counseling memo identifies the specific standard, policy, or expectation that was not met: "Department policy requires arrival at least 15 minutes prior to shift for briefing preparation. Member's tardiness on [dates] was inconsistent with this standard."</div></div></div><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-weight:800;font-family:'EB Garamond',serif;">EXP</div><div class="acro-content"><div class="acro-word">Expectation Going Forward — What Happens Next?</div><div class="acro-desc">Every counseling memo concludes with the expectation going forward: "Member is expected to report for shift briefing by [specific time] beginning with the next scheduled shift. Failure to meet this expectation will result in [next step in progressive discipline]." The member signs to acknowledge receipt of the expectation — not agreement with the content.</div></div></div></div><div class="callout callout-red"><span class="callout-label">The Retaliation Landmine</span><p>Any disciplinary documentation that occurs within close temporal proximity to protected activity (grievance filing, union activity, safety reporting) requires HR review before submission. The "temporal proximity test" — described in Module 33 (Labor Relations) — makes discipline that follows protected activity look like retaliation regardless of whether it actually is. HR consultation before submitting is not bureaucratic caution — it is legal protection.</p></div>
+</div><div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Communication</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Five-Paragraph Formula → Memo Format → Documentation Standards</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the document type → apply Five-Paragraph → analyze before recommending → close with Trustworthiness</div></div></div></div>
+<span class="sbar-label">Counseling Memo Standards</span><div class="sbar-card">Factual + behavioral (not interpretive) · specific dates (not general) · standard referenced · expectation going forward · member signature for receipt.</div><span class="sbar-label">Retaliation Risk</span><div class="sbar-card">Discipline following protected activity = potential ULP regardless of intent. HR review before submission when timing is close.</div></div></div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Counseling Memos and Disciplinary Documentati</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"How does counseling memos and disciplinary documentation apply to your daily leadership practice? Give me a specific example."</div><div class="ob-note">Name the document structure (heading, purpose, background, recommendation, closing). Show that your written communication is as structured as your oral communication.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 4 — Key Takeaways</div>
+  <div class="tk-item">LEAD integration: Label this as a Administrative Writing question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Communication</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Five-Paragraph Formula → Memo Format → Documentation Standards</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the document type → apply Five-Paragraph → analyze before recommending → close with Trustworthiness</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar"><button class="lnb-btn" onclick="prevLesson()">← Memoranda</button>
+<div class="lnb-info"><div class="lnb-name">Lesson 4 of 6</div><div class="lnb-num">Chapter 17</div></div>
+<button class="lnb-btn primary" onclick="nextLesson()">Next: Reports to Admin →</button></div></div><div class="lesson-view" id="lesson-4">
+<div class="lesson-container"><div class="lesson-main">
+<div class="lesson-header"><div class="lh-eyebrow">Chapter 17 · Lesson 5 of 6</div>
+<h1 class="lh-title">Reports to Administration —<br><em>Shift Reports, Special Reports, and Recommendations</em></h1><div class="lh-meta"><span class="lh-meta-item">⏱ 12 min</span><span class="lh-meta-item">📊 Admin Reports · Recommendations</span></div></div>
+<p>The company officer communicates upward through the chain of command through shift reports, special incident reports, and formal recommendations. Each document type serves a different organizational function and requires a different approach.</p><div class="framework-grid"><div class="fw-card"><div class="fw-card-label">Shift Reports</div><div class="fw-card-title">Daily Operational Summary</div><div class="fw-card-desc">The shift report — or daily activity log — summarizes the shift's operational activity, training, maintenance, and significant events. It is the primary communication channel between the company officer and the battalion chain on non-operational matters. A shift report that contains accurate, complete information about significant events provides upstream visibility that protects both the officer and the organization.</div></div><div class="fw-card"><div class="fw-card-label">Special Incident Reports</div><div class="fw-card-title">When a Significant Event Requires Additional Documentation</div><div class="fw-card-desc">Serious injuries, property damage, officer-involved decisions that may be questioned, or incidents with potential legal significance require a special incident report — a narrative document that provides complete context, sequence of events, and the officer's decisions with their rationale. Written from memory is inadequate; written from contemporaneous notes taken at the scene is the standard.</div></div><div class="fw-card"><div class="fw-card-label">Recommendations</div><div class="fw-card-title">Making a Case for a Decision</div><div class="fw-card-desc">When the company officer recommends a course of action — equipment purchase, policy change, personnel action, program investment — the recommendation document follows the same evidence-based structure as any resource justification: problem statement with data, options with trade-offs, recommended course of action with rationale, and requested decision. Recommendations without supporting evidence are opinions.</div></div><div class="fw-card"><div class="fw-card-label">When to Escalate</div><div class="fw-card-title">What Goes Up the Chain?</div><div class="fw-card-desc">Not everything that happens on a shift needs to go up the chain. The company officer exercises judgment about what requires upward communication: anything that may generate public, media, or governing body interest; anything that involves potential liability; anything that requires resources beyond the company officer's authority; and anything the battalion chief would want to know before they hear it from someone else — which is everything significant.</div></div></div><div class="callout callout-gold"><span class="callout-label">The "Up First" Principle</span><p>The battalion chief should never learn about a significant event in the company officer's shift from someone other than the company officer. This is the company-level application of the "no surprises" principle that Module 38 identifies as foundational for the Fire Chief-city manager relationship. It applies at every level of the chain. Report up before the information travels laterally or externally.</p></div>
+</div><div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Communication</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Five-Paragraph Formula → Memo Format → Documentation Standards</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the document type → apply Five-Paragraph → analyze before recommending → close with Trustworthiness</div></div></div></div>
+<span class="sbar-label">Report Types</span><div class="sbar-card">Shift report: daily summary. Special incident report: significant events narrative. Recommendation: evidence-based case for a decision.</div><span class="sbar-label">Up First Principle</span><div class="sbar-card">Battalion chief hears from you first. Before it travels laterally or externally. Same principle applies at every level of the chain.</div></div></div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Reports to Administration</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"How does reports to administration apply to your daily leadership practice? Give me a specific example."</div><div class="ob-note">Name the document structure (heading, purpose, background, recommendation, closing). Show that your written communication is as structured as your oral communication.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 5 — Key Takeaways</div>
+  <div class="tk-item">LEAD integration: Label this as a Administrative Writing question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Communication</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Five-Paragraph Formula → Memo Format → Documentation Standards</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the document type → apply Five-Paragraph → analyze before recommending → close with Trustworthiness</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar"><button class="lnb-btn" onclick="prevLesson()">← Counseling Memos</button>
+<div class="lnb-info"><div class="lnb-name">Lesson 5 of 6</div><div class="lnb-num">Chapter 17</div></div>
+<button class="lnb-btn primary" onclick="nextLesson()">Next: AC Application →</button></div></div><div class="lesson-view" id="lesson-5">
+<div class="lesson-container"><div class="lesson-main">
+<div class="lesson-header"><div class="lh-eyebrow">Chapter 17 · Lesson 6 of 6 · Assessment Application</div>
+<h1 class="lh-title">Assessment Center Application —<br><em>Administrative Writing Scenarios</em></h1><div class="lh-meta"><span class="lh-meta-item">⏱ 10 min</span><span class="lh-meta-item">🎯 Scoring</span></div></div>
+<p>Administrative writing in assessment centers typically appears as written exercise prompts — draft a memo, write a counseling summary, prepare a recommendation. The scoring evaluates clarity, accuracy, professional tone, appropriate structure, and completeness.</p><div class="callout callout-navy"><span class="callout-label">Written Exercise Prompt</span><p>"You are the company officer. During your shift, a crew member backed the apparatus into a parked vehicle in the station bay, causing minor damage to the crew member's personal vehicle. No injuries occurred. Draft the memo documenting this incident."</p></div><div class="score-compare"><div class="sc-card miss"><div class="sc-title">3/5 Response</div><div class="sc-body">"TO: Battalion Chief [Name]
+FROM: Lt. [Name]
+DATE: [Date]
+RE: Apparatus accident
+
+On [date] during the B shift, Firefighter [Name] backed Engine 4 into their personal vehicle in the apparatus bay. There was minor damage. No injuries occurred. The incident has been reported."</div></div><div class="sc-card hit"><div class="sc-title">5/5 Response</div><div class="sc-body">"TO: Battalion Chief [Name], Station [X] Battalion
+FROM: Lieutenant [Name], Engine [X], B-Shift
+DATE: [Date]
+RE: Apparatus Involved in Minor Vehicle Contact — [Date]
+
+Purpose: This memorandum documents a minor apparatus contact that occurred during B-Shift on [date] and provides the relevant details for administrative and vehicle maintenance follow-up.
+
+Incident Summary: At approximately [time], while returning Engine [X] to quarters following [call or routine return], Firefighter [Name] (personnel #XXX) was operating Engine [X] in the apparatus bay. During backing, the apparatus made contact with Firefighter [Name's] personally-owned vehicle (make/model), which was parked in the designated personal vehicle area. Impact occurred at an estimated speed of less than 5 mph.
+
+Damage Assessment: Minor scrape to the right rear bumper of the personal vehicle, approximately 6 inches. No visible damage to apparatus. No injuries to personnel.
+
+Actions Taken: [Name] was advised to contact their personal insurance carrier. The apparatus was inspected; no damage found. The apparatus was returned to in-service status. This report prepared per department policy for apparatus contacts.
+
+Recommended Follow-Up: Vehicle maintenance inspection of apparatus bumper at next routine service. [Name] should submit personal insurance documentation to verify no organizational claim will follow.
+
+I am available to provide additional information."</div></div></div><div class="callout callout-gold"><span class="callout-label">Chapter 17 Complete</span><p>Administrative writing is professional self-presentation in permanent form. The officer who writes accurately, specifically, structurally, and professionally is demonstrating the organizational competency that every administrative question about their work will encounter. Write as though it will be read — because it will be.</p></div>
+</div><div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Communication</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Five-Paragraph Formula → Memo Format → Documentation Standards</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the document type → apply Five-Paragraph → analyze before recommending → close with Trustworthiness</div></div></div></div>
+<span class="sbar-label">5/5 Pattern</span><div class="sbar-card">Specific subject line · purpose statement · complete incident summary (who, when, what, estimated speed) · damage assessment · actions taken · recommended follow-up · available for questions.</div><span class="sbar-label">3/5 Gap</span><div class="sbar-card">Minimal information. No purpose statement. No follow-up actions. No recommended next steps. Not documentarily useful.</div></div></div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Assessment Center Application</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"You receive a scenario about administrative writing. Walk me through your complete response using the frameworks from this chapter."</div><div class="ob-note">Use LEAD: Label the bucket (Administrative Writing), Engage the specific framework (reference Assessment Center Application explicitly), Address the operational and organizational impact, Drive to a concrete first action with a timeline.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 6 — Key Takeaways</div>
+  <div class="tk-item">LEAD integration: Label this as a Administrative Writing question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Communication</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Five-Paragraph Formula → Memo Format → Documentation Standards</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the document type → apply Five-Paragraph → analyze before recommending → close with Trustworthiness</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar"><button class="lnb-btn" onclick="prevLesson()">← Reports to Admin</button>
+<div class="lnb-info"><div class="lnb-name">Lesson 6 of 6</div><div class="lnb-num">Chapter 17</div></div>
+<button class="lnb-btn primary" onclick="window.scrollTo({{top:0,behavior:'smooth'}})">Module Complete ✓</button></div></div></main>
+<script>
+let cur=0;const ls=document.querySelectorAll('.lesson-view');const ps=document.querySelectorAll('.nav-pill');const mbs=document.querySelectorAll('.mh-lesson-btn');
+function showLesson(n){ls.forEach(l=>l.classList.remove('active'));ps.forEach(p=>p.classList.remove('active'));mbs.forEach(m=>m.classList.remove('active'));if(ls[n])ls[n].classList.add('active');if(ps[n])ps[n].classList.add('active');if(mbs[n])mbs[n].classList.add('active');cur=n;window.scrollTo({top:0,behavior:'smooth'});document.getElementById('prog').style.width='0%';}
+function nextLesson(){if(cur<ls.length-1)showLesson(cur+1);}
+function prevLesson(){if(cur>0)showLesson(cur-1);}
+window.addEventListener('scroll',()=>{const s=document.documentElement.scrollTop;const h=document.documentElement.scrollHeight-window.innerHeight;if(h>0)document.getElementById('prog').style.width=Math.min(100,(s/h*100))+'%';});
+document.addEventListener('DOMContentLoaded',()=>showLesson(0));
+
+function lfNext(el,stepNum){
+  var wrap=el.closest('.lf-wrap');
+  if(!wrap)return;
+  var steps=wrap.querySelectorAll('.lf-step');
+  var dots=wrap.querySelectorAll('.lf-dot');
+  steps.forEach(function(s,i){s.classList.remove('active');if(i<stepNum)s.classList.add('done');});
+  dots.forEach(function(d,i){d.classList.remove('active');if(i<stepNum)d.classList.add('done');if(i===stepNum)d.classList.add('active');});
+  if(steps[stepNum])steps[stepNum].classList.add('active');
+}
+</script><script>function toggleFT(el){var sw=el.querySelector('.ft-toggle-switch');var desc=el.querySelector('.ft-toggle-desc');var mains=document.querySelectorAll('.lesson-main');sw.classList.toggle('on');var on=sw.classList.contains('on');desc.textContent=on?'Frameworks + OB cards only':'Full lesson content';mains.forEach(function(m){m.classList.toggle('ft-on',on);});}</script>
+</body></html>

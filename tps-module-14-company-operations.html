@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Chapter 12 — Company Operations | The Promotional Standard</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Crimson+Pro:wght@300;400;500;600&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --navy:#0C2340;--navy2:#1A3A5C;--gold:#C9A84C;--gold2:#F5F0E8;--gold3:#6B4F10;
+  --cream:#F5F0E8;--offwhite:#F5F0E8;--light:#EAE5DC;--mid:#2A3D50;--gray:#8FA8C0;
+  --red:#B22222;--green:#1A5C3A;--green-light:#EAF3DE;
+  --teal:#006B6B;--teal-light:#E0F4F4;--purple:#4A2570;--purple-light:#F0EAF8;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:var(--navy);font-size:18px;line-height:1.8;}
+.top-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(12,35,64,0.98);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,168,76,0.2);height:64px;display:flex;align-items:center;padding:0 2rem;gap:1rem;}
+.nav-left{display:flex;align-items:center;gap:12px;flex:1;}
+.nav-brand{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;color:var(--cream);line-height:1.3;}
+.nav-brand span{display:block;font-size:8px;color:var(--gold);letter-spacing:2px;}
+.nav-pills{display:flex;gap:5px;flex:2;justify-content:center;overflow-x:auto;}
+.nav-pill{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#8FA8C0;padding:6px 11px;border-radius:20px;cursor:pointer;transition:all 0.2s;border:none;background:transparent;white-space:nowrap;}
+.nav-pill:hover{color:var(--cream);background:rgba(255,255,255,0.05);}
+.nav-pill.active{color:var(--gold);background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.25);}
+.progress-bar{position:fixed;top:64px;left:0;height:3px;background:linear-gradient(90deg,var(--navy2),var(--gold));z-index:199;width:0%;transition:width 0.3s;}
+.lesson-view{display:none;}.lesson-view.active{display:block;}
+.module-hero{background:var(--navy);padding:4.5rem 3rem 3.5rem;margin-top:64px;position:relative;overflow:hidden;border-bottom:3px solid var(--gold);}
+.module-hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 60px,rgba(201,168,76,0.015) 60px,rgba(201,168,76,0.015) 61px);}
+.module-hero::after{content:'';position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(180deg,var(--navy2),var(--gold));}
+.mh-inner{max-width:900px;position:relative;z-index:2;}
+.mh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.mh-title{font-family:'EB Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:800;color:var(--cream);line-height:1.1;margin-bottom:0.75rem;}
+.mh-title em{font-style:italic;color:var(--gold);}
+.mh-sub{font-size:1.05rem;color:#8FA8C0;max-width:700px;line-height:1.7;margin-bottom:2rem;}
+.mh-badges{display:flex;gap:10px;margin-bottom:1.5rem;flex-wrap:wrap;}
+.mh-badge{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border-radius:3px;}
+.badge-track{background:rgba(201,168,76,0.15);color:var(--gold);border:1px solid rgba(201,168,76,0.3);}
+.badge-nfpa{background:rgba(100,160,220,0.15);color:#8FA8C0;border:1px solid rgba(100,160,220,0.3);}
+.badge-new{background:rgba(50,180,100,0.15);color:#3AB464;border:1px solid rgba(50,180,100,0.3);}
+.mh-thread{background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);border-left:3px solid var(--gold);padding:1rem 1.5rem;margin-bottom:2rem;max-width:700px;}
+.mh-thread-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+.mh-thread-text{font-size:0.92rem;color:var(--cream);line-height:1.65;}
+.mh-lesson-nav{display:flex;gap:8px;flex-wrap:wrap;}
+.mh-lesson-btn{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:8px 14px;border-radius:6px;cursor:pointer;transition:all 0.2s;border:1px solid rgba(201,168,76,0.25);background:transparent;color:#8FA8C0;}
+.mh-lesson-btn:hover{background:rgba(255,255,255,0.05);color:var(--cream);}
+.mh-lesson-btn.active{background:rgba(201,168,76,0.12);color:var(--gold);border-color:rgba(201,168,76,0.4);}
+.lesson-container{display:grid;grid-template-columns:1fr 310px;gap:0;}
+.lesson-main{padding:3rem 3.5rem;border-right:1px solid var(--light);}
+.lesson-sidebar{padding:2rem 1.75rem;background:var(--offwhite);position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;}
+.lesson-header{margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:2px solid var(--light);}
+.lh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold3);margin-bottom:0.6rem;}
+.lh-title{font-family:'EB Garamond',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;color:var(--navy);line-height:1.15;margin-bottom:0.6rem;}
+.lh-title em{font-style:italic;color:var(--gold);}
+.lh-meta{display:flex;gap:1.5rem;flex-wrap:wrap;}
+.lh-meta-item{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);}
+.lesson-main h2{font-family:'EB Garamond',serif;font-size:1.7rem;font-weight:700;color:var(--navy);margin:3rem 0 0.9rem;padding-bottom:0.5rem;border-bottom:2px solid var(--light);}
+.lesson-main h3{font-family:'EB Garamond',serif;font-size:1.25rem;font-weight:600;color:var(--navy);margin:2.25rem 0 0.65rem;}
+.lesson-main p{margin-bottom:1.25rem;color:#2A3D50;line-height:1.82;}
+.lesson-main ul,.lesson-main ol{margin:0 0 1.25rem 1.5rem;color:#2A3D50;}
+.lesson-main li{margin-bottom:0.6rem;line-height:1.72;}
+.lesson-main strong{color:var(--navy);font-weight:600;}
+.callout{padding:1.4rem 1.6rem;margin:2rem 0;}
+.callout-gold{background:var(--gold2);border-left:3px solid var(--gold);}.callout-gold p{color:var(--gold3);font-size:0.97rem;line-height:1.75;}
+.callout-navy{background:var(--navy);border-left:3px solid var(--gold);}.callout-navy p{color:#8FA8C0;font-size:0.95rem;line-height:1.75;}
+.callout-red{background:#FFF0F0;border-left:4px solid var(--red);}.callout-red p{color:#6B4F10;font-size:0.97rem;line-height:1.75;}
+.callout-green{background:var(--green-light);border-left:4px solid var(--green);}.callout-green p{color:#1A3A5C;font-size:0.97rem;line-height:1.75;}
+.callout-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:0.5rem;display:block;}
+.callout-gold .callout-label{color:var(--gold3);}
+.callout-navy .callout-label{color:var(--gold);}
+.callout-red .callout-label{color:var(--red);}
+.callout-green .callout-label{color:var(--green);}
+.framework-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.fw-card{background:white;border:1px solid #EAE5DC;padding:1.25rem;border-radius:8px;}
+.fw-card-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:6px;}
+.fw-card-title{font-family:'EB Garamond',serif;font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.fw-card-desc{font-size:0.9rem;color:var(--mid);line-height:1.6;}
+.acro-grid{display:flex;flex-direction:column;gap:0;margin:1.5rem 0;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;}
+.acro-row{display:grid;grid-template-columns:52px 1fr;gap:0;border-bottom:1px solid #EAE5DC;}
+.acro-row:last-child{border-bottom:none;}
+.acro-letter{background:var(--navy);color:var(--gold);font-family:'EB Garamond',serif;font-size:1.8rem;font-weight:800;display:flex;align-items:center;justify-content:center;}
+.acro-content{padding:0.9rem 1.1rem;background:white;}
+.acro-word{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:3px;}
+.acro-desc{font-size:0.85rem;color:var(--mid);line-height:1.55;}
+.sbar-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold3);margin-bottom:0.65rem;margin-top:1.5rem;display:block;}
+.sbar-label:first-child{margin-top:0;}
+.sbar-card{background:white;border:1px solid #EAE5DC;border-radius:8px;padding:0.9rem 1rem;margin-bottom:8px;font-size:0.9rem;color:var(--mid);line-height:1.55;}
+.sbar-card strong{color:var(--navy);display:block;margin-bottom:3px;font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;}
+.lesson-nav-bar{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 3rem;border-top:3px solid var(--gold);background:var(--navy);gap:1rem;}
+.lnb-btn{background:rgba(255,255,255,0.08);border:2px solid rgba(201,168,76,0.4);padding:14px 28px;font-family:'Cinzel',serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border-radius:6px;color:var(--cream);transition:all 0.2s;white-space:nowrap;}
+.lnb-btn:hover{background:rgba(201,168,76,0.15);border-color:var(--gold);color:var(--gold);}
+.lnb-btn:disabled,.lnb-btn[disabled]{opacity:0.25;cursor:not-allowed;background:transparent;}
+.lnb-btn:disabled:hover,.lnb-btn[disabled]:hover{background:transparent;border-color:rgba(201,168,76,0.4);color:var(--cream);}
+.lnb-btn.primary{background:var(--gold);color:var(--navy);border-color:var(--gold);font-weight:800;}
+.lnb-btn.primary:hover{background:#C9A84C;border-color:#C9A84C;}
+.lnb-info{text-align:center;flex:1;}
+.lnb-name{font-family:'EB Garamond',serif;font-size:1rem;font-weight:700;color:var(--cream);}
+.lnb-num{font-size:0.85rem;color:var(--gold);font-family:'Cinzel',serif;letter-spacing:1px;}
+/* ICS-specific styles */
+.dim-cards{display:flex;flex-direction:column;gap:0.75rem;margin:1.5rem 0;}
+.dim-card{background:white;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;display:grid;grid-template-columns:64px 1fr;}
+.dim-card.dim-highlight{border-color:var(--gold);border-width:2px;}
+.dim-num-col{background:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1rem 0.5rem;gap:4px;}
+.dim-card.dim-highlight .dim-num-col{background:var(--gold);}
+.dim-badge{font-family:'EB Garamond',serif;font-size:1.6rem;font-weight:800;color:var(--gold);line-height:1;}
+.dim-card.dim-highlight .dim-badge{color:var(--navy);}
+.dim-body{padding:1rem 1.25rem;}
+.dim-title{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:5px;}
+.dim-card.dim-highlight .dim-title{color:var(--gold3);}
+.dim-desc{font-size:0.85rem;color:var(--mid);line-height:1.6;}
+.dim-scored{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold3);margin-top:6px;display:block;}
+.dim-card.dim-highlight .dim-scored{color:var(--gold3);}
+/* Legacy ics styles kept for ICS structure table in lesson 2 */
+.ics-structure{background:white;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;margin:1.5rem 0;}
+.ics-level{padding:0.9rem 1.25rem;border-bottom:1px solid #EAE5DC;display:grid;grid-template-columns:150px 1fr;gap:1rem;align-items:start;}
+.ics-level:last-child{border-bottom:none;}
+.ics-level-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:white;background:var(--navy);padding:4px 8px;border-radius:3px;display:inline-block;margin-top:2px;}
+.ics-level-desc{font-size:0.85rem;color:#2A3D50;line-height:1.6;}
+.ics-level-desc strong{color:var(--navy);font-family:'Cinzel',serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;}
+.ics-level.highlight{background:rgba(201,168,76,0.08);border-left:3px solid var(--gold);}
+.ics-level.highlight .ics-level-label{background:var(--gold);color:var(--navy);}
+.sizeup-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.75rem;margin:1.5rem 0;}
+.su-card{background:white;border:1px solid #EAE5DC;border-radius:8px;padding:1.1rem;text-align:center;}
+.su-num{font-family:'EB Garamond',serif;font-size:2rem;font-weight:800;color:var(--gold);line-height:1;}
+.su-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);font-weight:700;margin:5px 0 6px;}
+.su-desc{font-size:0.9rem;color:var(--mid);line-height:1.55;}
+.command-script{background:var(--navy);border-radius:8px;padding:1.5rem 1.75rem;margin:1.5rem 0;}
+.cs-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:block;}
+.cs-line{display:grid;grid-template-columns:100px 1fr;gap:0.75rem;margin-bottom:0.75rem;align-items:start;}
+.cs-line:last-child{margin-bottom:0;}
+.cs-role{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(201,168,76,0.6);padding-top:2px;}
+.cs-text{font-size:0.88rem;color:var(--cream);line-height:1.6;font-style:italic;}
+.score-compare{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.sc-card{padding:1.25rem;border-radius:8px;}
+.sc-card.miss{background:#FFF0F0;border:1px solid #F0C0C0;}
+.sc-card.hit{background:var(--green-light);border:1px solid #9DCCA8;}
+.sc-title{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;margin-bottom:0.75rem;}
+.sc-card.miss .sc-title{color:var(--red);}
+.sc-card.hit .sc-title{color:var(--green);}
+.sc-body{font-size:0.9rem;line-height:1.6;}
+.sc-card.miss .sc-body{color:#6B4F10;}
+.sc-card.hit .sc-body{color:#1A3A5C;}
+@media(max-width:900px){.lesson-container{grid-template-columns:1fr;}.lesson-sidebar{position:relative;height:auto;}.lesson-main{padding:2rem 1.5rem;}.lesson-nav-bar{padding:1rem 1.5rem;}.sizeup-grid{grid-template-columns:1fr 1fr;}.score-compare{grid-template-columns:1fr;}}
+
+.score-compare{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.sc-card{padding:1.25rem;border-radius:8px;}
+.sc-card.miss{background:var(--red-light);border:1px solid #F0C0C0;}
+.sc-card.hit{background:var(--green-light);border:1px solid #9DCCA8;}
+.sc-title{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:0.75rem;}
+.sc-card.miss .sc-title{color:var(--red);}.sc-card.hit .sc-title{color:var(--green);}
+.sc-body{font-size:0.87rem;line-height:1.6;}
+.sc-card.miss .sc-body{color:#6B4F10;}.sc-card.hit .sc-body{color:#1A3A5C;}
+.callout-teal{background:var(--teal-light);border-left:4px solid var(--teal);}.callout-teal p{color:#003A3A;font-size:0.97rem;line-height:1.75;}
+.callout-teal .callout-label{color:var(--teal);}
+.badge-blue{background:rgba(30,80,180,0.12);color:#4A7FD0;border:1px solid rgba(30,80,180,0.25);}
+.badge-gold{background:rgba(201,168,76,0.15);color:var(--gold);border:1px solid rgba(201,168,76,0.3);}
+.badge-purple{background:rgba(74,37,112,0.15);color:#8B5FBF;border:1px solid rgba(74,37,112,0.3);}
+.badge-nfpa{background:rgba(100,160,220,0.15);color:#8FA8C0;border:1px solid rgba(100,160,220,0.3);}
+
+/* OB CARD */
+.ob-card{background:var(--navy);margin:2rem 0;overflow:hidden;}
+.ob-header{padding:0.85rem 1.5rem;background:rgba(201,168,76,0.08);border-bottom:1px solid rgba(201,168,76,0.15);}
+.ob-label{font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);}
+.ob-body{padding:1.25rem 1.5rem;}
+.ob-q{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;}
+.ob-q-tag{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);background:rgba(201,168,76,0.1);padding:4px 10px;border-radius:3px;white-space:nowrap;}
+.ob-q-text{font-family:'EB Garamond',serif;font-size:1.08rem;font-weight:600;color:var(--cream);line-height:1.5;margin-bottom:8px;}
+.ob-note{font-size:0.88rem;color:#8FA8C0;line-height:1.6;font-style:italic;}
+/* TAKEAWAYS */
+.takeaways{background:var(--navy);padding:2.25rem;margin:3rem 0 0;border-top:3px solid var(--gold);}
+.tk-lbl{font-family:'Cinzel',serif;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.tk-item{color:#8FA8C0;font-size:0.92rem;line-height:1.7;padding:0.5rem 0 0.5rem 1.25rem;border-left:2px solid rgba(201,168,76,0.2);margin-bottom:0.5rem;}
+
+
+.lead-nav{background:var(--navy);border-radius:8px;padding:14px 16px;margin-bottom:16px;border:1px solid rgba(201,168,76,0.2)}
+.lead-nav-header{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.lead-nav-row{display:grid;grid-template-columns:20px 1fr;gap:6px;margin-bottom:6px;align-items:start}
+.lead-nav-letter{font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:var(--gold)}
+.lead-nav-content{}
+.lead-nav-name{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:2px}
+.lead-nav-app{font-size:11px;color:#8FA8C0;line-height:1.5}
+
+.lf-wrap{margin:2.5rem 0 1.5rem;border:2px solid var(--gold);border-radius:10px;overflow:hidden}
+.lf-header{background:var(--navy);padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
+.lf-title{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+.lf-dots{display:flex;gap:6px}
+.lf-dot{width:8px;height:8px;border-radius:50%;background:rgba(201,168,76,0.25);transition:all 0.3s}
+.lf-dot.active{background:var(--gold);transform:scale(1.3)}
+.lf-dot.done{background:var(--gold)}
+.lf-step{display:none;padding:20px}
+.lf-step.active{display:block}
+.lf-step-num{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:6px}
+.lf-step-title{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:10px}
+.lf-chain{background:var(--navy);border-radius:6px;padding:14px 18px;margin:10px 0}
+.lf-chain-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.lf-chain-text{font-size:13px;color:#8FA8C0;line-height:1.6}
+.lf-chain-close{font-size:12px;color:var(--cream);margin-top:6px;font-style:italic}
+.lf-btn{background:var(--navy);color:var(--gold);border:2px solid var(--gold);padding:12px 24px;border-radius:6px;font-family:'Cinzel',serif;font-size:12px;letter-spacing:1.5px;font-weight:600;cursor:pointer;margin-top:12px;transition:all 0.2s;display:inline-block}
+.lf-btn:hover{background:var(--gold);color:var(--navy)}
+.lf-timer{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:var(--gold);padding:6px 14px;border-radius:4px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:1px;margin-top:10px}
+.lesson-main.ft>p{display:none!important}.lesson-main.ft>.callout{display:none!important}.ft-toggle{display:flex;align-items:center;gap:10px;padding:10px 16px;background:var(--navy);border-radius:6px;cursor:pointer;border:1px solid rgba(201,168,76,0.25)}.ft-toggle-switch{width:36px;height:20px;background:rgba(201,168,76,0.2);border-radius:10px;position:relative;transition:background .2s}.ft-toggle-switch.on{background:var(--gold)}.ft-toggle-knob{width:14px;height:14px;background:#fff;border-radius:50%;position:absolute;top:3px;left:3px;transition:left .2s}.ft-toggle-switch.on .ft-toggle-knob{left:19px}.ft-toggle-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}.ft-toggle-desc{font-size:11px;color:var(--mid)}.lesson-main.ft-on>p,.lesson-main.ft-on>.callout,.lesson-main.ft-on h3{display:none!important}.lesson-main.ft-on .ob-card,.lesson-main.ft-on .lf-wrap,.lesson-main.ft-on .lead-nav,.lesson-main.ft-on h2{display:block!important}
+</style>
+</head>
+<body>
+<nav class="top-nav">
+  <div class="nav-left"><div class="nav-brand">The Promotional Standard<span>Lieutenant Track · Chapter 12</span></div></div>
+  <div class="nav-pills">
+    <button class="nav-pill active" onclick="showLesson(0)">IC at Company Level</button>
+    <button class="nav-pill" onclick="showLesson(1)">Size-Up: COAL WAS WEALTH</button>
+    <button class="nav-pill" onclick="showLesson(2)">Rescue Priorities</button>
+    <button class="nav-pill" onclick="showLesson(3)">Resource Management</button>
+    <button class="nav-pill" onclick="showLesson(4)">Special Tactical Situations</button>
+    <button class="nav-pill" onclick="showLesson(5)">AC Application</button>
+  </div>
+</nav>
+<div class="progress-bar" id="prog"></div>
+<div class="module-hero">
+  <div class="mh-inner">
+    <div class="mh-eyebrow">Chapter 12 · Lieutenant Track · Fire Officer I</div>
+    <h1 class="mh-title">Company Operations<br><em>Size-Up, Resource Management + Scene Command</em></h1>
+    <p class="mh-sub">COAL WAS WEALTH, rescue priority framework, incident command at the company level, resource staging and assignment, and the tactical situations that test everything the company officer knows simultaneously. The company operations curriculum for the Lieutenant who is the first on scene and the last to leave.</p>
+    <div class="mh-badges"><span class="mh-badge badge-badge-blue">Lieutenant Track</span><span class="mh-badge badge-badge-nfpa">NFPA 1021 · FO I</span></div>
+    <div class="mh-thread"><div class="mh-thread-label">Before You Begin</div><div class="mh-thread-text">This module covers the operational mechanics of company-level incident command. Module 13 (Fire Behavior) and Module 25 (ICS/NIMS) are complementary — complete them for the full operational picture.</div></div>
+    <div class="mh-lesson-nav">
+      <button class="mh-lesson-btn active" onclick="showLesson(0)">1. IC at Company Level</button>
+      <button class="mh-lesson-btn" onclick="showLesson(1)">2. Size-Up: COAL WAS WEALTH</button>
+      <button class="mh-lesson-btn" onclick="showLesson(2)">3. Rescue Priorities</button>
+      <button class="mh-lesson-btn" onclick="showLesson(3)">4. Resource Management</button>
+      <button class="mh-lesson-btn" onclick="showLesson(4)">5. Special Tactical Situations</button>
+      <button class="mh-lesson-btn" onclick="showLesson(5)">6. AC Application</button>
+    </div>
+  </div>
+</div>
+<main>
+<div class="lesson-view active" id="lesson-0">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 12 · Lesson 1 of 6</div>
+    <h1 class="lh-title">Incident Command at the Company Level</h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 14 min</span><span class="lh-meta-item">🏛️ IC Fundamentals</span><span class="lh-meta-item">Company Officer Role</span></div>
+  </div>
+  <p>The company officer is the most important position in the ICS structure at most incidents — not because of organizational rank, but because every complex incident is built from company-level operations. Understanding ICS at the company level means understanding not just how to use the system but what it requires of the officer who occupies the first-arriving IC position before a larger command structure is established.</p>
+<h2>The First-Arriving IC</h2>
+<p>At most residential and commercial structural incidents, the first-arriving company officer assumes Incident Command and manages the entire incident — for the first few minutes, until a higher-ranking officer arrives, or for the entire incident if it remains within single-company capability. This means the company officer must be capable of simultaneously: commanding their crew's tactical operations, establishing the command post, initiating the ICS structure (Operations, Safety), communicating with dispatch and incoming units, conducting ongoing size-up, and making the critical early decisions that determine incident trajectory.</p>
+    <div class="framework-grid"><div class="fw-card"><div class="fw-card-label">Assume Command</div><div class="fw-card-title">Establish the Command Post</div><div class="fw-card-desc">Announce command via radio. Identify CP location. Begin size-up narration for dispatch and incoming units.</div></div><div class="fw-card"><div class="fw-card-label">Size-Up + Strategy</div><div class="fw-card-title">Initial Tactical Decision</div><div class="fw-card-desc">Offensive, defensive, or transitional? Based on conditions, resources, and victim information. Announced on radio.</div></div><div class="fw-card"><div class="fw-card-label">Deploy Crew</div><div class="fw-card-title">Initial Tactical Assignment</div><div class="fw-card-desc">Assign crew to the primary tactical function: attack or search. Maintain two-in-two-out. Request resources.</div></div><div class="fw-card"><div class="fw-card-label">Transfer Command</div><div class="fw-card-title">To Arriving Senior Officer</div><div class="fw-card-desc">Brief the incoming IC on: conditions found, actions taken, resources assigned, status of primary search, outstanding needs.</div></div></div><div class="callout callout-gold"><span class="callout-label">The Danger of Task Saturation</span><p>The first-arriving officer who is both the IC and on the attack line simultaneously is doing two jobs that both require full attention. The result is degraded performance at both. Whenever possible, designate a crew member for one task and maintain the other. If single-person command is unavoidable due to staffing, it should be brief and transition to a formal IC as soon as additional resources arrive.</p></div>
+</div>
+<div class="lesson-sidebar">
+<div class="ft-toggle" onclick="toggleFT(this)" style="margin-bottom:16px;max-width:320px">
+<div class="ft-toggle-switch"><div class="ft-toggle-knob"></div></div>
+<div><div class="ft-toggle-label">Fast Track Mode</div><div class="ft-toggle-desc">Full lesson content</div></div>
+</div>
+
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Operational Command</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">First-Arriving IC Protocol → Rescue Priority Framework → Span of Control → ICS</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Size-up → establish command → assign sectors → communicate → close with Discipline and Service</div></div></div></div>
+<span class="sbar-label">First-Arriving IC Priorities</span><div class="sbar-card">1. Assume command · 2. Size-up + strategy · 3. Deploy crew · 4. Request resources · 5. Transfer to incoming IC.</div><span class="sbar-label">Task Saturation Risk</span><div class="sbar-card">IC + attack line simultaneously = degraded both. Designate whenever possible. Brief, then transition.</div></div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Incident Command at the Company Level</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"You are given a scenario that requires knowledge of incident command at the company level. How do you structure your response?"</div><div class="ob-note">Use LEAD: Label this as a Company Operations question. Engage the specific framework from this lesson — name it explicitly. Address impact at both the immediate and organizational level. Drive to a specific first action.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 1 — Key Takeaways</div>
+  <div class="tk-item">The First-Arriving IC — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Company Operations question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Operational Command</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">First-Arriving IC Protocol → Rescue Priority Framework → Span of Control → ICS</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Size-up → establish command → assign sectors → communicate → close with Discipline and Service</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" disabled>← Previous</button>
+  <div class="lnb-info"><div class="lnb-name">Lesson 1 of 6</div><div class="lnb-num">Chapter 12</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Reading the Fire →</button>
+</div>
+</div><div class="lesson-view" id="lesson-1">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 12 · Lesson 2 of 6</div>
+    <h1 class="lh-title">Size-Up — COAL WAS WEALTH</h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 14 min</span><span class="lh-meta-item">📋 Size-Up Framework</span></div>
+  </div>
+  <p>COAL WAS WEALTH is the comprehensive size-up framework used by the company officer to systematically assess an incident scene. Each letter represents a category of information that shapes the tactical approach. The officer who uses a systematic framework gathers more complete information than one relying on impressions.</p><div class="acro-grid"><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-family:'EB Garamond',serif;font-weight:800;">C</div><div class="acro-content"><div class="acro-word">Construction — What Type of Building?</div><div class="acro-desc">Ordinary, legacy wood frame, lightweight truss, fire-resistive, non-combustible. Construction type determines structural behavior under fire load and potential failure timeline.</div></div></div><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-family:'EB Garamond',serif;font-weight:800;">O</div><div class="acro-content"><div class="acro-word">Occupancy — What Is the Building Used For?</div><div class="acro-desc">Residential, commercial, industrial, assembly. Occupancy determines probable fuel load, occupant type and mobility, and hazardous materials probability.</div></div></div><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-family:'EB Garamond',serif;font-weight:800;">A</div><div class="acro-content"><div class="acro-word">Apparatus and Personnel — What Resources Do I Have?</div><div class="acro-desc">On scene, responding, available. Resource inventory at time of size-up determines what tactical approach is achievable with available forces.</div></div></div><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-family:'EB Garamond',serif;font-weight:800;">L</div><div class="acro-content"><div class="acro-word">Life Safety — Are There Victims?</div><div class="acro-desc">Known, probable, or unlikely? Location and mobility? Victim information is the primary driver of the offensive vs defensive decision.</div></div></div><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-family:'EB Garamond',serif;font-weight:800;">W</div><div class="acro-content"><div class="acro-word">Water Supply — Is There Adequate Water?</div><div class="acro-desc">Hydrant availability, flow rate, distance. Without confirmed water supply, offensive operations have a hard stop built in.</div></div></div><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-family:'EB Garamond',serif;font-weight:800;">A</div><div class="acro-content"><div class="acro-word">Auxiliary Appliances — Suppression Systems?</div><div class="acro-desc">Sprinklers, standpipes, FDC connections. Working suppression systems are the most valuable fire control asset on scene.</div></div></div><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-family:'EB Garamond',serif;font-weight:800;">S</div><div class="acro-content"><div class="acro-word">Street Conditions — Access and Egress?</div><div class="acro-desc">Driveway access for apparatus, overhead obstructions, aerial positioning requirements, secondary egress routes.</div></div></div><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-family:'EB Garamond',serif;font-weight:800;">W</div><div class="acro-content"><div class="acro-word">Weather — How Does It Affect Operations?</div><div class="acro-desc">Wind direction and speed (ventilation implications), temperature (decon and medical considerations), precipitation.</div></div></div><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-family:'EB Garamond',serif;font-weight:800;">E</div><div class="acro-content"><div class="acro-word">Exposures — What Is at Risk Beyond the Incident Structure?</div><div class="acro-desc">Adjacent buildings, vehicles, utilities. Exposure protection may be a competing priority with offensive interior attack.</div></div></div><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-family:'EB Garamond',serif;font-weight:800;">A</div><div class="acro-content"><div class="acro-word">Area — How Big Is the Incident?</div><div class="acro-desc">Fire area, building footprint, and square footage determine resource requirements and operational period planning.</div></div></div><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-family:'EB Garamond',serif;font-weight:800;">L</div><div class="acro-content"><div class="acro-word">Location and Extent of Fire — Where Is It?</div><div class="acro-desc">Floor, area, compartment. Combined with construction type and occupancy, determines spread probability and tactical approach.</div></div></div><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-family:'EB Garamond',serif;font-weight:800;">T</div><div class="acro-content"><div class="acro-word">Time — How Long Has It Been Burning?</div><div class="acro-desc">Elapsed time since ignition affects structural integrity, victim viability, and tactical options.</div></div></div><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-family:'EB Garamond',serif;font-weight:800;">H</div><div class="acro-content"><div class="acro-word">Hazardous Materials — What's in There?</div><div class="acro-desc">Occupancy type, facility LEPC reports, visible placards, occupant information. Hazmat changes the tactical approach significantly.</div></div></div></div><div class="callout callout-gold"><span class="callout-label">COAL WAS WEALTH as a Training Tool</span><p>The systematic framework is most valuable as a training tool — a checklist that builds the habit of comprehensive size-up before committing to a tactical approach. Over time, the framework becomes internalized as part of the arriving officer's automatic assessment process.</p></div>
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Operational Command</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">First-Arriving IC Protocol → Rescue Priority Framework → Span of Control → ICS</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Size-up → establish command → assign sectors → communicate → close with Discipline and Service</div></div></div></div>
+<span class="sbar-label">COAL WAS WEALTH</span><div class="sbar-card"><strong>C</strong>onstruction · <strong>O</strong>ccupancy · <strong>A</strong>pparatus · <strong>L</strong>ife Safety · <strong>W</strong>ater · <strong>A</strong>ux Appliances · <strong>S</strong>treet · <strong>W</strong>eather · <strong>E</strong>xposures · <strong>A</strong>rea · <strong>L</strong>ocation/Extent · <strong>T</strong>ime · <strong>H</strong>azMat</div></div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Size-Up</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"You arrive first on scene at a working structure fire. Walk me through your size-up process."</div><div class="ob-note">Name the size-up methodology from this lesson explicitly. Describe what each indicator tells you. Show that your size-up is systematic, not instinctive — assessors score the process.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 2 — Key Takeaways</div>
+  <div class="tk-item">LEAD integration: Label this as a Company Operations question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Operational Command</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">First-Arriving IC Protocol → Rescue Priority Framework → Span of Control → ICS</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Size-up → establish command → assign sectors → communicate → close with Discipline and Service</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Reading the Fire</button>
+  <div class="lnb-info"><div class="lnb-name">Lesson 2 of 6</div><div class="lnb-num">Chapter 12</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Rescue Priorities →</button>
+</div>
+</div><div class="lesson-view" id="lesson-2">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 12 · Lesson 3 of 6</div>
+    <h1 class="lh-title">Rescue Priority Framework</h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 14 min</span><span class="lh-meta-item">🚨 Rescue Priorities · Search Tactics</span></div>
+  </div>
+  <p>Rescue — the removal of victims from immediate danger — is the highest priority in the fire service tactical hierarchy. The company officer at a structural fire makes rescue priority decisions based on victim location, victim viability, available resources, and structural conditions. These decisions are among the most consequential and most time-compressed judgments in fire service operations.</p>
+<h2>The Rescue Priority Framework</h2><div class="acro-grid"><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-family:'EB Garamond',serif;font-weight:800;">P1</div><div class="acro-content"><div class="acro-word">Immediate Life Safety — Known Victims in Immediate Danger</div><div class="acro-desc">Visible victims at windows, confirmed location from witnesses, immediate rescue prior to water application in some circumstances. P1 rescue may require bypassing standard entry sequence if the victim is accessible and rescue is achievable before conditions deteriorate.</div></div></div><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-family:'EB Garamond',serif;font-weight:800;">P2</div><div class="acro-content"><div class="acro-word">Primary Search — Systematic Search in Fire Area and Adjacent Spaces</div><div class="acro-desc">Systematic search of the fire area and immediately adjacent spaces before fire control. Conducted simultaneously with or immediately following initial attack. Primary search seeks living victims who may be viable; it is not a recovery operation.</div></div></div><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-family:'EB Garamond',serif;font-weight:800;">P3</div><div class="acro-content"><div class="acro-word">Secondary Search — Complete Verification After Fire Control</div><div class="acro-desc">Systematic search of the entire structure after the fire is controlled. The secondary search is the verification that the primary search did not miss anyone and that no victims are in spaces not reached initially.</div></div></div><div class="acro-row"><div class="acro-letter" style="font-size:1.8rem;font-family:'EB Garamond',serif;font-weight:800;">P4</div><div class="acro-content"><div class="acro-word">Recovery — Body Recovery Operations</div><div class="acro-desc">Recovery of deceased victims after all viable rescue has been completed. Recovery operations typically involve different tactical approaches and may require law enforcement coordination for investigation purposes.</div></div></div></div><div class="framework-grid"><div class="fw-card"><div class="fw-card-label">Vent-Enter-Search</div><div class="fw-card-title">Traditional vs Modern</div><div class="fw-card-desc">Traditional VES — break window, enter, search — creates a flow path without water on the fire. Modern guidance: coordinate with attack team, water before or simultaneous with entry, or use transitional attack to stabilize the environment before entry.</div></div><div class="fw-card"><div class="fw-card-label">Search Pattern Discipline</div><div class="fw-card-title">Systematic and Disciplined</div><div class="fw-card-desc">Oriented search patterns (staying connected to the wall, maintaining orientation to the entry point) prevent disorientation and improve completeness. The officer who maintains orientation accountability for the search team is managing a critical safety function.</div></div></div><div class="callout callout-red"><span class="callout-label">The Rescue-Safety Balance</span><p>The company officer who commits all resources to rescue without maintaining the two-in-two-out requirement, without confirming structural integrity, and without a crew bailout plan has made the rescue decision at the expense of crew safety. Rescues that result in additional firefighter casualties are organizational and human tragedies. The balance: aggressive rescue within a structured safety framework.</p></div>
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Operational Command</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">First-Arriving IC Protocol → Rescue Priority Framework → Span of Control → ICS</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Size-up → establish command → assign sectors → communicate → close with Discipline and Service</div></div></div></div>
+<span class="sbar-label">Rescue Priorities</span><div class="sbar-card"><strong>P1</strong>Immediate — visible, accessible victim. <strong>P2</strong>Primary search — simultaneous with attack. <strong>P3</strong>Secondary — after fire control. <strong>P4</strong>Recovery — after viable rescue complete.</div><span class="sbar-label">VES Discipline</span><div class="sbar-card">Coordinate with attack team. Water before or simultaneous with entry. No independent ventilation that creates unmanaged flow path.</div></div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Rescue Priority Framework</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"Multiple victims are reported in a structure fire. How do you prioritize rescue operations?"</div><div class="ob-note">Name the rescue priority framework. Show how you balance victim savability against crew risk. The assessor is scoring your decision-making criteria, not just your decision.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 3 — Key Takeaways</div>
+  <div class="tk-item">The Rescue Priority Framework — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Company Operations question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Operational Command</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">First-Arriving IC Protocol → Rescue Priority Framework → Span of Control → ICS</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Size-up → establish command → assign sectors → communicate → close with Discipline and Service</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Size-Up</button>
+  <div class="lnb-info"><div class="lnb-name">Lesson 3 of 6</div><div class="lnb-num">Chapter 12</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Resource Management →</button>
+</div>
+</div><div class="lesson-view" id="lesson-3">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 12 · Lesson 4 of 6</div>
+    <h1 class="lh-title">Resource Management at Incident Command</h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 14 min</span><span class="lh-meta-item">⚙️ Resource Management · Staging</span></div>
+  </div>
+  <p>The company officer as IC is not only managing the tactical operation — they are managing the resources required to execute it. Resource management at the company officer level includes requesting resources, staging them appropriately, assigning them to tactical objectives, and tracking their status throughout the incident.</p>
+<h2>Span of Control and Staging</h2>
+
+<h3>ICS establishes a span of</h3>
+<p>ICS establishes a span of control guideline of 3–7 supervisory elements per supervisor, with 5 as optimal. The first-arriving IC who has four companies operating simultaneously without sector officers is exceeding a manageable span of control. The company officer recognizes when to request additional command resources — not just tactical resources — based on the growing complexity of the incident.</p><div class="acro-grid"><div class="acro-row"><div class="acro-letter" style="font-size:0.9rem;font-family:'EB Garamond',serif;font-weight:800;">STG</div><div class="acro-content"><div class="acro-word">Staging Discipline — Where Resources Wait</div><div class="acro-desc">Level 1 staging: companies stage one block away and advise dispatch. Level 2 (large incidents): companies stage in a designated area. Resources that freelance to the scene without staging create congestion, accountability problems, and coordination failures.</div></div></div><div class="acro-row"><div class="acro-letter" style="font-size:0.9rem;font-family:'EB Garamond',serif;font-weight:800;">ASN</div><div class="acro-content"><div class="acro-word">Assignment Clarity — Every Resource Knows Its Job</div><div class="acro-desc">Every company, team, and individual resource should have a clear assignment: where they are going, what they are doing, who they report to, and what their communications channel is. Companies that arrive without assignment and self-deploy create tactical chaos.</div></div></div><div class="acro-row"><div class="acro-letter" style="font-size:0.9rem;font-family:'EB Garamond',serif;font-weight:800;">ACT</div><div class="acro-content"><div class="acro-word">Accountability — Where Is Everyone?</div><div class="acro-desc">The IC maintains accountability for every resource: assigned (working), staged (available), committed (deployed to a sector). Resources not tracked are resources that cannot be rapidly redeployed if tactical conditions change or a mayday is declared.</div></div></div></div><div class="callout callout-gold"><span class="callout-label">The Air Management Principle</span><p>Air management — managing the air supply in SCBA cylinders — is a resource management function for interior operating crews. The standard: crews should begin withdrawal from IDLH environments at 50% cylinder pressure, providing air for the exit under normal conditions plus a reserve for emergency. The company officer who does not track crew air status is managing a time-limited resource without a clock.</p></div>
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Operational Command</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">First-Arriving IC Protocol → Rescue Priority Framework → Span of Control → ICS</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Size-up → establish command → assign sectors → communicate → close with Discipline and Service</div></div></div></div>
+<span class="sbar-label">Span of Control</span><div class="sbar-card">3–7, optimal 5. Exceeding manageable SOC → request sector officers, not just more companies.</div><span class="sbar-label">Staging Discipline</span><div class="sbar-card">L1: one block away. L2: designated area. No freelancing to scene. Congestion = accountability failure.</div><span class="sbar-label">Air Management</span><div class="sbar-card">50% cylinder → begin withdrawal. Time-limited resource. Track it.</div></div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Resource Management at Incident Command</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"You are given a scenario that requires knowledge of resource management at incident command. How do you structure your response?"</div><div class="ob-note">Use LEAD: Label this as a Company Operations question. Engage the specific framework from this lesson — name it explicitly. Address impact at both the immediate and organizational level. Drive to a specific first action.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 4 — Key Takeaways</div>
+  <div class="tk-item">Span of Control and Staging — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Company Operations question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Operational Command</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">First-Arriving IC Protocol → Rescue Priority Framework → Span of Control → ICS</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Size-up → establish command → assign sectors → communicate → close with Discipline and Service</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Rescue Priorities</button>
+  <div class="lnb-info"><div class="lnb-name">Lesson 4 of 6</div><div class="lnb-num">Chapter 12</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Special Tactical Situations →</button>
+</div>
+</div><div class="lesson-view" id="lesson-4">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 12 · Lesson 5 of 6</div>
+    <h1 class="lh-title">Special Tactical Situations</h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 14 min</span><span class="lh-meta-item">🔥 High-Rise · Commercial · Vehicle Fires</span></div>
+  </div>
+  <p>The company officer encounters structural fire situations beyond routine residential operations — commercial structures, high-rise buildings, vehicle fires, and wildland-urban interface conditions. Each presents unique tactical considerations that the officer should be prepared to address.</p><div class="framework-grid"><div class="fw-card"><div class="fw-card-label">Commercial Structure Fires</div><div class="fw-card-title">Larger Volume, Higher Fuel Loads</div><div class="fw-card-desc">Large volume commercial fires require earlier resource requests, higher water volumes, and more conservative offensive/defensive decisions. The same construction-type analysis applies, but at larger scale. Pre-incident plans are even more critical for commercial occupancies.</div></div><div class="fw-card"><div class="fw-card-label">High-Rise Operations</div><div class="fw-card-title">Stairwell Attack, Elevator Protocols</div><div class="fw-card-desc">High-rise fires require stairwell-based attack (typically two floors below the fire floor), elevator protocols (not to fire floor — to two floors below), and establishing a base, lobby control, and staging area. The company officer staging in a high-rise is managing a 3D resource coordination challenge.</div></div><div class="fw-card"><div class="fw-card-label">Vehicle Fires</div><div class="fw-card-title">Hybrid/EV Hazards</div><div class="fw-card-desc">Modern hybrid and electric vehicles present significant fire hazards: high-voltage battery fires that can reignite after apparent suppression, toxic off-gas from lithium-ion batteries, and structural features that complicate extrication. The company officer identifies hybrid/EV indicators and applies current guidance on thermal management and exposure protection.</div></div><div class="fw-card"><div class="fw-card-label">Wildland-Urban Interface</div><div class="fw-card-title">Defensible Space and LCES</div><div class="fw-card-desc">WUI fires require LCES — Lookouts, Communications, Escape Routes, Safety Zones — before any structure protection operations begin. The company officer who enters a WUI environment without confirming LCES has removed the survival system that WUI operations require.</div></div></div><div class="callout callout-teal"><span class="callout-label">The Pre-Incident Plan Advantage</span><p>The company officer who has pre-planned their commercial and high-occupancy buildings — with floor plans, utility shutoffs, hazardous materials locations, FDC connections, and structural features documented — arrives at those incidents with information advantage that dramatically improves their tactical decision-making speed and quality.</p></div>
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Operational Command</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">First-Arriving IC Protocol → Rescue Priority Framework → Span of Control → ICS</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Size-up → establish command → assign sectors → communicate → close with Discipline and Service</div></div></div></div>
+<span class="sbar-label">Commercial</span><div class="sbar-card">Larger volume → earlier resource requests. Pre-incident plans critical.</div><span class="sbar-label">High-Rise</span><div class="sbar-card">Stairwell attack · two floors below · elevator protocols · base + lobby + staging.</div><span class="sbar-label">EV/Hybrid</span><div class="sbar-card">Battery fires reignite. Toxic off-gas. Thermal management guidance. Exposure protection.</div><span class="sbar-label">WUI + LCES</span><div class="sbar-card">Lookouts · Communications · Escape Routes · Safety Zones. Confirm LCES before structure protection. No LCES = no WUI operations.</div></div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Special Tactical Situations</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"You are given a scenario that requires knowledge of special tactical situations. How do you structure your response?"</div><div class="ob-note">Use LEAD: Label this as a Company Operations question. Engage the specific framework from this lesson — name it explicitly. Address impact at both the immediate and organizational level. Drive to a specific first action.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 5 — Key Takeaways</div>
+  <div class="tk-item">LEAD integration: Label this as a Company Operations question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Operational Command</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">First-Arriving IC Protocol → Rescue Priority Framework → Span of Control → ICS</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Size-up → establish command → assign sectors → communicate → close with Discipline and Service</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Resource Management</button>
+  <div class="lnb-info"><div class="lnb-name">Lesson 5 of 6</div><div class="lnb-num">Chapter 12</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: AC Application →</button>
+</div>
+</div><div class="lesson-view" id="lesson-5">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 12 · Lesson 6 of 6 · Assessment Application</div>
+    <h1 class="lh-title">Assessment Center Application</h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 12 min</span><span class="lh-meta-item">🎯 Scenarios</span></div>
+  </div>
+  <p>Company operations scenarios at Lieutenant level test whether the candidate can apply size-up, resource management, tactical decision-making, and crew safety in a coordinated response rather than as separate isolated skills.</p><div class="callout callout-navy"><span class="callout-label">Oral Board Prompt</span><p>"You are the first-arriving Lieutenant at a two-story wood frame residential structure with heavy smoke showing from multiple upper floor windows. Your crew consists of three firefighters. A neighbor tells you the family is home and may not have gotten out. Radio traffic indicates the next closest engine is 6 minutes out. Walk me through your initial actions."</p></div><div class="score-compare"><div class="sc-card miss"><div class="sc-title">3/5 Response</div><div class="sc-body">"I would size up the structure and deploy my crew for interior attack and search. I would establish command, request additional units, and initiate primary search of the upper floor while the engine crew advances the attack line."</div></div><div class="sc-card hit"><div class="sc-title">5/5 Response</div><div class="sc-body">"My size-up in the first 60 seconds: two-story wood frame — lightweight truss construction possible given the neighborhood build date, I need to confirm. Multiple upper floor smoke — established fire, ventilation status unknown from this angle. Three-person crew — I have an attack line and a search team but not simultaneously with two-in-two-out for interior. I announce command on radio and immediately request a second alarm for the reported victim.<br><br>360 first — I need the back side before I commit my crew. This takes 30 seconds and tells me if victims are visible, if there's a fire escape, if the back is actively involved. While I'm doing that, my engineer is pulling a charged line to the front door and confirming water supply.<br><br>Interior entry decision: if the 360 shows tenable access and the smoke conditions support survivable interior conditions, I make entry with a two-person search team while my engineer maintains exterior with the charged line — two-in with one-out, requesting a fourth person for the second pair before entry if time allows. If the structure shows significant upper floor involvement and no viable victim window, I hold exterior and coordinate with the incoming engine for simultaneous entry-and-attack.<br><br>I am not sending my crew into a ventilation-controlled environment above an established fire without water coordinated for entry. Six minutes for the second engine changes the tactical calculus — the difference between waiting and entering may determine whether we maintain two-in-two-out. I make that decision based on visible victim probability, not urgency pressure."</div></div></div><div class="callout callout-gold"><span class="callout-label">Chapter 12 Complete</span><p>Company operations competency is the operational foundation of everything the company officer does. The frameworks — COAL WAS WEALTH for size-up, rescue priority sequence, staging and resource management discipline, CRM for crew safety — are the tools. Tactical judgment applied consistently under pressure is the competency. Both are built through training, exercise, and disciplined reflection.</p></div>
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Operational Command</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">First-Arriving IC Protocol → Rescue Priority Framework → Span of Control → ICS</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Size-up → establish command → assign sectors → communicate → close with Discipline and Service</div></div></div></div>
+<span class="sbar-label">5/5 Pattern</span><div class="sbar-card">Names construction type · does 360 · addresses two-in-two-out explicitly · names ventilation-controlled fire concern · distinguishes urgency pressure from tactical decision · resource request before entry.</div><span class="sbar-label">3/5 Gap</span><div class="sbar-card">"I would size up" without naming what size-up means. No mention of VC fire concern, no 360, no two-in-two-out analysis.</div></div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Assessment Center Application</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"You receive a scenario about company operations. Walk me through your complete response using the frameworks from this chapter."</div><div class="ob-note">Use LEAD: Label the bucket (Company Operations), Engage the specific framework (reference Assessment Center Application explicitly), Address the operational and organizational impact, Drive to a concrete first action with a timeline.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 6 — Key Takeaways</div>
+  <div class="tk-item">LEAD integration: Label this as a Company Operations question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Operational Command</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">First-Arriving IC Protocol → Rescue Priority Framework → Span of Control → ICS</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Size-up → establish command → assign sectors → communicate → close with Discipline and Service</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Special Tactical Situations</button>
+  <div class="lnb-info"><div class="lnb-name">Lesson 6 of 6</div><div class="lnb-num">Chapter 12</div></div>
+  <button class="lnb-btn primary" onclick="window.scrollTo({{top:0,behavior:'smooth'}})">Module Complete ✓</button>
+</div>
+</div>
+</main>
+<script>
+let cur=0;
+const ls=document.querySelectorAll('.lesson-view');
+const ps=document.querySelectorAll('.nav-pill');
+const mbs=document.querySelectorAll('.mh-lesson-btn');
+function showLesson(n){ls.forEach(l=>l.classList.remove('active'));ps.forEach(p=>p.classList.remove('active'));mbs.forEach(m=>m.classList.remove('active'));if(ls[n])ls[n].classList.add('active');if(ps[n])ps[n].classList.add('active');if(mbs[n])mbs[n].classList.add('active');cur=n;window.scrollTo({top:0,behavior:'smooth'});document.getElementById('prog').style.width='0%';}
+function nextLesson(){if(cur<ls.length-1)showLesson(cur+1);}
+function prevLesson(){if(cur>0)showLesson(cur-1);}
+window.addEventListener('scroll',()=>{const s=document.documentElement.scrollTop;const h=document.documentElement.scrollHeight-window.innerHeight;if(h>0)document.getElementById('prog').style.width=Math.min(100,(s/h*100))+'%';});
+document.addEventListener('DOMContentLoaded',()=>showLesson(0));
+
+function lfNext(el,stepNum){
+  var wrap=el.closest('.lf-wrap');
+  if(!wrap)return;
+  var steps=wrap.querySelectorAll('.lf-step');
+  var dots=wrap.querySelectorAll('.lf-dot');
+  steps.forEach(function(s,i){s.classList.remove('active');if(i<stepNum)s.classList.add('done');});
+  dots.forEach(function(d,i){d.classList.remove('active');if(i<stepNum)d.classList.add('done');if(i===stepNum)d.classList.add('active');});
+  if(steps[stepNum])steps[stepNum].classList.add('active');
+}
+</script>
+<script>function toggleFT(el){var sw=el.querySelector('.ft-toggle-switch');var desc=el.querySelector('.ft-toggle-desc');var mains=document.querySelectorAll('.lesson-main');sw.classList.toggle('on');var on=sw.classList.contains('on');desc.textContent=on?'Frameworks + OB cards only':'Full lesson content';mains.forEach(function(m){m.classList.toggle('ft-on',on);});}</script>
+</body>
+</html>

@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Chapter 32 — Emergency Management + EOC Operations | The Promotional Standard</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Crimson+Pro:wght@300;400;500;600&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{--navy:#0C2340;--navy2:#1A3A5C;--gold:#C9A84C;--gold2:#F5F0E8;--gold3:#6B4F10;--cream:#F5F0E8;--offwhite:#F5F0E8;--light:#EAE5DC;--mid:#2A3D50;--gray:#8FA8C0;--red:#B22222;--red-light:#FFF0F0;--green:#1A5C3A;--green-light:#EAF3DE;--teal:#006B6B;--teal-light:#E0F4F4;--blue:#1A3A7A;--blue-light:#E8EEF8;--orange:#8B3A0A;--orange-light:#FFF0E0;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:var(--navy);font-size:18px;line-height:1.8;}
+.top-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(12,35,64,0.98);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,168,76,0.2);height:64px;display:flex;align-items:center;padding:0 2rem;gap:1rem;}
+.nav-left{display:flex;align-items:center;gap:12px;flex:1;}
+.nav-brand{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;color:var(--cream);line-height:1.3;}
+.nav-brand span{display:block;font-size:8px;color:var(--gold);letter-spacing:2px;}
+.nav-pills{display:flex;gap:5px;flex:2;justify-content:center;overflow-x:auto;}
+.nav-pill{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#8FA8C0;padding:6px 11px;border-radius:20px;cursor:pointer;transition:all 0.2s;border:none;background:transparent;white-space:nowrap;}
+.nav-pill:hover{color:var(--cream);background:rgba(255,255,255,0.05);}
+.nav-pill.active{color:var(--gold);background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.25);}
+.progress-bar{position:fixed;top:64px;left:0;height:3px;background:linear-gradient(90deg,var(--navy2),var(--gold));z-index:199;width:0%;transition:width 0.3s;}
+.lesson-view{display:none;}.lesson-view.active{display:block;}
+.module-hero{background:var(--navy);padding:4.5rem 3rem 3.5rem;margin-top:64px;position:relative;overflow:hidden;border-bottom:3px solid var(--gold);}
+.module-hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 60px,rgba(201,168,76,0.015) 60px,rgba(201,168,76,0.015) 61px);}
+.module-hero::after{content:'';position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(180deg,var(--navy2),var(--gold));}
+.mh-inner{max-width:900px;position:relative;z-index:2;}
+.mh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.mh-title{font-family:'EB Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:800;color:var(--cream);line-height:1.1;margin-bottom:0.75rem;}
+.mh-title em{font-style:italic;color:var(--gold);}
+.mh-sub{font-size:1.05rem;color:#8FA8C0;max-width:700px;line-height:1.7;margin-bottom:2rem;}
+.mh-badges{display:flex;gap:10px;margin-bottom:1.5rem;flex-wrap:wrap;}
+.mh-badge{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border-radius:3px;}
+.badge-bc{background:rgba(139,50,22,0.12);color:#C06030;border:1px solid rgba(139,50,22,0.25);}
+.badge-nfpa{background:rgba(100,160,220,0.15);color:#8FA8C0;border:1px solid rgba(100,160,220,0.3);}
+.mh-thread{background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);border-left:3px solid var(--gold);padding:1rem 1.5rem;margin-bottom:2rem;max-width:700px;}
+.mh-thread-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+.mh-thread-text{font-size:0.92rem;color:var(--cream);line-height:1.65;}
+.mh-lesson-nav{display:flex;gap:8px;flex-wrap:wrap;}
+.mh-lesson-btn{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:8px 14px;border-radius:6px;cursor:pointer;transition:all 0.2s;border:1px solid rgba(201,168,76,0.25);background:transparent;color:#8FA8C0;}
+.mh-lesson-btn:hover{background:rgba(255,255,255,0.05);color:var(--cream);}
+.mh-lesson-btn.active{background:rgba(201,168,76,0.12);color:var(--gold);border-color:rgba(201,168,76,0.4);}
+.lesson-container{display:grid;grid-template-columns:1fr 310px;gap:0;}
+.lesson-main{padding:3rem 3.5rem;border-right:1px solid var(--light);}
+.lesson-sidebar{padding:2rem 1.75rem;background:var(--offwhite);position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;}
+.lesson-header{margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:2px solid var(--light);}
+.lh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold3);margin-bottom:0.6rem;}
+.lh-title{font-family:'EB Garamond',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;color:var(--navy);line-height:1.15;margin-bottom:0.6rem;}
+.lh-title em{font-style:italic;color:var(--gold);}
+.lh-meta{display:flex;gap:1.5rem;flex-wrap:wrap;}
+.lh-meta-item{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);}
+.lesson-main h2{font-family:'EB Garamond',serif;font-size:1.7rem;font-weight:700;color:var(--navy);margin:3rem 0 0.9rem;padding-bottom:0.5rem;border-bottom:2px solid var(--light);}
+.lesson-main h3{font-family:'EB Garamond',serif;font-size:1.25rem;font-weight:600;color:var(--navy);margin:2.25rem 0 0.65rem;}
+.lesson-main p{margin-bottom:1.25rem;color:#2A3D50;line-height:1.82;}
+.lesson-main ul,.lesson-main ol{margin:0 0 1.25rem 1.5rem;color:#2A3D50;}
+.lesson-main li{margin-bottom:0.6rem;line-height:1.72;}
+.lesson-main strong{color:var(--navy);font-weight:600;}
+.callout{padding:1.4rem 1.6rem;margin:2rem 0;}
+.callout-gold{background:var(--gold2);border-left:3px solid var(--gold);}.callout-gold p{color:var(--gold3);font-size:0.97rem;line-height:1.75;}
+.callout-navy{background:var(--navy);border-left:3px solid var(--gold);}.callout-navy p{color:#8FA8C0;font-size:0.95rem;line-height:1.75;}
+.callout-red{background:var(--red-light);border-left:4px solid var(--red);}.callout-red p{color:#6B4F10;font-size:0.97rem;line-height:1.75;}
+.callout-green{background:var(--green-light);border-left:4px solid var(--green);}.callout-green p{color:#1A3A5C;font-size:0.97rem;line-height:1.75;}
+.callout-teal{background:var(--teal-light);border-left:4px solid var(--teal);}.callout-teal p{color:#003A3A;font-size:0.97rem;line-height:1.75;}
+.callout-blue{background:var(--blue-light);border-left:4px solid var(--blue);}.callout-blue p{color:#0A1A3A;font-size:0.97rem;line-height:1.75;}
+.callout-orange{background:var(--orange-light);border-left:4px solid var(--orange);}.callout-orange p{color:#4A1A00;font-size:0.97rem;line-height:1.75;}
+.callout-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:0.5rem;display:block;}
+.callout-gold .callout-label{color:var(--gold3);}.callout-navy .callout-label{color:var(--gold);}.callout-red .callout-label{color:var(--red);}.callout-green .callout-label{color:var(--green);}.callout-teal .callout-label{color:var(--teal);}.callout-blue .callout-label{color:var(--blue);}.callout-orange .callout-label{color:var(--orange);}
+.framework-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.fw-card{background:white;border:1px solid #EAE5DC;padding:1.25rem;border-radius:8px;}
+.fw-card-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:6px;}
+.fw-card-title{font-family:'EB Garamond',serif;font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.fw-card-desc{font-size:0.9rem;color:var(--mid);line-height:1.6;}
+.acro-grid{display:flex;flex-direction:column;gap:0;margin:1.5rem 0;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;}
+.acro-row{display:grid;grid-template-columns:52px 1fr;gap:0;border-bottom:1px solid #EAE5DC;}
+.acro-row:last-child{border-bottom:none;}
+.acro-letter{background:var(--navy);color:var(--gold);font-family:'EB Garamond',serif;font-size:1.8rem;font-weight:800;display:flex;align-items:center;justify-content:center;}
+.acro-content{padding:0.9rem 1.1rem;background:white;}
+.acro-word{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:3px;}
+.acro-desc{font-size:0.85rem;color:var(--mid);line-height:1.55;}
+.esf-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.6rem;margin:1.5rem 0;}
+.esf-card{background:white;border:1px solid #EAE5DC;border-radius:6px;padding:0.75rem;}
+.esf-num{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold3);margin-bottom:3px;}
+.esf-name{font-family:'EB Garamond',serif;font-size:0.9rem;font-weight:700;color:var(--navy);margin-bottom:3px;}
+.esf-lead{font-size:0.78rem;color:var(--mid);}
+.esf-card.fire-lead{border-left:3px solid var(--gold);}
+.sbar-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold3);margin-bottom:0.65rem;margin-top:1.5rem;display:block;}
+.sbar-label:first-child{margin-top:0;}
+.sbar-card{background:white;border:1px solid #EAE5DC;border-radius:8px;padding:0.9rem 1rem;margin-bottom:8px;font-size:0.9rem;color:var(--mid);line-height:1.55;}
+.sbar-card strong{color:var(--navy);display:block;margin-bottom:3px;font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;}
+.score-compare{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.sc-card{padding:1.25rem;border-radius:8px;}
+.sc-card.miss{background:var(--red-light);border:1px solid #F0C0C0;}
+.sc-card.hit{background:var(--green-light);border:1px solid #9DCCA8;}
+.sc-title{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:0.75rem;}
+.sc-card.miss .sc-title{color:var(--red);}.sc-card.hit .sc-title{color:var(--green);}
+.sc-body{font-size:0.87rem;line-height:1.6;}
+.sc-card.miss .sc-body{color:#6B4F10;}.sc-card.hit .sc-body{color:#1A3A5C;}
+.lesson-nav-bar{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 3rem;border-top:3px solid var(--gold);background:var(--navy);gap:1rem;}
+.lnb-btn{background:rgba(255,255,255,0.08);border:2px solid rgba(201,168,76,0.4);padding:14px 28px;font-family:'Cinzel',serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border-radius:6px;color:var(--cream);transition:all 0.2s;white-space:nowrap;}
+.lnb-btn:hover{background:rgba(201,168,76,0.15);border-color:var(--gold);color:var(--gold);}
+.lnb-btn:disabled,.lnb-btn[disabled]{opacity:0.25;cursor:not-allowed;background:transparent;}
+.lnb-btn:disabled:hover,.lnb-btn[disabled]:hover{background:transparent;border-color:rgba(201,168,76,0.4);color:var(--cream);}
+.lnb-btn.primary{background:var(--gold);color:var(--navy);border-color:var(--gold);font-weight:800;}
+.lnb-btn.primary:hover{background:#C9A84C;border-color:#C9A84C;}
+.lnb-info{text-align:center;flex:1;}
+.lnb-name{font-family:'EB Garamond',serif;font-size:1rem;font-weight:700;color:var(--cream);}
+.lnb-num{font-size:0.85rem;color:var(--gold);font-family:'Cinzel',serif;letter-spacing:1px;}
+@media(max-width:900px){.lesson-container{grid-template-columns:1fr;}.lesson-sidebar{position:relative;height:auto;}.lesson-main{padding:2rem 1.5rem;}.lesson-nav-bar{padding:1rem 1.5rem;flex-wrap:wrap;}.framework-grid,.score-compare,.esf-grid{grid-template-columns:1fr;}.nav-pills{display:none;}}
+
+/* OB CARD */
+.ob-card{background:var(--navy);margin:2rem 0;overflow:hidden;}
+.ob-header{padding:0.85rem 1.5rem;background:rgba(201,168,76,0.08);border-bottom:1px solid rgba(201,168,76,0.15);}
+.ob-label{font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);}
+.ob-body{padding:1.25rem 1.5rem;}
+.ob-q{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;}
+.ob-q-tag{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);background:rgba(201,168,76,0.1);padding:4px 10px;border-radius:3px;white-space:nowrap;}
+.ob-q-text{font-family:'EB Garamond',serif;font-size:1.08rem;font-weight:600;color:var(--cream);line-height:1.5;margin-bottom:8px;}
+.ob-note{font-size:0.88rem;color:#8FA8C0;line-height:1.6;font-style:italic;}
+/* TAKEAWAYS */
+.takeaways{background:var(--navy);padding:2.25rem;margin:3rem 0 0;border-top:3px solid var(--gold);}
+.tk-lbl{font-family:'Cinzel',serif;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.tk-item{color:#8FA8C0;font-size:0.92rem;line-height:1.7;padding:0.5rem 0 0.5rem 1.25rem;border-left:2px solid rgba(201,168,76,0.2);margin-bottom:0.5rem;}
+
+
+.lead-nav{background:var(--navy);border-radius:8px;padding:14px 16px;margin-bottom:16px;border:1px solid rgba(201,168,76,0.2)}
+.lead-nav-header{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.lead-nav-row{display:grid;grid-template-columns:20px 1fr;gap:6px;margin-bottom:6px;align-items:start}
+.lead-nav-letter{font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:var(--gold)}
+.lead-nav-content{}
+.lead-nav-name{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:2px}
+.lead-nav-app{font-size:11px;color:#8FA8C0;line-height:1.5}
+
+.lf-wrap{margin:2.5rem 0 1.5rem;border:2px solid var(--gold);border-radius:10px;overflow:hidden}
+.lf-header{background:var(--navy);padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
+.lf-title{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+.lf-dots{display:flex;gap:6px}
+.lf-dot{width:8px;height:8px;border-radius:50%;background:rgba(201,168,76,0.25);transition:all 0.3s}
+.lf-dot.active{background:var(--gold);transform:scale(1.3)}
+.lf-dot.done{background:var(--gold)}
+.lf-step{display:none;padding:20px}
+.lf-step.active{display:block}
+.lf-step-num{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:6px}
+.lf-step-title{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:10px}
+.lf-chain{background:var(--navy);border-radius:6px;padding:14px 18px;margin:10px 0}
+.lf-chain-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.lf-chain-text{font-size:13px;color:#8FA8C0;line-height:1.6}
+.lf-chain-close{font-size:12px;color:var(--cream);margin-top:6px;font-style:italic}
+.lf-btn{background:var(--navy);color:var(--gold);border:2px solid var(--gold);padding:12px 24px;border-radius:6px;font-family:'Cinzel',serif;font-size:12px;letter-spacing:1.5px;font-weight:600;cursor:pointer;margin-top:12px;transition:all 0.2s;display:inline-block}
+.lf-btn:hover{background:var(--gold);color:var(--navy)}
+.lf-timer{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:var(--gold);padding:6px 14px;border-radius:4px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:1px;margin-top:10px}
+.lesson-main.ft>p{display:none!important}.lesson-main.ft>.callout{display:none!important}.ft-toggle{display:flex;align-items:center;gap:10px;padding:10px 16px;background:var(--navy);border-radius:6px;cursor:pointer;border:1px solid rgba(201,168,76,0.25)}.ft-toggle-switch{width:36px;height:20px;background:rgba(201,168,76,0.2);border-radius:10px;position:relative;transition:background .2s}.ft-toggle-switch.on{background:var(--gold)}.ft-toggle-knob{width:14px;height:14px;background:#fff;border-radius:50%;position:absolute;top:3px;left:3px;transition:left .2s}.ft-toggle-switch.on .ft-toggle-knob{left:19px}.ft-toggle-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}.ft-toggle-desc{font-size:11px;color:var(--mid)}.lesson-main.ft-on>p,.lesson-main.ft-on>.callout,.lesson-main.ft-on h3{display:none!important}.lesson-main.ft-on .ob-card,.lesson-main.ft-on .lf-wrap,.lesson-main.ft-on .lead-nav,.lesson-main.ft-on h2{display:block!important}
+</style>
+</head>
+<body>
+<nav class="top-nav">
+  <div class="nav-left"><div class="nav-brand">The Promotional Standard<span>BC/AC Track · Chapter 32</span></div></div>
+  <div class="nav-pills">
+    <button class="nav-pill active" onclick="showLesson(0)">NIMS + ICS Integration</button>
+    <button class="nav-pill" onclick="showLesson(1)">EOC Activation + Structure</button>
+    <button class="nav-pill" onclick="showLesson(2)">The BC's EOC Role</button>
+    <button class="nav-pill" onclick="showLesson(3)">ESFs + Interagency Coordination</button>
+    <button class="nav-pill" onclick="showLesson(4)">Mutual Aid + EMAC</button>
+    <button class="nav-pill" onclick="showLesson(5)">AC Application</button>
+  </div>
+</nav>
+<div class="progress-bar" id="prog"></div>
+<div class="module-hero">
+  <div class="mh-inner">
+    <div class="mh-eyebrow">Chapter 32 · BC/AC Track · Fire Officer III–IV</div>
+    <h1 class="mh-title">Emergency Management<br><em>+ EOC Operations</em></h1>
+    <p class="mh-sub">NIMS and ICS beyond the incident level, Emergency Operations Center activation and organizational structure, the Battalion Chief's role in the EOC, Emergency Support Functions and interagency coordination, and mutual aid and EMAC frameworks. The complete emergency management curriculum for the senior officer who leads beyond the incident perimeter.</p>
+    <div class="mh-badges">
+      <span class="mh-badge badge-bc">BC / AC Track</span>
+      <span class="mh-badge badge-nfpa">NFPA 1021 · FO III–IV · NIMS</span>
+    </div>
+    <div class="mh-thread">
+      <div class="mh-thread-label">Before You Begin</div>
+      <div class="mh-thread-text">Module 25 covers ICS and NIMS at the company and company officer level — incident command, ICS positions, span of control, unified command. This module builds the organizational layer above that: how the EOC supports field operations, how multiple agencies are coordinated at scale, and what the senior fire officer's responsibilities are when the emergency exceeds local resources. Complete Module 25 first if you haven't.</div>
+    </div>
+    <div class="mh-lesson-nav">
+      <button class="mh-lesson-btn active" onclick="showLesson(0)">1. NIMS + ICS Integration</button>
+      <button class="mh-lesson-btn" onclick="showLesson(1)">2. EOC Activation + Structure</button>
+      <button class="mh-lesson-btn" onclick="showLesson(2)">3. The BC's EOC Role</button>
+      <button class="mh-lesson-btn" onclick="showLesson(3)">4. ESFs + Interagency</button>
+      <button class="mh-lesson-btn" onclick="showLesson(4)">5. Mutual Aid + EMAC</button>
+      <button class="mh-lesson-btn" onclick="showLesson(5)">6. AC Application</button>
+    </div>
+  </div>
+</div>
+<main>
+
+<!-- LESSON 1 -->
+<div class="lesson-view active" id="lesson-0">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 32 · Lesson 1 of 6</div>
+    <h1 class="lh-title">NIMS + ICS Integration —<br><em>The System Above the Incident</em></h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 16 min</span><span class="lh-meta-item">🏛️ NIMS · ICS · Preparedness Framework</span></div>
+  </div>
+  <p>The National Incident Management System (NIMS) is the comprehensive national framework for incident management — not just the ICS organizational chart that most fire officers know, but the complete system of preparedness, resource management, communications, and coordination that enables all levels of government and the private sector to work together effectively during major emergencies. For the Battalion Chief and above, NIMS fluency means understanding the full system, not just the field operations layer.</p>
+  <h2>NIMS — The Five Components</h2>
+  <div class="acro-grid">
+    <div class="acro-row">
+      <div class="acro-letter">PPD</div>
+      <div class="acro-content">
+        <div class="acro-word">Preparedness — Building Capability Before the Incident</div>
+        <div class="acro-desc">The planning, organizing, training, equipping, exercising, evaluating, and improving activities that build organizational capability before an incident occurs. NIMS preparedness doctrine includes: development of emergency operations plans (EOPs), training to NIMS standards (ICS-100 through ICS-400), exercise programs (HSEEP methodology), and mutual aid agreements. The BC who participates actively in preparedness activities — not just incident response — is fulfilling the NIMS preparedness mandate.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">COM</div>
+      <div class="acro-content">
+        <div class="acro-word">Communications and Information Management</div>
+        <div class="acro-desc">NIMS establishes standards for interoperable communications — the ability of responders from different agencies and jurisdictions to communicate with each other. This includes common terminology, common radio protocols, and the use of plain language rather than 10-codes during multi-agency operations. The BC who arrives at a regional incident using agency-specific terminology is creating a communications barrier that NIMS is specifically designed to prevent.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">RES</div>
+      <div class="acro-content">
+        <div class="acro-word">Resource Management — Identifying, Typing, and Tracking</div>
+        <div class="acro-desc">NIMS resource management establishes standard resource typing (defining what each resource type consists of and what it can do), inventorying available resources, and tracking resources during incidents. Credentialing — ensuring that personnel have the qualifications they are claimed to have — is a resource management function. The BC who understands resource typing can request exactly what they need using common terminology rather than agency-specific labels.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">ICS</div>
+      <div class="acro-content">
+        <div class="acro-word">Command and Coordination — ICS, EOC, and MAC</div>
+        <div class="acro-desc">The command and coordination component encompasses the Incident Command System (ICS) at the incident level, Emergency Operations Centers (EOCs) at the organizational/jurisdictional level, and Multi-Agency Coordination (MAC) systems at the regional/national level. These three structures operate simultaneously during major incidents, each with distinct but complementary functions. The BC must understand how their ICS role at the incident interfaces with the EOC supporting them.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">JIS</div>
+      <div class="acro-content">
+        <div class="acro-word">Joint Information System — Public Information Coordination</div>
+        <div class="acro-desc">The Joint Information System (JIS) coordinates public information across agencies during multi-agency incidents. The Joint Information Center (JIC) is the physical or virtual facility where PIOs from multiple agencies coordinate messaging to avoid contradictions, rumors, and information gaps. The BC who understands the JIS knows that their statements at a multi-agency incident are coordinated through this system — not freelanced independently.</div>
+      </div>
+    </div>
+  </div>
+  <h2>ICS at Scale — What Changes Above Battalion Chief Level</h2>
+  <p>Most fire officers are comfortable with ICS at the company and battalion level — managing incidents with 1–20 units. As incidents scale beyond local resource capacity, the ICS organizational structure expands in ways that require the senior officer to understand positions and functions they may never have personally occupied in routine operations.</p>
+  <div class="callout callout-gold">
+    <span class="callout-label">The ICS-400 Level — What BC and Above Must Know</span>
+    <p>ICS-400 (Advanced ICS) covers the command and general staff positions in depth, area command, complex incident management, and the coordination between incident command and EOC. The BC who has completed ICS-300 and ICS-400 — not just as online compliance but with genuine understanding — is prepared to operate in any position the incident demands. NIMS requires that senior government officials (including senior fire officers) complete ICS-300 and ICS-400. Know the material, not just the certificate.</p>
+  </div>
+</div>
+<div class="lesson-sidebar">
+<div class="ft-toggle" onclick="toggleFT(this)" style="margin-bottom:16px;max-width:320px">
+<div class="ft-toggle-switch"><div class="ft-toggle-knob"></div></div>
+<div><div class="ft-toggle-label">Fast Track Mode</div><div class="ft-toggle-desc">Full lesson content</div></div>
+</div>
+
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Operational Command</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">NIMS Five Components → EOC vs ICS Distinction → ESF Framework → Mutual Aid Agreements</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the emergency management level → apply NIMS → coordinate EOC/ICS interface → close with Discipline</div></div></div></div>
+
+  <span class="sbar-label">NIMS Five Components</span>
+  <div class="sbar-card"><strong>Preparedness</strong>Plans · training · exercises · mutual aid. Before the incident.</div>
+  <div class="sbar-card"><strong>Communications</strong>Interoperability · common terminology · plain language. No 10-codes in multi-agency ops.</div>
+  <div class="sbar-card"><strong>Resource Management</strong>Typing · inventory · tracking · credentialing.</div>
+  <div class="sbar-card"><strong>Command + Coordination</strong>ICS (incident) + EOC (jurisdictional) + MAC (regional/national). Three simultaneous structures.</div>
+  <div class="sbar-card"><strong>Joint Information System</strong>Coordinated public information. JIC = multi-agency PIO coordination. No freelancing.</div>
+  <span class="sbar-label">ICS-400 Requirement</span>
+  <div class="sbar-card">NIMS requires ICS-300 + ICS-400 for senior government officials. Know the material — not just the certificate.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — NIMS + ICS Integration</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"Describe your understanding of nims — the five components and how you would apply it in a real scenario."</div><div class="ob-note">Name the NIMS/ICS structure. Describe EOC activation criteria. Show that emergency management is coordination and planning, not just response.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 1 — Key Takeaways</div>
+  <div class="tk-item">NIMS — The Five Components — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">ICS at Scale — What Changes Above Battalion Chief Level — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Emergency Management question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Operational Command</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">NIMS Five Components → EOC vs ICS Distinction → ESF Framework → Mutual Aid Agreements</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the emergency management level → apply NIMS → coordinate EOC/ICS interface → close with Discipline</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" disabled>← Previous</button>
+  <div class="lnb-info"><div class="lnb-name">NIMS + ICS Integration</div><div class="lnb-num">Lesson 1 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: EOC Activation + Structure →</button>
+</div>
+</div>
+
+<!-- LESSON 2 -->
+<div class="lesson-view" id="lesson-1">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 32 · Lesson 2 of 6</div>
+    <h1 class="lh-title">EOC Activation + Structure —<br><em>How the Emergency Operations Center Works</em></h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 16 min</span><span class="lh-meta-item">🏢 EOC Structure · Activation Levels · Functions</span></div>
+  </div>
+  <p>The Emergency Operations Center is the physical or virtual facility where senior officials, department heads, and agency representatives gather to coordinate resources, information, and policy decisions during a major emergency. The EOC does not command the incident — the Incident Commander does. The EOC supports the Incident Commander by providing resources, information, policy guidance, and interagency coordination that exceed the IC's capacity to manage from the field.</p>
+  <h2>EOC vs ICS — The Critical Distinction</h2>
+  <div class="framework-grid">
+    <div class="fw-card" style="border-top:3px solid var(--gold);">
+      <div class="fw-card-label">Incident Command System (ICS)</div>
+      <div class="fw-card-title">Tactical Operations at the Incident</div>
+      <div class="fw-card-desc">Located at or near the incident. Commands tactical operations. Manages resources assigned to the incident. Communicates resource needs and incident status to the EOC. The IC is accountable for tactical execution — not for policy decisions or resource acquisition beyond their delegated authority.</div>
+    </div>
+    <div class="fw-card" style="border-top:3px solid var(--teal);">
+      <div class="fw-card-label">Emergency Operations Center (EOC)</div>
+      <div class="fw-card-title">Strategic Support and Coordination</div>
+      <div class="fw-card-desc">Located away from the incident (typically a dedicated facility or government building). Supports the IC by acquiring and staging resources, coordinating with other agencies and jurisdictions, making policy decisions within the governing authority's purview, managing public information, and maintaining situational awareness across the full event. The EOC does not give tactical orders to the IC.</div>
+    </div>
+  </div>
+  <h2>EOC Organizational Models</h2>
+  <p>EOCs operate under one of three organizational models, and many jurisdictions blend elements of more than one:</p>
+  <div class="acro-grid">
+    <div class="acro-row">
+      <div class="acro-letter">ICS</div>
+      <div class="acro-content">
+        <div class="acro-word">ICS Structure — EOC Organized Like an Incident Command Post</div>
+        <div class="acro-desc">The EOC uses ICS positions (Operations, Planning, Logistics, Finance/Admin) as its organizational structure. Most familiar to fire service personnel. Provides clear command and coordination. Preferred by many fire-led jurisdictions because it uses familiar organizational language and structure.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">ESF</div>
+      <div class="acro-content">
+        <div class="acro-word">Emergency Support Function Structure — Organized by Function</div>
+        <div class="acro-desc">The EOC organizes around the 15 Emergency Support Functions from the National Response Framework. Each ESF desk is staffed by the agencies responsible for that function. Used by many state and federal EOCs. Requires understanding which ESF each agency's function falls under and how ESFs coordinate with each other.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">INC</div>
+      <div class="acro-content">
+        <div class="acro-word">Incident Support Model — EOC as Resource Management Hub</div>
+        <div class="acro-desc">The EOC focuses primarily on resource acquisition and logistics support for the incident, with less emphasis on policy coordination. Used in jurisdictions where the field IC retains most decision-making authority. Works well for incidents that are primarily operational (rather than involving significant policy decisions or multi-agency coordination).</div>
+      </div>
+    </div>
+  </div>
+  <h2>EOC Activation Levels</h2>
+  <p>Most EOCs operate on a tiered activation model — activating incrementally based on the scale and nature of the emergency. Knowing your jurisdiction's activation levels and what each level entails is a basic senior officer competency:</p>
+  <ul>
+    <li><strong>Level 3 / Monitoring:</strong> A potential incident is developing. Key staff are on standby. Information is being gathered and analyzed. No physical EOC activation required yet.</li>
+    <li><strong>Level 2 / Partial Activation:</strong> An incident has occurred that exceeds normal operational capacity. Key department heads and agency representatives are activated. The EOC is partially staffed.</li>
+    <li><strong>Level 1 / Full Activation:</strong> A major emergency requiring full multi-agency coordination. All ESF positions staffed. Mayor or City Manager likely present. Policy decisions being made at the EOC level. This is a declared emergency, typically triggering special governmental powers and access to state and federal resources.</li>
+  </ul>
+  <div class="callout callout-orange">
+    <span class="callout-label">The Declared Emergency — Why It Matters Operationally</span>
+    <p>A formal emergency declaration — by the mayor, city manager, governor, or president depending on scale — does more than signal severity. It unlocks procurement flexibility (emergency purchasing authority), activates mutual aid agreements, enables requests for state and federal assistance, and in some cases grants additional legal authority for emergency actions. The senior fire officer who understands the declaration process can advocate for timely declaration when an incident warrants it — rather than waiting for the administrative process to catch up with operational reality.</p>
+  </div>
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Operational Command</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">NIMS Five Components → EOC vs ICS Distinction → ESF Framework → Mutual Aid Agreements</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the emergency management level → apply NIMS → coordinate EOC/ICS interface → close with Discipline</div></div></div></div>
+
+  <span class="sbar-label">EOC vs ICS</span>
+  <div class="sbar-card"><strong>ICS</strong>At incident. Tactical operations. Commands field resources. Reports status to EOC.</div>
+  <div class="sbar-card"><strong>EOC</strong>Away from incident. Strategic support. Acquires resources. Coordinates agencies. Makes policy decisions. Does NOT give tactical orders to IC.</div>
+  <span class="sbar-label">Three EOC Models</span>
+  <div class="sbar-card"><strong>ICS Structure</strong>Familiar to fire service. Operations / Planning / Logistics / Finance.</div>
+  <div class="sbar-card"><strong>ESF Structure</strong>Organized by 15 Emergency Support Functions. Common at state/federal level.</div>
+  <div class="sbar-card"><strong>Incident Support Model</strong>Resource logistics focus. IC retains most decision authority.</div>
+  <span class="sbar-label">Activation Levels</span>
+  <div class="sbar-card">Level 3: Monitoring. Level 2: Partial — key agencies activated. Level 1: Full — all ESFs staffed, declaration likely.</div>
+  <span class="sbar-label">Emergency Declaration</span>
+  <div class="sbar-card">Unlocks procurement flexibility · activates mutual aid · enables state/federal requests · additional legal authority. Advocate for timely declaration when warranted.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — EOC Activation + Structure</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"Describe your understanding of eoc vs ics — the critical distinction and how you would apply it in a real scenario."</div><div class="ob-note">Name the NIMS/ICS structure. Describe EOC activation criteria. Show that emergency management is coordination and planning, not just response.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 2 — Key Takeaways</div>
+  <div class="tk-item">EOC vs ICS — The Critical Distinction — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">EOC Organizational Models — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Emergency Management question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Operational Command</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">NIMS Five Components → EOC vs ICS Distinction → ESF Framework → Mutual Aid Agreements</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the emergency management level → apply NIMS → coordinate EOC/ICS interface → close with Discipline</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← NIMS + ICS Integration</button>
+  <div class="lnb-info"><div class="lnb-name">EOC Activation + Structure</div><div class="lnb-num">Lesson 2 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: The BC's EOC Role →</button>
+</div>
+</div>
+
+<!-- LESSON 3 -->
+<div class="lesson-view" id="lesson-2">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 32 · Lesson 3 of 6</div>
+    <h1 class="lh-title">The BC's EOC Role —<br><em>Transitioning from Field to Coordination</em></h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 16 min</span><span class="lh-meta-item">🎯 BC in EOC · Situational Awareness · Coordination</span></div>
+  </div>
+  <p>The Battalion Chief who is accustomed to being the most senior operational decision-maker at an incident faces a significant role transition when assigned to the EOC. In the EOC, the BC is not the Incident Commander — they are a coordinator, an information manager, and a resource advocate. The skills that make an excellent IC do not automatically translate to EOC effectiveness; they must be consciously adapted.</p>
+  <h2>What the BC Does in the EOC</h2>
+  <div class="acro-grid">
+    <div class="acro-row">
+      <div class="acro-letter">SIT</div>
+      <div class="acro-content">
+        <div class="acro-word">Situational Awareness Management — The Primary Function</div>
+        <div class="acro-desc">The BC in the EOC is responsible for maintaining accurate, current situational awareness of the fire/rescue/EMS operational picture — what resources are deployed, where, doing what, and with what needs. This information flows from the IC to the EOC, and the BC must process, synthesize, and communicate it to other EOC functions that need it (logistics for resource requests, planning for projection, finance for cost tracking, public information for messaging).</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">RES</div>
+      <div class="acro-content">
+        <div class="acro-word">Resource Acquisition and Staging</div>
+        <div class="acro-desc">When the IC identifies resource needs that exceed locally available supply, the request comes to the EOC. The BC facilitates: identifying what additional resources are needed (using NIMS resource typing), where they can be obtained (mutual aid, state resources, EMAC, FEMA), and how they will be staged and deployed. The BC who understands resource typing and mutual aid processes can move resources faster and more effectively than the one who does not.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">POL</div>
+      <div class="acro-content">
+        <div class="acro-word">Policy Boundary Management — What Goes to the IC vs What Stays in the EOC</div>
+        <div class="acro-desc">One of the most critical EOC functions is maintaining the boundary between operational decisions (made by the IC) and policy decisions (made in the EOC). The EOC that begins micromanaging tactical operations creates confusion and undermines the IC's authority. The BC in the EOC who starts giving operational instructions to field commanders — bypassing the IC — is violating ICS unity of command and creating the exact coordination breakdown that ICS is designed to prevent.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">DOC</div>
+      <div class="acro-content">
+        <div class="acro-word">Documentation — The Record That Matters Post-Event</div>
+        <div class="acro-desc">EOC documentation — resource requests, decisions made, communications with field, cost tracking — is the record that supports after-action review, mutual aid reimbursement, FEMA public assistance applications, and potential litigation. The EOC that keeps excellent documentation is in a fundamentally stronger position for all post-event activities than the one that prioritized speed over record-keeping. Every significant EOC action should be documented in real time.</div>
+      </div>
+    </div>
+  </div>
+  <h2>The Transition Problem — From IC Mindset to EOC Mindset</h2>
+  <p>The most common failure of fire service personnel in EOC roles is the attempt to run the EOC like an incident command post — making unilateral decisions, issuing operational orders, and treating the EOC as an elevated ICP rather than as a coordination center. The distinctions that matter:</p>
+  <div class="framework-grid">
+    <div class="fw-card">
+      <div class="fw-card-label">ICP Mindset</div>
+      <div class="fw-card-title">Direct + Execute</div>
+      <div class="fw-card-desc">Clear command authority. Direct supervision of tactical operations. Rapid decision-making under time pressure. Single-agency or clearly unified command structure. Speed and decisiveness valued above consensus.</div>
+    </div>
+    <div class="fw-card">
+      <div class="fw-card-label">EOC Mindset</div>
+      <div class="fw-card-title">Coordinate + Enable</div>
+      <div class="fw-card-desc">Multi-agency coordination without direct command authority over most participants. Consensus-building across organizations with different authorities and priorities. Information management and synthesis rather than direct supervision. Support function rather than command function. Speed through coordination, not authority.</div>
+    </div>
+  </div>
+  <div class="callout callout-teal">
+    <span class="callout-label">The EOC Success Metric</span>
+    <p>The successful EOC senior officer is measured not by what decisions they made unilaterally, but by how effectively the field Incident Commander was supported — whether they had the resources they needed when they needed them, whether information flowed accurately between field and EOC, and whether the coordination function enabled the incident to be managed more effectively than it could have been without the EOC. Supporting someone else's success is the job.</p>
+  </div>
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Operational Command</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">NIMS Five Components → EOC vs ICS Distinction → ESF Framework → Mutual Aid Agreements</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the emergency management level → apply NIMS → coordinate EOC/ICS interface → close with Discipline</div></div></div></div>
+
+  <span class="sbar-label">BC's Four EOC Functions</span>
+  <div class="sbar-card"><strong>Situational Awareness</strong>Process field info · synthesize for other EOC functions · accurate current picture.</div>
+  <div class="sbar-card"><strong>Resource Acquisition</strong>IC need → EOC request → mutual aid / state / EMAC → stage and deploy.</div>
+  <div class="sbar-card"><strong>Policy Boundary</strong>Tactical = IC. Policy = EOC. Never bypass the IC with operational orders. ICS unity of command.</div>
+  <div class="sbar-card"><strong>Documentation</strong>Real-time records. Supports AAR, mutual aid reimbursement, FEMA PA, litigation protection.</div>
+  <span class="sbar-label">The Mindset Shift</span>
+  <div class="sbar-card">ICP: direct + execute. EOC: coordinate + enable. Supporting the IC's success is the job — not demonstrating your own authority.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — The BC's EOC Role</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"Describe your understanding of what the bc does in the eoc and how you would apply it in a real scenario."</div><div class="ob-note">Name the NIMS/ICS structure. Describe EOC activation criteria. Show that emergency management is coordination and planning, not just response.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 3 — Key Takeaways</div>
+  <div class="tk-item">What the BC Does in the EOC — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">The Transition Problem — From IC Mindset to EOC Mindset — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Emergency Management question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Operational Command</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">NIMS Five Components → EOC vs ICS Distinction → ESF Framework → Mutual Aid Agreements</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the emergency management level → apply NIMS → coordinate EOC/ICS interface → close with Discipline</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← EOC Activation + Structure</button>
+  <div class="lnb-info"><div class="lnb-name">The BC's EOC Role</div><div class="lnb-num">Lesson 3 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: ESFs + Interagency →</button>
+</div>
+</div>
+
+<!-- LESSON 4 -->
+<div class="lesson-view" id="lesson-3">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 32 · Lesson 4 of 6</div>
+    <h1 class="lh-title">Emergency Support Functions —<br><em>Where Fire Service Sits in the National Framework</em></h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 14 min</span><span class="lh-meta-item">🏛️ NRF · ESFs · Fire Service Lead Functions</span></div>
+  </div>
+  
+<h3>The National Response Framework (NRF)</h3>
+<p>The National Response Framework (NRF) organizes federal response capabilities into 15 Emergency Support Functions (ESFs), each representing a category of government capability. State and local emergency plans typically mirror this structure. The senior fire officer who understands the ESF framework knows where the fire service fits, which ESFs it leads or co-leads, and how to work within the framework to access capabilities the fire service doesn't have in-house.</p>
+  <h2>The 15 Emergency Support Functions</h2>
+  <div class="esf-grid">
+    <div class="esf-card fire-lead">
+      <div class="esf-num">ESF 4</div>
+      <div class="esf-name">Firefighting</div>
+      <div class="esf-lead">USDA Forest Service (Federal) / Fire Dept (Local) · <strong style="color:var(--gold3)">Fire Lead</strong></div>
+    </div>
+    <div class="esf-card fire-lead">
+      <div class="esf-num">ESF 9</div>
+      <div class="esf-name">Search and Rescue</div>
+      <div class="esf-lead">DHS/FEMA · <strong style="color:var(--gold3)">Fire Co-Lead</strong></div>
+    </div>
+    <div class="esf-card fire-lead">
+      <div class="esf-num">ESF 10</div>
+      <div class="esf-name">Oil and Hazardous Materials</div>
+      <div class="esf-lead">EPA / DHS · <strong style="color:var(--gold3)">Fire Co-Lead Local</strong></div>
+    </div>
+    <div class="esf-card">
+      <div class="esf-num">ESF 1</div>
+      <div class="esf-name">Transportation</div>
+      <div class="esf-lead">DOT</div>
+    </div>
+    <div class="esf-card">
+      <div class="esf-num">ESF 2</div>
+      <div class="esf-name">Communications</div>
+      <div class="esf-lead">DHS/CISA</div>
+    </div>
+    <div class="esf-card">
+      <div class="esf-num">ESF 3</div>
+      <div class="esf-name">Public Works + Engineering</div>
+      <div class="esf-lead">Army Corps of Engineers</div>
+    </div>
+    <div class="esf-card">
+      <div class="esf-num">ESF 5</div>
+      <div class="esf-name">Information + Planning</div>
+      <div class="esf-lead">DHS/FEMA</div>
+    </div>
+    <div class="esf-card">
+      <div class="esf-num">ESF 6</div>
+      <div class="esf-name">Mass Care + Housing</div>
+      <div class="esf-lead">DHS/FEMA + Red Cross</div>
+    </div>
+    <div class="esf-card">
+      <div class="esf-num">ESF 7</div>
+      <div class="esf-name">Logistics</div>
+      <div class="esf-lead">DHS/FEMA + GSA</div>
+    </div>
+    <div class="esf-card">
+      <div class="esf-num">ESF 8</div>
+      <div class="esf-name">Public Health + Medical</div>
+      <div class="esf-lead">HHS/ASPR</div>
+    </div>
+    <div class="esf-card">
+      <div class="esf-num">ESF 11</div>
+      <div class="esf-name">Agriculture + Natural Resources</div>
+      <div class="esf-lead">USDA</div>
+    </div>
+    <div class="esf-card">
+      <div class="esf-num">ESF 12</div>
+      <div class="esf-name">Energy</div>
+      <div class="esf-lead">DOE</div>
+    </div>
+    <div class="esf-card">
+      <div class="esf-num">ESF 13</div>
+      <div class="esf-name">Public Safety + Security</div>
+      <div class="esf-lead">DOJ / DHS</div>
+    </div>
+    <div class="esf-card">
+      <div class="esf-num">ESF 14</div>
+      <div class="esf-name">Cross-Sector Business + Infrastructure</div>
+      <div class="esf-lead">DHS/CISA</div>
+    </div>
+    <div class="esf-card">
+      <div class="esf-num">ESF 15</div>
+      <div class="esf-name">External Affairs</div>
+      <div class="esf-lead">DHS</div>
+    </div>
+  </div>
+  <h2>The Fire Service's ESF Responsibilities</h2>
+  <p><strong>ESF 4 (Firefighting)</strong> is the fire service's primary ESF — managing firefighting operations, resource deployment, and mutual aid coordination for fire suppression. At the local level, the fire department leads ESF 4 regardless of what other agencies may be involved. This is the ESF where the senior fire officer has the most direct authority and the most specific expertise.</p>
+  <p><strong>ESF 9 (Search and Rescue)</strong> encompasses structural collapse, confined space, swift water, and wilderness rescue — capabilities the fire service holds in urban search and rescue (USAR) teams and swift water teams. The senior fire officer assigned to ESF 9 in an EOC coordinates with national USAR teams (FEMA Type I and Type II teams), state resources, and local technical rescue capabilities.</p>
+  <p><strong>ESF 10 (Hazardous Materials)</strong> involves the fire service at the local response level. The EOC ESF 10 function coordinates between first responder agencies, state environmental agencies, EPA regional offices, and industry response teams during major hazmat incidents.</p>
+  <div class="callout callout-gold">
+    <span class="callout-label">Interagency Coordination — The Relationships That Matter Before the Incident</span>
+    <p>The EOC works most effectively when the relationships between agency representatives are already established — through joint training, exercises, and pre-incident coordination meetings. The senior fire officer who has invested in relationships with emergency management directors, public health officials, public works directors, and utility companies before the incident activates those relationships in the EOC far more effectively than the one who is meeting them for the first time during a major emergency. Relationship investment is preparedness investment.</p>
+  </div>
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Operational Command</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">NIMS Five Components → EOC vs ICS Distinction → ESF Framework → Mutual Aid Agreements</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the emergency management level → apply NIMS → coordinate EOC/ICS interface → close with Discipline</div></div></div></div>
+
+  <span class="sbar-label">Fire Service Lead ESFs</span>
+  <div class="sbar-card"><strong>ESF 4 — Firefighting</strong>Fire department primary lead at local level. Direct authority and expertise.</div>
+  <div class="sbar-card"><strong>ESF 9 — Search and Rescue</strong>USAR, confined space, swift water, wilderness. FEMA Type I/II teams, state resources, local tech rescue.</div>
+  <div class="sbar-card"><strong>ESF 10 — HazMat</strong>Local fire response + state environmental + EPA regional + industry teams.</div>
+  <span class="sbar-label">ESF Awareness</span>
+  <div class="sbar-card">Know all 15 ESFs by number and function. Know which federal agency leads each. Know where fire service has primary vs supporting roles.</div>
+  <span class="sbar-label">Pre-Incident Relationships</span>
+  <div class="sbar-card">EOC relationships established before the incident work in the EOC. Joint training + exercises + coordination meetings = preparedness investment.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Emergency Support Functions</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"Describe your understanding of the 15 emergency support functions and how you would apply it in a real scenario."</div><div class="ob-note">Name the NIMS/ICS structure. Describe EOC activation criteria. Show that emergency management is coordination and planning, not just response.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 4 — Key Takeaways</div>
+  <div class="tk-item">The 15 Emergency Support Functions — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">The Fire Service's ESF Responsibilities — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Emergency Management question, Engage the lesson framework, Address impact, Drive to action.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Operational Command</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">NIMS Five Components → EOC vs ICS Distinction → ESF Framework → Mutual Aid Agreements</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the emergency management level → apply NIMS → coordinate EOC/ICS interface → close with Discipline</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← The BC's EOC Role</button>
+  <div class="lnb-info"><div class="lnb-name">ESFs + Interagency</div><div class="lnb-num">Lesson 4 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Mutual Aid + EMAC →</button>
+</div>
+</div>
+
+<!-- LESSON 5 -->
+<div class="lesson-view" id="lesson-4">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 32 · Lesson 5 of 6</div>
+    <h1 class="lh-title">Mutual Aid + EMAC —<br><em>Expanding Response Beyond Local Capacity</em></h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 14 min</span><span class="lh-meta-item">🤝 Mutual Aid · EMAC · FEMA Assistance</span></div>
+  </div>
+  <p>No jurisdiction has the resources to handle every possible emergency within its own capabilities. Mutual aid — agreements between jurisdictions to share resources and personnel during emergencies — is the network that enables effective response to major incidents. The senior fire officer who understands the mutual aid framework can access significantly greater response capacity than the one who operates only within their own resource inventory.</p>
+  <h2>Mutual Aid Agreement Hierarchy</h2>
+  <div class="acro-grid">
+    <div class="acro-row">
+      <div class="acro-letter">LOC</div>
+      <div class="acro-content">
+        <div class="acro-word">Local Mutual Aid Agreements — First Tier</div>
+        <div class="acro-desc">Bilateral or multilateral agreements between neighboring fire departments and other local agencies — typically automatic aid (automatic dispatch of resources without a formal request) or mutual aid (resources provided on request). Most fire departments have automatic aid agreements with immediate neighbors and mutual aid agreements with a broader regional network. These agreements define what resources are available, the request process, who pays for what, and liability during mutual aid operations.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">REG</div>
+      <div class="acro-content">
+        <div class="acro-word">Regional Mutual Aid — FIRESCOPE, MABAS, Regional Compacts</div>
+        <div class="acro-desc">Regional mutual aid frameworks — FIRESCOPE in California, MABAS in Illinois, and various regional compacts elsewhere — establish standardized resource typing, request protocols, and reimbursement frameworks for multi-jurisdictional responses within a region. Regional frameworks enable the ordered deployment of large numbers of resources from multiple jurisdictions in a coordinated way, with established protocols for command, communications, and logistics.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">STA</div>
+      <div class="acro-content">
+        <div class="acro-word">State Mutual Aid — Governor's Declaration and State Resources</div>
+        <div class="acro-desc">When a local incident exceeds regional mutual aid capacity, the jurisdiction requests state assistance through the state emergency management agency. State assistance may include state-owned resources, activation of statewide mutual aid frameworks, and facilitation of EMAC requests. A gubernatorial declaration of emergency typically precedes formal state assistance. The fire officer who understands this process can advocate for timely state assistance requests rather than waiting for administrative process to catch up.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">EMAC</div>
+      <div class="acro-content">
+        <div class="acro-word">EMAC — Emergency Management Assistance Compact</div>
+        <div class="acro-desc">The Emergency Management Assistance Compact is a congressionally ratified agreement (P.L. 104-321) among all 50 states, D.C., Puerto Rico, and the U.S. Virgin Islands to share resources during governor-declared emergencies. EMAC is the primary mechanism for interstate mutual aid for major disasters. Key features: requesting state bears responsibility for worker's compensation and liability; sending state is reimbursed for all costs; EMAC uses NIMS resource typing for requests; the process is managed through state emergency management agencies — not directly by local fire departments.</div>
+      </div>
+    </div>
+    <div class="acro-row">
+      <div class="acro-letter">FEMA</div>
+      <div class="acro-content">
+        <div class="acro-word">FEMA Assistance — Federal Disaster Declaration</div>
+        <div class="acro-desc">A presidential major disaster declaration (or emergency declaration) triggers the full range of FEMA response and recovery programs. For fire service, the most relevant FEMA programs include: FEMA Urban Search and Rescue (USAR) teams, FEMA Public Assistance (PA) for reimbursement of eligible response and recovery costs, Individual Assistance (IA) for affected residents, and Hazard Mitigation grants. The process: local → state → presidential declaration. The timeline can be days to weeks. Planning that anticipates federal reimbursement must include accurate documentation from the beginning of the incident.</div>
+      </div>
+    </div>
+  </div>
+  <div class="callout callout-green">
+    <span class="callout-label">The Documentation-Reimbursement Connection</span>
+    <p>Every dollar of mutual aid, EMAC, or FEMA reimbursement depends on documentation — personnel time records, equipment use logs, material purchases, and incident cost tracking from the beginning of the event. Jurisdictions that begin tracking costs at declaration miss the pre-declaration costs that may be eligible. Jurisdictions that don't track costs at all lose reimbursement they could have received. The BC who builds cost documentation into the EOC documentation protocol from the first hour of activation is protecting the jurisdiction's reimbursement position.</p>
+  </div>
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Operational Command</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">NIMS Five Components → EOC vs ICS Distinction → ESF Framework → Mutual Aid Agreements</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the emergency management level → apply NIMS → coordinate EOC/ICS interface → close with Discipline</div></div></div></div>
+
+  <span class="sbar-label">Mutual Aid Hierarchy</span>
+  <div class="sbar-card"><strong>Local</strong>Automatic aid + mutual aid agreements. First tier. Neighbor-to-neighbor.</div>
+  <div class="sbar-card"><strong>Regional</strong>FIRESCOPE, MABAS, regional compacts. Standardized typing + protocols.</div>
+  <div class="sbar-card"><strong>State</strong>Governor's declaration → state emergency management → state resources.</div>
+  <div class="sbar-card"><strong>EMAC</strong>Interstate compact. All 50 states. Requesting state pays liability; sending state reimbursed. Managed through state EM — not directly by local.</div>
+  <div class="sbar-card"><strong>FEMA / Presidential</strong>Major disaster declaration. PA reimbursement + IA + hazard mitigation. Timeline: days to weeks.</div>
+  <span class="sbar-label">Documentation = Reimbursement</span>
+  <div class="sbar-card">Track costs from hour one. Personnel · equipment · materials · incident costs. Pre-declaration costs may be eligible. No documentation = no reimbursement.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Mutual Aid + EMAC</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"Describe your understanding of mutual aid agreement hierarchy and how you would apply it in a real scenario."</div><div class="ob-note">Name the NIMS/ICS structure. Describe EOC activation criteria. Show that emergency management is coordination and planning, not just response.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 5 — Key Takeaways</div>
+  <div class="tk-item">Mutual Aid Agreement Hierarchy — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Emergency Management question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Operational Command</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">NIMS Five Components → EOC vs ICS Distinction → ESF Framework → Mutual Aid Agreements</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the emergency management level → apply NIMS → coordinate EOC/ICS interface → close with Discipline</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← ESFs + Interagency</button>
+  <div class="lnb-info"><div class="lnb-name">Mutual Aid + EMAC</div><div class="lnb-num">Lesson 5 of 6</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: AC Application →</button>
+</div>
+</div>
+
+<!-- LESSON 6 -->
+<div class="lesson-view" id="lesson-5">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 32 · Lesson 6 of 6 · Assessment Application</div>
+    <h1 class="lh-title">Assessment Center Application —<br><em>Emergency Management Scenarios</em></h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 14 min</span><span class="lh-meta-item">🎯 Scoring + Practice Scenarios</span></div>
+  </div>
+  <p>Emergency management scenarios at BC and above typically appear in written exercises and oral boards. They test understanding of the NIMS/ICS framework, the EOC vs ICS distinction, and the mutual aid escalation process. The 5/5 response demonstrates system-level understanding — not just field operations knowledge described at larger scale.</p>
+  <h2>Practice Scenario — Major Flooding Event</h2>
+  <div class="callout callout-navy">
+    <span class="callout-label">Oral Board Prompt</span>
+    <p>"You are the Battalion Chief assigned to represent the Fire Department in the city's EOC. A major flooding event is unfolding — multiple swift water rescues are occurring simultaneously, a neighborhood of 400 homes is isolated by rising water, the wastewater treatment plant is threatened, and the city's emergency shelter is at 80% capacity. The Mayor is present and is asking you for a unified status briefing. The Incident Commander in the field is requesting 4 additional swift water teams that are not available locally. How do you respond?"</p>
+  </div>
+  <div class="score-compare">
+    <div class="sc-card miss">
+      <div class="sc-title">3/5 Response</div>
+      <div class="sc-body">"I would brief the Mayor on the current situation and what resources we have deployed. I would work to get the additional swift water teams by calling neighboring departments. I would coordinate with other agencies in the EOC to address the shelter and wastewater issues. I would keep the Mayor informed as the situation develops."</div>
+    </div>
+    <div class="sc-card hit">
+      <div class="sc-title">5/5 Response</div>
+      <div class="sc-body">"Before briefing the Mayor, I need 60 seconds to synthesize across all the active problems into a common operating picture. Then the briefing: 'Mayor, here's the unified status: We have 7 swift water rescue teams operational across three active incident sectors, 400 homes isolated with evacuation pending water level assessment, the wastewater plant is monitoring and may require ESF 3 (Public Works) coordination for protective measures, and ESF 6 (Mass Care) is managing shelter capacity at 80% with overflow options identified. The field IC needs 4 additional swift water teams — I'm initiating a regional mutual aid request now through our regional compact, and simultaneously notifying state EM that we may need EMAC activation if regional resources are exhausted. I'll have a resource status update in 30 minutes.'<br><br>Simultaneously I'm doing three things: (1) placing the mutual aid request through the regional compact using NIMS resource typing — Type I swift water rescue teams; (2) flagging for the EOC Director that we may need a state declaration request to unlock state and EMAC resources; (3) ensuring our EOC documentation is capturing all resource requests, costs, and decisions from this point forward for potential FEMA Public Assistance reimbursement.<br><br>What I'm not doing: I'm not making tactical decisions for the IC — the shelter siting, the wastewater plant response, and the rescue sector assignments belong to the field IC and the relevant ESF leads. My job is to make sure the IC has the resources he needs and the Mayor has accurate information, not to run the field operation from the EOC."</div>
+    </div>
+  </div>
+  <div class="callout callout-gold">
+    <span class="callout-label">Chapter 32 Complete</span>
+    <p>Emergency management competency at the BC level is the bridge between operational excellence and organizational resilience — it is the capability that allows the fire service to function effectively when the incident exceeds everything a single Incident Commander can manage alone. The officer who understands NIMS, knows the EOC structure, can operate in coordination rather than command mode, and knows how to escalate through the mutual aid hierarchy is the officer who keeps their jurisdiction functional through the incidents that test it most severely.</p>
+  </div>
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Operational Command</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">NIMS Five Components → EOC vs ICS Distinction → ESF Framework → Mutual Aid Agreements</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the emergency management level → apply NIMS → coordinate EOC/ICS interface → close with Discipline</div></div></div></div>
+
+  <span class="sbar-label">5/5 Pattern</span>
+  <div class="sbar-card">Synthesize before briefing · common operating picture · brief by ESF · simultaneously initiate mutual aid through proper channels · flag declaration need · document for reimbursement · explicitly names IC boundary — "what I'm not doing."</div>
+  <span class="sbar-label">3/5 Gap</span>
+  <div class="sbar-card">"Calling neighboring departments" = bypasses the formal mutual aid process. No mention of resource typing, regional compact, EMAC, declaration, or documentation. Activity without system.</div>
+  <span class="sbar-label">Key Terms for BC Level</span>
+  <div class="sbar-card">NIMS resource typing · regional compact · EMAC · state EM notification · declaration request · FEMA PA documentation · common operating picture · ESF coordination · unity of command.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Assessment Center Application</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"You receive a scenario about emergency management. Walk me through your complete response using the frameworks from this chapter."</div><div class="ob-note">Use LEAD: Label the bucket (Emergency Management), Engage the specific framework (reference Practice Scenario — Major Flooding Event explicitly), Address the operational and organizational impact, Drive to a concrete first action with a timeline.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 6 — Key Takeaways</div>
+  <div class="tk-item">Practice Scenario — Major Flooding Event — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Emergency Management question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Operational Command</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">NIMS Five Components → EOC vs ICS Distinction → ESF Framework → Mutual Aid Agreements</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the emergency management level → apply NIMS → coordinate EOC/ICS interface → close with Discipline</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Mutual Aid + EMAC</button>
+  <div class="lnb-info"><div class="lnb-name">AC Application</div><div class="lnb-num">Lesson 6 of 6</div></div>
+  <button class="lnb-btn primary" onclick="window.scrollTo({top:0,behavior:'smooth'})">Module Complete ✓</button>
+</div>
+</div>
+
+</main>
+<script>
+let cur=0;
+const ls=document.querySelectorAll('.lesson-view');
+const ps=document.querySelectorAll('.nav-pill');
+const mbs=document.querySelectorAll('.mh-lesson-btn');
+function showLesson(n){ls.forEach(l=>l.classList.remove('active'));ps.forEach(p=>p.classList.remove('active'));mbs.forEach(m=>m.classList.remove('active'));if(ls[n])ls[n].classList.add('active');if(ps[n])ps[n].classList.add('active');if(mbs[n])mbs[n].classList.add('active');cur=n;window.scrollTo({top:0,behavior:'smooth'});document.getElementById('prog').style.width='0%';}
+function nextLesson(){if(cur<ls.length-1)showLesson(cur+1);}
+function prevLesson(){if(cur>0)showLesson(cur-1);}
+window.addEventListener('scroll',()=>{const s=document.documentElement.scrollTop;const h=document.documentElement.scrollHeight-window.innerHeight;if(h>0)document.getElementById('prog').style.width=Math.min(100,(s/h*100))+'%';});
+document.addEventListener('DOMContentLoaded',()=>showLesson(0));
+
+function lfNext(el,stepNum){
+  var wrap=el.closest('.lf-wrap');
+  if(!wrap)return;
+  var steps=wrap.querySelectorAll('.lf-step');
+  var dots=wrap.querySelectorAll('.lf-dot');
+  steps.forEach(function(s,i){s.classList.remove('active');if(i<stepNum)s.classList.add('done');});
+  dots.forEach(function(d,i){d.classList.remove('active');if(i<stepNum)d.classList.add('done');if(i===stepNum)d.classList.add('active');});
+  if(steps[stepNum])steps[stepNum].classList.add('active');
+}
+</script>
+<script>function toggleFT(el){var sw=el.querySelector('.ft-toggle-switch');var desc=el.querySelector('.ft-toggle-desc');var mains=document.querySelectorAll('.lesson-main');sw.classList.toggle('on');var on=sw.classList.contains('on');desc.textContent=on?'Frameworks + OB cards only':'Full lesson content';mains.forEach(function(m){m.classList.toggle('ft-on',on);});}</script>
+</body>
+</html>

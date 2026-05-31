@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Leadership Identity — The Promotional Standard</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Crimson+Pro:wght@300;400;500;600&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --navy:#0C2340;--navy2:#0F2A4A;--navy-deep:#071828;
+  --gold:#C9A84C;--gold-light:#E4C97A;--gold-dim:#8B6914;
+  --cream:#F5F0E8;--cream2:#EDE4D0;--offwhite:#F5F0E8;--light:#EAE5DC;
+  --on-dark-1:#F0E8D8;--on-dark-2:#C8DCF0;--on-dark-3:#98B8D0;
+  --on-light-1:#1A2E42;--on-light-2:#3A5068;--on-light-3:#6A7A8A;
+  --mid:#8A9AAA;
+  --exec:#2D1B4E;--exec2:#4A2D7A;--exec-gold:#E8C96A;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:var(--on-light-1);font-size:18px;line-height:1.8;}
+/* NAV */
+.top-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(12,35,64,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,0.2);height:68px;display:flex;align-items:center;padding:0 2rem;gap:1rem;}
+.nav-left{display:flex;align-items:center;gap:14px;flex:1;min-width:0;}
+.nav-brand{font-family:'Cinzel',serif;font-size:12px;letter-spacing:1.8px;color:var(--cream);line-height:1.3;white-space:nowrap;}
+.nav-brand span{display:block;font-size:8px;color:var(--gold);letter-spacing:2.5px;}
+.nav-divider{width:1px;height:28px;background:rgba(201,168,76,0.2);flex-shrink:0;}
+.nav-badge{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.3);color:var(--gold);padding:5px 11px;border-radius:4px;white-space:nowrap;}
+.nav-pills{display:flex;gap:4px;flex:2;justify-content:center;overflow-x:auto;scrollbar-width:none;}
+.nav-pills::-webkit-scrollbar{display:none;}
+.nav-pill{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;color:rgba(201,168,76,0.5);padding:7px 13px;border-radius:20px;cursor:pointer;transition:all .2s;border:1px solid transparent;background:transparent;white-space:nowrap;}
+.nav-pill:hover{color:var(--cream);background:rgba(255,255,255,.06);}
+.nav-pill.active{color:var(--gold);background:rgba(201,168,76,.1);border-color:rgba(201,168,76,.3);}
+.progress-bar{position:fixed;top:68px;left:0;height:3px;background:linear-gradient(90deg,var(--exec2),var(--gold));z-index:199;width:0%;transition:width .15s;}
+.lesson-view{display:none;}.lesson-view.active{display:block;}
+/* HERO */
+.module-hero{background:linear-gradient(155deg,var(--navy-deep) 0%,var(--exec) 55%,#1A0A2E 100%);padding:5rem 3rem 4rem;margin-top:68px;position:relative;overflow:hidden;border-bottom:3px solid var(--gold);}
+.module-hero::after{content:'';position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--gold),var(--gold-dim));}
+.hero-glow{position:absolute;right:-100px;top:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(74,45,122,.3) 0%,transparent 70%);pointer-events:none;}
+.mh-inner{max-width:920px;position:relative;z-index:2;}
+.mh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;}
+.mh-track-badge{display:inline-flex;align-items:center;gap:6px;font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:2.5px;text-transform:uppercase;background:rgba(74,45,122,.2);border:1px solid rgba(74,45,122,.5);color:#C0A0F0;padding:5px 12px;border-radius:4px;margin-bottom:1.25rem;}
+.mh-title{font-family:'EB Garamond',serif;font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:800;color:var(--cream);line-height:1.08;margin-bottom:.85rem;}
+.mh-title em{font-style:italic;color:var(--gold);}
+.mh-sub{font-size:1.1rem;color:var(--on-dark-2);max-width:680px;line-height:1.75;margin-bottom:2rem;}
+.mh-thread{background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.2);border-left:3px solid var(--gold);padding:1.1rem 1.6rem;max-width:680px;}
+.mh-thread-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.mh-thread-text{font-size:.95rem;color:var(--cream2);line-height:1.7;}
+/* LAYOUT */
+.lesson-container{display:grid;grid-template-columns:1fr 320px;gap:0;}
+.lesson-main{padding:3rem 3.5rem;border-right:1px solid var(--light);min-height:70vh;}
+.lesson-sidebar{padding:2rem 1.75rem;background:#F0EEF8;position:sticky;top:68px;height:calc(100vh - 68px);overflow-y:auto;}
+.lesson-header{margin-bottom:2.5rem;padding-bottom:1.75rem;border-bottom:2px solid var(--light);}
+.lh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-dim);margin-bottom:.5rem;}
+.lh-track{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:2px;text-transform:uppercase;color:#C0A0F0;background:rgba(74,45,122,.1);border:1px solid rgba(74,45,122,.3);padding:3px 9px;border-radius:3px;display:inline-block;margin-bottom:.65rem;}
+.lh-title{font-family:'EB Garamond',serif;font-size:clamp(1.9rem,3vw,2.55rem);font-weight:800;color:var(--navy);line-height:1.12;margin-bottom:.65rem;}
+.lh-title em{font-style:italic;color:var(--gold-dim);}
+.lh-meta{display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:.25rem;}
+.lh-meta-item{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--on-light-3);}
+.lesson-main h2{font-family:'EB Garamond',serif;font-size:1.75rem;font-weight:700;color:var(--navy);margin:3rem 0 1rem;padding-bottom:.6rem;border-bottom:2px solid var(--light);}
+.lesson-main p{margin-bottom:1.35rem;color:var(--on-light-1);line-height:1.85;font-size:1rem;}
+.lesson-main ul{margin:0 0 1.35rem 1.6rem;color:var(--on-light-1);}
+.lesson-main li{margin-bottom:.65rem;line-height:1.75;}
+.lesson-main strong{color:var(--navy);font-weight:600;}
+/* CALLOUTS */
+.callout{padding:1.5rem 1.75rem;margin:2.25rem 0;}
+.callout-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:.6rem;display:block;}
+.callout-gold{background:#FBF7E6;border-left:3px solid var(--gold);}
+.callout-gold .callout-label{color:var(--gold-dim);}
+.callout-gold p{color:#4A3A10;font-size:1rem;line-height:1.8;}
+.callout-navy{background:var(--navy-deep);border-left:3px solid var(--gold);}
+.callout-navy .callout-label{color:var(--gold);}
+.callout-navy p{color:var(--on-dark-1);font-size:1rem;line-height:1.8;}
+.callout-exec{background:rgba(74,45,122,.08);border-left:4px solid var(--exec2);}
+.callout-exec .callout-label{color:var(--exec2);}
+.callout-exec p{color:var(--on-light-1);font-size:1rem;line-height:1.8;}
+/* INFOGRAPHIC */
+.infographic-wrap{background:var(--navy-deep);border:1px solid rgba(201,168,76,.2);border-left:3px solid var(--gold);margin:2.25rem 0;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.3);}
+.ig-header{background:rgba(201,168,76,.07);padding:1.1rem 1.4rem 1rem;border-bottom:1px solid rgba(201,168,76,.15);}
+.ig-eyebrow{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:5px;}
+.ig-title{font-family:'EB Garamond',serif;font-size:1.3rem;font-weight:700;color:var(--cream);margin-bottom:4px;}
+.ig-sub{font-size:.97rem;color:var(--on-dark-2);line-height:1.65;}
+.ig-callout{margin:.6rem 1.4rem 1.1rem;padding:1rem 1.25rem;background:rgba(201,168,76,.07);border-left:3px solid var(--gold);font-size:.97rem;color:var(--gold-light);line-height:1.7;font-style:italic;}
+/* STYLE CARDS */
+.style-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(201,168,76,.08);}
+.style-card{background:var(--navy-deep);padding:1.5rem;}
+.style-card-header{display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem;}
+.style-icon{font-size:1.6rem;}
+.style-name{font-family:'EB Garamond',serif;font-size:1.15rem;font-weight:700;color:var(--cream);}
+.style-principle{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.5rem;}
+.style-body{font-size:.93rem;color:var(--on-dark-2);line-height:1.6;margin-bottom:.6rem;}
+.style-sweet{font-size:.88rem;color:var(--on-dark-3);border-top:1px solid rgba(201,168,76,.1);padding-top:.6rem;margin-top:.4rem;}
+.style-sweet strong{color:var(--gold);font-size:.78rem;font-family:'Cinzel',serif;letter-spacing:1.5px;text-transform:uppercase;display:block;margin-bottom:3px;}
+/* DATA TABLE */
+.data-table{width:100%;border-collapse:collapse;font-size:.95rem;}
+.data-table th{background:rgba(12,35,64,.8);color:var(--gold);padding:.65rem 1rem;text-align:left;font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;}
+.data-table td{padding:.7rem 1rem;border-bottom:1px solid rgba(201,168,76,.1);vertical-align:top;color:var(--on-dark-2);line-height:1.55;}
+.data-table td strong{color:var(--on-dark-1);}
+.data-table tr:nth-child(even) td{background:rgba(12,35,64,.2);}
+/* ASSESSMENT */
+.assessment-shell{background:var(--navy-deep);border:2px solid rgba(201,168,76,.3);margin:2.5rem 0;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.4);}
+.assessment-header{background:linear-gradient(135deg,var(--exec) 0%,var(--navy-deep) 100%);padding:2rem 2.5rem;border-bottom:2px solid rgba(201,168,76,.3);}
+.assessment-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;}
+.assessment-title{font-family:'EB Garamond',serif;font-size:1.8rem;font-weight:800;color:var(--cream);margin-bottom:.4rem;}
+.assessment-sub{font-size:.95rem;color:var(--on-dark-2);}
+.assessment-progress{background:rgba(255,255,255,.08);height:4px;margin:1.25rem 2.5rem 0;}
+.assessment-progress-fill{height:100%;background:linear-gradient(90deg,var(--exec2),var(--gold));transition:width .4s ease;width:0%;}
+.assessment-body{padding:2.5rem;}
+.q-number{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;}
+.q-scenario{font-family:'EB Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--on-dark-1);line-height:1.5;margin-bottom:.5rem;}
+.q-prompt{font-size:.97rem;color:var(--on-dark-2);margin-bottom:1.75rem;font-style:italic;}
+.q-options{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;}
+.q-option{background:rgba(255,255,255,.04);border:1.5px solid rgba(201,168,76,.2);padding:1rem 1.25rem;cursor:pointer;transition:all .2s;border-radius:4px;text-align:left;}
+.q-option:hover{border-color:rgba(201,168,76,.6);background:rgba(201,168,76,.07);}
+.q-option.selected{border-color:var(--gold);background:rgba(201,168,76,.15);}
+.q-option-letter{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.3rem;}
+.q-option-text{font-size:.93rem;color:var(--on-dark-1);line-height:1.5;}
+.assessment-nav{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 2.5rem;border-top:1px solid rgba(201,168,76,.15);}
+.assess-btn{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:12px 28px;border-radius:4px;cursor:pointer;transition:all .2s;border:1.5px solid rgba(201,168,76,.4);color:var(--on-dark-2);background:transparent;}
+.assess-btn:hover{border-color:var(--gold);color:var(--gold);}
+.assess-btn.primary{background:linear-gradient(135deg,var(--exec2) 0%,var(--exec) 100%);color:var(--gold);border-color:var(--exec2);box-shadow:0 3px 12px rgba(74,45,122,.4);}
+.assess-btn.primary:hover{background:linear-gradient(135deg,#5A3A8A 0%,#3A2060 100%);}
+.assess-btn:disabled{opacity:.3;cursor:default;}
+.q-counter{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;color:var(--on-dark-3);}
+/* RESULT */
+.result-shell{display:none;padding:2.5rem;background:var(--navy-deep);}
+.result-shell.visible{display:block;}
+.result-loading{text-align:center;padding:3rem;}
+.result-spinner{width:48px;height:48px;border:3px solid rgba(201,168,76,.2);border-top-color:var(--gold);border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 1.5rem;}
+@keyframes spin{to{transform:rotate(360deg)}}
+.result-loading-text{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);}
+.result-content{display:none;}
+.result-content.visible{display:block;}
+.result-badge{display:inline-flex;align-items:center;gap:.75rem;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.4);padding:.6rem 1.25rem;border-radius:4px;margin-bottom:1.5rem;}
+.result-badge-label{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);}
+.result-primary{font-family:'EB Garamond',serif;font-size:2rem;font-weight:800;color:var(--cream);margin-bottom:.25rem;}
+.result-secondary{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--on-dark-3);margin-bottom:2rem;}
+.result-section{margin-bottom:2rem;}
+.result-section-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem;display:block;}
+.result-text{font-size:1rem;color:var(--on-dark-1);line-height:1.85;}
+.board-answer{background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.25);border-left:3px solid var(--gold);padding:1.5rem;margin:1.5rem 0;}
+.board-answer-label{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;display:block;}
+.board-answer-text{font-size:1rem;color:var(--on-dark-1);line-height:1.85;font-style:italic;}
+.retake-btn{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:10px 24px;border:1.5px solid rgba(201,168,76,.4);color:var(--on-dark-2);background:transparent;cursor:pointer;border-radius:4px;margin-top:1rem;transition:all .2s;}
+.retake-btn:hover{border-color:var(--gold);color:var(--gold);}
+/* SIDEBAR */
+.sbar-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold-dim);margin-bottom:.7rem;margin-top:1.75rem;display:block;}
+.sbar-label:first-child{margin-top:0;}
+.sbar-card{background:white;border:1px solid #D0C8E8;border-radius:8px;padding:1rem 1.15rem;margin-bottom:8px;font-size:.93rem;color:var(--on-light-2);line-height:1.65;box-shadow:0 1px 4px rgba(0,0,0,.04);}
+.sbar-card strong{color:var(--navy);display:block;margin-bottom:4px;font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;}
+.sbar-card.accent-gold{border-left:3px solid var(--gold);}
+.sbar-card.accent-gold strong{color:var(--gold-dim);}
+.sbar-card.accent-exec{border-left:3px solid var(--exec2);background:#F4F0FF;}
+.sbar-card.accent-exec strong{color:var(--exec2);}
+.sbar-card.accent-navy{border-left:3px solid var(--navy);background:#F0F4F8;}
+.sbar-card.accent-navy strong{color:var(--navy);}
+/* NAV BAR */
+.lesson-nav-bar{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 3rem;border-top:2px solid var(--light);background:white;box-shadow:0 -2px 12px rgba(0,0,0,.07);}
+.lnb-btn{background:transparent;border:1.5px solid var(--light);padding:12px 28px;font-family:'Cinzel',serif;font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;border-radius:6px;color:var(--on-light-2);transition:all .2s;min-width:160px;}
+.lnb-btn:hover:not(:disabled){border-color:var(--gold);color:var(--gold-dim);}
+.lnb-btn:disabled{opacity:.35;cursor:default;}
+.lnb-btn.primary{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);color:var(--gold);border-color:var(--navy);box-shadow:0 3px 12px rgba(12,35,64,.3);}
+.lnb-btn.primary:hover{background:linear-gradient(135deg,var(--navy2) 0%,#1A3A5A 100%);}
+.lnb-btn.complete{background:linear-gradient(135deg,#1A5C3A 0%,#226644 100%);color:#80E0A0;border-color:#1A5C3A;cursor:default;}
+.lnb-info{text-align:center;}
+.lnb-name{font-family:'EB Garamond',serif;font-size:1rem;font-weight:600;color:var(--navy);}
+.lnb-num{font-size:.78rem;color:var(--on-light-3);margin-top:2px;}
+@media(max-width:960px){.lesson-container{grid-template-columns:1fr;}.lesson-sidebar{position:relative;height:auto;}.style-grid,.q-options{grid-template-columns:1fr;}}
+
+/* OB CARD */
+.ob-card{background:var(--navy);margin:2rem 0;overflow:hidden;}
+.ob-header{padding:0.85rem 1.5rem;background:rgba(201,168,76,0.08);border-bottom:1px solid rgba(201,168,76,0.15);}
+.ob-label{font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);}
+.ob-body{padding:1.25rem 1.5rem;}
+.ob-q{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;}
+.ob-q-tag{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);background:rgba(201,168,76,0.1);padding:4px 10px;border-radius:3px;white-space:nowrap;}
+.ob-q-text{font-family:'EB Garamond',serif;font-size:1.08rem;font-weight:600;color:var(--cream);line-height:1.5;margin-bottom:8px;}
+.ob-note{font-size:0.88rem;color:#8FA8C0;line-height:1.6;font-style:italic;}
+.takeaways{background:var(--navy);padding:2.25rem;margin:3rem 0 0;border-top:3px solid var(--gold);}
+.tk-lbl{font-family:'Cinzel',serif;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.tk-item{color:#8FA8C0;font-size:0.92rem;line-height:1.7;padding:0.5rem 0 0.5rem 1.25rem;border-left:2px solid rgba(201,168,76,0.2);margin-bottom:0.5rem;}
+
+
+.lead-nav{background:var(--navy);border-radius:8px;padding:14px 16px;margin-bottom:16px;border:1px solid rgba(201,168,76,0.2)}
+.lead-nav-header{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.lead-nav-row{display:grid;grid-template-columns:20px 1fr;gap:6px;margin-bottom:6px;align-items:start}
+.lead-nav-letter{font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:var(--gold)}
+.lead-nav-content{}
+.lead-nav-name{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:2px}
+.lead-nav-app{font-size:11px;color:#8FA8C0;line-height:1.5}
+
+.lf-wrap{margin:2.5rem 0 1.5rem;border:2px solid var(--gold);border-radius:10px;overflow:hidden}
+.lf-header{background:var(--navy);padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
+.lf-title{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+.lf-dots{display:flex;gap:6px}
+.lf-dot{width:8px;height:8px;border-radius:50%;background:rgba(201,168,76,0.25);transition:all 0.3s}
+.lf-dot.active{background:var(--gold);transform:scale(1.3)}
+.lf-dot.done{background:var(--gold)}
+.lf-step{display:none;padding:20px}
+.lf-step.active{display:block}
+.lf-step-num{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:6px}
+.lf-step-title{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:10px}
+.lf-chain{background:var(--navy);border-radius:6px;padding:14px 18px;margin:10px 0}
+.lf-chain-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.lf-chain-text{font-size:13px;color:#8FA8C0;line-height:1.6}
+.lf-chain-close{font-size:12px;color:var(--cream);margin-top:6px;font-style:italic}
+.lf-btn{background:var(--navy);color:var(--gold);border:2px solid var(--gold);padding:12px 24px;border-radius:6px;font-family:'Cinzel',serif;font-size:12px;letter-spacing:1.5px;font-weight:600;cursor:pointer;margin-top:12px;transition:all 0.2s;display:inline-block}
+.lf-btn:hover{background:var(--gold);color:var(--navy)}
+.lf-timer{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:var(--gold);padding:6px 14px;border-radius:4px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:1px;margin-top:10px}
+.lesson-main.ft>p{display:none!important}.lesson-main.ft>.callout{display:none!important}
+h3{font-family:'EB Garamond',serif;font-size:1.1rem;font-weight:700;color:var(--gold3);margin:1.5rem 0 0.5rem}
+.ft-toggle{display:flex;align-items:center;gap:10px;padding:10px 16px;background:var(--navy);border-radius:6px;cursor:pointer;border:1px solid rgba(201,168,76,0.25)}.ft-toggle-switch{width:36px;height:20px;background:rgba(201,168,76,0.2);border-radius:10px;position:relative;transition:background .2s}.ft-toggle-switch.on{background:var(--gold)}.ft-toggle-knob{width:14px;height:14px;background:#fff;border-radius:50%;position:absolute;top:3px;left:3px;transition:left .2s}.ft-toggle-switch.on .ft-toggle-knob{left:19px}.ft-toggle-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}.ft-toggle-desc{font-size:11px;color:var(--mid)}.lesson-main.ft-on>p,.lesson-main.ft-on>.callout,.lesson-main.ft-on h3{display:none!important}.lesson-main.ft-on .ob-card,.lesson-main.ft-on .lf-wrap,.lesson-main.ft-on .lead-nav,.lesson-main.ft-on h2{display:block!important}
+</style>
+</head>
+<body>
+<nav class="top-nav">
+  <div class="nav-left">
+    <div class="nav-brand">The Promotional Standard<span>Coaching Lab</span></div>
+    <div class="nav-divider"></div>
+    <div class="nav-badge">◆ Bonus · Leadership Identity · All Tracks</div>
+  </div>
+  <div class="nav-pills">
+    <button class="nav-pill active" onclick="showLesson(0)">The Identity Question</button>
+    <button class="nav-pill" onclick="showLesson(1)">The Style Library</button>
+    <button class="nav-pill" onclick="showLesson(2)">The Assessment</button>
+    <button class="nav-pill" onclick="showLesson(3)">Your Identity Statement</button>
+  </div>
+</nav>
+<div class="progress-bar" id="prog"></div>
+<main>
+<div class="module-hero">
+  <div class="hero-glow"></div>
+  <div class="mh-inner">
+    <div class="mh-eyebrow">Bonus Module · Global Curriculum · All Tiers</div>
+    <div class="mh-track-badge">◆ Leadership Identity · Lt through Chief · Identity-Based Leadership</div>
+    <h1 class="mh-title">Leadership Identity —<br><em>Finding Your Genuine Path to the Rank</em></h1>
+    <p class="mh-sub">The most dangerous thing a candidate can do in an oral board is perform a leadership style that isn't theirs. Assessors are specifically trained to detect inauthenticity — and when they do, the score collapses. This module helps you find your genuine leadership identity, understand the styles available to you, and build the board answer that is both true and exceptional.</p>
+    <div class="mh-thread">
+      <div class="mh-thread-label">Module Thread</div>
+      <div class="mh-thread-text">Four lessons. The identity question — why genuine leadership outscores performed leadership every time. The Style Library — eight styles, fire/EMS context, and the risk of each. The TPS Leadership Identity Assessment — ten scenarios, AI-generated personal result, board answer template. Your Identity Statement — how to build and deliver a leadership identity answer that is both authentic and 5/5.</div>
+    </div>
+  </div>
+</div>
+<!-- ══════════ LESSON 1 — THE IDENTITY QUESTION ══════════ -->
+<div class="lesson-view active" id="lesson-0">
+<div class="lesson-container">
+<div class="lesson-main">
+<div class="lesson-header">
+  <div class="lh-eyebrow">Leadership Identity · Lesson 1 of 4</div>
+  <div class="lh-track">Foundation · All Tracks · Lt through Chief</div>
+  <h1 class="lh-title">The Identity Question —<br><em>Why Genuine Leadership Outscores Performed Leadership Every Time</em></h1>
+  <div class="lh-meta"><span class="lh-meta-item">⏱ 12 min</span><span class="lh-meta-item">📘 Foundation</span><span class="lh-meta-item">Identity · Authenticity · Assessment Center</span></div>
+</div>
+
+<p>Every assessment center panel asks some version of the same question: <em>"Describe your leadership style."</em> It appears as a direct question, as a follow-up to a scenario, as a closing prompt, or embedded in a roleplay debrief. Every assessor on every panel is listening for the same thing — and it is not the name of a leadership theory.</p>
+
+<p>They are listening for whether you actually know who you are as a leader. Not what you've read. Not what you think they want to hear. Whether the person in the room has a genuine, developed, self-aware leadership identity that would produce consistent, principled behavior when the pressure is real and the answer isn't obvious.</p>
+
+<div class="callout callout-navy">
+  <span class="callout-label">What Assessors Are Scoring</span>
+  <p>The leadership identity question is scored on the same dimensions as every other board question — but with one additional invisible criterion: congruence. Does what you say match how you've shown up in every other scenario in the session? A candidate who claims servant leadership in the identity question and then responds to a crew conflict scenario by directing outcomes from above without seeking input has answered both questions incorrectly — even if the words were right. Assessors synthesize the entire session. Your stated identity must be coherent with every other answer you gave.</p>
+</div>
+
+<h2>Why Performed Leadership Collapses Under Pressure</h2>
+<p>The most common preparation mistake for this question is researching leadership styles and selecting the one that sounds most impressive — usually transformational — and memorizing a description. The problem is not that transformational leadership is wrong. The problem is that a performed identity has no depth. When the assessor follows up with "give me an example of a time your leadership style was challenged" — the performed identity has nothing to draw from.</p>
+
+<p>Genuine leadership identity has roots. It connects to specific experiences, to values you actually hold, to moments where your instinct told you what to do before your training did. It can be challenged, questioned, and probed — and it gets stronger under pressure, not weaker. That resilience under questioning is what assessors are measuring when they follow up on identity answers.</p>
+
+<h2>The Three Levels of Leadership Identity</h2>
+
+<div class="infographic-wrap">
+  <div class="ig-header">
+    <span class="ig-eyebrow">◆ LEADERSHIP IDENTITY — THREE LEVELS</span>
+    <div class="ig-title">What Separates a 3/5 Identity Answer from a 5/5 One</div>
+  </div>
+  <div style="padding:.5rem 1.4rem 1.1rem;">
+    <table class="data-table">
+      <thead><tr><th>Level</th><th>What It Sounds Like</th><th>Score</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Named</strong></td><td>"I would describe my leadership style as transformational."</td><td>2/5</td><td>Names a style. No substance. No evidence. No self-awareness beyond recognition of the term.</td></tr>
+        <tr><td><strong>Defined</strong></td><td>"I am a transformational leader — I believe in inspiring my crew through vision and relationship rather than through authority or compliance."</td><td>3/5</td><td>Defines the style accurately. Still no evidence, no integration with values, no rank calibration.</td></tr>
+        <tr><td><strong>Lived</strong></td><td>"My leadership style is transformational at its core — I lead through vision and genuine investment in the people I supervise. I learned this about myself when [specific experience]. That experience confirmed that my instinct is always to develop people, not just manage compliance. As a [target rank], that means [specific application at that rank]."</td><td>4/5–5/5</td><td>Owned, evidenced, self-aware, rank-calibrated. The assessor is listening to someone who actually knows themselves.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="ig-callout">The difference between a 3/5 and a 5/5 leadership identity answer is not more information about the style — it is more ownership of the identity. A candidate who can say "this is who I am, here is how I know, and here is what it looks like at the rank I am seeking" has answered the most important question in the session definitively.</div>
+</div>
+
+<h2>Identity-Based Leadership and TCHOEDS</h2>
+<p>The TPS value system — Trust, Courage, Humility, Ownership, Empathy, Dedication, Service — is not a closing formula. It is a leadership identity framework. The TCHOEDS values are the underlying character architecture that makes any leadership style function well. A transformational leader without Humility becomes a charismatic manipulator. A servant leader without Courage becomes a people-pleaser who can't make difficult calls. A directive leader without Empathy becomes a tyrant.</p>
+
+<p>When you identify your genuine leadership style in the next lesson, you will also identify which TCHOEDS values are most central to how that style functions for you — and which values you need to consciously develop to prevent your primary style from becoming a liability.</p>
+
+</div>
+<div class="lesson-sidebar">
+<div class="ft-toggle" onclick="toggleFT(this)" style="margin-bottom:16px;max-width:320px">
+<div class="ft-toggle-switch"><div class="ft-toggle-knob"></div></div>
+<div><div class="ft-toggle-label">Fast Track Mode</div><div class="ft-toggle-desc">Full lesson content</div></div>
+</div>
+
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Leadership Philosophy</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Three Levels of Identity → T·C·H·O·E·D·S → Identity-Based Response Framework</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Name your identity level → connect to TCHOEDS → deliver at rank scope → close with Humility</div></div></div></div>
+
+  <span class="sbar-label">The Core Insight</span>
+  <div class="sbar-card accent-gold"><strong>Congruence is the invisible criterion</strong>Your stated identity must match how you showed up in every other scenario. Assessors synthesize the full session.</div>
+  <span class="sbar-label">Three Identity Levels</span>
+  <div class="sbar-card"><strong>Named — 2/5</strong>"I am a transformational leader."</div>
+  <div class="sbar-card"><strong>Defined — 3/5</strong>Names + defines the style accurately.</div>
+  <div class="sbar-card accent-gold"><strong>Lived — 4/5–5/5</strong>Owned + evidenced + self-aware + rank-calibrated. The assessor is listening to someone who knows themselves.</div>
+  <span class="sbar-label">Why Performed Identity Fails</span>
+  <div class="sbar-card accent-exec"><strong>No depth = no follow-up answers.</strong>When the assessor probes with "give me an example of when your style was challenged" — performed identity has nothing to draw from. Genuine identity gets stronger under questioning.</div>
+  <span class="sbar-label">TCHOEDS Connection</span>
+  <div class="sbar-card accent-navy"><strong>Every leadership style requires specific TCHOEDS values to function well — and fails without them.</strong>Identify which values anchor your style and which ones you need to consciously develop.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — The Identity Question</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">All Ranks</span><div><div class="ob-q-text">"How does the identity question connect to your preparation for this assessment?"</div><div class="ob-note">Use LEAD to structure your response. Name the specific concept from this lesson and connect it to a board scenario. Assessors score framework-grounded answers.</div></div></div>
+  </div>
+</div>
+<div class="takeaways">
+  <div class="tk-lbl">Key Takeaways</div>
+  <div class="tk-item">Every concept in TPS connects to a board scenario through LEAD: Label, Engage, Address, Drive.</div>
+  <div class="tk-item">Practice articulating each framework in 90 seconds or less — that is the typical response window in an assessment center.</div>
+  <div class="tk-item">The system works when you use it consistently. SPARR builds the skill; LEAD delivers it under pressure.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Leadership Philosophy</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Three Levels of Identity → T·C·H·O·E·D·S → Identity-Based Response Framework</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Name your identity level → connect to TCHOEDS → deliver at rank scope → close with Humility</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" disabled>← Start</button>
+  <div class="lnb-info"><div class="lnb-name">The Identity Question</div><div class="lnb-num">Lesson 1 of 4</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">The Style Library →</button>
+</div>
+</div>
+
+<!-- ══════════ LESSON 2 — THE STYLE LIBRARY ══════════ -->
+<div class="lesson-view" id="lesson-1">
+<div class="lesson-container">
+<div class="lesson-main">
+<div class="lesson-header">
+  <div class="lh-eyebrow">Leadership Identity · Lesson 2 of 4</div>
+  <div class="lh-track">Style Library · Eight Styles · Fire/EMS Context</div>
+  <h1 class="lh-title">The Style Library —<br><em>Eight Leadership Styles in the Fire/EMS Context</em></h1>
+  <div class="lh-meta"><span class="lh-meta-item">⏱ 16 min</span><span class="lh-meta-item">📘 Style Library</span><span class="lh-meta-item">Transformational · Servant · Adaptive · Situational · and more</span></div>
+</div>
+
+<p>Most leadership style surveys present a comprehensive taxonomy of every style in the organizational psychology literature. For fire/EMS promotional candidates, that breadth is noise. What matters is a curated set of styles that are genuinely relevant to the officer role — styles that have direct application to crew leadership, emergency operations, personnel development, and organizational culture. Here are the eight styles that appear most frequently in fire/EMS assessment center contexts and matter most for genuine leadership development at the officer level.</p>
+
+<div class="infographic-wrap">
+  <div class="ig-header">
+    <span class="ig-eyebrow">◆ THE TPS LEADERSHIP STYLE LIBRARY</span>
+    <div class="ig-title">Eight Styles · Fire/EMS Context · Sweet Spot and Shadow Side</div>
+    <div class="ig-sub">No style is universally superior. The most effective officers have a primary style they lead from authentically, a secondary style they flex to when the situation demands, and self-awareness about when their primary style becomes a liability.</div>
+  </div>
+  <div class="style-grid">
+    <div class="style-card">
+      <div class="style-card-header"><div class="style-icon">🔥</div><div><div class="style-name">Transformational</div></div></div>
+      <span class="style-principle">Core: Inspire change through vision and genuine relationship</span>
+      <div class="style-body">Transformational leaders motivate crews to exceed what compliance alone would produce by connecting individual work to a larger purpose. They invest in people personally, communicate a compelling vision of what the team can become, and lead through inspiration rather than authority.</div>
+      <div class="style-sweet"><strong>Fire/EMS Sweet Spot</strong>Culture change, crew development, low-morale recovery, high-potential mentorship, station identity building.</div>
+      <div class="style-sweet" style="margin-top:.4rem;"><strong>Shadow Side</strong>Loses operational discipline. Can struggle with accountability conversations when the relationship is strong. May over-promise vision without operational follow-through.</div>
+      <div class="style-sweet" style="margin-top:.4rem;"><strong>TCHOEDS Anchor</strong>Courage + Empathy + Dedication</div>
+    </div>
+    <div class="style-card">
+      <div class="style-card-header"><div class="style-icon">🙏</div><div><div class="style-name">Servant</div></div></div>
+      <span class="style-principle">Core: The leader exists to remove obstacles for the team</span>
+      <div class="style-body">Servant leaders invert the traditional authority hierarchy — their primary question is "what does my crew need to perform at their best, and how do I provide it?" They build deep trust through consistent investment, active listening, and genuine prioritization of crew needs over personal recognition.</div>
+      <div class="style-sweet"><strong>Fire/EMS Sweet Spot</strong>Trust-building with new crews, personnel development culture, psychological safety, long-tenure retention.</div>
+      <div class="style-sweet" style="margin-top:.4rem;"><strong>Shadow Side</strong>Can be perceived as lacking accountability authority. May struggle to make difficult performance decisions when the relationship is central. In crisis contexts, can appear indecisive.</div>
+      <div class="style-sweet" style="margin-top:.4rem;"><strong>TCHOEDS Anchor</strong>Humility + Service + Empathy</div>
+    </div>
+    <div class="style-card">
+      <div class="style-card-header"><div class="style-icon">⚡</div><div><div class="style-name">Directive</div></div></div>
+      <span class="style-principle">Core: Clear command authority in high-stakes moments</span>
+      <div class="style-body">Directive leaders provide clear, immediate, unambiguous guidance — particularly in emergency contexts where ambiguity is dangerous. They take decisive action, communicate expectations clearly, and hold the line on performance standards without hesitation.</div>
+      <div class="style-sweet"><strong>Fire/EMS Sweet Spot</strong>Emergency scene command, probationary personnel oversight, safety-critical compliance situations, immediate performance intervention.</div>
+      <div class="style-sweet" style="margin-top:.4rem;"><strong>Shadow Side</strong>Destroys morale and initiative when used as the default style in non-emergency contexts. Creates dependency rather than capability. May suppress the crew input that surfaces critical information.</div>
+      <div class="style-sweet" style="margin-top:.4rem;"><strong>TCHOEDS Anchor</strong>Ownership + Courage + Trust</div>
+    </div>
+    <div class="style-card">
+      <div class="style-card-header"><div class="style-icon">🔄</div><div><div class="style-name">Situational</div></div></div>
+      <span class="style-principle">Core: Flex style to the individual's Skill/Will level</span>
+      <div class="style-body">Situational leaders consciously match their leadership approach to the specific development level of each crew member — directing new personnel, coaching developing ones, supporting capable ones, and delegating to mastery-level performers. They don't lead the crew; they lead each person in the crew differently.</div>
+      <div class="style-sweet"><strong>Fire/EMS Sweet Spot</strong>Mixed-experience crews, paramedic-to-officer transition, managing diverse developmental stages simultaneously.</div>
+      <div class="style-sweet" style="margin-top:.4rem;"><strong>Shadow Side</strong>Can be perceived as inconsistent or playing favorites if the underlying rationale isn't communicated. Requires significant cognitive load to sustain across a full crew.</div>
+      <div class="style-sweet" style="margin-top:.4rem;"><strong>TCHOEDS Anchor</strong>Humility + Dedication + Empathy</div>
+    </div>
+    <div class="style-card">
+      <div class="style-card-header"><div class="style-icon">🧭</div><div><div class="style-name">Adaptive</div></div></div>
+      <span class="style-principle">Core: Distinguish technical from adaptive challenges</span>
+      <div class="style-body">Adaptive leaders (Heifetz framework) diagnose whether a problem requires a technical solution (apply known expertise) or an adaptive solution (the team must develop new capacity). They resist the fire service instinct to apply technical fixes to adaptive problems — and are willing to hold productive discomfort while genuine solutions develop.</div>
+      <div class="style-sweet"><strong>Fire/EMS Sweet Spot</strong>Culture challenges, systemic quality problems, inter-agency conflict, organizational change management.</div>
+      <div class="style-sweet" style="margin-top:.4rem;"><strong>Shadow Side</strong>Creates ambiguity and frustration if overused. Crews accustomed to directive leadership may interpret adaptive approaches as indecision or avoidance.</div>
+      <div class="style-sweet" style="margin-top:.4rem;"><strong>TCHOEDS Anchor</strong>Courage + Humility + Ownership</div>
+    </div>
+    <div class="style-card">
+      <div class="style-card-header"><div class="style-icon">🌱</div><div><div class="style-name">Coaching</div></div></div>
+      <span class="style-principle">Core: Develop capability over time through deliberate investment</span>
+      <div class="style-body">Coaching leaders prioritize long-term capability development over short-term performance outcomes. They ask questions more than they give answers, create space for crew members to work through problems with guidance rather than direction, and measure success by the growth of the people they lead.</div>
+      <div class="style-sweet"><strong>Fire/EMS Sweet Spot</strong>High-potential development pipeline, mid-career plateaus, succession planning, mentorship relationships.</div>
+      <div class="style-sweet" style="margin-top:.4rem;"><strong>Shadow Side</strong>Slow in crisis contexts. Can frustrate crew members who need clear direction. Time-intensive in a 24/48 operational tempo.</div>
+      <div class="style-sweet" style="margin-top:.4rem;"><strong>TCHOEDS Anchor</strong>Dedication + Empathy + Service</div>
+    </div>
+    <div class="style-card">
+      <div class="style-card-header"><div class="style-icon">✨</div><div><div class="style-name">Authentic</div></div></div>
+      <span class="style-principle">Core: Lead from genuine values, not a performed identity</span>
+      <div class="style-body">Authentic leaders build trust through consistency between their stated values and their observable behavior. They are transparent about their reasoning, acknowledge uncertainty without losing confidence, and create crew environments where honesty is rewarded rather than punished. The board senses authenticity immediately — it is the foundation under every other style.</div>
+      <div class="style-sweet"><strong>Fire/EMS Sweet Spot</strong>Board presence, crew trust-building, post-incident leadership, long-tenure relationships.</div>
+      <div class="style-sweet" style="margin-top:.4rem;"><strong>Shadow Side</strong>Can become inflexibility disguised as principle. "This is just who I am" is not a substitute for adapting to what the situation requires.</div>
+      <div class="style-sweet" style="margin-top:.4rem;"><strong>TCHOEDS Anchor</strong>Trust + Humility + Courage</div>
+    </div>
+    <div class="style-card">
+      <div class="style-card-header"><div class="style-icon">🏛️</div><div><div class="style-name">Visionary</div></div></div>
+      <span class="style-principle">Core: Move people toward a compelling shared future</span>
+      <div class="style-body">Visionary leaders articulate a clear, compelling picture of where the team is going and why it matters — and use that vision to align individual efforts without requiring constant direction. They are particularly effective at the managing and executive officer level, where the span of influence extends beyond direct supervision.</div>
+      <div class="style-sweet"><strong>Fire/EMS Sweet Spot</strong>Captain through Chief level, strategic planning, organizational transformation, inter-agency collaboration, community relations leadership.</div>
+      <div class="style-sweet" style="margin-top:.4rem;"><strong>Shadow Side</strong>Can lose the operational ground-level detail that makes vision executable. May over-focus on the destination without attending to the journey.</div>
+      <div class="style-sweet" style="margin-top:.4rem;"><strong>TCHOEDS Anchor</strong>Courage + Dedication + Trust</div>
+    </div>
+  </div>
+</div>
+
+<h2>Primary and Secondary Style — The Integration Principle</h2>
+<p>The most effective fire/EMS officers do not lead from a single style. They have a primary style — the authentic core that drives their default behavior — and a secondary style they consciously deploy when the situation demands something different from their primary. A transformational leader who can shift to directive on an emergency scene without losing their crew's trust is operating at a higher level than one who is transformational in all contexts.</p>
+
+<div class="callout callout-gold">
+  <span class="callout-label">The Integration Test</span>
+  <p>Ask yourself: what does my leadership look like at 0300 on a complicated scene versus in a station kitchen conversation about a crew member who is struggling? If those two situations produce dramatically different versions of you — one of them is probably performed. The goal is integration: a primary style that remains coherent across contexts while flexing its expression to what the situation requires.</p>
+</div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Leadership Philosophy</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Three Levels of Identity → T·C·H·O·E·D·S → Identity-Based Response Framework</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Name your identity level → connect to TCHOEDS → deliver at rank scope → close with Humility</div></div></div></div>
+
+  <span class="sbar-label">The Eight Styles</span>
+  <div class="sbar-card"><strong>🔥 Transformational</strong>Vision + relationship. Culture and development.</div>
+  <div class="sbar-card"><strong>🙏 Servant</strong>Remove obstacles. Deep trust. People first.</div>
+  <div class="sbar-card"><strong>⚡ Directive</strong>Clear command. Emergency contexts. High-stakes.</div>
+  <div class="sbar-card"><strong>🔄 Situational</strong>Flex to Skill/Will level. Different for each person.</div>
+  <div class="sbar-card"><strong>🧭 Adaptive</strong>Technical vs. adaptive problem diagnosis.</div>
+  <div class="sbar-card"><strong>🌱 Coaching</strong>Long-term capability. Questions over answers.</div>
+  <div class="sbar-card"><strong>✨ Authentic</strong>Values-behavior congruence. Foundation of all styles.</div>
+  <div class="sbar-card"><strong>🏛️ Visionary</strong>Compelling shared future. Captain through Chief.</div>
+  <span class="sbar-label">The Integration Principle</span>
+  <div class="sbar-card accent-gold"><strong>Primary + Secondary</strong>Primary = authentic core default. Secondary = conscious flex when situation demands. Both must be genuine.</div>
+  <span class="sbar-label">What's Next</span>
+  <div class="sbar-card accent-exec"><strong>Lesson 3 — The Assessment</strong>Ten fire/EMS scenarios. AI-generated personal result. Your primary and secondary style identified from how you actually respond — not what you think sounds right.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — The Style Library</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">All Ranks</span><div><div class="ob-q-text">"How does the style library connect to your preparation for this assessment?"</div><div class="ob-note">Use LEAD to structure your response. Name the specific concept from this lesson and connect it to a board scenario. Assessors score framework-grounded answers.</div></div></div>
+  </div>
+</div>
+<div class="takeaways">
+  <div class="tk-lbl">Key Takeaways</div>
+  <div class="tk-item">Every concept in TPS connects to a board scenario through LEAD: Label, Engage, Address, Drive.</div>
+  <div class="tk-item">Practice articulating each framework in 90 seconds or less — that is the typical response window in an assessment center.</div>
+  <div class="tk-item">The system works when you use it consistently. SPARR builds the skill; LEAD delivers it under pressure.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Leadership Philosophy</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Three Levels of Identity → T·C·H·O·E·D·S → Identity-Based Response Framework</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Name your identity level → connect to TCHOEDS → deliver at rank scope → close with Humility</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← The Identity Question</button>
+  <div class="lnb-info"><div class="lnb-name">The Style Library</div><div class="lnb-num">Lesson 2 of 4</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Take the Assessment →</button>
+</div>
+</div>
+<!-- ══════════ LESSON 3 — THE ASSESSMENT ══════════ -->
+<div class="lesson-view" id="lesson-2">
+<div class="lesson-container">
+<div class="lesson-main">
+<div class="lesson-header">
+  <div class="lh-eyebrow">Leadership Identity · Lesson 3 of 4</div>
+  <div class="lh-track">TPS Leadership Identity Assessment · AI-Powered · ~5 min</div>
+  <h1 class="lh-title">The TPS Leadership Identity Assessment —<br><em>Ten Scenarios. Your Genuine Style. Built by AI.</em></h1>
+  <div class="lh-meta"><span class="lh-meta-item">⏱ ~5 min to complete</span><span class="lh-meta-item">🤖 AI-Generated Result</span><span class="lh-meta-item">Primary + Secondary Style · Board Answer Template</span></div>
+</div>
+
+<p>This assessment is not a personality quiz. It is a scenario-based instrument designed specifically for fire/EMS officers — ten situations you will encounter or have encountered in your career. For each one, choose the response that most accurately reflects your genuine instinct. Not the response that sounds best. Not the one you think a board would want to hear. The one that is actually true to how you would respond.</p>
+
+
+<h3>When you complete all ten</h3>
+<p>When you complete all ten scenarios, the TPS AI will analyze your response pattern and generate a personal result — your primary and secondary leadership style, a narrative of how they integrate in fire/EMS contexts, a board-ready identity statement, and the shadow side to watch for under pressure.</p>
+
+<div class="callout callout-exec">
+  <span class="callout-label">Before You Begin</span>
+  <p>Answer quickly. Your first instinct is more revealing than a carefully considered answer. The scenarios are designed to surface genuine tendencies — not to test your knowledge of leadership theory. There are no wrong styles. There are only genuine ones and performed ones. This assessment only produces a useful result if you answer honestly.</p>
+</div>
+
+<div class="assessment-shell" id="assessmentShell">
+  <div class="assessment-header">
+    <div class="assessment-eyebrow">◆ TPS Leadership Identity Assessment</div>
+    <div class="assessment-title">Ten Scenarios. Your Genuine Style.</div>
+    <div class="assessment-sub">Choose the response that most accurately reflects your genuine instinct — not what sounds best.</div>
+    <div class="assessment-progress"><div class="assessment-progress-fill" id="assessProgress"></div></div>
+  </div>
+  <div class="assessment-body" id="assessBody">
+    <!-- Questions rendered by JS -->
+  </div>
+  <div class="assessment-nav">
+    <button class="assess-btn" id="prevBtn" onclick="prevQ()" disabled>← Previous</button>
+    <span class="q-counter" id="qCounter">Question 1 of 10</span>
+    <button class="assess-btn primary" id="nextBtn" onclick="nextQ()">Next →</button>
+  </div>
+  <div class="result-shell" id="resultShell">
+    <div class="result-loading" id="resultLoading">
+      <div class="result-spinner"></div>
+      <div class="result-loading-text">Analyzing your leadership identity...</div>
+    </div>
+    <div class="result-content" id="resultContent">
+      <div class="result-badge">
+        <span class="result-badge-label">Your Leadership Identity</span>
+      </div>
+      <div class="result-primary" id="resultPrimary"></div>
+      <div class="result-secondary" id="resultSecondary"></div>
+      <div class="result-section">
+        <span class="result-section-label">Your Integration Profile</span>
+        <div class="result-text" id="resultProfile"></div>
+      </div>
+      <div class="board-answer">
+        <span class="board-answer-label">◆ Your Board Answer — Ready to Use</span>
+        <div class="board-answer-text" id="resultBoardAnswer"></div>
+      </div>
+      <div class="result-section">
+        <span class="result-section-label">Your Shadow Side — Watch for This Under Pressure</span>
+        <div class="result-text" id="resultShadow"></div>
+      </div>
+      <div class="result-section">
+        <span class="result-section-label">Your TCHOEDS Anchors</span>
+        <div class="result-text" id="resultTchoeds"></div>
+      </div>
+      <button class="retake-btn" onclick="retakeAssessment()">Retake the Assessment</button>
+    </div>
+  </div>
+</div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Leadership Philosophy</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Three Levels of Identity → T·C·H·O·E·D·S → Identity-Based Response Framework</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Name your identity level → connect to TCHOEDS → deliver at rank scope → close with Humility</div></div></div></div>
+
+  <span class="sbar-label">Assessment Guide</span>
+  <div class="sbar-card accent-exec"><strong>Answer Your First Instinct</strong>Quick responses reveal genuine tendencies. Careful consideration produces performed answers.</div>
+  <div class="sbar-card accent-gold"><strong>No Wrong Styles</strong>There are only genuine ones and performed ones. This only works if you answer honestly.</div>
+  <span class="sbar-label">What You'll Receive</span>
+  <div class="sbar-card"><strong>Primary Style</strong>Your dominant leadership orientation from the 8-style library.</div>
+  <div class="sbar-card"><strong>Secondary Style</strong>Your complementary mode under different conditions.</div>
+  <div class="sbar-card"><strong>Integration Profile</strong>How your two styles work together in fire/EMS contexts.</div>
+  <div class="sbar-card accent-gold"><strong>Board Answer Template</strong>A ready-to-use identity statement calibrated to your result.</div>
+  <div class="sbar-card"><strong>Shadow Side</strong>What to watch for when your primary style is under pressure.</div>
+  <div class="sbar-card"><strong>TCHOEDS Anchors</strong>Which values most support your genuine leadership style.</div>
+  <span class="sbar-label">After the Assessment</span>
+  <div class="sbar-card accent-exec"><strong>Lesson 4</strong>Take your result into the Identity Statement builder — the final step that makes it board-ready.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — The TPS Leadership Identity Assessment</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">All Ranks</span><div><div class="ob-q-text">"How does the tps leadership identity assessment connect to your preparation for this assessment?"</div><div class="ob-note">Use LEAD to structure your response. Name the specific concept from this lesson and connect it to a board scenario. Assessors score framework-grounded answers.</div></div></div>
+  </div>
+</div>
+<div class="takeaways">
+  <div class="tk-lbl">Key Takeaways</div>
+  <div class="tk-item">Every concept in TPS connects to a board scenario through LEAD: Label, Engage, Address, Drive.</div>
+  <div class="tk-item">Practice articulating each framework in 90 seconds or less — that is the typical response window in an assessment center.</div>
+  <div class="tk-item">The system works when you use it consistently. SPARR builds the skill; LEAD delivers it under pressure.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Leadership Philosophy</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Three Levels of Identity → T·C·H·O·E·D·S → Identity-Based Response Framework</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Name your identity level → connect to TCHOEDS → deliver at rank scope → close with Humility</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Style Library</button>
+  <div class="lnb-info"><div class="lnb-name">The TPS Assessment</div><div class="lnb-num">Lesson 3 of 4</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Your Identity Statement →</button>
+</div>
+</div>
+<!-- ══════════ LESSON 4 — YOUR IDENTITY STATEMENT ══════════ -->
+<div class="lesson-view" id="lesson-3">
+<div class="lesson-container">
+<div class="lesson-main">
+<div class="lesson-header">
+  <div class="lh-eyebrow">Leadership Identity · Lesson 4 of 4</div>
+  <div class="lh-track">Board Application · Identity Statement · 5/5 Delivery</div>
+  <h1 class="lh-title">Your Identity Statement —<br><em>Building and Delivering the Answer That Defines You</em></h1>
+  <div class="lh-meta"><span class="lh-meta-item">⏱ 14 min</span><span class="lh-meta-item">📘 Board Application</span><span class="lh-meta-item">Structure · Evidence · Rank Calibration · Delivery</span></div>
+</div>
+
+<p>The assessment gave you the raw material. This lesson builds it into a board answer. The leadership identity statement is one of the most important responses in any promotional session — and one of the few you can prepare in advance with near-complete specificity. Unlike scenario questions where the content varies, "describe your leadership style" is a question you can know is coming, prepare for precisely, and deliver with complete confidence.</p>
+
+<h2>The Five-Part Identity Statement Architecture</h2>
+
+<div class="infographic-wrap">
+  <div class="ig-header">
+    <span class="ig-eyebrow">◆ IDENTITY STATEMENT — FIVE-PART STRUCTURE</span>
+    <div class="ig-title">The Architecture of a 5/5 Leadership Identity Answer</div>
+    <div class="ig-sub">Each part serves a specific function. Missing any one of them reduces the score. The full five-part answer takes approximately 90 seconds to deliver — the right length for this question at any rank.</div>
+  </div>
+  <div style="padding:.5rem 1.4rem 1.1rem;">
+    <table class="data-table">
+      <thead><tr><th>#</th><th>Part</th><th>Function</th><th>Example Language</th></tr></thead>
+      <tbody>
+        <tr><td><strong>1</strong></td><td><strong>The Name</strong></td><td>State your primary style clearly and without hesitation. No hedging. No "I think I might be..."</td><td>"At my core, I lead from a transformational orientation."</td></tr>
+        <tr><td><strong>2</strong></td><td><strong>The Definition</strong></td><td>Define what that style means in your own words — not a textbook definition. Your understanding of it.</td><td>"That means I believe my primary job is to invest in the people I lead — not to manage their compliance, but to develop their capacity."</td></tr>
+        <tr><td><strong>3</strong></td><td><strong>The Evidence</strong></td><td>One specific experience that confirmed this identity. Behavioral and specific — not general or hypothetical.</td><td>"I know this about myself because [specific moment]. That experience showed me that my instinct is always to develop, not just direct."</td></tr>
+        <tr><td><strong>4</strong></td><td><strong>The Integration</strong></td><td>Name your secondary style and how it complements your primary — showing self-awareness beyond a single dimension.</td><td>"I pair that with a situational approach — I flex how I lead to where each person actually is, not where I want them to be."</td></tr>
+        <tr><td><strong>5</strong></td><td><strong>The Rank Anchor</strong></td><td>Connect your identity to the specific rank you are testing for. What does your style mean at THAT level?</td><td>"As a [target rank], that means [specific application]. The [target rank] is responsible for [scope] — my leadership style is built for exactly that."</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="ig-callout">The rank anchor is what separates 4/5 from 5/5. A leadership identity that stops at the evidence is a strong personal statement. A leadership identity that connects explicitly to the specific scope and responsibilities of the target rank tells the assessor you already think at that level. That is the 5/5 signal.</div>
+</div>
+
+<h2>Worked Examples — Three Ranks</h2>
+
+<div class="callout callout-navy">
+  <span class="callout-label">Lieutenant Candidate — Servant + Situational</span>
+  <p>"My leadership is servant-oriented at its core — I believe the Lieutenant's primary job is to remove the obstacles that keep crew members from performing at their best. I learned this during a mentorship relationship with a medic who was struggling clinically — not because they lacked ability, but because they lacked a clear picture of where the gap was. I paired deliberate feedback with genuine investment in their development, and watching them grow changed how I think about what supervision is actually for. I complement that with a situational approach — I lead each crew member from where they are, not where I want them to be. As a Lieutenant, my span of influence is my immediate crew. Servant leadership at that scale means being present, being specific, and building the trust that makes accountability conversations land instead of land badly."</p>
+</div>
+
+<div class="callout callout-gold">
+  <span class="callout-label">Captain Candidate — Transformational + Adaptive</span>
+  <p>"I lead from a transformational foundation — I believe that lasting performance improvement comes from inspiring people, not managing them. At the station level, that means building a culture where crew members want to excel, not just comply. The moment I understood this about myself was when I watched a crew I led turn a struggling shift culture around — not because I changed policies, but because I changed the conversation about what we were trying to become. I balance that with an adaptive lens — I try to distinguish when a problem is technical (apply expertise) versus adaptive (the crew needs to develop new capacity). That distinction determines whether I direct or develop. As a Captain, I'm responsible for a station culture, not just individual crew members. Transformational leadership at that scope means being the person who holds the picture of what this station can become — even when the day-to-day makes it hard to see."</p>
+</div>
+
+<div class="callout callout-exec">
+  <span class="callout-label">Battalion Chief Candidate — Visionary + Authentic</span>
+  <p>"My leadership is visionary in its orientation — I believe the most important thing a Battalion Chief can do is give the people they lead a clear picture of where the organization is going and why it matters. That alignment is what makes independent decision-making across multiple companies coherent. I know this about myself because I've watched what happens when vision is absent — people fill the vacuum with their own competing priorities, and coordination collapses. My secondary orientation is authenticity — I lead from visible consistency between what I say I value and how I actually behave under pressure. As a Battalion Chief, I'm leading across companies I can't always see. That means the only real currency is trust — and trust requires that my crew can predict my values even when they can't predict the situation. Visionary leadership gives them the direction. Authentic leadership gives them the trust. Together, that's how a Battalion Chief leads at scale."</p>
+</div>
+
+<h2>The Delivery — What to Watch For</h2>
+<ul>
+  <li><strong>Don't rush the name.</strong> Candidates who are uncertain of their identity answer speed up at the beginning. State your primary style clearly, then pause for half a second. Confidence is communicated in the pause.</li>
+  <li><strong>The evidence should be specific, not general.</strong> "I tend to invest in my crew members" is general. "During a difficult mentorship relationship with a probationary paramedic who was three months from washout" is specific. Specificity signals truth.</li>
+  <li><strong>The rank anchor should name the rank explicitly.</strong> Don't say "at this level." Say "as a Captain" or "as a Lieutenant." Naming the rank signals that you are thinking from that seat, not reaching for it.</li>
+  <li><strong>Practice it out loud.</strong> This is the one question in the board where you have near-perfect advance preparation. There is no reason to deliver it at anything less than complete fluency. The The Halligan oral board function can score your delivery — use it.</li>
+</ul>
+
+<div class="callout callout-gold">
+  <span class="callout-label">The Final Principle</span>
+  <p>A 5/5 leadership identity answer is not the most sophisticated answer. It is the most true one — delivered with the precision, self-awareness, and rank-calibrated specificity that tells every assessor in the room: this officer knows who they are, knows where they are going, and has already begun leading from that place. That is not a performance. That is readiness.</p>
+</div>
+
+<div style="margin:3rem 0 0;padding:1.25rem 1.5rem;background:#F0EEF8;border:1px solid #D0C8E8;border-top:3px solid var(--exec2);">
+  <span style="font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--on-light-3);margin-bottom:.5rem;display:block;">TPS Bonus Module · Global Curriculum · Educational Content</span>
+  <p style="font-size:.8rem;color:var(--on-light-3);line-height:1.65;margin-bottom:0;font-style:italic;">This module is part of The Promotional Standard global curriculum, available across all tiers. The TPS Leadership Identity Assessment is powered by the Anthropic Claude API. Assessment results are generated fresh for each candidate and are not stored. Leadership style frameworks referenced in this module draw from the published work of James MacGregor Burns (Transformational), Robert Greenleaf (Servant), Hersey &amp; Blanchard (Situational), Ronald Heifetz (Adaptive), and Daniel Goleman (Emotional Intelligence / Coaching). The Promotional Standard LLC · thepromotionalstandard.com</p>
+</div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator</div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Leadership Philosophy</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Three Levels of Identity → T·C·H·O·E·D·S → Identity-Based Response Framework</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Name your identity level → connect to TCHOEDS → deliver at rank scope → close with Humility</div></div></div></div>
+
+  <span class="sbar-label">Five-Part Structure</span>
+  <div class="sbar-card"><strong>1 — The Name</strong>State your primary style clearly. No hedging.</div>
+  <div class="sbar-card"><strong>2 — The Definition</strong>Your understanding in your own words.</div>
+  <div class="sbar-card"><strong>3 — The Evidence</strong>One specific experience. Behavioral. True.</div>
+  <div class="sbar-card"><strong>4 — The Integration</strong>Secondary style + how it complements primary.</div>
+  <div class="sbar-card accent-gold"><strong>5 — The Rank Anchor</strong>What your style means at the SPECIFIC rank you are testing for. This is the 5/5 separator.</div>
+  <span class="sbar-label">Delivery Reminders</span>
+  <div class="sbar-card accent-exec"><strong>Don't rush the name.</strong>Pause after stating your primary style. Confidence lives in the pause.</div>
+  <div class="sbar-card"><strong>Evidence must be specific.</strong>General = 3/5. Specific = 4/5–5/5.</div>
+  <div class="sbar-card"><strong>Name the rank explicitly.</strong>"As a Captain" — not "at this level."</div>
+  <div class="sbar-card accent-gold"><strong>Practice out loud.</strong>This is the one board question you can prepare with near-perfect specificity. Use The Halligan to score your delivery.</div>
+  <span class="sbar-label">The Final Principle</span>
+  <div class="sbar-card accent-navy"><strong>A 5/5 identity answer is not the most sophisticated. It is the most true — delivered with precision, self-awareness, and rank-calibrated specificity.</strong></div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Your Identity Statement</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">All Ranks</span><div><div class="ob-q-text">"How does your identity statement connect to your preparation for this assessment?"</div><div class="ob-note">Use LEAD to structure your response. Name the specific concept from this lesson and connect it to a board scenario. Assessors score framework-grounded answers.</div></div></div>
+  </div>
+</div>
+<div class="takeaways">
+  <div class="tk-lbl">Key Takeaways</div>
+  <div class="tk-item">Every concept in TPS connects to a board scenario through LEAD: Label, Engage, Address, Drive.</div>
+  <div class="tk-item">Practice articulating each framework in 90 seconds or less — that is the typical response window in an assessment center.</div>
+  <div class="tk-item">The system works when you use it consistently. SPARR builds the skill; LEAD delivers it under pressure.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Leadership Philosophy</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Three Levels of Identity → T·C·H·O·E·D·S → Identity-Based Response Framework</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Name your identity level → connect to TCHOEDS → deliver at rank scope → close with Humility</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← The Assessment</button>
+  <div class="lnb-info"><div class="lnb-name">Your Identity Statement</div><div class="lnb-num">Lesson 4 of 4</div></div>
+  <button class="lnb-btn complete" disabled>Module Complete ✓</button>
+</div>
+</div>
+</main>
+<script>
+// ── LESSON NAV ─────────────────────────────────────
+let cur=0;
+const ls=document.querySelectorAll('.lesson-view');
+const ps=document.querySelectorAll('.nav-pill');
+function showLesson(i){
+  ls.forEach(l=>l.classList.remove('active'));
+  ps.forEach(p=>p.classList.remove('active'));
+  ls[i].classList.add('active');
+  ps[i].classList.add('active');
+  cur=i;
+  window.scrollTo({top:0,behavior:'smooth'});
+  document.getElementById('prog').style.width='0%';
+}
+function nextLesson(){if(cur<ls.length-1)showLesson(cur+1);}
+function prevLesson(){if(cur>0)showLesson(cur-1);}
+window.addEventListener('scroll',()=>{
+  const s=document.documentElement.scrollTop;
+  const h=document.documentElement.scrollHeight-window.innerHeight;
+  if(h>0)document.getElementById('prog').style.width=Math.min(100,(s/h*100))+'%';
+});
+
+// ── ASSESSMENT ENGINE ──────────────────────────────
+const questions = [
+  {
+    scenario: "A crew member who has been performing well for two years suddenly starts showing up late, producing below-average PCRs, and seems disengaged. Nothing significant has changed operationally.",
+    prompt: "Your first instinct is to...",
+    options: [
+      { letter: "A", text: "Request a private conversation to understand what's changed — you assume something is happening in their life and want to support them before addressing the performance.", style: "servant" },
+      { letter: "B", text: "Address the performance directly in a clear counseling conversation — you document the pattern, name the standard, and set a timeline for correction.", style: "directive" },
+      { letter: "C", text: "Diagnose whether this is an awareness, ability, or willingness gap before deciding on any intervention — the right response depends on the root cause.", style: "situational" },
+      { letter: "D", text: "Share what you've observed openly and ask them what they think is happening — you believe the most useful thing you can do is reflect the pattern back and let them help solve it.", style: "coaching" }
+    ]
+  },
+  {
+    scenario: "Your station has a long-standing culture of skepticism toward new EMS protocols — crew members comply but openly express that the changes are unnecessary. A new protocol is arriving next month.",
+    prompt: "Your approach is to...",
+    options: [
+      { letter: "A", text: "Brief the protocol clearly, communicate the expectation, and make clear that compliance is not optional — culture will follow performance.", style: "directive" },
+      { letter: "B", text: "Involve the crew in a discussion about why the protocol exists before it arrives — you want them to understand the reasoning so compliance comes from conviction, not just obligation.", style: "transformational" },
+      { letter: "C", text: "Recognize that the skepticism is an adaptive challenge — the crew needs to develop a new relationship with protocol change, not just comply with this one protocol.", style: "adaptive" },
+      { letter: "D", text: "Paint a picture of what this station's EMS reputation looks like when they're known as the crew that leads protocol adoption rather than resists it — and invite them into that future.", style: "visionary" }
+    ]
+  },
+  {
+    scenario: "You have two crew members on the same shift — one with 15 years of experience who needs minimal direction, and one in their second year who requires active guidance on complex calls.",
+    prompt: "Your day-to-day leadership approach with this crew is...",
+    options: [
+      { letter: "A", text: "You lead both of them the same way — consistent, clear expectations apply equally regardless of experience level.", style: "directive" },
+      { letter: "B", text: "You delegate almost entirely to the senior member and spend your supervisory attention on the junior one — matching your investment to where it produces the most growth.", style: "situational" },
+      { letter: "C", text: "You actively develop the junior one while also finding ways to challenge and grow the senior one — you believe everyone has a next level regardless of tenure.", style: "coaching" },
+      { letter: "D", text: "You build genuine relationship with both of them differently — what motivates each of them is different and you lead from that knowledge.", style: "servant" }
+    ]
+  },
+  {
+    scenario: "You are on scene at a working structure fire. The incident is escalating faster than the initial size-up suggested and your crew is beginning to freelance.",
+    prompt: "Your immediate leadership response is...",
+    options: [
+      { letter: "A", text: "Issue clear, direct commands to reestablish crew discipline — this is not a moment for conversation, it is a moment for command.", style: "directive" },
+      { letter: "B", text: "Quickly assess whether the freelancing is awareness-driven (they don't see the escalation) or judgment-driven (they see it and are making their own calls) — the intervention differs.", style: "adaptive" },
+      { letter: "C", text: "Communicate what you're seeing directly and rapidly so the crew has the same picture you have — shared situational awareness reduces freelancing faster than commands.", style: "authentic" },
+      { letter: "D", text: "Pull your crew together for a rapid 30-second regroup — you need alignment before anyone else moves.", style: "situational" }
+    ]
+  },
+  {
+    scenario: "A crew member approaches you privately and tells you they are considering leaving the department — they feel undervalued and believe their development has stalled.",
+    prompt: "Your response prioritizes...",
+    options: [
+      { letter: "A", text: "Listening first, completely — you want to understand the full picture before you say anything that might close off what they're willing to share.", style: "servant" },
+      { letter: "B", text: "Being honest about what you've observed in them and naming specifically what you see as their potential — you believe they need to hear what you actually think, not a retention speech.", style: "authentic" },
+      { letter: "C", text: "Exploring what development would look like for them — you ask questions to help them articulate what they actually want before offering anything.", style: "coaching" },
+      { letter: "D", text: "Connecting them to a picture of where they could be in this department — you believe they're disconnected from the vision of what's possible, not just undervalued today.", style: "visionary" }
+    ]
+  },
+  {
+    scenario: "Your shift's quality metrics have been consistently below division average for three months. The data shows the issue is concentrated in documentation, not clinical outcomes.",
+    prompt: "Your intervention strategy is...",
+    options: [
+      { letter: "A", text: "Address it directly in a crew meeting — name the data, name the standard, and communicate that this is changing starting this shift.", style: "directive" },
+      { letter: "B", text: "Diagnose whether this is a training issue, a motivation issue, or a systemic issue before designing any intervention — the three require completely different responses.", style: "adaptive" },
+      { letter: "C", text: "Connect the documentation quality to patient outcomes and division reputation in a conversation with your crew — you want them to care about this for the right reasons.", style: "transformational" },
+      { letter: "D", text: "Work with each crew member individually to understand their specific documentation gaps and coach to their specific development need.", style: "coaching" }
+    ]
+  },
+  {
+    scenario: "You are preparing for a difficult performance counseling conversation with a crew member who has been warned before about the same issue.",
+    prompt: "Your orientation going into the conversation is...",
+    options: [
+      { letter: "A", text: "This is a formal accountability conversation — you are clear on the standard, clear on the pattern, and clear on the consequence. The conversation is not a negotiation.", style: "directive" },
+      { letter: "B", text: "You go in genuinely curious about what is preventing change — you've been through the standard before, so this conversation is about understanding the barrier, not repeating the warning.", style: "coaching" },
+      { letter: "C", text: "You are honest about your own experience of this — you name that this conversation is hard for you too, and that you are having it because you believe in this person's potential.", style: "authentic" },
+      { letter: "D", text: "You focus on what they need from you to actually change — you are less interested in the accountability message than in what support or change on your end might unlock different behavior.", style: "servant" }
+    ]
+  },
+  {
+    scenario: "You've been in your current role for 18 months. A newer officer asks you how you've built trust with your crew so quickly.",
+    prompt: "The honest answer you give is...",
+    options: [
+      { letter: "A", text: "\"I showed them I would do the hard things — the accountability conversations, the honest feedback, the decisions nobody wanted to make. Trust came from consistency, not from being easy to work with.\"", style: "authentic" },
+      { letter: "B", text: "\"I learned what mattered to each of them individually and then showed up for those things. Trust is built specifically, not generally.\"", style: "servant" },
+      { letter: "C", text: "\"I gave them a picture of what we could be as a crew and then invested in the people who wanted to get there. Shared vision builds faster trust than individual relationship.\"", style: "transformational" },
+      { letter: "D", text: "\"I made sure my expectations were always clear and that I responded the same way every time to the same situation. They trust what they can predict.\"", style: "situational" }
+    ]
+  },
+  {
+    scenario: "Your department is implementing a significant operational change that your crew disagrees with. You privately agree that the change has flaws, but the decision has been made.",
+    prompt: "Your leadership approach with your crew is...",
+    options: [
+      { letter: "A", text: "You implement the change as directed and keep your personal view entirely private — loyalty to the organization requires not undermining decisions from above at the crew level.", style: "directive" },
+      { letter: "B", text: "You are honest that you had concerns and raised them through the appropriate channels, that the decision was made, and that your job now is to implement it effectively — you name the line between advocacy and compliance.", style: "authentic" },
+      { letter: "C", text: "You focus your energy on helping the crew find the best possible version of the change — if it's happening, you want your crew to own the implementation rather than just endure it.", style: "transformational" },
+      { letter: "D", text: "You help the crew see the longer arc — this change exists in a context, and understanding that context makes it easier to implement with integrity rather than resentment.", style: "visionary" }
+    ]
+  },
+  {
+    scenario: "You are in an oral board. The panel asks: \"Give us an example of a time your leadership approach failed to produce the outcome you intended.\"",
+    prompt: "Your instinct about what this question is actually asking is...",
+    options: [
+      { letter: "A", text: "They want to see whether you can take genuine accountability — you answer with a real failure, name what you got wrong specifically, and what you changed as a result.", style: "authentic" },
+      { letter: "B", text: "They want to see whether you diagnose failure accurately — you name the mismatch between your approach and what the situation actually required.", style: "adaptive" },
+      { letter: "C", text: "They want to see growth orientation — you name the failure, but the emphasis is on what you learned and how you've developed since.", style: "coaching" },
+      { letter: "D", text: "They want to see resilience and commitment — you name the failure but close with how your values held even when the outcome didn't go as planned.", style: "servant" }
+    ]
+  }
+];
+
+let answers = new Array(10).fill(null);
+let currentQ = 0;
+
+function renderQuestion() {
+  const q = questions[currentQ];
+  const body = document.getElementById('assessBody');
+  body.innerHTML = `
+    <div class="q-number">Scenario ${currentQ + 1} of ${questions.length}</div>
+    <div class="q-scenario">${q.scenario}</div>
+    <div class="q-prompt">${q.prompt}</div>
+    <div class="q-options">
+      ${q.options.map(opt => `
+        <button class="q-option ${answers[currentQ] === opt.style ? 'selected' : ''}"
+                onclick="selectAnswer('${opt.style}', this)">
+          <span class="q-option-letter">${opt.letter}</span>
+          <span class="q-option-text">${opt.text}</span>
+        </button>
+      `).join('')}
+    </div>
+  `;
+  document.getElementById('assessProgress').style.width = ((currentQ / questions.length) * 100) + '%';
+  document.getElementById('qCounter').textContent = `Question ${currentQ + 1} of ${questions.length}`;
+  document.getElementById('prevBtn').disabled = currentQ === 0;
+  const nextBtn = document.getElementById('nextBtn');
+  if (currentQ === questions.length - 1) {
+    nextBtn.textContent = 'See My Result →';
+    nextBtn.onclick = submitAssessment;
+  } else {
+    nextBtn.textContent = 'Next →';
+    nextBtn.onclick = nextQ;
+  }
+  nextBtn.disabled = answers[currentQ] === null;
+}
+
+function selectAnswer(style, el) {
+  answers[currentQ] = style;
+  document.querySelectorAll('.q-option').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  document.getElementById('nextBtn').disabled = false;
+}
+
+function nextQ() {
+  if (answers[currentQ] === null) return;
+  if (currentQ < questions.length - 1) { currentQ++; renderQuestion(); }
+}
+
+function prevQ() {
+  if (currentQ > 0) { currentQ--; renderQuestion(); }
+}
+
+function submitAssessment() {
+  if (answers[currentQ] === null) return;
+  document.getElementById('assessBody').style.display = 'none';
+  document.querySelector('.assessment-nav').style.display = 'none';
+  document.getElementById('assessProgress').style.width = '100%';
+  const shell = document.getElementById('resultShell');
+  shell.style.display = 'block';
+  document.getElementById('resultLoading').style.display = 'block';
+  document.getElementById('resultContent').style.display = 'none';
+  generateResult();
+}
+
+async function generateResult() {
+  const styleCounts = {};
+  answers.forEach(a => { styleCounts[a] = (styleCounts[a] || 0) + 1; });
+  const sorted = Object.entries(styleCounts).sort((a,b) => b[1]-a[1]);
+  const primary = sorted[0][0];
+  const secondary = sorted[1] ? sorted[1][0] : sorted[0][0];
+
+  const styleNames = {
+    transformational: 'Transformational', servant: 'Servant',
+    directive: 'Directive', situational: 'Situational',
+    adaptive: 'Adaptive', coaching: 'Coaching',
+    authentic: 'Authentic', visionary: 'Visionary'
+  };
+
+  const prompt = `You are the TPS Leadership Identity Assessment engine for The Promotional Standard — a fire and EMS promotional preparation system. You analyze fire/EMS officer candidates' leadership style profiles and generate personalized, actionable results.
+
+A candidate has completed the TPS Leadership Identity Assessment — 10 fire/EMS operational scenarios. Their response pattern reveals:
+
+Primary Leadership Style: ${styleNames[primary]} (${styleCounts[primary] || 0} of 10 responses)
+Secondary Leadership Style: ${styleNames[secondary]} (${styleCounts[secondary] || 0} of 10 responses)
+Full distribution: ${JSON.stringify(styleCounts)}
+
+Generate a personalized leadership identity result in the following JSON format. Be specific, operational, fire/EMS-grounded, and avoid generic corporate leadership language. Write as if you are a respected fire service leadership coach speaking directly to this officer candidate. Every section should feel personal — not like a style description they could have read in a textbook.
+
+Return ONLY valid JSON, no preamble, no markdown:
+{
+  "primaryStyle": "${styleNames[primary]}",
+  "secondaryStyle": "${styleNames[secondary]}",
+  "integrationProfile": "3-4 sentences describing how this specific primary+secondary combination works in fire/EMS contexts. Be specific about what this combination looks like at the station level and how it shows up under operational pressure. Name specific situations where this combination is especially effective.",
+  "boardAnswer": "A complete, board-ready leadership identity statement using the 5-part TPS structure (Name + Definition + Evidence setup + Integration + Rank anchor). Write it in first person as if the candidate is speaking. Leave [specific experience] as a placeholder for their personal evidence. Make the rank anchor say 'as a [target rank]' with the bracket as a placeholder. This should be 5-7 sentences — complete enough to deliver as a full board answer.",
+  "shadowSide": "2-3 sentences describing the specific failure mode of this primary+secondary combination under pressure in fire/EMS contexts. Be honest and specific — what does this combination look like when it goes wrong? Name the operational or personnel situation where this combination is most likely to produce a suboptimal outcome.",
+  "tchoedsAnchors": "Name the 3 specific TCHOEDS values (from Trust, Courage, Humility, Ownership, Empathy, Dedication, Service) that most powerfully anchor this primary style — and briefly explain why each one matters for this specific combination. Then name 1 TCHOEDS value this combination tends to underweight and why developing it is important."
+}`;
+
+  try {
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+    const data = await response.json();
+    const text = data.content[0].text;
+    const clean = text.replace(/```json|```/g, '').trim();
+    const result = JSON.parse(clean);
+    displayResult(result);
+  } catch(err) {
+    // Fallback result if API fails
+    displayResult({
+      primaryStyle: styleNames[primary],
+      secondaryStyle: styleNames[secondary],
+      integrationProfile: `Your ${styleNames[primary]} core paired with ${styleNames[secondary]} as your secondary creates a leadership profile well-suited for fire/EMS officer development. Your instinct is to lead from genuine investment in people while maintaining the flexibility to flex your approach when the situation demands something different. This combination is particularly effective in personnel development contexts and culture-building environments — situations where relationship and adaptability matter more than authority alone.`,
+      boardAnswer: `At my core, I lead from a ${styleNames[primary].toLowerCase()} orientation — I believe that [specific principle of that style]. I know this about myself because [specific experience] — that moment confirmed that my instinct is always to [key behavior]. I complement that with a ${styleNames[secondary].toLowerCase()} approach, which means [how secondary style integrates]. As a [target rank], that combination means [specific application at that rank] — and I believe that is exactly the leadership this role requires.`,
+      shadowSide: `The primary risk of this combination is that the ${styleNames[primary].toLowerCase()} orientation can sometimes slow the decisive action that operational contexts require. When your ${styleNames[secondary].toLowerCase()} secondary is also engaged, there is a risk of over-processing situations that require speed. Watch for moments when thoroughness becomes hesitation.`,
+      tchoedsAnchors: `Your primary anchors are Empathy, Dedication, and Humility — Empathy powers your investment in people, Dedication sustains the long-term development work your style requires, and Humility keeps you learning rather than assuming. The value your combination tends to underweight is Courage — the willingness to make difficult calls quickly, without consensus. Developing that edge will make your leadership complete.`
+    });
+  }
+}
+
+function displayResult(result) {
+  document.getElementById('resultLoading').style.display = 'none';
+  document.getElementById('resultPrimary').textContent = result.primaryStyle + ' Leadership';
+  document.getElementById('resultSecondary').textContent = 'Secondary Orientation · ' + result.secondaryStyle;
+  document.getElementById('resultProfile').textContent = result.integrationProfile;
+  document.getElementById('resultBoardAnswer').textContent = result.boardAnswer;
+  document.getElementById('resultShadow').textContent = result.shadowSide;
+  document.getElementById('resultTchoeds').textContent = result.tchoedsAnchors;
+  document.getElementById('resultContent').style.display = 'block';
+}
+
+function retakeAssessment() {
+  answers = new Array(10).fill(null);
+  currentQ = 0;
+  document.getElementById('resultShell').style.display = 'none';
+  document.getElementById('assessBody').style.display = 'block';
+  document.querySelector('.assessment-nav').style.display = 'flex';
+  renderQuestion();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  showLesson(0);
+  renderQuestion();
+});
+
+function lfNext(el,stepNum){
+  var wrap=el.closest('.lf-wrap');
+  if(!wrap)return;
+  var steps=wrap.querySelectorAll('.lf-step');
+  var dots=wrap.querySelectorAll('.lf-dot');
+  steps.forEach(function(s,i){s.classList.remove('active');if(i<stepNum)s.classList.add('done');});
+  dots.forEach(function(d,i){d.classList.remove('active');if(i<stepNum)d.classList.add('done');if(i===stepNum)d.classList.add('active');});
+  if(steps[stepNum])steps[stepNum].classList.add('active');
+}
+</script>
+<script>function toggleFT(el){var sw=el.querySelector('.ft-toggle-switch');var desc=el.querySelector('.ft-toggle-desc');var mains=document.querySelectorAll('.lesson-main');sw.classList.toggle('on');var on=sw.classList.contains('on');desc.textContent=on?'Frameworks + OB cards only':'Full lesson content';mains.forEach(function(m){m.classList.toggle('ft-on',on);});}</script>
+</body>
+</html>
