@@ -163,7 +163,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 
 <div class="callout callout-navy">
   <span class="cl-label">What This Document Is</span>
-  <div class="cl">This is the complete intelligence architecture for the TPS AI Practice Engine. It contains: the master system prompt that makes Claude behave as a TPS-trained coach, the variable injection points that personalize each session, the five exercise-specific prompt modules, the Make automation workflow, and the testing and refinement guide. Everything you need to go from zero to a live AI coaching engine is in this document.</div>
+  <div class="cl">This is the complete intelligence architecture for the TPS AI Practice Engine. It contains: the master system prompt that makes Claude behave as a TPS-trained coach, the variable injection points that personalize each session, the six exercise-specific prompt modules, the Make automation workflow, and the testing and refinement guide. Everything you need to go from zero to a live AI coaching engine is in this document.</div>
 </div>
 
 <!-- ══ SECTION 1 — HOW IT WORKS ══ -->
@@ -184,9 +184,9 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
     <div class="fs-num">1</div>
     <div class="fs-content">
       <span class="fs-label">Candidate Action</span>
-      <div class="fs-title">Candidate Selects Exercise Parameters in Softr</div>
-      <div class="fs-body">The candidate chooses: Rank (Lieutenant / Captain / BC / Chief), Exercise Type (Oral Board / Role Play / In-Basket / Written Exercise / Presentation Feedback), and Dimension Focus (optional — Supervisory Judgment, Interpersonal Skills, Strategic Thinking, etc.). Softr collects these as form field values and passes them to Make.</div>
-      <div class="fs-code">Softr → Make webhook trigger with: {{rank}}, {{exercise_type}}, {{dimension}}, {{candidate_name}}</div>
+      <div class="fs-title">Candidate Selects Exercise Parameters in The Halligan platform</div>
+      <div class="fs-body">The candidate chooses: Rank (Lieutenant / Captain / BC / Chief), Exercise Type (Oral Board / Role Play / In-Basket / Written Exercise / Presentation Feedback), and Dimension Focus (optional — Supervisory Judgment, Interpersonal Skills, Strategic Thinking, etc.). The Halligan platform collects these as form field values and passes them to Make.</div>
+      <div class="fs-code">The Halligan platform → Engine webhook trigger with: {{rank}}, {{exercise_type}}, {{dimension}}, {{candidate_name}}</div>
     </div>
   </div>
   <div class="flow-step fs-2">
@@ -194,8 +194,8 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
     <div class="fs-content">
       <span class="fs-label">Scenario Generation</span>
       <div class="fs-title">Make Sends Generation Request to Anthropic API</div>
-      <div class="fs-body">Make assembles the full API call: the master system prompt (constant, always the same) plus the scenario generation prompt (variable, based on rank and exercise type). Claude generates a unique, never-repeated scenario calibrated to the specified rank and dimension. Make stores the scenario in Airtable and displays it in Softr.</div>
-      <div class="fs-code">Make → Anthropic API → Claude generates scenario → Airtable stores → Softr displays</div>
+      <div class="fs-body">Make assembles the full API call: the master system prompt (constant, always the same) plus the scenario generation prompt (variable, based on rank and exercise type). Claude generates a unique, never-repeated scenario calibrated to the specified rank and dimension. Make stores the scenario in Airtable and displays it in The Halligan platform.</div>
+      <div class="fs-code">Make → Anthropic API → Claude generates scenario → Airtable stores → The Halligan platform displays</div>
     </div>
   </div>
   <div class="flow-step fs-3">
@@ -203,8 +203,8 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
     <div class="fs-content">
       <span class="fs-label">Candidate Response</span>
       <div class="fs-title">Candidate Reads Scenario and Types Their Response</div>
-      <div class="fs-body">The candidate reads the scenario in Softr and types their full response in the text area. For oral board questions, this is their spoken-response transcript. For role play, it is how they would open and conduct the conversation. For in-basket, it is their triage and response decisions. When submitted, Make captures the response and the session ID.</div>
-      <div class="fs-code">Softr text input → Make webhook → {{candidate_response}} captured with {{session_id}}</div>
+      <div class="fs-body">The candidate reads the scenario in The Halligan platform and types their full response in the text area. For oral board questions, this is their spoken-response transcript. For role play, it is how they would open and conduct the conversation. For in-basket, it is their triage and response decisions. When submitted, Make captures the response and the session ID.</div>
+      <div class="fs-code">The Halligan platform text input → Make webhook → {{candidate_response}} captured with {{session_id}}</div>
     </div>
   </div>
   <div class="flow-step fs-4">
@@ -220,9 +220,9 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
     <div class="fs-num">5</div>
     <div class="fs-content">
       <span class="fs-label">Feedback Delivery</span>
-      <div class="fs-title">Make Writes Feedback to Airtable, Softr Displays It</div>
-      <div class="fs-body">Make parses Claude's structured response, writes the scores and feedback to the candidate's Airtable record, and Softr displays the full CLEAR feedback in the candidate's Practice Lab. The session is logged with date, exercise type, scores, and key feedback points. The candidate can immediately run another session or review their progress dashboard.</div>
-      <div class="fs-code">Claude response → Make parses → Airtable writes scores + feedback → Softr renders feedback view</div>
+      <div class="fs-title">Make Writes Feedback to Airtable, The Halligan platform Displays It</div>
+      <div class="fs-body">Make parses Claude's structured response, writes the scores and feedback to the candidate's Airtable record, and The Halligan platform displays the full CLEAR feedback in the candidate's Practice Lab. The session is logged with date, exercise type, scores, and key feedback points. The candidate can immediately run another session or review their progress dashboard.</div>
+      <div class="fs-code">Claude response → Make parses → Airtable writes scores + feedback → The Halligan platform renders feedback view</div>
     </div>
   </div>
 </div>
@@ -476,11 +476,11 @@ CRITICAL CONSTRAINTS
   <div class="sh-content">
     <div class="sh-eyebrow">Dynamic Personalization</div>
     <div class="sh-title">Session Variables — What Changes Each Session</div>
-    <div class="sh-sub">These are injected by Make from Softr form fields · The master prompt stays constant · Variables make each session unique</div>
+    <div class="sh-sub">These are injected by Make from The Halligan platform form fields · The master prompt stays constant · Variables make each session unique</div>
   </div>
 </div>
 
-<p>The master system prompt is the constant. These variables are what Make injects into the user-turn prompt for each session, creating a personalized experience without changing the core coaching intelligence. In Make, these appear as data from the Softr form submission.</p>
+<p>The master system prompt is the constant. These variables are what Make injects into the user-turn prompt for each session, creating a personalized experience without changing the core coaching intelligence. In Make, these appear as data from the The Halligan platform form submission.</p>
 
 <div class="var-table">
   <div class="vt-header">
@@ -495,22 +495,22 @@ CRITICAL CONSTRAINTS
   </div>
   <div class="vt-row">
     <div class="vt-var">&#123;&#123;rank&#125;&#125;</div>
-    <div class="vt-type">Dropdown · Softr form</div>
+    <div class="vt-type">Dropdown · The Halligan platform form</div>
     <div class="vt-desc">Lieutenant / Captain / Battalion Chief / Deputy Chief / Fire Chief. Calibrates scenario complexity, vocabulary, and expected strategic depth.</div>
   </div>
   <div class="vt-row">
     <div class="vt-var">&#123;&#123;exercise_type&#125;&#125;</div>
-    <div class="vt-type">Dropdown · Softr form</div>
+    <div class="vt-type">Dropdown · The Halligan platform form</div>
     <div class="vt-desc">Oral Board / Role Play / In-Basket / Written Exercise / Presentation Feedback. Routes to the correct exercise-specific prompt module in Section 4.</div>
   </div>
   <div class="vt-row">
     <div class="vt-var">&#123;&#123;dimension_focus&#125;&#125;</div>
-    <div class="vt-type">Dropdown · Softr form</div>
+    <div class="vt-type">Dropdown · The Halligan platform form</div>
     <div class="vt-desc">Supervisory Judgment / Interpersonal Skills / Strategic Thinking / Culture and Organizational Leadership / Self-Awareness / Surprise Me (AI selects). Optional — if blank, AI selects the dimension most relevant to the candidate's development arc.</div>
   </div>
   <div class="vt-row">
     <div class="vt-var">&#123;&#123;department_context&#125;&#125;</div>
-    <div class="vt-type">Text · Softr optional field</div>
+    <div class="vt-type">Text · The Halligan platform optional field</div>
     <div class="vt-desc">Optional free-text field. Candidate can enter: "urban department, 400 firefighters, strong union, high EMS call volume." AI uses this to make scenarios more realistic to their actual context.</div>
   </div>
   <div class="vt-row">
@@ -525,7 +525,7 @@ CRITICAL CONSTRAINTS
   </div>
   <div class="vt-row">
     <div class="vt-var">&#123;&#123;candidate_response&#125;&#125;</div>
-    <div class="vt-type">Text · Softr response field</div>
+    <div class="vt-type">Text · The Halligan platform response field</div>
     <div class="vt-desc">The candidate's typed response to the scenario. This is the content being analyzed. Injected only in the analysis call (Step 4), not the generation call (Step 2).</div>
   </div>
   <div class="vt-row">
@@ -983,21 +983,21 @@ Deliver full CLEAR feedback. End with Transfer question.</div>
   </div>
 </div>
 
-<p>Make (formerly Integromat) is the automation layer that connects Softr, Airtable, and the Anthropic API without writing code. You need to build two Make scenarios: one for scenario generation (when a candidate starts a session) and one for response analysis (when a candidate submits their response).</p>
+<p>Make (formerly Integromat) is the automation layer that connects The Halligan platform, Airtable, and the Anthropic API without writing code. You need to build two Make scenarios: one for scenario generation (when a candidate starts a session) and one for response analysis (when a candidate submits their response).</p>
 
 <div class="section-block sb-slate">
   <div class="sb-header">
     <div class="sb-icon">⚙️</div>
     <div class="sb-title">Make Scenario 1 — Session Start (Generate the Scenario)</div>
-    <span class="sb-tag">Trigger: Softr Form Submission · Output: Scenario displayed to candidate</span>
+    <span class="sb-tag">Trigger: The Halligan platform Form Submission · Output: Scenario displayed to candidate</span>
   </div>
   <div class="sb-body">
-    <strong>Step 1 — Webhook Trigger:</strong> In Make, create a new scenario. Add a Webhook module as the trigger. Copy the webhook URL and paste it into Softr as the form submission action for your Practice Lab form.<br/><br/>
-    <strong>Step 2 — Airtable: Get Candidate Record:</strong> Add an Airtable Search Records module. Search the Candidates table by email (passed from Softr). This retrieves the candidate's rank, assessment date, tier, and session history summary.<br/><br/>
+    <strong>Step 1 — Webhook Trigger:</strong> In Make, create a new scenario. Add a Webhook module as the trigger. Copy the webhook URL and paste it into The Halligan platform as the form submission action for your Practice Lab form.<br/><br/>
+    <strong>Step 2 — Airtable: Get Candidate Record:</strong> Add an Airtable Search Records module. Search the Candidates table by email (passed from The Halligan platform). This retrieves the candidate's rank, assessment date, tier, and session history summary.<br/><br/>
     <strong>Step 3 — Airtable: Get Session History:</strong> Add another Airtable Search Records module. Search the Sessions table for the last 5 sessions by this candidate. Use a Text Aggregator module to combine the key fields (exercise type, overall score, growth edge) into a single text block for the {session_history} variable.<br/><br/>
     <strong>Step 4 — HTTP: Call Anthropic API:</strong> Add an HTTP module. Set to POST. URL: https://api.anthropic.com/v1/messages. Headers: x-api-key: [your Anthropic API key], anthropic-version: 2023-06-01, Content-Type: application/json. Body: assemble the JSON with the master system prompt as the system parameter and the exercise generation prompt (with variables filled) as the user message.<br/><br/>
     <strong>Step 5 — Airtable: Create Session Record:</strong> Parse the API response to extract the generated scenario text. Create a new record in the Sessions table: candidate ID, session date, exercise type, rank, dimension, generated scenario text, status = "awaiting_response".<br/><br/>
-    <strong>Step 6 — Webhook Response:</strong> Return the generated scenario and session ID to Softr for display. Softr renders the scenario in the Practice Lab interface and shows the candidate the response text field.
+    <strong>Step 6 — Webhook Response:</strong> Return the generated scenario and session ID to The Halligan platform for display. The Halligan platform renders the scenario in the Practice Lab interface and shows the candidate the response text field.
   </div>
 </div>
 
@@ -1008,12 +1008,12 @@ Deliver full CLEAR feedback. End with Transfer question.</div>
     <span class="sb-tag">Trigger: Candidate Submits Response · Output: CLEAR Feedback displayed</span>
   </div>
   <div class="sb-body">
-    <strong>Step 1 — Webhook Trigger:</strong> Same as Scenario 1, but triggered by the response submission form in Softr. Receives: session_id, candidate_response.<br/><br/>
+    <strong>Step 1 — Webhook Trigger:</strong> Same as Scenario 1, but triggered by the response submission form in The Halligan platform. Receives: session_id, candidate_response.<br/><br/>
     <strong>Step 2 — Airtable: Get Session Record:</strong> Look up the session record by session_id. Retrieve: generated_scenario, rank, exercise_type, dimension_focus, candidate_name, assessment_date, department_context, session_history.<br/><br/>
     <strong>Step 3 — HTTP: Call Anthropic API:</strong> Same structure as Scenario 1 but use the exercise-specific Analysis Prompt with all variables populated. The system parameter is always the Master System Prompt. The user parameter is the analysis prompt for the exercise type with all {variable} placeholders filled from the Airtable data.<br/><br/>
     <strong>Step 4 — Parse the Response:</strong> The API returns Claude's feedback as a text block. Use Make's text parsing tools (or a second Claude call with a simple parsing prompt) to extract: Structure score, Content score, Authenticity score, Overall score, Strength observation, Growth edge, Practice recommendation.<br/><br/>
-    <strong>Step 5 — Airtable: Update Session Record:</strong> Write all parsed fields to the session record. Update status to "complete". This powers the progress dashboard in Softr.<br/><br/>
-    <strong>Step 6 — Webhook Response:</strong> Return the full formatted feedback to Softr for display. Softr renders the score block and CLEAR feedback in the candidate's feedback view. The "Run It Again" button triggers a new Session Start with the same parameters.
+    <strong>Step 5 — Airtable: Update Session Record:</strong> Write all parsed fields to the session record. Update status to "complete". This powers the progress dashboard in The Halligan platform.<br/><br/>
+    <strong>Step 6 — Webhook Response:</strong> Return the full formatted feedback to The Halligan platform for display. The Halligan platform renders the score block and CLEAR feedback in the candidate's feedback view. The "Run It Again" button triggers a new Session Start with the same parameters.
   </div>
 </div>
 
@@ -1081,12 +1081,12 @@ Deliver full CLEAR feedback. End with Transfer question.</div>
       <div class="cs-title">Infrastructure Setup Checklist</div>
       <div class="cs-body">
         □ Anthropic API key obtained (console.anthropic.com)<br/>
-        □ Softr account created — Practice Lab interface built<br/>
+        □ The Halligan platform account created — Practice Lab interface built<br/>
         □ Airtable base created — Candidates + Sessions tables<br/>
         □ Make account created — two scenarios built<br/>
         □ Master system prompt pasted into Make HTTP module<br/>
         □ All five exercise prompts tested and working<br/>
-        □ Webhook URLs connected between Softr and Make
+        □ Webhook URLs connected between The Halligan platform and Make
       </div>
     </div>
     <div class="cs-card">
