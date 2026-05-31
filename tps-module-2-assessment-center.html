@@ -357,10 +357,10 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
   color:#8FA8C0;
   line-height:1.4;
 }
-/* Four dims */
+/* Assessment Dimensions — fluid grid handles any count */
 .ig-dims {
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
   gap:1px;
   background:rgba(201,168,76,0.08);
 }
@@ -482,7 +482,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
   font-style:italic;
 }
 @media(max-width:700px){
-  .ig-stage-grid,.ig-dims,.ig-bucket-grid{grid-template-columns:1fr 1fr;}
+  .ig-stage-grid,.ig-bucket-grid{grid-template-columns:1fr 1fr;}
   .ig-compare{grid-template-columns:1fr;}
   .ig-covey-paradox{grid-template-columns:1fr;}
   .ig-lang-row,.ig-lang-header{grid-template-columns:1fr;}
@@ -527,7 +527,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 
 
 /* LEAD NAVIGATOR */
-.lead-nav{background:var(--navy);border-radius:8px;padding:14px;margin-bottom:12px;position:sticky;top:80px}
+.lead-nav{background:var(--navy);border-radius:8px;padding:14px;margin-bottom:12px;}
 .lead-nav-title{font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
 .lead-nav-step{display:grid;grid-template-columns:28px 1fr;gap:6px;margin-bottom:8px;align-items:start}
 .lead-nav-step:last-child{margin-bottom:0}
@@ -622,9 +622,9 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="lead-nav">
 <div class="lead-nav-title">LEAD Navigator</div>
 <div class="lead-nav-step"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Assessment Awareness</div></div></div>
-<div class="lead-nav-step"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Behavioral Rating Scale · Exercise Types</div></div></div>
-<div class="lead-nav-step"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">What assessors score vs. what candidates assume</div></div></div>
-<div class="lead-nav-step"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Pre-exercise protocol</div></div></div>
+<div class="lead-nav-step"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Six Exercise Types · Behavioral Observation Model</div></div></div>
+<div class="lead-nav-step"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Assessment vs. interview distinction · I/O psychology basis</div></div></div>
+<div class="lead-nav-step"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Pre-exercise protocol · T·C·H·O·E·D·S close</div></div></div>
 </div>
 
 <span class="sbar-label">Chapter 2 Overview</span>
@@ -768,9 +768,9 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="lead-nav">
 <div class="lead-nav-title">LEAD Navigator</div>
 <div class="lead-nav-step"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Assessment Awareness</div></div></div>
-<div class="lead-nav-step"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Behavioral Rating Scale · Exercise Types</div></div></div>
-<div class="lead-nav-step"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">What assessors score vs. what candidates assume</div></div></div>
-<div class="lead-nav-step"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Pre-exercise protocol</div></div></div>
+<div class="lead-nav-step"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Assessor Psychology · Frame of Reference Training</div></div></div>
+<div class="lead-nav-step"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Scoreability over likability · Behavioral indicators</div></div></div>
+<div class="lead-nav-step"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Make indicators visible · T·C·H·O·E·D·S close</div></div></div>
 </div>
 
 <span class="sbar-label">Assessor Types</span>
@@ -848,13 +848,15 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="lesson-container"><div class="lesson-main">
 <div class="lesson-header"><div class="lh-eyebrow">Chapter 2 · Lesson 3 of 5</div>
 <h1 class="lh-title">How<br><em>Scoring Works</em></h1>
-<div class="lh-meta"><span class="lh-meta-item">⏱ 20 min</span><span class="lh-meta-item">📊 Scoring System</span></div>
+<div class="lh-meta"><span class="lh-meta-item">⏱ 22 min</span><span class="lh-meta-item">📊 Scoring System</span></div>
 <div class="ft-toggle" onclick="toggleFastTrack(this)">
 <div class="ft-toggle-switch"><div class="ft-toggle-knob"></div></div>
 <div><div class="ft-toggle-label">Fast Track</div><div class="ft-toggle-desc">Frameworks + OB cards only</div></div>
 </div>
 </div>
-<p>Most assessment centers use a 1–5 behavioral rating scale. Understanding what each number means — and what specific behaviors separate a 3 from a 4, and a 4 from a 5 — gives you a concrete target for every practice rep.</p>
+
+<p>Most fire and EMS assessment centers use a 1–5 behavioral rating scale — the same scale that industrial-organizational psychologists developed and validated across thousands of real assessment center administrations. Understanding exactly what each number means, and what specific behaviors separate a 3 from a 4 and a 4 from a 5, gives you a precise target for every practice rep.</p>
+
 <div class="score-grid">
 <div class="score-cell"><span class="score-num">1</span><div class="score-label">Significantly Below Standard</div></div>
 <div class="score-cell"><span class="score-num">2</span><div class="score-label">Below Standard</div></div>
@@ -862,80 +864,176 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="score-cell"><span class="score-num">4</span><div class="score-label">Above Standard</div></div>
 <div class="score-cell"><span class="score-num">5</span><div class="score-label">Significantly Above Standard</div></div>
 </div>
-<h2>What Separates Each Level</h2>
+
+<h2>The Eight Assessment Dimensions</h2>
+<p>Assessors do not watch for general impressiveness. They score observable behaviors against eight specific competency dimensions drawn from validated I-O psychology research. These are the same dimensions The Halligan scores in every practice session. Every exercise. Every scenario. Every rank. The same eight dimensions — every time. Learn them by name. Name them in your responses.</p>
+
 <div class="infographic-wrap">
 <div class="ig-header">
 <span class="ig-eyebrow">◆ TPS FRAMEWORK</span>
-<div class="ig-title">The Four Assessment Dimensions — What Every Assessor Scores</div>
-<div class="ig-sub">Every exercise. Every scenario. Every rank. The same four dimensions — every time.</div>
+<div class="ig-title">The Eight Assessment Dimensions — What Every Assessor Scores</div>
+<div class="ig-sub">Validated competency dimensions used in fire and EMS assessment centers. These are what assessors are trained to observe and score.</div>
 </div>
 <div class="ig-dims">
+
 <div class="ig-dim-card" style="border-top:3px solid #C9A84C;">
-  <div class="ig-dim-num" style="color:#C9A84C;">01</div>
-  <div class="ig-dim-name">Supervisory Judgment</div>
-  <div class="ig-dim-desc">Diagnose before acting. 3 U's → Skill/Will → named principle close. Most heavily weighted.</div>
-  <div class="ig-dim-key" style="color:#6B4F10;">Key: Name the U before any action word.</div>
+<div class="ig-dim-num" style="color:#C9A84C;">01</div>
+<div class="ig-dim-name">Problem Analysis</div>
+<div class="ig-dim-desc">Identify the core issue before prescribing a solution. Separate symptoms from cause. Recognize what is actually happening vs. what appears to be happening. Candidates who jump to solutions without naming the problem score at 3 maximum.</div>
+<div class="ig-dim-key" style="color:#6B4F10;">Board signal: Diagnose before you prescribe. Name the problem explicitly before any action word.</div>
 </div>
-<div class="ig-dim-card" style="border-top:3px solid #8FA8C0;">
-  <div class="ig-dim-num" style="color:#8FA8C0;">02</div>
-  <div class="ig-dim-name">Interpersonal Skills</div>
-  <div class="ig-dim-desc">Bias awareness. Glasl phase identification. Positions vs interests. De-escalation with framework.</div>
-  <div class="ig-dim-key" style="color:#8FA8C0;">Key: Name the bias check explicitly.</div>
-</div>
-<div class="ig-dim-card" style="border-top:3px solid #3A9C5A;">
-  <div class="ig-dim-num" style="color:#3A9C5A;">03</div>
-  <div class="ig-dim-name">Oral Communication</div>
-  <div class="ig-dim-desc">STAR-P structure. 50% of time in Action. Named TPS framework as closing principle.</div>
-  <div class="ig-dim-key" style="color:#3A9C5A;">Key: Stay in Action until you hit 50%.</div>
-</div>
+
 <div class="ig-dim-card" style="border-top:3px solid #E87070;">
-  <div class="ig-dim-num" style="color:#E87070;">04</div>
-  <div class="ig-dim-name">Written Communication</div>
-  <div class="ig-dim-desc">Five-Paragraph Formula. Purpose statement in ¶1. Analysis depth in ¶3. Specific decisions in ¶4.</div>
-  <div class="ig-dim-key" style="color:#E87070;">Key: Purpose statement first — always.</div>
+<div class="ig-dim-num" style="color:#E87070;">02</div>
+<div class="ig-dim-name">Judgment &amp; Decision-Making</div>
+<div class="ig-dim-desc">Make a clear decision, name the policy or principle behind it, and own the call. Hedging without deciding is a 3. Making the call with rationale — and acknowledging the organizational impact of the decision — is a 4+.</div>
+<div class="ig-dim-key" style="color:#c0474a;">Board signal: Make the decision. Name the principle behind it. Own it without qualification.</div>
+</div>
+
+<div class="ig-dim-card" style="border-top:3px solid #3A9C5A;">
+<div class="ig-dim-num" style="color:#3A9C5A;">03</div>
+<div class="ig-dim-name">Oral Communication</div>
+<div class="ig-dim-desc">STAR-P structure. 50% of time in the Action section. Named TPS framework as the closing principle. Clarity, pace, and delivery under observation pressure. Assessors cannot score what they cannot follow.</div>
+<div class="ig-dim-key" style="color:#3A9C5A;">Board signal: Stay in Action until you hit 50% of your time. Never leave Action early.</div>
+</div>
+
+<div class="ig-dim-card" style="border-top:3px solid #8FA8C0;">
+<div class="ig-dim-num" style="color:#8FA8C0;">04</div>
+<div class="ig-dim-name">Written Communication</div>
+<div class="ig-dim-desc">Five-Paragraph Formula. Purpose statement in ¶1. Analysis depth in ¶3. Specific, actionable decisions in ¶4. Organization is itself a signal — assessors can identify structure before reading content.</div>
+<div class="ig-dim-key" style="color:#6080a0;">Board signal: Purpose statement first — always. No exceptions. No warmup paragraph.</div>
+</div>
+
+<div class="ig-dim-card" style="border-top:3px solid #7B5EA7;">
+<div class="ig-dim-num" style="color:#7B5EA7;">05</div>
+<div class="ig-dim-name">Leadership</div>
+<div class="ig-dim-desc">Demonstrated leadership identity — values-based reasoning, rank-appropriate authority and scope, and a clear philosophical close. T·C·H·O·E·D·S value anchor. The "I am the kind of [rank] who…" identity close is the clearest 5-level signal in this dimension.</div>
+<div class="ig-dim-key" style="color:#7B5EA7;">Board signal: Close with a named value anchor. Make your leadership philosophy visible.</div>
+</div>
+
+<div class="ig-dim-card" style="border-top:3px solid #E8920A;">
+<div class="ig-dim-num" style="color:#E8920A;">06</div>
+<div class="ig-dim-name">Interpersonal Sensitivity</div>
+<div class="ig-dim-desc">Awareness of others' perspectives, explicit bias recognition, and empathy in conflict. Glasl phase identification. Positions vs. interests. De-escalation with framework — not with personality. Sensitivity is demonstrated, not claimed.</div>
+<div class="ig-dim-key" style="color:#b36d00;">Board signal: Name the bias check or Glasl phase explicitly before proposing any action.</div>
+</div>
+
+<div class="ig-dim-card" style="border-top:3px solid #1A7A4A;">
+<div class="ig-dim-num" style="color:#1A7A4A;">07</div>
+<div class="ig-dim-name">Planning &amp; Organizing</div>
+<div class="ig-dim-desc">Sequence your response. Prioritize competing demands. Delegate with specificity. Show your decision hierarchy — what you do first, what you do second, and why. Eisenhower Matrix for in-basket. RACI for delegation. The 5 candidate makes the priority structure visible.</div>
+<div class="ig-dim-key" style="color:#1A7A4A;">Board signal: Name your priority order explicitly — first, second, third — with rationale for each.</div>
+</div>
+
+<div class="ig-dim-card" style="border-top:3px solid #C41E2A;">
+<div class="ig-dim-num" style="color:#C41E2A;">08</div>
+<div class="ig-dim-name">Stress Tolerance</div>
+<div class="ig-dim-desc">Composure under observation pressure. Deliberate pace. Grounded posture. Consistent performance when challenged by follow-up questions. Stress Tolerance is the dimension most candidates never prepare for — and assessors can see it from the moment you walk in.</div>
+<div class="ig-dim-key" style="color:#C41E2A;">Board signal: Pause before follow-up responses. A beat of composure scores higher than an immediate defensive answer.</div>
+</div>
+
+</div>
+</div>
+
+<h2>What Separates Each Score Level</h2>
+
+<h3>1 and 2 — Below Standard</h3>
+<p>Candidates scoring 1 or 2 demonstrate missing or incorrect behavior across one or more dimensions. They misidentify the issue, apply the wrong framework, avoid the difficult decision, act outside their authority, or respond in a way that would create organizational harm. A 1 is not just uninformed — it is actively counterproductive. Assessors document 1s and 2s specifically in their scoring notes.</p>
+
+<h3>3 — Meets Standard</h3>
+<p>The 3 candidate addresses the question correctly. They identify the issue, cite a relevant policy or principle, and propose a reasonable response. They are technically correct. What they are missing is diagnosis depth, named frameworks, organizational awareness, and leadership identity. Most candidates who study hard land at 3. Consistently scoring 3 does not place competitively in most promotional processes.</p>
+
+<h3>4 — Above Standard</h3>
+<p>The 4 candidate does everything the 3 does, plus names the specific dimension being addressed, applies a named TPS framework to the exact scenario, acknowledges complexity, shows awareness of organizational impact, and drives to a concrete action with a value anchor close. The response is structured, principled, and goes beyond the surface of the question.</p>
+
+<h3>5 — Significantly Above Standard</h3>
+<p>The 5 candidate operates like someone who already has the rank. They diagnose before they prescribe. They name the dimension explicitly. They demonstrate leadership philosophy, not just supervisory mechanics. Their response is organized, specific, and leaves no ambiguity about whether they are ready. A 5 response sounds like it came from someone who already holds the position.</p>
+
+<div class="callout callout-gold"><span class="callout-label">Your Target</span>
+<p>Your goal is not to avoid 1s and 2s. Your goal is to consistently score 4s and build the habits that produce 5s. The jump from 3 to 4 is preparation depth — knowing your frameworks well enough to name them under pressure. The jump from 4 to 5 is leadership identity — and that is what Chapters 8 through 12 develop.</p></div>
+
+<h2>How the Eight Dimensions Map to TPS Chapters</h2>
+<p>Each TPS chapter builds one or more of the eight dimensions. Knowing the map lets you study strategically — identify your weakest dimension and start there. Assessors score all eight simultaneously in every exercise.</p>
+
+<div class="infographic-wrap" style="margin-top:0;">
+<div class="ig-dims" style="grid-template-columns:repeat(auto-fill,minmax(190px,1fr));">
+<div class="ig-dim-card" style="border-top:2px solid #C9A84C;padding:12px;">
+<div class="ig-dim-num" style="color:#C9A84C;font-size:.75rem;">Dim 01 + 02</div>
+<div class="ig-dim-name" style="font-size:.88rem;">Problem Analysis + Judgment</div>
+<div class="ig-dim-desc" style="font-size:.8rem;">Chapter 5 — Supervisory Judgment</div>
+</div>
+<div class="ig-dim-card" style="border-top:2px solid #3A9C5A;padding:12px;">
+<div class="ig-dim-num" style="color:#3A9C5A;font-size:.75rem;">Dim 03</div>
+<div class="ig-dim-name" style="font-size:.88rem;">Oral Communication</div>
+<div class="ig-dim-desc" style="font-size:.8rem;">Chapter 7 — Oral Communication</div>
+</div>
+<div class="ig-dim-card" style="border-top:2px solid #8FA8C0;padding:12px;">
+<div class="ig-dim-num" style="color:#8FA8C0;font-size:.75rem;">Dim 04</div>
+<div class="ig-dim-name" style="font-size:.88rem;">Written Communication</div>
+<div class="ig-dim-desc" style="font-size:.8rem;">Chapter 8 — Written Communication</div>
+</div>
+<div class="ig-dim-card" style="border-top:2px solid #7B5EA7;padding:12px;">
+<div class="ig-dim-num" style="color:#7B5EA7;font-size:.75rem;">Dim 05</div>
+<div class="ig-dim-name" style="font-size:.88rem;">Leadership</div>
+<div class="ig-dim-desc" style="font-size:.8rem;">Chapter 9 — Leading with Purpose</div>
+</div>
+<div class="ig-dim-card" style="border-top:2px solid #E8920A;padding:12px;">
+<div class="ig-dim-num" style="color:#E8920A;font-size:.75rem;">Dim 06</div>
+<div class="ig-dim-name" style="font-size:.88rem;">Interpersonal Sensitivity</div>
+<div class="ig-dim-desc" style="font-size:.8rem;">Chapter 6 — Interpersonal Skills</div>
+</div>
+<div class="ig-dim-card" style="border-top:2px solid #1A7A4A;padding:12px;">
+<div class="ig-dim-num" style="color:#1A7A4A;font-size:.75rem;">Dim 07</div>
+<div class="ig-dim-name" style="font-size:.88rem;">Planning &amp; Organizing</div>
+<div class="ig-dim-desc" style="font-size:.8rem;">Chapter 10 — The Organized Leader</div>
+</div>
+<div class="ig-dim-card" style="border-top:2px solid #C41E2A;padding:12px;">
+<div class="ig-dim-num" style="color:#C41E2A;font-size:.75rem;">Dim 08</div>
+<div class="ig-dim-name" style="font-size:.88rem;">Stress Tolerance</div>
+<div class="ig-dim-desc" style="font-size:.8rem;">Chapter 41 — Assessment Day Prep</div>
 </div>
 </div>
 </div>
 
-<h3>1 and 2 — Below Standard</h3>
-<p>Candidates scoring 1 or 2 demonstrate missing or incorrect behavior. They misidentify the supervisory issue, apply the wrong framework, avoid the difficult conversation, act outside their authority, or respond in a way that would create organizational harm. A 1 is not just uninformed — it is actively counterproductive.</p>
-<h3>3 — Meets Standard</h3>
-<p>The 3 candidate addresses the question correctly. They identify the issue, cite the relevant policy or principle, and propose a reasonable response. They are technically correct. What they are missing is the leadership depth, the organizational awareness, and the communication sophistication that pushes a response to 4 or 5. Most candidates who study hard land here.</p>
-<h3>4 — Above Standard</h3>
-<p>The 4 candidate does everything the 3 candidate does, plus demonstrates proactive thinking, names the underlying principle, acknowledges complexity, and shows awareness of organizational impact. The response is structured, clear, and goes beyond the surface of the question.</p>
-<h3>5 — Significantly Above Standard</h3>
-<p>The 5 candidate operates like someone who already has the rank. They diagnose before they respond. They name the dimension they are addressing. They demonstrate leadership philosophy, not just supervisory mechanics. Their response is organized, specific, and leaves no ambiguity about whether they are ready.</p>
-<div class="callout callout-gold"><span class="callout-label">Your Target</span>
-<p>Your goal is not to avoid 1s and 2s. Your goal is to consistently score 4s and build the behaviors that produce 5s. The difference between a 3 and a 4 is preparation depth. The difference between a 4 and a 5 is leadership identity — and that is what Chapters 8 through 14 develop.</p></div>
 </div>
 <div class="lesson-sidebar">
 <div class="lead-nav">
 <div class="lead-nav-title">LEAD Navigator</div>
 <div class="lead-nav-step"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Assessment Awareness</div></div></div>
-<div class="lead-nav-step"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Behavioral Rating Scale · Exercise Types</div></div></div>
-<div class="lead-nav-step"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">What assessors score vs. what candidates assume</div></div></div>
-<div class="lead-nav-step"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Pre-exercise protocol</div></div></div>
+<div class="lead-nav-step"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">8 BARS Dimensions · 1–5 Scale</div></div></div>
+<div class="lead-nav-step"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Name the dimension · Name the framework</div></div></div>
+<div class="lead-nav-step"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Score 4+ behaviors · T·C·H·O·E·D·S close</div></div></div>
 </div>
 
 <span class="sbar-label">The 1–5 Scale</span>
-<div class="sbar-card"><strong>1–2</strong>Missing or incorrect behavior — counterproductive responses</div>
-<div class="sbar-card"><strong>3</strong>Technically correct — addresses the question without depth</div>
-<div class="sbar-card"><strong>4</strong>Correct plus principled — proactive, structured, aware</div>
-<div class="sbar-card"><strong>5</strong>Already has the rank — diagnosis first, leadership identity visible</div>
+<div class="sbar-card"><strong>1–2</strong> Missing or incorrect behavior — counterproductive responses</div>
+<div class="sbar-card"><strong>3</strong> Technically correct — no framework depth or diagnosis</div>
+<div class="sbar-card"><strong>4</strong> Named framework + diagnosis + principle close</div>
+<div class="sbar-card"><strong>5</strong> Already has the rank — diagnoses first, leads with identity</div>
+
+<span class="sbar-label" style="margin-top:14px;">The 8 Dimensions</span>
+<div class="sbar-card"><strong>01</strong> Problem Analysis</div>
+<div class="sbar-card"><strong>02</strong> Judgment &amp; Decision-Making</div>
+<div class="sbar-card"><strong>03</strong> Oral Communication</div>
+<div class="sbar-card"><strong>04</strong> Written Communication</div>
+<div class="sbar-card"><strong>05</strong> Leadership</div>
+<div class="sbar-card"><strong>06</strong> Interpersonal Sensitivity</div>
+<div class="sbar-card"><strong>07</strong> Planning &amp; Organizing</div>
+<div class="sbar-card"><strong>08</strong> Stress Tolerance</div>
 </div></div>
 
 <div class="ob-card">
-  <div class="ob-header"><div class="ob-label">Oral Board — Scoring Intelligence</div></div>
-  <div class="ob-body">
-    <div class="ob-q"><span class="ob-q-tag">All Ranks</span><div><div class="ob-q-text">"What separates a 3 from a 5 on a behavioral rating scale?"</div><div class="ob-note">A 3 is competent — you addressed the scenario adequately. A 5 is exceptional — you demonstrated depth, used a framework explicitly, addressed multiple dimensions, and closed with ownership. The difference is specificity and structure.</div></div></div>
-  </div>
+<div class="ob-header"><div class="ob-label">Oral Board — Scoring Intelligence</div></div>
+<div class="ob-body">
+<div class="ob-q"><span class="ob-q-tag">All Ranks</span><div><div class="ob-q-text">"Assessment centers score on eight competency dimensions. Name as many as you can and explain which dimension you believe is most critical to demonstrate in an oral board scenario."</div><div class="ob-note">Name all eight: Problem Analysis, Judgment &amp; Decision-Making, Oral Communication, Written Communication, Leadership, Interpersonal Sensitivity, Planning &amp; Organizing, and Stress Tolerance. For oral boards, Problem Analysis and Judgment (Dims 01–02) are typically weighted most heavily — but all eight are scored simultaneously. A 5 response acknowledges that the board is evaluating multiple dimensions at once and structures the answer to make behaviors visible across more than one.</div></div></div>
+</div>
 </div>
 
 <div class="takeaways">
-  <div class="tk-lbl">Lesson 3 — Key Takeaways</div>
-  <div class="tk-item">Most assessment centers use a 1–5 behavioral rating scale. The jump from 3 to 5 is not about saying more — it is about demonstrating frameworks, specificity, and structured thinking.</div>
-  <div class="tk-item">A 3 response addresses the scenario. A 5 response names the framework, applies it to the specific scenario, addresses impact, and drives to a concrete action.</div>
-  <div class="tk-item">Assessors cannot give a 5 unless they observe specific behavioral indicators. Your job is to make those indicators visible — not assumed.</div>
+<div class="tk-lbl">Lesson 3 — Key Takeaways</div>
+<div class="tk-item">Fire and EMS assessment centers score on eight specific dimensions: Problem Analysis, Judgment &amp; Decision-Making, Oral Communication, Written Communication, Leadership, Interpersonal Sensitivity, Planning &amp; Organizing, and Stress Tolerance. These are validated I-O psychology competencies — not TPS inventions. The Halligan scores your practice reps against these same eight dimensions.</div>
+<div class="tk-item">A 3 response addresses the scenario correctly. A 4 names the framework, diagnoses before prescribing, and closes with a principle. A 5 sounds like the person already holds the rank — diagnosis first, leadership philosophy visible throughout.</div>
+<div class="tk-item">Every TPS chapter maps to one or more of the eight dimensions. Identify your weakest dimension and start there. Assessors score all eight in every exercise — your job is to make the behavioral indicators visible, not assumed.</div>
 </div>
 
 <div class="lf-wrap">
@@ -946,7 +1044,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="lf-step active">
 <div class="lf-step-num">Step 1 of 3 · Review</div>
 <div class="lf-step-title">You just read the OB card above. Can you answer it using LEAD?</div>
-<p style="font-size:13px;color:var(--mid);line-height:1.6">Mentally rehearse your response. Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level and close with a TCHOEDS value anchor. If you can do this in 90 seconds, you own this lesson.</p>
+<p style="font-size:13px;color:var(--mid);line-height:1.6">Mentally rehearse your response. Label the bucket. Engage the eight dimensions. Apply the scoring framework. Deliver at rank level and close with a TCHOEDS value anchor. Can you name all eight dimensions from memory?</p>
 <button class="lf-btn" onclick="lfNext(this,1)">Got it → Show me the framework chain</button>
 </div>
 <div class="lf-step">
@@ -958,11 +1056,11 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 </div>
 <div class="lf-chain">
 <div class="lf-chain-label">Framework Chain</div>
-<div class="lf-chain-text">Behavioral Rating Scale · Exercise Types</div>
+<div class="lf-chain-text">8 BARS Dimensions · 1–5 Scale · Dimension-to-Chapter Map</div>
 </div>
 <div class="lf-chain">
 <div class="lf-chain-label">Close Cue</div>
-<div class="lf-chain-close">Pre-exercise protocol · Reframe the room</div>
+<div class="lf-chain-close">Name your weakest dimension → identify the chapter → start there</div>
 </div>
 <button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button>
 </div>
@@ -971,18 +1069,18 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="lf-step-title">The Halligan — Do your rep</div>
 <div class="lf-prompt">
 <div class="lf-prompt-label">Your Scenario</div>
-<div class="lf-prompt-text">Use the OB card question above. Set a 90-second timer. Respond out loud using LEAD. Record yourself if possible.</div>
+<div class="lf-prompt-text">Use the OB card question above. Set a 90-second timer. Respond out loud using LEAD. Name all eight dimensions. Record yourself if possible.</div>
 </div>
 <div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div>
-<p style="font-size:12px;color:var(--gray);margin-top:10px;line-height:1.5">After your rep: What framework did you name? Did you close with a specific action? What would you change? One rep per lesson. 90 reps over 90 days.</p>
+<p style="font-size:12px;color:var(--gray);margin-top:10px;line-height:1.5">After your rep: Could you name all eight? Which one did you forget? That's your priority chapter. One rep per lesson. 90 reps over 90 days.</p>
 </div>
 </div>
-
 
 <div class="lesson-nav-bar"><button class="lnb-btn" onclick="prevLesson()">← Who Are the Assessors?</button>
 <div class="lnb-info"><div class="lnb-name">How Scoring Works</div><div class="lnb-num">Lesson 3 of 5</div></div>
 <button class="lnb-btn primary" onclick="nextLesson()">Next: What Assessors Watch →</button>
 </div></div>
+
 
 <div class="lesson-view" id="lesson-3">
 <div class="lesson-container"><div class="lesson-main">
@@ -1080,9 +1178,9 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="lead-nav">
 <div class="lead-nav-title">LEAD Navigator</div>
 <div class="lead-nav-step"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Assessment Awareness</div></div></div>
-<div class="lead-nav-step"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Behavioral Rating Scale · Exercise Types</div></div></div>
-<div class="lead-nav-step"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">What assessors score vs. what candidates assume</div></div></div>
-<div class="lead-nav-step"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Pre-exercise protocol</div></div></div>
+<div class="lead-nav-step"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">8 BARS Dimensions · Behavioral Signal Framework</div></div></div>
+<div class="lead-nav-step"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Name the dimension · Surface the behavioral indicator</div></div></div>
+<div class="lead-nav-step"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Indicators visible, not assumed · T·C·H·O·E·D·S close</div></div></div>
 </div>
 
 <span class="sbar-label">Behavioral Indicators</span>
@@ -1200,9 +1298,9 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="lead-nav">
 <div class="lead-nav-title">LEAD Navigator</div>
 <div class="lead-nav-step"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Assessment Awareness</div></div></div>
-<div class="lead-nav-step"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Behavioral Rating Scale · Exercise Types</div></div></div>
-<div class="lead-nav-step"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">What assessors score vs. what candidates assume</div></div></div>
-<div class="lead-nav-step"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Pre-exercise protocol</div></div></div>
+<div class="lead-nav-step"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Pre-exercise protocol · Mental reframe framework</div></div></div>
+<div class="lead-nav-step"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Reframe the room · Manage physical environment · Anchor identity</div></div></div>
+<div class="lead-nav-step"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Enter at testing rank · T·C·H·O·E·D·S close</div></div></div>
 </div>
 
 <span class="sbar-label">The Mental Reframes</span>
