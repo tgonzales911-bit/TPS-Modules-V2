@@ -554,7 +554,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 
 
 /* LEAD NAVIGATOR */
-.lead-nav{background:var(--navy);border-radius:8px;padding:14px;margin-bottom:12px;position:sticky;top:80px}
+.lead-nav{background:var(--navy);border-radius:8px;padding:14px;margin-bottom:12px;}
 .lead-nav-title{font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
 .lead-nav-step{display:grid;grid-template-columns:28px 1fr;gap:6px;margin-bottom:8px;align-items:start}
 .lead-nav-step:last-child{margin-bottom:0}
@@ -639,6 +639,23 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 @media(max-width:700px){.ma-line{grid-template-columns:1fr;}.ma-anno{border-left:none;border-top:1px dashed #D8C9A8;}}
 
 .lead-nav-subtitle{font-family:'Crimson Pro',serif;font-size:10px;letter-spacing:0.5px;text-transform:none;color:#8FA8C0;font-style:italic;margin-top:3px;}
+
+/* === module-end knowledge check (mq-*) — light bg / dark text === */
+.mq-wrap{background:var(--offwhite);border:1px solid var(--light);border-top:4px solid var(--gold);border-radius:8px;padding:2rem 2.25rem;margin:2.5rem 0;}
+.mq-lbl{font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold3);margin-bottom:.4rem;}
+.mq-title{font-family:'EB Garamond',serif;font-size:1.5rem;color:var(--navy);margin-bottom:.4rem;}
+.mq-intro{font-size:.95rem;color:var(--mid);line-height:1.6;margin-bottom:1.75rem;}
+.mq-q{margin-bottom:1.75rem;padding-bottom:1.75rem;border-bottom:1px solid var(--light);}
+.mq-q:last-of-type{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.mq-qnum{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:6px;}
+.mq-qtext{font-family:'EB Garamond',serif;font-size:1.12rem;font-weight:600;color:var(--navy);line-height:1.5;margin-bottom:1rem;}
+.mq-opts{display:flex;flex-direction:column;gap:9px;}
+.mq-opt{text-align:left;font-family:'Crimson Pro',Georgia,serif;font-size:1rem;color:var(--navy);background:#fff;border:1px solid var(--light);border-radius:6px;padding:.7rem 1rem;cursor:pointer;transition:all .15s;}
+.mq-opt:hover:not(:disabled){border-color:var(--gold);background:rgba(201,168,76,.05);}
+.mq-opt:disabled{cursor:default;}
+.mq-correct{border-color:#2E7D5B!important;background:rgba(46,125,91,.1)!important;color:#1B5E3F!important;font-weight:600;}
+.mq-wrong{border-color:#B23A3A!important;background:rgba(178,58,58,.08)!important;color:#8B2E2E!important;}
+.mq-feedback{font-size:.85rem;font-style:italic;color:var(--mid);margin-top:10px;}
 </style>
 </head>
 <body>
@@ -651,8 +668,9 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
   <div class="mh-inner">
     <div class="mh-eyebrow">Chapter 5 · Lieutenant Track</div>
     <h1 class="mh-title">Supervisory <em>Judgment</em></h1>
-    <p class="mh-sub">The dimension area that separates Lieutenant-ready candidates from those still thinking like firefighters. In the canonical eight-dimension model, this chapter develops two scored dimensions: <strong>Problem Analysis</strong> and <strong>Judgment &amp; Decision-Making</strong>.</p>
-    <div class="mh-thread"><div class="mh-thread-label">Diagnose, Then Decide</div><div class="mh-thread-text">3 U's &amp; Skill/Will = diagnosis (PA). The call, the principle, the documentation = decision (JU). Every lesson closes with a board question and a knowledge check.</div></div>
+    <p class="mh-sub">The dimension that separates Lieutenant-ready candidates from candidates who are still thinking like firefighters. This chapter covers the 3 U's diagnostic framework, Skill/Will matrix, trap scenarios, and documentation language that scores.</p>
+    <div class="mh-badges"><span class="mh-badge badge-blue">Lieutenant Track</span><span class="mh-badge badge-blue">NFPA 1021 · FO I</span></div>
+    <div class="mh-thread"><div class="mh-thread-label">The Core Truth</div><div class="mh-thread-text">Assessors are not evaluating whether you know what to do. They are evaluating whether you think like someone who already has the rank. The supervisory judgment dimension is where that distinction becomes visible.</div></div>
     <div class="mh-lesson-nav"><button class="mh-lesson-btn active" onclick="showLesson(0)">L1 · Overview</button><button class="mh-lesson-btn" onclick="showLesson(1)">L2 · The 3 U's Framework</button><button class="mh-lesson-btn" onclick="showLesson(2)">L3 · Skill/Will Matrix</button><button class="mh-lesson-btn" onclick="showLesson(3)">L4 · Trap Scenarios</button><button class="mh-lesson-btn" onclick="showLesson(4)">L5 · Documentation Language</button></div>
   </div>
 </div>
@@ -725,14 +743,63 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="tk-item">The most common error is jumping to action before diagnosis. Assessors score the quality of your analysis, not just the speed of your response.</div>
 <div class="tk-item">Every personnel scenario should trigger the diagnostic sequence: What is the problem? What is causing it? What is the appropriate response for that specific cause?</div>
 </div>
+      <div class="lf-wrap">
+<div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div>
+<div class="lf-step active">
+<div class="lf-step-num">Step 1 of 3 · Review</div>
+<div class="lf-step-title">You just read the OB card above. Can you answer it using LEAD?</div>
+<p style="font-size:13px;color:var(--mid);line-height:1.6">Mentally rehearse your response. <strong>Label</strong> the bucket. <strong>Engage</strong> the response framework (STAR-P). <strong>Apply</strong> the diagnostic or leadership frameworks, chained. <strong>Deliver</strong> at rank level and close with a value anchor. If you can do this in 90 seconds, you own this lesson.</p>
+<button class="lf-btn" onclick="lfNext(this,1)">Got it → Show me the framework chain</button>
+</div>
+<div class="lf-step">
+<div class="lf-step-num">Step 2 of 3 · Framework Chain</div>
+<div class="lf-step-title">Your framework chain for this question type</div>
+<div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Personnel Issue</div></div>
+<div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">STAR-P (structure) → diagnose-before-decide</div></div>
+<div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Frame supervisory, not operational → name the dimension</div></div>
+<button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button>
+</div>
+<div class="lf-step">
+<div class="lf-step-num">Step 3 of 3 · The Rep</div>
+<div class="lf-step-title">The Halligan — Do your rep</div>
+<div class="lf-prompt"><div class="lf-prompt-label">Your Scenario</div><div class="lf-prompt-text">Use the OB card question above. Set a 90-second timer. Respond out loud using LEAD. Record yourself if possible.</div></div>
+<div class="lf-timer">&#9201; 90 seconds · Respond using LEAD</div>
+<p style="font-size:12px;color:var(--gray);margin-top:10px;line-height:1.5">After your rep: What framework did you name? Did you close with a specific action? What would you change? One rep per lesson. 90 reps over 90 days.</p>
+</div>
+</div>
     </div>
     <div class="lesson-sidebar">
 <div class="lead-nav">
-<div class="lead-nav-title">LEAD Navigator<div class="lead-nav-subtitle">Applied to this lesson's board question</div></div>
-<div class="lead-nav-step"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Personnel Issue (one of the 13 buckets)</div></div></div>
-<div class="lead-nav-step"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">STAR-P (response structure)</div></div></div>
-<div class="lead-nav-step"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">3 U's &rarr; Skill/Will, chained to diagnose then decide</div></div></div>
-<div class="lead-nav-step"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">At testing rank; close on a value anchor</div></div></div>
+<div class="lead-nav-title">LEAD Navigator<div class="lead-nav-subtitle">Personnel issues — what scores on Problem Analysis and Judgment</div>
+</div>
+<div class="lead-nav-step">
+<div class="lead-nav-letter">L</div>
+<div>
+<div class="lead-nav-name">Label</div>
+<div class="lead-nav-app">The bucket (1 of 13) + what the assessor is scoring</div>
+</div>
+</div>
+<div class="lead-nav-step">
+<div class="lead-nav-letter">E</div>
+<div>
+<div class="lead-nav-name">Engage</div>
+<div class="lead-nav-app">The response structure: STAR-P / Five-Paragraph / ERS-CALM</div>
+</div>
+</div>
+<div class="lead-nav-step">
+<div class="lead-nav-letter">A</div>
+<div>
+<div class="lead-nav-name">Apply</div>
+<div class="lead-nav-app">Name your diagnostic frameworks — 3 U’s, Skill/Will, Glasl — chaining when warranted</div>
+</div>
+</div>
+<div class="lead-nav-step">
+<div class="lead-nav-letter">D</div>
+<div>
+<div class="lead-nav-name">Deliver</div>
+<div class="lead-nav-app">At your testing rank + close with a value anchor</div>
+</div>
+</div>
 </div>
 <span class="sbar-label">This Chapter Covers</span>
 <div class="sbar-card"><strong>Lesson 1</strong>What assessors score in the supervisory judgment dimension</div>
@@ -747,8 +814,12 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
   <div class="lesson-nav-bar">
     <button class="lnb-btn" onclick="prevLesson()">&larr; Previous</button>
     <div class="lnb-info"><div class="lnb-name">What Assessors Are Watching</div><div class="lnb-num">Lesson 1 of 5</div></div>
-    <button class="lnb-btn primary" onclick="nextLesson()">Next &rarr;</button>
+    <button class="lnb-btn primary" onclick="nextLesson()">Next: The 3 U's Framework &rarr;</button>
   </div>
+  <div class="dim-frame">
+<div><div class="dim-frame-num">Dimensions 01 + 02</div><div class="dim-frame-title">Problem Analysis &amp; Judgment</div><div class="dim-frame-desc">This chapter develops two of the eight assessment dimensions. Dimension 01 — diagnose the actual issue before prescribing any action. Dimension 02 — make a clear, principled decision and own it.</div></div>
+<div class="dim-frame-badge">Chapter 5 · Dims 01–02</div>
+</div>
 </div>
 <div class="lesson-view" id="lesson-1">
   <div class="lesson-container">
@@ -826,14 +897,63 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="tk-item">Unaware = knowledge gap. The person doesn't know the standard exists or has changed. Response: education, documentation review, clear communication.</div>
 <div class="tk-item">Unwilling = motivation gap. The person knows the standard and can meet it but chooses not to. Response: accountability conversation, documentation, progressive discipline if pattern continues.</div>
 </div>
+      <div class="lf-wrap">
+<div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div>
+<div class="lf-step active">
+<div class="lf-step-num">Step 1 of 3 · Review</div>
+<div class="lf-step-title">You just read the OB card above. Can you answer it using LEAD?</div>
+<p style="font-size:13px;color:var(--mid);line-height:1.6">Mentally rehearse your response. <strong>Label</strong> the bucket. <strong>Engage</strong> the response framework (STAR-P). <strong>Apply</strong> the diagnostic or leadership frameworks, chained. <strong>Deliver</strong> at rank level and close with a value anchor. If you can do this in 90 seconds, you own this lesson.</p>
+<button class="lf-btn" onclick="lfNext(this,1)">Got it → Show me the framework chain</button>
+</div>
+<div class="lf-step">
+<div class="lf-step-num">Step 2 of 3 · Framework Chain</div>
+<div class="lf-step-title">Your framework chain for this question type</div>
+<div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Personnel Issue</div></div>
+<div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">STAR-P (structure) → 3 U's diagnostic</div></div>
+<div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Unaware / Unable / Unwilling → matched response</div></div>
+<button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button>
+</div>
+<div class="lf-step">
+<div class="lf-step-num">Step 3 of 3 · The Rep</div>
+<div class="lf-step-title">The Halligan — Do your rep</div>
+<div class="lf-prompt"><div class="lf-prompt-label">Your Scenario</div><div class="lf-prompt-text">Use the OB card question above. Set a 90-second timer. Respond out loud using LEAD. Record yourself if possible.</div></div>
+<div class="lf-timer">&#9201; 90 seconds · Respond using LEAD</div>
+<p style="font-size:12px;color:var(--gray);margin-top:10px;line-height:1.5">After your rep: What framework did you name? Did you close with a specific action? What would you change? One rep per lesson. 90 reps over 90 days.</p>
+</div>
+</div>
     </div>
     <div class="lesson-sidebar">
 <div class="lead-nav">
-<div class="lead-nav-title">LEAD Navigator<div class="lead-nav-subtitle">Applied to this lesson's board question</div></div>
-<div class="lead-nav-step"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Personnel Issue (one of the 13 buckets)</div></div></div>
-<div class="lead-nav-step"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">STAR-P (response structure)</div></div></div>
-<div class="lead-nav-step"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">3 U's &rarr; Skill/Will, chained to diagnose then decide</div></div></div>
-<div class="lead-nav-step"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">At testing rank; close on a value anchor</div></div></div>
+<div class="lead-nav-title">LEAD Navigator<div class="lead-nav-subtitle">The 3 U’s — diagnose Unaware / Unable / Unwilling before acting</div>
+</div>
+<div class="lead-nav-step">
+<div class="lead-nav-letter">L</div>
+<div>
+<div class="lead-nav-name">Label</div>
+<div class="lead-nav-app">The bucket (1 of 13) + what the assessor is scoring</div>
+</div>
+</div>
+<div class="lead-nav-step">
+<div class="lead-nav-letter">E</div>
+<div>
+<div class="lead-nav-name">Engage</div>
+<div class="lead-nav-app">The response structure: STAR-P / Five-Paragraph / ERS-CALM</div>
+</div>
+</div>
+<div class="lead-nav-step">
+<div class="lead-nav-letter">A</div>
+<div>
+<div class="lead-nav-name">Apply</div>
+<div class="lead-nav-app">Name your diagnostic frameworks — 3 U’s, Skill/Will, Glasl — chaining when warranted</div>
+</div>
+</div>
+<div class="lead-nav-step">
+<div class="lead-nav-letter">D</div>
+<div>
+<div class="lead-nav-name">Deliver</div>
+<div class="lead-nav-app">At your testing rank + close with a value anchor</div>
+</div>
+</div>
 </div>
 <span class="sbar-label">This Chapter Covers</span>
 <div class="sbar-card"><strong>Lesson 1</strong>What assessors score in the supervisory judgment dimension</div>
@@ -848,8 +968,12 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
   <div class="lesson-nav-bar">
     <button class="lnb-btn" onclick="prevLesson()">&larr; Previous</button>
     <div class="lnb-info"><div class="lnb-name">The 3 U's Diagnostic Framework</div><div class="lnb-num">Lesson 2 of 5</div></div>
-    <button class="lnb-btn primary" onclick="nextLesson()">Next &rarr;</button>
+    <button class="lnb-btn primary" onclick="nextLesson()">Next: Skill/Will Matrix &rarr;</button>
   </div>
+  <div class="dim-frame">
+<div><div class="dim-frame-num">Dimensions 01 + 02</div><div class="dim-frame-title">Problem Analysis &amp; Judgment</div><div class="dim-frame-desc">This chapter develops two of the eight assessment dimensions. Dimension 01 — diagnose the actual issue before prescribing any action. Dimension 02 — make a clear, principled decision and own it.</div></div>
+<div class="dim-frame-badge">Chapter 5 · Dims 01–02</div>
+</div>
 </div>
 <div class="lesson-view" id="lesson-2">
   <div class="lesson-container">
@@ -944,14 +1068,63 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="tk-item">High Skill/High Will: delegate and develop — these are your top performers. Neglecting them is the most common supervisory error.</div>
 <div class="tk-item">Low Skill/Low Will: direct and document — this quadrant requires the most structure and the clearest accountability. Do not confuse this with coaching.</div>
 </div>
+      <div class="lf-wrap">
+<div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div>
+<div class="lf-step active">
+<div class="lf-step-num">Step 1 of 3 · Review</div>
+<div class="lf-step-title">You just read the OB card above. Can you answer it using LEAD?</div>
+<p style="font-size:13px;color:var(--mid);line-height:1.6">Mentally rehearse your response. <strong>Label</strong> the bucket. <strong>Engage</strong> the response framework (STAR-P). <strong>Apply</strong> the diagnostic or leadership frameworks, chained. <strong>Deliver</strong> at rank level and close with a value anchor. If you can do this in 90 seconds, you own this lesson.</p>
+<button class="lf-btn" onclick="lfNext(this,1)">Got it → Show me the framework chain</button>
+</div>
+<div class="lf-step">
+<div class="lf-step-num">Step 2 of 3 · Framework Chain</div>
+<div class="lf-step-title">Your framework chain for this question type</div>
+<div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Personnel Issue</div></div>
+<div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">STAR-P (structure) → 3 U's → Skill/Will Matrix</div></div>
+<div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Name the quadrant → match the leadership style</div></div>
+<button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button>
+</div>
+<div class="lf-step">
+<div class="lf-step-num">Step 3 of 3 · The Rep</div>
+<div class="lf-step-title">The Halligan — Do your rep</div>
+<div class="lf-prompt"><div class="lf-prompt-label">Your Scenario</div><div class="lf-prompt-text">Use the OB card question above. Set a 90-second timer. Respond out loud using LEAD. Record yourself if possible.</div></div>
+<div class="lf-timer">&#9201; 90 seconds · Respond using LEAD</div>
+<p style="font-size:12px;color:var(--gray);margin-top:10px;line-height:1.5">After your rep: What framework did you name? Did you close with a specific action? What would you change? One rep per lesson. 90 reps over 90 days.</p>
+</div>
+</div>
     </div>
     <div class="lesson-sidebar">
 <div class="lead-nav">
-<div class="lead-nav-title">LEAD Navigator<div class="lead-nav-subtitle">Applied to this lesson's board question</div></div>
-<div class="lead-nav-step"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Personnel Issue (one of the 13 buckets)</div></div></div>
-<div class="lead-nav-step"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">STAR-P (response structure)</div></div></div>
-<div class="lead-nav-step"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">3 U's &rarr; Skill/Will, chained to diagnose then decide</div></div></div>
-<div class="lead-nav-step"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">At testing rank; close on a value anchor</div></div></div>
+<div class="lead-nav-title">LEAD Navigator<div class="lead-nav-subtitle">The Skill/Will Matrix — match the intervention to the quadrant</div>
+</div>
+<div class="lead-nav-step">
+<div class="lead-nav-letter">L</div>
+<div>
+<div class="lead-nav-name">Label</div>
+<div class="lead-nav-app">The bucket (1 of 13) + what the assessor is scoring</div>
+</div>
+</div>
+<div class="lead-nav-step">
+<div class="lead-nav-letter">E</div>
+<div>
+<div class="lead-nav-name">Engage</div>
+<div class="lead-nav-app">The response structure: STAR-P / Five-Paragraph / ERS-CALM</div>
+</div>
+</div>
+<div class="lead-nav-step">
+<div class="lead-nav-letter">A</div>
+<div>
+<div class="lead-nav-name">Apply</div>
+<div class="lead-nav-app">Name your diagnostic frameworks — 3 U’s, Skill/Will, Glasl — chaining when warranted</div>
+</div>
+</div>
+<div class="lead-nav-step">
+<div class="lead-nav-letter">D</div>
+<div>
+<div class="lead-nav-name">Deliver</div>
+<div class="lead-nav-app">At your testing rank + close with a value anchor</div>
+</div>
+</div>
 </div>
 <span class="sbar-label">This Chapter Covers</span>
 <div class="sbar-card"><strong>Lesson 1</strong>What assessors score in the supervisory judgment dimension</div>
@@ -966,8 +1139,12 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
   <div class="lesson-nav-bar">
     <button class="lnb-btn" onclick="prevLesson()">&larr; Previous</button>
     <div class="lnb-info"><div class="lnb-name">The Skill/Will Matrix</div><div class="lnb-num">Lesson 3 of 5</div></div>
-    <button class="lnb-btn primary" onclick="nextLesson()">Next &rarr;</button>
+    <button class="lnb-btn primary" onclick="nextLesson()">Next: Trap Scenarios &rarr;</button>
   </div>
+  <div class="dim-frame">
+<div><div class="dim-frame-num">Dimensions 01 + 02</div><div class="dim-frame-title">Problem Analysis &amp; Judgment</div><div class="dim-frame-desc">This chapter develops two of the eight assessment dimensions. Dimension 01 — diagnose the actual issue before prescribing any action. Dimension 02 — make a clear, principled decision and own it.</div></div>
+<div class="dim-frame-badge">Chapter 5 · Dims 01–02</div>
+</div>
 </div>
 <div class="lesson-view" id="lesson-3">
   <div class="lesson-container">
@@ -1043,14 +1220,63 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="tk-item">Five common trap patterns: the popular rule-breaker, the over-performer with attitude, the personal crisis excuse, the inherited problem, and the grey-area policy gap.</div>
 <div class="tk-item">The assessor is scoring your principle, not your personality. Candidates who bend the standard to avoid conflict score lower than candidates who name the conflict and address it directly.</div>
 </div>
+      <div class="lf-wrap">
+<div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div>
+<div class="lf-step active">
+<div class="lf-step-num">Step 1 of 3 · Review</div>
+<div class="lf-step-title">You just read the OB card above. Can you answer it using LEAD?</div>
+<p style="font-size:13px;color:var(--mid);line-height:1.6">Mentally rehearse your response. <strong>Label</strong> the bucket. <strong>Engage</strong> the response framework (STAR-P). <strong>Apply</strong> the diagnostic or leadership frameworks, chained. <strong>Deliver</strong> at rank level and close with a value anchor. If you can do this in 90 seconds, you own this lesson.</p>
+<button class="lf-btn" onclick="lfNext(this,1)">Got it → Show me the framework chain</button>
+</div>
+<div class="lf-step">
+<div class="lf-step-num">Step 2 of 3 · Framework Chain</div>
+<div class="lf-step-title">Your framework chain for this question type</div>
+<div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Personnel Issue</div></div>
+<div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">STAR-P (structure) → gather → 3 U's → decide</div></div>
+<div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Gather before acting → act within your authority</div></div>
+<button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button>
+</div>
+<div class="lf-step">
+<div class="lf-step-num">Step 3 of 3 · The Rep</div>
+<div class="lf-step-title">The Halligan — Do your rep</div>
+<div class="lf-prompt"><div class="lf-prompt-label">Your Scenario</div><div class="lf-prompt-text">Use the OB card question above. Set a 90-second timer. Respond out loud using LEAD. Record yourself if possible.</div></div>
+<div class="lf-timer">&#9201; 90 seconds · Respond using LEAD</div>
+<p style="font-size:12px;color:var(--gray);margin-top:10px;line-height:1.5">After your rep: What framework did you name? Did you close with a specific action? What would you change? One rep per lesson. 90 reps over 90 days.</p>
+</div>
+</div>
     </div>
     <div class="lesson-sidebar">
 <div class="lead-nav">
-<div class="lead-nav-title">LEAD Navigator<div class="lead-nav-subtitle">Applied to this lesson's board question</div></div>
-<div class="lead-nav-step"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Personnel Issue (one of the 13 buckets)</div></div></div>
-<div class="lead-nav-step"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">STAR-P (response structure)</div></div></div>
-<div class="lead-nav-step"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">3 U's &rarr; Skill/Will, chained to diagnose then decide</div></div></div>
-<div class="lead-nav-step"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">At testing rank; close on a value anchor</div></div></div>
+<div class="lead-nav-title">LEAD Navigator<div class="lead-nav-subtitle">Trap scenarios — diagnose before the reflex decision</div>
+</div>
+<div class="lead-nav-step">
+<div class="lead-nav-letter">L</div>
+<div>
+<div class="lead-nav-name">Label</div>
+<div class="lead-nav-app">The bucket (1 of 13) + what the assessor is scoring</div>
+</div>
+</div>
+<div class="lead-nav-step">
+<div class="lead-nav-letter">E</div>
+<div>
+<div class="lead-nav-name">Engage</div>
+<div class="lead-nav-app">The response structure: STAR-P / Five-Paragraph / ERS-CALM</div>
+</div>
+</div>
+<div class="lead-nav-step">
+<div class="lead-nav-letter">A</div>
+<div>
+<div class="lead-nav-name">Apply</div>
+<div class="lead-nav-app">Name your diagnostic frameworks — 3 U’s, Skill/Will, Glasl — chaining when warranted</div>
+</div>
+</div>
+<div class="lead-nav-step">
+<div class="lead-nav-letter">D</div>
+<div>
+<div class="lead-nav-name">Deliver</div>
+<div class="lead-nav-app">At your testing rank + close with a value anchor</div>
+</div>
+</div>
 </div>
 <span class="sbar-label">This Chapter Covers</span>
 <div class="sbar-card"><strong>Lesson 1</strong>What assessors score in the supervisory judgment dimension</div>
@@ -1065,8 +1291,12 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
   <div class="lesson-nav-bar">
     <button class="lnb-btn" onclick="prevLesson()">&larr; Previous</button>
     <div class="lnb-info"><div class="lnb-name">Personnel Items — The Trap Scenarios</div><div class="lnb-num">Lesson 4 of 5</div></div>
-    <button class="lnb-btn primary" onclick="nextLesson()">Next &rarr;</button>
+    <button class="lnb-btn primary" onclick="nextLesson()">Next: Documentation Language &rarr;</button>
   </div>
+  <div class="dim-frame">
+<div><div class="dim-frame-num">Dimensions 01 + 02</div><div class="dim-frame-title">Problem Analysis &amp; Judgment</div><div class="dim-frame-desc">This chapter develops two of the eight assessment dimensions. Dimension 01 — diagnose the actual issue before prescribing any action. Dimension 02 — make a clear, principled decision and own it.</div></div>
+<div class="dim-frame-badge">Chapter 5 · Dims 01–02</div>
+</div>
 </div>
 <div class="lesson-view" id="lesson-4">
   <div class="lesson-container">
@@ -1146,14 +1376,63 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="tk-item">Write behaviors, not character assessments. "Arrived at 0715" — not "has a problem with punctuality." Assessors score professional language.</div>
 <div class="tk-item">Every documentation should include: what was observed, what standard was violated, what was discussed, what is expected going forward, and when follow-up will occur.</div>
 </div>
+      <div class="lf-wrap">
+<div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div>
+<div class="lf-step active">
+<div class="lf-step-num">Step 1 of 3 · Review</div>
+<div class="lf-step-title">You just read the OB card above. Can you answer it using LEAD?</div>
+<p style="font-size:13px;color:var(--mid);line-height:1.6">Mentally rehearse your response. <strong>Label</strong> the bucket. <strong>Engage</strong> the response framework (STAR-P). <strong>Apply</strong> the diagnostic or leadership frameworks, chained. <strong>Deliver</strong> at rank level and close with a value anchor. If you can do this in 90 seconds, you own this lesson.</p>
+<button class="lf-btn" onclick="lfNext(this,1)">Got it → Show me the framework chain</button>
+</div>
+<div class="lf-step">
+<div class="lf-step-num">Step 2 of 3 · Framework Chain</div>
+<div class="lf-step-title">Your framework chain for this question type</div>
+<div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Written Exercise</div></div>
+<div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Five-Paragraph Formula (structure) → 4 documentation principles</div></div>
+<div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Specific · behavioral · impact-aware · action-oriented</div></div>
+<button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button>
+</div>
+<div class="lf-step">
+<div class="lf-step-num">Step 3 of 3 · The Rep</div>
+<div class="lf-step-title">The Halligan — Do your rep</div>
+<div class="lf-prompt"><div class="lf-prompt-label">Your Scenario</div><div class="lf-prompt-text">Use the OB card question above. Set a 90-second timer. Respond out loud using LEAD. Record yourself if possible.</div></div>
+<div class="lf-timer">&#9201; 90 seconds · Respond using LEAD</div>
+<p style="font-size:12px;color:var(--gray);margin-top:10px;line-height:1.5">After your rep: What framework did you name? Did you close with a specific action? What would you change? One rep per lesson. 90 reps over 90 days.</p>
+</div>
+</div>
     </div>
     <div class="lesson-sidebar">
 <div class="lead-nav">
-<div class="lead-nav-title">LEAD Navigator<div class="lead-nav-subtitle">Applied to this lesson's board question</div></div>
-<div class="lead-nav-step"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Personnel Issue (one of the 13 buckets)</div></div></div>
-<div class="lead-nav-step"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">STAR-P (response structure)</div></div></div>
-<div class="lead-nav-step"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">3 U's &rarr; Skill/Will, chained to diagnose then decide</div></div></div>
-<div class="lead-nav-step"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">At testing rank; close on a value anchor</div></div></div>
+<div class="lead-nav-title">LEAD Navigator<div class="lead-nav-subtitle">Documentation language that scores Written Communication</div>
+</div>
+<div class="lead-nav-step">
+<div class="lead-nav-letter">L</div>
+<div>
+<div class="lead-nav-name">Label</div>
+<div class="lead-nav-app">The bucket (1 of 13) + what the assessor is scoring</div>
+</div>
+</div>
+<div class="lead-nav-step">
+<div class="lead-nav-letter">E</div>
+<div>
+<div class="lead-nav-name">Engage</div>
+<div class="lead-nav-app">The response structure: STAR-P / Five-Paragraph / ERS-CALM</div>
+</div>
+</div>
+<div class="lead-nav-step">
+<div class="lead-nav-letter">A</div>
+<div>
+<div class="lead-nav-name">Apply</div>
+<div class="lead-nav-app">Name your diagnostic frameworks — 3 U’s, Skill/Will, Glasl — chaining when warranted</div>
+</div>
+</div>
+<div class="lead-nav-step">
+<div class="lead-nav-letter">D</div>
+<div>
+<div class="lead-nav-name">Deliver</div>
+<div class="lead-nav-app">At your testing rank + close with a value anchor</div>
+</div>
+</div>
 </div>
 <span class="sbar-label">This Chapter Covers</span>
 <div class="sbar-card"><strong>Lesson 1</strong>What assessors score in the supervisory judgment dimension</div>
@@ -1165,11 +1444,75 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="sbar-card">Assessors are not evaluating your knowledge. They are evaluating your frame — whether you think like someone who already has the rank.</div>
 </div>
   </div>
-  <div class="lesson-nav-bar">
+  <div class="mq-wrap">
+<div class="mq-lbl">Module 4 · Knowledge Check</div>
+<div class="mq-title">Check Your Understanding</div>
+<div class="mq-intro">Five questions on supervisory judgment — the 3 U’s, the Skill/Will Matrix, diagnosing before deciding, the trap scenarios, and documentation language. Answer from memory before you mark the module complete.</div>
+<div class="mq-q">
+<div class="mq-qnum">Question 1 of 5</div>
+<div class="mq-qtext">A crew member isn’t meeting a standard. Under the 3 U’s, which diagnosis is the ONLY one that justifies formal discipline?</div>
+<div class="mq-opts">
+<button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'Unaware means the standard was never communicated — the fix is communication, not discipline.')">Unaware</button>
+<button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'Unable means a skill or resource gap — the fix is coaching and support, not discipline.')">Unable</button>
+<button class="mq-opt" data-correct="1" onclick="mqAnswer(this,true,'Correct. Discipline is appropriate only when the person knows, is able, and still chooses not to.')">Unwilling</button>
+<button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'Only Unwilling does; disciplining Unaware or Unable is an officer failure.')">All three justify discipline equally</button>
+</div>
+<div class="mq-feedback"></div>
+</div>
+<div class="mq-q">
+<div class="mq-qnum">Question 2 of 5</div>
+<div class="mq-qtext">Using the Skill/Will Matrix, a High Skill / Low Will crew member needs:</div>
+<div class="mq-opts">
+<button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'That fits Low Skill / High Will — here the skill is already present.')">More training and close supervision</button>
+<button class="mq-opt" data-correct="1" onclick="mqAnswer(this,true,'Correct. They know how — the issue is engagement, so the conversation is about will, not skill.')">A motivational conversation, not instruction</button>
+<button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'Discipline is premature; diagnose the motivation gap first.')">Immediate formal discipline</button>
+<button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'That fits High Skill / High Will, not Low Will.')">Full delegation with no follow-up</button>
+</div>
+<div class="mq-feedback"></div>
+</div>
+<div class="mq-q">
+<div class="mq-qnum">Question 3 of 5</div>
+<div class="mq-qtext">What single behavior most separates a 4—5 from a 3 on a personnel question?</div>
+<div class="mq-opts">
+<button class="mq-opt" data-correct="1" onclick="mqAnswer(this,true,'Correct. Diagnosis before intervention — naming the framework — is the behavior the board is scoring.')">Diagnosing the root cause with a named framework before prescribing any action</button>
+<button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'Fluency without diagnosis still caps at 3.')">Speaking confidently and at length</button>
+<button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'Jumping to action without diagnosis is the classic 3-ceiling.')">Recommending discipline as quickly as possible</button>
+<button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'Experience is not a scored behavior; demonstrated diagnosis is.')">Citing your years of experience</button>
+</div>
+<div class="mq-feedback"></div>
+</div>
+<div class="mq-q">
+<div class="mq-qnum">Question 4 of 5</div>
+<div class="mq-qtext">Which of these is a classic personnel "trap" the assessors build into a scenario?</div>
+<div class="mq-opts">
+<button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'Traps are not unsolvable — they are designed to tempt a specific error.')">A scenario with no possible correct answer</button>
+<button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'Boards test judgment, not legal citation.')">A scenario that requires citing specific case law</button>
+<button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'That is the opposite — most traps punish jumping to discipline.')">A scenario solvable only by immediate discipline</button>
+<button class="mq-opt" data-correct="1" onclick="mqAnswer(this,true,'Correct. The trap rewards the candidate who diagnoses first and punishes the reflex decision.')">A scenario engineered to tempt you into acting before you diagnose</button>
+</div>
+<div class="mq-feedback"></div>
+</div>
+<div class="mq-q">
+<div class="mq-qnum">Question 5 of 5</div>
+<div class="mq-qtext">What makes documentation language "score" on Written Communication in a personnel context?</div>
+<div class="mq-opts">
+<button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'Jargon does not score — clarity and specificity do.')">Using as much legal jargon as possible</button>
+<button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'Vagueness fails — specific, behavioral language is what protects and scores.')">Keeping it deliberately vague to limit liability</button>
+<button class="mq-opt" data-correct="1" onclick="mqAnswer(this,true,'Correct. Observable, behavioral, standard-anchored language is what scores and what holds up.')">Objective, behavioral, specific language tied to the standard — not interpretation or character</button>
+<button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'Character attributions contaminate the record; describe behavior, not personality.')">Focusing on the employee’s personality and attitude</button>
+</div>
+<div class="mq-feedback"></div>
+</div>
+</div>
+<div class="lesson-nav-bar">
     <button class="lnb-btn" onclick="prevLesson()">&larr; Previous</button>
     <div class="lnb-info"><div class="lnb-name">Documentation Language That Scores</div><div class="lnb-num">Lesson 5 of 5</div></div>
-    <button class="lnb-btn primary" onclick="nextLesson()">Next &rarr;</button>
+    <button class="lnb-btn primary" onclick="nextLesson()">Finish &rarr;</button>
   </div>
+  <div class="dim-frame">
+<div><div class="dim-frame-num">Dimensions 01 + 02</div><div class="dim-frame-title">Problem Analysis &amp; Judgment</div><div class="dim-frame-desc">This chapter develops two of the eight assessment dimensions. Dimension 01 — diagnose the actual issue before prescribing any action. Dimension 02 — make a clear, principled decision and own it.</div></div>
+<div class="dim-frame-badge">Chapter 5 · Dims 01–02</div>
+</div>
 </div>
 <script>
 let currentLesson = 0;
@@ -1218,7 +1561,17 @@ function kcAnswer(btn){
     const m=document.createElement('span');m.className='kc-mark';m.textContent='\u2717';btn.appendChild(m);
   }
 }
+function lfNext(el,stepNum){
+  var wrap=el.closest('.lf-wrap');
+  if(!wrap)return;
+  var steps=wrap.querySelectorAll('.lf-step');
+  var dots=wrap.querySelectorAll('.lf-dot');
+  steps.forEach(function(s,k){s.classList.remove('active');if(k<stepNum)s.classList.add('done');});
+  dots.forEach(function(d,k){d.classList.remove('active');if(k<stepNum)d.classList.add('done');if(k===stepNum)d.classList.add('active');});
+  if(steps[stepNum])steps[stepNum].classList.add('active');
+}
 document.addEventListener('DOMContentLoaded',()=>showLesson(0));
 </script>
+<script>function mqAnswer(btn,correct,fb){var opts=btn.closest('.mq-opts');opts.querySelectorAll('.mq-opt').forEach(function(b){b.disabled=true;});btn.classList.add(correct?'mq-correct':'mq-wrong');if(!correct){opts.querySelectorAll('.mq-opt').forEach(function(b){if(b.getAttribute('data-correct')==='1')b.classList.add('mq-correct');});}var f=opts.parentElement.querySelector('.mq-feedback');if(f)f.textContent=fb;}</script>
 </body>
 </html>
