@@ -72,7 +72,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 .acro-row:last-child{border-bottom:none;}
 .acro-letter{background:var(--navy);color:var(--gold);font-family:'EB Garamond',serif;font-size:1.8rem;font-weight:800;display:flex;align-items:center;justify-content:center;}
 .acro-content{padding:0.9rem 1.1rem;background:white;}
-.acro-word{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:3px;}
+.acro-word{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:3px;}
 .acro-desc{font-size:0.85rem;color:var(--mid);line-height:1.55;}
 .budget-flow{display:flex;flex-direction:column;gap:0;margin:1.5rem 0;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;}
 .bf-step{display:grid;grid-template-columns:44px 1fr;border-bottom:1px solid var(--light);}
@@ -148,6 +148,53 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 .lf-btn:hover{background:var(--gold);color:var(--navy)}
 .lf-timer{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:var(--gold);padding:6px 14px;border-radius:4px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:1px;margin-top:10px}
 .lesson-main.ft>p{display:none!important}.lesson-main.ft>.callout{display:none!important}.ft-toggle{display:flex;align-items:center;gap:10px;padding:10px 16px;background:var(--navy);border-radius:6px;cursor:pointer;border:1px solid rgba(201,168,76,0.25)}.ft-toggle-switch{width:36px;height:20px;background:rgba(201,168,76,0.2);border-radius:10px;position:relative;transition:background .2s}.ft-toggle-switch.on{background:var(--gold)}.ft-toggle-knob{width:14px;height:14px;background:#fff;border-radius:50%;position:absolute;top:3px;left:3px;transition:left .2s}.ft-toggle-switch.on .ft-toggle-knob{left:19px}.ft-toggle-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}.ft-toggle-desc{font-size:11px;color:var(--mid)}.lesson-main.ft-on>p,.lesson-main.ft-on>.callout,.lesson-main.ft-on h3{display:none!important}.lesson-main.ft-on .ob-card,.lesson-main.ft-on .lf-wrap,.lesson-main.ft-on .lead-nav,.lesson-main.ft-on h2{display:block!important}
+
+/* ===== M29 v3 premium: hardening + new components ===== */
+.callout-navy{color:var(--cream);}
+.callout-navy p{color:var(--cream);}
+.callout-navy strong,.callout-navy em{color:var(--cream);}
+
+/* Knowledge Check (navy band, white cards / dark text; green=correct, red=wrong) */
+.mq-wrap{background:var(--navy);border-radius:14px;padding:2rem 2rem 1.5rem;margin:2.5rem 0;}
+.mq-head{font-family:'Cinzel',serif;font-size:1.15rem;color:var(--gold);letter-spacing:1px;margin-bottom:0.35rem;}
+.mq-sub{font-size:13px;color:var(--gray);margin-bottom:1.5rem;}
+.mq-q{background:#ffffff;border-radius:10px;padding:1.25rem 1.25rem 1rem;margin-bottom:1rem;}
+.mq-q-num{font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:0.4rem;}
+.mq-q-text{color:var(--navy);font-weight:600;font-size:1rem;line-height:1.5;margin-bottom:0.9rem;}
+.mq-opt{display:block;width:100%;text-align:left;background:var(--offwhite);border:1px solid var(--light);border-radius:8px;padding:0.7rem 0.9rem;margin-bottom:0.5rem;color:var(--mid);font-size:0.93rem;cursor:pointer;font-family:inherit;line-height:1.45;}
+.mq-opt:hover{border-color:var(--gold);}
+.mq-opt.correct{background:#E3F0E8;border-color:var(--green);color:var(--green);font-weight:600;}
+.mq-opt.wrong{background:#F4E2E2;border-color:var(--red);color:var(--red);}
+.mq-fb{font-size:0.88rem;line-height:1.55;color:var(--mid);margin-top:0.6rem;padding:0.7rem 0.9rem;background:var(--offwhite);border-left:3px solid var(--gold);border-radius:4px;display:none;}
+.mq-fb.show{display:block;}
+
+/* Monroe's annotated 5/5 model answer */
+.mon-wrap{border:1px solid var(--light);border-radius:14px;overflow:hidden;margin:2rem 0;}
+.mon-head{background:var(--navy);padding:1.1rem 1.4rem;}
+.mon-head-title{font-family:'Cinzel',serif;font-size:1.05rem;color:var(--gold);letter-spacing:0.5px;}
+.mon-head-sub{font-size:12.5px;color:var(--gray);margin-top:0.25rem;}
+.mon-row{display:grid;grid-template-columns:56px 1fr;border-top:1px solid var(--light);}
+.mon-letter{background:var(--offwhite);color:var(--gold3);font-family:'Cinzel',serif;font-weight:800;font-size:1.45rem;display:flex;align-items:center;justify-content:center;border-right:1px solid var(--light);}
+.mon-cell{padding:1rem 1.25rem;background:#ffffff;}
+.mon-label{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:0.35rem;}
+.mon-say{color:var(--navy);font-size:0.96rem;line-height:1.55;font-style:italic;margin-bottom:0.5rem;}
+.mon-why{color:var(--mid);font-size:0.86rem;line-height:1.5;border-left:3px solid var(--gold);padding-left:0.7rem;}
+
+/* Lifecycle infographic (navy figure, cream text, SVG fills via presentation attrs) */
+.lcv-fig{background:var(--navy);border-radius:14px;padding:1.75rem 1.5rem 1.4rem;margin:2rem 0;}
+.lcv-title{font-family:'Cinzel',serif;color:var(--gold);font-size:1rem;letter-spacing:1px;text-align:center;margin-bottom:0.25rem;}
+.lcv-sub{color:var(--gray);font-size:12px;text-align:center;margin-bottom:1.1rem;}
+.lcv-svg{display:block;width:100%;height:auto;}
+.lcv-legend{display:flex;flex-wrap:wrap;gap:0.9rem 1.3rem;justify-content:center;margin-top:1.1rem;}
+.lcv-leg{display:flex;align-items:center;gap:7px;color:var(--cream);font-size:12px;}
+.lcv-dot{width:11px;height:11px;border-radius:2px;display:inline-block;}
+.lcv-note{color:var(--gray);font-size:11.5px;text-align:center;margin-top:0.95rem;line-height:1.55;}
+
+
+/* M29 v3: fix pre-existing invisible-text in LEAD nav + Fast Track on navy */
+.lead-nav-name{color:var(--gold);}
+.ft-toggle-desc{color:var(--gray);}
+.lead-nav-subtitle{color:var(--gray);font-size:12px;line-height:1.4;margin-top:2px;}
 </style>
 </head>
 <body>
@@ -253,6 +300,16 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
       </div>
     </div>
   </div>
+
+<h2>How Budgets Are Built — From Line Items to Priorities</h2>
+<p>Knowing where the money comes from is half the picture. The other half is how it gets allocated — the <strong>method</strong> a government uses to turn revenue into a budget. The method shapes what kind of case actually wins funding, so a Captain who understands it argues on the decision-maker’s terms instead of their own.</p>
+<div class="framework-grid">
+  <div class="fw-card"><div class="fw-card-label">Traditional</div><div class="fw-card-title">Line-Item / Incremental</div><div class="fw-card-desc">Last year’s budget plus or minus a percentage, organized by object of expenditure. Simple and familiar, but slow to adapt and it hides what the money actually buys for the community.</div></div>
+  <div class="fw-card"><div class="fw-card-label">Mid-tier</div><div class="fw-card-title">Program Budgeting</div><div class="fw-card-desc">Money organized around programs and services (suppression, EMS, prevention) rather than line items. Begins to connect dollars to what the department delivers.</div></div>
+  <div class="fw-card"><div class="fw-card-label">Contemporary</div><div class="fw-card-title">Priority-Based Budgeting (PBB)</div><div class="fw-card-desc">Resources ranked against the community’s strategic priorities and the results each program produces. Funding follows outcomes, not history.</div></div>
+</div>
+<div class="callout callout-teal"><div class="callout-label">The Contemporary Shift</div><p>The Government Finance Officers Association’s <strong>Rethinking Budgeting</strong> initiative is steadily moving local governments away from incremental line-item budgeting toward <strong>priority-based and outcome budgeting</strong> tied to the strategic plan — GFOA and the IAFC have even built joint “Fire Service 101 for Finance Officers” resources around the shift. For a promotional candidate, the takeaway is concrete: the modern budget question is no longer “what did we spend last year?” but <strong>“what community outcome does this resource produce, and how does it rank against everything else the city is trying to accomplish?”</strong> The officer who frames a request in outcome-and-priority language is speaking the language budgets are increasingly built in.</p></div>
+
 </div>
 <div class="lesson-sidebar">
 <div class="ft-toggle" onclick="toggleFT(this)" style="margin-bottom:16px;max-width:320px">
@@ -260,7 +317,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div><div class="ft-toggle-label">Fast Track Mode</div><div class="ft-toggle-desc">Full lesson content</div></div>
 </div>
 
-<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Applied to this lesson's board question</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Operating vs Capital Budget Framework → Line-Item Management → Cost-Per-Call → BSC Financial Perspective</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the budget category → apply the framework → justify with data → close with Discipline</div></div></div></div>
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Budget structure & municipal finance</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">ERS — Explain the principle, give a recent example, state it at the rank you are testing for</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Operating vs Capital budget → Fund structure (General · Special Revenue · Enterprise) → Budgeting method: line-item · program · priority-based (PBB)</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Name the budget structure → apply the method → ground it in data → close with a value anchor (Stewardship)</div></div></div></div>
 
   <span class="sbar-label">Four Budget Sources</span>
   <div class="sbar-card"><strong>General Fund</strong>Primary source. Tax revenue. Competes with all other city departments.</div>
@@ -277,7 +334,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="ob-card">
   <div class="ob-header"><div class="ob-label">Oral Board — Budget Fundamentals</div></div>
   <div class="ob-body">
-    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"Describe your understanding of municipal budget structure — the basics and how you would apply it in a real scenario."</div><div class="ob-note">Name the budget justification process: identify the need with data, quantify the cost and benefit, present it in the language decision-makers use. Show financial literacy.</div></div></div>
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"Walk us through how your department is funded, and tell us what financial accountability means at the Captain level."</div><div class="ob-note">ERS structure. Name the funding reality (general-fund competition; fund types), name a budgeting method (line-item vs priority-based), and connect your role to stewardship of public resources — not just spending a line.</div></div></div>
   </div>
 </div>
 
@@ -288,7 +345,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
   <div class="tk-item">LEAD integration: Label this as a Budget Resource Management question, Engage the lesson framework, Address impact, Drive to action.</div>
 </div>
 
-<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Operating vs Capital Budget Framework → Line-Item Management → Cost-Per-Call → BSC Financial Perspective</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the budget category → apply the framework → justify with data → close with Discipline</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response structure. Apply the content frameworks to the scenario. Deliver at the rank you’re testing for and close with a value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Operating vs Capital budget → Fund structure (General · Special Revenue · Enterprise) → Budgeting method: line-item · program · priority-based (PBB)</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Name the budget structure → apply the method → ground it in data → close with a value anchor (Stewardship)</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
 <div class="lesson-nav-bar">
   <button class="lnb-btn" disabled>← Previous</button>
   <div class="lnb-info"><div class="lnb-name">Budget Fundamentals</div><div class="lnb-num">Lesson 1 of 6</div></div>
@@ -355,7 +412,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
   </div>
 </div>
 <div class="lesson-sidebar">
-<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Applied to this lesson's board question</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Operating vs Capital Budget Framework → Line-Item Management → Cost-Per-Call → BSC Financial Perspective</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the budget category → apply the framework → justify with data → close with Discipline</div></div></div></div>
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">The annual cycle & your input window</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">ERS — principle, recent example, stated at rank</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">The annual budget cycle → locate the Captain’s input window → document the need with data (equipment · training · incident records)</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Locate the cycle phase → name your input window → document proactively → close with a value anchor (Stewardship)</div></div></div></div>
 
   <span class="sbar-label">5-Phase Annual Cycle</span>
   <div class="sbar-card"><strong>Phase 1</strong>Needs assessment — Captain's primary input window. 5–7 months out.</div>
@@ -371,7 +428,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="ob-card">
   <div class="ob-header"><div class="ob-label">Oral Board — The Budget Process</div></div>
   <div class="ob-body">
-    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"Describe your understanding of the annual budget cycle and how you would apply it in a real scenario."</div><div class="ob-note">Name the budget justification process: identify the need with data, quantify the cost and benefit, present it in the language decision-makers use. Show financial literacy.</div></div></div>
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"A firefighter tells you the department never has money for what the crews actually need. As a company officer, what can you really do about that?"</div><div class="ob-note">Locate the Captain’s input window in the annual cycle — the needs-assessment phase, months before submission. Document needs with data proactively rather than complaining after the decisions are made.</div></div></div>
   </div>
 </div>
 
@@ -382,7 +439,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
   <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
 </div>
 
-<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Operating vs Capital Budget Framework → Line-Item Management → Cost-Per-Call → BSC Financial Perspective</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the budget category → apply the framework → justify with data → close with Discipline</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response structure. Apply the content frameworks to the scenario. Deliver at the rank you’re testing for and close with a value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">The annual budget cycle → locate the Captain’s input window → document the need with data (equipment · training · incident records)</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Locate the cycle phase → name your input window → document proactively → close with a value anchor (Stewardship)</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
 <div class="lesson-nav-bar">
   <button class="lnb-btn" onclick="prevLesson()">← Budget Fundamentals</button>
   <div class="lnb-info"><div class="lnb-name">The Budget Process</div><div class="lnb-num">Lesson 2 of 6</div></div>
@@ -406,7 +463,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
       <div class="acro-letter">PRB</div>
       <div class="acro-content">
         <div class="acro-word">State the Problem with Data, Not Opinion</div>
-        <div class="acro-desc">"Our SCBA sets are aging" is an opinion. "47% of our SCBA inventory has exceeded the NFPA 1852 ten-year service life. In the last fiscal year, 3 units required emergency maintenance during active incidents. Per NFPA data, respiratory equipment failures in structural firefighting are a leading cause of near-miss events." That is a data-supported problem statement. Decision-makers fund solutions to documented problems, not general preferences.</div>
+        <div class="acro-desc">"Our SCBA sets are aging" is an opinion. "47% of our SCBA fleet is past the manufacturer’s recommended service life and our oldest units no longer meet the current SCBA compliance edition. (Care, maintenance, and retirement of SCBA now fall under NFPA 1850 — the 2026 consolidation of the former NFPA 1851/1852 — while SCBA performance and design sit in NFPA 1970.) In the last fiscal year, 3 units required emergency repair during active incidents. Respiratory-equipment failures in structural firefighting are a recognized near-miss driver." That is a data-supported problem statement. Decision-makers fund solutions to documented problems, not general preferences.</div>
       </div>
     </div>
     <div class="acro-row">
@@ -439,15 +496,18 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
     </div>
   </div>
   <h2>The Grant Opportunity — Working the AFG and SAFER Process</h2>
-  <p>FEMA's Assistance to Firefighters Grants (AFG) and Staffing for Adequate Fire and Emergency Response (SAFER) grants provide competitive federal funding for equipment and staffing. The Captain who understands these programs — their cycles, their eligibility requirements, their scoring criteria — can position their department to compete effectively rather than leaving available funding uncaptured.</p>
+  <p>FEMA's Assistance to Firefighters Grants (AFG) and Staffing for Adequate Fire and Emergency Response (SAFER) grants provide competitive federal funding for equipment and staffing. Both programs were reauthorized through the Fire Grants and Safety Act (P.L. 118-67, signed July 2024), which extends their sunset to September 30, 2030 at a combined $750 million per year and adds dedicated recruitment-and-retention grants under SAFER — so as of 2025–2026 they are stable, fundable programs, not a vanishing resource. The Captain who understands these programs — their cycles, their eligibility requirements, their scoring criteria — can position their department to compete effectively rather than leaving available funding uncaptured.</p>
   <ul>
     <li><strong>AFG</strong> funds equipment, training, and wellness/fitness programs for the operational fire service. Applications are scored on need, cost-effectiveness, and alignment with FEMA priorities. Departments with well-documented need histories and specific, measurable project descriptions score higher.</li>
     <li><strong>SAFER</strong> funds staffing to achieve and maintain minimum staffing levels. The application requires demonstration of need, financial sustainability plan for after the grant period, and community risk documentation. Applications that connect staffing to specific service level data are more competitive.</li>
     <li><strong>The Captain's role:</strong> Maintain the documentation — incident records, response time data, equipment condition logs, training records — that makes a compelling grant application possible when the window opens.</li>
   </ul>
+
+<div class="callout callout-gold"><div class="callout-label">The Translation Principle</div><p>The single most common reason a sound request dies is that it was argued in operational language to a decision-maker who thinks in community and political terms. “Our UHU is 0.47 during the evening peak” is true — and invisible to a city manager. Translated, it becomes: “Twelve thousand residents in the northeast district wait roughly four minutes longer for an ambulance on weekday evenings.” Same fact, decision-maker’s language. Strong requests <strong>lead with constituent impact</strong> and reach for the operational data only as proof — the architecture you’ll see in the Monroe’s Motivated Sequence model answer in the assessment lesson.</p></div>
+
 </div>
 <div class="lesson-sidebar">
-<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Applied to this lesson's board question</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Operating vs Capital Budget Framework → Line-Item Management → Cost-Per-Call → BSC Financial Perspective</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the budget category → apply the framework → justify with data → close with Discipline</div></div></div></div>
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Making the fundable case</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Monroe’s Motivated Sequence (persuasive request) · Five-Paragraph (written brief)</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Five elements of a fundable request → Monroe’s Motivated Sequence → the Translation Principle (operational data → decision-maker language)</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">State the problem in data → translate to constituent impact → name the ask → close with a value anchor (Stewardship)</div></div></div></div>
 
   <span class="sbar-label">Five Elements of Fundable Requests</span>
   <div class="sbar-card"><strong>Problem with Data</strong>Not opinion. Documented evidence with numbers.</div>
@@ -464,7 +524,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="ob-card">
   <div class="ob-header"><div class="ob-label">Oral Board — Justifying Resources</div></div>
   <div class="ob-body">
-    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"Describe your understanding of the five elements of a fundable resource request and how you would apply it in a real scenario."</div><div class="ob-note">Name the budget justification process: identify the need with data, quantify the cost and benefit, present it in the language decision-makers use. Show financial literacy.</div></div></div>
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"Your station needs a piece of equipment that isn’t in this year’s budget. Make the case to me as if I’m the city manager."</div><div class="ob-note">Run Monroe’s / the five elements: a data problem statement, the risk of not funding, cost-benefit, alternatives with trade-offs, and alignment to council priorities. Translate operational data into constituent-impact language.</div></div></div>
   </div>
 </div>
 
@@ -475,7 +535,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
   <div class="tk-item">LEAD integration: Label this as a Budget Resource Management question, Engage the lesson framework, Address impact, Drive to action.</div>
 </div>
 
-<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Operating vs Capital Budget Framework → Line-Item Management → Cost-Per-Call → BSC Financial Perspective</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the budget category → apply the framework → justify with data → close with Discipline</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response structure. Apply the content frameworks to the scenario. Deliver at the rank you’re testing for and close with a value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Five elements of a fundable request → Monroe’s Motivated Sequence → the Translation Principle (operational data → decision-maker language)</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">State the problem in data → translate to constituent impact → name the ask → close with a value anchor (Stewardship)</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
 <div class="lesson-nav-bar">
   <button class="lnb-btn" onclick="prevLesson()">← The Budget Process</button>
   <div class="lnb-info"><div class="lnb-name">Justifying Resources</div><div class="lnb-num">Lesson 3 of 6</div></div>
@@ -531,7 +591,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
   </div>
 </div>
 <div class="lesson-sidebar">
-<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Applied to this lesson's board question</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Operating vs Capital Budget Framework → Line-Item Management → Cost-Per-Call → BSC Financial Perspective</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the budget category → apply the framework → justify with data → close with Discipline</div></div></div></div>
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Prioritizing under constraint</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Five-Paragraph (written / in-basket directive)</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Prioritization discipline (life-safety → mission-critical → discretionary) → Pareto (protect the high-leverage 20%) → Eisenhower (sort before acting)</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Sort all items first → prioritize by risk and impact → protect life-safety → close with a value anchor (Stewardship)</div></div></div></div>
 
   <span class="sbar-label">Prioritization Hierarchy</span>
   <div class="sbar-card"><strong>1st</strong>Life safety — PPE, SCBA, building systems. Non-negotiable.</div>
@@ -548,7 +608,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="ob-card">
   <div class="ob-header"><div class="ob-label">Oral Board — Managing Within Constraints</div></div>
   <div class="ob-body">
-    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"Describe your understanding of the prioritization discipline and how you would apply it in a real scenario."</div><div class="ob-note">Name the budget justification process: identify the need with data, quantify the cost and benefit, present it in the language decision-makers use. Show financial literacy.</div></div></div>
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"Mid-year, you’re directed to cut your station’s non-personnel budget by 15%. Talk me through your approach."</div><div class="ob-note">Sort all items first (Eisenhower), then prioritize by hierarchy — life-safety → mission-critical → discretionary — protecting the high-leverage 20% (Pareto). Document for the next cycle and frame as stewardship, not advocacy.</div></div></div>
   </div>
 </div>
 
@@ -559,7 +619,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
   <div class="tk-item">LEAD integration: Label this as a Budget Resource Management question, Engage the lesson framework, Address impact, Drive to action.</div>
 </div>
 
-<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Operating vs Capital Budget Framework → Line-Item Management → Cost-Per-Call → BSC Financial Perspective</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the budget category → apply the framework → justify with data → close with Discipline</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response structure. Apply the content frameworks to the scenario. Deliver at the rank you’re testing for and close with a value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Prioritization discipline (life-safety → mission-critical → discretionary) → Pareto (protect the high-leverage 20%) → Eisenhower (sort before acting)</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Sort all items first → prioritize by risk and impact → protect life-safety → close with a value anchor (Stewardship)</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
 <div class="lesson-nav-bar">
   <button class="lnb-btn" onclick="prevLesson()">← Justifying Resources</button>
   <div class="lnb-info"><div class="lnb-name">Managing Constraints</div><div class="lnb-num">Lesson 4 of 6</div></div>
@@ -584,7 +644,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
       <div class="acro-letter">SVC</div>
       <div class="acro-content">
         <div class="acro-word">Know Your Apparatus Service Life Standards</div>
-        <div class="acro-desc">NFPA 1911 (Standard for the Inspection, Maintenance, Testing, and Retirement of In-Service Automotive Fire Apparatus) establishes guidance on apparatus service life and retirement criteria. Front-line apparatus is typically replaced at 10–15 years; reserve apparatus extends that life. The Captain who knows where their apparatus sits on this timeline can anticipate capital needs and document accordingly.</div>
+        <div class="acro-desc">NFPA 1910 (Standard for the Inspection, Maintenance, Refurbishment, Testing, and Retirement of In-Service Emergency Vehicles and Marine Firefighting Vessels — the 2024 consolidation of the former NFPA 1910 and 1912) establishes guidance on apparatus service life and retirement criteria. The companion apparatus design standards (former NFPA 1901, 1906, and 1917) are now consolidated as NFPA 1900. Front-line apparatus is typically replaced at 10–15 years; reserve apparatus extends that life. The Captain who knows where their apparatus sits on this timeline can anticipate capital needs and document accordingly.</div>
       </div>
     </div>
     <div class="acro-row">
@@ -608,12 +668,56 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
     <span class="callout-label">The Captain's Capital Responsibility in Plain Terms</span>
     <p>You are not expected to build the capital budget. You are expected to provide the raw material that makes a capital request defensible: accurate maintenance records, documented reliability incidents, honest condition assessments, and specific operational impact data when apparatus is unavailable. The battalion chief and chief officer translate that material into the capital request. Your job is to make sure the material is there, current, and honest. The captain who overstates condition to avoid the paperwork of a capital process, and the one who understates it to avoid scrutiny of their management, both fail this responsibility.</p>
   </div>
+
+<h2>The Contemporary Reality — A Market That Has Changed</h2>
+<p>The comfortable version of capital planning — order a rig, take delivery in a year, replace front-line apparatus on a tidy schedule — no longer matches the market. A current Captain candidate who describes the old world sounds dated; one who reasons about the new one sounds ready.</p>
+<p>Since 2020, the price of a new engine has roughly doubled — in 2025 Senate testimony the IAFF put it near $589,000 in 2020 versus about $1.1 million in 2025 — and delivery times that once ran 12 to 18 months now commonly stretch two to four years, with some orders quoted at four and a half. Industry consolidation is part of the story: three manufacturers (REV Group, Oshkosh/Pierce, and Rosenbauer) now build more than 70% of U.S. apparatus, and the delays and pricing drew a 2025 U.S. Senate hearing and antitrust scrutiny. The operational consequence is what a board wants you to reason about: departments are ordering years ahead, holding aging apparatus in front-line service past its planned retirement, watching reserve fleets thin out, and turning to stock or refurbished units as a bridge.</p>
+<div class="callout callout-red"><div class="callout-label">The Reality Check</div><p>If your replacement engine is three to four years out, the planning decision is <strong>today</strong>, not the year you need the truck. The officer who waits until an apparatus is failing to start the conversation has already lost three years. Condition documentation, lead-time planning, and a defensible reserve strategy are now core capital-planning competencies — not paperwork.</p></div>
+<h2>Thinking in Lifecycle, Not Purchase Price</h2>
+<p>The mature financial frame for any major asset is <strong>Total Cost of Ownership</strong>: not the sticker price, but the full arc of plan → procure → front-line service → reserve → retirement, including maintenance, reliability, and the cost of unavailability. The Captain’s contribution lives at the front of that arc — the condition records and reliability data that make the replacement case defensible — and at the planning end, where lead time now reshapes when the request must start.</p>
+
+<div class="lcv-fig">
+  <div class="lcv-title">The Apparatus Lifecycle — Plan Backward From Delivery</div>
+  <div class="lcv-sub">Front-line service of a pumper typically runs ~10–15 years; with 2–4 year lead times, the replacement decision starts long before retirement.</div>
+  <svg class="lcv-svg" viewBox="0 0 720 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Apparatus lifecycle timeline">
+    <!-- phase bars -->
+    <rect x="20"  y="78" width="150" height="38" rx="5" fill="#C9A84C"/>
+    <rect x="170" y="78" width="250" height="38" rx="5" fill="#006B6B"/>
+    <rect x="420" y="78" width="180" height="38" rx="5" fill="#8FA8C0"/>
+    <rect x="600" y="78" width="100" height="38" rx="5" fill="#B22222"/>
+    <!-- phase labels (inside) -->
+    <text x="95"  y="102" text-anchor="middle" font-family="Cinzel,serif" font-size="12" fill="#0C2340" font-weight="700">PLAN &amp; PROCURE</text>
+    <text x="295" y="102" text-anchor="middle" font-family="Cinzel,serif" font-size="12" fill="#F5F0E8" font-weight="700">FRONT-LINE SERVICE</text>
+    <text x="510" y="102" text-anchor="middle" font-family="Cinzel,serif" font-size="12" fill="#0C2340" font-weight="700">RESERVE FLEET</text>
+    <text x="650" y="102" text-anchor="middle" font-family="Cinzel,serif" font-size="11" fill="#F5F0E8" font-weight="700">RETIRE</text>
+    <!-- year markers below -->
+    <text x="95"  y="134" text-anchor="middle" font-family="EB Garamond,serif" font-size="12" fill="#8FA8C0">Years -4 to 0</text>
+    <text x="295" y="134" text-anchor="middle" font-family="EB Garamond,serif" font-size="12" fill="#8FA8C0">Years 0–12</text>
+    <text x="510" y="134" text-anchor="middle" font-family="EB Garamond,serif" font-size="12" fill="#8FA8C0">Years 12–20</text>
+    <text x="650" y="134" text-anchor="middle" font-family="EB Garamond,serif" font-size="12" fill="#8FA8C0">20+</text>
+    <!-- order-now callout over plan phase -->
+    <text x="95" y="56" text-anchor="middle" font-family="EB Garamond,serif" font-size="13" fill="#C9A84C" font-style="italic">order now —</text>
+    <text x="95" y="71" text-anchor="middle" font-family="EB Garamond,serif" font-size="13" fill="#C9A84C" font-style="italic">2–4 yr lead time</text>
+    <line x1="95" y1="60" x2="95" y2="76" stroke="#C9A84C" stroke-width="1.5"/>
+    <!-- TCO bracket under front-line+reserve -->
+    <text x="360" y="168" text-anchor="middle" font-family="EB Garamond,serif" font-size="12.5" fill="#F5F0E8">Total Cost of Ownership = purchase + maintenance + reliability + cost of unavailability</text>
+  </svg>
+  <div class="lcv-legend">
+    <span class="lcv-leg"><span class="lcv-dot" style="background:#C9A84C"></span>Plan &amp; procure</span>
+    <span class="lcv-leg"><span class="lcv-dot" style="background:#006B6B"></span>Front-line</span>
+    <span class="lcv-leg"><span class="lcv-dot" style="background:#8FA8C0"></span>Reserve</span>
+    <span class="lcv-leg"><span class="lcv-dot" style="background:#B22222"></span>Retire / replace</span>
+  </div>
+  <div class="lcv-note">Figures reflect 2025–2026 market conditions (FAMA/IAFF reporting); local replacement criteria and service-life standards (NFPA 1910) govern specific decisions.</div>
+</div>
+
+
 </div>
 <div class="lesson-sidebar">
-<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Applied to this lesson's board question</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Operating vs Capital Budget Framework → Line-Item Management → Cost-Per-Call → BSC Financial Perspective</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the budget category → apply the framework → justify with data → close with Discipline</div></div></div></div>
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Capital & lifecycle planning</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">ERS / Five-Paragraph</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Capital Improvement Plan → Total Cost of Ownership (lifecycle) → replacement scoring → lead-time & cost-escalation planning</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Document condition → build the lifecycle case → plan for lead time → close with a value anchor (Stewardship)</div></div></div></div>
 
   <span class="sbar-label">Apparatus Replacement</span>
-  <div class="sbar-card"><strong>NFPA 1911</strong>Service life guidance. Front-line: 10–15 years. Know where yours sits.</div>
+  <div class="sbar-card"><strong>NFPA 1910</strong>Service life guidance. Front-line: 10–15 years. Know where yours sits.</div>
   <div class="sbar-card"><strong>Maintenance as Evidence</strong>Every repair, out-of-service event, and reliability incident is capital justification data.</div>
   <div class="sbar-card"><strong>Total Cost of Ownership</strong>Purchase price + maintenance savings + operational availability = the real financial case.</div>
   <span class="sbar-label">CIP Process</span>
@@ -626,7 +730,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="ob-card">
   <div class="ob-header"><div class="ob-label">Oral Board — Capital Planning</div></div>
   <div class="ob-body">
-    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"Describe your understanding of apparatus replacement planning and how you would apply it in a real scenario."</div><div class="ob-note">Name the budget justification process: identify the need with data, quantify the cost and benefit, present it in the language decision-makers use. Show financial literacy.</div></div></div>
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"A front-line engine is reaching end of life and a replacement won’t arrive for three to four years. How do you plan for that?"</div><div class="ob-note">Lifecycle / Total-Cost-of-Ownership thinking, relentless condition documentation, lead-time and cost-escalation planning, a reserve-fleet strategy, and stock or refurbished units as a bridge.</div></div></div>
   </div>
 </div>
 
@@ -637,7 +741,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
   <div class="tk-item">LEAD integration: Label this as a Budget Resource Management question, Engage the lesson framework, Address impact, Drive to action.</div>
 </div>
 
-<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Operating vs Capital Budget Framework → Line-Item Management → Cost-Per-Call → BSC Financial Perspective</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the budget category → apply the framework → justify with data → close with Discipline</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response structure. Apply the content frameworks to the scenario. Deliver at the rank you’re testing for and close with a value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Capital Improvement Plan → Total Cost of Ownership (lifecycle) → replacement scoring → lead-time & cost-escalation planning</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Document condition → build the lifecycle case → plan for lead time → close with a value anchor (Stewardship)</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
 <div class="lesson-nav-bar">
   <button class="lnb-btn" onclick="prevLesson()">← Managing Constraints</button>
   <div class="lnb-info"><div class="lnb-name">Capital Planning</div><div class="lnb-num">Lesson 5 of 6</div></div>
@@ -676,7 +780,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
   </div>
 </div>
 <div class="lesson-sidebar">
-<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Applied to this lesson's board question</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Operating vs Capital Budget Framework → Line-Item Management → Cost-Per-Call → BSC Financial Perspective</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the budget category → apply the framework → justify with data → close with Discipline</div></div></div></div>
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Budget scenarios on the board</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Five-Paragraph (written / in-basket) · Monroe’s (funding presentation)</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Size up the directive → prioritize (Pareto / Eisenhower) → structure the written response (Five-Paragraph)</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Quantify the constraint → prioritize by hierarchy → document for the next cycle → close with a value anchor (Stewardship)</div></div></div></div>
 
   <span class="sbar-label">What Assessors Score</span>
   <div class="sbar-card">Stewardship mindset · data literacy · organizational perspective · specific and structured response · transparency and documentation discipline.</div>
@@ -690,7 +794,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="ob-card">
   <div class="ob-header"><div class="ob-label">Oral Board — Assessment Center Application</div></div>
   <div class="ob-body">
-    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"You receive a scenario about budget resource management. Walk me through your complete response using the frameworks from this chapter."</div><div class="ob-note">Use LEAD: Label the bucket (Budget Resource Management), Engage the specific framework (reference Practice Scenario — Budget Reduction explicitly), Address the operational and organizational impact, Drive to a concrete first action with a timeline.</div></div></div>
+    <div class="ob-q"><span class="ob-q-tag">Captain</span><div><div class="ob-q-text">"Your in-basket contains a memo directing a 15% non-personnel cut for the rest of the fiscal year. Draft your response."</div><div class="ob-note">Five-Paragraph written structure. Calculate the actual dollar figure, apply the prioritization hierarchy to specific categories, name amounts, document for the future cycle, and address crew communication explicitly.</div></div></div>
   </div>
 </div>
 
@@ -701,7 +805,69 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
   <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
 </div>
 
-<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Operating vs Capital Budget Framework → Line-Item Management → Cost-Per-Call → BSC Financial Perspective</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the budget category → apply the framework → justify with data → close with Discipline</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response structure. Apply the content frameworks to the scenario. Deliver at the rank you’re testing for and close with a value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Size up the directive → prioritize (Pareto / Eisenhower) → structure the written response (Five-Paragraph)</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Quantify the constraint → prioritize by hierarchy → document for the next cycle → close with a value anchor (Stewardship)</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+
+<h2>What a 5/5 Sounds Like — A Funding Request Built on Monroe’s Motivated Sequence</h2>
+<p>The most common high-value budget exercise is a request to decision-makers — a capital ask, a staffing request, a grant-matched purchase. Delivered as a presentation, it is built on <strong>Monroe’s Motivated Sequence</strong>, which works because it follows how people actually move toward a decision. Here is a capital-replacement request, annotated for why each move scores.</p>
+<div class="mon-wrap">
+  <div class="mon-head"><div class="mon-head-title">5/5 Model — Apparatus Replacement Request to the City Manager</div><div class="mon-head-sub">Monroe’s Motivated Sequence · Captain / Managing Officer · leads with constituent impact</div></div>
+  <div class="mon-row"><div class="mon-letter">A</div><div class="mon-cell"><div class="mon-label">Attention</div><div class="mon-say">“Engine 1 protects the 9,000 residents of our downtown core. It is now thirteen years old, two years past our planned front-line retirement, because its replacement is on a three-year delivery backorder.”</div><div class="mon-why">Opens on the community, not the equipment. Names a number and frames the age problem as a delivery-market reality — signals the officer understands the current procurement world.</div></div></div>
+  <div class="mon-row"><div class="mon-letter">N</div><div class="mon-cell"><div class="mon-label">Need</div><div class="mon-say">“In the last twelve months Engine 1 was out of service for repair on nine occasions, each time backfilled by a reserve unit that is itself eighteen years old. We are one breakdown away from a coverage gap in our highest-call district.”</div><div class="mon-why">Translates reliability data into a risk the decision-maker owns — a coverage gap for residents — rather than a maintenance complaint. This is the Translation Principle in action.</div></div></div>
+  <div class="mon-row"><div class="mon-letter">S</div><div class="mon-cell"><div class="mon-label">Satisfaction</div><div class="mon-say">“Authorizing the replacement order now secures a build slot and locks today’s price against further escalation. Total cost of ownership — including the maintenance and downtime we are absorbing on the current unit — favors replacement over another repair cycle.”</div><div class="mon-why">Names the specific, data-supported solution and reaches for Total Cost of Ownership, not sticker price. Shows the officer thinks in lifecycle, not line item.</div></div></div>
+  <div class="mon-row"><div class="mon-letter">V</div><div class="mon-cell"><div class="mon-label">Visualization</div><div class="mon-say">“With the order placed this cycle, we take delivery in roughly three years as the current engine reaches the end of safe service — no coverage gap, a healthy reserve, and a fleet plan we can defend at the next budget hearing.”</div><div class="mon-why">Paints the after-state. Connects the ask back to organizational credibility and the next budget cycle — a Managing-Officer perspective.</div></div></div>
+  <div class="mon-row"><div class="mon-letter">A</div><div class="mon-cell"><div class="mon-label">Action</div><div class="mon-say">“I’m requesting authorization this cycle to place the replacement order, with the purchase programmed into the capital improvement plan. This reflects our stewardship of both public dollars and the reliability the community depends on.”</div><div class="mon-why">A specific ask with a timeline, tied to the CIP — and it closes on a value anchor (stewardship) that the whole request earned, rather than appending it.</div></div></div>
+</div>
+
+<div class="mq-wrap">
+  <div class="mq-head">Knowledge Check</div>
+  <div class="mq-sub">Five questions across the chapter. Testing yourself is how the material sticks — pick an answer to see why it’s right or wrong.</div>
+
+  <div class="mq-q">
+    <div class="mq-q-num">Question 1 · Budget Structure</div>
+    <div class="mq-q-text">Most fire department operations are funded from the municipal general fund. What does that fact tell a Captain about resource requests?</div>
+    <button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'fb1')">The department’s funding is guaranteed because public safety is a core service.</button>
+    <button class="mq-opt" data-correct="1" onclick="mqAnswer(this,true,'fb1')">Fire competes with police, parks, and public works for the same pool, so requests must compete on impact, not entitlement.</button>
+    <button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'fb1')">General-fund money can only be spent on personnel, so equipment must come from grants.</button>
+    <div class="mq-fb" id="fb1">The general fund is a shared, competitive pool. That’s exactly why the way a request is framed — impact and priority, not “we deserve it” — determines whether it survives.</div>
+  </div>
+
+  <div class="mq-q">
+    <div class="mq-q-num">Question 2 · Budgeting Methods</div>
+    <div class="mq-q-text">A city moving from line-item to priority-based budgeting (PBB) changes what most about a Captain’s request?</div>
+    <button class="mq-opt" data-correct="1" onclick="mqAnswer(this,true,'fb2')">The request must connect the resource to a community outcome and priority, not to last year’s spending.</button>
+    <button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'fb2')">Nothing — PBB only affects the finance department’s spreadsheets.</button>
+    <button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'fb2')">Requests are no longer allowed; the budget is set automatically by formula.</button>
+    <div class="mq-fb" id="fb2">PBB ranks resources against strategic priorities and the outcomes they produce. The winning argument shifts from “what we spent” to “what outcome this produces and how it ranks.”</div>
+  </div>
+
+  <div class="mq-q">
+    <div class="mq-q-num">Question 3 · Justifying Resources</div>
+    <div class="mq-q-text">In a funding request, what is the “Translation Principle”?</div>
+    <button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'fb3')">Always submit the request in both English and the budget office’s preferred software.</button>
+    <button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'fb3')">Convert all costs into per-call figures before presenting them.</button>
+    <button class="mq-opt" data-correct="1" onclick="mqAnswer(this,true,'fb3')">Restate operational data (e.g., UHU, response time) as constituent impact in the decision-maker’s language.</button>
+    <div class="mq-fb" id="fb3">“UHU is 0.47” is invisible to a city manager; “residents wait four minutes longer for an ambulance” is the same fact translated into the language that gets funded.</div>
+  </div>
+
+  <div class="mq-q">
+    <div class="mq-q-num">Question 4 · Managing Within Constraints</div>
+    <div class="mq-q-text">Directed to cut your station’s non-personnel budget 15% mid-year, what does principled prioritization protect first — and what tool keeps the highest-leverage spending safe?</div>
+    <button class="mq-opt" data-correct="1" onclick="mqAnswer(this,true,'fb4')">Life-safety spending first; Pareto thinking protects the high-leverage 20% that drives most of the mission value.</button>
+    <button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'fb4')">Whatever is easiest to cut first; spread the rest evenly across all categories.</button>
+    <button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'fb4')">Discretionary morale spending first, to keep the crew engaged during the cut.</button>
+    <div class="mq-fb" id="fb4">Life-safety (PPE, SCBA maintenance, systems testing) is non-negotiable. Sorting first (Eisenhower) and protecting the high-leverage 20% (Pareto) is principled, defensible stewardship.</div>
+  </div>
+
+  <div class="mq-q">
+    <div class="mq-q-num">Question 5 · Capital Planning</div>
+    <div class="mq-q-text">Given current apparatus lead times of two to four years, when does the replacement decision actually need to begin?</div>
+    <button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'fb5')">When the apparatus fails its annual pump test and is taken out of service.</button>
+    <button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'fb5')">In the budget year the new apparatus is needed in service.</button>
+    <button class="mq-opt" data-correct="1" onclick="mqAnswer(this,true,'fb5')">Years ahead — the lead time means the planning and order decision starts long before retirement.</button>
+    <div class="mq-fb" id="fb5">With 2–4 year delivery, waiting until the truck is needed (or failing) guarantees a coverage gap. Lifecycle planning means ordering against the delivery clock, not the retirement date.</div>
+  </div>
+</div>
+
 <div class="lesson-nav-bar">
   <button class="lnb-btn" onclick="prevLesson()">← Capital Planning</button>
   <div class="lnb-info"><div class="lnb-name">AC Application</div><div class="lnb-num">Lesson 6 of 6</div></div>
@@ -732,5 +898,18 @@ function lfNext(el,stepNum){
 }
 </script>
 <script>function toggleFT(el){var sw=el.querySelector('.ft-toggle-switch');var desc=el.querySelector('.ft-toggle-desc');var mains=document.querySelectorAll('.lesson-main');sw.classList.toggle('on');var on=sw.classList.contains('on');desc.textContent=on?'Frameworks + OB cards only':'Full lesson content';mains.forEach(function(m){m.classList.toggle('ft-on',on);});}</script>
+
+<script>
+function mqAnswer(btn,isCorrect,fbId){
+  var q=btn.closest('.mq-q'); if(!q) return;
+  var opts=q.querySelectorAll('.mq-opt');
+  opts.forEach(function(o){o.disabled=true;});
+  if(isCorrect){btn.classList.add('correct');}
+  else{btn.classList.add('wrong');
+    opts.forEach(function(o){if(o.getAttribute('data-correct')==='1')o.classList.add('correct');});}
+  var fb=document.getElementById(fbId); if(fb)fb.classList.add('show');
+}
+</script>
+
 </body>
 </html>
