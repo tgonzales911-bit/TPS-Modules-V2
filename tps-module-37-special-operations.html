@@ -72,7 +72,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 .acro-row:last-child{border-bottom:none;}
 .acro-letter{background:var(--navy);color:var(--gold);font-family:'EB Garamond',serif;font-size:1.8rem;font-weight:800;display:flex;align-items:center;justify-content:center;}
 .acro-content{padding:0.9rem 1.1rem;background:white;}
-.acro-word{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:3px;}
+.acro-word{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:3px;}
 .acro-desc{font-size:0.85rem;color:var(--mid);line-height:1.55;}
 .disc-grid{display:flex;flex-direction:column;gap:0;margin:1.5rem 0;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;}
 .disc-row{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--light);}
@@ -149,6 +149,37 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 .lf-btn:hover{background:var(--gold);color:var(--navy)}
 .lf-timer{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:var(--gold);padding:6px 14px;border-radius:4px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:1px;margin-top:10px}
 .lesson-main.ft>p{display:none!important}.lesson-main.ft>.callout{display:none!important}.ft-toggle{display:flex;align-items:center;gap:10px;padding:10px 16px;background:var(--navy);border-radius:6px;cursor:pointer;border:1px solid rgba(201,168,76,0.25)}.ft-toggle-switch{width:36px;height:20px;background:rgba(201,168,76,0.2);border-radius:10px;position:relative;transition:background .2s}.ft-toggle-switch.on{background:var(--gold)}.ft-toggle-knob{width:14px;height:14px;background:#fff;border-radius:50%;position:absolute;top:3px;left:3px;transition:left .2s}.ft-toggle-switch.on .ft-toggle-knob{left:19px}.ft-toggle-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}.ft-toggle-desc{font-size:11px;color:var(--mid)}.lesson-main.ft-on>p,.lesson-main.ft-on>.callout,.lesson-main.ft-on h3{display:none!important}.lesson-main.ft-on .ob-card,.lesson-main.ft-on .lf-wrap,.lesson-main.ft-on .lead-nav,.lesson-main.ft-on h2{display:block!important}
+
+/* ===== M37 v3 premium: hardening + components ===== */
+.lead-nav-name{color:var(--gold);}
+.ft-toggle-desc{color:var(--gray);}
+.lead-nav-subtitle{color:var(--gray);font-size:12px;line-height:1.4;margin-top:2px;}
+.callout-navy{color:var(--cream);}
+.callout-navy strong,.callout-navy em{color:var(--cream);}
+.mh-thread-text em,.mh-thread-text strong{color:var(--cream);}
+.mq-wrap{background:var(--navy);border-radius:14px;padding:2rem 2rem 1.5rem;margin:2.5rem 0;}
+.mq-head{font-family:'Cinzel',serif;font-size:1.15rem;color:var(--gold);letter-spacing:1px;margin-bottom:0.35rem;}
+.mq-sub{font-size:13px;color:var(--gray);margin-bottom:1.5rem;}
+.mq-q{background:#ffffff;border-radius:10px;padding:1.25rem 1.25rem 1rem;margin-bottom:1rem;}
+.mq-q-num{font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:0.4rem;}
+.mq-q-text{color:var(--navy);font-weight:600;font-size:1rem;line-height:1.5;margin-bottom:0.9rem;}
+.mq-opt{display:block;width:100%;text-align:left;background:var(--offwhite);border:1px solid var(--light);border-radius:8px;padding:0.7rem 0.9rem;margin-bottom:0.5rem;color:var(--mid);font-size:0.93rem;cursor:pointer;font-family:inherit;line-height:1.45;}
+.mq-opt:hover{border-color:var(--gold);}
+.mq-opt.correct{background:#E3F0E8;border-color:var(--green);color:var(--green);font-weight:600;}
+.mq-opt.wrong{background:#F4E2E2;border-color:var(--red);color:var(--red);}
+.mq-fb{font-size:0.88rem;line-height:1.55;color:var(--mid);margin-top:0.6rem;padding:0.7rem 0.9rem;background:var(--offwhite);border-left:3px solid var(--gold);border-radius:4px;display:none;}
+.mq-fb.show{display:block;}
+.mon-wrap{border:1px solid var(--light);border-radius:14px;overflow:hidden;margin:2rem 0;}
+.mon-head{background:var(--navy);padding:1.1rem 1.4rem;}
+.mon-head-title{font-family:'Cinzel',serif;font-size:1.05rem;color:var(--gold);letter-spacing:0.5px;}
+.mon-head-sub{font-size:12.5px;color:var(--gray);margin-top:0.25rem;}
+.mon-row{display:grid;grid-template-columns:120px 1fr;border-top:1px solid var(--light);}
+.mon-letter{background:var(--offwhite);color:var(--gold3);font-family:'Cinzel',serif;font-weight:800;font-size:0.72rem;display:flex;align-items:center;justify-content:center;border-right:1px solid var(--light);text-align:center;line-height:1.15;padding:0.3rem;}
+.mon-cell{padding:1rem 1.25rem;background:#ffffff;}
+.mon-label{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:0.35rem;}
+.mon-say{color:var(--navy);font-size:0.96rem;line-height:1.55;font-style:italic;margin-bottom:0.5rem;}
+.mon-why{color:var(--mid);font-size:0.86rem;line-height:1.5;border-left:3px solid var(--gold);padding-left:0.7rem;}
+
 </style>
 </head>
 <body>
@@ -171,7 +202,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
     <p class="mh-sub">Technical rescue disciplines and NFPA standards, hazardous materials incident command at the senior officer level, swift water and water rescue command considerations, managing special operations resources across the training-certification-readiness continuum, and what assessors look for when they probe senior candidates on specialized capability oversight. The complete special operations leadership curriculum for Battalion Chief and above.</p>
     <div class="mh-badges">
       <span class="mh-badge badge-bc">BC / AC Track</span>
-      <span class="mh-badge badge-nfpa">NFPA 1670 · NFPA 472 · FO III–IV</span>
+      <span class="mh-badge badge-nfpa">NFPA 2500 · NFPA 470 · FO III–IV</span>
     </div>
     <div class="mh-thread">
       <div class="mh-thread-label">Before You Begin</div>
@@ -204,27 +235,27 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
     <div class="acro-row">
       <div class="acro-letter">TR</div>
       <div class="acro-content">
-        <div class="acro-word">Technical Rescue — NFPA 1670 and 1006</div>
-        <div class="acro-desc">Technical rescue encompasses structural collapse, confined space, rope rescue (high angle, low angle, and cliff rescue), trench and excavation rescue, vehicle and machinery rescue, and wilderness search. NFPA 1670 (Standard on Operations and Training for Technical Search and Rescue Incidents) defines operational levels. NFPA 1006 (Standard for Technical Rescuer Professional Qualifications) defines the rescuer certification levels. The BC commands technical rescue incidents; they do not perform technical rescue operations.</div>
+        <div class="acro-word">Technical Rescue — NFPA 2500 and 1006</div>
+        <div class="acro-desc">Technical rescue encompasses structural collapse, confined space, rope rescue (high angle, low angle, and cliff rescue), trench and excavation rescue, vehicle and machinery rescue, and wilderness search. NFPA 2500 (Standard for Operations and Training for Technical Search and Rescue Incidents and Life Safety Rope and Equipment) defines operational levels. NFPA 1006 (Standard for Technical Rescuer Professional Qualifications) defines the rescuer certification levels. The BC commands technical rescue incidents; they do not perform technical rescue operations.</div>
       </div>
     </div>
     <div class="acro-row">
       <div class="acro-letter">HM</div>
       <div class="acro-content">
-        <div class="acro-word">Hazardous Materials — NFPA 472 and 473</div>
-        <div class="acro-desc">Hazardous materials response encompasses chemical, biological, radiological, nuclear, and explosive (CBRNE) incidents, as well as industrial chemical releases, pipeline incidents, and transportation accidents. NFPA 472 (Standard for Competence of Responders to Hazardous Materials/WMD Incidents) defines awareness through technician competency levels. The BC commands hazmat incidents at the operations or incident command level; technician-level operations are performed by certified hazmat team members.</div>
+        <div class="acro-word">Hazardous Materials — NFPA 470</div>
+        <div class="acro-desc">Hazardous materials response encompasses chemical, biological, radiological, nuclear, and explosive (CBRNE) incidents, as well as industrial chemical releases, pipeline incidents, and transportation accidents. NFPA 470 (Hazardous Materials/WMD Standard for Responders) defines awareness through technician competency levels. The BC commands hazmat incidents at the operations or incident command level; technician-level operations are performed by certified hazmat team members.</div>
       </div>
     </div>
     <div class="acro-row">
       <div class="acro-letter">WR</div>
       <div class="acro-content">
-        <div class="acro-word">Water/Swift Water Rescue — NFPA 1670</div>
-        <div class="acro-desc">Water rescue encompasses surface water rescue, swift water rescue, dive rescue, and flood rescue. NFPA 1670 also covers water rescue operational levels. Swift water rescue in particular is a high-fatality discipline for responders who enter moving water without proper training and equipment — making the command decision about what resources to commit and what operations to authorize especially consequential.</div>
+        <div class="acro-word">Water/Swift Water Rescue — NFPA 2500</div>
+        <div class="acro-desc">Water rescue encompasses surface water rescue, swift water rescue, dive rescue, and flood rescue. NFPA 2500 also covers water rescue operational levels. Swift water rescue in particular is a high-fatality discipline for responders who enter moving water without proper training and equipment — making the command decision about what resources to commit and what operations to authorize especially consequential.</div>
       </div>
     </div>
   </div>
   <h2>NFPA Operational Levels — The Framework Every BC Must Know</h2>
-  <p>NFPA 1670 establishes three operational levels for special operations that define what a given agency's personnel and teams are trained and equipped to do. These levels directly govern what command decisions the BC can authorize:</p>
+  <p>NFPA 2500 establishes three operational levels for special operations that define what a given agency's personnel and teams are trained and equipped to do. These levels directly govern what command decisions the BC can authorize:</p>
   <div class="framework-grid">
     <div class="fw-card" style="border-top:3px solid var(--gold);">
       <div class="fw-card-label">Awareness Level</div>
@@ -246,6 +277,9 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
     <span class="callout-label">The Command Principle That Saves Lives</span>
     <p>The single most dangerous command error in special operations is authorizing operations beyond the team's certification and training level. The untrained rescuer entering a confined space to reach a victim who is already deceased creates two casualties where there was one. The BC who orders entry operations without confirming team certification, equipment availability, and hazard assessment has violated the command principle that governs all special operations: <strong>do not create additional victims in the attempt to rescue.</strong> Tactical patience — waiting for the right resources rather than committing available but insufficient ones — is not abandonment. It is the most defensible and most ethical command decision in high-risk rescue scenarios.</p>
   </div>
+
+<div class="callout callout-gold"><div class="callout-label">The Standards Renumbered — Know Both Numbers</div><p>NFPA consolidated its emergency-response standards, and special operations is where it shows up most. The operational and organizational technical-rescue content formerly in <strong>NFPA 1670</strong> (with the rope/equipment standards 1983 and 1858) is now <strong>NFPA 2500</strong> (2022). Hazmat/WMD <em>responder competencies</em> formerly in <strong>NFPA 472 and 473</strong> are now <strong>NFPA 470</strong> (2019). One that did <em>not</em> change: individual technical-rescuer <em>qualifications</em> remain in <strong>NFPA 1006</strong> — so the clean distinction to state at a board is <strong>NFPA 2500 = organizational capability, NFPA 1006 = individual qualifications</strong>. Much of the field still says “1670” and “472” out of habit; cite the current number and you signal you’re current without making a show of it.</p></div>
+
 </div>
 <div class="lesson-sidebar">
 <div class="ft-toggle" onclick="toggleFT(this)" style="margin-bottom:16px;max-width:320px">
@@ -253,12 +287,12 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div><div class="ft-toggle-label">Fast Track Mode</div><div class="ft-toggle-desc">Full lesson content</div></div>
 </div>
 
-<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Applied to this lesson's board question</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Operational Command</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">NFPA Operational Levels → Four Technical Rescue Disciplines → Span of Control at Scale → CRM</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the special ops type → apply NFPA level → establish command → close with Discipline and Service</div></div></div></div>
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Discipline, level, command</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Operational Command</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">ERS — Explain the principle, give a recent example, state it at the rank you are testing for</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Identify the special-ops discipline (rescue / hazmat / water) → name the NFPA capability level (Awareness / Operations / Technician) → locate command responsibility (NFPA 2500 organizational, NFPA 1006 individual)</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the discipline → name the NFPA capability level → establish command → close with a value anchor</div></div></div></div>
 
   <span class="sbar-label">Three SO Disciplines</span>
-  <div class="sbar-card"><strong>Technical Rescue</strong>NFPA 1670 + 1006. Structural collapse · confined space · rope · trench · vehicle/machinery · wilderness.</div>
-  <div class="sbar-card"><strong>HazMat</strong>NFPA 472 + 473. CBRNE · industrial · pipeline · transportation. BC commands; technicians enter.</div>
-  <div class="sbar-card"><strong>Water/Swift Water</strong>NFPA 1670. Surface · swift · dive · flood. Moving water = highest responder fatality risk.</div>
+  <div class="sbar-card"><strong>Technical Rescue</strong>NFPA 2500 + 1006. Structural collapse · confined space · rope · trench · vehicle/machinery · wilderness.</div>
+  <div class="sbar-card"><strong>HazMat</strong>NFPA 470. CBRNE · industrial · pipeline · transportation. BC commands; technicians enter.</div>
+  <div class="sbar-card"><strong>Water/Swift Water</strong>NFPA 2500. Surface · swift · dive · flood. Moving water = highest responder fatality risk.</div>
   <span class="sbar-label">Three Operational Levels</span>
   <div class="sbar-card"><strong>Awareness</strong>Recognize · isolate · notify. No rescue operations.</div>
   <div class="sbar-card"><strong>Operations</strong>Defensive + limited offensive. No hazard zone entry for rescue.</div>
@@ -271,7 +305,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="ob-card">
   <div class="ob-header"><div class="ob-label">Oral Board — Special Operations Overview</div></div>
   <div class="ob-body">
-    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"Describe your understanding of the three special operations disciplines and how you would apply it in a real scenario."</div><div class="ob-note">Name training frequency requirements. Address certification maintenance, equipment readiness, and mutual aid coordination. Show that special ops readiness is a command responsibility.</div></div></div>
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"A technical-rescue call comes in and your crews are trained only to the Operations level. As BC, what does that mean for how you command it?"</div><div class="ob-note">Identify the discipline, then be honest about capability. NFPA 2500 sets organizational capability at three levels — Awareness, Operations, Technician — and you command within the level you actually have. At Operations, your crews can support and perform limited defensive actions but cannot make an entry that requires Technician certification; so you establish command, isolate and deny entry, and request a Technician-level team (regional or mutual aid) before any rescue that exceeds your level. Knowing the level is what keeps you from committing people beyond their training.</div></div></div>
   </div>
 </div>
 
@@ -279,10 +313,10 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
   <div class="tk-lbl">Lesson 1 — Key Takeaways</div>
   <div class="tk-item">The Three Special Operations Disciplines — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
   <div class="tk-item">NFPA Operational Levels — The Framework Every BC Must Know — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
-  <div class="tk-item">LEAD integration: Label this as a Special Operations question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">LEAD integration: Label this as an Operational Command question, Engage the response structure, Apply the content frameworks, Deliver at rank and close with a value anchor.</div>
 </div>
 
-<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Operational Command</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">NFPA Operational Levels → Four Technical Rescue Disciplines → Span of Control at Scale → CRM</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the special ops type → apply NFPA level → establish command → close with Discipline and Service</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response structure. Apply the content frameworks to the scenario. Deliver at the rank you’re testing for and close with a value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Operational Command</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Identify the special-ops discipline (rescue / hazmat / water) → name the NFPA capability level (Awareness / Operations / Technician) → locate command responsibility (NFPA 2500 organizational, NFPA 1006 individual)</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the discipline → name the NFPA capability level → establish command → close with a value anchor</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
 <div class="lesson-nav-bar">
   <button class="lnb-btn" disabled>← Previous</button>
   <div class="lnb-info"><div class="lnb-name">Special Ops Overview</div><div class="lnb-num">Lesson 1 of 6</div></div>
@@ -305,7 +339,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
     <div class="disc-row">
       <div class="disc-label" style="background:#0C2340;"><div class="disc-tag" style="color:var(--gold);">Structural Collapse</div></div>
       <div class="disc-body">
-        <div class="disc-std">NFPA 1670 · FEMA USAR Typing</div>
+        <div class="disc-std">NFPA 2500 · FEMA USAR Typing</div>
         <div class="disc-desc">Structural collapse rescue involves locating and extracting victims from collapsed buildings or structures. Hazards include secondary collapse, utility hazards, confined space atmospheres within void spaces, and structural instability. FEMA USAR teams are typed Light, Medium, and Heavy based on capability. The BC's command priorities: establish collapse zone (1.5× building height minimum), request appropriate USAR typing, activate search (acoustic, optical, search dogs), and manage staging for sustained operations that may extend 24–72+ hours.</div>
         <div class="disc-bc">BC focus: Resource typing and request, hazard zone management, operational period planning for extended operations, family liaison coordination.</div>
       </div>
@@ -313,7 +347,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
     <div class="disc-row">
       <div class="disc-label" style="background:#1A3A5C;"><div class="disc-tag" style="color:var(--gold);">Confined Space</div></div>
       <div class="disc-body">
-        <div class="disc-std">NFPA 1670 · OSHA 29 CFR 1910.146</div>
+        <div class="disc-std">NFPA 2500 · OSHA 29 CFR 1910.146</div>
         <div class="disc-desc">Confined space rescue involves permit-required confined spaces — any space large enough to enter but not designed for continuous occupancy, with limited egress, and containing or capable of containing a hazardous atmosphere. The hazardous atmosphere is the primary killer — nearly all confined space fatalities involve responders who entered to rescue a victim and succumbed to the same atmosphere. OSHA 29 CFR 1910.146 governs permit-required confined space entry. The BC must ensure atmospheric testing is completed before any entry is authorized, the entry permit process is followed, and rescue resources are staged before entry begins.</div>
         <div class="disc-bc">BC focus: Atmospheric testing completion before ANY entry authorization. Entry permit compliance. Rescue standby staged before the entry team goes in. OSHA process is non-negotiable.</div>
       </div>
@@ -321,7 +355,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
     <div class="disc-row">
       <div class="disc-label" style="background:#2A1A40;"><div class="disc-tag" style="color:var(--gold);">Rope Rescue</div></div>
       <div class="disc-body">
-        <div class="disc-std">NFPA 1670 · NFPA 1006</div>
+        <div class="disc-std">NFPA 2500 · NFPA 1006</div>
         <div class="disc-desc">Rope rescue encompasses high-angle (greater than 60 degrees), low-angle (less than 60 degrees), and cliff rescue operations. Hazards include fall potential for rescuers, anchor failure, and patient packaging and movement challenges on steep terrain. NFPA 1006 defines rope rescue technician qualifications. The BC's command role: confirm team has appropriate rope rescue certification level, ensure a qualified technical rescue supervisor is in operational command of the rescue, and manage the perimeter and support resources while the technical team executes.</div>
         <div class="disc-bc">BC focus: Confirm certification level before authorizing. Technical supervisor in charge of rescue face operations. BC manages the ICS structure above the technical team — not the rope system.</div>
       </div>
@@ -329,7 +363,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
     <div class="disc-row">
       <div class="disc-label" style="background:#3A1A00;"><div class="disc-tag" style="color:var(--gold);">Trench + Excavation</div></div>
       <div class="disc-body">
-        <div class="disc-std">NFPA 1670 · OSHA 29 CFR 1926.652</div>
+        <div class="disc-std">NFPA 2500 · OSHA 29 CFR 1926.652</div>
         <div class="disc-desc">Trench rescue involves buried victims in trenches, excavations, or soil engulfment incidents. Secondary collapse is the primary hazard — the same unstable soil conditions that caused the initial burial remain present and are often exacerbated by the incident. OSHA 29 CFR 1926.652 governs trench safety. The BC's most critical command decision: establishing and enforcing an adequate exclusion zone around the trench (crowds of bystanders, vibration from emergency vehicles, and the weight of rescue equipment all increase collapse risk), and preventing non-certified personnel from entering to "help."</div>
         <div class="disc-bc">BC focus: Exclusion zone enforcement is the most critical immediate action. Vibration from vehicles increases secondary collapse risk. Non-certified bystanders in the trench have created many two-victim incidents.</div>
       </div>
@@ -341,7 +375,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
   </div>
 </div>
 <div class="lesson-sidebar">
-<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Applied to this lesson's board question</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Operational Command</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">NFPA Operational Levels → Four Technical Rescue Disciplines → Span of Control at Scale → CRM</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the special ops type → apply NFPA level → establish command → close with Discipline and Service</div></div></div></div>
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">The four core disciplines</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Operational Command</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">ERS / size-up framing</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Name the technical-rescue discipline → confirm the team's NFPA 2500 capability level → set span of control and the rescue-vs-recovery risk decision</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Name the discipline → confirm capability level → set span of control → close with a value anchor</div></div></div></div>
 
   <span class="sbar-label">Structural Collapse</span>
   <div class="sbar-card">Collapse zone = 1.5× building height · request USAR typing (Light/Medium/Heavy) · search activation · 24–72+ hr operational planning.</div>
@@ -359,18 +393,18 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="ob-card">
   <div class="ob-header"><div class="ob-label">Oral Board — Technical Rescue</div></div>
   <div class="ob-body">
-    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"Describe your understanding of the four core technical rescue disciplines and how you would apply it in a real scenario."</div><div class="ob-note">Name the rescue priority framework. Show how you balance victim savability against crew risk. The assessor is scoring your decision-making criteria, not just your decision.</div></div></div>
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"Walk me through how you’d size up and command a structural-collapse rescue."</div><div class="ob-note">Treat it as a Technician-level discipline with a hard rescue-vs-recovery decision up front. Size up structural stability, the victim’s survivability profile, and secondary-collapse risk; establish command and a single point of entry control; confirm your team’s NFPA 2500 capability and call for USAR/Technician resources if the operation exceeds it. The defining BC move is the risk calculus — great risk for savable lives, calculated risk for savable property, no risk for what is already lost — and you say it out loud.</div></div></div>
   </div>
 </div>
 
 <div class="takeaways">
   <div class="tk-lbl">Lesson 2 — Key Takeaways</div>
   <div class="tk-item">The Four Core Technical Rescue Disciplines — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
-  <div class="tk-item">LEAD integration: Label this as a Special Operations question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">LEAD integration: Label this as an Operational Command question, Engage the response structure, Apply the content frameworks, Deliver at rank and close with a value anchor.</div>
   <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
 </div>
 
-<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Operational Command</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">NFPA Operational Levels → Four Technical Rescue Disciplines → Span of Control at Scale → CRM</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the special ops type → apply NFPA level → establish command → close with Discipline and Service</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response structure. Apply the content frameworks to the scenario. Deliver at the rank you’re testing for and close with a value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Operational Command</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Name the technical-rescue discipline → confirm the team's NFPA 2500 capability level → set span of control and the rescue-vs-recovery risk decision</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Name the discipline → confirm capability level → set span of control → close with a value anchor</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
 <div class="lesson-nav-bar">
   <button class="lnb-btn" onclick="prevLesson()">← Special Ops Overview</button>
   <div class="lnb-info"><div class="lnb-name">Technical Rescue</div><div class="lnb-num">Lesson 2 of 6</div></div>
@@ -430,7 +464,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
   <p>The BC at a hazmat incident does not need to know chemical thermodynamics. They need to: establish and enforce the three-zone system; ensure identification is completed before offensive action is authorized; activate the hazmat team and technical specialists; manage staging, public protection (evacuation or shelter-in-place), and interagency coordination (fire, EMS, law enforcement, public works, utilities, environmental agencies); and communicate with the EOC as the incident scales. These are command and coordination functions — not technical functions. The technical functions belong to the hazmat team.</p>
 </div>
 <div class="lesson-sidebar">
-<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Applied to this lesson's board question</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Operational Command</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">NFPA Operational Levels → Four Technical Rescue Disciplines → Span of Control at Scale → CRM</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the special ops type → apply NFPA level → establish command → close with Discipline and Service</div></div></div></div>
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Isolate before you act</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Operational Command</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">ERS / size-up framing</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Identify the hazard (NFPA 470 governs competencies) → establish the hot / warm / cold zones → command from the cold zone</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the hazard → establish the zones → command from cold → close with a value anchor</div></div></div></div>
 
   <span class="sbar-label">Three-Zone Structure</span>
   <div class="sbar-card"><strong>Hot Zone</strong>Exclusion. Technician-level + proper PPE only. BC controls entry authorization.</div>
@@ -448,7 +482,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="ob-card">
   <div class="ob-header"><div class="ob-label">Oral Board — Hazardous Materials</div></div>
   <div class="ob-body">
-    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"Describe your understanding of the three-zone structure — the mandatory framework and how you would apply it in a real scenario."</div><div class="ob-note">Name training frequency requirements. Address certification maintenance, equipment readiness, and mutual aid coordination. Show that special ops readiness is a command responsibility.</div></div></div>
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"You arrive at a hazmat release. What’s the first command structure you put in place, and why?"</div><div class="ob-note">Identification before action, then the three-zone structure. Establish hot (exclusion), warm (decon corridor), and cold (command/support) zones, and command from the cold zone — you are the informed overseer, not the entry technician. Confirm the product (NFPA 470 governs responder competencies), set entry control and decon, and don’t commit anyone until the hazard is identified. The board is checking whether you isolate and identify before you act, and whether you keep command where it belongs.</div></div></div>
   </div>
 </div>
 
@@ -456,10 +490,10 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
   <div class="tk-lbl">Lesson 3 — Key Takeaways</div>
   <div class="tk-item">The Three-Zone Structure — The Mandatory Framework — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
   <div class="tk-item">Identification Before Action — The HazMat Command Imperative — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
-  <div class="tk-item">LEAD integration: Label this as a Special Operations question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">LEAD integration: Label this as an Operational Command question, Engage the response structure, Apply the content frameworks, Deliver at rank and close with a value anchor.</div>
 </div>
 
-<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Operational Command</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">NFPA Operational Levels → Four Technical Rescue Disciplines → Span of Control at Scale → CRM</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the special ops type → apply NFPA level → establish command → close with Discipline and Service</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response structure. Apply the content frameworks to the scenario. Deliver at the rank you’re testing for and close with a value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Operational Command</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Identify the hazard (NFPA 470 governs competencies) → establish the hot / warm / cold zones → command from the cold zone</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the hazard → establish the zones → command from cold → close with a value anchor</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
 <div class="lesson-nav-bar">
   <button class="lnb-btn" onclick="prevLesson()">← Technical Rescue</button>
   <div class="lnb-info"><div class="lnb-name">Hazardous Materials</div><div class="lnb-num">Lesson 3 of 6</div></div>
@@ -518,7 +552,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
   </div>
 </div>
 <div class="lesson-sidebar">
-<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Applied to this lesson's board question</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Operational Command</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">NFPA Operational Levels → Four Technical Rescue Disciplines → Span of Control at Scale → CRM</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the special ops type → apply NFPA level → establish command → close with Discipline and Service</div></div></div></div>
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">The order of rescue</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Operational Command</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">ERS / size-up framing</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Size up the water hazard → apply the swift-water command priorities (self → team → bystander → victim) → work the low-to-high-risk rescue continuum</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Size up the water → apply the order of rescue → resource the operation → close with a value anchor</div></div></div></div>
 
   <span class="sbar-label">Swift Water Priority Sequence</span>
   <div class="sbar-card"><strong>1. Reach</strong>From shore. No water entry. Try first.</div>
@@ -535,7 +569,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="ob-card">
   <div class="ob-header"><div class="ob-label">Oral Board — Water + Swift Water Rescue</div></div>
   <div class="ob-body">
-    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"Describe your understanding of swift water command priorities and how you would apply it in a real scenario."</div><div class="ob-note">Name the rescue priority framework. Show how you balance victim savability against crew risk. The assessor is scoring your decision-making criteria, not just your decision.</div></div></div>
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"A vehicle is caught in flood water with occupants inside. How do you command this?"</div><div class="ob-note">Apply the order of rescue — self, team, bystanders, victim, in that order, every time — and the low-to-high-risk continuum: talk, reach, throw, row, go, helo. Size up the water (speed, hydraulics, strainers, debris) and confirm you have a swift-water-capable team, not just willing volunteers. The BC’s job is to resist the pressure to put untrained people into moving water — that is exactly how rescuers become victims.</div></div></div>
   </div>
 </div>
 
@@ -543,10 +577,10 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
   <div class="tk-lbl">Lesson 4 — Key Takeaways</div>
   <div class="tk-item">Swift Water Command Priorities — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
   <div class="tk-item">Flood Rescue — The Extended Operation — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
-  <div class="tk-item">LEAD integration: Label this as a Special Operations question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">LEAD integration: Label this as an Operational Command question, Engage the response structure, Apply the content frameworks, Deliver at rank and close with a value anchor.</div>
 </div>
 
-<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Operational Command</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">NFPA Operational Levels → Four Technical Rescue Disciplines → Span of Control at Scale → CRM</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the special ops type → apply NFPA level → establish command → close with Discipline and Service</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response structure. Apply the content frameworks to the scenario. Deliver at the rank you’re testing for and close with a value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Operational Command</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Size up the water hazard → apply the swift-water command priorities (self → team → bystander → victim) → work the low-to-high-risk rescue continuum</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Size up the water → apply the order of rescue → resource the operation → close with a value anchor</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
 <div class="lesson-nav-bar">
   <button class="lnb-btn" onclick="prevLesson()">← Hazardous Materials</button>
   <div class="lnb-info"><div class="lnb-name">Water + Swift Water</div><div class="lnb-num">Lesson 4 of 6</div></div>
@@ -569,7 +603,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
     <div class="fw-card">
       <div class="fw-card-label">Personnel Certification</div>
       <div class="fw-card-title">Current, Verified, Documented</div>
-      <div class="fw-card-desc">NFPA 1006, NFPA 472, and state certifications have recertification cycles — typically every 2–3 years. The BC maintains a current certification matrix for all special operations personnel and knows, at any given time, which personnel are currently certified at which levels in which disciplines. A team roster that includes members with expired certifications is a liability and a safety risk during incident operations.</div>
+      <div class="fw-card-desc">NFPA 1006, NFPA 470, and state certifications have recertification cycles — typically every 2–3 years. The BC maintains a current certification matrix for all special operations personnel and knows, at any given time, which personnel are currently certified at which levels in which disciplines. A team roster that includes members with expired certifications is a liability and a safety risk during incident operations.</div>
     </div>
     <div class="fw-card">
       <div class="fw-card-label">Training Currency</div>
@@ -595,7 +629,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
   </div>
 </div>
 <div class="lesson-sidebar">
-<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Applied to this lesson's board question</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Operational Command</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">NFPA Operational Levels → Four Technical Rescue Disciplines → Span of Control at Scale → CRM</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the special ops type → apply NFPA level → establish command → close with Discipline and Service</div></div></div></div>
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Ready before the call</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Operational Command</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">ERS — principle, recent example, stated at rank</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Assess the readiness dimensions (capability, training, equipment, mutual aid) → match capability to risk → close the gap with regional / MABAS resources</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Assess readiness → match capability to risk → close the gap → close with a value anchor</div></div></div></div>
 
   <span class="sbar-label">Four Readiness Dimensions</span>
   <div class="sbar-card"><strong>Personnel Certification</strong>Current matrix maintained. Expired certs = liability + safety risk.</div>
@@ -612,7 +646,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="ob-card">
   <div class="ob-header"><div class="ob-label">Oral Board — Managing Special Operations Resources</div></div>
   <div class="ob-body">
-    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"Describe your understanding of the four readiness dimensions and how you would apply it in a real scenario."</div><div class="ob-note">Name training frequency requirements. Address certification maintenance, equipment readiness, and mutual aid coordination. Show that special ops readiness is a command responsibility.</div></div></div>
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"How do you know whether your department is actually ready for a special-operations incident — before one happens?"</div><div class="ob-note">Assess readiness honestly across capability, training currency, equipment serviceability, and mutual-aid agreements. Most departments cannot staff Technician-level teams for every discipline — the mature answer is to define which disciplines you hold to Operations vs Technician, keep certifications and equipment current to NFPA 2500/1006, and pre-build the regional or MABAS-style agreements that bring Technician capability fast. Readiness is a documented, maintained system — not an assumption that the special-ops team will figure it out.</div></div></div>
   </div>
 </div>
 
@@ -620,10 +654,10 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
   <div class="tk-lbl">Lesson 5 — Key Takeaways</div>
   <div class="tk-item">The Four Readiness Dimensions — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
   <div class="tk-item">The BC's Safety Officer Role at Special Operations Incidents — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
-  <div class="tk-item">LEAD integration: Label this as a Special Operations question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">LEAD integration: Label this as an Operational Command question, Engage the response structure, Apply the content frameworks, Deliver at rank and close with a value anchor.</div>
 </div>
 
-<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Operational Command</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">NFPA Operational Levels → Four Technical Rescue Disciplines → Span of Control at Scale → CRM</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the special ops type → apply NFPA level → establish command → close with Discipline and Service</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response structure. Apply the content frameworks to the scenario. Deliver at the rank you’re testing for and close with a value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Operational Command</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Assess the readiness dimensions (capability, training, equipment, mutual aid) → match capability to risk → close the gap with regional / MABAS resources</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Assess readiness → match capability to risk → close the gap → close with a value anchor</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
 <div class="lesson-nav-bar">
   <button class="lnb-btn" onclick="prevLesson()">← Water + Swift Water</button>
   <div class="lnb-info"><div class="lnb-name">Managing SO Resources</div><div class="lnb-num">Lesson 5 of 6</div></div>
@@ -662,7 +696,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
   </div>
 </div>
 <div class="lesson-sidebar">
-<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Applied to this lesson's board question</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Operational Command</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">NFPA Operational Levels → Four Technical Rescue Disciplines → Span of Control at Scale → CRM</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the special ops type → apply NFPA level → establish command → close with Discipline and Service</div></div></div></div>
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Confined space under command</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Operational Command</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">ERS (philosophy) · size-up → command (for the scenario)</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Size up the incident → identify discipline + NFPA capability level → establish command and zones → make the rescue-vs-recovery risk call → resource and document</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Size up → identify discipline & level → establish command → make the risk call → close with a value anchor</div></div></div></div>
 
   <span class="sbar-label">5/5 Pattern</span>
   <div class="sbar-card">Physical interception first · command established · specialized resources requested · atmospheric monitoring before approach · SCBA requirement · hazmat/confined space escalation · explicit articulation of tactical patience principle · ISO assigned · entry permit commitment.</div>
@@ -676,18 +710,75 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="ob-card">
   <div class="ob-header"><div class="ob-label">Oral Board — Assessment Center Application</div></div>
   <div class="ob-body">
-    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"You receive a scenario about special operations. Walk me through your complete response using the frameworks from this chapter."</div><div class="ob-note">Use LEAD: Label the bucket (Special Operations), Engage the specific framework (reference Practice Scenario — Industrial Confined Space explicitly), Address the operational and organizational impact, Drive to a concrete first action with a timeline.</div></div></div>
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"A worker is unconscious at the bottom of an industrial confined space and coworkers want to go in. Take command."</div><div class="ob-note">Stop the would-be rescuers first — most confined-space deaths are untrained rescuers. Size up the atmosphere (is it IDLH?), the space configuration, and the patient’s likely survivability. Establish command and a Technician-level confined-space entry under NFPA 2500 — atmospheric monitoring, ventilation, retrieval systems, and an entrant/attendant/supervisor structure. Make the rescue-vs-recovery call honestly, based on atmosphere and time. The defining move is refusing to trade a savable rescuer for a victim who may already be lost — and saying why.</div></div></div>
   </div>
 </div>
 
 <div class="takeaways">
   <div class="tk-lbl">Lesson 6 — Key Takeaways</div>
   <div class="tk-item">Practice Scenario — Industrial Confined Space — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
-  <div class="tk-item">LEAD integration: Label this as a Special Operations question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">LEAD integration: Label this as an Operational Command question, Engage the response structure, Apply the content frameworks, Deliver at rank and close with a value anchor.</div>
   <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
 </div>
 
-<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Operational Command</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">NFPA Operational Levels → Four Technical Rescue Disciplines → Span of Control at Scale → CRM</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the special ops type → apply NFPA level → establish command → close with Discipline and Service</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response structure. Apply the content frameworks to the scenario. Deliver at the rank you’re testing for and close with a value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Operational Command</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Size up the incident → identify discipline + NFPA capability level → establish command and zones → make the rescue-vs-recovery risk call → resource and document</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Size up → identify discipline & level → establish command → make the risk call → close with a value anchor</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+
+<h2>What a 5/5 Sounds Like — Industrial Confined-Space Rescue</h2>
+<p>A special-operations command question is a <strong>size-up → command</strong> answer, not a story. The board wants the discipline, the capability level, the command structure, and — above all — the honest rescue-vs-recovery risk decision. Here it is annotated.</p>
+<div class="mon-wrap">
+  <div class="mon-head"><div class="mon-head-title">5/5 Model — “Worker down in a confined space; coworkers want to enter.”</div><div class="mon-head-sub">Size-up → command structure — BC / AC, Operational Command</div></div>
+  <div class="mon-row"><div class="mon-letter">Stop &amp; Isolate</div><div class="mon-cell"><div class="mon-label">First move</div><div class="mon-say">"My first action is to stop the coworkers from entering. Most confined-space deaths are would-be rescuers, and I will not add victims. I isolate the space and establish entry control immediately."</div><div class="mon-why">Leads with the single most important decision in this discipline. Naming the untrained-rescuer hazard first shows command judgment, not heroics.</div></div></div>
+  <div class="mon-row"><div class="mon-letter">Size-Up</div><div class="mon-cell"><div class="mon-label">Read the hazard</div><div class="mon-say">"Then I size up the atmosphere — is it IDLH? — the space configuration and access, and the patient’s likely survivability given time down and conditions. The atmosphere drives everything that follows."</div><div class="mon-why">Identifies the controlling hazard (atmosphere/IDLH) before committing anyone. Separates observation from action — the size-up discipline.</div></div></div>
+  <div class="mon-row"><div class="mon-letter">Command + Level</div><div class="mon-cell"><div class="mon-label">Right structure, right capability</div><div class="mon-say">"I establish command and a Technician-level confined-space entry under NFPA 2500 — atmospheric monitoring, ventilation, retrieval systems, and a defined entrant/attendant/entry-supervisor structure. If we’re only Operations-level, I command defensively and call the Technician team now, not later."</div><div class="mon-why">Matches command structure to actual NFPA 2500 capability and refuses to exceed the team’s level — the core competency this chapter tests.</div></div></div>
+  <div class="mon-row"><div class="mon-letter">Risk Decision</div><div class="mon-cell"><div class="mon-label">Rescue vs. recovery, said out loud</div><div class="mon-say">"I make the risk call explicitly: great risk for a savable life, no risk for a body. If the atmosphere and time make this a recovery, I slow it down and protect my people — and I tell the family and my crew why."</div><div class="mon-why">States the risk calculus aloud and is willing to declare a recovery. That moral clarity — not bravado — is what separates a 5/5 command answer.</div></div></div>
+  <div class="mon-row"><div class="mon-letter">Close</div><div class="mon-cell"><div class="mon-label">Anchor it</div><div class="mon-say">"Every responder who came went home. In special operations, that is the standard I command to first — because the people I send in are the ones I’m most responsible for. That’s the Ownership this rank carries."</div><div class="mon-why">Closes on an earned value anchor (Ownership) tied to responder safety — the identity of a special-ops commander.</div></div></div>
+</div>
+
+<div class="mq-wrap">
+  <div class="mq-head">Knowledge Check</div>
+  <div class="mq-sub">Five questions across the chapter. Pick an answer to see why it’s right or wrong — testing yourself is how it sticks.</div>
+  <div class="mq-q">
+    <div class="mq-q-num">Question 1 · Capability Levels</div>
+    <div class="mq-q-text">What are the three NFPA technical-rescue capability levels, and what do they govern?</div>
+    <button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'fb1')">Basic, Intermediate, Advanced — set by the IC on scene.</button>
+    <button class="mq-opt" data-correct="1" onclick="mqAnswer(this,true,'fb1')">Awareness, Operations, Technician — the level your organization is trained and equipped to, which bounds what you can commit to.</button>
+    <button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'fb1')">Probationary, Certified, Master — individual ranks only.</button>
+    <div class="mq-fb" id="fb1">Awareness / Operations / Technician define organizational capability. You command within the level you actually hold and request higher-level teams before exceeding it.</div>
+  </div>
+  <div class="mq-q">
+    <div class="mq-q-num">Question 2 · The Standards</div>
+    <div class="mq-q-text">Which is the current, correct mapping of special-operations standards?</div>
+    <button class="mq-opt" data-correct="1" onclick="mqAnswer(this,true,'fb2')">NFPA 2500 (organizational technical-rescue capability), NFPA 1006 (individual rescuer qualifications), NFPA 470 (hazmat/WMD responder competencies).</button>
+    <button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'fb2')">NFPA 1670 and NFPA 472 are still the current standalone standards.</button>
+    <button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'fb2')">All technical-rescue content is now in a single standard, NFPA 1006.</button>
+    <div class="mq-fb" id="fb2">2500 absorbed 1670 (plus rope standards); 470 absorbed 472/473; but 1006 stayed separate as the individual-qualifications standard. 2500 = organization, 1006 = person.</div>
+  </div>
+  <div class="mq-q">
+    <div class="mq-q-num">Question 3 · HazMat Command</div>
+    <div class="mq-q-text">What is the first command structure at a hazmat release, and where does the BC operate?</div>
+    <button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'fb3')">Make immediate entry to identify the product firsthand.</button>
+    <button class="mq-opt" data-correct="1" onclick="mqAnswer(this,true,'fb3')">Establish hot/warm/cold zones and command from the cold zone — identification before action.</button>
+    <button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'fb3')">Whatever gets responders to the victim fastest.</button>
+    <div class="mq-fb" id="fb3">Three-zone structure with command in the cold zone; the BC is the informed overseer, not the entry technician, and nothing commits until the hazard is identified.</div>
+  </div>
+  <div class="mq-q">
+    <div class="mq-q-num">Question 4 · Water Rescue</div>
+    <div class="mq-q-text">What is the order of rescue priority in swift/flood water?</div>
+    <button class="mq-opt" data-correct="1" onclick="mqAnswer(this,true,'fb4')">Self, team, bystanders, victim — working talk/reach/throw/row/go/helo from low to high risk.</button>
+    <button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'fb4')">Victim first, always, regardless of responder risk.</button>
+    <button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'fb4')">Whoever is closest enters the water immediately.</button>
+    <div class="mq-fb" id="fb4">Self → team → bystanders → victim, lowest-risk technique first. Putting untrained responders into moving water is how rescuers become victims.</div>
+  </div>
+  <div class="mq-q">
+    <div class="mq-q-num">Question 5 · The Risk Decision</div>
+    <div class="mq-q-text">What is the defining command judgment at a high-risk technical rescue?</div>
+    <button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'fb5')">Commit maximum resources to every rescue regardless of survivability.</button>
+    <button class="mq-opt" data-correct="1" onclick="mqAnswer(this,true,'fb5')">The rescue-vs-recovery risk calculus — great risk for savable life, calculated risk for property, no risk for what’s already lost — stated explicitly.</button>
+    <button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'fb5')">Defer entirely to the special-ops team and step back from command.</button>
+    <div class="mq-fb" id="fb5">Naming the risk calculus out loud — and being willing to declare a recovery to protect responders — is the mark of a special-operations commander.</div>
+  </div>
+</div>
+
 <div class="lesson-nav-bar">
   <button class="lnb-btn" onclick="prevLesson()">← Managing SO Resources</button>
   <div class="lnb-info"><div class="lnb-name">AC Application</div><div class="lnb-num">Lesson 6 of 6</div></div>
@@ -718,5 +809,17 @@ function lfNext(el,stepNum){
 }
 </script>
 <script>function toggleFT(el){var sw=el.querySelector('.ft-toggle-switch');var desc=el.querySelector('.ft-toggle-desc');var mains=document.querySelectorAll('.lesson-main');sw.classList.toggle('on');var on=sw.classList.contains('on');desc.textContent=on?'Frameworks + OB cards only':'Full lesson content';mains.forEach(function(m){m.classList.toggle('ft-on',on);});}</script>
+
+<script>
+function mqAnswer(btn,isCorrect,fbId){
+  var q=btn.closest('.mq-q'); if(!q) return;
+  q.querySelectorAll('.mq-opt').forEach(function(o){o.disabled=true;});
+  if(isCorrect){btn.classList.add('correct');}
+  else{btn.classList.add('wrong');
+    q.querySelectorAll('.mq-opt').forEach(function(o){if(o.getAttribute('data-correct')==='1')o.classList.add('correct');});}
+  var fb=document.getElementById(fbId); if(fb)fb.classList.add('show');
+}
+</script>
+
 </body>
 </html>
