@@ -72,7 +72,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 .acro-row:last-child{border-bottom:none;}
 .acro-letter{background:var(--navy);color:var(--gold);font-family:'EB Garamond',serif;font-size:1.8rem;font-weight:800;display:flex;align-items:center;justify-content:center;}
 .acro-content{padding:0.9rem 1.1rem;background:white;}
-.acro-word{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:3px;}
+.acro-word{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:3px;}
 .acro-desc{font-size:0.85rem;color:var(--mid);line-height:1.55;}
 .sbar-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold3);margin-bottom:0.65rem;margin-top:1.5rem;display:block;}
 .sbar-label:first-child{margin-top:0;}
@@ -140,6 +140,37 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 .lf-btn:hover{background:var(--gold);color:var(--navy)}
 .lf-timer{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:var(--gold);padding:6px 14px;border-radius:4px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:1px;margin-top:10px}
 .lesson-main.ft>p{display:none!important}.lesson-main.ft>.callout{display:none!important}.ft-toggle{display:flex;align-items:center;gap:10px;padding:10px 16px;background:var(--navy);border-radius:6px;cursor:pointer;border:1px solid rgba(201,168,76,0.25)}.ft-toggle-switch{width:36px;height:20px;background:rgba(201,168,76,0.2);border-radius:10px;position:relative;transition:background .2s}.ft-toggle-switch.on{background:var(--gold)}.ft-toggle-knob{width:14px;height:14px;background:#fff;border-radius:50%;position:absolute;top:3px;left:3px;transition:left .2s}.ft-toggle-switch.on .ft-toggle-knob{left:19px}.ft-toggle-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}.ft-toggle-desc{font-size:11px;color:var(--mid)}.lesson-main.ft-on>p,.lesson-main.ft-on>.callout,.lesson-main.ft-on h3{display:none!important}.lesson-main.ft-on .ob-card,.lesson-main.ft-on .lf-wrap,.lesson-main.ft-on .lead-nav,.lesson-main.ft-on h2{display:block!important}
+
+/* ===== M36 v3 premium: hardening + components ===== */
+.callout-blue{background:var(--blue-light);border-left:3px solid var(--blue);}
+.lead-nav-name{color:var(--gold);}
+.ft-toggle-desc{color:var(--gray);}
+.lead-nav-subtitle{color:var(--gray);font-size:12px;line-height:1.4;margin-top:2px;}
+.callout-navy{color:var(--cream);}
+.callout-navy strong,.callout-navy em{color:var(--cream);}
+.mq-wrap{background:var(--navy);border-radius:14px;padding:2rem 2rem 1.5rem;margin:2.5rem 0;}
+.mq-head{font-family:'Cinzel',serif;font-size:1.15rem;color:var(--gold);letter-spacing:1px;margin-bottom:0.35rem;}
+.mq-sub{font-size:13px;color:var(--gray);margin-bottom:1.5rem;}
+.mq-q{background:#ffffff;border-radius:10px;padding:1.25rem 1.25rem 1rem;margin-bottom:1rem;}
+.mq-q-num{font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:0.4rem;}
+.mq-q-text{color:var(--navy);font-weight:600;font-size:1rem;line-height:1.5;margin-bottom:0.9rem;}
+.mq-opt{display:block;width:100%;text-align:left;background:var(--offwhite);border:1px solid var(--light);border-radius:8px;padding:0.7rem 0.9rem;margin-bottom:0.5rem;color:var(--mid);font-size:0.93rem;cursor:pointer;font-family:inherit;line-height:1.45;}
+.mq-opt:hover{border-color:var(--gold);}
+.mq-opt.correct{background:#E3F0E8;border-color:var(--green);color:var(--green);font-weight:600;}
+.mq-opt.wrong{background:#F4E2E2;border-color:var(--red);color:var(--red);}
+.mq-fb{font-size:0.88rem;line-height:1.55;color:var(--mid);margin-top:0.6rem;padding:0.7rem 0.9rem;background:var(--offwhite);border-left:3px solid var(--gold);border-radius:4px;display:none;}
+.mq-fb.show{display:block;}
+.mon-wrap{border:1px solid var(--light);border-radius:14px;overflow:hidden;margin:2rem 0;}
+.mon-head{background:var(--navy);padding:1.1rem 1.4rem;}
+.mon-head-title{font-family:'Cinzel',serif;font-size:1.05rem;color:var(--gold);letter-spacing:0.5px;}
+.mon-head-sub{font-size:12.5px;color:var(--gray);margin-top:0.25rem;}
+.mon-row{display:grid;grid-template-columns:128px 1fr;border-top:1px solid var(--light);}
+.mon-letter{background:var(--offwhite);color:var(--gold3);font-family:'Cinzel',serif;font-weight:800;font-size:0.72rem;display:flex;align-items:center;justify-content:center;border-right:1px solid var(--light);text-align:center;line-height:1.15;padding:0.3rem;}
+.mon-cell{padding:1rem 1.25rem;background:#ffffff;}
+.mon-label{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:0.35rem;}
+.mon-say{color:var(--navy);font-size:0.96rem;line-height:1.55;font-style:italic;margin-bottom:0.5rem;}
+.mon-why{color:var(--mid);font-size:0.86rem;line-height:1.5;border-left:3px solid var(--gold);padding-left:0.7rem;}
+
 </style>
 </head>
 <body>
@@ -201,7 +232,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
     <div class="fw-card">
       <div class="fw-card-label">CFAI</div>
       <div class="fw-card-title">Commission on Fire Accreditation International</div>
-      <div class="fw-card-desc">The accrediting body. CFAI accreditation is based on the agency's self-assessment against 10 categories and 247 performance indicators, followed by a peer review team site visit. Accreditation is voluntary and must be renewed every five years. Over 300 agencies are currently accredited worldwide.</div>
+      <div class="fw-card-desc">The accrediting body. CFAI accreditation is based on the agency's self-assessment against 11 categories and roughly 250 performance indicators, followed by a peer review team site visit. Accreditation is voluntary and must be renewed every five years. Over 300 agencies are currently accredited worldwide.</div>
     </div>
   </div>
   <h2>Why Pursue Accreditation — The Three Arguments</h2>
@@ -232,6 +263,10 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
     <span class="callout-label">The Assessment Center Framing</span>
     <p>When accreditation questions appear in DC-level assessments, the 5/5 response connects accreditation to organizational improvement, not to trophy-seeking. "We pursue accreditation not for the certificate but because the self-assessment process forces us to systematically examine what we're doing and why, measure whether it's working, and improve what isn't. The accreditation is the outcome; the organizational improvement is the goal." That framing — process over product, continuous improvement as the purpose — signals executive-level organizational thinking.</p>
   </div>
+
+<div class="callout callout-blue"><div class="callout-label">The CPSE Ecosystem — Get the Names Right</div><p>Candidates conflate these constantly. The <strong>Center for Public Safety Excellence (CPSE)</strong> is the parent organization. Under it, the <strong>Commission on Fire Accreditation International (CFAI)</strong> runs <em>agency</em> accreditation (the department earns it), and the <strong>Commission on Professional Credentialing (CPC)</strong> issues <em>individual</em> officer designations such as the Chief Fire Officer (CFO). Accreditation is the organization; credentialing is the person. Name them precisely and you signal you actually operate in this world.</p></div>
+<div class="callout callout-gold"><div class="callout-label">FESSAM — Know the Current Edition</div><p>The model is the <strong>Fire &amp; Emergency Services Self-Assessment Model (FESSAM)</strong>: <strong>eleven categories</strong> and roughly <strong>250 performance indicators</strong>. Know the edition story — the <strong>11th Edition was approved in December 2024</strong>, but the <strong>10th Edition remains in effect for agencies appearing before the Commission until Summer 2026</strong>, and the 11th becomes the basis for agencies before the Commission starting <strong>Spring 2027</strong>. The 11th Edition adds criteria for EMS patient transport, the PIO role, expanded mental-health/wellness and labor-management indicators, and even a recommendation for an ethical-AI-use policy. Citing the edition correctly is a small detail that reads as genuine currency.</p></div>
+
 </div>
 <div class="lesson-sidebar">
 <div class="ft-toggle" onclick="toggleFT(this)" style="margin-bottom:16px;max-width:320px">
@@ -239,11 +274,11 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div><div class="ft-toggle-label">Fast Track Mode</div><div class="ft-toggle-desc">Full lesson content</div></div>
 </div>
 
-<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Applied to this lesson's board question</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">CFAI Ten Categories → BSC Performance Metrics → CPSE Standards → Continuous Improvement Cycle</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the performance gap → apply CFAI category → build the measurement system → close with Commitment</div></div></div></div>
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Why accreditation exists</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">ERS — Explain the principle, give a recent example, state it at the rank you are testing for</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Name the CPSE ecosystem (CFAI accreditation + CPC credentialing) → the FESSAM self-assessment model → why accreditation (the three arguments)</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the performance gap → apply CFAI category → build the measurement system → close with a value anchor</div></div></div></div>
 
   <span class="sbar-label">CPSE + CFAI</span>
   <div class="sbar-card"><strong>CPSE</strong>Parent org. Also administers CFO and CEMSO designations (senior professional credentialing).</div>
-  <div class="sbar-card"><strong>CFAI</strong>Accrediting body. 10 categories · 247 performance indicators · self-assessment + site visit · 5-year renewal.</div>
+  <div class="sbar-card"><strong>CFAI</strong>Accrediting body. 11 categories · 250 performance indicators · self-assessment + site visit · 5-year renewal.</div>
   <span class="sbar-label">Three Arguments for Accreditation</span>
   <div class="sbar-card"><strong>Organizational Improvement</strong>Self-assessment makes gaps visible. Improvement is the product — not the certificate.</div>
   <div class="sbar-card"><strong>Political Credibility</strong>External validation to governing structure. Credibility currency in budget discussions.</div>
@@ -256,7 +291,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="ob-card">
   <div class="ob-header"><div class="ob-label">Oral Board — Why Accreditation Matters</div></div>
   <div class="ob-body">
-    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"Describe your understanding of cfai and cpse — the organizations and how you would apply it in a real scenario."</div><div class="ob-note">Name the accrediting body (CFAI) and the self-assessment process. Connect accreditation to measurable performance improvement, not just a plaque on the wall.</div></div></div>
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"A new council member asks why the department spends money pursuing CFAI accreditation. Make the case."</div><div class="ob-note">Explain the CPSE ecosystem briefly — CFAI runs agency accreditation, CPC credentials individual officers, both under the Center for Public Safety Excellence — then make the three arguments: accreditation forces a rigorous, data-driven self-assessment against a national model; it produces external, third-party validation that builds public and governing-body trust; and it creates a continuous-improvement discipline that outlasts any single chief. Frame it as accountability and transparency, not a plaque on the wall.</div></div></div>
   </div>
 </div>
 
@@ -264,10 +299,10 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
   <div class="tk-lbl">Lesson 1 — Key Takeaways</div>
   <div class="tk-item">CFAI and CPSE — The Organizations — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
   <div class="tk-item">Why Pursue Accreditation — The Three Arguments — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
-  <div class="tk-item">LEAD integration: Label this as a Accreditation Performance question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">LEAD integration: Label this as a Strategic & Organizational question, Engage the response structure, Apply the content frameworks, Deliver at rank and close with a value anchor.</div>
 </div>
 
-<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">CFAI Ten Categories → BSC Performance Metrics → CPSE Standards → Continuous Improvement Cycle</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the performance gap → apply CFAI category → build the measurement system → close with Commitment</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response structure. Apply the content frameworks to the scenario. Deliver at the rank you’re testing for and close with a value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Name the CPSE ecosystem (CFAI accreditation + CPC credentialing) → the FESSAM self-assessment model → why accreditation (the three arguments)</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the performance gap → apply CFAI category → build the measurement system → close with a value anchor</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
 <div class="lesson-nav-bar">
   <button class="lnb-btn" disabled>← Previous</button>
   <div class="lnb-info"><div class="lnb-name">Why Accreditation Matters</div><div class="lnb-num">Lesson 1 of 6</div></div>
@@ -281,11 +316,11 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="lesson-main">
   <div class="lesson-header">
     <div class="lh-eyebrow">Chapter 35 · Lesson 2 of 6</div>
-    <h1 class="lh-title">The CFAI Self-Assessment —<br><em>Ten Categories, 247 Indicators</em></h1>
-    <div class="lh-meta"><span class="lh-meta-item">⏱ 16 min</span><span class="lh-meta-item">📋 Self-Assessment · Ten Categories · Peer Review</span></div>
+    <h1 class="lh-title">The CFAI Self-Assessment —<br><em>Eleven Categories, 250 Indicators</em></h1>
+    <div class="lh-meta"><span class="lh-meta-item">⏱ 16 min</span><span class="lh-meta-item">📋 Self-Assessment · Eleven Categories · Peer Review</span></div>
   </div>
-  <p>The CFAI self-assessment is the core of the accreditation process — a comprehensive, systematic evaluation of the agency's performance across all functional areas. Understanding the ten category structure tells the senior officer what the accreditation is actually measuring and where their organization's performance gaps are most likely to be found.</p>
-  <h2>The Ten CFAI Categories</h2>
+  <p>The CFAI self-assessment is the core of the accreditation process — a comprehensive, systematic evaluation of the agency's performance across all functional areas. Understanding the eleven category structure tells the senior officer what the accreditation is actually measuring and where their organization's performance gaps are most likely to be found.</p>
+  <h2>The Eleven CFAI Categories</h2>
   <div class="acro-grid">
     <div class="acro-row">
       <div class="acro-letter">1</div>
@@ -357,16 +392,26 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
         <div class="acro-desc">Mutual aid, regional coordination, external agency relationships, community partnerships, and stakeholder engagement. Assesses the organization's integration into the broader emergency services and community systems it depends on and serves.</div>
       </div>
     </div>
+    <div class="acro-row">
+      <div class="acro-letter">11</div>
+      <div class="acro-content">
+        <div class="acro-word">Health and Safety</div>
+        <div class="acro-desc">Occupational health, safety, and risk management; wellness and fitness programs. Added as a standalone category in the 10th Edition to reflect how central firefighter health and safety has become — it assesses whether the department systematically protects the long-term health of its members. The 11th Edition expands this further into mental health and behavioral wellness.</div>
+      </div>
+    </div>
   </div>
   <div class="callout callout-teal">
     <span class="callout-label">The Peer Review Team Visit</span>
     <p>After the self-assessment is complete and submitted, CFAI assigns a peer review team — typically senior fire service leaders from accredited agencies — to conduct a site visit. The team reviews the self-assessment documentation, interviews staff at multiple levels, observes operations, and evaluates whether the agency's self-assessment is accurate and whether the performance indicators are being met. The peer review is not a pass-fail inspection — it is a professional development conversation at organizational scale. Departments that approach it defensively get less value from it than those that approach it as an honest external assessment.</p>
   </div>
+
+<div class="callout callout-teal"><div class="callout-label">Board Tip — Locate, Don’t List</div><p>No board wants you to recite all eleven categories. The skill is to <strong>locate the problem in the model</strong>: a staffing question lives in Human Resources (VII), a response-time gap in Assessment &amp; Planning (II) and Programs (V), a near-miss trend in Health &amp; Safety (XI). Naming the right category — and the continuous-improvement loop behind it — shows you think in the model, not just about it.</p></div>
+
 </div>
 <div class="lesson-sidebar">
-<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Applied to this lesson's board question</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">CFAI Ten Categories → BSC Performance Metrics → CPSE Standards → Continuous Improvement Cycle</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the performance gap → apply CFAI category → build the measurement system → close with Commitment</div></div></div></div>
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">The model, by category</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">ERS — principle, recent example, stated at rank</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Name CFAI's eleven categories → locate the issue's category → tie self-assessment to continuous improvement</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the performance gap → apply CFAI category → build the measurement system → close with a value anchor</div></div></div></div>
 
-  <span class="sbar-label">Ten CFAI Categories</span>
+  <span class="sbar-label">Eleven CFAI Categories</span>
   <div class="sbar-card">1. Governance + Administration · 2. Assessment + Planning · 3. Goals + Objectives · 4. Financial Resources · 5. Programs · 6. Physical Resources · 7. Human Resources · 8. Training + Competency · 9. Essential Resources · 10. External Systems</div>
   <span class="sbar-label">Most Common Gaps</span>
   <div class="sbar-card">Outdated policies (Cat 1) · static risk assessment (Cat 2) · aspirational goals without metrics (Cat 3) · no apparatus replacement schedule (Cat 6) · underdeveloped training records (Cat 8).</div>
@@ -378,18 +423,18 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="ob-card">
   <div class="ob-header"><div class="ob-label">Oral Board — The CFAI Self-Assessment</div></div>
   <div class="ob-body">
-    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"Describe your understanding of the ten cfai categories and how you would apply it in a real scenario."</div><div class="ob-note">Name the accrediting body (CFAI) and the self-assessment process. Connect accreditation to measurable performance improvement, not just a plaque on the wall.</div></div></div>
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"Walk me through the CFAI accreditation model — what does it actually assess?"</div><div class="ob-note">The FESSAM self-assessment model spans eleven categories — from Governance & Administration and Assessment & Planning through Programs, Resources, Training, External Relationships, and Health & Safety — with roughly 250 performance indicators beneath them. The point is that it’s comprehensive by design: the agency must describe and appraise every segment of the organization, identify gaps, and build improvement plans, all verified by peer assessors. Knowing the category structure lets you locate any problem in the model and speak to it precisely.</div></div></div>
   </div>
 </div>
 
 <div class="takeaways">
   <div class="tk-lbl">Lesson 2 — Key Takeaways</div>
-  <div class="tk-item">The Ten CFAI Categories — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
-  <div class="tk-item">LEAD integration: Label this as a Accreditation Performance question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">The Eleven CFAI Categories — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
+  <div class="tk-item">LEAD integration: Label this as a Strategic & Organizational question, Engage the response structure, Apply the content frameworks, Deliver at rank and close with a value anchor.</div>
   <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
 </div>
 
-<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">CFAI Ten Categories → BSC Performance Metrics → CPSE Standards → Continuous Improvement Cycle</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the performance gap → apply CFAI category → build the measurement system → close with Commitment</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response structure. Apply the content frameworks to the scenario. Deliver at the rank you’re testing for and close with a value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Name CFAI's eleven categories → locate the issue's category → tie self-assessment to continuous improvement</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the performance gap → apply CFAI category → build the measurement system → close with a value anchor</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
 <div class="lesson-nav-bar">
   <button class="lnb-btn" onclick="prevLesson()">← Why Accreditation Matters</button>
   <div class="lnb-info"><div class="lnb-name">CFAI Self-Assessment</div><div class="lnb-num">Lesson 2 of 6</div></div>
@@ -453,7 +498,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
   </div>
 </div>
 <div class="lesson-sidebar">
-<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Applied to this lesson's board question</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">CFAI Ten Categories → BSC Performance Metrics → CPSE Standards → Continuous Improvement Cycle</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the performance gap → apply CFAI category → build the measurement system → close with Commitment</div></div></div></div>
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">From risk to deployment</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">ERS / size-up for the deployment problem</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Build the Standards of Cover (risk → baseline → benchmark → compliance) → anchor to NFPA 1710 → drive the deployment decision</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the performance gap → apply CFAI category → build the measurement system → close with a value anchor</div></div></div></div>
 
   <span class="sbar-label">Four SOC Components</span>
   <div class="sbar-card"><strong>Risk Assessment</strong>Geographic risk zoning. High/moderate/low risk areas receive different deployment standards.</div>
@@ -470,7 +515,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="ob-card">
   <div class="ob-header"><div class="ob-label">Oral Board — Standards of Cover</div></div>
   <div class="ob-body">
-    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"Describe your understanding of the four soc components and how you would apply it in a real scenario."</div><div class="ob-note">Name the accrediting body (CFAI) and the self-assessment process. Connect accreditation to measurable performance improvement, not just a plaque on the wall.</div></div></div>
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"Your response times in a growing district are slipping. How do you diagnose and defend a deployment change?"</div><div class="ob-note">Work the Standards of Cover process: a current community risk assessment, your baseline performance (what you’re actually delivering, measured at fractile, not average), the benchmark you’re committing to (anchored to NFPA 1710’s response-time continuum), and a compliance/improvement plan that closes the gap. That SOC, backed by real data, is what turns ‘we feel slow’ into a defensible, board-ready case for a station, a unit, or a staffing change.</div></div></div>
   </div>
 </div>
 
@@ -478,10 +523,10 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
   <div class="tk-lbl">Lesson 3 — Key Takeaways</div>
   <div class="tk-item">The Four SOC Components — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
   <div class="tk-item">The NFPA 1710 Benchmark Numbers — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
-  <div class="tk-item">LEAD integration: Label this as a Accreditation Performance question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">LEAD integration: Label this as a Strategic & Organizational question, Engage the response structure, Apply the content frameworks, Deliver at rank and close with a value anchor.</div>
 </div>
 
-<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">CFAI Ten Categories → BSC Performance Metrics → CPSE Standards → Continuous Improvement Cycle</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the performance gap → apply CFAI category → build the measurement system → close with Commitment</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response structure. Apply the content frameworks to the scenario. Deliver at the rank you’re testing for and close with a value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Build the Standards of Cover (risk → baseline → benchmark → compliance) → anchor to NFPA 1710 → drive the deployment decision</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the performance gap → apply CFAI category → build the measurement system → close with a value anchor</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
 <div class="lesson-nav-bar">
   <button class="lnb-btn" onclick="prevLesson()">← CFAI Self-Assessment</button>
   <div class="lnb-info"><div class="lnb-name">Standards of Cover</div><div class="lnb-num">Lesson 3 of 6</div></div>
@@ -537,7 +582,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
   </div>
 </div>
 <div class="lesson-sidebar">
-<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Applied to this lesson's board question</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">CFAI Ten Categories → BSC Performance Metrics → CPSE Standards → Continuous Improvement Cycle</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the performance gap → apply CFAI category → build the measurement system → close with Commitment</div></div></div></div>
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Measuring what matters</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">ERS — principle, recent example, stated at rank</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Define the performance metrics (balanced scorecard) → baseline vs benchmark, measured at fractile → trend data to decision</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the performance gap → apply CFAI category → build the measurement system → close with a value anchor</div></div></div></div>
 
   <span class="sbar-label">Four KPI Categories</span>
   <div class="sbar-card"><strong>Response Performance</strong>Turnout · travel · total · ERF assembly. By type, geography, time. Against SOC.</div>
@@ -554,7 +599,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="ob-card">
   <div class="ob-header"><div class="ob-label">Oral Board — Performance Metrics</div></div>
   <div class="ob-body">
-    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"Describe your understanding of the fire service kpi dashboard — core metrics and how you would apply it in a real scenario."</div><div class="ob-note">Name the accrediting body (CFAI) and the self-assessment process. Connect accreditation to measurable performance improvement, not just a plaque on the wall.</div></div></div>
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"The city manager wants to know if the department is performing. What do you put in front of them?"</div><div class="ob-note">A balanced performance dashboard — not just call volume. Show response-time fractile compliance against the benchmark, outcome measures (not just outputs), and trend data over time, organized so a non-fire-service reader can see whether performance is improving, holding, or declining. Tie the metrics back to the SOC and the accreditation model so it reads as a managed system, not a pile of numbers. The discipline is measuring outcomes and trends — and being honest about what’s declining.</div></div></div>
   </div>
 </div>
 
@@ -562,10 +607,10 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
   <div class="tk-lbl">Lesson 4 — Key Takeaways</div>
   <div class="tk-item">The Fire Service KPI Dashboard — Core Metrics — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
   <div class="tk-item">Building the Performance Dashboard — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
-  <div class="tk-item">LEAD integration: Label this as a Accreditation Performance question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">LEAD integration: Label this as a Strategic & Organizational question, Engage the response structure, Apply the content frameworks, Deliver at rank and close with a value anchor.</div>
 </div>
 
-<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">CFAI Ten Categories → BSC Performance Metrics → CPSE Standards → Continuous Improvement Cycle</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the performance gap → apply CFAI category → build the measurement system → close with Commitment</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response structure. Apply the content frameworks to the scenario. Deliver at the rank you’re testing for and close with a value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Define the performance metrics (balanced scorecard) → baseline vs benchmark, measured at fractile → trend data to decision</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the performance gap → apply CFAI category → build the measurement system → close with a value anchor</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
 <div class="lesson-nav-bar">
   <button class="lnb-btn" onclick="prevLesson()">← Standards of Cover</button>
   <div class="lnb-info"><div class="lnb-name">Performance Metrics</div><div class="lnb-num">Lesson 4 of 6</div></div>
@@ -622,7 +667,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
   </div>
 </div>
 <div class="lesson-sidebar">
-<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Applied to this lesson's board question</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">CFAI Ten Categories → BSC Performance Metrics → CPSE Standards → Continuous Improvement Cycle</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the performance gap → apply CFAI category → build the measurement system → close with Commitment</div></div></div></div>
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Reading the ISO score</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">ERS — principle, recent example, stated at rank</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">The ISO FSRS components (Fire Dept 50 · Water 40 · Communications 10 · CRR) → the PPC class → translate to resource justification</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the performance gap → apply CFAI category → build the measurement system → close with a value anchor</div></div></div></div>
 
   <span class="sbar-label">ISO Scoring</span>
   <div class="sbar-card"><strong>50% — Fire Department</strong>Engine companies · ladder companies · staffing · training · deployment.</div>
@@ -639,7 +684,7 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
 <div class="ob-card">
   <div class="ob-header"><div class="ob-label">Oral Board — ISO Public Protection Classification</div></div>
   <div class="ob-body">
-    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"Describe your understanding of the iso scoring components and how you would apply it in a real scenario."</div><div class="ob-note">Name the accrediting body (CFAI) and the self-assessment process. Connect accreditation to measurable performance improvement, not just a plaque on the wall.</div></div></div>
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"Explain what an ISO PPC rating measures and how you’d use it."</div><div class="ob-note">The ISO Public Protection Classification scores the community’s fire-suppression capability through the Fire Suppression Rating Schedule: the fire department itself (about 50 points — staffing, apparatus, training, deployment), water supply (40 points), emergency communications (10 points), plus a Community Risk Reduction section. The resulting Class (1–10) affects insurance rates and, more usefully for you, pinpoints where capability gaps are — making it a data-backed lever for justifying staffing, apparatus, or water-system investment.</div></div></div>
   </div>
 </div>
 
@@ -647,10 +692,10 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
   <div class="tk-lbl">Lesson 5 — Key Takeaways</div>
   <div class="tk-item">The ISO Scoring Components — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
   <div class="tk-item">Connecting ISO to Resource Justification — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
-  <div class="tk-item">LEAD integration: Label this as a Accreditation Performance question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">LEAD integration: Label this as a Strategic & Organizational question, Engage the response structure, Apply the content frameworks, Deliver at rank and close with a value anchor.</div>
 </div>
 
-<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">CFAI Ten Categories → BSC Performance Metrics → CPSE Standards → Continuous Improvement Cycle</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the performance gap → apply CFAI category → build the measurement system → close with Commitment</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response structure. Apply the content frameworks to the scenario. Deliver at the rank you’re testing for and close with a value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">The ISO FSRS components (Fire Dept 50 · Water 40 · Communications 10 · CRR) → the PPC class → translate to resource justification</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the performance gap → apply CFAI category → build the measurement system → close with a value anchor</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
 <div class="lesson-nav-bar">
   <button class="lnb-btn" onclick="prevLesson()">← Performance Metrics</button>
   <div class="lnb-info"><div class="lnb-name">ISO Rating Process</div><div class="lnb-num">Lesson 5 of 6</div></div>
@@ -689,32 +734,87 @@ body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:va
   </div>
 </div>
 <div class="lesson-sidebar">
-<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Applied to this lesson's board question</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">Response framework for this question type</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">CFAI Ten Categories → BSC Performance Metrics → CPSE Standards → Continuous Improvement Cycle</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the performance gap → apply CFAI category → build the measurement system → close with Commitment</div></div></div></div>
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Making the case</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Strategic & Organizational</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">ERS (knowledge/strategy) · Monroe's (when pitching the council)</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Frame the performance system → marshal the data (accreditation, SOC, KPIs, ISO) → make the costed case to the decision-maker</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Identify the performance gap → apply CFAI category → build the measurement system → close with a value anchor</div></div></div></div>
 
   <span class="sbar-label">5/5 Pattern</span>
   <div class="sbar-card">Evidence-based (NFPA research, not opinion) · current performance data against SOC · ISO PPC community financial impact quantified · critical task analysis at accessible level · closes with "your decision, my job is to give you the data." Never pleads or threatens.</div>
   <span class="sbar-label">3/5 Gap</span>
   <div class="sbar-card">"Professional standard" + "please reconsider" = advocacy without evidence. Council can always say no to advocacy. Harder to say no to data that quantifies community financial impact.</div>
   <span class="sbar-label">Key Terms for DC Level</span>
-  <div class="sbar-card">NFPA 1710 · critical task analysis · effective response force · Standards of Cover · ISO PPC community impact · CFAI 10 categories · performance dashboard · trend data. These signal DC-level fluency.</div>
+  <div class="sbar-card">NFPA 1710 · critical task analysis · effective response force · Standards of Cover · ISO PPC community impact · CFAI 11 categories · performance dashboard · trend data. These signal DC-level fluency.</div>
 </div>
 </div>
 
 <div class="ob-card">
   <div class="ob-header"><div class="ob-label">Oral Board — Assessment Center Application</div></div>
   <div class="ob-body">
-    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"You receive a scenario about accreditation performance. Walk me through your complete response using the frameworks from this chapter."</div><div class="ob-note">Use LEAD: Label the bucket (Accreditation Performance), Engage the specific framework (reference Practice Scenario — Presenting to Council explicitly), Address the operational and organizational impact, Drive to a concrete first action with a timeline.</div></div></div>
+    <div class="ob-q"><span class="ob-q-tag">BC / DC</span><div><div class="ob-q-text">"Present a five-minute case to council for the resources your performance data says you need."</div><div class="ob-note">Lead with the data system, not the ask: the accreditation self-assessment found the gap, the Standards of Cover quantifies it against the NFPA 1710 benchmark, the performance dashboard shows the trend, and the ISO classification corroborates the capability shortfall. Then make the specific, costed request and the outcome it buys — in the governance language council cares about. The move at this rank is to let a credible, data-driven system make the argument for you, then own the outcome.</div></div></div>
   </div>
 </div>
 
 <div class="takeaways">
   <div class="tk-lbl">Lesson 6 — Key Takeaways</div>
   <div class="tk-item">Practice Scenario — Presenting to Council — understand the framework, name it in your response, and apply it to a specific fire service scenario.</div>
-  <div class="tk-item">LEAD integration: Label this as a Accreditation Performance question, Engage the lesson framework, Address impact, Drive to action.</div>
+  <div class="tk-item">LEAD integration: Label this as a Strategic & Organizational question, Engage the response structure, Apply the content frameworks, Deliver at rank and close with a value anchor.</div>
   <div class="tk-item">Board application: every concept in this lesson maps to a real assessment center scenario. Practice articulating it in 90 seconds or less.</div>
 </div>
 
-<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">CFAI Ten Categories → BSC Performance Metrics → CPSE Standards → Continuous Improvement Cycle</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the performance gap → apply CFAI category → build the measurement system → close with Commitment</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response structure. Apply the content frameworks to the scenario. Deliver at the rank you’re testing for and close with a value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Strategic & Organizational</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Frame the performance system → marshal the data (accreditation, SOC, KPIs, ISO) → make the costed case to the decision-maker</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Identify the performance gap → apply CFAI category → build the measurement system → close with a value anchor</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+
+<h2>What a 5/5 Sounds Like — Defending a Deployment Change With Data</h2>
+<p>An accreditation/performance question at this rank is a knowledge-and-strategy question — the natural structure is <strong>ERS</strong>: Explain the principle, give a Recent example, State what it means at the rank you’re testing for. Here it is annotated, for a response-time decline.</p>
+<div class="mon-wrap">
+  <div class="mon-head"><div class="mon-head-title">5/5 Model — “Your response times are slipping. What do you do?”</div><div class="mon-head-sub">ERS structure — DC / FO IV, Strategic &amp; Organizational</div></div>
+  <div class="mon-row"><div class="mon-letter">Explain</div><div class="mon-cell"><div class="mon-label">Principle + named system</div><div class="mon-say">"My approach is grounded in the Standards of Cover process — I don’t react to a feeling that we’re slow, I measure it. Risk assessment, baseline performance at fractile, the benchmark we’ve committed to against the NFPA 1710 continuum, and a compliance plan to close the gap. Accreditation is the discipline that keeps that honest."</div><div class="mon-why">Names the framework (SOC) and the standard (NFPA 1710, fractile not average) in the first breath — the move from instinct to managed system. That is the 4/5 floor.</div></div></div>
+  <div class="mon-row"><div class="mon-letter">Recent Example</div><div class="mon-cell"><div class="mon-label">Principle in action</div><div class="mon-say">"When our growing northeast district’s 90th-percentile travel time drifted past benchmark, I stratified the data by zone and hour, confirmed it wasn’t a turnout problem but a coverage problem, and built the SOC case for a peak-demand unit — with the performance dashboard and ISO capability gap corroborating it."</div><div class="mon-why">A pointed, specific illustration — not a full war story — showing the system actually used: data stratified, root cause diagnosed, multiple sources converging on one defensible ask.</div></div></div>
+  <div class="mon-row"><div class="mon-letter">State at Rank</div><div class="mon-cell"><div class="mon-label">What it means at this level + close</div><div class="mon-say">"As a chief officer, I own the performance system, not just the response. My job is to put a credible, data-driven case in front of the council, be honest about what the data shows even when it’s unflattering, and then own the outcome. That accountability — to the community and the standard we exist to uphold — is what this rank is for."</div><div class="mon-why">Makes the identity shift explicit (own the system, not just the incident), commits to intellectual honesty, and closes on an earned value anchor — the difference between 4/5 and 5/5.</div></div></div>
+</div>
+
+<div class="mq-wrap">
+  <div class="mq-head">Knowledge Check</div>
+  <div class="mq-sub">Five questions across the chapter. Pick an answer to see why it’s right or wrong — testing yourself is how it sticks.</div>
+  <div class="mq-q">
+    <div class="mq-q-num">Question 1 · The Accreditation Model</div>
+    <div class="mq-q-text">How many categories does the CFAI FESSAM use, and roughly how many performance indicators?</div>
+    <button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'fb1')">Ten categories and about 247 indicators.</button>
+    <button class="mq-opt" data-correct="1" onclick="mqAnswer(this,true,'fb1')">Eleven categories and roughly 250 performance indicators.</button>
+    <button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'fb1')">Five categories and about 100 indicators.</button>
+    <div class="mq-fb" id="fb1">Eleven categories — Category XI (Health &amp; Safety) was added in the 10th Edition — with roughly 250 indicators in the current model.</div>
+  </div>
+  <div class="mq-q">
+    <div class="mq-q-num">Question 2 · The Ecosystem</div>
+    <div class="mq-q-text">What’s the difference between CFAI and CPC?</div>
+    <button class="mq-opt" data-correct="1" onclick="mqAnswer(this,true,'fb2')">CFAI accredits agencies; CPC credentials individual officers — both under CPSE.</button>
+    <button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'fb2')">They’re two names for the same accreditation program.</button>
+    <button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'fb2')">CFAI is a federal agency; CPC is a union.</button>
+    <div class="mq-fb" id="fb2">Accreditation is the organization (CFAI); credentialing is the person (CPC, e.g., the CFO designation). Both sit under the Center for Public Safety Excellence.</div>
+  </div>
+  <div class="mq-q">
+    <div class="mq-q-num">Question 3 · Standards of Cover</div>
+    <div class="mq-q-text">How should response-time performance be measured in a Standards of Cover?</div>
+    <button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'fb3')">As a simple average response time across all calls.</button>
+    <button class="mq-opt" data-correct="1" onclick="mqAnswer(this,true,'fb3')">At fractile (e.g., 90th percentile) against a benchmark anchored to NFPA 1710.</button>
+    <button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'fb3')">By total call volume only.</button>
+    <div class="mq-fb" id="fb3">Averages hide the slow tail. Fractile measurement against the NFPA 1710 continuum is what makes a SOC defensible.</div>
+  </div>
+  <div class="mq-q">
+    <div class="mq-q-num">Question 4 · ISO PPC</div>
+    <div class="mq-q-text">How is the ISO Fire Suppression Rating Schedule weighted?</div>
+    <button class="mq-opt" data-correct="1" onclick="mqAnswer(this,true,'fb4')">Fire department ~50, water supply ~40, emergency communications ~10, plus a Community Risk Reduction section.</button>
+    <button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'fb4')">Entirely on the number of firefighters.</button>
+    <button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'fb4')">Equal thirds across staffing, training, and apparatus.</button>
+    <div class="mq-fb" id="fb4">The FSRS weights the department most heavily (~50 points), then water supply (40) and communications (10), with a CRR section — which is why it pinpoints where capability gaps sit.</div>
+  </div>
+  <div class="mq-q">
+    <div class="mq-q-num">Question 5 · Performance Reporting</div>
+    <div class="mq-q-text">What distinguishes a strong performance dashboard for elected officials?</div>
+    <button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'fb5')">It maximizes the call-volume number to look busy.</button>
+    <button class="mq-opt" data-correct="1" onclick="mqAnswer(this,true,'fb5')">It reports outcomes and trends against benchmark, readable by a non-fire audience, and is honest about what’s declining.</button>
+    <button class="mq-opt" data-correct="0" onclick="mqAnswer(this,false,'fb5')">It shows only the metrics that look good this quarter.</button>
+    <div class="mq-fb" id="fb5">Outcomes over outputs, trends over snapshots, plain enough for a city manager to read — and honest about declines. That credibility is what gets the next request funded.</div>
+  </div>
+</div>
+
 <div class="lesson-nav-bar">
   <button class="lnb-btn" onclick="prevLesson()">← ISO Rating Process</button>
   <div class="lnb-info"><div class="lnb-name">AC Application</div><div class="lnb-num">Lesson 6 of 6</div></div>
@@ -745,5 +845,17 @@ function lfNext(el,stepNum){
 }
 </script>
 <script>function toggleFT(el){var sw=el.querySelector('.ft-toggle-switch');var desc=el.querySelector('.ft-toggle-desc');var mains=document.querySelectorAll('.lesson-main');sw.classList.toggle('on');var on=sw.classList.contains('on');desc.textContent=on?'Frameworks + OB cards only':'Full lesson content';mains.forEach(function(m){m.classList.toggle('ft-on',on);});}</script>
+
+<script>
+function mqAnswer(btn,isCorrect,fbId){
+  var q=btn.closest('.mq-q'); if(!q) return;
+  q.querySelectorAll('.mq-opt').forEach(function(o){o.disabled=true;});
+  if(isCorrect){btn.classList.add('correct');}
+  else{btn.classList.add('wrong');
+    q.querySelectorAll('.mq-opt').forEach(function(o){if(o.getAttribute('data-correct')==='1')o.classList.add('correct');});}
+  var fb=document.getElementById(fbId); if(fb)fb.classList.add('show');
+}
+</script>
+
 </body>
 </html>
