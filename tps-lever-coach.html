@@ -26,44 +26,59 @@ body{margin:0;background:var(--cream);color:var(--mid);font-family:'Source Serif
 .step-num{font-family:'Cinzel',serif;color:var(--gold3);font-size:10px;letter-spacing:2px;text-transform:uppercase;}
 .step-q{font-family:'Cinzel',serif;color:var(--navy);font-size:1.2rem;margin:0.3rem 0 0.3rem;letter-spacing:0.3px;}
 .step-hint{color:var(--mid);font-size:0.9rem;margin-bottom:0.9rem;}
+.reframe{background:rgba(201,168,76,0.10);border-left:4px solid var(--gold);border-radius:0 8px 8px 0;padding:0.75rem 1rem;margin-bottom:1rem;font-size:0.9rem;color:var(--mid);font-style:italic;}
+.reframe b{color:var(--navy);font-style:normal;}
 textarea{width:100%;min-height:96px;border:1px solid var(--light);border-radius:10px;padding:0.8rem 0.9rem;font-family:'Source Serif 4',Georgia,serif;font-size:0.95rem;color:var(--navy);resize:vertical;background:#fdfcfa;}
 textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,168,76,0.15);}
 .row{display:flex;justify-content:space-between;align-items:center;margin-top:1.1rem;gap:0.8rem;}
 .btn{font-family:'Cinzel',serif;font-size:0.82rem;letter-spacing:1px;padding:0.7rem 1.3rem;border-radius:8px;border:none;cursor:pointer;transition:all .2s;}
 .btn-primary{background:var(--gold);color:var(--navy);}
 .btn-primary:hover{background:#d8b85f;}
-.btn-primary:disabled{opacity:0.5;cursor:not-allowed;}
+.btn-primary:disabled{opacity:0.45;cursor:not-allowed;}
 .btn-ghost{background:transparent;color:var(--mid);border:1px solid var(--light);}
 .btn-ghost:hover{border-color:var(--gray);}
-.scaffold{background:rgba(12,35,64,0.04);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:0.7rem 0.9rem;margin-bottom:0.9rem;font-size:0.85rem;color:var(--mid);}
-.scaffold b{color:var(--navy);}
+/* options */
+.opt{display:block;width:100%;text-align:left;background:#fff;border:1px solid var(--light);border-radius:10px;padding:0.85rem 1rem;margin-bottom:0.6rem;cursor:pointer;transition:all .15s;font-family:inherit;}
+.opt:hover{border-color:var(--gold);}
+.opt.sel{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,168,76,0.15);}
+.opt.reveal-best{border-left:4px solid var(--green);}
+.opt.locked{cursor:default;}
+.opt-label{font-family:'Cinzel',serif;color:var(--navy);font-size:0.92rem;margin-bottom:0.15rem;letter-spacing:0.2px;}
+.opt-detail{color:var(--mid);font-size:0.86rem;line-height:1.5;}
+.tier{display:inline-block;font-family:'Cinzel',serif;font-size:8px;letter-spacing:1px;text-transform:uppercase;padding:1px 7px;border-radius:3px;margin-right:7px;vertical-align:middle;border:1px solid var(--gray);color:var(--gray);}
+.tier.moderate{color:var(--teal);border-color:var(--teal);}
+.tier.high{color:var(--purple);border-color:var(--purple);}
+.tier.highest{color:var(--gold3);border-color:var(--gold);}
+.chk{color:var(--green);font-weight:700;margin-left:6px;}
+.fb{background:rgba(12,35,64,0.04);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:0.75rem 0.95rem;margin:0.2rem 0 0.6rem;font-size:0.87rem;color:var(--mid);}
+.fb b{color:var(--navy);}
+.fb.good{border-left-color:var(--green);background:rgba(26,92,58,0.06);}
+.fb-label{font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold3);display:block;margin-bottom:0.2rem;}
+.fb.good .fb-label{color:var(--green);}
 /* brief */
 .brief-head{background:var(--navy);border-radius:14px 14px 0 0;padding:1.2rem 1.4rem;}
-.brief-head .hero-eyebrow{color:var(--gold);}
 .brief-head h2{font-family:'Cinzel',serif;color:var(--cream);font-size:1.3rem;margin:0.3rem 0 0;}
 .brief-body{background:#fff;border:1px solid var(--light);border-top:none;border-radius:0 0 14px 14px;padding:1.3rem 1.4rem;}
-.bsec{margin-bottom:1.2rem;}
+.bsec{margin-bottom:1.1rem;}
 .blabel{font-family:'Cinzel',serif;color:var(--gold3);font-size:10px;letter-spacing:2px;text-transform:uppercase;margin-bottom:0.3rem;}
 .btext{color:var(--mid);font-size:0.93rem;}
 .btext b{color:var(--navy);}
-.lever{display:flex;gap:10px;align-items:flex-start;padding:0.6rem 0.8rem;border-radius:9px;background:rgba(12,35,64,0.03);margin-bottom:0.5rem;border-left:4px solid var(--gray);}
-.lever.s-moderate{border-left-color:var(--teal);}
-.lever.s-high{border-left-color:var(--purple);}
-.lever.s-highest{border-left-color:var(--gold);}
-.lever-tier{font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:1px;text-transform:uppercase;color:var(--gold3);white-space:nowrap;padding-top:3px;min-width:74px;}
-.lever-move{font-size:0.88rem;color:var(--mid);}
 .rec{background:rgba(26,92,58,0.07);border-left:4px solid var(--green);border-radius:0 8px 8px 0;padding:0.8rem 1rem;}
 .rec .blabel{color:var(--green);}
 .warn{background:rgba(178,34,34,0.06);border-left:4px solid var(--red);border-radius:0 8px 8px 0;padding:0.8rem 1rem;margin-top:0.8rem;}
 .warn .blabel{color:var(--red);}
+.recap{margin-top:0.6rem;border-top:1px solid var(--light);padding-top:0.7rem;}
+.recap .ri{font-size:0.85rem;color:var(--mid);padding:0.25rem 0;}
+.recap .ri b{color:var(--navy);font-family:'Cinzel',serif;font-size:0.74rem;letter-spacing:0.5px;}
 .loading{text-align:center;padding:2rem 1rem;color:var(--mid);}
 .spinner{width:34px;height:34px;border:3px solid var(--light);border-top-color:var(--gold);border-radius:50%;margin:0 auto 0.9rem;animation:spin 0.9s linear infinite;}
 @keyframes spin{to{transform:rotate(360deg);}}
 .err{background:rgba(178,34,34,0.06);border:1px solid rgba(178,34,34,0.25);border-radius:10px;padding:1rem;color:var(--mid);font-size:0.9rem;}
-.recap{margin-top:0.9rem;font-size:0.85rem;color:var(--mid);}
-.recap .ri{padding:0.4rem 0;border-top:1px solid var(--light);}
-.recap .ri b{color:var(--navy);font-family:'Cinzel',serif;font-size:0.78rem;letter-spacing:0.5px;display:block;margin-bottom:1px;}
 .tools{display:flex;gap:0.6rem;margin-top:1.2rem;flex-wrap:wrap;}
+.manual{margin-top:1rem;font-size:0.86rem;}
+.manual summary{cursor:pointer;font-family:'Cinzel',serif;color:var(--gold3);font-size:0.8rem;letter-spacing:0.5px;}
+.manual ol{padding-left:1.1rem;color:var(--mid);}
+.manual li{margin:0.4rem 0;}
 </style>
 </head>
 <body>
@@ -71,10 +86,9 @@ textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(2
   <div class="hero">
     <div class="hero-eyebrow">The Executive Crucible · Systems &amp; Leverage</div>
     <h1>The Lever Coach</h1>
-    <p>Take one problem you keep fighting and walk it all the way down — from the symptom everyone reacts to, to the lever that actually moves the system. Built on Senge's ladder, the systems archetypes, and Donella Meadows' leverage hierarchy.</p>
-    <div class="note">Your responses are processed to generate your brief and are not stored. One analysis per worksheet.</div>
+    <p>Bring one problem you keep fighting. The coach walks you down from the symptom everyone reacts to, to the lever that actually moves the system — choosing at each step, learning as you go. Built on Senge's ladder, the systems archetypes, and Donella Meadows' leverage hierarchy.</p>
+    <div class="note">Your responses are processed to generate your coaching and are not stored.</div>
   </div>
-
   <div class="prog" id="prog"></div>
   <div id="stage"></div>
 </div>
@@ -83,207 +97,239 @@ textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(2
 /* ============================================================
    THE LEVER COACH — AI configuration
    ------------------------------------------------------------
-   PRODUCTION (TPS app / GitHub Pages module):
-     MODE = 'backend', ENDPOINT = a Supabase edge function that
-     holds the key server-side and returns { text: "..." }.
-     RECOMMENDED: clone supabase/functions/practice-engine — it
-     already works, using the Lovable AI Gateway + LOVABLE_API_KEY
-     (no new secret needed). Swap in this tool's SYSTEM_PROMPT,
-     return { text }, Counsel-gate it, and cap calls per user.
-     DO NOT copy the Leadership Identity tool's wiring: it calls
-     api.anthropic.com directly from the browser with no auth, so
-     it always fails and silently serves a hardcoded fallback.
-
-   DEMO (inside Claude.ai as an artifact):
-     MODE = 'direct' previews the experience; auth is handled by
-     the artifact runtime. This will NOT work on GitHub Pages.
+   PRODUCTION: MODE='backend', ENDPOINT = the lever-coach Supabase
+   edge function (holds the key server-side, returns { text }).
+   IMPORTANT: this guided version needs more output room than the
+   first build — set the edge function's max_tokens to >= 2000
+   (or have it read body.max_tokens). 1000 will truncate the JSON.
+   Do NOT copy the Leadership Identity wiring (browser-direct, no
+   auth → always fails to a fallback).
+   DEMO: MODE='direct' previews inside Claude.ai only.
    ============================================================ */
 const COACH_CFG = {
-  MODE: 'backend',                      // 'direct' (demo) | 'backend' (production)
+  MODE: 'backend',
   ENDPOINT: 'https://xrgztcvjpimjaodtmmys.supabase.co/functions/v1/lever-coach',
   MODEL: 'claude-sonnet-4-6',
+  MAX_TOKENS: 2000,
 };
 
-const STEPS = [
-  { key:'problem', num:'Step 1 of 5',
-    q:'Name the problem you keep reacting to.',
-    hint:'State it as the symptom you keep firefighting — not the cause you already assume.',
-    scaffold:'<b>Stay at the symptom.</b> "Overtime is over budget again," not "we need to hire." The cause is what we\u2019re about to find together.',
-    ph:'e.g., Overtime blows the budget almost every quarter and the pressure from above is to cut it.' },
-  { key:'ladder', num:'Step 2 of 5',
-    q:'Climb the ladder.',
-    hint:'Look beneath the events for the deeper structure.',
-    scaffold:'<b>Four rungs:</b> the <b>pattern</b> over time · the <b>structure</b> (rules, schedules, incentives, pipelines) producing it · the <b>mental model</b> (the belief that keeps the structure feeling normal).',
-    ph:'e.g., Pattern: OT spikes every winter and after retirements; sick time rises with it. Structure: thin roster, callback rule leans on the same few, slow hiring pipeline. Belief: "we\u2019ve always just backfilled with OT."' },
-  { key:'archetype', num:'Step 3 of 5',
-    q:'Name the trap, and list your options.',
-    hint:'Which recurring pattern is this — and every move you could make.',
-    scaffold:'<b>Archetypes:</b> Fixes That Fail · Shifting the Burden · Limits to Growth · Eroding Goals · Escalation · Success to the Successful · Tragedy of the Commons. Then list candidate moves — from budget tweaks to rule changes to goal shifts.',
-    ph:'e.g., Looks like Shifting the Burden + Fixes That Fail. Options: cap OT; speed up hiring; show council the real OT-vs-hire cost; change the callback rule; reframe the goal to crew health.' },
-  { key:'lever', num:'Step 4 of 5',
-    q:'Which lever can you actually move?',
-    hint:'The highest-leverage point your authority and coalition can reach right now.',
-    scaffold:'<b>Be honest about reach.</b> The deepest levers (goals, paradigm) need a coalition and a budget cycle. The middle band — information flows, feedback, rules — is powerful and usually within a chief officer\u2019s grasp today.',
-    ph:'e.g., I can move the information flow (show council the true delayed cost) and shorten the hiring pipeline now; build the coalition for the staffing-plan goal next budget.' },
-  { key:'push', num:'Step 5 of 5',
-    q:'Push it the right way — and name the delay.',
-    hint:'Direction and patience are where most leverage attempts fail.',
-    scaffold:'<b>Right direction?</b> Cutting OT often pushes the lever the wrong way (more fatigue, more gaps). <b>The delay:</b> how long before change should show — and what low-leverage twitch will you refuse to make while you wait?',
-    ph:'e.g., Right direction = fix the pipeline and the cost visibility, not slash OT. Delay = a few months before the budget line moves; I will not panic back to OT-cutting in the meantime.' },
-];
-
-let cur = 0;
-const answers = {};
-
-function renderProg(){
-  const p = document.getElementById('prog');
-  p.innerHTML = STEPS.map((_,i)=>'<div class="pdot'+(i<=cur?' on':'')+'"></div>').join('');
-}
-
-function renderStep(){
-  renderProg();
-  const s = STEPS[cur];
-  const val = answers[s.key] || '';
-  document.getElementById('stage').innerHTML = `
-    <div class="card">
-      <div class="step-num">${s.num}</div>
-      <div class="step-q">${s.q}</div>
-      <div class="step-hint">${s.hint}</div>
-      <div class="scaffold">${s.scaffold}</div>
-      <textarea id="ans" placeholder="${s.ph}">${val.replace(/"/g,'&quot;')}</textarea>
-      <div class="row">
-        <button class="btn btn-ghost" id="back" ${cur===0?'style="visibility:hidden"':''}>← Back</button>
-        <button class="btn btn-primary" id="next">${cur===STEPS.length-1?'Build My Leverage Brief':'Next →'}</button>
-      </div>
-    </div>`;
-  const ta = document.getElementById('ans');
-  ta.focus();
-  document.getElementById('next').onclick = ()=>{
-    answers[s.key] = ta.value.trim();
-    if(cur===STEPS.length-1){ analyze(); }
-    else { cur++; renderStep(); }
-  };
-  const b = document.getElementById('back');
-  if(b) b.onclick = ()=>{ answers[s.key]=ta.value.trim(); cur--; renderStep(); };
-}
-
-function recapHTML(){
-  return `<div class="recap">${STEPS.map(s=>
-    `<div class="ri"><b>${s.q}</b>${(answers[s.key]||'—').replace(/</g,'&lt;')}</div>`).join('')}</div>`;
-}
-
 const SYSTEM_PROMPT =
-`You are the TPS Lever Coach, a systems-thinking coach for fire and EMS officers preparing for executive promotional assessments. You reason with three tools: Senge's ladder (events -> patterns -> structure -> mental models), the common systems archetypes (Fixes That Fail, Shifting the Burden, Limits to Growth, Eroding Goals, Escalation, Success to the Successful, Tragedy of the Commons, Growth and Underinvestment), and Donella Meadows' leverage hierarchy grouped into four bands from weakest to strongest: Parameters, Feedbacks, Design, Intent.
-A user has worked a 5-step leverage worksheet about a recurring problem in their department. Analyze their inputs like a sharp, supportive coach. Respect that they likely cannot pull the deepest levers (goals/paradigm) alone — steer them to the highest-leverage move within a chief officer's realistic reach (often Feedbacks or Design). Be concrete and fire/EMS-grounded, never generic.
-Return ONLY a JSON object, no prose and no code fences, with these keys:
-"structure": string — the underlying structure you see beneath their symptom (2-3 sentences),
-"archetype": string — the most likely archetype and one line on why,
-"levers": array of 3-5 objects {"tier": one of "Parameter"|"Feedback"|"Design"|"Intent", "move": short concrete intervention, "strength": one of "weak"|"moderate"|"high"|"highest"},
-"recommended": string — the single highest-leverage move within their realistic reach and why (2-3 sentences),
-"direction": string — the wrong-direction trap to avoid (1-2 sentences),
-"delay": string — the delay to respect before judging whether it worked (1 sentence).`;
+`You are the TPS Lever Coach, a systems-thinking coach for fire and EMS officers preparing for executive promotional assessments. The user is a NOVICE at systems thinking and has described one recurring problem in their department. Your job is to scaffold them through the analysis using multiple-choice options written specifically for THEIR problem, so they learn by recognition.
 
-async function callClaude(userContent){
+You reason with three tools: Senge's ladder (events -> patterns of behavior -> systemic structure -> mental models), the common systems archetypes (Fixes That Fail, Shifting the Burden, Limits to Growth, Eroding Goals, Escalation, Success to the Successful, Tragedy of the Commons, Growth and Underinvestment), and Donella Meadows' leverage hierarchy grouped weakest-to-strongest into four tiers: Parameter, Feedback, Design, Intent.
+
+Return ONLY a JSON object, no prose, no code fences, with exactly this shape:
+{
+ "reframe": "1-2 sentences restating their problem as a symptom and setting up the climb",
+ "ladder": { "prompt": "Which reading is closest to what's really going on?", "options": [ {"label":"short title","detail":"a concrete pattern -> structure -> belief reading of THEIR problem (1-2 sentences)","depth":"symptom|structural|deep","feedback":"1-2 sentences on why this read is shallow or deep"} ], "best": <index of the deepest option> }, 
+ "archetype": { "prompt": "Which trap is this?", "options": [ {"label":"archetype name","why":"one line on why it fits THEIR problem","correct": true|false} ] },
+ "levers": { "prompt": "Here are your options, ranked by leverage. Which can you actually move now?", "options": [ {"tier":"Parameter|Feedback|Design|Intent","move":"a concrete intervention for THEIR problem","strength":"weak|moderate|high|highest","note":"one line on leverage vs reach"} ], "recommended": <index of the highest-leverage move realistically within a company or chief officer's reach> },
+ "brief": { "recommended":"2-3 sentences: the move to pull and why","direction":"1-2 sentences: the wrong-direction trap to avoid","delay":"1 sentence: the delay to respect before judging it" }
+}
+Rules: ladder = exactly 3 options at increasing depth (one symptom/parameter-level, one structural, one naming the mental model); mark the deepest as best. archetype = exactly 3 options, exactly one correct:true. levers = 4 or 5 options sorted weakest->strongest across the tiers; mark the best within-reach one as recommended (usually Feedback or Design, since the deepest levers need a coalition). Keep every string tight and concrete and fire/EMS-grounded. Never generic.`;
+
+async function callClaude(message){
   if(COACH_CFG.MODE==='backend'){
     const r = await fetch(COACH_CFG.ENDPOINT,{
       method:'POST', headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({ system: SYSTEM_PROMPT, message: userContent, model: COACH_CFG.MODEL })
+      body: JSON.stringify({ system: SYSTEM_PROMPT, message, model: COACH_CFG.MODEL, max_tokens: COACH_CFG.MAX_TOKENS })
     });
-    if(!r.ok) throw new Error('Backend returned '+r.status);
+    if(!r.ok) throw new Error('Backend '+r.status);
     const d = await r.json();
     return d.text || (d.content||[]).map(b=>b.text||'').join('\n');
   }
   const r = await fetch("https://api.anthropic.com/v1/messages",{
     method:"POST", headers:{"Content-Type":"application/json"},
-    body: JSON.stringify({
-      model: COACH_CFG.MODEL, max_tokens: 1000,
-      system: SYSTEM_PROMPT,
-      messages: [{ role:"user", content: userContent }]
-    })
+    body: JSON.stringify({ model: COACH_CFG.MODEL, max_tokens: COACH_CFG.MAX_TOKENS, system: SYSTEM_PROMPT, messages:[{role:"user",content:message}] })
   });
-  if(!r.ok) throw new Error('API returned '+r.status);
+  if(!r.ok) throw new Error('API '+r.status);
   const d = await r.json();
   return (d.content||[]).map(b=>b.text||"").join("\n").trim();
 }
 
-function userContent(){
-  return `THE PROBLEM (symptom): ${answers.problem||'(blank)'}
-CLIMBING THE LADDER (pattern / structure / mental model): ${answers.ladder||'(blank)'}
-ARCHETYPE + OPTIONS THEY LISTED: ${answers.archetype||'(blank)'}
-THE LEVER THEY THINK THEY CAN MOVE: ${answers.lever||'(blank)'}
-DIRECTION + DELAY THEY NAMED: ${answers.push||'(blank)'}`;
+function parseKit(txt){
+  let t=(txt||'').trim().replace(/^```json/i,'').replace(/^```/,'').replace(/```$/,'').trim();
+  try{ return JSON.parse(t);}catch(e){ const m=t.match(/\{[\s\S]*\}/); if(m){ try{return JSON.parse(m[0]);}catch(e2){} } return null; }
+}
+function esc(s){ return (s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+/* ---------- state ---------- */
+let problem='';
+let kit=null;
+const picks={ladder:null,archetype:null,levers:null};
+const STAGES=['problem','ladder','archetype','levers','brief'];
+let stage=0;
+
+function setProg(){
+  document.getElementById('prog').innerHTML = STAGES.map((_,i)=>'<div class="pdot'+(i<=stage?' on':'')+'"></div>').join('');
+}
+function go(s){ stage=s; setProg(); render(); }
+
+function render(){
+  setProg();
+  const k=STAGES[stage];
+  if(k==='problem') return renderProblem();
+  if(k==='brief')   return renderBrief();
+  return renderChoice(k);
 }
 
-function parseBrief(txt){
-  let t = (txt||'').trim().replace(/^```json/i,'').replace(/^```/,'').replace(/```$/,'').trim();
-  try { return JSON.parse(t); } catch(e){
-    const m = t.match(/\{[\s\S]*\}/);
-    if(m){ try { return JSON.parse(m[0]); } catch(e2){} }
-    return null;
-  }
+function renderProblem(){
+  document.getElementById('stage').innerHTML=`
+    <div class="card">
+      <div class="step-num">Step 1 of 5 · Your Problem</div>
+      <div class="step-q">Name the problem you keep reacting to.</div>
+      <div class="step-hint">State it as the symptom you keep firefighting — not the cause you already assume. The coach will take it from there.</div>
+      <textarea id="ans" placeholder="e.g., Crews are not performing the mandatory morning EMS bag and equipment checks.">${esc(problem)}</textarea>
+      <div class="row">
+        <span></span>
+        <button class="btn btn-primary" id="go" disabled>Coach me through it →</button>
+      </div>
+    </div>`;
+  const ta=document.getElementById('ans'), go2=document.getElementById('go');
+  ta.focus();
+  const upd=()=>{ go2.disabled = ta.value.trim().length<8; };
+  ta.addEventListener('input',upd); upd();
+  go2.onclick=()=>{ problem=ta.value.trim(); analyze(); };
 }
 
 async function analyze(){
-  renderProg();
-  document.getElementById('stage').innerHTML =
-    `<div class="card"><div class="loading"><div class="spinner"></div>Working your problem down to the lever…</div></div>`;
+  stage=1; setProg();
+  document.getElementById('stage').innerHTML=`<div class="card"><div class="loading"><div class="spinner"></div>Reading your problem and building your path down the ladder…</div></div>`;
   try{
-    const raw = await callClaude(userContent());
-    const b = parseBrief(raw);
-    if(!b) throw new Error('parse');
-    renderBrief(b);
-  }catch(err){
-    document.getElementById('stage').innerHTML = `
-      <div class="card">
-        <div class="err"><b>The coach is unavailable right now.</b><br/>
-        Your worksheet is intact below — you ran the full workflow, which is the real skill. Try the analysis again in a moment.</div>
-        ${recapHTML()}
-        <div class="tools">
-          <button class="btn btn-primary" id="retry">Try analysis again</button>
-          <button class="btn btn-ghost" id="reset">Start over</button>
-        </div>
-      </div>`;
-    document.getElementById('retry').onclick = analyze;
-    document.getElementById('reset').onclick = reset;
-  }
+    const kitObj = parseKit(await callClaude('RECURRING PROBLEM (symptom): '+problem));
+    if(!kitObj || !kitObj.ladder || !kitObj.levers) throw new Error('parse');
+    kit=kitObj; picks.ladder=picks.archetype=picks.levers=null;
+    render();
+  }catch(err){ renderError(); }
 }
 
-function renderBrief(b){
-  const levers = (b.levers||[]).map(l=>{
-    const s = (l.strength||'').toLowerCase();
-    return `<div class="lever s-${s}"><div class="lever-tier">${l.tier||''}</div><div class="lever-move">${(l.move||'')}</div></div>`;
+function renderChoice(key){
+  const block = kit[key];
+  const stepMeta = {
+    ladder:    {n:'Step 2 of 5 · Climb the Ladder', hint:'Look beneath the event. Which reading goes deepest into what is really producing this?'},
+    archetype: {n:'Step 3 of 5 · Name the Trap',     hint:'Most recurring problems are one of a handful of classic structures. Which fits?'},
+    levers:    {n:'Step 4 of 5 · Find Your Lever',    hint:'Ranked weakest to strongest. The obvious one is usually the weakest — pick the strongest you can actually move.'},
+  }[key];
+  const picked = picks[key];
+  const opts = (block.options||[]).map((o,i)=>{
+    let label, detail, tier='';
+    if(key==='ladder'){ label=o.label; detail=o.detail; }
+    else if(key==='archetype'){ label=o.label; detail=o.why; }
+    else { label=o.move; detail=o.note; tier='<span class="tier '+esc((o.strength||'').toLowerCase())+'">'+esc(o.tier||'')+'</span>'; }
+    const sel = picked===i ? ' sel':'';
+    const locked = picked!=null ? ' locked':'';
+    let mark='';
+    if(picked!=null){
+      if(key==='ladder' && i===block.best) mark=' reveal-best';
+      if(key==='archetype' && o.correct) mark=' reveal-best';
+      if(key==='levers' && i===block.recommended) mark=' reveal-best';
+    }
+    const chk = (picked!=null && ((key==='ladder'&&i===block.best)||(key==='archetype'&&o.correct)||(key==='levers'&&i===block.recommended))) ? '<span class="chk">✓</span>':'';
+    return `<button class="opt${sel}${mark}${locked}" data-i="${i}" ${picked!=null?'disabled':''}>
+      <div class="opt-label">${tier}${esc(label)}${chk}</div><div class="opt-detail">${esc(detail)}</div></button>`;
   }).join('');
-  document.getElementById('stage').innerHTML = `
-    <div>
-      <div class="brief-head">
-        <div class="hero-eyebrow">Your Leverage Brief</div>
-        <h2>Where the leverage actually is</h2>
+
+  document.getElementById('stage').innerHTML=`
+    <div class="card">
+      <div class="step-num">${stepMeta.n}</div>
+      <div class="step-q">${esc(block.prompt||'')}</div>
+      <div class="step-hint">${stepMeta.hint}</div>
+      ${stage===1 && kit.reframe ? `<div class="reframe"><b>The coach:</b> ${esc(kit.reframe)}</div>`:''}
+      <div id="opts">${opts}</div>
+      <div id="fb"></div>
+      <div class="row">
+        <button class="btn btn-ghost" id="back">← Back</button>
+        <button class="btn btn-primary" id="next" ${picked==null?'disabled':''}>${stage===3?'See my Leverage Brief →':'Continue →'}</button>
       </div>
+    </div>`;
+
+  document.getElementById('back').onclick=()=>{ go(stage-1); };
+  document.getElementById('next').onclick=()=>{ go(stage+1); };
+  if(picked!=null) showFb(key,picked);
+  document.querySelectorAll('#opts .opt').forEach(b=>{
+    b.onclick=()=>{ picks[key]=parseInt(b.dataset.i,10); render(); };
+  });
+}
+
+function showFb(key,i){
+  const block=kit[key], o=block.options[i]; let html='';
+  if(key==='ladder'){
+    const isBest=i===block.best;
+    html=`<div class="fb ${isBest?'good':''}"><span class="fb-label">${isBest?"That's the deepest read":"Good — now go one level deeper"}</span>${esc(o.feedback||'')}`;
+    if(!isBest && block.options[block.best]) html+=` <b>The deepest read here:</b> ${esc(block.options[block.best].label)} — ${esc(block.options[block.best].detail)}`;
+    html+=`</div>`;
+  } else if(key==='archetype'){
+    const correct=block.options.findIndex(x=>x.correct);
+    const isC=!!o.correct;
+    html=`<div class="fb ${isC?'good':''}"><span class="fb-label">${isC?"That's the fit":"Close — here's the better fit"}</span>${esc(o.why||'')}`;
+    if(!isC && block.options[correct]) html+=` <b>Most likely this is ${esc(block.options[correct].label)}:</b> ${esc(block.options[correct].why)}`;
+    html+=`</div>`;
+  } else {
+    const isRec=i===block.recommended;
+    html=`<div class="fb ${isRec?'good':''}"><span class="fb-label">${isRec?'Strong, reachable lever':'Workable — but look higher'}</span>${esc(o.note||'')}`;
+    if(!isRec && block.options[block.recommended]){ const r=block.options[block.recommended]; html+=` <b>Higher leverage within reach:</b> [${esc(r.tier)}] ${esc(r.move)} — ${esc(r.note)}`; }
+    html+=`</div>`;
+  }
+  document.getElementById('fb').innerHTML=html;
+}
+
+function chosen(key){ const i=picks[key]; return i==null?null:kit[key].options[i]; }
+
+function renderBrief(){
+  const b=kit.brief||{};
+  const lad=chosen('ladder'), arc=chosen('archetype'), lev=chosen('levers');
+  document.getElementById('stage').innerHTML=`
+    <div>
+      <div class="brief-head"><div class="hero-eyebrow" style="color:var(--gold)">Step 5 of 5 · Your Leverage Brief</div><h2>Where the leverage actually is</h2></div>
       <div class="brief-body">
-        <div class="bsec"><div class="blabel">The structure beneath it</div><div class="btext">${b.structure||''}</div></div>
-        <div class="bsec"><div class="blabel">The trap you're in</div><div class="btext">${b.archetype||''}</div></div>
-        <div class="bsec"><div class="blabel">Your levers, ranked</div>${levers}</div>
-        <div class="bsec rec"><div class="blabel">Pull this one</div><div class="btext">${b.recommended||''}</div></div>
-        <div class="warn"><div class="blabel">Don't push it the wrong way</div><div class="btext">${b.direction||''}</div></div>
-        <div class="bsec" style="margin-top:0.8rem"><div class="blabel">Respect the delay</div><div class="btext">${b.delay||''}</div></div>
+        <div class="bsec rec"><div class="blabel">Pull this lever</div><div class="btext">${esc(b.recommended||'')}</div></div>
+        <div class="warn"><div class="blabel">Don't push it the wrong way</div><div class="btext">${esc(b.direction||'')}</div></div>
+        <div class="bsec" style="margin-top:0.8rem"><div class="blabel">Respect the delay</div><div class="btext">${esc(b.delay||'')}</div></div>
+        <div class="recap">
+          <div class="ri"><b>YOUR PROBLEM:</b> ${esc(problem)}</div>
+          ${lad?`<div class="ri"><b>STRUCTURE YOU NAMED:</b> ${esc(lad.label)} — ${esc(lad.detail)}</div>`:''}
+          ${arc?`<div class="ri"><b>THE TRAP:</b> ${esc(arc.label)}</div>`:''}
+          ${lev?`<div class="ri"><b>YOUR LEVER:</b> [${esc(lev.tier)}] ${esc(lev.move)}</div>`:''}
+        </div>
         <div class="tools">
           <button class="btn btn-ghost" id="copy">Copy my brief</button>
           <button class="btn btn-ghost" id="reset">Start over</button>
         </div>
       </div>
     </div>`;
-  document.getElementById('reset').onclick = reset;
-  document.getElementById('copy').onclick = ()=>{
-    const txt = `MY LEVERAGE BRIEF\n\nStructure: ${b.structure}\n\nArchetype: ${b.archetype}\n\nLevers:\n`+
-      (b.levers||[]).map(l=>` - [${l.tier}] ${l.move}`).join('\n')+
-      `\n\nPull this: ${b.recommended}\n\nAvoid: ${b.direction}\n\nDelay: ${b.delay}`;
-    navigator.clipboard.writeText(txt).then(()=>{ const c=document.getElementById('copy'); c.textContent='Copied ✓'; setTimeout(()=>c.textContent='Copy my brief',1600); });
+  document.getElementById('reset').onclick=reset;
+  document.getElementById('copy').onclick=()=>{
+    const txt=`MY LEVERAGE BRIEF\n\nProblem: ${problem}\n`+
+      (lad?`\nStructure: ${lad.label} — ${lad.detail}`:'')+
+      (arc?`\nTrap: ${arc.label}`:'')+
+      (lev?`\nLever: [${lev.tier}] ${lev.move}`:'')+
+      `\n\nPull this: ${b.recommended||''}\n\nAvoid: ${b.direction||''}\n\nDelay: ${b.delay||''}`;
+    navigator.clipboard.writeText(txt).then(()=>{const c=document.getElementById('copy');c.textContent='Copied ✓';setTimeout(()=>c.textContent='Copy my brief',1600);});
   };
 }
 
-function reset(){ cur=0; for(const k in answers) delete answers[k]; renderStep(); }
+function renderError(){
+  document.getElementById('stage').innerHTML=`
+    <div class="card">
+      <div class="err"><b>The coach is unavailable right now.</b><br/>Your problem is safe below — try again in a moment, or work it through manually using the same five steps.</div>
+      <div style="margin-top:0.8rem;font-size:0.9rem"><b>Your problem:</b> ${esc(problem)}</div>
+      <details class="manual"><summary>Work it manually</summary>
+        <ol>
+          <li><b>Climb the ladder:</b> the pattern over time → the structure (rules, schedules, incentives) producing it → the belief that keeps the structure feeling normal.</li>
+          <li><b>Name the trap:</b> Fixes That Fail · Shifting the Burden · Eroding Goals · Limits to Growth · Escalation · Success to the Successful · Tragedy of the Commons.</li>
+          <li><b>Rank your levers</b> weakest→strongest: Parameter → Feedback → Design → Intent. Pick the strongest you can actually move.</li>
+          <li><b>Push it the right way, then respect the delay</b> before judging it.</li>
+        </ol>
+      </details>
+      <div class="tools"><button class="btn btn-primary" id="retry">Try again</button><button class="btn btn-ghost" id="reset">Start over</button></div>
+    </div>`;
+  document.getElementById('retry').onclick=analyze;
+  document.getElementById('reset').onclick=reset;
+}
 
-renderStep();
+function reset(){ problem=''; kit=null; picks.ladder=picks.archetype=picks.levers=null; go(0); }
+
+go(0);
 </script>
 </body>
 </html>
