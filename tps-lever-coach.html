@@ -265,10 +265,14 @@ function showFb(key,i){
     if(!isC && block.options[correct]) html+=` <b>Most likely this is ${esc(block.options[correct].label)}:</b> ${esc(block.options[correct].why)}`;
     html+=`</div>`;
   } else {
-    const isRec=i===block.recommended;
-    html=`<div class="fb ${isRec?'good':''}"><span class="fb-label">${isRec?'Strong, reachable lever':'Workable — but look higher'}</span>${esc(o.note||'')}`;
-    if(!isRec && block.options[block.recommended]){ const r=block.options[block.recommended]; html+=` <b>Higher leverage within reach:</b> [${esc(r.tier)}] ${esc(r.move)} — ${esc(r.note)}`; }
-    html+=`</div>`;
+    const rec=block.recommended;
+    const isRec=i===rec;
+    const r=block.options[rec];
+    let lbl, tail='';
+    if(isRec){ lbl='Strong, reachable lever'; }
+    else if(i<rec){ lbl='Workable — but look higher'; if(r) tail=` <b>Higher leverage within reach:</b> [${esc(r.tier)}] ${esc(r.move)} — ${esc(r.note)}`; }
+    else { lbl='The deepest lever — but mind your reach'; if(r) tail=` <b>That's the highest-leverage point on the scale, but it usually needs a coalition and time.</b> The strongest move within your own authority right now: [${esc(r.tier)}] ${esc(r.move)} — ${esc(r.note)}`; }
+    html=`<div class="fb ${isRec?'good':''}"><span class="fb-label">${lbl}</span>${esc(o.note||'')}${tail}</div>`;
   }
   document.getElementById('fb').innerHTML=html;
 }
@@ -277,7 +281,9 @@ function chosen(key){ const i=picks[key]; return i==null?null:kit[key].options[i
 
 function renderBrief(){
   const b=kit.brief||{};
-  const lad=chosen('ladder'), arc=chosen('archetype'), lev=chosen('levers');
+  const lad=kit.ladder.options[kit.ladder.best];
+  const arc=kit.archetype.options.find(o=>o.correct)||kit.archetype.options[0];
+  const lev=kit.levers.options[kit.levers.recommended];
   document.getElementById('stage').innerHTML=`
     <div>
       <div class="brief-head"><div class="hero-eyebrow" style="color:var(--gold)">Step 5 of 5 · Your Leverage Brief</div><h2>Where the leverage actually is</h2></div>
@@ -287,9 +293,9 @@ function renderBrief(){
         <div class="bsec" style="margin-top:0.8rem"><div class="blabel">Respect the delay</div><div class="btext">${esc(b.delay||'')}</div></div>
         <div class="recap">
           <div class="ri"><b>YOUR PROBLEM:</b> ${esc(problem)}</div>
-          ${lad?`<div class="ri"><b>STRUCTURE YOU NAMED:</b> ${esc(lad.label)} — ${esc(lad.detail)}</div>`:''}
+          ${lad?`<div class="ri"><b>THE STRUCTURE:</b> ${esc(lad.label)} — ${esc(lad.detail)}</div>`:''}
           ${arc?`<div class="ri"><b>THE TRAP:</b> ${esc(arc.label)}</div>`:''}
-          ${lev?`<div class="ri"><b>YOUR LEVER:</b> [${esc(lev.tier)}] ${esc(lev.move)}</div>`:''}
+          ${lev?`<div class="ri"><b>THE LEVER TO PULL:</b> [${esc(lev.tier)}] ${esc(lev.move)}</div>`:''}
         </div>
         <div class="tools">
           <button class="btn btn-ghost" id="copy">Copy my brief</button>
