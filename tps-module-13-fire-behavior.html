@@ -1054,6 +1054,7 @@ function lfNext(el,stepNum){
 }
 </script>
 <script>function mqAnswer(btn,correct,fb){var q=btn.parentNode;while(q&&!(q.className&&q.className.indexOf('mq-q')>-1))q=q.parentNode;if(!q)return;var o=q.querySelectorAll('.mq-opt');for(var i=0;i<o.length;i++)o[i].disabled=true;btn.classList.add(correct?'mq-correct':'mq-wrong');var f=q.querySelector('.mq-fb');if(f){f.innerHTML=fb;f.classList.add('mq-fb-show');}}</script>
+
 <!-- tps-bridge v1: deep-link + progress reporting. Append-only; safe to remove. -->
 <script>
 (function(){
@@ -1072,5 +1073,6 @@ function lfNext(el,stepNum){
   if(typeof showLesson==='function'){var _s=showLesson;showLesson=function(n){_s(n);rep();};}
   window.addEventListener('hashchange',function(){var n=hashLesson();if(n!==null&&typeof showLesson==='function'){showLesson(n);}});
 })();
-</script></body>
+</script>
+</body>
 </html>

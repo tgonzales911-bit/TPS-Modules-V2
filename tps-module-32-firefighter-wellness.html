@@ -888,5 +888,25 @@ function mqAnswer(btn,isCorrect,fbId){
 }
 </script>
 
+
+<!-- tps-bridge v1: deep-link + progress reporting. Append-only; safe to remove. -->
+<script>
+(function(){
+  function hashLesson(){var m=(location.hash||'').match(/#lesson-(\d+)/);return m?parseInt(m[1],10):null;}
+  function activeIdx(){var v=document.querySelectorAll('.lesson-view');for(var i=0;i<v.length;i++){if(v[i].classList.contains('active'))return i;}return null;}
+  function rep(){try{if(window.parent!==window){window.parent.postMessage({type:'tps:lesson',lesson:activeIdx(),total:document.querySelectorAll('.lesson-view').length,href:location.pathname},'*');}}catch(e){}}
+  function init(){
+    var n=hashLesson();
+    if(n!==null&&typeof showLesson==='function'){try{showLesson(n);}catch(e){}}
+    if(/[?&]ft=1/.test(location.search)&&typeof toggleFastTrack==='function'){
+      var tg=document.querySelectorAll('.ft-toggle');for(var i=0;i<tg.length;i++){try{toggleFastTrack(tg[i]);}catch(e){}}
+    }
+    rep();
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',init);}else{init();}
+  if(typeof showLesson==='function'){var _s=showLesson;showLesson=function(n){_s(n);rep();};}
+  window.addEventListener('hashchange',function(){var n=hashLesson();if(n!==null&&typeof showLesson==='function'){showLesson(n);}});
+})();
+</script>
 </body>
 </html>
