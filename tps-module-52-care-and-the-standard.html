@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Chapter 47 — Care + the Standard | The Promotional Standard</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Crimson+Pro:wght@300;400;500;600&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --navy:#0C2340;--navy2:#1A3A5C;--gold:#C9A84C;--gold2:#F5F0E8;--gold3:#6B4F10;
+  --cream:#F5F0E8;--offwhite:#F5F0E8;--light:#EAE5DC;--mid:#2A3D50;--gray:#8FA8C0;
+  --red:#B22222;--red-light:#FFF0F0;--green:#1A5C3A;--green-light:#EAF3DE;
+  --teal:#006B6B;--teal-light:#E0F4F4;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:var(--navy);font-size:18px;line-height:1.8;}
+.top-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(12,35,64,0.98);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,168,76,0.2);height:64px;display:flex;align-items:center;padding:0 2rem;gap:1rem;}
+.nav-left{display:flex;align-items:center;gap:12px;flex:1;}
+.nav-brand{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;color:var(--cream);line-height:1.3;}
+.nav-brand span{display:block;font-size:8px;color:var(--gold);letter-spacing:2px;}
+.nav-pills{display:flex;gap:5px;flex:2;justify-content:center;overflow-x:auto;}
+.nav-pill{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#8FA8C0;padding:6px 11px;border-radius:20px;cursor:pointer;transition:all 0.2s;border:none;background:transparent;white-space:nowrap;}
+.nav-pill:hover{color:var(--cream);background:rgba(255,255,255,0.05);}
+.nav-pill.active{color:var(--gold);background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.25);}
+.progress-bar{position:fixed;top:64px;left:0;height:3px;background:linear-gradient(90deg,var(--navy2),var(--gold));z-index:199;width:0%;transition:width 0.3s;}
+.lesson-view{display:none;}.lesson-view.active{display:block;}
+.module-hero{background:var(--navy);padding:4.5rem 3rem 3.5rem;margin-top:64px;position:relative;overflow:hidden;border-bottom:3px solid var(--gold);}
+.module-hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 60px,rgba(201,168,76,0.015) 60px,rgba(201,168,76,0.015) 61px);}
+.module-hero::after{content:'';position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(180deg,var(--navy2),var(--gold));}
+.mh-inner{max-width:900px;position:relative;z-index:2;}
+.mh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.mh-title{font-family:'EB Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:800;color:var(--cream);line-height:1.1;margin-bottom:0.75rem;}
+.mh-title em{font-style:italic;color:var(--gold);}
+.mh-sub{font-size:1.05rem;color:#8FA8C0;max-width:700px;line-height:1.7;margin-bottom:2rem;}
+.mh-badges{display:flex;gap:10px;margin-bottom:1.5rem;flex-wrap:wrap;}
+.mh-badge{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border-radius:3px;}
+.badge-track{background:rgba(201,168,76,0.15);color:var(--gold);border:1px solid rgba(201,168,76,0.3);}
+.badge-nfpa{background:rgba(100,160,220,0.15);color:#8FA8C0;border:1px solid rgba(100,160,220,0.3);}
+.badge-new{background:rgba(50,180,100,0.15);color:#3AB464;border:1px solid rgba(50,180,100,0.3);}
+.mh-thread{background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);border-left:3px solid var(--gold);padding:1rem 1.5rem;margin-bottom:2rem;max-width:700px;}
+.mh-thread-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+.mh-thread-text{font-size:0.92rem;color:var(--cream);line-height:1.65;}
+.mh-lesson-nav{display:flex;gap:8px;flex-wrap:wrap;}
+.mh-lesson-btn{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:8px 14px;border-radius:6px;cursor:pointer;transition:all 0.2s;border:1px solid rgba(201,168,76,0.25);background:transparent;color:#8FA8C0;}
+.mh-lesson-btn:hover{background:rgba(255,255,255,0.05);color:var(--cream);}
+.mh-lesson-btn.active{background:rgba(201,168,76,0.12);color:var(--gold);border-color:rgba(201,168,76,0.4);}
+.lesson-container{display:grid;grid-template-columns:1fr 310px;gap:0;}
+.lesson-main{padding:3rem 3.5rem;border-right:1px solid var(--light);}
+.lesson-sidebar{padding:2rem 1.75rem;background:var(--offwhite);position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;}
+.lesson-header{margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:2px solid var(--light);}
+.lh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold3);margin-bottom:0.6rem;}
+.lh-title{font-family:'EB Garamond',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;color:var(--navy);line-height:1.15;margin-bottom:0.6rem;}
+.lh-title em{font-style:italic;color:var(--gold);}
+.lh-meta{display:flex;gap:1.5rem;flex-wrap:wrap;}
+.lh-meta-item{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);}
+.lesson-main h2{font-family:'EB Garamond',serif;font-size:1.7rem;font-weight:700;color:var(--navy);margin:3rem 0 0.9rem;padding-bottom:0.5rem;border-bottom:2px solid var(--light);}
+.lesson-main h3{font-family:'EB Garamond',serif;font-size:1.25rem;font-weight:600;color:var(--navy);margin:2.25rem 0 0.65rem;}
+.lesson-main p{margin-bottom:1.25rem;color:#2A3D50;line-height:1.82;}
+.lesson-main ul,.lesson-main ol{margin:0 0 1.25rem 1.5rem;color:#2A3D50;}
+.lesson-main li{margin-bottom:0.6rem;line-height:1.72;}
+.lesson-main strong{color:var(--navy);font-weight:600;}
+.callout{padding:1.4rem 1.6rem;margin:2rem 0;}
+.callout-gold{background:var(--gold2);border-left:3px solid var(--gold);}.callout-gold p{color:var(--gold3);font-size:0.97rem;line-height:1.75;}
+.callout-navy{background:var(--navy);border-left:3px solid var(--gold);}.callout-navy p{color:#8FA8C0;font-size:0.95rem;line-height:1.75;}
+.callout-red{background:var(--red-light);border-left:4px solid var(--red);}.callout-red p{color:#6B4F10;font-size:0.97rem;line-height:1.75;}
+.callout-green{background:var(--green-light);border-left:4px solid var(--green);}.callout-green p{color:#1A3A5C;font-size:0.97rem;line-height:1.75;}
+.callout-teal{background:var(--teal-light);border-left:4px solid var(--teal);}.callout-teal p{color:#003A3A;font-size:0.97rem;line-height:1.75;}
+.callout-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:0.5rem;display:block;}
+.callout-gold .callout-label{color:var(--gold3);}
+.callout-navy .callout-label{color:var(--gold);}
+.callout-red .callout-label{color:var(--red);}
+.callout-green .callout-label{color:var(--green);}
+.callout-teal .callout-label{color:var(--teal);}
+.framework-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.fw-card{background:white;border:1px solid #EAE5DC;padding:1.25rem;border-radius:8px;}
+.fw-card-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:6px;}
+.fw-card-title{font-family:'EB Garamond',serif;font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.fw-card-desc{font-size:0.9rem;color:var(--mid);line-height:1.6;}
+.acro-grid{display:flex;flex-direction:column;gap:0;margin:1.5rem 0;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;}
+.acro-row{display:grid;grid-template-columns:52px 1fr;gap:0;border-bottom:1px solid #EAE5DC;}
+.acro-row:last-child{border-bottom:none;}
+.acro-letter{background:var(--navy);color:var(--gold);font-family:'EB Garamond',serif;font-size:1.8rem;font-weight:800;display:flex;align-items:center;justify-content:center;}
+.acro-content{padding:0.9rem 1.1rem;background:white;}
+.acro-word{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:3px;}
+.acro-desc{font-size:0.85rem;color:var(--mid);line-height:1.55;}
+.sbar-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:0.65rem;margin-top:1.5rem;display:block;}
+.sbar-label:first-child{margin-top:0;}
+.sbar-card{background:white;border:1px solid #EAE5DC;border-radius:8px;padding:0.9rem 1rem;margin-bottom:8px;font-size:0.9rem;color:var(--mid);line-height:1.55;}
+.sbar-card strong{color:var(--navy);display:block;margin-bottom:3px;font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;}
+/* Nav bar — full M25/M27 standard */
+.lesson-nav-bar{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 3rem;border-top:3px solid var(--gold);background:var(--navy);gap:1rem;}
+.lnb-btn{background:rgba(255,255,255,0.08);border:2px solid rgba(201,168,76,0.4);padding:14px 28px;font-family:'Cinzel',serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border-radius:6px;color:var(--cream);transition:all 0.2s;white-space:nowrap;}
+.lnb-btn:hover{background:rgba(201,168,76,0.15);border-color:var(--gold);color:var(--gold);}
+.lnb-btn:disabled,.lnb-btn[disabled]{opacity:0.25;cursor:not-allowed;background:transparent;}
+.lnb-btn:disabled:hover,.lnb-btn[disabled]:hover{background:transparent;border-color:rgba(201,168,76,0.4);color:var(--cream);}
+.lnb-btn.primary{background:var(--gold);color:var(--navy);border-color:var(--gold);font-weight:800;}
+.lnb-btn.primary:hover{background:#C9A84C;border-color:#C9A84C;}
+.lnb-info{text-align:center;flex:1;}
+.lnb-name{font-family:'EB Garamond',serif;font-size:1rem;font-weight:700;color:var(--cream);}
+.lnb-num{font-size:0.85rem;color:var(--gold);font-family:'Cinzel',serif;letter-spacing:1px;}
+/* Counseling-specific: dialogue script */
+.dialogue{background:white;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;margin:1.5rem 0;}
+.dl-header{background:var(--navy);padding:0.9rem 1.5rem;}
+.dl-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);}
+.dl-line{display:grid;grid-template-columns:110px 1fr;gap:0.75rem;padding:0.85rem 1.5rem;border-bottom:1px solid var(--light);align-items:start;}
+.dl-line:last-child{border-bottom:none;}
+.dl-speaker{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;padding-top:2px;}
+.dl-speaker.officer{color:var(--navy);}
+.dl-speaker.role{color:var(--red);}
+.dl-speaker.note{color:var(--gold3);}
+.dl-text{font-size:0.87rem;color:#2A3D50;line-height:1.65;}
+.dl-text em{color:var(--gold3);font-style:italic;}
+/* Score compare */
+.score-compare{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.sc-card{padding:1.25rem;border-radius:8px;}
+.sc-card.miss{background:var(--red-light);border:1px solid #F0C0C0;}
+.sc-card.hit{background:var(--green-light);border:1px solid #9DCCA8;}
+.sc-title{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:0.75rem;}
+.sc-card.miss .sc-title{color:var(--red);}
+.sc-card.hit .sc-title{color:var(--green);}
+.sc-body{font-size:0.9rem;line-height:1.6;}
+.sc-card.miss .sc-body{color:#6B4F10;}
+.sc-card.hit .sc-body{color:#1A3A5C;}
+/* Phase cards */
+.phase-cards{display:flex;flex-direction:column;gap:0.75rem;margin:1.5rem 0;}
+.phase-card{background:white;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;display:grid;grid-template-columns:64px 1fr;}
+.phase-num-col{background:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1rem 0.5rem;gap:4px;}
+.phase-badge{font-family:'EB Garamond',serif;font-size:1.5rem;font-weight:800;color:var(--gold);line-height:1;}
+.phase-body{padding:1rem 1.25rem;}
+.phase-title{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:4px;}
+.phase-desc{font-size:0.9rem;color:var(--mid);line-height:1.58;}
+.phase-time{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold3);margin-top:5px;display:block;font-weight:700;}
+@media(max-width:900px){.lesson-container{grid-template-columns:1fr;}.lesson-sidebar{position:relative;height:auto;}.lesson-main{padding:2rem 1.5rem;}.lesson-nav-bar{padding:1rem 1.5rem;flex-wrap:wrap;}.score-compare{grid-template-columns:1fr;}.framework-grid{grid-template-columns:1fr;}.dl-line{grid-template-columns:80px 1fr;}}
+
+/* OB CARD */
+.ob-card{background:var(--navy);margin:2rem 0;overflow:hidden;}
+.ob-header{padding:0.85rem 1.5rem;background:rgba(201,168,76,0.08);border-bottom:1px solid rgba(201,168,76,0.15);}
+.ob-label{font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);}
+.ob-body{padding:1.25rem 1.5rem;}
+.ob-q{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;}
+.ob-q-tag{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);background:rgba(201,168,76,0.1);padding:4px 10px;border-radius:3px;white-space:nowrap;}
+.ob-q-text{font-family:'EB Garamond',serif;font-size:1.08rem;font-weight:600;color:var(--cream);line-height:1.5;margin-bottom:8px;}
+.ob-note{font-size:0.88rem;color:#8FA8C0;line-height:1.6;font-style:italic;}
+/* TAKEAWAYS */
+.takeaways{background:var(--navy);padding:2.25rem;margin:3rem 0 0;border-top:3px solid var(--gold);}
+.tk-lbl{font-family:'Cinzel',serif;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.tk-item{color:#8FA8C0;font-size:0.92rem;line-height:1.7;padding:0.5rem 0 0.5rem 1.25rem;border-left:2px solid rgba(201,168,76,0.2);margin-bottom:0.5rem;}
+
+
+.lead-nav{background:var(--navy);border-radius:8px;padding:14px 16px;margin-bottom:16px;border:1px solid rgba(201,168,76,0.2)}
+.lead-nav-header{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.lead-nav-row{display:grid;grid-template-columns:20px 1fr;gap:6px;margin-bottom:6px;align-items:start}
+.lead-nav-letter{font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:var(--gold)}
+.lead-nav-content{}
+.lead-nav-name{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:2px}
+.lead-nav-app{font-size:11px;color:#8FA8C0;line-height:1.5}
+
+.lf-wrap{margin:2.5rem 0 1.5rem;border:2px solid var(--gold);border-radius:10px;overflow:hidden}
+.lf-header{background:var(--navy);padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
+.lf-title{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+.lf-dots{display:flex;gap:6px}
+.lf-dot{width:8px;height:8px;border-radius:50%;background:rgba(201,168,76,0.25);transition:all 0.3s}
+.lf-dot.active{background:var(--gold);transform:scale(1.3)}
+.lf-dot.done{background:var(--gold)}
+.lf-step{display:none;padding:20px}
+.lf-step.active{display:block}
+.lf-step-num{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:6px}
+.lf-step-title{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:10px}
+.lf-chain{background:var(--navy);border-radius:6px;padding:14px 18px;margin:10px 0}
+.lf-chain-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.lf-chain-text{font-size:13px;color:#8FA8C0;line-height:1.6}
+.lf-chain-close{font-size:12px;color:var(--cream);margin-top:6px;font-style:italic}
+.lf-btn{background:var(--navy);color:var(--gold);border:2px solid var(--gold);padding:12px 24px;border-radius:6px;font-family:'Cinzel',serif;font-size:12px;letter-spacing:1.5px;font-weight:600;cursor:pointer;margin-top:12px;transition:all 0.2s;display:inline-block}
+.lf-btn:hover{background:var(--gold);color:var(--navy)}
+.lf-timer{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:var(--gold);padding:6px 14px;border-radius:4px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:1px;margin-top:10px}
+.lesson-main.ft>p{display:none!important}.lesson-main.ft>.callout{display:none!important}.ft-toggle{display:flex;align-items:center;gap:10px;padding:10px 16px;background:var(--navy);border-radius:6px;cursor:pointer;border:1px solid rgba(201,168,76,0.25)}.ft-toggle-switch{width:36px;height:20px;background:rgba(201,168,76,0.2);border-radius:10px;position:relative;transition:background .2s}.ft-toggle-switch.on{background:var(--gold)}.ft-toggle-knob{width:14px;height:14px;background:#fff;border-radius:50%;position:absolute;top:3px;left:3px;transition:left .2s}.ft-toggle-switch.on .ft-toggle-knob{left:19px}.ft-toggle-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}.ft-toggle-desc{font-size:11px;color:var(--mid)}.lesson-main.ft-on>p,.lesson-main.ft-on>.callout,.lesson-main.ft-on h3{display:none!important}.lesson-main.ft-on .ob-card,.lesson-main.ft-on .lf-wrap,.lesson-main.ft-on .lead-nav,.lesson-main.ft-on h2{display:block!important}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <div class="nav-left">
+    <div class="nav-brand">The Promotional Standard<span>Universal · Chapter 47</span></div>
+  </div>
+  <div class="nav-pills">
+    <button class="nav-pill active" onclick="showLesson(0)">The False Choice</button>
+    <button class="nav-pill" onclick="showLesson(1)">Just Culture</button>
+    <button class="nav-pill" onclick="showLesson(2)">Serve and Own</button>
+    <button class="nav-pill" onclick="showLesson(3)">When Someone Is Struggling</button>
+    <button class="nav-pill" onclick="showLesson(4)">LEAD Applied</button>
+  </div>
+</nav>
+<div class="progress-bar" id="prog"></div>
+
+<div class="module-hero">
+  <div class="mh-inner">
+    <div class="mh-eyebrow">Chapter 47 · Universal · All Ranks · Capstone</div>
+    <h1 class="mh-title">Care<br><em>+ the Standard</em></h1>
+    <p class="mh-sub">Take care of your people. Hold them accountable. Every officer is told to do both, and most quietly pick one. This capstone shows why that is a false choice and how to do both in the same conversation. It brings together Just Culture, servant leadership, ownership, and the hardest case of all: a good member who is struggling. It prepares you for the leadership philosophy question, and for the first week you wear the badge.</p>
+    <div class="mh-badges">
+      <span class="mh-badge badge-track">Universal — All Tracks</span>
+      <span class="mh-badge badge-nfpa">NFPA 1021 FO I–IV · Human Resource Management JPRs</span>
+      <span class="mh-badge badge-new">New Chapter</span>
+    </div>
+    <div class="mh-thread">
+      <div class="mh-thread-label">Before You Begin</div>
+      <div class="mh-thread-text">Complete Chapter 9 (Leading with Purpose), Chapter 38 (Firefighter Wellness + Behavioral Health) and Chapter 40 (Subordinate Counseling) first. If you have access to Chapter 26 (Progressive Discipline), its Just Culture decision guide is the companion to Lesson 2 here.</div>
+    </div>
+    <div class="mh-lesson-nav">
+      <button class="mh-lesson-btn active" onclick="showLesson(0)">1. The False Choice</button>
+      <button class="mh-lesson-btn" onclick="showLesson(1)">2. Just Culture</button>
+      <button class="mh-lesson-btn" onclick="showLesson(2)">3. Serve and Own</button>
+      <button class="mh-lesson-btn" onclick="showLesson(3)">4. When Someone Is Struggling</button>
+      <button class="mh-lesson-btn" onclick="showLesson(4)">5. LEAD Applied</button>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- LESSON 1 -->
+<div class="lesson-view active" id="lesson-0">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 47 · Lesson 1 of 5</div>
+    <h1 class="lh-title">Care and the Standard —<br><em>The False Choice</em></h1>
+    <div class="lh-meta">
+      <span class="lh-meta-item">⏱ 10 min</span>
+      <span class="lh-meta-item">⚖️ Leadership Identity</span>
+    </div>
+  </div>
+
+  <p>Every new officer is told there are two kinds of bosses. The one who takes care of the crew and lets things slide, and the one who holds the line and nobody wants to work for. Then they are asked to pick.</p>
+  <p>It is a false choice, and believing it is the most common reason good firefighters become mediocre officers. Care and standards are not two ends of one dial. They are two separate dials, and you are responsible for both being turned up.</p>
+  <p>The board question sounds like this: "How do you take care of your people while still holding them accountable?" Most candidates answer half of it. This chapter is about answering all of it, and about being that officer after the badge is pinned on.</p>
+
+  <h2>The Four Officers</h2>
+  <div class="framework-grid">
+    <div class="fw-card"><div class="fw-card-label">Low Care · Low Standard</div><div class="fw-card-title">The Absentee</div><div class="fw-card-desc">In the office with the door shut. No conflict because no engagement. The crew runs itself, at whatever level it drifts to.</div></div>
+    <div class="fw-card"><div class="fw-card-label">High Care · Low Standard</div><div class="fw-card-title">The Buddy</div><div class="fw-card-desc">Loved at the kitchen table. Avoids hard conversations to protect the relationship. The crew slowly learns that nothing is required, and the strongest members get resentful first.</div></div>
+    <div class="fw-card"><div class="fw-card-label">Low Care · High Standard</div><div class="fw-card-title">The Enforcer</div><div class="fw-card-desc">Knows every policy. Corrects in public. Gets compliance while he is watching and nothing when he is not. People transfer out and stop telling him things.</div></div>
+    <div class="fw-card"><div class="fw-card-label">High Care · High Standard</div><div class="fw-card-title">The Standard Bearer</div><div class="fw-card-desc">Knows their people and expects a lot from them. The crew works hard because they do not want to let this officer down, and because they know the officer will not let them down either.</div></div>
+  </div>
+  <p>Kim Scott describes a similar grid in <em>Radical Candor</em>: care personally and challenge directly. The fire service version has higher stakes, because the standard you did not hold on Tuesday is the mistake that hurts someone on Friday.</p>
+
+  <h2>Holding the Standard Is the Care</h2>
+  <p>Here is the shift in thinking. When you let a firefighter skip the mask check, you are not being kind. You are deciding that their comfort today matters more than their life next month. When you avoid telling someone their performance is slipping, you are letting them walk toward discipline without a warning. The Buddy is not caring for people. He is caring for his own comfort.</p>
+  <p>And the standard without care does not hold either. People do not give discretionary effort to someone who does not know their kids' names. Trust is what makes a hard conversation land as help instead of as an attack.</p>
+  <div class="score-compare">
+    <div class="sc-card miss"><div class="sc-title">❌ Half an Answer — Scores a 3</div><div class="sc-body">"I believe in taking care of my people. If you take care of them, they will take care of you. I would have an open door and make sure they have what they need." All care. The assessor writes: no mention of accountability.</div></div>
+    <div class="sc-card hit"><div class="sc-title">✅ Both Dials — Scores High</div><div class="sc-body">"I do not see those as competing. Holding someone to the standard is one of the ways I take care of them, because the standard is what sends them home. So I invest in knowing my people first, and when something slips I address it early, privately and specifically. The relationship is what lets them hear it." Both halves, with the link between them.</div></div>
+  </div>
+  <div class="callout callout-gold">
+    <span class="callout-label">The Core Idea of This Chapter</span>
+    <p>You are not choosing between being liked and being respected. You are building enough trust that you can tell someone the truth, and telling the truth often enough that the trust means something.</p>
+  </div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="ft-toggle" onclick="toggleFT(this)" style="margin-bottom:16px;max-width:320px">
+<div class="ft-toggle-switch"><div class="ft-toggle-knob"></div></div>
+<div><div class="ft-toggle-label">Fast Track Mode</div><div class="ft-toggle-desc">Full lesson content</div></div>
+</div>
+
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Applied to this lesson's board question</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Leadership Philosophy</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">T·C·H·O·E·D·S with an authentic example</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Care × Standard grid → Just Culture sorting → 3 U's Diagnostic → Bank of Leadership → T·C·H·O·E·D·S</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Care about the person → hold the standard → both in the same sentence → close with Empathy and Courage</div></div></div></div>
+
+  <span class="sbar-label">The Four Officers</span>
+  <div class="sbar-card"><strong>Absentee</strong>Low care, low standard.</div>
+  <div class="sbar-card"><strong>Buddy</strong>High care, low standard.</div>
+  <div class="sbar-card"><strong>Enforcer</strong>Low care, high standard.</div>
+  <div class="sbar-card"><strong>Standard Bearer</strong>High care, high standard.</div>
+  <span class="sbar-label">Two Dials</span>
+  <div class="sbar-card">Care and standard are separate. Turn both up.</div>
+  <span class="sbar-label">The 3-Level Trap</span>
+  <div class="sbar-card">Answering only the care half of the question.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — The False Choice</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">LT / CAPT</span><div><div class="ob-q-text">"How do you balance taking care of your crew with holding them accountable?"</div><div class="ob-note">Reject the word "balance" politely. They are not a trade-off. Explain the link, then give one example where you did both in the same conversation.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 1 — Key Takeaways</div>
+  <div class="tk-item">Care and standards are two separate dials. The officer owns both.</div>
+  <div class="tk-item">Holding the standard is a form of care, and care is what makes the standard hold.</div>
+  <div class="tk-item">LEAD integration: Label Leadership Philosophy, Engage T·C·H·O·E·D·S, Apply the grid, Deliver with Empathy and Courage.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Leadership Philosophy</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Care × Standard grid → Just Culture sorting → 3 U's Diagnostic → Bank of Leadership → T·C·H·O·E·D·S</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Care about the person → hold the standard → both in the same sentence → close with Empathy and Courage</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" disabled>← Previous</button>
+  <div class="lnb-info"><div class="lnb-name">The False Choice</div><div class="lnb-num">Lesson 1 of 5</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Just Culture →</button>
+</div>
+</div>
+
+<!-- LESSON 2 -->
+<div class="lesson-view" id="lesson-1">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 47 · Lesson 2 of 5</div>
+    <h1 class="lh-title">Just Culture —<br><em>Sorting the Behavior</em></h1>
+    <div class="lh-meta">
+      <span class="lh-meta-item">⏱ 11 min</span>
+      <span class="lh-meta-item">🧭 Fair Accountability</span>
+    </div>
+  </div>
+
+  <p>"Hold them accountable" is easy to say. The harder question is: accountable how? If every mistake gets the same response, you are either too harsh on honest errors or too soft on reckless ones. Either way the crew stops reporting problems, and that is when people get hurt.</p>
+  <p>Just Culture, developed by David Marx and used widely in aviation and healthcare, gives you a sorting tool. You met its decision guide in Chapter 26. Here it becomes your daily operating method. The principle: respond to the behavior and the choice behind it, not to how bad the outcome was.</p>
+
+  <h2>Three Behaviors, Three Responses</h2>
+  <div class="acro-grid">
+    <div class="acro-row"><div class="acro-letter">1</div><div class="acro-content"><div class="acro-word">Human Error — Console</div><div class="acro-desc">An unintended slip by someone trying to do it right. The medic who grabbed the wrong vial from a drawer where two look-alike drugs sit side by side. Support the person, then fix the system that made the error easy. Punishing honest error teaches people to hide it.</div></div></div>
+    <div class="acro-row"><div class="acro-letter">2</div><div class="acro-content"><div class="acro-word">At-Risk Behavior — Coach</div><div class="acro-desc">A shortcut that has become normal because nothing bad has happened yet. Skipping the backing spotter. Not buckling for the short run. The person does not see the risk anymore. Coach them back to why the rule exists, and ask what is making the shortcut attractive.</div></div></div>
+    <div class="acro-row"><div class="acro-letter">3</div><div class="acro-content"><div class="acro-word">Reckless Behavior — Discipline</div><div class="acro-desc">A conscious choice to disregard a risk they knew was substantial. This is where progressive discipline belongs. Protecting reckless behavior is unfair to everyone who does it right.</div></div></div>
+  </div>
+
+  <h2>Three Questions Before You Respond</h2>
+  <div class="phase-cards">
+    <div class="phase-card"><div class="phase-num-col"><div class="phase-badge">1</div></div><div class="phase-body"><div class="phase-title">What did they intend?</div><div class="phase-desc">Were they trying to do the right thing and slipped, taking a shortcut they thought was fine, or knowingly ignoring the risk? Ask them. This is the 3 U's with a safety lens.</div><span class="phase-time">Listen before you sort</span></div></div>
+    <div class="phase-card"><div class="phase-num-col"><div class="phase-badge">2</div></div><div class="phase-body"><div class="phase-title">Would someone else have done the same?</div><div class="phase-desc">The substitution test. If you put another competent firefighter in the same spot with the same information and they would likely do the same thing, look hard at the system before you look at the person.</div><span class="phase-time">Protects against blaming the individual for a setup</span></div></div>
+    <div class="phase-card"><div class="phase-num-col"><div class="phase-badge">3</div></div><div class="phase-body"><div class="phase-title">Is it a pattern?</div><div class="phase-desc">A first slip and a fifth are different conversations. Repeated at-risk behavior after coaching moves toward discipline.</div><span class="phase-time">Check your documentation</span></div></div>
+  </div>
+
+  <h2>Do Not Sort by Outcome</h2>
+  <p>Two engineers both back without a spotter. One taps a bollard. The other gets lucky. The choice was identical, so the response should be identical. If you only address the one with the dent, you have taught the crew that the standard is "do not get caught."</p>
+  <div class="score-compare">
+    <div class="sc-card miss"><div class="sc-title">❌ Outcome-Based — Loses Points</div><div class="sc-body">"There was damage to the apparatus, so that is a written reprimand per policy." No inquiry into what happened or why. No look at whether everyone backs that way.</div></div>
+    <div class="sc-card hit"><div class="sc-title">✅ Just Culture — Scores High</div><div class="sc-body">"Before I decide anything, I find out what happened. If he was doing it the way we all do it, then I have an at-risk behavior that is normal on my crew, and that is mine to own and fix with everyone. If he was told to wait for a spotter and chose not to, that is a different conversation. And I follow our policy on reporting the damage either way." Sorts the behavior, owns the system, respects policy.</div></div>
+  </div>
+  <div class="callout callout-navy">
+    <span class="callout-label">Your Authority Has Limits</span>
+    <p>Just Culture is how you think. Your department's policy and labor agreement decide what you are allowed to do. Some events carry required reporting or required steps regardless of intent. Know which ones, follow them, and use the sorting to inform what you recommend up the chain.</p>
+  </div>
+  <p>When the crew sees you respond to an honest mistake with support and a system fix, they start telling you about near misses. That is the payoff. A crew that reports is a crew you can keep safe.</p>
+
+</div>
+<div class="lesson-sidebar">
+<div class="ft-toggle" onclick="toggleFT(this)" style="margin-bottom:16px;max-width:320px">
+<div class="ft-toggle-switch"><div class="ft-toggle-knob"></div></div>
+<div><div class="ft-toggle-label">Fast Track Mode</div><div class="ft-toggle-desc">Full lesson content</div></div>
+</div>
+
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Applied to this lesson's board question</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Personnel Issue</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">STAR-P or the three questions in order</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Just Culture sorting → 3 U's Diagnostic → substitution test → Progressive Discipline Sequence when warranted</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Find the choice behind the behavior → console, coach or discipline → fix the system → close with Trust</div></div></div></div>
+
+  <span class="sbar-label">Three Behaviors</span>
+  <div class="sbar-card"><strong>Human error</strong>Console. Fix the system.</div>
+  <div class="sbar-card"><strong>At-risk</strong>Coach. Restore the why.</div>
+  <div class="sbar-card"><strong>Reckless</strong>Discipline.</div>
+  <span class="sbar-label">Three Questions</span>
+  <div class="sbar-card">What did they intend? · Would someone else have done the same? · Is it a pattern?</div>
+  <span class="sbar-label">Never</span>
+  <div class="sbar-card">Sort by how bad the outcome was.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Just Culture</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">LT / CAPT</span><div><div class="ob-q-text">"One of your firefighters makes a mistake on a call that could have caused an injury but did not. How do you respond?"</div><div class="ob-note">Do not jump to discipline or dismiss it because nobody was hurt. Find out what happened, sort the behavior, respond to match, and say what you would fix in the system.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 2 — Key Takeaways</div>
+  <div class="tk-item">Human error is consoled, at-risk behavior is coached, reckless behavior is disciplined.</div>
+  <div class="tk-item">Respond to the choice, not the outcome.</div>
+  <div class="tk-item">LEAD integration: name Just Culture, ask before sorting, and include the system fix. Close with Trust.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Personnel Issue</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Just Culture sorting → 3 U's Diagnostic → substitution test → Progressive Discipline Sequence when warranted</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Find the choice behind the behavior → console, coach or discipline → fix the system → close with Trust</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Previous</button>
+  <div class="lnb-info"><div class="lnb-name">Just Culture</div><div class="lnb-num">Lesson 2 of 5</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Serve and Own →</button>
+</div>
+</div>
+
+<!-- LESSON 3 -->
+<div class="lesson-view" id="lesson-2">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 47 · Lesson 3 of 5</div>
+    <h1 class="lh-title">Serve and Own —<br><em>Two Halves of One Officer</em></h1>
+    <div class="lh-meta">
+      <span class="lh-meta-item">⏱ 10 min</span>
+      <span class="lh-meta-item">🛡 Philosophy in Practice</span>
+    </div>
+  </div>
+
+  <p>Two leadership philosophies get quoted at almost every oral board. Candidates name them and move on. Assessors have heard both names a hundred times. What they have rarely heard is what either one looks like at 0700 on a Tuesday.</p>
+
+  <h2>Servant Leadership — What It Is and Is Not</h2>
+  <p>Robert Greenleaf's idea is that the leader exists to serve the people doing the work, so they can do it well and grow. In a firehouse it is concrete.</p>
+  <div class="framework-grid">
+    <div class="fw-card"><div class="fw-card-label">It Is</div><div class="fw-card-title">Removing obstacles</div><div class="fw-card-desc">The broken tool gets fixed because you chased the work order. The training they need gets scheduled because you made the call.</div></div>
+    <div class="fw-card"><div class="fw-card-label">It Is</div><div class="fw-card-title">Going last</div><div class="fw-card-desc">You eat last, you take the worst bunk, you stay late when someone has to. Small things the crew notices immediately.</div></div>
+    <div class="fw-card"><div class="fw-card-label">It Is</div><div class="fw-card-title">Serving their needs</div><div class="fw-card-desc">What a person needs and what they want are sometimes different. A firefighter may want you to ignore a slipping skill. What they need is for you to help them fix it.</div></div>
+    <div class="fw-card"><div class="fw-card-label">It Is Not</div><div class="fw-card-title">Serving their comfort</div><div class="fw-card-desc">Servant leadership is not doing whatever keeps the crew happy. The Buddy thinks he is a servant leader. He is serving himself.</div></div>
+  </div>
+
+  <h2>Extreme Ownership — What It Is and Is Not</h2>
+  <p>Jocko Willink and Leif Babin's principle is that the leader owns everything in their world. If the crew failed, the first question is what you did or did not do.</p>
+  <div class="framework-grid">
+    <div class="fw-card"><div class="fw-card-label">It Is</div><div class="fw-card-title">Looking in the mirror first</div><div class="fw-card-desc">"I did not make the expectation clear." "I never checked that C shift was trained." Internal locus of control, out loud.</div></div>
+    <div class="fw-card"><div class="fw-card-label">It Is</div><div class="fw-card-title">Owning it upward</div><div class="fw-card-desc">When your chief asks what happened, the answer starts with "I," not with a firefighter's name.</div></div>
+    <div class="fw-card"><div class="fw-card-label">It Is Not</div><div class="fw-card-title">Taking the fall for everything</div><div class="fw-card-desc">Owning the crew's performance does not mean excusing an individual's choices. You can say "I own that my crew thought this was acceptable" and still hold the member accountable.</div></div>
+    <div class="fw-card"><div class="fw-card-label">It Is Not</div><div class="fw-card-title">A speech</div><div class="fw-card-desc">If you announce your ownership and nothing changes, it was a performance.</div></div>
+  </div>
+
+  <h2>Why You Need Both</h2>
+  <p>Service without ownership produces a pleasant crew that drifts. Ownership without service produces a driven officer nobody trusts. Together they describe the Standard Bearer: I am here for you, and what happens here is on me.</p>
+
+  <h2>The Bank of Leadership</h2>
+  <p>You know the Bank of Leadership from earlier chapters. Every act of service is a deposit: remembering the surgery date, covering the shift trade, going to bat for someone's class request. Every hard conversation is a withdrawal. The officer who has made deposits for a year can make a large withdrawal and keep the relationship. The officer who shows up with only withdrawals is overdrawn on the first one.</p>
+  <div class="score-compare">
+    <div class="sc-card miss"><div class="sc-title">❌ Name-Dropping — Loses Points</div><div class="sc-body">"My leadership philosophy is servant leadership and extreme ownership. I serve my crew and I own everything." Two book titles and no behavior. Every candidate said it today.</div></div>
+    <div class="sc-card hit"><div class="sc-title">✅ Behavior — Scores High</div><div class="sc-body">"I think of my job as two things. I work for my crew, which means if the saw has been out of service for a week, that is my phone call to make. And I answer for my crew, which means when our turnout times slipped last quarter, I told my BC it was mine and then changed how we stage gear. Greenleaf and Willink have names for those. I just think it is the job." Two specific acts. The names come last and sound earned.</div></div>
+  </div>
+  <div class="callout callout-teal">
+    <span class="callout-label">Humility Is the Hinge</span>
+    <p>Both philosophies depend on the H in T·C·H·O·E·D·S. You cannot serve people you think you are above, and you cannot own a failure you are too proud to see.</p>
+  </div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="ft-toggle" onclick="toggleFT(this)" style="margin-bottom:16px;max-width:320px">
+<div class="ft-toggle-switch"><div class="ft-toggle-knob"></div></div>
+<div><div class="ft-toggle-label">Fast Track Mode</div><div class="ft-toggle-desc">Full lesson content</div></div>
+</div>
+
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Applied to this lesson's board question</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Leadership Philosophy</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">T·C·H·O·E·D·S → Identity Anchor → Servant Leadership</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Servant Leadership → Extreme Ownership → Locus of Control → Bank of Leadership</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">One act of service → one act of ownership → name the philosophy last → close with Humility</div></div></div></div>
+
+  <span class="sbar-label">Servant Leadership</span>
+  <div class="sbar-card">Remove obstacles · Go last · Serve needs, not comfort</div>
+  <span class="sbar-label">Extreme Ownership</span>
+  <div class="sbar-card">Mirror first · Own it upward · Still hold individuals accountable</div>
+  <span class="sbar-label">Bank of Leadership</span>
+  <div class="sbar-card">Deposits before withdrawals.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Serve and Own</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">LT / CAPT</span><div><div class="ob-q-text">"Describe your leadership philosophy and give us an example of it in action."</div><div class="ob-note">Lead with two specific behaviors from your own career. Name the philosophy after the example, not before. Identity must be earned, not appended.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 3 — Key Takeaways</div>
+  <div class="tk-item">Servant leadership serves people's needs and growth, not their comfort.</div>
+  <div class="tk-item">Extreme ownership means the mirror first, and it does not excuse individual choices.</div>
+  <div class="tk-item">LEAD integration: behaviors first, philosophy names last. Close with Humility.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Leadership Philosophy</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Servant Leadership → Extreme Ownership → Locus of Control → Bank of Leadership</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">One act of service → one act of ownership → name the philosophy last → close with Humility</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Previous</button>
+  <div class="lnb-info"><div class="lnb-name">Serve and Own</div><div class="lnb-num">Lesson 3 of 5</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: When Someone Is Struggling →</button>
+</div>
+</div>
+
+<!-- LESSON 4 -->
+<div class="lesson-view" id="lesson-3">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 47 · Lesson 4 of 5</div>
+    <h1 class="lh-title">When Someone Is Struggling —<br><em>Both Things Are True</em></h1>
+    <div class="lh-meta">
+      <span class="lh-meta-item">⏱ 11 min</span>
+      <span class="lh-meta-item">❤️ The Hardest Case</span>
+    </div>
+  </div>
+
+  <p>This is the situation that tests everything in this chapter. A good firefighter starts slipping. Late twice. Quiet at the table. A missed step on a call that they would never have missed a year ago. You hear from someone else that things are bad at home.</p>
+  <p>The Buddy says nothing because the member is going through a lot. The Enforcer writes it up because late is late. Both are failing the member. The Standard Bearer holds two true things at once: this person needs support, and the job still has to be done safely.</p>
+
+  <h2>The Conversation — Care First, Standard Clear</h2>
+  <div class="phase-cards">
+    <div class="phase-card"><div class="phase-num-col"><div class="phase-badge">1</div></div><div class="phase-body"><div class="phase-title">Start with the person</div><div class="phase-desc">Private, unhurried. "I have noticed you have not seemed like yourself the last few weeks, and I wanted to check on you before anything else. How are you doing?" Then stop talking.</div><span class="phase-time">Deposit before withdrawal</span></div></div>
+    <div class="phase-card"><div class="phase-num-col"><div class="phase-badge">2</div></div><div class="phase-body"><div class="phase-title">Name what you have seen</div><div class="phase-desc">SBI, gently and specifically. "You were late on the 3rd and the 9th, and on the alarm Tuesday you went in without your radio." Facts show that you are paying attention, which is a form of care.</div><span class="phase-time">Behavior, not character</span></div></div>
+    <div class="phase-card"><div class="phase-num-col"><div class="phase-badge">3</div></div><div class="phase-body"><div class="phase-title">Diagnose</div><div class="phase-desc">Run the 3 U's. In this case you are usually looking at Unable: something outside of work is taking capacity. That changes the response from discipline to support.</div><span class="phase-time">Do not guess. Ask</span></div></div>
+    <div class="phase-card"><div class="phase-num-col"><div class="phase-badge">4</div></div><div class="phase-body"><div class="phase-title">Offer real support</div><div class="phase-desc">Know your department's resources before you need them: peer support, the employee assistance program, the chaplain, leave options, a shift trade. Offer to make the first call with them. Chapter 38 covers this in depth.</div><span class="phase-time">Specific, not "let me know"</span></div></div>
+    <div class="phase-card"><div class="phase-num-col"><div class="phase-badge">5</div></div><div class="phase-body"><div class="phase-title">State the standard and the plan</div><div class="phase-desc">"I am going to help you get through this. I also need you safe and on time, because the crew is counting on you and so are the people who call. So here is what we are going to do for the next month." Agree on it together.</div><span class="phase-time">Both true, same sentence</span></div></div>
+    <div class="phase-card"><div class="phase-num-col"><div class="phase-badge">6</div></div><div class="phase-body"><div class="phase-title">Follow up</div><div class="phase-desc">A set date, and informal check-ins between. Document the conversation factually and tell your BC what they need to know.</div><span class="phase-time">Care is what you do next week</span></div></div>
+  </div>
+
+  <h2>What It Sounds Like</h2>
+  <div class="dialogue">
+    <div class="dl-header"><div class="dl-label">Struggling Member · Lieutenant Level</div></div>
+    <div class="dl-line"><div class="dl-speaker officer">Officer</div><div class="dl-text">"I wanted to check on you. You have not seemed like yourself lately. How are you doing?"</div></div>
+    <div class="dl-line"><div class="dl-speaker role">Firefighter</div><div class="dl-text">"I am fine, Lieutenant. Just tired."</div></div>
+    <div class="dl-line"><div class="dl-speaker officer">Officer</div><div class="dl-text">"Okay. I ask because you were late on the 3rd and the 9th, and Tuesday you went in without a radio. That is not you. In six years I have never seen that from you." <em>(Specific, and frames it as out of character)</em></div></div>
+    <div class="dl-line"><div class="dl-speaker role">Firefighter</div><div class="dl-text">"...My wife moved out three weeks ago. I have the kids on my days off and I am not sleeping."</div></div>
+    <div class="dl-line"><div class="dl-speaker officer">Officer</div><div class="dl-text">"I am sorry. That is a lot to carry, and I am glad you told me." <em>(Pause)</em> "I want to do two things. I want to get you some help, and I want to keep you safe at work while you get through this. Have you talked to anyone on the peer support team?"</div></div>
+    <div class="dl-line"><div class="dl-speaker role">Firefighter</div><div class="dl-text">"No. I do not want this all over the department."</div></div>
+    <div class="dl-line"><div class="dl-speaker officer">Officer</div><div class="dl-text">"It will not be. Peer support exists for exactly this, and I am not going to share your personal business. The only thing I pass to the BC is that I am working with you on attendance. I will sit with you while you make the call if that helps. For the next month, I need you here on time and I need you sharp on calls. If you are not rested enough to be safe on a given shift, call me before the shift and we will figure out leave. Can you work with that?" <em>(Support and standard together)</em></div></div>
+    <div class="dl-line"><div class="dl-speaker note">Assessor</div><div class="dl-text"><em>Led with the person. Specific behaviors. Diagnosed before deciding. Named resources. Kept the standard. Addressed confidentiality honestly. Set a plan.</em></div></div>
+  </div>
+
+  <h2>Where the Line Is</h2>
+  <p>Support does not mean the standard is suspended without limit. If the member cannot perform safely, they should not be on the rig, and getting them off it through leave or modified duty is the caring act. If the behavior continues after real support, the conversation moves toward formal steps, and you will be able to show that you did everything right first. If you ever have a concern that a member may harm themselves, that is not a coaching issue. Stay with them and follow your department's crisis procedure immediately.</p>
+  <div class="callout callout-gold">
+    <span class="callout-label">Friend to Boss</span>
+    <p>This conversation is hardest when the member is your friend. It is also when it matters most, because your friend is the person least likely to hear it from anyone else. Say it plainly: "I am telling you this because I am your friend and because I am your officer. Both of those are why I am not going to look away."</p>
+  </div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="ft-toggle" onclick="toggleFT(this)" style="margin-bottom:16px;max-width:320px">
+<div class="ft-toggle-switch"><div class="ft-toggle-knob"></div></div>
+<div><div class="ft-toggle-label">Fast Track Mode</div><div class="ft-toggle-desc">Full lesson content</div></div>
+</div>
+
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Applied to this lesson's board question</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Personnel Issue</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">3 U's → SBI → Four-P opening</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Care-first opening → SBI Feedback Model → 3 U's (Unable) → support resources → stated standard and plan</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Person first → facts → support with a name on it → standard and plan → close with Empathy and Courage</div></div></div></div>
+
+  <span class="sbar-label">Both Are True</span>
+  <div class="sbar-card">This person needs support. The job still has to be done safely.</div>
+  <span class="sbar-label">Know Before You Need</span>
+  <div class="sbar-card">Peer support contact · Employee assistance program · Chaplain · Leave and modified-duty options</div>
+  <span class="sbar-label">Confidentiality</span>
+  <div class="sbar-card">Promise only what you can keep. Say what you must pass up and why.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — When Someone Is Struggling</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">LT / CAPT</span><div><div class="ob-q-text">"A reliable member of your crew has recently started arriving late and seems withdrawn. You have heard they are having problems at home. What do you do?"</div><div class="ob-note">Private conversation, person first, specific behaviors, 3 U's, real resources by name, and a clear statement that the standard still applies. Mention follow-up and informing the BC appropriately.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 4 — Key Takeaways</div>
+  <div class="tk-item">With a struggling member, two things are true: they need support and the job must be done safely.</div>
+  <div class="tk-item">Know your support resources before you need them, and offer to make the first call together.</div>
+  <div class="tk-item">LEAD integration: put care and the standard in the same sentence. Close with Empathy and Courage.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Personnel Issue</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Care-first opening → SBI Feedback Model → 3 U's (Unable) → support resources → stated standard and plan</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Person first → facts → support with a name on it → standard and plan → close with Empathy and Courage</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Previous</button>
+  <div class="lnb-info"><div class="lnb-name">When Someone Is Struggling</div><div class="lnb-num">Lesson 4 of 5</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: LEAD Applied →</button>
+</div>
+</div>
+
+<!-- LESSON 5 -->
+<div class="lesson-view" id="lesson-4">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 47 · Lesson 5 of 5</div>
+    <h1 class="lh-title">L·E·A·D<br><em>Applied to Care and the Standard</em></h1>
+    <div class="lh-meta">
+      <span class="lh-meta-item">⏱ 9 min</span>
+      <span class="lh-meta-item">⚡ Capstone</span>
+    </div>
+  </div>
+
+  <p>This chapter is a capstone. It does not add a new exercise type. It gives you the through-line for answers you already know how to structure, and for the officer you are about to be.</p>
+
+  <h2>L·E·A·D on a Care-and-Standard Question</h2>
+  <div class="acro-grid">
+    <div class="acro-row"><div class="acro-letter">L</div><div class="acro-content"><div class="acro-word">Label</div><div class="acro-desc">The philosophy version is Leadership Philosophy. The scenario version is a Personnel Issue. Listen for which one you were asked.</div></div></div>
+    <div class="acro-row"><div class="acro-letter">E</div><div class="acro-content"><div class="acro-word">Engage</div><div class="acro-desc">T·C·H·O·E·D·S and your Identity Anchor for philosophy. STAR-P or the counseling arc for a scenario.</div></div></div>
+    <div class="acro-row"><div class="acro-letter">A</div><div class="acro-content"><div class="acro-word">Apply</div><div class="acro-desc">Show both dials every time. Sort the behavior with Just Culture. Diagnose with the 3 U's. Name a real support resource.</div></div></div>
+    <div class="acro-row"><div class="acro-letter">D</div><div class="acro-content"><div class="acro-word">Deliver</div><div class="acro-desc">Close with two values together. Empathy and Courage is the natural pair: I care enough to have the conversation.</div></div></div>
+  </div>
+
+  <h2>The Complete Response</h2>
+  <div class="dialogue">
+    <div class="dl-header"><div class="dl-label">Model Response · "How do you take care of your crew while still holding the standard?"</div></div>
+    <div class="dl-line"><div class="dl-speaker officer">Reframe</div><div class="dl-text">"I do not see those as two things I have to trade off. Holding someone to the standard is one of the ways I take care of them, because the standard is what gets them home and what gets the public the service they called for."</div></div>
+    <div class="dl-line"><div class="dl-speaker officer">Care</div><div class="dl-text">"So I start by knowing my people. What they are working toward, what is going on at home, what they need from me to do the job well. If the saw is down, that is my phone call."</div></div>
+    <div class="dl-line"><div class="dl-speaker officer">Standard</div><div class="dl-text">"And I am clear from the first shift about what I expect. When something slips, I address it that day, in private, with the specific behavior. Before I decide what it is, I ask. An honest mistake gets support and I look at what set them up for it. A shortcut gets coaching. A conscious disregard gets documented and goes where our policy says it goes."</div></div>
+    <div class="dl-line"><div class="dl-speaker officer">Example</div><div class="dl-text">"Last year one of my most reliable firefighters was late twice in a month. I sat down with him and asked how he was doing before I said anything about the time. He was going through a divorce. We got him connected with peer support, we worked out a shift trade, and I told him I still needed him on time and sharp. He has not been late since, and he told me later that conversation was the first time he felt like anybody noticed."</div></div>
+    <div class="dl-line"><div class="dl-speaker officer">Principle</div><div class="dl-text">"That is Empathy and Courage together. I cared enough to notice, and I cared enough to say the hard part. As an officer I owe my crew both."</div></div>
+    <div class="dl-line"><div class="dl-speaker note">Assessor</div><div class="dl-text"><em>Rejected the trade-off. Both dials shown. Sorted behavior fairly. Real example with outcome. Two-value close earned by the story.</em></div></div>
+  </div>
+
+  <h2>How This Chapter Connects the Others</h2>
+  <div class="framework-grid">
+    <div class="fw-card"><div class="fw-card-label">Chapter 40</div><div class="fw-card-title">Subordinate Counseling</div><div class="fw-card-desc">The structure of the hard conversation. This chapter adds why you are having it.</div></div>
+    <div class="fw-card"><div class="fw-card-label">Chapter 26</div><div class="fw-card-title">Progressive Discipline</div><div class="fw-card-desc">The formal steps. This chapter adds how to decide whether you are on that path at all.</div></div>
+    <div class="fw-card"><div class="fw-card-label">Chapter 38</div><div class="fw-card-title">Wellness + Behavioral Health</div><div class="fw-card-desc">The resources. This chapter adds how to offer them without dropping the standard.</div></div>
+    <div class="fw-card"><div class="fw-card-label">Chapter 46</div><div class="fw-card-title">Coaching for Growth</div><div class="fw-card-desc">The deposits. Regular coaching conversations are what make the hard ones possible.</div></div>
+  </div>
+
+  <h2>Your Practice Target for This Chapter</h2>
+  <p>Write your answer to the question at the top of the model response in five sentences: the reframe, one care behavior, one standard behavior, one real example, one two-value close. Then run the struggling-member scenario in The Office and listen to the debrief from their chair. If they did not feel both the care and the standard, run it again.</p>
+  <div class="callout callout-gold">
+    <span class="callout-label">The First Ninety Days</span>
+    <p>When you promote, your crew will decide within a few weeks which of the four officers you are. Make a deposit with every member in your first two shifts. State your standards in your first week. Then keep both promises. Everything else in this curriculum works better once the crew knows you mean both.</p>
+  </div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="ft-toggle" onclick="toggleFT(this)" style="margin-bottom:16px;max-width:320px">
+<div class="ft-toggle-switch"><div class="ft-toggle-knob"></div></div>
+<div><div class="ft-toggle-label">Fast Track Mode</div><div class="ft-toggle-desc">Full lesson content</div></div>
+</div>
+
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Applied to this lesson's board question</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Leadership Philosophy</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">T·C·H·O·E·D·S or STAR-P, depending on the question</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Care × Standard grid → Just Culture sorting → 3 U's Diagnostic → Bank of Leadership → T·C·H·O·E·D·S</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Care about the person → hold the standard → both in the same sentence → close with Empathy and Courage</div></div></div></div>
+
+  <span class="sbar-label">Five-Sentence Answer</span>
+  <div class="sbar-card">Reframe · One care behavior · One standard behavior · One real example · Two-value close</div>
+  <span class="sbar-label">Two-Value Closes</span>
+  <div class="sbar-card">Empathy + Courage · Trust + Ownership · Service + Dedication</div>
+  <span class="sbar-label">The First Ninety Days</span>
+  <div class="sbar-card">A deposit with every member. Standards stated in week one. Both promises kept.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — LEAD Applied</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">LT / CAPT</span><div><div class="ob-q-text">"Tell us about a time you had to hold someone accountable who you cared about personally."</div><div class="ob-note">STAR-P. Show the care before, during and after the conversation. State the standard you held and what happened to the relationship afterward.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 5 — Key Takeaways</div>
+  <div class="tk-item">Show both dials in every answer: what you did for the person and what standard you held.</div>
+  <div class="tk-item">Close with two values together. Empathy and Courage is the natural pair.</div>
+  <div class="tk-item">LEAD integration: this chapter is the through-line for Personnel Issue and Leadership Philosophy answers.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Leadership Philosophy</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Care × Standard grid → Just Culture sorting → 3 U's Diagnostic → Bank of Leadership → T·C·H·O·E·D·S</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Care about the person → hold the standard → both in the same sentence → close with Empathy and Courage</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Previous</button>
+  <div class="lnb-info"><div class="lnb-name">LEAD Applied</div><div class="lnb-num">Lesson 5 of 5</div></div>
+  <button class="lnb-btn primary" onclick="window.scrollTo({top:0,behavior:'smooth'})">Module Complete ✓</button>
+</div>
+</div>
+
+</main>
+
+<script>
+let cur=0;
+const ls=document.querySelectorAll('.lesson-view');
+const ps=document.querySelectorAll('.nav-pill');
+const mbs=document.querySelectorAll('.mh-lesson-btn');
+
+function showLesson(i){
+  ls.forEach(l=>l.classList.remove('active'));
+  ps.forEach(p=>p.classList.remove('active'));
+  mbs.forEach(m=>m.classList.remove('active'));
+  ls[i].classList.add('active');
+  ps[i].classList.add('active');
+  mbs[i].classList.add('active');
+  cur=i;
+  window.scrollTo({top:0,behavior:'smooth'});
+  document.getElementById('prog').style.width='0%';
+}
+
+function nextLesson(){if(cur<ls.length-1)showLesson(cur+1);}
+function prevLesson(){if(cur>0)showLesson(cur-1);}
+
+window.addEventListener('scroll',()=>{
+  const s=document.documentElement.scrollTop;
+  const h=document.documentElement.scrollHeight-window.innerHeight;
+  if(h>0)document.getElementById('prog').style.width=Math.min(100,(s/h*100))+'%';
+});
+
+document.addEventListener('DOMContentLoaded',()=>showLesson(0));
+
+function lfNext(el,stepNum){
+  var wrap=el.closest('.lf-wrap');
+  if(!wrap)return;
+  var steps=wrap.querySelectorAll('.lf-step');
+  var dots=wrap.querySelectorAll('.lf-dot');
+  steps.forEach(function(s,i){s.classList.remove('active');if(i<stepNum)s.classList.add('done');});
+  dots.forEach(function(d,i){d.classList.remove('active');if(i<stepNum)d.classList.add('done');if(i===stepNum)d.classList.add('active');});
+  if(steps[stepNum])steps[stepNum].classList.add('active');
+}
+</script>
+<script>function toggleFT(el){var sw=el.querySelector('.ft-toggle-switch');var desc=el.querySelector('.ft-toggle-desc');var mains=document.querySelectorAll('.lesson-main');sw.classList.toggle('on');var on=sw.classList.contains('on');desc.textContent=on?'Frameworks + OB cards only':'Full lesson content';mains.forEach(function(m){m.classList.toggle('ft-on',on);});}</script>
+
+<!-- tps-bridge v1: deep-link + progress reporting. Append-only; safe to remove. -->
+<script>
+(function(){
+  function hashLesson(){var m=(location.hash||'').match(/#lesson-(\d+)/);return m?parseInt(m[1],10):null;}
+  function activeIdx(){var v=document.querySelectorAll('.lesson-view');for(var i=0;i<v.length;i++){if(v[i].classList.contains('active'))return i;}return null;}
+  function rep(){try{if(window.parent!==window){window.parent.postMessage({type:'tps:lesson',lesson:activeIdx(),total:document.querySelectorAll('.lesson-view').length,href:location.pathname},'*');}}catch(e){}}
+  function init(){
+    var n=hashLesson();
+    if(n!==null&&typeof showLesson==='function'){try{showLesson(n);}catch(e){}}
+    if(/[?&]ft=1/.test(location.search)&&typeof toggleFastTrack==='function'){
+      var tg=document.querySelectorAll('.ft-toggle');for(var i=0;i<tg.length;i++){try{toggleFastTrack(tg[i]);}catch(e){}}
+    }
+    rep();
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',init);}else{init();}
+  if(typeof showLesson==='function'){var _s=showLesson;showLesson=function(n){_s(n);rep();};}
+  window.addEventListener('hashchange',function(){var n=hashLesson();if(n!==null&&typeof showLesson==='function'){showLesson(n);}});
+})();
+</script>
+</body>
+</html>

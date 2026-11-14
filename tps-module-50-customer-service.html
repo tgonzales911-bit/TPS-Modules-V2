@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Chapter 45 — Customer Service + Citizen Complaints | The Promotional Standard</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Crimson+Pro:wght@300;400;500;600&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --navy:#0C2340;--navy2:#1A3A5C;--gold:#C9A84C;--gold2:#F5F0E8;--gold3:#6B4F10;
+  --cream:#F5F0E8;--offwhite:#F5F0E8;--light:#EAE5DC;--mid:#2A3D50;--gray:#8FA8C0;
+  --red:#B22222;--red-light:#FFF0F0;--green:#1A5C3A;--green-light:#EAF3DE;
+  --teal:#006B6B;--teal-light:#E0F4F4;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:var(--navy);font-size:18px;line-height:1.8;}
+.top-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(12,35,64,0.98);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,168,76,0.2);height:64px;display:flex;align-items:center;padding:0 2rem;gap:1rem;}
+.nav-left{display:flex;align-items:center;gap:12px;flex:1;}
+.nav-brand{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;color:var(--cream);line-height:1.3;}
+.nav-brand span{display:block;font-size:8px;color:var(--gold);letter-spacing:2px;}
+.nav-pills{display:flex;gap:5px;flex:2;justify-content:center;overflow-x:auto;}
+.nav-pill{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#8FA8C0;padding:6px 11px;border-radius:20px;cursor:pointer;transition:all 0.2s;border:none;background:transparent;white-space:nowrap;}
+.nav-pill:hover{color:var(--cream);background:rgba(255,255,255,0.05);}
+.nav-pill.active{color:var(--gold);background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.25);}
+.progress-bar{position:fixed;top:64px;left:0;height:3px;background:linear-gradient(90deg,var(--navy2),var(--gold));z-index:199;width:0%;transition:width 0.3s;}
+.lesson-view{display:none;}.lesson-view.active{display:block;}
+.module-hero{background:var(--navy);padding:4.5rem 3rem 3.5rem;margin-top:64px;position:relative;overflow:hidden;border-bottom:3px solid var(--gold);}
+.module-hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 60px,rgba(201,168,76,0.015) 60px,rgba(201,168,76,0.015) 61px);}
+.module-hero::after{content:'';position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(180deg,var(--navy2),var(--gold));}
+.mh-inner{max-width:900px;position:relative;z-index:2;}
+.mh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.mh-title{font-family:'EB Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:800;color:var(--cream);line-height:1.1;margin-bottom:0.75rem;}
+.mh-title em{font-style:italic;color:var(--gold);}
+.mh-sub{font-size:1.05rem;color:#8FA8C0;max-width:700px;line-height:1.7;margin-bottom:2rem;}
+.mh-badges{display:flex;gap:10px;margin-bottom:1.5rem;flex-wrap:wrap;}
+.mh-badge{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border-radius:3px;}
+.badge-track{background:rgba(201,168,76,0.15);color:var(--gold);border:1px solid rgba(201,168,76,0.3);}
+.badge-nfpa{background:rgba(100,160,220,0.15);color:#8FA8C0;border:1px solid rgba(100,160,220,0.3);}
+.badge-new{background:rgba(50,180,100,0.15);color:#3AB464;border:1px solid rgba(50,180,100,0.3);}
+.mh-thread{background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);border-left:3px solid var(--gold);padding:1rem 1.5rem;margin-bottom:2rem;max-width:700px;}
+.mh-thread-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+.mh-thread-text{font-size:0.92rem;color:var(--cream);line-height:1.65;}
+.mh-lesson-nav{display:flex;gap:8px;flex-wrap:wrap;}
+.mh-lesson-btn{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:8px 14px;border-radius:6px;cursor:pointer;transition:all 0.2s;border:1px solid rgba(201,168,76,0.25);background:transparent;color:#8FA8C0;}
+.mh-lesson-btn:hover{background:rgba(255,255,255,0.05);color:var(--cream);}
+.mh-lesson-btn.active{background:rgba(201,168,76,0.12);color:var(--gold);border-color:rgba(201,168,76,0.4);}
+.lesson-container{display:grid;grid-template-columns:1fr 310px;gap:0;}
+.lesson-main{padding:3rem 3.5rem;border-right:1px solid var(--light);}
+.lesson-sidebar{padding:2rem 1.75rem;background:var(--offwhite);position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;}
+.lesson-header{margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:2px solid var(--light);}
+.lh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold3);margin-bottom:0.6rem;}
+.lh-title{font-family:'EB Garamond',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;color:var(--navy);line-height:1.15;margin-bottom:0.6rem;}
+.lh-title em{font-style:italic;color:var(--gold);}
+.lh-meta{display:flex;gap:1.5rem;flex-wrap:wrap;}
+.lh-meta-item{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);}
+.lesson-main h2{font-family:'EB Garamond',serif;font-size:1.7rem;font-weight:700;color:var(--navy);margin:3rem 0 0.9rem;padding-bottom:0.5rem;border-bottom:2px solid var(--light);}
+.lesson-main h3{font-family:'EB Garamond',serif;font-size:1.25rem;font-weight:600;color:var(--navy);margin:2.25rem 0 0.65rem;}
+.lesson-main p{margin-bottom:1.25rem;color:#2A3D50;line-height:1.82;}
+.lesson-main ul,.lesson-main ol{margin:0 0 1.25rem 1.5rem;color:#2A3D50;}
+.lesson-main li{margin-bottom:0.6rem;line-height:1.72;}
+.lesson-main strong{color:var(--navy);font-weight:600;}
+.callout{padding:1.4rem 1.6rem;margin:2rem 0;}
+.callout-gold{background:var(--gold2);border-left:3px solid var(--gold);}.callout-gold p{color:var(--gold3);font-size:0.97rem;line-height:1.75;}
+.callout-navy{background:var(--navy);border-left:3px solid var(--gold);}.callout-navy p{color:#8FA8C0;font-size:0.95rem;line-height:1.75;}
+.callout-red{background:var(--red-light);border-left:4px solid var(--red);}.callout-red p{color:#6B4F10;font-size:0.97rem;line-height:1.75;}
+.callout-green{background:var(--green-light);border-left:4px solid var(--green);}.callout-green p{color:#1A3A5C;font-size:0.97rem;line-height:1.75;}
+.callout-teal{background:var(--teal-light);border-left:4px solid var(--teal);}.callout-teal p{color:#003A3A;font-size:0.97rem;line-height:1.75;}
+.callout-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:0.5rem;display:block;}
+.callout-gold .callout-label{color:var(--gold3);}
+.callout-navy .callout-label{color:var(--gold);}
+.callout-red .callout-label{color:var(--red);}
+.callout-green .callout-label{color:var(--green);}
+.callout-teal .callout-label{color:var(--teal);}
+.framework-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.fw-card{background:white;border:1px solid #EAE5DC;padding:1.25rem;border-radius:8px;}
+.fw-card-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:6px;}
+.fw-card-title{font-family:'EB Garamond',serif;font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.fw-card-desc{font-size:0.9rem;color:var(--mid);line-height:1.6;}
+.acro-grid{display:flex;flex-direction:column;gap:0;margin:1.5rem 0;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;}
+.acro-row{display:grid;grid-template-columns:52px 1fr;gap:0;border-bottom:1px solid #EAE5DC;}
+.acro-row:last-child{border-bottom:none;}
+.acro-letter{background:var(--navy);color:var(--gold);font-family:'EB Garamond',serif;font-size:1.8rem;font-weight:800;display:flex;align-items:center;justify-content:center;}
+.acro-content{padding:0.9rem 1.1rem;background:white;}
+.acro-word{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:3px;}
+.acro-desc{font-size:0.85rem;color:var(--mid);line-height:1.55;}
+.sbar-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:0.65rem;margin-top:1.5rem;display:block;}
+.sbar-label:first-child{margin-top:0;}
+.sbar-card{background:white;border:1px solid #EAE5DC;border-radius:8px;padding:0.9rem 1rem;margin-bottom:8px;font-size:0.9rem;color:var(--mid);line-height:1.55;}
+.sbar-card strong{color:var(--navy);display:block;margin-bottom:3px;font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;}
+/* Nav bar — full M25/M27 standard */
+.lesson-nav-bar{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 3rem;border-top:3px solid var(--gold);background:var(--navy);gap:1rem;}
+.lnb-btn{background:rgba(255,255,255,0.08);border:2px solid rgba(201,168,76,0.4);padding:14px 28px;font-family:'Cinzel',serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border-radius:6px;color:var(--cream);transition:all 0.2s;white-space:nowrap;}
+.lnb-btn:hover{background:rgba(201,168,76,0.15);border-color:var(--gold);color:var(--gold);}
+.lnb-btn:disabled,.lnb-btn[disabled]{opacity:0.25;cursor:not-allowed;background:transparent;}
+.lnb-btn:disabled:hover,.lnb-btn[disabled]:hover{background:transparent;border-color:rgba(201,168,76,0.4);color:var(--cream);}
+.lnb-btn.primary{background:var(--gold);color:var(--navy);border-color:var(--gold);font-weight:800;}
+.lnb-btn.primary:hover{background:#C9A84C;border-color:#C9A84C;}
+.lnb-info{text-align:center;flex:1;}
+.lnb-name{font-family:'EB Garamond',serif;font-size:1rem;font-weight:700;color:var(--cream);}
+.lnb-num{font-size:0.85rem;color:var(--gold);font-family:'Cinzel',serif;letter-spacing:1px;}
+/* Counseling-specific: dialogue script */
+.dialogue{background:white;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;margin:1.5rem 0;}
+.dl-header{background:var(--navy);padding:0.9rem 1.5rem;}
+.dl-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);}
+.dl-line{display:grid;grid-template-columns:110px 1fr;gap:0.75rem;padding:0.85rem 1.5rem;border-bottom:1px solid var(--light);align-items:start;}
+.dl-line:last-child{border-bottom:none;}
+.dl-speaker{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;padding-top:2px;}
+.dl-speaker.officer{color:var(--navy);}
+.dl-speaker.role{color:var(--red);}
+.dl-speaker.note{color:var(--gold3);}
+.dl-text{font-size:0.87rem;color:#2A3D50;line-height:1.65;}
+.dl-text em{color:var(--gold3);font-style:italic;}
+/* Score compare */
+.score-compare{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.sc-card{padding:1.25rem;border-radius:8px;}
+.sc-card.miss{background:var(--red-light);border:1px solid #F0C0C0;}
+.sc-card.hit{background:var(--green-light);border:1px solid #9DCCA8;}
+.sc-title{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:0.75rem;}
+.sc-card.miss .sc-title{color:var(--red);}
+.sc-card.hit .sc-title{color:var(--green);}
+.sc-body{font-size:0.9rem;line-height:1.6;}
+.sc-card.miss .sc-body{color:#6B4F10;}
+.sc-card.hit .sc-body{color:#1A3A5C;}
+/* Phase cards */
+.phase-cards{display:flex;flex-direction:column;gap:0.75rem;margin:1.5rem 0;}
+.phase-card{background:white;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;display:grid;grid-template-columns:64px 1fr;}
+.phase-num-col{background:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1rem 0.5rem;gap:4px;}
+.phase-badge{font-family:'EB Garamond',serif;font-size:1.5rem;font-weight:800;color:var(--gold);line-height:1;}
+.phase-body{padding:1rem 1.25rem;}
+.phase-title{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:4px;}
+.phase-desc{font-size:0.9rem;color:var(--mid);line-height:1.58;}
+.phase-time{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold3);margin-top:5px;display:block;font-weight:700;}
+@media(max-width:900px){.lesson-container{grid-template-columns:1fr;}.lesson-sidebar{position:relative;height:auto;}.lesson-main{padding:2rem 1.5rem;}.lesson-nav-bar{padding:1rem 1.5rem;flex-wrap:wrap;}.score-compare{grid-template-columns:1fr;}.framework-grid{grid-template-columns:1fr;}.dl-line{grid-template-columns:80px 1fr;}}
+
+/* OB CARD */
+.ob-card{background:var(--navy);margin:2rem 0;overflow:hidden;}
+.ob-header{padding:0.85rem 1.5rem;background:rgba(201,168,76,0.08);border-bottom:1px solid rgba(201,168,76,0.15);}
+.ob-label{font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);}
+.ob-body{padding:1.25rem 1.5rem;}
+.ob-q{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;}
+.ob-q-tag{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);background:rgba(201,168,76,0.1);padding:4px 10px;border-radius:3px;white-space:nowrap;}
+.ob-q-text{font-family:'EB Garamond',serif;font-size:1.08rem;font-weight:600;color:var(--cream);line-height:1.5;margin-bottom:8px;}
+.ob-note{font-size:0.88rem;color:#8FA8C0;line-height:1.6;font-style:italic;}
+/* TAKEAWAYS */
+.takeaways{background:var(--navy);padding:2.25rem;margin:3rem 0 0;border-top:3px solid var(--gold);}
+.tk-lbl{font-family:'Cinzel',serif;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.tk-item{color:#8FA8C0;font-size:0.92rem;line-height:1.7;padding:0.5rem 0 0.5rem 1.25rem;border-left:2px solid rgba(201,168,76,0.2);margin-bottom:0.5rem;}
+
+
+.lead-nav{background:var(--navy);border-radius:8px;padding:14px 16px;margin-bottom:16px;border:1px solid rgba(201,168,76,0.2)}
+.lead-nav-header{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.lead-nav-row{display:grid;grid-template-columns:20px 1fr;gap:6px;margin-bottom:6px;align-items:start}
+.lead-nav-letter{font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:var(--gold)}
+.lead-nav-content{}
+.lead-nav-name{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:2px}
+.lead-nav-app{font-size:11px;color:#8FA8C0;line-height:1.5}
+
+.lf-wrap{margin:2.5rem 0 1.5rem;border:2px solid var(--gold);border-radius:10px;overflow:hidden}
+.lf-header{background:var(--navy);padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
+.lf-title{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+.lf-dots{display:flex;gap:6px}
+.lf-dot{width:8px;height:8px;border-radius:50%;background:rgba(201,168,76,0.25);transition:all 0.3s}
+.lf-dot.active{background:var(--gold);transform:scale(1.3)}
+.lf-dot.done{background:var(--gold)}
+.lf-step{display:none;padding:20px}
+.lf-step.active{display:block}
+.lf-step-num{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:6px}
+.lf-step-title{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:10px}
+.lf-chain{background:var(--navy);border-radius:6px;padding:14px 18px;margin:10px 0}
+.lf-chain-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.lf-chain-text{font-size:13px;color:#8FA8C0;line-height:1.6}
+.lf-chain-close{font-size:12px;color:var(--cream);margin-top:6px;font-style:italic}
+.lf-btn{background:var(--navy);color:var(--gold);border:2px solid var(--gold);padding:12px 24px;border-radius:6px;font-family:'Cinzel',serif;font-size:12px;letter-spacing:1.5px;font-weight:600;cursor:pointer;margin-top:12px;transition:all 0.2s;display:inline-block}
+.lf-btn:hover{background:var(--gold);color:var(--navy)}
+.lf-timer{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:var(--gold);padding:6px 14px;border-radius:4px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:1px;margin-top:10px}
+.lesson-main.ft>p{display:none!important}.lesson-main.ft>.callout{display:none!important}.ft-toggle{display:flex;align-items:center;gap:10px;padding:10px 16px;background:var(--navy);border-radius:6px;cursor:pointer;border:1px solid rgba(201,168,76,0.25)}.ft-toggle-switch{width:36px;height:20px;background:rgba(201,168,76,0.2);border-radius:10px;position:relative;transition:background .2s}.ft-toggle-switch.on{background:var(--gold)}.ft-toggle-knob{width:14px;height:14px;background:#fff;border-radius:50%;position:absolute;top:3px;left:3px;transition:left .2s}.ft-toggle-switch.on .ft-toggle-knob{left:19px}.ft-toggle-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}.ft-toggle-desc{font-size:11px;color:var(--mid)}.lesson-main.ft-on>p,.lesson-main.ft-on>.callout,.lesson-main.ft-on h3{display:none!important}.lesson-main.ft-on .ob-card,.lesson-main.ft-on .lf-wrap,.lesson-main.ft-on .lead-nav,.lesson-main.ft-on h2{display:block!important}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <div class="nav-left">
+    <div class="nav-brand">The Promotional Standard<span>Lieutenant Advanced · Chapter 45</span></div>
+  </div>
+  <div class="nav-pills">
+    <button class="nav-pill active" onclick="showLesson(0)">Every Contact</button>
+    <button class="nav-pill" onclick="showLesson(1)">The Angry Citizen</button>
+    <button class="nav-pill" onclick="showLesson(2)">The Formal Complaint</button>
+    <button class="nav-pill" onclick="showLesson(3)">Service on Scene</button>
+    <button class="nav-pill" onclick="showLesson(4)">LEAD Applied</button>
+  </div>
+</nav>
+<div class="progress-bar" id="prog"></div>
+
+<div class="module-hero">
+  <div class="mh-inner">
+    <div class="mh-eyebrow">Chapter 45 · Lieutenant Advanced · Company Officer</div>
+    <h1 class="mh-title">Customer Service<br><em>+ Citizen Complaints</em></h1>
+    <p class="mh-sub">The public cannot judge your tactics. They judge how your crew treated them, and as the company officer that is yours to own. This chapter covers the service standard and how to set it, the angry citizen at the station door, the formal complaint that has to go up the chain, and how to correct your own crew when the service was poor. It prepares you for the citizen role play and for the first real complaint that lands on your desk.</p>
+    <div class="mh-badges">
+      <span class="mh-badge badge-track">Lieutenant Advanced</span>
+      <span class="mh-badge badge-nfpa">NFPA 1021 FO I–II · Community Relations JPRs</span>
+      <span class="mh-badge badge-new">New Chapter</span>
+    </div>
+    <div class="mh-thread">
+      <div class="mh-thread-label">Before You Begin</div>
+      <div class="mh-thread-text">Complete Chapter 6 (Interpersonal Skills) and Chapter 21 (Community Relations + CRR) first. This chapter uses the CALM Model and bias checks from Chapter 6 and picks up where Chapter 21 leaves off: the individual citizen in front of you.</div>
+    </div>
+    <div class="mh-lesson-nav">
+      <button class="mh-lesson-btn active" onclick="showLesson(0)">1. Every Contact</button>
+      <button class="mh-lesson-btn" onclick="showLesson(1)">2. The Angry Citizen</button>
+      <button class="mh-lesson-btn" onclick="showLesson(2)">3. The Formal Complaint</button>
+      <button class="mh-lesson-btn" onclick="showLesson(3)">4. Service on Scene</button>
+      <button class="mh-lesson-btn" onclick="showLesson(4)">5. LEAD Applied</button>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- LESSON 1 -->
+<div class="lesson-view active" id="lesson-0">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 45 · Lesson 1 of 5</div>
+    <h1 class="lh-title">Every Contact —<br><em>Is the Department</em></h1>
+    <div class="lh-meta">
+      <span class="lh-meta-item">⏱ 9 min</span>
+      <span class="lh-meta-item">🤝 Service as a Scored Behavior</span>
+    </div>
+  </div>
+
+  <p>The public does not grade your fire attack. They cannot tell a good one from a bad one. They grade how your crew treated them, and they remember it for twenty years. The late Chief Alan Brunacini built a career on that point: the customer's experience is part of the job, and most of it comes down to being nice when it would be easier not to be.</p>
+  <p>As a firefighter you were responsible for your own conduct. As a company officer you own the conduct of four people on every contact, including the ones you were not standing next to. When a citizen says "the fire department was rude to my mother," they mean your engine.</p>
+  <p>Assessors ask about customer service for two reasons. It shows how you represent the organization, and it shows whether you will correct your own crew when the service was poor.</p>
+
+  <h2>Who the Customer Is</h2>
+  <div class="framework-grid">
+    <div class="fw-card"><div class="fw-card-label">External</div><div class="fw-card-title">The person who called</div><div class="fw-card-desc">The patient, the family, the business owner, the driver stuck behind your rig. Most of them are having one of the worst days of their year.</div></div>
+    <div class="fw-card"><div class="fw-card-label">External</div><div class="fw-card-title">The person who did not call</div><div class="fw-card-desc">Neighbors watching from the sidewalk, the passerby filming, the taxpayer who only ever sees you at the grocery store.</div></div>
+    <div class="fw-card"><div class="fw-card-label">Internal</div><div class="fw-card-title">Other crews and divisions</div><div class="fw-card-desc">The oncoming shift, the mechanic, dispatch, the prevention bureau. How you treat internal customers sets how your crew treats external ones.</div></div>
+    <div class="fw-card"><div class="fw-card-label">Partner</div><div class="fw-card-title">Other agencies</div><div class="fw-card-desc">Hospital staff, law enforcement, public works, the ambulance crew. Their opinion of your department is formed on scene with you.</div></div>
+  </div>
+
+  <h2>The Three Standards</h2>
+  <p>You do not need a customer service manual. You need three standards your crew can remember at three in the morning.</p>
+  <div class="acro-grid">
+    <div class="acro-row"><div class="acro-letter">1</div><div class="acro-content"><div class="acro-word">Solve the Problem They Called About</div><div class="acro-desc">Competence first. Nothing else matters if the work was poor.</div></div></div>
+    <div class="acro-row"><div class="acro-letter">2</div><div class="acro-content"><div class="acro-word">Treat Them the Way You Would Want Your Family Treated</div><div class="acro-desc">Tone, patience, and explaining what you are doing. This is where most complaints start.</div></div></div>
+    <div class="acro-row"><div class="acro-letter">3</div><div class="acro-content"><div class="acro-word">Leave It Better Than You Found It</div><div class="acro-desc">Lock the door, move the furniture back, tell them what happens next, give them a number to call. Thirty seconds that people remember.</div></div></div>
+  </div>
+
+  <h2>What Assessors Are Scoring</h2>
+  <div class="framework-grid">
+    <div class="fw-card"><div class="fw-card-label">Scored Behavior 1</div><div class="fw-card-title">Represents the Organization</div><div class="fw-card-desc">Speaks as "we." Does not blame policy, dispatch, or another shift in front of the citizen.</div></div>
+    <div class="fw-card"><div class="fw-card-label">Scored Behavior 2</div><div class="fw-card-title">Listens Before Explaining</div><div class="fw-card-desc">Lets the person finish. Explanations offered too early sound like excuses.</div></div>
+    <div class="fw-card"><div class="fw-card-label">Scored Behavior 3</div><div class="fw-card-title">Takes Action or Routes It</div><div class="fw-card-desc">Fixes what is within authority, and gets the rest to the right person with a name and a time.</div></div>
+    <div class="fw-card"><div class="fw-card-label">Scored Behavior 4</div><div class="fw-card-title">Follows Up With the Crew</div><div class="fw-card-desc">Addresses the behavior with the member involved. A candidate who soothes the citizen and never talks to the crew scores a 3.</div></div>
+  </div>
+  <div class="callout callout-gold">
+    <span class="callout-label">The Core Idea of This Chapter</span>
+    <p>Service is a standard, the same as PPE or apparatus checks. You set it, you model it, and you correct it when it slips. The board wants to hear that you treat it that way.</p>
+  </div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="ft-toggle" onclick="toggleFT(this)" style="margin-bottom:16px;max-width:320px">
+<div class="ft-toggle-switch"><div class="ft-toggle-knob"></div></div>
+<div><div class="ft-toggle-label">Fast Track Mode</div><div class="ft-toggle-desc">Full lesson content</div></div>
+</div>
+
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Applied to this lesson's board question</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Communication</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">STAR-P with a real citizen contact</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">L·A·S·T service recovery → CALM Model → complaint intake steps → SBI coaching for the crew</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Listen first → own the experience → fix or route it → follow up → close with Service</div></div></div></div>
+
+  <span class="sbar-label">Three Standards</span>
+  <div class="sbar-card"><strong>1</strong>Solve the problem they called about.</div>
+  <div class="sbar-card"><strong>2</strong>Treat them like family.</div>
+  <div class="sbar-card"><strong>3</strong>Leave it better than you found it.</div>
+  <span class="sbar-label">Four Customers</span>
+  <div class="sbar-card">The caller · The onlooker · Internal divisions · Partner agencies</div>
+  <span class="sbar-label">The 3-Level Trap</span>
+  <div class="sbar-card">Calming the citizen and never addressing it with the crew.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Every Contact</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">LT / CAPT</span><div><div class="ob-q-text">"What does customer service mean to you as a company officer, and how do you set that expectation with your crew?"</div><div class="ob-note">Give the three standards in your own words, then one specific thing you do to set them: a first-shift expectation talk, or how you debrief a contact that went poorly.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 1 — Key Takeaways</div>
+  <div class="tk-item">The public grades how they were treated, and the company officer owns that for the whole crew.</div>
+  <div class="tk-item">Three standards: solve the problem, treat them like family, leave it better than you found it.</div>
+  <div class="tk-item">LEAD integration: Label Communication, Engage STAR-P, Apply the standards, Deliver with Service.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Communication</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">L·A·S·T service recovery → CALM Model → complaint intake steps → SBI coaching for the crew</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Listen first → own the experience → fix or route it → follow up → close with Service</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" disabled>← Previous</button>
+  <div class="lnb-info"><div class="lnb-name">Every Contact</div><div class="lnb-num">Lesson 1 of 5</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: The Angry Citizen →</button>
+</div>
+</div>
+
+<!-- LESSON 2 -->
+<div class="lesson-view" id="lesson-1">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 45 · Lesson 2 of 5</div>
+    <h1 class="lh-title">The Angry Citizen —<br><em>L·A·S·T in Real Time</em></h1>
+    <div class="lh-meta">
+      <span class="lh-meta-item">⏱ 11 min</span>
+      <span class="lh-meta-item">🎙 Role Play &amp; Real Life</span>
+    </div>
+  </div>
+
+  <p>A man walks up the apron and he is already yelling. Your engine blocked his driveway for forty minutes. Or the crew tracked mud through his mother's house. Or nobody told him which hospital his wife went to. This shows up in assessment centers as a citizen role play, and it shows up at your station door a few times a year.</p>
+  <p>The instinct is to explain. Do not start there. An upset person cannot hear an explanation until they believe they have been heard. Use a four-step service recovery sequence that is common across service professions.</p>
+
+  <h2>L·A·S·T</h2>
+  <div class="acro-grid">
+    <div class="acro-row"><div class="acro-letter">L</div><div class="acro-content"><div class="acro-word">Listen — All the Way to the End</div><div class="acro-desc">Step toward them, not behind the rig. Let them finish without correcting facts. Take a note if you can; writing it down shows you are taking it seriously. Then say it back: "So the engine blocked you in and nobody came to tell you how long it would be."</div></div></div>
+    <div class="acro-row"><div class="acro-letter">A</div><div class="acro-content"><div class="acro-word">Apologize — For the Experience</div><div class="acro-desc">"I am sorry that happened, and I am sorry nobody talked to you." You are apologizing for their experience, which is real whether or not anyone did anything wrong. You are not admitting a policy violation or assigning fault to a member.</div></div></div>
+    <div class="acro-row"><div class="acro-letter">S</div><div class="acro-content"><div class="acro-word">Solve — Or Route It</div><div class="acro-desc">Fix what you have authority to fix right now. For everything else, tell them exactly who will handle it and when they will hear back. Then ask: "What would make this right for you?" Most people ask for less than you expect.</div></div></div>
+    <div class="acro-row"><div class="acro-letter">T</div><div class="acro-content"><div class="acro-word">Thank — And Follow Up</div><div class="acro-desc">"Thank you for coming to tell me directly. I would rather hear it from you." Then do what you said, and make the follow-up call yourself.</div></div></div>
+  </div>
+
+  <h2>Staying Regulated</h2>
+  <p>The CALM Model from Chapter 6 applies here exactly as it does with a subordinate. Lower your volume as theirs rises. Keep your hands visible and your stance open. If they are too escalated to talk, name it without judgment: "I want to hear all of this. Can we step over here out of the bay?" If there is any threat to safety, the conversation is over and you follow your department's procedure. Service does not require accepting abuse.</p>
+
+  <h2>What It Sounds Like</h2>
+  <div class="dialogue">
+    <div class="dl-header"><div class="dl-label">Citizen Complaint at the Station · Lieutenant Level</div></div>
+    <div class="dl-line"><div class="dl-speaker role">Citizen</div><div class="dl-text">"Your truck sat across my driveway for forty minutes yesterday! I missed picking up my kid. Nobody said a word to me." <em>(Loud, specific, legitimate)</em></div></div>
+    <div class="dl-line"><div class="dl-speaker officer">Officer</div><div class="dl-text">"I want to hear this. I am Lieutenant Reyes, I was the officer on that engine. Tell me what happened from your side." <em>(Identifies self, invites the full account)</em></div></div>
+    <div class="dl-line"><div class="dl-speaker role">Citizen</div><div class="dl-text">"I stood there waving at your guys and they just ignored me."</div></div>
+    <div class="dl-line"><div class="dl-speaker officer">Officer</div><div class="dl-text">"So you were blocked in for forty minutes, you tried to get our attention, and nobody came over. I am sorry. That should not have happened and it is on me as the officer." <em>(Says it back, apologizes for the experience, owns it)</em></div></div>
+    <div class="dl-line"><div class="dl-speaker role">Citizen</div><div class="dl-text">"Well... what was even going on over there?" <em>(Volume drops)</em></div></div>
+    <div class="dl-line"><div class="dl-speaker officer">Officer</div><div class="dl-text">"We had a patient in cardiac arrest two doors down and we needed the engine close. That explains where we parked. It does not explain why nobody talked to you, and that is the part I am going to fix with my crew. Is there anything from yesterday I can help with now?" <em>(Explanation only after being heard, then Solve)</em></div></div>
+    <div class="dl-line"><div class="dl-speaker note">Assessor</div><div class="dl-text"><em>Listened fully. Did not defend first. Owned the gap. Explained without excusing. Committed to follow up with the crew.</em></div></div>
+  </div>
+  <div class="score-compare">
+    <div class="sc-card miss"><div class="sc-title">❌ Defends First — Loses Points</div><div class="sc-body">"Sir, we were on an emergency call. We park where we need to park. That is state law." Accurate, and the citizen leaves angrier and calls the chief's office.</div></div>
+    <div class="sc-card hit"><div class="sc-title">✅ Hears First — Scores High</div><div class="sc-body">"You were stuck for forty minutes and nobody told you anything. I am sorry. Tell me the rest." Same facts will come out later, after the person is able to hear them.</div></div>
+  </div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="ft-toggle" onclick="toggleFT(this)" style="margin-bottom:16px;max-width:320px">
+<div class="ft-toggle-switch"><div class="ft-toggle-knob"></div></div>
+<div><div class="ft-toggle-label">Fast Track Mode</div><div class="ft-toggle-desc">Full lesson content</div></div>
+</div>
+
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Applied to this lesson's board question</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Communication</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">L·A·S·T as the Action sequence</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">L·A·S·T → CALM Model → follow-up with the crew using SBI</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Listen → apologize for the experience → solve or route → thank and follow up → close with Empathy</div></div></div></div>
+
+  <span class="sbar-label">L·A·S·T</span>
+  <div class="sbar-card"><strong>Listen</strong>To the end. Say it back.</div>
+  <div class="sbar-card"><strong>Apologize</strong>For the experience.</div>
+  <div class="sbar-card"><strong>Solve</strong>Fix it or route it with a name and time.</div>
+  <div class="sbar-card"><strong>Thank</strong>And follow up yourself.</div>
+  <span class="sbar-label">Never Say</span>
+  <div class="sbar-card">"That is our policy." · "You need to calm down." · "That was B shift." · "There is nothing I can do."</div>
+  <span class="sbar-label">The Line</span>
+  <div class="sbar-card">Service does not mean accepting threats. Safety first, then procedure.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — The Angry Citizen</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">LT / CAPT</span><div><div class="ob-q-text">"A citizen comes to your station angry that your crew was rude to them on a call yesterday. Your crew is in the next room. What do you do?"</div><div class="ob-note">Move the conversation somewhere private, run L·A·S·T, do not defend or condemn the crew in front of the citizen, then address it with the crew. Mention notifying your BC.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 2 — Key Takeaways</div>
+  <div class="tk-item">An upset person cannot hear an explanation until they feel heard. Listen and say it back first.</div>
+  <div class="tk-item">Apologize for the experience without assigning fault to a member.</div>
+  <div class="tk-item">LEAD integration: name L·A·S·T, show the follow-up with the crew, close with Empathy or Service.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Communication</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">L·A·S·T → CALM Model → follow-up with the crew using SBI</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Listen → apologize for the experience → solve or route → thank and follow up → close with Empathy</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Previous</button>
+  <div class="lnb-info"><div class="lnb-name">The Angry Citizen</div><div class="lnb-num">Lesson 2 of 5</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: The Formal Complaint →</button>
+</div>
+</div>
+
+<!-- LESSON 3 -->
+<div class="lesson-view" id="lesson-2">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 45 · Lesson 3 of 5</div>
+    <h1 class="lh-title">The Formal Complaint —<br><em>Intake Without Investigation</em></h1>
+    <div class="lh-meta">
+      <span class="lh-meta-item">⏱ 10 min</span>
+      <span class="lh-meta-item">📝 Process &amp; Protection</span>
+    </div>
+  </div>
+
+  <p>Some complaints are not fixed with a conversation. An allegation of misconduct, missing property, an inappropriate comment, rough treatment of a patient. The moment a complaint moves from "I was unhappy" to "your member did something wrong," your role changes. You are no longer the fixer. You are the intake point for a process that protects the citizen, the member and the department.</p>
+  <p>Company officers get this wrong in two directions. Some dismiss it at the door to protect their crew. Others launch their own investigation and compromise the real one. Both hurt the member they were trying to help.</p>
+
+  <h2>The Intake Steps</h2>
+  <div class="phase-cards">
+    <div class="phase-card"><div class="phase-num-col"><div class="phase-badge">1</div></div><div class="phase-body"><div class="phase-title">Receive it respectfully</div><div class="phase-desc">Same L·A·S·T opening. Thank them for bringing it forward. Never talk a person out of filing a complaint.</div><span class="phase-time">Every complaint is taken</span></div></div>
+    <div class="phase-card"><div class="phase-num-col"><div class="phase-badge">2</div></div><div class="phase-body"><div class="phase-title">Get the facts, not the verdict</div><div class="phase-desc">Who, what, when, where, and how to reach them. Write down their words. Do not ask leading questions and do not offer your opinion of what happened.</div><span class="phase-time">Their account, in their words</span></div></div>
+    <div class="phase-card"><div class="phase-num-col"><div class="phase-badge">3</div></div><div class="phase-body"><div class="phase-title">Explain what happens next</div><div class="phase-desc">Tell them the complaint goes to your Battalion Chief, that it will be reviewed under department procedure, and that someone will contact them. Do not promise an outcome.</div><span class="phase-time">Process, not promises</span></div></div>
+    <div class="phase-card"><div class="phase-num-col"><div class="phase-badge">4</div></div><div class="phase-body"><div class="phase-title">Notify up the same shift</div><div class="phase-desc">Call your BC. Do not sit on it until morning and do not let the chief hear it from the citizen first.</div><span class="phase-time">Same shift, by phone</span></div></div>
+    <div class="phase-card"><div class="phase-num-col"><div class="phase-badge">5</div></div><div class="phase-body"><div class="phase-title">Document and preserve</div><div class="phase-desc">Write a factual memo while it is fresh: what was reported, what you did, who you notified and when. Preserve anything relevant such as the run report.</div><span class="phase-time">Facts only, no conclusions</span></div></div>
+  </div>
+
+  <h2>What You Do Not Do</h2>
+  <div class="framework-grid">
+    <div class="fw-card"><div class="fw-card-label">Do Not</div><div class="fw-card-title">Investigate your own crew</div><div class="fw-card-desc">Do not interview the member, gather statements or review their phone. Your department has a process and, in many places, members have procedural rights during an inquiry. Follow your policy and labor agreement.</div></div>
+    <div class="fw-card"><div class="fw-card-label">Do Not</div><div class="fw-card-title">Pre-judge either way</div><div class="fw-card-desc">"My guys would never do that" and "I knew he would do something like this" both end up in a deposition.</div></div>
+    <div class="fw-card"><div class="fw-card-label">Do Not</div><div class="fw-card-title">Discuss it around the table</div><div class="fw-card-desc">The accused member hears about it through the proper channel, not at dinner.</div></div>
+    <div class="fw-card"><div class="fw-card-label">Do Not</div><div class="fw-card-title">Allow retaliation</div><div class="fw-card-desc">No comments to or about the citizen, no change in service to that address. Say this out loud to the crew if you have to.</div></div>
+  </div>
+
+  <h2>Taking Care of Your Member</h2>
+  <p>Following the process is how you take care of your member. A fair, documented process is the thing that clears a firefighter who did nothing wrong. Tell the member what you can: that a complaint was received, that it is being handled under policy, that you expect professionalism while it runs, and that support is available. Check on them. An open complaint is one of the more stressful things a firefighter goes through.</p>
+  <div class="callout callout-navy">
+    <span class="callout-label">Just Culture Connection</span>
+    <p>When the review is finished, the response depends on what the behavior was. An honest mistake is consoled and the system is fixed. A shortcut is coached. Conscious disregard is disciplined. Chapter 26 and Chapter 47 cover that sorting in detail. Your intake should never assume which one it is.</p>
+  </div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="ft-toggle" onclick="toggleFT(this)" style="margin-bottom:16px;max-width:320px">
+<div class="ft-toggle-switch"><div class="ft-toggle-knob"></div></div>
+<div><div class="ft-toggle-label">Fast Track Mode</div><div class="ft-toggle-desc">Full lesson content</div></div>
+</div>
+
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Applied to this lesson's board question</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Ethics &amp; Integrity</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">STAR-P or step-by-step intake</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">L·A·S·T opening → five intake steps → notification → Documentation Language</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Take it → facts only → notify the same shift → protect the process → close with Trust</div></div></div></div>
+
+  <span class="sbar-label">Five Intake Steps</span>
+  <div class="sbar-card">Receive · Facts not verdict · Explain next steps · Notify up · Document and preserve</div>
+  <span class="sbar-label">Your Role</span>
+  <div class="sbar-card">Intake point. Not investigator. Not defense attorney. Not judge.</div>
+  <span class="sbar-label">Check Your Own</span>
+  <div class="sbar-card">Department complaint policy · Labor agreement · Any state procedural-rights statute for firefighters</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — The Formal Complaint</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">LT / CAPT</span><div><div class="ob-q-text">"A citizen calls your station and says one of your firefighters took something from their home during a call. How do you handle it?"</div><div class="ob-note">Take it seriously, gather facts without judgment, do not confront the member yourself, notify the BC immediately, document. Name both the citizen and the member as people you are protecting.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 3 — Key Takeaways</div>
+  <div class="tk-item">A misconduct allegation makes you the intake point, not the investigator.</div>
+  <div class="tk-item">Five steps: receive, facts, explain, notify up the same shift, document.</div>
+  <div class="tk-item">LEAD integration: this is often an Ethics &amp; Integrity question. Close with Trust in a fair process.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Ethics &amp; Integrity</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">L·A·S·T opening → five intake steps → notification → Documentation Language</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Take it → facts only → notify the same shift → protect the process → close with Trust</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Previous</button>
+  <div class="lnb-info"><div class="lnb-name">The Formal Complaint</div><div class="lnb-num">Lesson 3 of 5</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Service on Scene →</button>
+</div>
+</div>
+
+<!-- LESSON 4 -->
+<div class="lesson-view" id="lesson-3">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 45 · Lesson 4 of 5</div>
+    <h1 class="lh-title">Service on Scene —<br><em>Coaching the Crew</em></h1>
+    <div class="lh-meta">
+      <span class="lh-meta-item">⏱ 10 min</span>
+      <span class="lh-meta-item">🚒 Daily Practice</span>
+    </div>
+  </div>
+
+  <p>Most complaints are prevented, not resolved. They are prevented on scene by small behaviors that take seconds, and by an officer who notices when those behaviors slip.</p>
+
+  <h2>The Calls That Test It</h2>
+  <div class="framework-grid">
+    <div class="fw-card"><div class="fw-card-label">Test 1</div><div class="fw-card-title">The low-acuity call at 0300</div><div class="fw-card-desc">The stubbed toe, the third lift assist this week at the same address. The crew is tired and it shows in their faces before anyone speaks. This is where your standard is real or it is not.</div></div>
+    <div class="fw-card"><div class="fw-card-label">Test 2</div><div class="fw-card-title">The frequent caller</div><div class="fw-card-desc">Frustration is understandable. Contempt is not acceptable. Many departments have a referral path for frequent callers. Use it, and treat the person with dignity while you do.</div></div>
+    <div class="fw-card"><div class="fw-card-label">Test 3</div><div class="fw-card-title">The family on the worst day</div><div class="fw-card-desc">After a death or a serious fire, what the family remembers is whether someone explained what was happening and stayed an extra minute.</div></div>
+    <div class="fw-card"><div class="fw-card-label">Test 4</div><div class="fw-card-title">The camera</div><div class="fw-card-desc">Assume every scene is recorded. The standard is not "behave because you are being filmed." The standard is to behave so that it never matters.</div></div>
+  </div>
+
+  <h2>Small Behaviors That Carry the Weight</h2>
+  <p>Introduce yourself by name. Ask permission before moving through the house. Explain what you are doing as you do it. Tell the family which hospital and how to get there. Wipe your boots. Before you leave, ask whether there is anything else you can do. None of this slows the call down.</p>
+
+  <h2>Setting the Standard</h2>
+  <p>Say it on day one with a new crew, in plain words: "On every call we solve the problem, we treat people like family, and we leave it better than we found it. If I see something different, we will talk about it that shift." Then model it at 0300, when they are watching to see if you meant it.</p>
+
+  <h2>Correcting It — The Same Day</h2>
+  <p>When service slips, address it that shift with SBI: Situation, Behavior, Impact. Keep it about the behavior.</p>
+  <div class="score-compare">
+    <div class="sc-card miss"><div class="sc-title">❌ Character Attack — Loses Points</div><div class="sc-body">"You were a jerk to that lady. You need to fix your attitude." Not specific, not behavioral, and the firefighter will argue the label instead of hearing the point.</div></div>
+    <div class="sc-card hit"><div class="sc-title">✅ SBI Coaching — Scores High</div><div class="sc-body">"On the lift assist this morning, when Mrs. Alvarez asked if we were coming back tonight, you sighed and said 'probably.' She apologized to us three times after that. She is scared to call now, and that is the opposite of what we want. What was going on?" Specific, observable, tied to impact, and it ends with a question.</div></div>
+  </div>
+  <p>Then listen. Run your 3 U's. A tired firefighter on a fourth night call needs a different conversation than one who has decided that certain patients do not deserve courtesy. The first is a coaching moment and maybe a wellness check. The second is a standards conversation, and it gets documented.</p>
+  <div class="callout callout-teal">
+    <span class="callout-label">Catch Them Doing It Right</span>
+    <p>Use SBI for good service too. "When you sat down next to that man's wife and explained the cardiac monitor, she stopped shaking. That is exactly what I want this crew known for." Reinforced behavior repeats.</p>
+  </div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="ft-toggle" onclick="toggleFT(this)" style="margin-bottom:16px;max-width:320px">
+<div class="ft-toggle-switch"><div class="ft-toggle-knob"></div></div>
+<div><div class="ft-toggle-label">Fast Track Mode</div><div class="ft-toggle-desc">Full lesson content</div></div>
+</div>
+
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Applied to this lesson's board question</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Communication</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">STAR-P with a crew coaching example</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Three standards → SBI Feedback Model → 3 U's Diagnostic</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Set it on day one → model it at 0300 → correct it the same shift → close with Service</div></div></div></div>
+
+  <span class="sbar-label">Before You Leave</span>
+  <div class="sbar-card">Explain what happens next · Which hospital · Secure the home · "Anything else we can do?"</div>
+  <span class="sbar-label">Correcting Service</span>
+  <div class="sbar-card">Same shift · SBI · End with a question · 3 U's before conclusions</div>
+  <span class="sbar-label">Reinforce</span>
+  <div class="sbar-card">Name good service specifically, in front of the crew when appropriate.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Service on Scene</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">LT / CAPT</span><div><div class="ob-q-text">"You notice one of your firefighters is consistently short and dismissive with patients on low-acuity calls. How do you address it?"</div><div class="ob-note">Private, same shift, SBI with a specific example, then diagnose with the 3 U's. State the expectation and the follow-up. Mention checking on the member's wellbeing.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 4 — Key Takeaways</div>
+  <div class="tk-item">Complaints are prevented by small on-scene behaviors and an officer who notices.</div>
+  <div class="tk-item">Set the service standard on day one and correct it the same shift with SBI.</div>
+  <div class="tk-item">LEAD integration: this can be labeled Personnel Issue or Communication. Either way, diagnose before you conclude.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Communication</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Three standards → SBI Feedback Model → 3 U's Diagnostic</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Set it on day one → model it at 0300 → correct it the same shift → close with Service</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Previous</button>
+  <div class="lnb-info"><div class="lnb-name">Service on Scene</div><div class="lnb-num">Lesson 4 of 5</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: LEAD Applied →</button>
+</div>
+</div>
+
+<!-- LESSON 5 -->
+<div class="lesson-view" id="lesson-4">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 45 · Lesson 5 of 5</div>
+    <h1 class="lh-title">L·E·A·D<br><em>Applied to Customer Service</em></h1>
+    <div class="lh-meta">
+      <span class="lh-meta-item">⏱ 9 min</span>
+      <span class="lh-meta-item">⚡ Full Integration</span>
+    </div>
+  </div>
+
+  <p>Customer service questions come in three forms: the philosophy question, the angry citizen scenario, and the crew behavior scenario. The structure is the same for all three.</p>
+
+  <h2>L·E·A·D on a Service Question</h2>
+  <div class="acro-grid">
+    <div class="acro-row"><div class="acro-letter">L</div><div class="acro-content"><div class="acro-word">Label</div><div class="acro-desc">Usually Communication. A misconduct allegation is Ethics &amp; Integrity. A crew member's behavior is a Personnel Issue. Label it before you answer, because the framework chain changes.</div></div></div>
+    <div class="acro-row"><div class="acro-letter">E</div><div class="acro-content"><div class="acro-word">Engage</div><div class="acro-desc">STAR-P for "tell us about a time." For "what would you do," walk L·A·S·T or the intake steps in order.</div></div></div>
+    <div class="acro-row"><div class="acro-letter">A</div><div class="acro-content"><div class="acro-word">Apply</div><div class="acro-desc">Show both halves every time: what you do for the citizen, and what you do with the crew afterward.</div></div></div>
+    <div class="acro-row"><div class="acro-letter">D</div><div class="acro-content"><div class="acro-word">Deliver</div><div class="acro-desc">Close on Service, Empathy or Trust, tied to the scenario.</div></div></div>
+  </div>
+
+  <h2>The Complete Response</h2>
+  <div class="dialogue">
+    <div class="dl-header"><div class="dl-label">Model Response · "A citizen comes to the station angry about how your crew treated them"</div></div>
+    <div class="dl-line"><div class="dl-speaker officer">Citizen first</div><div class="dl-text">"I would step outside or into the office with them so we are not in front of the crew. I introduce myself, ask them to tell me what happened, and I listen without interrupting. I say it back so they know I have it right, and I apologize for the experience they had."</div></div>
+    <div class="dl-line"><div class="dl-speaker officer">Solve or route</div><div class="dl-text">"If it is something I can fix, I fix it then. If it is an allegation of misconduct, I tell them I am taking it to my Battalion Chief today, that it will be reviewed under our procedure, and that they will hear back. I get their contact information and I thank them for coming to me."</div></div>
+    <div class="dl-line"><div class="dl-speaker officer">Chain</div><div class="dl-text">"I call my BC that shift so they hear it from me, and I write up what was reported and what I did."</div></div>
+    <div class="dl-line"><div class="dl-speaker officer">Crew</div><div class="dl-text">"If it is a service issue and not a formal complaint, I talk to the member privately that same day. I describe the specific behavior and the impact, and I ask what was going on before I decide what it was. Then I restate the standard and follow up."</div></div>
+    <div class="dl-line"><div class="dl-speaker officer">Principle</div><div class="dl-text">"Service is why this job exists. People call us on their worst day, and how we treat them is the one part of the call they are qualified to judge. As the officer, that standard is mine to set and mine to protect."</div></div>
+    <div class="dl-line"><div class="dl-speaker note">Assessor</div><div class="dl-text"><em>Private setting. Listened first. Routed correctly. Notified up. Addressed the crew. Value close earned by the answer.</em></div></div>
+  </div>
+
+  <h2>Common Scenario Types</h2>
+  <div class="framework-grid">
+    <div class="fw-card"><div class="fw-card-label">Scenario</div><div class="fw-card-title">Driveway or parking complaint</div><div class="fw-card-desc">L·A·S·T. Explain after listening. Look for the real gap, which is usually that nobody communicated.</div></div>
+    <div class="fw-card"><div class="fw-card-label">Scenario</div><div class="fw-card-title">Rudeness on a medical call</div><div class="fw-card-desc">L·A·S·T with the citizen, SBI and the 3 U's with the member.</div></div>
+    <div class="fw-card"><div class="fw-card-label">Scenario</div><div class="fw-card-title">Property damage during operations</div><div class="fw-card-desc">Listen, explain why it was necessary, and know your department's claims process so you can route it.</div></div>
+    <div class="fw-card"><div class="fw-card-label">Scenario</div><div class="fw-card-title">Allegation of theft or misconduct</div><div class="fw-card-desc">Intake, not investigation. Notify immediately. Protect both parties.</div></div>
+    <div class="fw-card"><div class="fw-card-label">Scenario</div><div class="fw-card-title">Social media post about your crew</div><div class="fw-card-desc">Do not respond online. Notify the chain and the PIO per Chapter 21. Address the underlying behavior if it was real.</div></div>
+  </div>
+
+  <h2>Your Practice Target for This Chapter</h2>
+  <p>Run the angry citizen scenario out loud twice: once in The Office with a live character, and once recorded on your own. In the recording, count the seconds before you start explaining. If it is under thirty, you are defending too early.</p>
+
+</div>
+<div class="lesson-sidebar">
+<div class="ft-toggle" onclick="toggleFT(this)" style="margin-bottom:16px;max-width:320px">
+<div class="ft-toggle-switch"><div class="ft-toggle-knob"></div></div>
+<div><div class="ft-toggle-label">Fast Track Mode</div><div class="ft-toggle-desc">Full lesson content</div></div>
+</div>
+
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Applied to this lesson's board question</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: Communication</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">STAR-P or L·A·S·T in order</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">L·A·S·T service recovery → CALM Model → complaint intake steps → SBI coaching for the crew</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Listen first → own the experience → fix or route it → follow up → close with Service</div></div></div></div>
+
+  <span class="sbar-label">Label It First</span>
+  <div class="sbar-card"><strong>Communication</strong>Unhappy citizen.</div>
+  <div class="sbar-card"><strong>Ethics &amp; Integrity</strong>Alleged misconduct.</div>
+  <div class="sbar-card"><strong>Personnel Issue</strong>Crew behavior.</div>
+  <span class="sbar-label">Both Halves</span>
+  <div class="sbar-card">What you do for the citizen. What you do with the crew.</div>
+  <span class="sbar-label">Value Close</span>
+  <div class="sbar-card">Service · Empathy · Trust</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — LEAD Applied</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">LT / CAPT</span><div><div class="ob-q-text">"Tell us about a time you dealt with a dissatisfied member of the public. What did you do and what was the outcome?"</div><div class="ob-note">STAR-P with a real contact. The strongest answers include what you changed afterward so it would not happen again.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 5 — Key Takeaways</div>
+  <div class="tk-item">Three forms of the question: philosophy, angry citizen, crew behavior. Label before answering.</div>
+  <div class="tk-item">Always show both halves: the citizen and the crew.</div>
+  <div class="tk-item">LEAD integration: close on Service, Empathy or Trust, earned by what you described.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">Communication</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">L·A·S·T service recovery → CALM Model → complaint intake steps → SBI coaching for the crew</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Listen first → own the experience → fix or route it → follow up → close with Service</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Previous</button>
+  <div class="lnb-info"><div class="lnb-name">LEAD Applied</div><div class="lnb-num">Lesson 5 of 5</div></div>
+  <button class="lnb-btn primary" onclick="window.scrollTo({top:0,behavior:'smooth'})">Module Complete ✓</button>
+</div>
+</div>
+
+</main>
+
+<script>
+let cur=0;
+const ls=document.querySelectorAll('.lesson-view');
+const ps=document.querySelectorAll('.nav-pill');
+const mbs=document.querySelectorAll('.mh-lesson-btn');
+
+function showLesson(i){
+  ls.forEach(l=>l.classList.remove('active'));
+  ps.forEach(p=>p.classList.remove('active'));
+  mbs.forEach(m=>m.classList.remove('active'));
+  ls[i].classList.add('active');
+  ps[i].classList.add('active');
+  mbs[i].classList.add('active');
+  cur=i;
+  window.scrollTo({top:0,behavior:'smooth'});
+  document.getElementById('prog').style.width='0%';
+}
+
+function nextLesson(){if(cur<ls.length-1)showLesson(cur+1);}
+function prevLesson(){if(cur>0)showLesson(cur-1);}
+
+window.addEventListener('scroll',()=>{
+  const s=document.documentElement.scrollTop;
+  const h=document.documentElement.scrollHeight-window.innerHeight;
+  if(h>0)document.getElementById('prog').style.width=Math.min(100,(s/h*100))+'%';
+});
+
+document.addEventListener('DOMContentLoaded',()=>showLesson(0));
+
+function lfNext(el,stepNum){
+  var wrap=el.closest('.lf-wrap');
+  if(!wrap)return;
+  var steps=wrap.querySelectorAll('.lf-step');
+  var dots=wrap.querySelectorAll('.lf-dot');
+  steps.forEach(function(s,i){s.classList.remove('active');if(i<stepNum)s.classList.add('done');});
+  dots.forEach(function(d,i){d.classList.remove('active');if(i<stepNum)d.classList.add('done');if(i===stepNum)d.classList.add('active');});
+  if(steps[stepNum])steps[stepNum].classList.add('active');
+}
+</script>
+<script>function toggleFT(el){var sw=el.querySelector('.ft-toggle-switch');var desc=el.querySelector('.ft-toggle-desc');var mains=document.querySelectorAll('.lesson-main');sw.classList.toggle('on');var on=sw.classList.contains('on');desc.textContent=on?'Frameworks + OB cards only':'Full lesson content';mains.forEach(function(m){m.classList.toggle('ft-on',on);});}</script>
+
+<!-- tps-bridge v1: deep-link + progress reporting. Append-only; safe to remove. -->
+<script>
+(function(){
+  function hashLesson(){var m=(location.hash||'').match(/#lesson-(\d+)/);return m?parseInt(m[1],10):null;}
+  function activeIdx(){var v=document.querySelectorAll('.lesson-view');for(var i=0;i<v.length;i++){if(v[i].classList.contains('active'))return i;}return null;}
+  function rep(){try{if(window.parent!==window){window.parent.postMessage({type:'tps:lesson',lesson:activeIdx(),total:document.querySelectorAll('.lesson-view').length,href:location.pathname},'*');}}catch(e){}}
+  function init(){
+    var n=hashLesson();
+    if(n!==null&&typeof showLesson==='function'){try{showLesson(n);}catch(e){}}
+    if(/[?&]ft=1/.test(location.search)&&typeof toggleFastTrack==='function'){
+      var tg=document.querySelectorAll('.ft-toggle');for(var i=0;i<tg.length;i++){try{toggleFastTrack(tg[i]);}catch(e){}}
+    }
+    rep();
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',init);}else{init();}
+  if(typeof showLesson==='function'){var _s=showLesson;showLesson=function(n){_s(n);rep();};}
+  window.addEventListener('hashchange',function(){var n=hashLesson();if(n!==null&&typeof showLesson==='function'){showLesson(n);}});
+})();
+</script>
+</body>
+</html>

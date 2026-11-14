@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Chapter 44 — Project Management for the Company Officer | The Promotional Standard</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Crimson+Pro:wght@300;400;500;600&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --navy:#0C2340;--navy2:#1A3A5C;--gold:#C9A84C;--gold2:#F5F0E8;--gold3:#6B4F10;
+  --cream:#F5F0E8;--offwhite:#F5F0E8;--light:#EAE5DC;--mid:#2A3D50;--gray:#8FA8C0;
+  --red:#B22222;--red-light:#FFF0F0;--green:#1A5C3A;--green-light:#EAF3DE;
+  --teal:#006B6B;--teal-light:#E0F4F4;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Crimson Pro',Georgia,serif;background:var(--offwhite);color:var(--navy);font-size:18px;line-height:1.8;}
+.top-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(12,35,64,0.98);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,168,76,0.2);height:64px;display:flex;align-items:center;padding:0 2rem;gap:1rem;}
+.nav-left{display:flex;align-items:center;gap:12px;flex:1;}
+.nav-brand{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;color:var(--cream);line-height:1.3;}
+.nav-brand span{display:block;font-size:8px;color:var(--gold);letter-spacing:2px;}
+.nav-pills{display:flex;gap:5px;flex:2;justify-content:center;overflow-x:auto;}
+.nav-pill{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#8FA8C0;padding:6px 11px;border-radius:20px;cursor:pointer;transition:all 0.2s;border:none;background:transparent;white-space:nowrap;}
+.nav-pill:hover{color:var(--cream);background:rgba(255,255,255,0.05);}
+.nav-pill.active{color:var(--gold);background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.25);}
+.progress-bar{position:fixed;top:64px;left:0;height:3px;background:linear-gradient(90deg,var(--navy2),var(--gold));z-index:199;width:0%;transition:width 0.3s;}
+.lesson-view{display:none;}.lesson-view.active{display:block;}
+.module-hero{background:var(--navy);padding:4.5rem 3rem 3.5rem;margin-top:64px;position:relative;overflow:hidden;border-bottom:3px solid var(--gold);}
+.module-hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 60px,rgba(201,168,76,0.015) 60px,rgba(201,168,76,0.015) 61px);}
+.module-hero::after{content:'';position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(180deg,var(--navy2),var(--gold));}
+.mh-inner{max-width:900px;position:relative;z-index:2;}
+.mh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.mh-title{font-family:'EB Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:800;color:var(--cream);line-height:1.1;margin-bottom:0.75rem;}
+.mh-title em{font-style:italic;color:var(--gold);}
+.mh-sub{font-size:1.05rem;color:#8FA8C0;max-width:700px;line-height:1.7;margin-bottom:2rem;}
+.mh-badges{display:flex;gap:10px;margin-bottom:1.5rem;flex-wrap:wrap;}
+.mh-badge{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border-radius:3px;}
+.badge-track{background:rgba(201,168,76,0.15);color:var(--gold);border:1px solid rgba(201,168,76,0.3);}
+.badge-nfpa{background:rgba(100,160,220,0.15);color:#8FA8C0;border:1px solid rgba(100,160,220,0.3);}
+.badge-new{background:rgba(50,180,100,0.15);color:#3AB464;border:1px solid rgba(50,180,100,0.3);}
+.mh-thread{background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);border-left:3px solid var(--gold);padding:1rem 1.5rem;margin-bottom:2rem;max-width:700px;}
+.mh-thread-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+.mh-thread-text{font-size:0.92rem;color:var(--cream);line-height:1.65;}
+.mh-lesson-nav{display:flex;gap:8px;flex-wrap:wrap;}
+.mh-lesson-btn{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:8px 14px;border-radius:6px;cursor:pointer;transition:all 0.2s;border:1px solid rgba(201,168,76,0.25);background:transparent;color:#8FA8C0;}
+.mh-lesson-btn:hover{background:rgba(255,255,255,0.05);color:var(--cream);}
+.mh-lesson-btn.active{background:rgba(201,168,76,0.12);color:var(--gold);border-color:rgba(201,168,76,0.4);}
+.lesson-container{display:grid;grid-template-columns:1fr 310px;gap:0;}
+.lesson-main{padding:3rem 3.5rem;border-right:1px solid var(--light);}
+.lesson-sidebar{padding:2rem 1.75rem;background:var(--offwhite);position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;}
+.lesson-header{margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:2px solid var(--light);}
+.lh-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold3);margin-bottom:0.6rem;}
+.lh-title{font-family:'EB Garamond',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;color:var(--navy);line-height:1.15;margin-bottom:0.6rem;}
+.lh-title em{font-style:italic;color:var(--gold);}
+.lh-meta{display:flex;gap:1.5rem;flex-wrap:wrap;}
+.lh-meta-item{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);}
+.lesson-main h2{font-family:'EB Garamond',serif;font-size:1.7rem;font-weight:700;color:var(--navy);margin:3rem 0 0.9rem;padding-bottom:0.5rem;border-bottom:2px solid var(--light);}
+.lesson-main h3{font-family:'EB Garamond',serif;font-size:1.25rem;font-weight:600;color:var(--navy);margin:2.25rem 0 0.65rem;}
+.lesson-main p{margin-bottom:1.25rem;color:#2A3D50;line-height:1.82;}
+.lesson-main ul,.lesson-main ol{margin:0 0 1.25rem 1.5rem;color:#2A3D50;}
+.lesson-main li{margin-bottom:0.6rem;line-height:1.72;}
+.lesson-main strong{color:var(--navy);font-weight:600;}
+.callout{padding:1.4rem 1.6rem;margin:2rem 0;}
+.callout-gold{background:var(--gold2);border-left:3px solid var(--gold);}.callout-gold p{color:var(--gold3);font-size:0.97rem;line-height:1.75;}
+.callout-navy{background:var(--navy);border-left:3px solid var(--gold);}.callout-navy p{color:#8FA8C0;font-size:0.95rem;line-height:1.75;}
+.callout-red{background:var(--red-light);border-left:4px solid var(--red);}.callout-red p{color:#6B4F10;font-size:0.97rem;line-height:1.75;}
+.callout-green{background:var(--green-light);border-left:4px solid var(--green);}.callout-green p{color:#1A3A5C;font-size:0.97rem;line-height:1.75;}
+.callout-teal{background:var(--teal-light);border-left:4px solid var(--teal);}.callout-teal p{color:#003A3A;font-size:0.97rem;line-height:1.75;}
+.callout-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:0.5rem;display:block;}
+.callout-gold .callout-label{color:var(--gold3);}
+.callout-navy .callout-label{color:var(--gold);}
+.callout-red .callout-label{color:var(--red);}
+.callout-green .callout-label{color:var(--green);}
+.callout-teal .callout-label{color:var(--teal);}
+.framework-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.fw-card{background:white;border:1px solid #EAE5DC;padding:1.25rem;border-radius:8px;}
+.fw-card-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:6px;}
+.fw-card-title{font-family:'EB Garamond',serif;font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.fw-card-desc{font-size:0.9rem;color:var(--mid);line-height:1.6;}
+.acro-grid{display:flex;flex-direction:column;gap:0;margin:1.5rem 0;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;}
+.acro-row{display:grid;grid-template-columns:52px 1fr;gap:0;border-bottom:1px solid #EAE5DC;}
+.acro-row:last-child{border-bottom:none;}
+.acro-letter{background:var(--navy);color:var(--gold);font-family:'EB Garamond',serif;font-size:1.8rem;font-weight:800;display:flex;align-items:center;justify-content:center;}
+.acro-content{padding:0.9rem 1.1rem;background:white;}
+.acro-word{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:3px;}
+.acro-desc{font-size:0.85rem;color:var(--mid);line-height:1.55;}
+.sbar-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:0.65rem;margin-top:1.5rem;display:block;}
+.sbar-label:first-child{margin-top:0;}
+.sbar-card{background:white;border:1px solid #EAE5DC;border-radius:8px;padding:0.9rem 1rem;margin-bottom:8px;font-size:0.9rem;color:var(--mid);line-height:1.55;}
+.sbar-card strong{color:var(--navy);display:block;margin-bottom:3px;font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;}
+/* Nav bar — full M25/M27 standard */
+.lesson-nav-bar{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 3rem;border-top:3px solid var(--gold);background:var(--navy);gap:1rem;}
+.lnb-btn{background:rgba(255,255,255,0.08);border:2px solid rgba(201,168,76,0.4);padding:14px 28px;font-family:'Cinzel',serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border-radius:6px;color:var(--cream);transition:all 0.2s;white-space:nowrap;}
+.lnb-btn:hover{background:rgba(201,168,76,0.15);border-color:var(--gold);color:var(--gold);}
+.lnb-btn:disabled,.lnb-btn[disabled]{opacity:0.25;cursor:not-allowed;background:transparent;}
+.lnb-btn:disabled:hover,.lnb-btn[disabled]:hover{background:transparent;border-color:rgba(201,168,76,0.4);color:var(--cream);}
+.lnb-btn.primary{background:var(--gold);color:var(--navy);border-color:var(--gold);font-weight:800;}
+.lnb-btn.primary:hover{background:#C9A84C;border-color:#C9A84C;}
+.lnb-info{text-align:center;flex:1;}
+.lnb-name{font-family:'EB Garamond',serif;font-size:1rem;font-weight:700;color:var(--cream);}
+.lnb-num{font-size:0.85rem;color:var(--gold);font-family:'Cinzel',serif;letter-spacing:1px;}
+/* Counseling-specific: dialogue script */
+.dialogue{background:white;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;margin:1.5rem 0;}
+.dl-header{background:var(--navy);padding:0.9rem 1.5rem;}
+.dl-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);}
+.dl-line{display:grid;grid-template-columns:110px 1fr;gap:0.75rem;padding:0.85rem 1.5rem;border-bottom:1px solid var(--light);align-items:start;}
+.dl-line:last-child{border-bottom:none;}
+.dl-speaker{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;padding-top:2px;}
+.dl-speaker.officer{color:var(--navy);}
+.dl-speaker.role{color:var(--red);}
+.dl-speaker.note{color:var(--gold3);}
+.dl-text{font-size:0.87rem;color:#2A3D50;line-height:1.65;}
+.dl-text em{color:var(--gold3);font-style:italic;}
+/* Score compare */
+.score-compare{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.sc-card{padding:1.25rem;border-radius:8px;}
+.sc-card.miss{background:var(--red-light);border:1px solid #F0C0C0;}
+.sc-card.hit{background:var(--green-light);border:1px solid #9DCCA8;}
+.sc-title{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:0.75rem;}
+.sc-card.miss .sc-title{color:var(--red);}
+.sc-card.hit .sc-title{color:var(--green);}
+.sc-body{font-size:0.9rem;line-height:1.6;}
+.sc-card.miss .sc-body{color:#6B4F10;}
+.sc-card.hit .sc-body{color:#1A3A5C;}
+/* Phase cards */
+.phase-cards{display:flex;flex-direction:column;gap:0.75rem;margin:1.5rem 0;}
+.phase-card{background:white;border:1px solid #EAE5DC;border-radius:8px;overflow:hidden;display:grid;grid-template-columns:64px 1fr;}
+.phase-num-col{background:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1rem 0.5rem;gap:4px;}
+.phase-badge{font-family:'EB Garamond',serif;font-size:1.5rem;font-weight:800;color:var(--gold);line-height:1;}
+.phase-body{padding:1rem 1.25rem;}
+.phase-title{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:4px;}
+.phase-desc{font-size:0.9rem;color:var(--mid);line-height:1.58;}
+.phase-time{font-family:'Cinzel',serif;font-size:9px.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold3);margin-top:5px;display:block;font-weight:700;}
+@media(max-width:900px){.lesson-container{grid-template-columns:1fr;}.lesson-sidebar{position:relative;height:auto;}.lesson-main{padding:2rem 1.5rem;}.lesson-nav-bar{padding:1rem 1.5rem;flex-wrap:wrap;}.score-compare{grid-template-columns:1fr;}.framework-grid{grid-template-columns:1fr;}.dl-line{grid-template-columns:80px 1fr;}}
+
+/* OB CARD */
+.ob-card{background:var(--navy);margin:2rem 0;overflow:hidden;}
+.ob-header{padding:0.85rem 1.5rem;background:rgba(201,168,76,0.08);border-bottom:1px solid rgba(201,168,76,0.15);}
+.ob-label{font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);}
+.ob-body{padding:1.25rem 1.5rem;}
+.ob-q{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;}
+.ob-q-tag{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);background:rgba(201,168,76,0.1);padding:4px 10px;border-radius:3px;white-space:nowrap;}
+.ob-q-text{font-family:'EB Garamond',serif;font-size:1.08rem;font-weight:600;color:var(--cream);line-height:1.5;margin-bottom:8px;}
+.ob-note{font-size:0.88rem;color:#8FA8C0;line-height:1.6;font-style:italic;}
+/* TAKEAWAYS */
+.takeaways{background:var(--navy);padding:2.25rem;margin:3rem 0 0;border-top:3px solid var(--gold);}
+.tk-lbl{font-family:'Cinzel',serif;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.tk-item{color:#8FA8C0;font-size:0.92rem;line-height:1.7;padding:0.5rem 0 0.5rem 1.25rem;border-left:2px solid rgba(201,168,76,0.2);margin-bottom:0.5rem;}
+
+
+.lead-nav{background:var(--navy);border-radius:8px;padding:14px 16px;margin-bottom:16px;border:1px solid rgba(201,168,76,0.2)}
+.lead-nav-header{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.lead-nav-row{display:grid;grid-template-columns:20px 1fr;gap:6px;margin-bottom:6px;align-items:start}
+.lead-nav-letter{font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:var(--gold)}
+.lead-nav-content{}
+.lead-nav-name{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:2px}
+.lead-nav-app{font-size:11px;color:#8FA8C0;line-height:1.5}
+
+.lf-wrap{margin:2.5rem 0 1.5rem;border:2px solid var(--gold);border-radius:10px;overflow:hidden}
+.lf-header{background:var(--navy);padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
+.lf-title{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+.lf-dots{display:flex;gap:6px}
+.lf-dot{width:8px;height:8px;border-radius:50%;background:rgba(201,168,76,0.25);transition:all 0.3s}
+.lf-dot.active{background:var(--gold);transform:scale(1.3)}
+.lf-dot.done{background:var(--gold)}
+.lf-step{display:none;padding:20px}
+.lf-step.active{display:block}
+.lf-step-num{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold3);margin-bottom:6px}
+.lf-step-title{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:10px}
+.lf-chain{background:var(--navy);border-radius:6px;padding:14px 18px;margin:10px 0}
+.lf-chain-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.lf-chain-text{font-size:13px;color:#8FA8C0;line-height:1.6}
+.lf-chain-close{font-size:12px;color:var(--cream);margin-top:6px;font-style:italic}
+.lf-btn{background:var(--navy);color:var(--gold);border:2px solid var(--gold);padding:12px 24px;border-radius:6px;font-family:'Cinzel',serif;font-size:12px;letter-spacing:1.5px;font-weight:600;cursor:pointer;margin-top:12px;transition:all 0.2s;display:inline-block}
+.lf-btn:hover{background:var(--gold);color:var(--navy)}
+.lf-timer{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:var(--gold);padding:6px 14px;border-radius:4px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:1px;margin-top:10px}
+.lesson-main.ft>p{display:none!important}.lesson-main.ft>.callout{display:none!important}.ft-toggle{display:flex;align-items:center;gap:10px;padding:10px 16px;background:var(--navy);border-radius:6px;cursor:pointer;border:1px solid rgba(201,168,76,0.25)}.ft-toggle-switch{width:36px;height:20px;background:rgba(201,168,76,0.2);border-radius:10px;position:relative;transition:background .2s}.ft-toggle-switch.on{background:var(--gold)}.ft-toggle-knob{width:14px;height:14px;background:#fff;border-radius:50%;position:absolute;top:3px;left:3px;transition:left .2s}.ft-toggle-switch.on .ft-toggle-knob{left:19px}.ft-toggle-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}.ft-toggle-desc{font-size:11px;color:var(--mid)}.lesson-main.ft-on>p,.lesson-main.ft-on>.callout,.lesson-main.ft-on h3{display:none!important}.lesson-main.ft-on .ob-card,.lesson-main.ft-on .lf-wrap,.lesson-main.ft-on .lead-nav,.lesson-main.ft-on h2{display:block!important}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <div class="nav-left">
+    <div class="nav-brand">The Promotional Standard<span>Lieutenant Advanced · Chapter 44</span></div>
+  </div>
+  <div class="nav-pills">
+    <button class="nav-pill active" onclick="showLesson(0)">Why Projects Land on You</button>
+    <button class="nav-pill" onclick="showLesson(1)">Define It</button>
+    <button class="nav-pill" onclick="showLesson(2)">Plan It</button>
+    <button class="nav-pill" onclick="showLesson(3)">Run It</button>
+    <button class="nav-pill" onclick="showLesson(4)">Close It + LEAD</button>
+  </div>
+</nav>
+<div class="progress-bar" id="prog"></div>
+
+<div class="module-hero">
+  <div class="mh-inner">
+    <div class="mh-eyebrow">Chapter 44 · Lieutenant Advanced · Company Officer</div>
+    <h1 class="mh-title">Project Management<br><em>for the Company Officer</em></h1>
+    <p class="mh-sub">Nobody promotes to manage projects, and every officer ends up managing them. Hose testing, equipment rollouts, pre-plan updates, the station remodel. This chapter gives you a four-phase method that fits on one page: define it, plan it, run it, close it. It is built for three shifts, interrupted days and people who do not report to you, and it is exactly what assessors listen for when they ask how you would handle an assigned project.</p>
+    <div class="mh-badges">
+      <span class="mh-badge badge-track">Lieutenant Advanced</span>
+      <span class="mh-badge badge-nfpa">NFPA 1021 FO I–II · Administration JPRs</span>
+      <span class="mh-badge badge-new">New Chapter</span>
+    </div>
+    <div class="mh-thread">
+      <div class="mh-thread-label">Before You Begin</div>
+      <div class="mh-thread-text">Complete Chapter 10 (The Organized Leader) and Chapter 8 (Written Communication) first. This chapter uses the Eisenhower Matrix and BLUF from those chapters and adds the tools for work that takes weeks instead of hours.</div>
+    </div>
+    <div class="mh-lesson-nav">
+      <button class="mh-lesson-btn active" onclick="showLesson(0)">1. Why Projects Land on You</button>
+      <button class="mh-lesson-btn" onclick="showLesson(1)">2. Define It</button>
+      <button class="mh-lesson-btn" onclick="showLesson(2)">3. Plan It</button>
+      <button class="mh-lesson-btn" onclick="showLesson(3)">4. Run It</button>
+      <button class="mh-lesson-btn" onclick="showLesson(4)">5. Close It + LEAD</button>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- LESSON 1 -->
+<div class="lesson-view active" id="lesson-0">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 44 · Lesson 1 of 5</div>
+    <h1 class="lh-title">The Project —<br><em>The Work Nobody Trained You For</em></h1>
+    <div class="lh-meta">
+      <span class="lh-meta-item">⏱ 9 min</span>
+      <span class="lh-meta-item">📋 Planning &amp; Organizing</span>
+    </div>
+  </div>
+
+  <p>The week you promote, somebody hands you a project. Annual hose testing for the battalion. The new SCBA rollout at your station. Pre-plan updates for forty target hazards. A station remodel that needs a point of contact. Nobody calls it project management. They say, "Can you take this?" and you say yes.</p>
+  <p>Most company officers were promoted for how they run a crew and a scene. A project is a different animal. A scene ends in hours and the incident forces the pace. A project runs for weeks or months, crosses three shifts, depends on people who do not work for you, and has no tones dropping to make it urgent. It fails slowly and quietly, and it fails with your name on it.</p>
+  <p>Assessors know this. That is why in-baskets, written exercises and oral boards keep asking about assigned projects. They are checking whether you can turn a vague assignment into finished work without your chief having to chase you.</p>
+
+  <h2>A Task, a Program, and a Project</h2>
+  <div class="framework-grid">
+    <div class="fw-card"><div class="fw-card-label">Task</div><div class="fw-card-title">One person, one sitting</div><div class="fw-card-desc">Restock the engine. Write the memo. If it can be finished by one person before the end of shift, it is a task. Use the Eisenhower Matrix and get it done.</div></div>
+    <div class="fw-card"><div class="fw-card-label">Project</div><div class="fw-card-title">A start, an end, and a deliverable</div><div class="fw-card-desc">Multiple steps, multiple people, a deadline and a defined finished product. Hose testing complete and documented by June 30 is a project.</div></div>
+    <div class="fw-card"><div class="fw-card-label">Program</div><div class="fw-card-title">Ongoing, no end date</div><div class="fw-card-desc">The station fitness program or the preceptor program. A program is sustained. Most programs are launched as a project and then handed off.</div></div>
+  </div>
+  <p>The first scored behavior is recognizing which one you were handed. Candidates who treat a project like a task say "I'd get it done." Candidates who recognize a project say what done means, who is involved, and when the chief hears from them next.</p>
+
+  <h2>What Assessors Are Scoring</h2>
+  <div class="framework-grid">
+    <div class="fw-card"><div class="fw-card-label">Scored Behavior 1</div><div class="fw-card-title">Clarifies the Assignment</div><div class="fw-card-desc">Asks or states the outcome, the deadline, the budget and the limits of authority before starting work.</div></div>
+    <div class="fw-card"><div class="fw-card-label">Scored Behavior 2</div><div class="fw-card-title">Builds a Visible Plan</div><div class="fw-card-desc">Breaks the work into steps, sequences them, and puts dates on them. A plan the assessor can repeat back.</div></div>
+    <div class="fw-card"><div class="fw-card-label">Scored Behavior 3</div><div class="fw-card-title">Assigns With Names</div><div class="fw-card-desc">Every piece has one named owner. "The crew will handle it" is not an assignment.</div></div>
+    <div class="fw-card"><div class="fw-card-label">Scored Behavior 4</div><div class="fw-card-title">Anticipates Problems</div><div class="fw-card-desc">Names the two or three things most likely to go wrong and what the plan is for each.</div></div>
+    <div class="fw-card"><div class="fw-card-label">Scored Behavior 5</div><div class="fw-card-title">Reports Up Unprompted</div><div class="fw-card-desc">Sets the reporting rhythm with the supervisor and brings bad news early.</div></div>
+    <div class="fw-card"><div class="fw-card-label">Scored Behavior 6</div><div class="fw-card-title">Closes the Loop</div><div class="fw-card-desc">Finishes, documents, hands off, and captures the lesson. Most candidates stop at "it got done."</div></div>
+  </div>
+  <div class="callout callout-gold">
+    <span class="callout-label">The Core Idea of This Chapter</span>
+    <p>Your chief is not grading the project plan. Your chief is grading how much of their attention the project costs. An officer who can be handed a problem and return a finished product, with updates along the way, gets handed the next opportunity. That is the behavior the board is listening for.</p>
+  </div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="ft-toggle" onclick="toggleFT(this)" style="margin-bottom:16px;max-width:320px">
+<div class="ft-toggle-switch"><div class="ft-toggle-knob"></div></div>
+<div><div class="ft-toggle-label">Fast Track Mode</div><div class="ft-toggle-desc">Full lesson content</div></div>
+</div>
+
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Applied to this lesson's board question</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: In-Basket &amp; Priority</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">STAR-P with the project life cycle as the Action</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Five-Line Charter → SMART Goals → RACI Matrix → Risk Matrix → BLUF status → After-Action Review</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Define done → name the owner of every piece → report before you are asked → close with Ownership</div></div></div></div>
+
+  <span class="sbar-label">The Four Phases</span>
+  <div class="sbar-card"><strong>1 — Define</strong>What does done look like, by when, with what.</div>
+  <div class="sbar-card"><strong>2 — Plan</strong>Steps, sequence, names, dates, risks.</div>
+  <div class="sbar-card"><strong>3 — Run</strong>A weekly rhythm and honest status.</div>
+  <div class="sbar-card"><strong>4 — Close</strong>Finish, document, hand off, review.</div>
+  <span class="sbar-label">Why Projects Fail</span>
+  <div class="sbar-card">Nobody defined done · No single owner · Three shifts, three versions · Bad news arrived late</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Why Projects Land on You</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">LT / CAPT</span><div><div class="ob-q-text">"Your Battalion Chief assigns you to coordinate annual hose testing for the battalion. Walk us through how you would handle it."</div><div class="ob-note">Do not start with the testing. Start with clarifying the assignment: outcome, deadline, authority. Then plan, names, risks, reporting rhythm, and close.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 1 — Key Takeaways</div>
+  <div class="tk-item">A project has a start, an end, a deliverable and more than one person. Recognize it and say so.</div>
+  <div class="tk-item">Assessors score six behaviors: clarify, plan, assign with names, anticipate, report up, close the loop.</div>
+  <div class="tk-item">LEAD integration: Label In-Basket &amp; Priority, Engage STAR-P, Apply the four phases, Deliver with Ownership.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">In-Basket &amp; Priority</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Five-Line Charter → SMART Goals → RACI Matrix → Risk Matrix → BLUF status → After-Action Review</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Define done → name the owner of every piece → report before you are asked → close with Ownership</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" disabled>← Previous</button>
+  <div class="lnb-info"><div class="lnb-name">Why Projects Land on You</div><div class="lnb-num">Lesson 1 of 5</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Define It →</button>
+</div>
+</div>
+
+<!-- LESSON 2 -->
+<div class="lesson-view" id="lesson-1">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 44 · Lesson 2 of 5</div>
+    <h1 class="lh-title">Define It —<br><em>The Five-Line Charter</em></h1>
+    <div class="lh-meta">
+      <span class="lh-meta-item">⏱ 10 min</span>
+      <span class="lh-meta-item">🎯 Clarifying the Assignment</span>
+    </div>
+  </div>
+
+  <p>Projects are lost in the first conversation. The chief says "get the pre-plans updated," pictures forty finished pre-plans in the CAD by September, and walks away. You hear "work on pre-plans when you can." Three months later both of you are frustrated and both of you are right about what was said.</p>
+  <p>The fix takes five minutes. Before you do any work, write five lines and send them to the person who gave you the project. If they agree, you have a charter. If they correct you, you just saved the project.</p>
+
+  <h2>The Five-Line Charter</h2>
+  <div class="acro-grid">
+    <div class="acro-row"><div class="acro-letter">1</div><div class="acro-content"><div class="acro-word">Outcome — What Finished Looks Like</div><div class="acro-desc">One sentence a stranger could verify. "All battalion supply and attack hose service-tested to the current NFPA standard, results logged in the records system, failed lengths tagged and replaced."</div></div></div>
+    <div class="acro-row"><div class="acro-letter">2</div><div class="acro-content"><div class="acro-word">Deadline — The Date and Why</div><div class="acro-desc">A calendar date, and the reason behind it. A deadline tied to the ISO review gets treated differently than one somebody picked.</div></div></div>
+    <div class="acro-row"><div class="acro-letter">3</div><div class="acro-content"><div class="acro-word">Resources — People, Money, Time</div><div class="acro-desc">Who can I use, what can I spend, and can crews work on it during shift or only between calls.</div></div></div>
+    <div class="acro-row"><div class="acro-letter">4</div><div class="acro-content"><div class="acro-word">Authority — What I Can Decide</div><div class="acro-desc">Can I schedule other stations directly or do I go through their officers? Can I approve the purchase or only recommend it?</div></div></div>
+    <div class="acro-row"><div class="acro-letter">5</div><div class="acro-content"><div class="acro-word">Reporting — When You Hear From Me</div><div class="acro-desc">A short written update every other Friday, and a call the same day if the deadline is at risk.</div></div></div>
+  </div>
+  <p>This is commander's intent applied to administrative work. You already do it on the fireground when you repeat back an assignment. The charter is the repeat-back for a project.</p>
+
+  <h2>Make the Outcome SMART</h2>
+  <p>The Outcome line is where SMART Goals earns its place: Specific, Measurable, Achievable, Relevant, Time-bound. Test the line by asking whether two different people would agree, on the deadline date, that it was met.</p>
+  <div class="score-compare">
+    <div class="sc-card miss"><div class="sc-title">❌ Vague Assignment Accepted — Loses Points</div><div class="sc-body">"Yes Chief, I'll get on the pre-plans. We'll knock out as many as we can this summer and I'll keep you posted." No outcome. No date. No limits. No reporting plan. The assessor notes: accepted an undefined assignment.</div></div>
+    <div class="sc-card hit"><div class="sc-title">✅ Charter Confirmed — Scores High</div><div class="sc-body">"Chief, to make sure I deliver what you need: forty target hazards re-surveyed and entered in the CAD by September 15, using on-duty crews, with me scheduling directly with the other two station officers. I will send you a count every other Friday. Did I get that right?" Outcome, deadline, resources, authority, reporting. Twenty seconds.</div></div>
+  </div>
+  <div class="callout callout-navy">
+    <span class="callout-label">In the In-Basket</span>
+    <p>When an in-basket item assigns you a project, your written reply should contain the five lines. You are not expected to finish the project in the exercise. You are expected to show that it is defined, owned and scheduled.</p>
+  </div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="ft-toggle" onclick="toggleFT(this)" style="margin-bottom:16px;max-width:320px">
+<div class="ft-toggle-switch"><div class="ft-toggle-knob"></div></div>
+<div><div class="ft-toggle-label">Fast Track Mode</div><div class="ft-toggle-desc">Full lesson content</div></div>
+</div>
+
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Applied to this lesson's board question</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: In-Basket &amp; Priority</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">BLUF opening, then the five lines</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Five-Line Charter → SMART Goals → repeat-back to the supervisor</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">State the outcome and date first → confirm authority → set the reporting rhythm → close with Ownership</div></div></div></div>
+
+  <span class="sbar-label">The Five Lines</span>
+  <div class="sbar-card"><strong>Outcome</strong>What finished looks like.</div>
+  <div class="sbar-card"><strong>Deadline</strong>The date and the reason.</div>
+  <div class="sbar-card"><strong>Resources</strong>People, money, time.</div>
+  <div class="sbar-card"><strong>Authority</strong>What I can decide.</div>
+  <div class="sbar-card"><strong>Reporting</strong>When you hear from me.</div>
+  <span class="sbar-label">The Test</span>
+  <div class="sbar-card">Would two people agree on the deadline date that it was met? If not, rewrite the Outcome line.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Define It</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">LT / CAPT</span><div><div class="ob-q-text">"Tell us about a time you were given an assignment that was not clearly defined. What did you do?"</div><div class="ob-note">STAR-P. The Action is the clarification itself: what you asked, what you wrote down, what you confirmed. Close on what it prevented.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 2 — Key Takeaways</div>
+  <div class="tk-item">Write five lines before doing any work: Outcome, Deadline, Resources, Authority, Reporting.</div>
+  <div class="tk-item">Send the charter back to whoever assigned the project. Their correction is the cheapest fix you will ever get.</div>
+  <div class="tk-item">LEAD integration: open with the bottom line, name the charter, close with Ownership of the outcome.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">In-Basket &amp; Priority</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Five-Line Charter → SMART Goals → repeat-back to the supervisor</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">State the outcome and date first → confirm authority → set the reporting rhythm → close with Ownership</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Previous</button>
+  <div class="lnb-info"><div class="lnb-name">Define It</div><div class="lnb-num">Lesson 2 of 5</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Plan It →</button>
+</div>
+</div>
+
+<!-- LESSON 3 -->
+<div class="lesson-view" id="lesson-2">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 44 · Lesson 3 of 5</div>
+    <h1 class="lh-title">Plan It —<br><em>Steps, Names, Dates, Risks</em></h1>
+    <div class="lh-meta">
+      <span class="lh-meta-item">⏱ 11 min</span>
+      <span class="lh-meta-item">🗂 Building the Plan</span>
+    </div>
+  </div>
+
+  <p>A plan answers four questions: what are the steps, in what order, who owns each one, and by when. If you can put it on one page, your crew can follow it and your chief can read it in a minute.</p>
+
+  <h2>Work Backward From the Deadline</h2>
+  <div class="phase-cards">
+    <div class="phase-card"><div class="phase-num-col"><div class="phase-badge">1</div></div><div class="phase-body"><div class="phase-title">List the pieces</div><div class="phase-desc">Write every piece of work that has to happen. For hose testing: inventory, test schedule, equipment reserved, coverage arranged, testing days, records entry, failed hose replaced, final report. Do not sequence yet. Just get them all on paper.</div><span class="phase-time">Ten minutes with the crew at the kitchen table</span></div></div>
+    <div class="phase-card"><div class="phase-num-col"><div class="phase-badge">2</div></div><div class="phase-body"><div class="phase-title">Sequence them</div><div class="phase-desc">Which pieces block others? You cannot schedule test days until you know the footage. You cannot close out until replacements are ordered. Put the blockers first.</div><span class="phase-time">Find the two or three that everything waits on</span></div></div>
+    <div class="phase-card"><div class="phase-num-col"><div class="phase-badge">3</div></div><div class="phase-body"><div class="phase-title">Date them backward</div><div class="phase-desc">Start at the deadline and walk back. Report due June 30, so records done June 23, so testing done June 16, so the schedule published by May 15. Now you know whether today is early or already late.</div><span class="phase-time">Build in one week of slack before the real deadline</span></div></div>
+    <div class="phase-card"><div class="phase-num-col"><div class="phase-badge">4</div></div><div class="phase-body"><div class="phase-title">Name them</div><div class="phase-desc">One name on each piece. Not a shift, not a station. A person.</div><span class="phase-time">If two people own it, nobody owns it</span></div></div>
+  </div>
+
+  <h2>RACI — Who Does What</h2>
+  <p>The RACI Matrix settles the arguments before they start. For each piece of work, decide four roles.</p>
+  <div class="acro-grid">
+    <div class="acro-row"><div class="acro-letter">R</div><div class="acro-content"><div class="acro-word">Responsible — Does the Work</div><div class="acro-desc">The person whose hands are on it. Engineer Ortiz runs the test pump on B shift.</div></div></div>
+    <div class="acro-row"><div class="acro-letter">A</div><div class="acro-content"><div class="acro-word">Accountable — Answers for It</div><div class="acro-desc">One name only. For the project as a whole, that is you. You can delegate the work. You cannot delegate the answer.</div></div></div>
+    <div class="acro-row"><div class="acro-letter">C</div><div class="acro-content"><div class="acro-word">Consulted — Asked Before</div><div class="acro-desc">People whose input changes the plan. The other station officers. The training division if you need the drill ground.</div></div></div>
+    <div class="acro-row"><div class="acro-letter">I</div><div class="acro-content"><div class="acro-word">Informed — Told After</div><div class="acro-desc">People who need to know but do not get a vote. Your BC. Dispatch on test days.</div></div></div>
+  </div>
+
+  <h2>The Three-Shift Problem</h2>
+  <p>Fire service projects break at shift change. You plan it on A shift, B shift never hears, C shift does it a different way. Solve it on purpose: one written plan posted where all three shifts see it, one named lead per shift, and a pass-on note for the project every morning it is active. If you only brief your own shift, you have planned a third of a project.</p>
+
+  <h2>The Pre-Mortem</h2>
+  <p>Before you launch, ask the crew one question: "It is the deadline and this failed. What happened?" You will get the real risks in five minutes. Rank them on the Risk Matrix by how likely and how damaging, then plan for the top three.</p>
+  <div class="framework-grid">
+    <div class="fw-card"><div class="fw-card-label">Risk</div><div class="fw-card-title">Call volume eats the test days</div><div class="fw-card-desc">Plan: schedule two more days than you need, and arrange move-up coverage through the BC a week ahead.</div></div>
+    <div class="fw-card"><div class="fw-card-label">Risk</div><div class="fw-card-title">Another station does not buy in</div><div class="fw-card-desc">Plan: call that officer first, ask what dates work for them, and let them shape their piece.</div></div>
+    <div class="fw-card"><div class="fw-card-label">Risk</div><div class="fw-card-title">Failed hose has no budget</div><div class="fw-card-desc">Plan: get the replacement cost estimate to the chief in week one, not in the final report.</div></div>
+  </div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="ft-toggle" onclick="toggleFT(this)" style="margin-bottom:16px;max-width:320px">
+<div class="ft-toggle-switch"><div class="ft-toggle-knob"></div></div>
+<div><div class="ft-toggle-label">Fast Track Mode</div><div class="ft-toggle-desc">Full lesson content</div></div>
+</div>
+
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Applied to this lesson's board question</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: In-Basket &amp; Priority</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">STAR-P — the plan is the Action</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Backward planning → RACI Matrix → shift leads → Risk Matrix pre-mortem</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Steps → names → dates → top three risks → close with Dedication to the finished product</div></div></div></div>
+
+  <span class="sbar-label">Four Plan Questions</span>
+  <div class="sbar-card">What are the steps · In what order · Who owns each · By when</div>
+  <span class="sbar-label">RACI</span>
+  <div class="sbar-card"><strong>R</strong>Does the work.</div>
+  <div class="sbar-card"><strong>A</strong>Answers for it. One name.</div>
+  <div class="sbar-card"><strong>C</strong>Asked before.</div>
+  <div class="sbar-card"><strong>I</strong>Told after.</div>
+  <span class="sbar-label">Three-Shift Rule</span>
+  <div class="sbar-card">One written plan. One lead per shift. One pass-on note every active day.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Plan It</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">LT / CAPT</span><div><div class="ob-q-text">"You are assigned to implement a new piece of equipment across all three shifts at your station. How do you make sure it is done consistently?"</div><div class="ob-note">Name the three-shift problem directly. One plan, a lead per shift, training verified by a skills check, and a date when every member is signed off.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 3 — Key Takeaways</div>
+  <div class="tk-item">Plan backward from the deadline and leave a week of slack.</div>
+  <div class="tk-item">One name on every piece of work. Use RACI when more than one station or division is involved.</div>
+  <div class="tk-item">LEAD integration: name the risks before the assessor asks about them. That is what a 5 sounds like.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">In-Basket &amp; Priority</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Backward planning → RACI Matrix → shift leads → Risk Matrix pre-mortem</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Steps → names → dates → top three risks → close with Dedication to the finished product</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Previous</button>
+  <div class="lnb-info"><div class="lnb-name">Plan It</div><div class="lnb-num">Lesson 3 of 5</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Run It →</button>
+</div>
+</div>
+
+<!-- LESSON 4 -->
+<div class="lesson-view" id="lesson-3">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 44 · Lesson 4 of 5</div>
+    <h1 class="lh-title">Run It —<br><em>Rhythm, Status, and Slippage</em></h1>
+    <div class="lh-meta">
+      <span class="lh-meta-item">⏱ 10 min</span>
+      <span class="lh-meta-item">⚙️ Execution</span>
+    </div>
+  </div>
+
+  <p>Plans do not fail on launch day. They fail in week three, when the first deadline slips and nobody says anything. Running a project is mostly two habits: a fixed rhythm for checking it, and telling the truth about where it stands.</p>
+
+  <h2>The Weekly Fifteen</h2>
+  <p>Pick one fixed time each week and spend fifteen minutes on the project. Three questions for each open piece: what got done, what is next, what is in the way. Then update the one-page plan. A project that is looked at every week rarely surprises anyone. A project that is looked at "when things slow down" is already behind.</p>
+
+  <h2>Status Up the Chain — BLUF</h2>
+  <p>Your chief should never have to ask how it is going. Send the update on the schedule you set in the charter, and lead with the bottom line.</p>
+  <div class="score-compare">
+    <div class="sc-card miss"><div class="sc-title">❌ Activity Report — Loses Points</div><div class="sc-body">"Chief, we have been working hard on hose testing. A shift got some done last week, and B shift is planning to get to it. We ran into a few issues with the pump but we are working through it." Effort, not status. The chief still does not know whether June 30 is safe.</div></div>
+    <div class="sc-card hit"><div class="sc-title">✅ BLUF Status — Scores High</div><div class="sc-body">"Chief: hose testing is on track for June 30. 14,000 of 24,000 feet tested, 350 feet failed and tagged. One risk: the test pump is leaking and may not last. I have asked Station 4 to hold theirs for us on the 12th. Nothing needed from you today." Bottom line, numbers, risk, what you are doing about it, what you need.</div></div>
+  </div>
+
+  <h2>When It Slips</h2>
+  <p>Something will slip. The scored behavior is what you do in the first twenty-four hours.</p>
+  <div class="phase-cards">
+    <div class="phase-card"><div class="phase-num-col"><div class="phase-badge">1</div></div><div class="phase-body"><div class="phase-title">Say it early</div><div class="phase-desc">Tell your supervisor the day you know, not the day it is due. Bad news does not improve with age.</div><span class="phase-time">Same day</span></div></div>
+    <div class="phase-card"><div class="phase-num-col"><div class="phase-badge">2</div></div><div class="phase-body"><div class="phase-title">Bring options</div><div class="phase-desc">Come with two ways to recover and your recommendation: add a test day, borrow a crew, or move the date by a week.</div><span class="phase-time">Never a problem without a proposal</span></div></div>
+    <div class="phase-card"><div class="phase-num-col"><div class="phase-badge">3</div></div><div class="phase-body"><div class="phase-title">Own it</div><div class="phase-desc">No blaming call volume or the other shift. "I underestimated the time. Here is the fix." That is Ownership, and assessors write it down.</div><span class="phase-time">Internal locus of control</span></div></div>
+  </div>
+
+  <h2>Delegating Without Dumping</h2>
+  <p>You are accountable, but you should not be doing all of it. Use the Skill/Will Matrix to decide how much direction each person needs. A capable, motivated engineer gets the outcome and the date and is left alone. A newer firefighter gets the same piece with a walkthrough and a check at the halfway point. Either way, say why this piece matters and why you picked them. Handing someone a piece of a project is one of the best development tools you have.</p>
+  <div class="callout callout-teal">
+    <span class="callout-label">Give the Credit Away</span>
+    <p>When you report up, use names. "Firefighter Kim built the inventory spreadsheet and found 300 feet we did not know we had." It costs you nothing, the chief learns who is doing good work, and your crew will volunteer for the next one.</p>
+  </div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="ft-toggle" onclick="toggleFT(this)" style="margin-bottom:16px;max-width:320px">
+<div class="ft-toggle-switch"><div class="ft-toggle-knob"></div></div>
+<div><div class="ft-toggle-label">Fast Track Mode</div><div class="ft-toggle-desc">Full lesson content</div></div>
+</div>
+
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Applied to this lesson's board question</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: In-Basket &amp; Priority</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">BLUF for status, STAR-P for the story</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Weekly check → BLUF status → early escalation with options → Skill/Will delegation</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Bottom line first → numbers → risk and your plan → close with Ownership</div></div></div></div>
+
+  <span class="sbar-label">The Weekly Fifteen</span>
+  <div class="sbar-card">What got done · What is next · What is in the way</div>
+  <span class="sbar-label">A BLUF Status Has</span>
+  <div class="sbar-card"><strong>Bottom line</strong>On track, at risk, or behind.</div>
+  <div class="sbar-card"><strong>Numbers</strong>Done versus total.</div>
+  <div class="sbar-card"><strong>Risk</strong>And what you are doing.</div>
+  <div class="sbar-card"><strong>Ask</strong>What you need, or nothing.</div>
+  <span class="sbar-label">When It Slips</span>
+  <div class="sbar-card">Say it early. Bring options. Own it.</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Run It</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">LT / CAPT</span><div><div class="ob-q-text">"You are halfway through an assigned project and realize you will not meet the deadline. What do you do?"</div><div class="ob-note">Notify the supervisor the same day with options and a recommendation. Own the estimate. Assessors are scoring candor and problem solving, not perfection.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 4 — Key Takeaways</div>
+  <div class="tk-item">A fixed weekly check keeps a project from going quiet.</div>
+  <div class="tk-item">Status reports lead with the bottom line and numbers, never with effort.</div>
+  <div class="tk-item">LEAD integration: when a deadline is at risk, the 5-level answer notifies early, brings options and owns it.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">In-Basket &amp; Priority</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Weekly check → BLUF status → early escalation with options → Skill/Will delegation</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Bottom line first → numbers → risk and your plan → close with Ownership</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Previous</button>
+  <div class="lnb-info"><div class="lnb-name">Run It</div><div class="lnb-num">Lesson 4 of 5</div></div>
+  <button class="lnb-btn primary" onclick="nextLesson()">Next: Close It + LEAD →</button>
+</div>
+</div>
+
+<!-- LESSON 5 -->
+<div class="lesson-view" id="lesson-4">
+<div class="lesson-container">
+<div class="lesson-main">
+  <div class="lesson-header">
+    <div class="lh-eyebrow">Chapter 44 · Lesson 5 of 5</div>
+    <h1 class="lh-title">Close It —<br><em>and L·E·A·D Applied</em></h1>
+    <div class="lh-meta">
+      <span class="lh-meta-item">⏱ 10 min</span>
+      <span class="lh-meta-item">⚡ Full Integration</span>
+    </div>
+  </div>
+
+  <p>Most projects end at ninety percent. The testing is done but the records are not entered. The equipment is on the rig but C shift never got trained. Closing is its own phase, and it is where candidates separate themselves, because almost nobody talks about it.</p>
+
+  <h2>The Four-Part Close</h2>
+  <div class="framework-grid">
+    <div class="fw-card"><div class="fw-card-label">Close 1</div><div class="fw-card-title">Verify Done</div><div class="fw-card-desc">Go back to the Outcome line of the charter and check it line by line. Done means what you agreed to, not what you got to.</div></div>
+    <div class="fw-card"><div class="fw-card-label">Close 2</div><div class="fw-card-title">Document</div><div class="fw-card-desc">Records entered, final numbers, money spent, open items listed. A one-page closeout your chief can file.</div></div>
+    <div class="fw-card"><div class="fw-card-label">Close 3</div><div class="fw-card-title">Hand Off</div><div class="fw-card-desc">If the project created something ongoing, name who owns it now and what the upkeep is. A project with no handoff slowly comes undone.</div></div>
+    <div class="fw-card"><div class="fw-card-label">Close 4</div><div class="fw-card-title">Review</div><div class="fw-card-desc">A fifteen-minute After-Action Review with the people who did the work: what was planned, what happened, why, and what we do next time. Write it down so next year's officer starts ahead.</div></div>
+  </div>
+
+  <h2>L·E·A·D on a Project Question</h2>
+  <div class="acro-grid">
+    <div class="acro-row"><div class="acro-letter">L</div><div class="acro-content"><div class="acro-word">Label</div><div class="acro-desc">In-Basket &amp; Priority. The assessor is scoring planning and organizing. Some project questions also touch Strategic &amp; Organizational at Captain level.</div></div></div>
+    <div class="acro-row"><div class="acro-letter">E</div><div class="acro-content"><div class="acro-word">Engage</div><div class="acro-desc">STAR-P if they ask for an example. If they ask how you would handle it, walk the four phases in order.</div></div></div>
+    <div class="acro-row"><div class="acro-letter">A</div><div class="acro-content"><div class="acro-word">Apply</div><div class="acro-desc">Name the tools as you use them: charter, RACI, pre-mortem, BLUF status, AAR. Two or three named tools is enough.</div></div></div>
+    <div class="acro-row"><div class="acro-letter">D</div><div class="acro-content"><div class="acro-word">Deliver</div><div class="acro-desc">Close with a T·C·H·O·E·D·S value. Ownership and Dedication fit most project answers.</div></div></div>
+  </div>
+
+  <h2>The Complete Response</h2>
+  <div class="dialogue">
+    <div class="dl-header"><div class="dl-label">Model Response · Lieutenant Level · "Coordinate annual hose testing for the battalion"</div></div>
+    <div class="dl-line"><div class="dl-speaker officer">Define</div><div class="dl-text">"The first thing I do is confirm the assignment with you, Chief. My understanding is all battalion hose tested to standard, logged, and failed lengths replaced by June 30, and that I can schedule directly with the other station officers. I will send you a short update every other Friday."</div></div>
+    <div class="dl-line"><div class="dl-speaker officer">Plan</div><div class="dl-text">"I work backward from June 30. I need the inventory first, then a test schedule that gives each shift at each station its days, with two spare days for call volume. Each shift has a named lead. Before we start I ask my crew what is most likely to sink this, and I plan for the top three. My guess is coverage, the test pump, and replacement cost, so I get the cost estimate to you in week one."</div></div>
+    <div class="dl-line"><div class="dl-speaker officer">Run</div><div class="dl-text">"Every week I check it for fifteen minutes and update the one-page plan. If a date slips, you hear it from me that day with two options."</div></div>
+    <div class="dl-line"><div class="dl-speaker officer">Close</div><div class="dl-text">"When testing is finished I verify it against what we agreed, enter the records, give you a one-page closeout, and run a short after-action with the crews so next year is easier."</div></div>
+    <div class="dl-line"><div class="dl-speaker officer">Principle</div><div class="dl-text">"For me this comes down to Ownership. When you hand me a project, my job is to hand you back a finished product, not a list of reasons."</div></div>
+    <div class="dl-line"><div class="dl-speaker note">Assessor</div><div class="dl-text"><em>Clarified. Planned backward. Named owners. Anticipated risk. Reported up. Closed the loop. Value close tied to the scenario.</em></div></div>
+  </div>
+
+  <h2>Your Practice Target for This Chapter</h2>
+  <p>Pick a real project you have been part of and write its five-line charter after the fact. Then record a ninety-second answer to the OB card below. Listen for whether a stranger could repeat your plan back.</p>
+  <div class="callout callout-gold">
+    <span class="callout-label">On the Job</span>
+    <p>Keep a one-page plan template in your notes. The next time someone says "can you take this?", you will have the five lines sent before the end of shift. Do that twice and you will be the officer who gets the interesting assignments.</p>
+  </div>
+
+</div>
+<div class="lesson-sidebar">
+<div class="ft-toggle" onclick="toggleFT(this)" style="margin-bottom:16px;max-width:320px">
+<div class="ft-toggle-switch"><div class="ft-toggle-knob"></div></div>
+<div><div class="ft-toggle-label">Fast Track Mode</div><div class="ft-toggle-desc">Full lesson content</div></div>
+</div>
+
+<div class="lead-nav"><div class="lead-nav-header">L·E·A·D Navigator<div class="lead-nav-subtitle">Applied to this lesson's board question</div></div><div class="lead-nav-row"><div class="lead-nav-letter">L</div><div><div class="lead-nav-name">Label</div><div class="lead-nav-app">Bucket: In-Basket &amp; Priority</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">E</div><div><div class="lead-nav-name">Engage</div><div class="lead-nav-app">STAR-P or the four phases in order</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">A</div><div><div class="lead-nav-name">Apply</div><div class="lead-nav-app">Five-Line Charter → SMART Goals → RACI Matrix → Risk Matrix → BLUF status → After-Action Review</div></div></div><div class="lead-nav-row"><div class="lead-nav-letter">D</div><div><div class="lead-nav-name">Deliver</div><div class="lead-nav-app">Define done → name the owner of every piece → report before you are asked → close with Ownership</div></div></div></div>
+
+  <span class="sbar-label">The Four-Part Close</span>
+  <div class="sbar-card">Verify done · Document · Hand off · Review</div>
+  <span class="sbar-label">Tools to Name</span>
+  <div class="sbar-card">Five-Line Charter · SMART Goals · RACI Matrix · Risk Matrix · BLUF · After-Action Review</div>
+  <span class="sbar-label">Value Close</span>
+  <div class="sbar-card">Ownership · Dedication · Service</div>
+</div>
+</div>
+
+<div class="ob-card">
+  <div class="ob-header"><div class="ob-label">Oral Board — Close It + LEAD</div></div>
+  <div class="ob-body">
+    <div class="ob-q"><span class="ob-q-tag">LT / CAPT</span><div><div class="ob-q-text">"Describe a project you led from start to finish. What was the result, and what would you do differently?"</div><div class="ob-note">STAR-P with real numbers in the Result. "What would you do differently" is an AAR question: give one specific process change, not a personality flaw.</div></div></div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <div class="tk-lbl">Lesson 5 — Key Takeaways</div>
+  <div class="tk-item">Closing is a phase: verify, document, hand off, review.</div>
+  <div class="tk-item">On a project question, walk Define → Plan → Run → Close and name two or three tools.</div>
+  <div class="tk-item">LEAD integration: Label In-Basket &amp; Priority, Engage STAR-P, Apply the phases, Deliver with Ownership.</div>
+</div>
+
+<div class="lf-wrap"><div class="lf-header"><div class="lf-title">Lesson Close · 3-Step Flow</div><div class="lf-dots"><div class="lf-dot active"></div><div class="lf-dot"></div><div class="lf-dot"></div></div></div><div class="lf-step active"><div class="lf-step-num">Step 1 of 3 · Review</div><div class="lf-step-title">Can you answer the OB card using LEAD?</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Label the bucket. Engage the response framework. Apply the diagnostic or leadership framework. Deliver at rank level with a T·C·H·O·E·D·S value anchor.</p><button class="lf-btn" onclick="lfNext(this,1)">Got it — Show me the framework chain</button></div><div class="lf-step"><div class="lf-step-num">Step 2 of 3 · Framework Chain</div><div class="lf-step-title">Your framework chain for this question type</div><div class="lf-chain"><div class="lf-chain-label">Bucket</div><div class="lf-chain-text">In-Basket &amp; Priority</div></div><div class="lf-chain"><div class="lf-chain-label">Framework Chain</div><div class="lf-chain-text">Five-Line Charter → SMART Goals → RACI Matrix → Risk Matrix → BLUF status → After-Action Review</div></div><div class="lf-chain"><div class="lf-chain-label">Close Cue</div><div class="lf-chain-close">Define done → name the owner of every piece → report before you are asked → close with Ownership</div></div><button class="lf-btn" onclick="lfNext(this,2)">Ready for my rep →</button></div><div class="lf-step"><div class="lf-step-num">Step 3 of 3 · The Rep</div><div class="lf-step-title">The Halligan — Do your rep</div><p style="font-size:13px;color:var(--mid);line-height:1.6">Use the OB card question above. 90 seconds. LEAD structure. Record yourself if possible.</p><div class="lf-timer">⏱ 90 seconds · Respond using LEAD</div></div></div>
+<div class="lesson-nav-bar">
+  <button class="lnb-btn" onclick="prevLesson()">← Previous</button>
+  <div class="lnb-info"><div class="lnb-name">Close It + LEAD</div><div class="lnb-num">Lesson 5 of 5</div></div>
+  <button class="lnb-btn primary" onclick="window.scrollTo({top:0,behavior:'smooth'})">Module Complete ✓</button>
+</div>
+</div>
+
+</main>
+
+<script>
+let cur=0;
+const ls=document.querySelectorAll('.lesson-view');
+const ps=document.querySelectorAll('.nav-pill');
+const mbs=document.querySelectorAll('.mh-lesson-btn');
+
+function showLesson(i){
+  ls.forEach(l=>l.classList.remove('active'));
+  ps.forEach(p=>p.classList.remove('active'));
+  mbs.forEach(m=>m.classList.remove('active'));
+  ls[i].classList.add('active');
+  ps[i].classList.add('active');
+  mbs[i].classList.add('active');
+  cur=i;
+  window.scrollTo({top:0,behavior:'smooth'});
+  document.getElementById('prog').style.width='0%';
+}
+
+function nextLesson(){if(cur<ls.length-1)showLesson(cur+1);}
+function prevLesson(){if(cur>0)showLesson(cur-1);}
+
+window.addEventListener('scroll',()=>{
+  const s=document.documentElement.scrollTop;
+  const h=document.documentElement.scrollHeight-window.innerHeight;
+  if(h>0)document.getElementById('prog').style.width=Math.min(100,(s/h*100))+'%';
+});
+
+document.addEventListener('DOMContentLoaded',()=>showLesson(0));
+
+function lfNext(el,stepNum){
+  var wrap=el.closest('.lf-wrap');
+  if(!wrap)return;
+  var steps=wrap.querySelectorAll('.lf-step');
+  var dots=wrap.querySelectorAll('.lf-dot');
+  steps.forEach(function(s,i){s.classList.remove('active');if(i<stepNum)s.classList.add('done');});
+  dots.forEach(function(d,i){d.classList.remove('active');if(i<stepNum)d.classList.add('done');if(i===stepNum)d.classList.add('active');});
+  if(steps[stepNum])steps[stepNum].classList.add('active');
+}
+</script>
+<script>function toggleFT(el){var sw=el.querySelector('.ft-toggle-switch');var desc=el.querySelector('.ft-toggle-desc');var mains=document.querySelectorAll('.lesson-main');sw.classList.toggle('on');var on=sw.classList.contains('on');desc.textContent=on?'Frameworks + OB cards only':'Full lesson content';mains.forEach(function(m){m.classList.toggle('ft-on',on);});}</script>
+
+<!-- tps-bridge v1: deep-link + progress reporting. Append-only; safe to remove. -->
+<script>
+(function(){
+  function hashLesson(){var m=(location.hash||'').match(/#lesson-(\d+)/);return m?parseInt(m[1],10):null;}
+  function activeIdx(){var v=document.querySelectorAll('.lesson-view');for(var i=0;i<v.length;i++){if(v[i].classList.contains('active'))return i;}return null;}
+  function rep(){try{if(window.parent!==window){window.parent.postMessage({type:'tps:lesson',lesson:activeIdx(),total:document.querySelectorAll('.lesson-view').length,href:location.pathname},'*');}}catch(e){}}
+  function init(){
+    var n=hashLesson();
+    if(n!==null&&typeof showLesson==='function'){try{showLesson(n);}catch(e){}}
+    if(/[?&]ft=1/.test(location.search)&&typeof toggleFastTrack==='function'){
+      var tg=document.querySelectorAll('.ft-toggle');for(var i=0;i<tg.length;i++){try{toggleFastTrack(tg[i]);}catch(e){}}
+    }
+    rep();
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',init);}else{init();}
+  if(typeof showLesson==='function'){var _s=showLesson;showLesson=function(n){_s(n);rep();};}
+  window.addEventListener('hashchange',function(){var n=hashLesson();if(n!==null&&typeof showLesson==='function'){showLesson(n);}});
+})();
+</script>
+</body>
+</html>
